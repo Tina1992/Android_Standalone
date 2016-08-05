@@ -1,6 +1,8 @@
 package com.example.prediction.graphic;
 
 
+import java.awt.Rectangle;
+
 import com.example.prediction.logica.Config;
 
 import javafx.scene.canvas.Canvas;
@@ -12,7 +14,7 @@ public class ChartView extends ImageView {
 	
 	
 	//private Bitmap              bitmap;
-    private RectangularShape           rectArea;
+    private Rectangle           rectArea;
     private Canvas              canvas;
     private AreaChart          chart;
 
@@ -23,12 +25,12 @@ public class ChartView extends ImageView {
 		switch(type){
 		case Config.Graphic.GRAPHIC_TYPE_BAR:
 			bitmap = Bitmap.createBitmap(Config.Graphic.GRAPHIC_BAR_WIDTH, Config.Graphic.GRAPHIC_BAR_HEIGHT, Bitmap.Config.ARGB_8888);
-	        rectArea = new RectangularShape(0.0, 0.0, Config.Graphic.GRAPHIC_BAR_WIDTH, Config.Graphic.GRAPHIC_BAR_HEIGHT);
+	        rectArea = new Rectangle(Config.Graphic.GRAPHIC_BAR_WIDTH, Config.Graphic.GRAPHIC_BAR_HEIGHT);
 	        break;
 	        
 		case Config.Graphic.GRAPHIC_TYPE_LINE:
 			bitmap = Bitmap.createBitmap(Config.Graphic.GRAPHIC_LINE_WIDTH, Config.Graphic.GRAPHIC_LINE_HEIGHT, Bitmap.Config.ARGB_8888);
-	        rectArea = new RectangularShape(0.0, 0.0, Config.Graphic.GRAPHIC_LINE_WIDTH, Config.Graphic.GRAPHIC_LINE_HEIGHT);
+	        rectArea = new Rectangle(Config.Graphic.GRAPHIC_LINE_WIDTH, Config.Graphic.GRAPHIC_LINE_HEIGHT);
 	        break;
 		}
 		
