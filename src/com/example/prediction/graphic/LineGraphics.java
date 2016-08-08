@@ -23,8 +23,6 @@ import com.example.prediction.logica.database.AbsDatabase;
 import com.example.prediction.logica.metrics.simple_metrics.SimpleERMetric;
 import com.example.prediction.logica.models.AbsModeler;
 
-import javafx.scene.chart.AreaChart;
-
 public class LineGraphics extends AbsGraphics {
 	private int bestPrediction = 0;
 	private final static int limit = 300; 
@@ -67,12 +65,12 @@ public class LineGraphics extends AbsGraphics {
 		String workingDir = System.getProperty("user.dir");
 		String separator = System.getProperty("file.separator");
 		
-		BufferedImage img = ImageIO.read(new File(workingDir + separator + image));
+		//BufferedImage img = ImageIO.read(new File(workingDir + separator + image));
 	
 		CategoryPlot plot = chart.getCategoryPlot();
-	    plot.setBackgroundImage(img);
-	    plot.setBackgroundImageAlpha(0.3F);
-	    plot.setBackgroundPaint(Color.white);
+	    //plot.setBackgroundImage(img);
+	    //plot.setBackgroundImageAlpha(0.3F);
+	    //plot.setBackgroundPaint(Color.white);
 	    plot.setOutlineVisible(false);
 	    plot.setDomainGridlinePaint(Color.white);
 	    plot.setRangeGridlinePaint(Color.white);

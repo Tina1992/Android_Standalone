@@ -1,6 +1,5 @@
 package com.example.prediction.graphic;
 
-import java.awt.Frame;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -32,6 +31,11 @@ public abstract class AbsGraphics {
 	
 	class Frame extends ApplicationFrame {
 		
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
+
 		protected Frame( String applicationTitle ) throws Exception {
 			super(applicationTitle);
 		}

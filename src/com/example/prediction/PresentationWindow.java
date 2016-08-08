@@ -7,34 +7,24 @@ import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import java.awt.GridBagLayout;
 import java.awt.Image;
 import java.awt.Toolkit;
-import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.BorderLayout;
-import java.awt.CardLayout;
-import javax.swing.BoxLayout;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
 
-import java.awt.GridLayout;
-import javax.swing.JPopupMenu;
-import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-import javax.swing.JToolBar;
-import javax.swing.Box;
-import java.awt.Button;
-import javax.swing.SwingConstants;
+
+import java.awt.Color;
+import javax.swing.JTextPane;
 
 public class PresentationWindow {
 
 	private JFrame frame;
 	
-	public class BackgroundPanel extends JPanel {
+	private class BackgroundPanel extends JPanel {
 
 		/**
 		 * 
@@ -58,6 +48,26 @@ public class PresentationWindow {
 			super.paintComponent(g);
 			g.drawImage(img, 0, 0, 450, 300, this);
 		}
+	}
+	
+	public class MyButton extends JButton {
+	    /**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
+		public MyButton(String string) {
+	    	super(string);
+			// TODO Auto-generated constructor stub
+		}
+		@Override
+	    public Dimension getMaximumSize() {
+	        return new Dimension(120,frame.getHeight()/4);
+
+	    }
+	    @Override
+	    public Dimension getMinimumSize() {
+	        return new Dimension(120,frame.getHeight()/4);
+	    }
 	}
 
 	/**
@@ -99,55 +109,40 @@ public class PresentationWindow {
 		frame.setBounds(100, 100, 450, 300);
 		
 		//JPanel panel = new JPanel();
-		BackgroundPanel panel = new BackgroundPanel("resources/background_initial.jpg");
-		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
-		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addComponent(panel, GroupLayout.DEFAULT_SIZE, 434, Short.MAX_VALUE)
-		);
-		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addComponent(panel, GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
-		);
+		BackgroundPanel panel = new BackgroundPanel("resources/background_presentation.jpg");
+		frame.getContentPane().add(panel);
 		panel.setLayout(new BorderLayout(0, 0));
 		
-		JToolBar toolBar = new JToolBar();
-		toolBar.setRollover(true);
-		toolBar.setFloatable(false);
-		toolBar.setOpaque(false);
-		toolBar.setOrientation(SwingConstants.VERTICAL);
-		panel.add(toolBar, BorderLayout.WEST);
-		
-		JButton button = new JButton("Select Library");
-		button.setOpaque(false);
-		toolBar.add(button);
-		
-		JButton button_1 = new JButton("Select Database");
-		toolBar.add(button_1);
-		
-		JButton button_2 = new JButton("New button");
-		toolBar.add(button_2);
-		
-		JButton button_3 = new JButton("New button");
-		toolBar.add(button_3);
-		frame.getContentPane().setLayout(groupLayout);
-		
-	}
-	private static void addPopup(Component component, final JPopupMenu popup) {
-		component.addMouseListener(new MouseAdapter() {
-			public void mousePressed(MouseEvent e) {
-				if (e.isPopupTrigger()) {
-					showMenu(e);
+		JButton btnNewButton = new JButton("Start");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				try {
+					@SuppressWarnings("unused")
+					ConfiguresWindows cw=new ConfiguresWindows();
+					frame.setVisible(false);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
 				}
-			}
-			public void mouseReleased(MouseEvent e) {
-				if (e.isPopupTrigger()) {
-					showMenu(e);
-				}
-			}
-			private void showMenu(MouseEvent e) {
-				popup.show(e.getComponent(), e.getX(), e.getY());
 			}
 		});
+		btnNewButton.setOpaque(false);
+		btnNewButton.setFont(new Font("Calibri", Font.BOLD, 20));
+		btnNewButton.setForeground(Color.white);
+		btnNewButton.setBorderPainted(true);
+		btnNewButton.setFocusable(false);
+		btnNewButton.setContentAreaFilled(false);
+		panel.add(btnNewButton, BorderLayout.SOUTH);
+		
+		JTextPane txtpnTuecnicasDeAprendizaje = new JTextPane();
+		txtpnTuecnicasDeAprendizaje.setOpaque(false);
+		txtpnTuecnicasDeAprendizaje.setEditable(false);
+		txtpnTuecnicasDeAprendizaje.setFocusable(false);
+		txtpnTuecnicasDeAprendizaje.setFont(new Font("Calibri", Font.BOLD, 20));
+		txtpnTuecnicasDeAprendizaje.setForeground(Color.white);
+		txtpnTuecnicasDeAprendizaje.setText("Técnicas de aprendizaje para predecir atributos no funcionales en componentes de aplicaciones Android");
+		panel.add(txtpnTuecnicasDeAprendizaje, BorderLayout.NORTH);
+		
 	}
 }

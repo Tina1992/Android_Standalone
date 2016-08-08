@@ -1,7 +1,11 @@
-package com.example.prediction.graphic;
+/*package com.example.prediction.graphic;
 
 
+import java.awt.Graphics2D;
 import java.awt.Rectangle;
+import java.awt.image.BufferedImage;
+
+import org.jfree.chart.JFreeChart;
 
 import com.example.prediction.logica.Config;
 
@@ -13,12 +17,12 @@ import javafx.scene.image.ImageView;
 public class ChartView extends ImageView {
 	
 	
-	//private Bitmap              bitmap;
+	private BufferedImage              bitmap;
     private Rectangle           rectArea;
-    private Canvas              canvas;
-    private AreaChart          chart;
+    private Graphics2D              canvas;
+    private JFreeChart          chart;
 
-	public ChartView(int type, AreaChart chart) {
+	public ChartView(int type, JFreeChart chart2) {
 		// TODO Auto-generated constructor stub
 		super();
 		
@@ -36,21 +40,16 @@ public class ChartView extends ImageView {
 		
 	}
 	
-	public void drawChart( AreaChart chart )
+	public void drawChart( JFreeChart chart2 )
     {
-        canvas = new Canvas();
-        this.chart = chart;   
+        canvas = new Graphics2D();
+        this.chart = chart2;   
         this.chart.draw(canvas, rectArea);
-        setImageBitmap(bitmap);
+        setImage(bitmap);
     }
 	
-    @Override
-    protected void onDraw( Canvas canvas )
-    {
-        super.onDraw(canvas);               
-    }
 
 
                   
     
-}
+}*/

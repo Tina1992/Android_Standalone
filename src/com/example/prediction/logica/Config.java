@@ -1,12 +1,14 @@
 package com.example.prediction.logica;
 
+import java.awt.Color;
+
 public class Config {
 
 	public static class InitialSettings {
-		private static String DIR_STORAGE = System.getProperty("user.dir");// Environment.getExternalStorageDirectory().toString()
+		private static String DIR_STORAGE = "C:\\Users\\Tina\\Desktop\\";//System.getProperty("user.dir");// Environment.getExternalStorageDirectory().toString()
 																			// +
 																			// "/";
-		private static String DIR_WORKING = System.getProperty("user.dir");// Environment.getExternalStorageDirectory().toString()
+		private static String DIR_WORKING = "C:\\Users\\Tina\\Desktop\\";//System.getProperty("user.dir");// Environment.getExternalStorageDirectory().toString()
 																			// +
 																			// "/"
 																			// ;
@@ -114,7 +116,7 @@ public class Config {
 		public static final String GRAPHIC_LINE_LABEL_CROSSVALIDATION = "Cross Validation";
 		public static final String GRAPHIC_LINE_PREDICTION = "Prediction";
 
-		//public static final SolidColor GRAPHIC_LINE_COLOR_REALVALUES = new SolidColor(Color.BLACK);
+		public static final Color GRAPHIC_LINE_COLOR_REALVALUES = Color.BLACK;
 
 		public static final int GRAPHIC_BAR_HEIGHT = 400;
 		public static final int GRAPHIC_BAR_WIDTH = 500;
@@ -126,9 +128,9 @@ public class Config {
 		public static final String GRAPHIC_BAR_TITLE_AXISX = "Metrics";
 		public static final String GRAPHIC_BAR_TITLE_AXISY = "Measure";
 
-		/*public static final SolidColor GRAPHIC_BAR_COLOR = new SolidColor(Color.GRAY);
-		public static final SolidColor GRAPHIC_BAR_COLOR_BESTRESULT1 = new SolidColor(Color.rgb(133, 47, 4));
-		public static final SolidColor GRAPHIC_BAR_COLOR_BESTRESULT2 = new SolidColor(Color.rgb(174, 60, 4));*/
+		public static final Color GRAPHIC_BAR_COLOR = Color.GRAY;
+		public static final Color GRAPHIC_BAR_COLOR_BESTRESULT1 = new Color(133, 47, 4);
+		public static final Color GRAPHIC_BAR_COLOR_BESTRESULT2 = new Color (174, 60, 4);
 
 	}
 

@@ -48,6 +48,9 @@ public class WekaDatabase extends AbsDatabase {
 	public void parseFile(File file) {
 		// TODO Auto-generated method stub
 		CSVLoader cvsloader = new CSVLoader();
+		cvsloader.setNoHeaderRowPresent(false);
+		cvsloader.setFieldSeparator(",");
+		cvsloader.setBufferSize(300);
 		try {
 			cvsloader.setSource(file);
 			trainingSet = cvsloader.getDataSet();

@@ -111,13 +111,13 @@ public abstract class AbsMetric {
 			return calculate(Config.TrainingMode.TRAINING_MODE);
 		}
 		
-		public void configurateTrainingMode(AbsDatabase database, AbsModeler scheme){
+		protected void configurateTrainingMode(AbsDatabase database, AbsModeler scheme){
 			this.database=database;
 			this.modeler=scheme;
 			configurateTraining(database, scheme);
 		}
 		
-		public void configurateCVMode(AbsDatabase database, AbsModeler scheme, int folds){
+		protected void configurateCVMode(AbsDatabase database, AbsModeler scheme, int folds){
 			this.database=database;
 			this.modeler=scheme;
 			configurateCV(database, scheme, folds);

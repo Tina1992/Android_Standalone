@@ -1,6 +1,6 @@
 package com.example.prediction.logica.metrics.collection;
 
-import com.example.prediction.logica.metrics.composite.COMBMetric;
+import com.example.prediction.logica.metrics.composite.WekaCOMBMetric;
 import com.example.prediction.logica.metrics.evaluation_metric.WekaCCMetric;
 import com.example.prediction.logica.metrics.evaluation_metric.WekaMAEMetric;
 import com.example.prediction.logica.metrics.evaluation_metric.WekaRMSEMetric;
@@ -14,7 +14,7 @@ public class WekaMetricsCollection extends MetricsCollection {
 		// TODO Auto-generated constructor stub
 		super();
 		acceptMetric(new WekaCCMetric());
-		//acceptMetric(new COMBMetric());
+		acceptMetric(new WekaCOMBMetric());
 		acceptMetric(new WekaMAEMetric());
 		acceptMetric(new WekaRMSEMetric());
 		acceptMetric(new WekaRRSEMetric());

@@ -96,7 +96,6 @@ public class BarGraphics extends AbsGraphics {
 		Vector<Double> auxValues = new Vector<Double>();
 																							//row = serie
 		for(int column=0; column < dataset.getColumnCount(); column++){						//column = category
-			System.out.println("iteracion columna...");
 			Required req = categorys[column].getRequired();
 			for(int row=0; row < dataset.getRowCount(); row++) {
 				value = dataset.getValue(row, column).doubleValue();
@@ -109,27 +108,23 @@ public class BarGraphics extends AbsGraphics {
 			}
 			Collections.sort(auxValues);
 			if(req.equals(Required.MAX)){
-				bestResults.add(values.indexOf(auxValues.elementAt(auxValues.size()-1)));	//PLANTEAR EXCEPCION SI SOLO TENGO UN SCHEME
-				bestResults.add(values.indexOf(auxValues.elementAt(auxValues.size()-2)));
+				bestResults.add(values.indexOf(auxValues.elementAt(auxValues.size()-1)));	
+				if (auxValues.size()>1){
+				bestResults.add(values.indexOf(auxValues.elementAt(auxValues.size()-2)));}
 			}
 			else {
 				bestResults.add(values.indexOf(auxValues.elementAt(0)));
-				bestResults.add(values.indexOf(auxValues.elementAt(1)));
+				if (values.size()>1){
+				bestResults.add(values.indexOf(auxValues.elementAt(1)));}
 			}
 			auxValues.removeAllElements();
 			values.removeAllElements();
-			
-			
 		}
-		for(Integer i:bestResults)
-			System.out.print("" + i + ", ");
-		System.out.println();
-		max += max/10;				//VER COMO PONER POR DEFECTO
+		max += max/10;				
 		min = 0;
-		System.out.println("min: "+min +", max: "+ max);
 	}
 	
-	protected JFreeChart generateChart(String chartTitle, String axisX, String axisY) throws Exception{
+	protected JFreeChart createChart(String chartTitle, String axisX, String axisY) throws Exception{
 		
 		// create the chart... 
 		final JFreeChart chart = ChartFactory.createBarChart(
@@ -164,13 +159,8 @@ public class BarGraphics extends AbsGraphics {
 		
 		String workingDir = System.getProperty("user.dir");
 		String separator = System.getProperty("file.separator");
-		BufferedImage img = ImageIO.read(new File(workingDir + separator + "ML.png"));
 		
-	    chart.setBackgroundImage(img);
-	    chart.setBackgroundImageAlpha(0.1F);
-	    chart.setBackgroundPaint(Color.white);
-	    CategoryPlot plot = chart.getCategoryPlot();
-	    plot.setBackgroundImage(img);
+		CategoryPlot plot = chart.getCategoryPlot();
 	    plot.setOutlineVisible(false);
 	    plot.setDomainGridlinePaint(Color.white);
 	    plot.setRangeGridlinePaint(Color.white);
@@ -233,12 +223,6 @@ public class BarGraphics extends AbsGraphics {
 				Config.Graphic.GRAPHIC_BAR_TITLE_CHART,
 				Config.Graphic.GRAPHIC_BAR_TITLE_AXISX,  
 				Config.Graphic.GRAPHIC_BAR_TITLE_AXISY );	
-	}
-
-	@Override
-	protected JFreeChart createChart(String chartTitle, String axisX, String axisY) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
 	}
 	
 	
