@@ -20,12 +20,14 @@ public class EvaluationWeka extends AbsEvaluation {
 	@Override
 	public void testTrainingSet(AbsDatabase dataset, AbsModeler scheme) throws Exception {
 		// TODO Auto-generated method stub 
+		test=new Evaluation((Instances)dataset.getDatabaseImplementation());
 		test.evaluateModel(((AbsWekaClassifier) scheme).getClassifier(), (Instances)dataset.getDatabaseImplementation());
 	}
 
 	@Override
 	public void testCV(AbsDatabase dataset, AbsModeler scheme, int folds) throws Exception {
 		// TODO Auto-generated method stub
+		test=new Evaluation((Instances)dataset.getDatabaseImplementation());
 		test.crossValidateModel(((AbsWekaClassifier) scheme).getClassifier(), (Instances)dataset.getDatabaseImplementation(),folds, new Random(1));		
 	}
 

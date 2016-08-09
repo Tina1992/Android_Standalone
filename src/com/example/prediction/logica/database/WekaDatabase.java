@@ -50,7 +50,6 @@ public class WekaDatabase extends AbsDatabase {
 		CSVLoader cvsloader = new CSVLoader();
 		cvsloader.setNoHeaderRowPresent(false);
 		cvsloader.setFieldSeparator(",");
-		cvsloader.setBufferSize(300);
 		try {
 			cvsloader.setSource(file);
 			trainingSet = cvsloader.getDataSet();

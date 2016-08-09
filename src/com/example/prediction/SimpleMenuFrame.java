@@ -119,13 +119,13 @@ public class SimpleMenuFrame extends JDialog {
 				jrb.setOpaque(false);
 				jrb.addMouseListener(new MouseAdapter() {
 					@Override
-					public void mouseClicked(MouseEvent arg0) {
+					public void mousePressed(MouseEvent e){
 						try {
 							selected=count;
 							System.out.print(selected);
-						} catch (Exception e) {
+						} catch (Exception ex) {
 							// TODO Auto-generated catch block
-							e.printStackTrace();
+							ex.printStackTrace();
 						}
 					}
 				});

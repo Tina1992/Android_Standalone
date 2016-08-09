@@ -2,6 +2,7 @@ package com.example.prediction;
 
 import javax.swing.JPanel;
 import javax.swing.JRadioButtonMenuItem;
+import javax.swing.JScrollPane;
 
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -14,7 +15,7 @@ import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.JTextPane;
-
+import javax.swing.ScrollPaneConstants;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
@@ -104,22 +105,23 @@ public class MultipleMenuFrame extends JFrame {
 				jrb.setOpaque(false);
 				jrb.addMouseListener(new MouseAdapter() {
 					@Override
-					public void mouseClicked(MouseEvent arg0) {
+					public void mousePressed(MouseEvent e){
 						try {
 							MultipleMenuFrame.selected[count]=jrb.isSelected();
-						} catch (Exception e) {
+						} catch (Exception ex) {
 							// TODO Auto-generated catch block
-							e.printStackTrace();
+							ex.printStackTrace();
 						}
 					}
 				});
 				selected[i]=false;
 				panel.add(jrb);
 			}
-
+			
 			JPanel panel2 = new JPanel();
 			panel.add(panel2);
 			panel2.setOpaque(false);
+			
 			
 			acceptButton.setBackground(new Color(0,0,0,0));
 			

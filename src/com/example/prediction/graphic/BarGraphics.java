@@ -2,6 +2,7 @@ package com.example.prediction.graphic;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.Paint;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -14,6 +15,7 @@ import javax.imageio.ImageIO;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
+import org.jfree.chart.axis.CategoryAxis;
 import org.jfree.chart.axis.ValueAxis;
 import org.jfree.chart.block.BlockBorder;
 import org.jfree.chart.labels.CategoryItemLabelGenerator;
@@ -22,6 +24,8 @@ import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.chart.renderer.category.BarRenderer;
 import org.jfree.chart.renderer.category.CategoryItemRenderer;
+import org.jfree.chart.title.TextTitle;
+import org.jfree.chart.title.Title;
 import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.ui.RectangleInsets;
 
@@ -53,22 +57,21 @@ public class BarGraphics extends AbsGraphics {
 			  int index2 = (column * 2) + 1;							//COLUMN: CATEGORY (METRIC)
 			  if(column < 4){
 				  if(row == bestResults.elementAt(index1)){
-					   return new Color(133,47,4);
+					   return Config.Graphic.GRAPHIC_BAR_COLOR_BESTRESULT1;
 				   }
 				   if(row == bestResults.elementAt(index2)){
-					   return new Color(174,60,4);
+					   return Config.Graphic.GRAPHIC_BAR_COLOR_BESTRESULT2;
 					   
 				   }  
 			  }
-				return Color.gray;																					  
+				return Config.Graphic.GRAPHIC_BAR_COLOR;																					  
 		   }
 		
 		//SHOW VALUES ON BAR WHICH RESULTS ARE BETTER!!
 		public CategoryItemLabelGenerator getItemLabelGenerator(int i, int j){ 				//J = COLUMN = METRIC
-			int index1 = j * 2;																//I = ROW = SCHEME
-			int index2 = (j * 2) + 1;
-			if(bestResults.elementAt(index1) == i || bestResults.elementAt(index2) == i)	
-				return new StandardCategoryItemLabelGenerator("{2}", new DecimalFormat("##.###"));
+			int index1 = j * 2;		
+			if(bestResults.elementAt(index1) == i )	
+				return new StandardCategoryItemLabelGenerator("{2}", new DecimalFormat("##.##"));
 			return null;
 		} 
 	}
@@ -134,9 +137,11 @@ public class BarGraphics extends AbsGraphics {
 	            dataset,                 
 	            PlotOrientation.VERTICAL,
 	            true, true, false );
-	   
-        ChartPanel chartPanel = new ChartPanel( chart );
-	    chartPanel.setPreferredSize( new java.awt.Dimension( width , height ) );
+	   TextTitle title = new TextTitle(chartTitle);
+	   title.setFont(new Font("Calibri", Font.ITALIC,18));
+	   chart.setTitle(title);
+		
+		
 	    return chart;
 	}
 	 
@@ -153,17 +158,21 @@ public class BarGraphics extends AbsGraphics {
 	}
 	
 	protected void customizeChart(JFreeChart chart) throws Exception{
-		height = 400;
-		width = 500;
+		height = Config.Graphic.GRAPHIC_BAR_HEIGHT;
+		width =  Config.Graphic.GRAPHIC_BAR_WIDTH;
 		settings();
 		
-		String workingDir = System.getProperty("user.dir");
-		String separator = System.getProperty("file.separator");
+		Image img = ImageIO.read(BarGraphics.class.getResource("/resources/machine_learning.png"));
+		chart.setBackgroundImage(img);
+		chart.setBackgroundImageAlpha(0.4F);
 		
 		CategoryPlot plot = chart.getCategoryPlot();
 	    plot.setOutlineVisible(false);
 	    plot.setDomainGridlinePaint(Color.white);
 	    plot.setRangeGridlinePaint(Color.white);
+	    plot.setBackgroundImage(img);
+	    plot.setBackgroundAlpha(0.2F);
+	    
 	    BarRenderer render = (BarRenderer)plot.getRenderer();
 	    
 	    CategoryItemRenderer renderer = new CustomRenderer();
@@ -173,24 +182,31 @@ public class BarGraphics extends AbsGraphics {
 	    if(dataset.getRowCount() < 5) {
 	    	chart.getLegend().setFrame(BlockBorder.NONE);	
 			//TOP-LEFT-BOTTOM-RIGHT
-			chart.getLegend().setItemLabelPadding(new RectangleInsets(5.0,2.0,3.0,width));
+			//chart.getLegend().setItemLabelPadding(new RectangleInsets(5.0,2.0,3.0,width));
 		}
 	    
 	    for(int i=0;i<dataset.getRowCount();i++){
 		    renderer.setSeriesPaint(i, Color.GRAY);			//BUSCAR MEJOR COLOR!!
 		}
 	    
-	    plot.setRenderer(renderer);
+	    
 	    renderer.setItemLabelsVisible(true);
 	    renderer.setBaseItemLabelsVisible(true);
-	    renderer.setItemLabelFont(new Font("SansSerif", Font.ITALIC, 15));
-	
+	    renderer.setItemLabelFont(new Font("Calibri", Font.ITALIC, 18));
+	    plot.setRenderer(renderer);
 	  
 	    //  chart.getCategoryPlot().setRenderer(render);
 	    //SET RANGE AXIS
 	    ValueAxis yAxis = plot.getRangeAxis();
-	    System.out.println("min: "+min +", max: "+ max);
-	    yAxis.setRange(min, max);  	    
+	    yAxis.setLabelFont(new Font("Calibri", Font.PLAIN,16));
+	    yAxis.setLabelPaint(Color.GRAY);
+	    max = max*1.10;
+	    yAxis.setRange(min, max); 
+	    
+	    CategoryAxis xAxis = plot.getDomainAxis();
+	    xAxis.setLabelFont(new Font("Calibri", Font.PLAIN,16));
+	    xAxis.setLabelPaint(Color.GRAY);
+	    
 	}
 
 

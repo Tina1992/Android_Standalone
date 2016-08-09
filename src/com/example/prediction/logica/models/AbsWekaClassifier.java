@@ -47,13 +47,13 @@ public abstract class AbsWekaClassifier extends AbsClassifier {
 		selectBestAttributes();
 		try {
 			optimizer.optimiceParams(this);
-			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("No se puede optimizar");
 		}
 		try {
 			classifier.buildClassifier(((Instances) database_.getDatabaseImplementation()));
+			return true;
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -116,7 +116,7 @@ public class FilteredSchemesWindows {
 			public void itemStateChanged(ItemEvent e) {
 				// TODO Auto-generated method stub
 				System.out.println("El item selecionado es: "+ choice.getSelectedIndex());
-				info.setBestScheme(info.getBestSchemes().get(choice.getSelectedIndex()));
+				info.setBestScheme(info.getBestSchemes().get(choice.getSelectedIndex()-1));
 				try {
 					ImagesLCWindows lc=new ImagesLCWindows();
 					frame.setVisible(false);
