@@ -50,8 +50,19 @@ public abstract class AbsWekaClusterer extends AbsClusterer {
 		return clusterer_.getCapabilities().test((Instances)((WekaDatabase)trainingSet).getDatabaseImplementation());
 	}
 
+	protected boolean buildModel(){
+		try {
+			clusterer_.buildClusterer((Instances) database_.getDatabaseImplementation());
+			return true;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
+	
 	// --Abstract methods
-
+	
 	protected abstract void getClusterer(Instances instances);
 
 }

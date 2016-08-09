@@ -52,14 +52,22 @@ public class BarGraphics extends AbsGraphics {
 	{
 		public CustomRenderer() {}
 		
-		public Paint getItemPaint(final int row, final int column) {
-			int index1 = column * 2;									//ROW: SERIE (BARRA)
-			  int index2 = (column * 2) + 1;							//COLUMN: CATEGORY (METRIC)
-			  if(column < 4){
+		public Paint getItemPaint(final int row, final int column) {			//ROW: SERIE (SCHEME) //COLUMN: CATEGORY (METRIC)
+			Integer index1 = 0;
+			Integer index2=0;
+			if(dataset.getRowCount() <= 1){
+				index1 = column;									
+				index2 = null;	
+			}
+			else{
+				index1 = column * 2;									
+				index2 = (column * 2) + 1;
+			}
+			if(column < 4){
 				  if(row == bestResults.elementAt(index1)){
 					   return Config.Graphic.GRAPHIC_BAR_COLOR_BESTRESULT1;
 				   }
-				   if(row == bestResults.elementAt(index2)){
+				   if(index2 !=null && row == bestResults.elementAt(index2)){
 					   return Config.Graphic.GRAPHIC_BAR_COLOR_BESTRESULT2;
 					   
 				   }  
@@ -69,8 +77,15 @@ public class BarGraphics extends AbsGraphics {
 		
 		//SHOW VALUES ON BAR WHICH RESULTS ARE BETTER!!
 		public CategoryItemLabelGenerator getItemLabelGenerator(int i, int j){ 				//J = COLUMN = METRIC
-			int index1 = j * 2;		
-			if(bestResults.elementAt(index1) == i )	
+			int index1 = 0;
+			int index2=0;
+			if(dataset.getRowCount() > 1){ 
+				index1 = j * 2;	
+				index2 = (j * 2)+1;
+			}
+			else
+				index1=j;
+			if(bestResults.elementAt(index1) == i || bestResults.elementAt(index2) == j)	
 				return new StandardCategoryItemLabelGenerator("{2}", new DecimalFormat("##.##"));
 			return null;
 		} 
@@ -113,12 +128,12 @@ public class BarGraphics extends AbsGraphics {
 			if(req.equals(Required.MAX)){
 				bestResults.add(values.indexOf(auxValues.elementAt(auxValues.size()-1)));	
 				if (auxValues.size()>1){
-				bestResults.add(values.indexOf(auxValues.elementAt(auxValues.size()-2)));}
+					bestResults.add(values.indexOf(auxValues.elementAt(auxValues.size()-2)));}
 			}
 			else {
 				bestResults.add(values.indexOf(auxValues.elementAt(0)));
 				if (values.size()>1){
-				bestResults.add(values.indexOf(auxValues.elementAt(1)));}
+					bestResults.add(values.indexOf(auxValues.elementAt(1)));}
 			}
 			auxValues.removeAllElements();
 			values.removeAllElements();
@@ -235,6 +250,7 @@ public class BarGraphics extends AbsGraphics {
 		}
 
 		configureDataset(trainingSet);
+		bestResults.removeAllElements();
 		return getChart(series, 
 				Config.Graphic.GRAPHIC_BAR_TITLE_CHART,
 				Config.Graphic.GRAPHIC_BAR_TITLE_AXISX,  

@@ -3,6 +3,7 @@ package com.example.prediction.logica.metrics.collection;
 import com.example.prediction.logica.metrics.composite.WekaCOMBMetric;
 import com.example.prediction.logica.metrics.evaluation_metric.WekaCCMetric;
 import com.example.prediction.logica.metrics.evaluation_metric.WekaMAEMetric;
+import com.example.prediction.logica.metrics.evaluation_metric.WekaRAEMetric;
 import com.example.prediction.logica.metrics.evaluation_metric.WekaRMSEMetric;
 import com.example.prediction.logica.metrics.evaluation_metric.WekaRRSEMetric;
 import com.example.prediction.logica.models.AbsModeler;
@@ -18,6 +19,7 @@ public class WekaMetricsCollection extends MetricsCollection {
 		acceptMetric(new WekaMAEMetric());
 		acceptMetric(new WekaRMSEMetric());
 		acceptMetric(new WekaRRSEMetric());
+		acceptMetric(new WekaRAEMetric());
 	}
 
 	@Override

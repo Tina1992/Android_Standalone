@@ -8,7 +8,7 @@ public class Config {
 		private static String DIR_STORAGE = "C:\\Users\\Tina\\Desktop\\";//System.getProperty("user.dir");// Environment.getExternalStorageDirectory().toString()
 																			// +
 																			// "/";
-		private static String DIR_WORKING = "C:\\Users\\Tina\\Desktop\\";//System.getProperty("user.dir");// Environment.getExternalStorageDirectory().toString()
+		private static String DIR_WORKING = "C:\\ProgramData\\BlueStacks\\UserData\\SharedFolder\\";//System.getProperty("user.dir");// Environment.getExternalStorageDirectory().toString()
 																			// +
 																			// "/"
 																			// ;

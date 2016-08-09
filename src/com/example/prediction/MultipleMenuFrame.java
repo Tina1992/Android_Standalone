@@ -148,7 +148,7 @@ public class MultipleMenuFrame extends JFrame {
 			    }
 			});
 			
-			JButton cancelButton = new JButton("Cancel");
+			final JButton cancelButton = new JButton("Cancel");
 			cancelButton.setFont(new Font("Calibri", Font.BOLD, 17));
 			cancelButton.setForeground(Color.white);
 			cancelButton.setBorderPainted(false);

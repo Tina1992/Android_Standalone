@@ -40,12 +40,18 @@ public abstract class AbsModeler {
 	}
 	
 
-	public boolean calculateModeler(AbsDatabase database){
+	public boolean calculateModeler(AbsDatabase database){		//Calcula el model con optimización
 		database_=database;
 		setIndexAttribute(indexClass);
 		return getModel();
 	}
 	
+	public boolean buildModeler(AbsDatabase database){
+		database_=database;
+		setIndexAttribute(indexClass);
+		return buildModel();
+	}
+
 	public AbsDatabase getDatabase(){
 		return database_;
 	}
@@ -76,4 +82,6 @@ public abstract class AbsModeler {
 	public abstract Double predictIndividualValue(Individual ind) throws Exception;
 	
 	public abstract boolean handles(AbsDatabase trainingSet);
+	
+	protected abstract boolean buildModel();
 }

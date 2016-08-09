@@ -89,6 +89,17 @@ public abstract class AbsWekaClassifier extends AbsClassifier {
 	public boolean handles(AbsDatabase trainingSet){
 		return classifier.getCapabilities().test((Instances)((WekaDatabase)trainingSet).getDatabaseImplementation());
 	}
+	
+	protected boolean buildModel(){
+		try {
+			classifier.buildClassifier((Instances) database_.getDatabaseImplementation());
+			return true;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
 
 	// --Abstract methods
 	public abstract String getName();

@@ -3,10 +3,13 @@ package com.example.prediction;
 import java.awt.EventQueue;
 import java.awt.FlowLayout;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.util.Vector;
 
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -113,7 +116,17 @@ public class OptimizingSchemeWindows {
 																WindowPreferences.DEFAULT_WIDTH_P,
 																WindowPreferences.DEFAULT_HEIGHT_P);
 		panel_params.add(WindowPreferences.textFormatOptimizing("Select the button to generate model"));
-		panel_params.add(WindowPreferences.defaultButton("/resources/icon_model.png"));
+		JButton button_model = WindowPreferences.defaultButton("/resources/icon_model.png");
+		button_model.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
+		panel_params.add(button_model);
 
 		return panel_params;
 	}

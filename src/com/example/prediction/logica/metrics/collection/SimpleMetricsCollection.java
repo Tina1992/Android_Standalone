@@ -12,10 +12,8 @@ import com.example.prediction.logica.models.AbsModeler;
 public class SimpleMetricsCollection extends MetricsCollection{
 	
 	public SimpleMetricsCollection(){
-		acceptMetric(new SimpleERMetric());
 		acceptMetric(new SimpleMAEMetric());
 		acceptMetric(new SimpleCCMetric());
-		acceptMetric(new SimpleRAEMetric());
 		acceptMetric(new SimpleRMSEMetric());
 		acceptMetric(new SimpleRRSEMetric());
 		acceptMetric(new SimpleCOMBMetric());

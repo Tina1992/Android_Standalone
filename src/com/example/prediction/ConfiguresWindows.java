@@ -67,10 +67,10 @@ public class ConfiguresWindows {
 			@Override
 			public void mousePressed(MouseEvent e){
 				//DE ESTA MANERA FUNCIONA EL HACER CLICK.  
-				Info info=Info.getInstance();
+				final Info info=Info.getInstance();
 				info.setLibraries();
-				CharSequence[] lc=info.getListLibraries();
-				SimpleMenuFrame smp;
+				final CharSequence[] lc=info.getListLibraries();
+				final SimpleMenuFrame smp;
 				try {
 					smp = new SimpleMenuFrame(Config.AppSettings.TITLE_CONFIGURES_ITEMS[0], lc);
 					smp.setLocationByPlatform(false);
@@ -97,10 +97,10 @@ public class ConfiguresWindows {
 			@Override
 			public void mousePressed(MouseEvent e){
 				//DE ESTA MANERA FUNCIONA EL HACER CLICK.  
-				Info info=Info.getInstance();
+				final Info info=Info.getInstance();
 				info.setListFilesDataset();;
-				CharSequence[] lc=info.getListFilesDataset();
-				SimpleMenuFrame smp;
+				final CharSequence[] lc=info.getListFilesDataset();
+				final SimpleMenuFrame smp;
 				try {
 					smp = new SimpleMenuFrame(Config.AppSettings.TITLE_CONFIGURES_ITEMS[1], lc);
 					smp.addConfirmListener(new ActionListener() {
@@ -134,10 +134,10 @@ public class ConfiguresWindows {
 			@Override
 			public void mousePressed(MouseEvent e){
 				//DE ESTA MANERA FUNCIONA EL HACER CLICK.  
-				Info info=Info.getInstance();
+				final Info info=Info.getInstance();
 				info.setListAttributes(info.getDatasetSelected());
 				CharSequence[] lc=info.getListAttributes();
-				SimpleMenuFrame smp;
+				final SimpleMenuFrame smp;
 				try {
 					smp = new SimpleMenuFrame(Config.AppSettings.TITLE_CONFIGURES_ITEMS[2], lc);
 					smp.addConfirmListener(new ActionListener() {
@@ -166,10 +166,10 @@ public class ConfiguresWindows {
 			@Override
 			public void mousePressed(MouseEvent e){
 				//DE ESTA MANERA FUNCIONA EL HACER CLICK.  
-				Info info=Info.getInstance();
+				final Info info=Info.getInstance();
 				info.setListSchemes();
 				CharSequence[] lc=info.getListSchemes();
-				MultipleMenuFrame mmp;
+				final MultipleMenuFrame mmp;
 				try {
 					mmp = new MultipleMenuFrame(Config.AppSettings.TITLE_CONFIGURES_ITEMS[3], lc);
 					mmp.addConfirmListener(new ActionListener() {
@@ -203,7 +203,7 @@ public class ConfiguresWindows {
 	}
 	
 	private JPanel createItem(String iconID, String title) throws Exception {
-		JPanel panel_row = new JPanel();
+		final JPanel panel_row = new JPanel();
 		panel_row.setPreferredSize(new Dimension(330,55));
 		
 		/** CON ESTA LINEA HACEMOS TRANSPARENTE EL FONDO DEL PANEL. */

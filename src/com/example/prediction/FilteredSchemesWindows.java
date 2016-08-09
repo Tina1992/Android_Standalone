@@ -14,6 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 
+import com.example.prediction.logica.Config;
 import com.example.prediction.logica.models.AbsModeler;
 
 import java.awt.Choice;
@@ -22,6 +23,8 @@ import java.awt.event.ItemListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 
 public class FilteredSchemesWindows {
 
@@ -116,9 +119,13 @@ public class FilteredSchemesWindows {
 			public void itemStateChanged(ItemEvent e) {
 				// TODO Auto-generated method stub
 				System.out.println("El item selecionado es: "+ choice.getSelectedIndex());
-				info.setBestScheme(info.getBestSchemes().get(choice.getSelectedIndex()-1));
+				AbsModeler m=info.getBestSchemes().get(choice.getSelectedIndex()-1);
+				info.setBestScheme(m);
 				try {
 					ImagesLCWindows lc=new ImagesLCWindows();
+					FileWriter writer = new FileWriter(Config.InitialSettings.getDirWorking()+m.getName()+".model");
+					writer.write(m.toString());
+					writer.close();
 					frame.setVisible(false);
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block

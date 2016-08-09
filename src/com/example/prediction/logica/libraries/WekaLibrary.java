@@ -103,7 +103,7 @@ public class WekaLibrary extends AbsLibrary{
 	@Override
 	public void createMetricsEvaluation() {
 		// TODO Auto-generated method stub
-		this.metricsEvaluation = new SimpleMetricsCollection();
+		this.metricsEvaluation = new WekaMetricsCollection();
 	}
 
 	@Override

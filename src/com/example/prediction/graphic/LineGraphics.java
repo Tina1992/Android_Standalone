@@ -182,7 +182,7 @@ public class LineGraphics extends AbsGraphics {
 				
 				//Double value= rae.calculate(mTDataset, scheme,5);	//CV con fold=5
 				
-				scheme.calculateModeler(mTDataset);
+				scheme.buildModeler(mTDataset);
 				Double value = rae.calculate(mTDataset, scheme);
 				
 				dataset.addValue(value, Config.Graphic.GRAPHIC_LINE_LABEL_TRAINING, cantInstances);
