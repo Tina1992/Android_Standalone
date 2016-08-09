@@ -5,6 +5,7 @@ import java.util.Vector;
 import com.example.prediction.logica.Config;
 import com.example.prediction.logica.database.WekaDatabase;
 import com.example.prediction.logica.evaluation.EvaluationWeka;
+import com.example.prediction.logica.metrics.collection.SimpleMetricsCollection;
 import com.example.prediction.logica.metrics.collection.WekaMetricsCollection;
 import com.example.prediction.logica.models.AbsModeler;
 import com.example.prediction.logica.models.LinearRegClassifier;
@@ -102,7 +103,7 @@ public class WekaLibrary extends AbsLibrary{
 	@Override
 	public void createMetricsEvaluation() {
 		// TODO Auto-generated method stub
-		this.metricsEvaluation = new WekaMetricsCollection();
+		this.metricsEvaluation = new SimpleMetricsCollection();
 	}
 
 	@Override

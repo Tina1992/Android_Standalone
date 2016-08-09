@@ -164,7 +164,7 @@ public class BarGraphics extends AbsGraphics {
 		
 		Image img = ImageIO.read(BarGraphics.class.getResource("/resources/machine_learning.png"));
 		chart.setBackgroundImage(img);
-		chart.setBackgroundImageAlpha(0.4F);
+		chart.setBackgroundImageAlpha(0.2F);
 		
 		CategoryPlot plot = chart.getCategoryPlot();
 	    plot.setOutlineVisible(false);

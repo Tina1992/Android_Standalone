@@ -85,7 +85,14 @@ public class MultipleMenuFrame extends JFrame {
 		try {
 			BackgroundPanel panel = new BackgroundPanel("resources/background.jpg");
 			
-			setContentPane(panel);
+
+			panel.setPreferredSize(new Dimension(width,300));
+			JScrollPane panel_scroll = new JScrollPane();
+			panel_scroll.setViewportView(panel);
+			panel_scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+			panel_scroll.setPreferredSize(new Dimension(width,150));
+			
+			setContentPane(panel_scroll);
 			panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 			JTextPane textPane = new JTextPane();
 			textPane.setEditable(false);
@@ -107,7 +114,7 @@ public class MultipleMenuFrame extends JFrame {
 					@Override
 					public void mousePressed(MouseEvent e){
 						try {
-							MultipleMenuFrame.selected[count]=jrb.isSelected();
+							MultipleMenuFrame.selected[count]=!MultipleMenuFrame.selected[count];
 						} catch (Exception ex) {
 							// TODO Auto-generated catch block
 							ex.printStackTrace();
@@ -121,7 +128,6 @@ public class MultipleMenuFrame extends JFrame {
 			JPanel panel2 = new JPanel();
 			panel.add(panel2);
 			panel2.setOpaque(false);
-			
 			
 			acceptButton.setBackground(new Color(0,0,0,0));
 			

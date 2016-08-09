@@ -2,6 +2,7 @@ package com.example.prediction;
 
 import javax.swing.JPanel;
 import javax.swing.JRadioButtonMenuItem;
+import javax.swing.JScrollPane;
 
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -14,6 +15,7 @@ import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.JTextPane;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
@@ -98,7 +100,13 @@ public class SimpleMenuFrame extends JDialog {
 		try {
 			BackgroundPanel panel = new BackgroundPanel("resources/background.jpg");
 			//JPanel panel=new JPanel();
-			setContentPane(panel);
+			//panel.setPreferredSize(new Dimension(width,300));
+			JScrollPane panel_scroll = new JScrollPane();
+			panel_scroll.setViewportView(panel);
+			panel_scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+			panel_scroll.setPreferredSize(new Dimension(width,150));
+			
+			this.getContentPane().add(panel_scroll);
 			panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 			JTextPane textPane = new JTextPane();
 			textPane.setEditable(false);
