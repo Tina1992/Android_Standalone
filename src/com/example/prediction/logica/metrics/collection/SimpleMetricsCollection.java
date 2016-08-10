@@ -2,7 +2,6 @@ package com.example.prediction.logica.metrics.collection;
 
 import com.example.prediction.logica.metrics.composite.SimpleCOMBMetric;
 import com.example.prediction.logica.metrics.simple_metrics.SimpleCCMetric;
-import com.example.prediction.logica.metrics.simple_metrics.SimpleERMetric;
 import com.example.prediction.logica.metrics.simple_metrics.SimpleMAEMetric;
 import com.example.prediction.logica.metrics.simple_metrics.SimpleRAEMetric;
 import com.example.prediction.logica.metrics.simple_metrics.SimpleRMSEMetric;
@@ -17,6 +16,7 @@ public class SimpleMetricsCollection extends MetricsCollection{
 		acceptMetric(new SimpleRMSEMetric());
 		acceptMetric(new SimpleRRSEMetric());
 		acceptMetric(new SimpleCOMBMetric());
+		acceptMetric(new SimpleRAEMetric());
 	}
 
 	@Override

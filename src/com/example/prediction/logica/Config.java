@@ -5,10 +5,10 @@ import java.awt.Color;
 public class Config {
 
 	public static class InitialSettings {
-		private static String DIR_STORAGE = "C:\\Users\\Tina\\Desktop\\";//System.getProperty("user.dir");// Environment.getExternalStorageDirectory().toString()
+		private static String DIR_STORAGE = "C:\\ProgramData\\BlueStacks\\UserData\\SharedFolder\\";//System.getProperty("user.dir");// Environment.getExternalStorageDirectory().toString()
 																			// +
 																			// "/";
-		private static String DIR_WORKING = "C:\\Users\\Tina\\Desktop\\";//System.getProperty("user.dir");// Environment.getExternalStorageDirectory().toString()
+		private static String DIR_WORKING = "C:\\ProgramData\\BlueStacks\\UserData\\SharedFolder\\";//System.getProperty("user.dir");// Environment.getExternalStorageDirectory().toString()
 																			// +
 																			// "/"
 																			// ;

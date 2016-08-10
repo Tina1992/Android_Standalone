@@ -12,7 +12,7 @@ import com.example.prediction.logica.metrics.collection.MetricsCollection;
 public class SimpleRAEMetric extends AbsSimpleMetric {
 	
 	public SimpleRAEMetric(){
-		super(MetricsCollection.RAE, Required.MIN, Representation.PERCENTUAL, Type.REGRESSION, Info.ERROR_PREDICTION,
+		super(MetricsCollection.RAE, Required.MIN, Representation.NORMALIZED, Type.REGRESSION, Info.ERROR_PREDICTION,
 				"Relative absolute error");
 	}
 

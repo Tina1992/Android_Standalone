@@ -1,5 +1,7 @@
 package com.example.prediction.logica.models;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Vector;
 
 import com.example.prediction.logica.database.AbsDatabase;
@@ -85,4 +87,29 @@ public abstract class AbsModeler {
 	public abstract boolean handles(AbsDatabase trainingSet);
 	
 	protected abstract boolean buildModel();
+	
+	public void saveModel(String path){
+		String params = "";
+		for(AbsParameter m: modelParameters_){
+			try {
+				params=params.concat(m.getParameterString()+" ");
+				
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		String model=this.toString();
+		try {
+			FileWriter fw=new FileWriter(path);
+			fw.write(params);
+			fw.write(model);
+			fw.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		 //modelParameters_
+	}
 }

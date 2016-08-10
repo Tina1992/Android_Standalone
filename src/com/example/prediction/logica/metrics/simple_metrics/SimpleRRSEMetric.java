@@ -12,7 +12,7 @@ import com.example.prediction.logica.metrics.collection.MetricsCollection;
 public class SimpleRRSEMetric extends AbsSimpleMetric {
 	
 	public SimpleRRSEMetric(){
-		super(MetricsCollection.RRSE,Required.MIN, Representation.PERCENTUAL, Type.REGRESSION, Info.ERROR_PREDICTION, "Root relative squared error");
+		super(MetricsCollection.RRSE,Required.MIN, Representation.NORMALIZED, Type.REGRESSION, Info.ERROR_PREDICTION, "Root relative squared error");
 		// TODO Auto-generated constructor stub
 	}
 

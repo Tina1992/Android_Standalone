@@ -1,5 +1,6 @@
 package com.example.prediction;
 
+import java.awt.Choice;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -9,6 +10,7 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
+import java.util.List;
 
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
@@ -20,6 +22,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.SwingConstants;
+
+import com.example.prediction.logica.Config;
 
 public class WindowPreferences {
 	
@@ -38,7 +42,7 @@ public class WindowPreferences {
 	static int LIST_FILT_WIDTH = 250; 
 	static int ITEM_DEGREE_WIDTH = 250;
 	static int UNIT_GAP = 5;
-	
+	static int CHOICE_INITIAL_WIDTH = 330;
 	
 	
 	
@@ -141,4 +145,16 @@ public class WindowPreferences {
 		
 	}
 
+	
+	
+	public static Choice groupItemConfig(String[] strings, String title){
+		final Choice choice = new Choice();
+		choice.add(title);
+		choice.setPreferredSize(new Dimension(CHOICE_INITIAL_WIDTH, DEFAULT_HEIGHT_P));
+		for(String i:strings)
+			choice.add(i);
+		
+		
+		return choice;
+	}
 }

@@ -300,6 +300,11 @@ public class ConfiguresWindows {
                 	if (!m.calculateModeler(info.getDatasetSelected())){
                 		info.addNotComputedSchemes(m);
                 	}
+                	else
+                	{
+
+                		m.saveModel(Config.InitialSettings.getDirWorking()+m.getName()+".txt");
+                	}
                 }
                 info.setFilteredBestSchemes();
                 try {

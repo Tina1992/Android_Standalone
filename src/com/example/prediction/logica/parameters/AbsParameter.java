@@ -16,4 +16,6 @@ public abstract class AbsParameter {
 	
 	public abstract void modifyModel(AbsModeler modeler);
 	
+	public abstract String getParameterString() throws Exception;
+	
 };

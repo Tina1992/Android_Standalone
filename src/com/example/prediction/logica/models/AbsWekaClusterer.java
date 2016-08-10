@@ -5,6 +5,7 @@ import com.example.prediction.logica.database.WekaDatabase;
 
 import weka.clusterers.Clusterer;
 import weka.core.Instances;
+import weka.core.SerializationHelper;
 
 public abstract class AbsWekaClusterer extends AbsClusterer {
 

@@ -15,8 +15,6 @@ public abstract class AbsWekaParameter extends AbsParameter {
 
 	public abstract void modifyModel(AbsModeler modeler);
 
-	public abstract String getParameterString() throws Exception;
-
 	public abstract Vector<String> getPropertyString(double min, double max);
 
 	public abstract int getSimpleParametersCount();

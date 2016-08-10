@@ -18,7 +18,7 @@ public class WekaRAEMetric extends AbsWekaEvaluationMetric {
 	@Override
 	protected Double calculate(AbsEvaluation evaluation) throws Exception {
 		// TODO Auto-generated method stub
-		return evaluation.calculateMAE(database, modeler);
+		return evaluation.calculateRAE(database, modeler);
 	}
 
 }

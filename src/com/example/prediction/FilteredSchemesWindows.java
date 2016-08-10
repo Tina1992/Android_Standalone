@@ -121,18 +121,6 @@ public class FilteredSchemesWindows {
 				System.out.println("El item selecionado es: "+ choice.getSelectedIndex());
 				AbsModeler m=info.getBestSchemes().get(choice.getSelectedIndex()-1);
 				info.setBestScheme(m);
-				try {
-					ImagesLCWindows lc=new ImagesLCWindows();
-					FileWriter writer = new FileWriter(Config.InitialSettings.getDirWorking()+m.getName()+".model");
-					writer.write(m.toString());
-					writer.close();
-					frame.setVisible(false);
-				} catch (Exception e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				//if(choice.getSelectedIndex() != 0)
-					//info.setBestScheme(models.elementAt(choice.getSelectedIndex()));
 			}
 			
 		});

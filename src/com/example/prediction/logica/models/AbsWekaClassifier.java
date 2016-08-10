@@ -14,6 +14,7 @@ import weka.classifiers.meta.AttributeSelectedClassifier;
 import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.OptionHandler;
+import weka.core.SerializationHelper;
 
 public abstract class AbsWekaClassifier extends AbsClassifier {
 	protected AbstractClassifier classifier;

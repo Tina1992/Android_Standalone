@@ -46,10 +46,16 @@ public class BarGraphics extends AbsGraphics {
 	private Vector<Integer> bestResults = new Vector<Integer>();
 	private double maxBarWidth = 0.05;
 	private AbsMetric[] categorys;
+	private double umbral = 0.1;
 	
 	
 	class CustomRenderer extends BarRenderer
 	{
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
+
 		public CustomRenderer() {}
 		
 		public Paint getItemPaint(final int row, final int column) {			//ROW: SERIE (SCHEME) //COLUMN: CATEGORY (METRIC)
@@ -78,15 +84,13 @@ public class BarGraphics extends AbsGraphics {
 		//SHOW VALUES ON BAR WHICH RESULTS ARE BETTER!!
 		public CategoryItemLabelGenerator getItemLabelGenerator(int i, int j){ 				//J = COLUMN = METRIC
 			int index1 = 0;
-			int index2=0;
 			if(dataset.getRowCount() > 1){ 
 				index1 = j * 2;	
-				index2 = (j * 2)+1;
 			}
 			else
 				index1=j;
-			if(bestResults.elementAt(index1) == i || bestResults.elementAt(index2) == j)	
-				return new StandardCategoryItemLabelGenerator("{2}", new DecimalFormat("##.##"));
+			if(bestResults.elementAt(index1) == i || (dataset.getValue(j, j)).doubleValue() < umbral )	
+				return new StandardCategoryItemLabelGenerator("{2}", new DecimalFormat("##.#####"));
 			return null;
 		} 
 	}
