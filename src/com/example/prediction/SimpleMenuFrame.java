@@ -106,7 +106,7 @@ public class SimpleMenuFrame extends JDialog {
 			panel_scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 			panel_scroll.setPreferredSize(new Dimension(width,150));
 			
-			this.getContentPane().add(panel_scroll);
+			this.setContentPane(panel_scroll);
 			panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 			JTextPane textPane = new JTextPane();
 			textPane.setEditable(false);

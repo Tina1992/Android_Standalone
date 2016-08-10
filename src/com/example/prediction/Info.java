@@ -179,13 +179,13 @@ public class Info {
 		// TODO Auto-generated method stub
 
 		MetricsCollection mc = getLibrarySelected().getMetricsEvaluationObject();
-		/*boolean acept = true;
+		boolean acept = true;
 		for (AbsModeler model : this.getListSchemesSelected()) {
 			acept = acept && mc.aceptModel(model);
 		}
 		if (acept != true) {
 			mc = new SimpleMetricsCollection();
-		}*/
+		}
 
 		Vector<AbsModeler> listschemes = getBestSchemes();
 
@@ -311,7 +311,6 @@ public class Info {
 		fileDatasetSelected = new File(Config.InitialSettings.getDirWorking() + name);
 		trainingSet = getLibrarySelected().getDatasetObject();
 		trainingSet.parseFile(fileDatasetSelected);
-
 		setListAttributes(trainingSet);
 	}
 

@@ -41,6 +41,7 @@ public abstract class AbsModeler {
 	
 
 	public boolean calculateModeler(AbsDatabase database){		//Calcula el model con optimización
+		database.convertFromStringToNominal();
 		database_=database;
 		setIndexAttribute(indexClass);
 		return getModel();

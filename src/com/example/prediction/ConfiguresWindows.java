@@ -98,7 +98,7 @@ public class ConfiguresWindows {
 			public void mousePressed(MouseEvent e){
 				//DE ESTA MANERA FUNCIONA EL HACER CLICK.  
 				final Info info=Info.getInstance();
-				info.setListFilesDataset();;
+				info.setListFilesDataset();
 				final CharSequence[] lc=info.getListFilesDataset();
 				final SimpleMenuFrame smp;
 				try {

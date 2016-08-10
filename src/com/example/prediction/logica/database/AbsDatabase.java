@@ -72,6 +72,7 @@ public abstract class AbsDatabase implements Cloneable{		//Database general - se
 	
 	public AbsDatabase(File file) throws Exception{
 		parseFile(file);
+		convertFromStringToNominal();
 	}
 	
 	public  Vector<Double> getActualValues(int classIndex){
@@ -155,5 +156,5 @@ public abstract class AbsDatabase implements Cloneable{		//Database general - se
 	public abstract AbsDatabase newInstance(AbsDatabase database);					//Ver como se va a almacenar el file
 	public abstract void parseFile(File file);	//Parsing del archivo
 	public abstract String getTypeAttribute(int index);
-	
+	public abstract void convertFromStringToNominal();
 }
