@@ -1,9 +1,8 @@
 package com.example.prediction;
 
 import java.awt.Choice;
-import java.awt.Dimension;
-import java.awt.EventQueue;
 import java.awt.FlowLayout;
+import java.awt.Frame;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.awt.event.MouseAdapter;
@@ -31,6 +30,7 @@ public class InitialConfigWindows {
 	public InitialConfigWindows() throws Exception {
 		initialize();
 		frame.setVisible(true);
+		
 	}
 
 	/**
@@ -38,10 +38,15 @@ public class InitialConfigWindows {
 	 * @throws Exception 
 	 */
 	private void initialize() throws Exception {
-		frame = WindowPreferences.mainFrame("/resources/background_initial.jpg", FlowLayout.CENTER);
+		frame = WindowPreferences.mainFrame( "/resources/background_initial.jpg");
+		frame.setBounds(WindowPreferences.STARTW_X + 40,
+						WindowPreferences.STARTW_Y + 40,
+						WindowPreferences.WIDTH_W,
+						WindowPreferences.HEIGHT_W);
+		
 		frame.getContentPane().add(configHeader());
 		frame.getContentPane().add(configOptions());
-		frame.getContentPane().add(configOK());
+		frame.getContentPane().add(new AlphaContainer(configOK()));
 	}
 
 	private JPanel configHeader() throws Exception{
@@ -115,7 +120,8 @@ public class InitialConfigWindows {
 			@Override
 			public void mousePressed(MouseEvent e){
 				try {
-	                frame.setVisible(false);
+					frame.setVisible(false);
+	                ConfiguresWindows.changeCloseOperation(JFrame.EXIT_ON_CLOSE);
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -174,8 +180,12 @@ public class InitialConfigWindows {
 					dir = dir.concat("/");
 				directorys.add(dir);
 			}
-		String[] result = (String[]) directorys.toArray();
-		
+		String[] result = new String[directorys.size()];
+		int index=0;
+		for(String s: directorys){
+			result[index]=s;
+			index++;
+		}		
 		return result;
 	}
 	

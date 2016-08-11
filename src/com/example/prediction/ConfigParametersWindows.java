@@ -1,12 +1,10 @@
 package com.example.prediction;
 
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.EventQueue;
 import java.awt.FlowLayout;
 
 import javax.swing.BorderFactory;
-import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -45,16 +43,16 @@ public class ConfigParametersWindows {
 	 * @throws Exception 
 	 */
 	private void initialize() throws Exception {
-		frame = WindowPreferences.mainFrame("/resources/background.jpg", FlowLayout.CENTER);
+		frame = WindowPreferences.mainFrame("/resources/background.jpg");
 		
-		frame.getContentPane().add(configHeader());
-		frame.getContentPane().add(configTitleUnderfit());
-		frame.getContentPane().add(configUnderfit());
-		frame.getContentPane().add(configTitleOverfit());
-		frame.getContentPane().add(configOverfit());
-		frame.getContentPane().add(WindowPreferences.itemsDegree());
-		frame.getContentPane().add(configAccept());
-		frame.getContentPane().add(this.configExit());
+		frame.getContentPane().add(new AlphaContainer(configHeader()));
+		frame.getContentPane().add(new AlphaContainer(configTitleUnderfit()) );
+		frame.getContentPane().add(new AlphaContainer(configUnderfit()) );
+		frame.getContentPane().add(new AlphaContainer(configTitleOverfit()) );
+		frame.getContentPane().add(new AlphaContainer(configOverfit()) );
+		frame.getContentPane().add(new AlphaContainer(WindowPreferences.itemsDegree()) );
+		frame.getContentPane().add(new AlphaContainer(configAccept()) );
+		frame.getContentPane().add(new AlphaContainer(configExit()) );
 	}
 
 	private JPanel configHeader() throws Exception{

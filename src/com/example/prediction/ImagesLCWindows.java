@@ -60,12 +60,12 @@ public class ImagesLCWindows {
 	 * @throws Exception 
 	 */
 	private void initialize() throws Exception {
-		frame = WindowPreferences.mainFrame("/resources/background.jpg", FlowLayout.CENTER);
+		frame = WindowPreferences.mainFrame("/resources/background.jpg");
 		generateImages();
-		frame.getContentPane().add(configHeader());
-		frame.getContentPane().add(configReturn());
-		frame.getContentPane().add(configImage());
-		frame.getContentPane().add(configChangeImage());
+		frame.getContentPane().add(new AlphaContainer(configHeader()) );
+		frame.getContentPane().add(new AlphaContainer(configReturn()) );
+		frame.getContentPane().add(new AlphaContainer(configImage()) );
+		frame.getContentPane().add(new AlphaContainer(configChangeImage()) );
 		
 	}
 	

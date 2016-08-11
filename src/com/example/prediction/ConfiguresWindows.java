@@ -2,6 +2,7 @@ package com.example.prediction;
 
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Graphics;
 import java.awt.Image;
 
 import javax.imageio.ImageIO;
@@ -9,9 +10,6 @@ import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-
-import java.awt.Toolkit;
-
 import javax.swing.JLabel;
 
 import java.awt.Font;
@@ -32,12 +30,26 @@ import java.io.IOException;
 import java.util.Vector;
 
 public class ConfiguresWindows {
+	
+	private class BackgroundPanel extends JPanel {
+		private static final long serialVersionUID = 1L;
+		private Image img;
 
-	private JFrame frame;
+		@SuppressWarnings("static-access")
+		public BackgroundPanel(String resourceID) throws Exception {
+			img = ImageIO.read(getClass().getClassLoader().getSystemResource(resourceID));
+		}
+
+		@Override
+		public void paintComponent(Graphics g) {
+			super.paintComponent(g);
+			g.drawImage(img, 0, 0, WindowPreferences.WIDTH_W,WindowPreferences.HEIGHT_W , null);
+		}
+	}
+
+	private static JFrame frame;
 	private JButton button_configures_lock;
-	private final int height = 475;
-	private final int width = 375;
-
+	private JLabel[] labelSelected= new JLabel[4];
 	/**
 	 * Create the application.
 	 * @throws Exception 
@@ -53,20 +65,17 @@ public class ConfiguresWindows {
 	 */
 	private void initialize() throws Exception {
 		
-		configFrame();
+		frame = WindowPreferences.mainFrame(FlowLayout.CENTER);
 		
-		JPanel panel_title = new JPanel();
-		panel_title.setBackground(new Color(0,0,0,0));
-		panel_title.setPreferredSize(new Dimension(width,50));
-		panel_title.add(configTitle());
-		panel_title.add(this.configButtonSettings());
-		frame.getContentPane().add(panel_title);
+		JPanel panel = new JPanel();
+		panel = new BackgroundPanel("resources/background.jpg");
+		frame.getContentPane().add(panel);
+		panel.add(new AlphaContainer(configHeader()));
 		
-		final JPanel panel_library = createItem("/resources/icon_library.png", Config.AppSettings.TITLE_CONFIGURES_ITEMS[0]);
+		final JPanel panel_library = createItem("/resources/icon_library.png", Config.AppSettings.TITLE_CONFIGURES_ITEMS[0], 0);
 		panel_library.addMouseListener(new MouseAdapter(){
 			@Override
-			public void mousePressed(MouseEvent e){
-				//DE ESTA MANERA FUNCIONA EL HACER CLICK.  
+			public void mousePressed(MouseEvent e){  
 				final Info info=Info.getInstance();
 				info.setLibraries();
 				final CharSequence[] lc=info.getListLibraries();
@@ -91,8 +100,10 @@ public class ConfiguresWindows {
 				}
 			}
 		});
-		frame.getContentPane().add(new AlphaContainer(panel_library));
-		JPanel panel_file = createItem("/resources/icon_file.png", Config.AppSettings.TITLE_CONFIGURES_ITEMS[1]);
+		//frame.getContentPane().add(new AlphaContainer(panel_library));
+		panel.add(new AlphaContainer(panel_library));
+		
+		JPanel panel_file = createItem("/resources/icon_file.png", Config.AppSettings.TITLE_CONFIGURES_ITEMS[1],1);
 		panel_file.addMouseListener(new MouseAdapter(){
 			@Override
 			public void mousePressed(MouseEvent e){
@@ -127,8 +138,10 @@ public class ConfiguresWindows {
 			}
 		});
 		
-        frame.getContentPane().add(new AlphaContainer(panel_file));
-        JPanel panel_attribute = createItem("/resources/icon_attribute.png", Config.AppSettings.TITLE_CONFIGURES_ITEMS[2]);
+       // frame.getContentPane().add(new AlphaContainer(panel_file));
+        panel.add(new AlphaContainer(panel_file));
+		
+        JPanel panel_attribute = createItem("/resources/icon_attribute.png", Config.AppSettings.TITLE_CONFIGURES_ITEMS[2],2);
         
         panel_attribute.addMouseListener(new MouseAdapter(){
 			@Override
@@ -158,9 +171,11 @@ public class ConfiguresWindows {
 				}
 			}
 		});
-        frame.getContentPane().add(new AlphaContainer(panel_attribute));
-        JPanel panel_schemes = createItem("/resources/icon_schemes.png", Config.AppSettings.TITLE_CONFIGURES_ITEMS[3]);
-        frame.getContentPane().add(new AlphaContainer(panel_schemes));
+        panel.add(new AlphaContainer(panel_attribute));
+        
+        JPanel panel_schemes = createItem("/resources/icon_schemes.png", Config.AppSettings.TITLE_CONFIGURES_ITEMS[3],3);
+       // frame.getContentPane().add(new AlphaContainer(panel_schemes));
+        panel.add(new AlphaContainer(panel_schemes));
         
         panel_schemes.addMouseListener(new MouseAdapter(){
 			@Override
@@ -190,23 +205,47 @@ public class ConfiguresWindows {
 			}
 		});
         
-        configButtonLock();
-        
-        JPanel container_exit = new JPanel();
-        ((FlowLayout)container_exit.getLayout()).setAlignment(FlowLayout.RIGHT);
-        container_exit.setPreferredSize(new Dimension(width - 20,50));
-        container_exit.setBackground(new Color(0,0,0,0));
-        container_exit.add(configButtonExit());
-        
-        frame.getContentPane().add(container_exit);
-	
+       panel.add( new AlphaContainer(configButtonLock() ));
+       panel.add(new AlphaContainer(this.configButtonExit()));
 	}
 	
-	private JPanel createItem(String iconID, String title) throws Exception {
+	public static void changeCloseOperation(int OP){
+		frame.setDefaultCloseOperation(OP);
+	}
+	
+	
+	private JPanel configHeader() throws Exception{
+		int height = WindowPreferences.DEFAULT_HEIGHT_P * 2;
+		int width = WindowPreferences.ICON_SIZE * 3;
+		JPanel panel_header = WindowPreferences.defaultPanel(0, FlowLayout.LEFT, WindowPreferences.DEFAULT_WIDTH_P,height );
+		JLabel label_title = WindowPreferences.mainTitle("Configures");
+		JButton button_settings = WindowPreferences.defaultButton("/resources/icon_config.png");
+		button_settings.addMouseListener(new MouseAdapter(){
+			@Override
+			public void mousePressed(MouseEvent e){
+				try {
+					frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+					@SuppressWarnings("unused")
+					InitialConfigWindows icw = new InitialConfigWindows();
+					
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
+		JButton button_home = WindowPreferences.defaultButton("/resources/icon_home.png");
+		button_home.setPreferredSize(new Dimension(width,WindowPreferences.ICON_SIZE));
+		button_home.setHorizontalAlignment(SwingConstants.LEFT);
+		panel_header.add(button_home);
+		panel_header.add(label_title);
+		panel_header.add(button_settings);
+		return panel_header;
+	}
+	
+	private JPanel createItem(String iconID, String title, int ID) throws Exception {
 		final JPanel panel_row = new JPanel();
 		panel_row.setPreferredSize(new Dimension(330,55));
-		
-		/** CON ESTA LINEA HACEMOS TRANSPARENTE EL FONDO DEL PANEL. */
 		panel_row.setBackground(new Color(0,0,0,20));
 		
 		Image icon_main = ImageIO.read(ConfiguresWindows.class.getResource(iconID));
@@ -221,13 +260,15 @@ public class ConfiguresWindows {
 		
 		JLabel label_iconselect = new JLabel();
 		label_iconselect.setPreferredSize(new Dimension(40,40));
+		labelSelected[ID]= label_iconselect;
 		panel_row.add(label_iconselect);	
 		
 		panel_row.addMouseListener(new java.awt.event.MouseAdapter() {
+			@Override
 		    public void mouseEntered(java.awt.event.MouseEvent evt) {
 		    	panel_row.setBackground(new Color(0,0,0,40));
 		    }
-
+			@Override
 		    public void mouseExited(java.awt.event.MouseEvent evt) {
 		    	panel_row.setBackground(new Color(0,0,0,20));
 		    }
@@ -235,63 +276,12 @@ public class ConfiguresWindows {
 		return panel_row;
 	}
 	
-	private void configFrame() throws Exception{
-		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(ConfiguresWindows.class.getResource("/resources/ic_launcher.png")));
-		frame.setTitle("Prediction");
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(new Dimension(width,height));
-		
-		Image image_background = ImageIO.read(ConfiguresWindows.class.getResource("/resources/background.jpg"));
-		JLabel background = new JLabel(new ImageIcon(image_background.getScaledInstance(width, height, Image.SCALE_SMOOTH)));
-		background.setPreferredSize(new Dimension(width,height));
-		frame.setContentPane(background);
-		frame.getContentPane().setLayout(new FlowLayout());	
-	}
-	
-	private JLabel configTitle(){
-		JLabel label_configures_title = new JLabel("Configures");
-		label_configures_title.setHorizontalAlignment(SwingConstants.CENTER);
-		label_configures_title.setForeground(Color.WHITE);
-		label_configures_title.setFont(new Font("Calibri", Font.BOLD, 25));
-		return label_configures_title;
-	}
-
-	private JButton configButtonSettings() throws Exception{
-		/** get the icon from resources */
-		Image icon_settings = ImageIO.read(ConfiguresWindows.class.getResource("/resources/icon_configuration.png"));
-		
-		/** CON ESTA LINEA SE AJUSTA LA IMAGEN DEL ICONO, AL TAMAÑO DEL BOTON */
-		JButton button_configures_setting = new JButton(new ImageIcon(icon_settings.getScaledInstance(30, 30, Image.SCALE_SMOOTH)));
-		button_configures_setting.setBorder(BorderFactory.createEmptyBorder());
-		button_configures_setting.setPreferredSize(new Dimension(30,30));
-		
-		/** CON ESTA LINEA LE QUITAMOS EL FONDO AL BOTON. */
-		button_configures_setting.setContentAreaFilled(false);
-		button_configures_setting.addActionListener(new ActionListener(){
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-		});
-		return button_configures_setting;
-	}
-
-	private void configButtonLock() throws Exception{
-		JPanel container_lock = new JPanel();
-		container_lock.setPreferredSize(new Dimension(width,50));
-		container_lock.setBackground(new Color(0,0,0,0));
-		Image icon = ImageIO.read(ConfiguresWindows.class.getResource("/resources/icon_lockclose.png") );
-		button_configures_lock = new JButton(new ImageIcon(icon.getScaledInstance(30, 30, Image.SCALE_SMOOTH)));
-		button_configures_lock.setBorder(BorderFactory.createEmptyBorder());
-		button_configures_lock.setPreferredSize(new Dimension(30,30));
-		button_configures_lock.setContentAreaFilled(false);
-		container_lock.add(button_configures_lock);
+	private JPanel configButtonLock() throws Exception{
+		JPanel container_lock = WindowPreferences.defaultPanel(0, FlowLayout.CENTER, WindowPreferences.DEFAULT_WIDTH_P, WindowPreferences.DEFAULT_HEIGHT_P);
+		button_configures_lock = WindowPreferences.defaultButton("/resources/icon_lockclose.png");
 		button_configures_lock.addMouseListener(new MouseAdapter(){
 			@Override
 			public void mousePressed(MouseEvent e){
-				//DE ESTA MANERA FUNCIONA EL HACER CLICK.
 				Info info=Info.getInstance();
 				Vector<AbsModeler> models=info.getListSchemesSelected();
                 //info.reset();
@@ -316,22 +306,21 @@ public class ConfiguresWindows {
 				}
 			}
 		});
-		frame.getContentPane().add(new AlphaContainer(container_lock));
+		container_lock.add(button_configures_lock);	
+		return container_lock;
 	}
 	
-	private JButton configButtonExit() throws Exception{
-		Image icon = ImageIO.read(ConfiguresWindows.class.getResource("/resources/ic_launcher.png"));
-		JButton button_configures_exit = new JButton(new ImageIcon(icon.getScaledInstance(30, 30, Image.SCALE_SMOOTH)));
-		button_configures_exit.setBorder(BorderFactory.createEmptyBorder());
-		button_configures_exit.setPreferredSize(new Dimension(30,30));
-		button_configures_exit.setContentAreaFilled(false);
+	private JPanel configButtonExit() throws Exception{
+	JPanel panel_exit = WindowPreferences.defaultPanel(0, FlowLayout.RIGHT, WindowPreferences.DEFAULT_WIDTH_P, WindowPreferences.DEFAULT_WIDTH_P);
+	JButton button_configures_exit = WindowPreferences.defaultButton("/resources/icon_exit.png");
 		button_configures_exit.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				System.out.println("hizo click en exit");
+				frame.setVisible(false);
 			}
 		});
-		return button_configures_exit;
+		panel_exit.add(button_configures_exit);
+		return panel_exit;
 	}
 }

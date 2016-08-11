@@ -7,17 +7,18 @@ import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import java.awt.FlowLayout;
 import java.awt.Image;
-import java.awt.Toolkit;
 import java.awt.Font;
 import java.awt.BorderLayout;
+
 import javax.swing.JButton;
 
 import java.awt.Dimension;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-
 import java.awt.Color;
+
 import javax.swing.JTextPane;
 
 public class PresentationWindow {
@@ -46,7 +47,7 @@ public class PresentationWindow {
 		@Override
 		public void paintComponent(Graphics g) {
 			super.paintComponent(g);
-			g.drawImage(img, 0, 0, 450, 300, this);
+			g.drawImage(img, 0, 0, WindowPreferences.WIDTH_W,WindowPreferences.HEIGHT_W , null);
 		}
 	}
 	
@@ -104,14 +105,16 @@ public class PresentationWindow {
 	 * @throws Exception 
 	 */
 	private void initialize() throws Exception {
-		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(PresentationWindow.class.getResource("/resources/ic_launcher.png")));
-		frame.setBounds(100, 100, 450, 300);
-		
-		//JPanel panel = new JPanel();
-		BackgroundPanel panel = new BackgroundPanel("resources/background_presentation.jpg");
+		frame = WindowPreferences.mainFrame(FlowLayout.CENTER);
+		JPanel panel = new JPanel();
+		panel = new BackgroundPanel("resources/background_presentation.jpg");
 		frame.getContentPane().add(panel);
 		panel.setLayout(new BorderLayout(0, 0));
+		
+		/*@SuppressWarnings("static-access")
+		BufferedImage img = ImageIO.read(getClass().getClassLoader().getSystemResource("resources/background_presentation.jpg"));
+		JPanel panel = WindowPreferences.mainPanel(img);
+		frame.getContentPane().add(panel);*/
 		
 		JButton btnNewButton = new JButton("Start");
 		btnNewButton.addMouseListener(new MouseAdapter() {
@@ -141,7 +144,8 @@ public class PresentationWindow {
 		txtpnTuecnicasDeAprendizaje.setFocusable(false);
 		txtpnTuecnicasDeAprendizaje.setFont(new Font("Calibri", Font.BOLD, 20));
 		txtpnTuecnicasDeAprendizaje.setForeground(Color.white);
-		txtpnTuecnicasDeAprendizaje.setText("Técnicas de aprendizaje para predecir atributos no funcionales en componentes de aplicaciones Android");
+		txtpnTuecnicasDeAprendizaje.setText("Técnicas de aprendizaje para predecir atributos no funcionales en componentes de "
+											+ "aplicaciones Android");
 		panel.add(txtpnTuecnicasDeAprendizaje, BorderLayout.NORTH);
 		
 	}

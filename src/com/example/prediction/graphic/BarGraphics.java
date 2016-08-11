@@ -4,8 +4,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.Paint;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.text.DecimalFormat;
 import java.util.Collections;
 import java.util.Vector;
@@ -13,7 +11,6 @@ import java.util.Vector;
 import javax.imageio.ImageIO;
 
 import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.axis.CategoryAxis;
 import org.jfree.chart.axis.ValueAxis;
@@ -25,9 +22,7 @@ import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.chart.renderer.category.BarRenderer;
 import org.jfree.chart.renderer.category.CategoryItemRenderer;
 import org.jfree.chart.title.TextTitle;
-import org.jfree.chart.title.Title;
 import org.jfree.data.category.DefaultCategoryDataset;
-import org.jfree.ui.RectangleInsets;
 
 import com.example.prediction.logica.Config;
 import com.example.prediction.logica.database.AbsDatabase;
@@ -176,6 +171,7 @@ public class BarGraphics extends AbsGraphics {
 		  }
 	}
 	
+	@SuppressWarnings("deprecation")
 	protected void customizeChart(JFreeChart chart) throws Exception{
 		height = Config.Graphic.GRAPHIC_BAR_HEIGHT;
 		width =  Config.Graphic.GRAPHIC_BAR_WIDTH;
@@ -192,7 +188,7 @@ public class BarGraphics extends AbsGraphics {
 	    plot.setBackgroundImage(img);
 	    plot.setBackgroundAlpha(0.2F);
 	    
-	    BarRenderer render = (BarRenderer)plot.getRenderer();
+	    
 	    
 	    CategoryItemRenderer renderer = new CustomRenderer();
 	    ((BarRenderer) renderer).setMaximumBarWidth(maxBarWidth);

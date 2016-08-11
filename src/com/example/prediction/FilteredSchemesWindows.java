@@ -13,8 +13,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
-
-import com.example.prediction.logica.Config;
 import com.example.prediction.logica.models.AbsModeler;
 
 import java.awt.Choice;
@@ -23,8 +21,6 @@ import java.awt.event.ItemListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
-import java.io.FileWriter;
-import java.io.PrintWriter;
 
 public class FilteredSchemesWindows {
 
@@ -52,7 +48,7 @@ public class FilteredSchemesWindows {
 	 */
 	private void initialize() throws Exception {
 		
-		frame = WindowPreferences.mainFrame("/resources/background.jpg", FlowLayout.CENTER);
+		frame = WindowPreferences.mainFrame("/resources/background.jpg");
 		
 		frame.getContentPane().add(configHeader());
 		frame.getContentPane().add(configOptions());

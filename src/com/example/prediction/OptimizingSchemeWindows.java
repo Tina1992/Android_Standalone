@@ -54,7 +54,7 @@ public class OptimizingSchemeWindows {
 	 * @throws Exception 
 	 */
 	private void initialize() throws Exception {
-		frame = WindowPreferences.mainFrame("/resources/background.jpg", FlowLayout.CENTER);
+		frame = WindowPreferences.mainFrame("/resources/background.jpg");
 		
 		frame.getContentPane().add(configHeader());
 		frame.getContentPane().add(configOptions());

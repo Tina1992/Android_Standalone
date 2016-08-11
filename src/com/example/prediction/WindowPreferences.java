@@ -1,16 +1,18 @@
 package com.example.prediction;
 
+import java.awt.BorderLayout;
 import java.awt.Choice;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
-import java.util.List;
+import java.io.IOException;
 
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
@@ -21,16 +23,15 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
 
-import com.example.prediction.logica.Config;
-
 public class WindowPreferences {
+	static Dimension DIMENSION_SCREEN = Toolkit.getDefaultToolkit().getScreenSize();
+	static int WIDTH_W = 400;
+	static int HEIGHT_W = 600;
 	
-	final static int WIDTH_W = 375;
-	final static int HEIGHT_W = 550;
-	
-	static int PADDING = 10;
+	static int PADDING = 20;
 	static int DEFAULT_WIDTH_P = WIDTH_W - (PADDING * 2);
 	static int DEFAULT_HEIGHT_P = 40;
 	
@@ -43,12 +44,25 @@ public class WindowPreferences {
 	static int ITEM_DEGREE_WIDTH = 250;
 	static int UNIT_GAP = 5;
 	static int CHOICE_INITIAL_WIDTH = 330;
+	static int TEXT_MODEL_HEIGHT = 300;
+	static int IMG_FITCOMPARE_HEIGHT = 250;
+	static int IMG_FITDEGREE_HEIGHT = 150;
+	static int STARTW_X = (DIMENSION_SCREEN.width /2) - (WIDTH_W /2) ;
+	static int STARTW_Y = (DIMENSION_SCREEN.height /2) - (HEIGHT_W /2);
 	
-	
-	
-	public static JFrame mainFrame(String ResourceID, int LayoutAlign) throws Exception{
+	public static JFrame mainFrame(int LayoutAlign) throws Exception{
 		JFrame frame = new JFrame();
-		frame.setBounds(100, 100, WIDTH_W,HEIGHT_W);
+		frame.setBounds(STARTW_X, STARTW_Y, WIDTH_W,HEIGHT_W);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(ConfiguresWindows.class.getResource("/resources/ic_launcher.png")));
+		frame.setTitle("Prediction");
+		//frame.getContentPane().setLayout(new FlowLayout(LayoutAlign));	
+		return frame;
+	}
+	
+	public static JFrame mainFrame(String ResourceID) throws Exception{
+		JFrame frame = new JFrame();
+		frame.setBounds(STARTW_X, STARTW_Y, WIDTH_W,HEIGHT_W);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(ConfiguresWindows.class.getResource("/resources/ic_launcher.png")));
 		frame.setTitle("Prediction");
@@ -56,9 +70,18 @@ public class WindowPreferences {
 		JLabel background = new JLabel(new ImageIcon(image_background.getScaledInstance(WIDTH_W, HEIGHT_W, Image.SCALE_SMOOTH)));
 		background.setPreferredSize(new Dimension(WIDTH_W,HEIGHT_W));
 		frame.setContentPane(background);
-		frame.getContentPane().setLayout(new FlowLayout(LayoutAlign));	
-		
+		frame.getContentPane().setLayout(new FlowLayout(FlowLayout.CENTER));
 		return frame;
+	}
+
+	
+	public static JPanel mainPanel(BufferedImage background){
+		JPanel panel = new JPanel();
+		Graphics g = background.createGraphics();
+		g.drawImage(background, 0, 0, WIDTH_W,HEIGHT_W,null);
+		panel.paintComponents(g);
+		panel.setLayout(new BorderLayout(0, 0));
+		return panel;
 	}
 	
 	public static JPanel defaultPanel(int alpha, int LayoutAlign, int width, int height){
@@ -71,18 +94,24 @@ public class WindowPreferences {
 	}
 	
 	public static JButton defaultButton(String ImageID) throws Exception{
-		Image icon = ImageIO.read(ConfiguresWindows.class.getResource(ImageID));
-		JButton button = new JButton(new ImageIcon(icon.getScaledInstance(ICON_SIZE, ICON_SIZE, Image.SCALE_SMOOTH)));
-		button.setContentAreaFilled(false);
-		button.setBorder(BorderFactory.createEmptyBorder());
+		Image img = ImageIO.read(ConfiguresWindows.class.getResource(ImageID));
+		ImageIcon icon = new ImageIcon(img.getScaledInstance(ICON_SIZE, ICON_SIZE, Image.SCALE_SMOOTH));
+		JButton button = new JButton();
+		button.setIcon(icon);
+		button.setBorder(null);
 		button.setBorderPainted(false);
-		
+		button.setPreferredSize(new Dimension(ICON_SIZE,ICON_SIZE));
+		button.setContentAreaFilled(false);
+		button.setFocusable(false);
+		button.setOpaque(false);
+		button.setBackground(new Color(0,0,0,10));
 		return button;
+		
 	}
 	
-	public static JPanel defaultImage(BufferedImage image) throws Exception{
+	public static JPanel defaultImage(BufferedImage image, int height) throws Exception{
 		//Image img = ImageIO.read(ConfiguresWindows.class.getResource(ImageID));
-		JPanel panel = WindowPreferences.defaultPanel(0, FlowLayout.CENTER, DEFAULT_WIDTH_P, HEIGHT_I);		
+		JPanel panel = WindowPreferences.defaultPanel(0, FlowLayout.CENTER, DEFAULT_WIDTH_P, height);		
 		JLabel label = new JLabel(new ImageIcon(image.getScaledInstance(DEFAULT_WIDTH_P,HEIGHT_I, Image.SCALE_SMOOTH)) );
 		panel.add(label);
 		
@@ -144,6 +173,8 @@ public class WindowPreferences {
 		return panel_list;
 		
 	}
+	
+	
 
 	
 	
@@ -157,4 +188,23 @@ public class WindowPreferences {
 		
 		return choice;
 	}
+
+	public static JPanel wordWrap(String text) {
+		// TODO Auto-generated method stub
+		JTextArea area = new JTextArea();
+		area.setText(text);
+		area.setWrapStyleWord(true);
+		area.setLineWrap(true);
+		area.setEditable(false);
+		area.setBackground(new Color(0,0,0,15));
+		area.setBorder(BorderFactory.createLineBorder(Color.WHITE));
+		area.setFont(new Font("Calibri", Font.PLAIN, 18));
+		area.setForeground(Color.BLACK);
+		area.setPreferredSize(new Dimension(DEFAULT_WIDTH_P,TEXT_MODEL_HEIGHT));
+			
+		JPanel panel = defaultPanel(0,FlowLayout.CENTER,DEFAULT_WIDTH_P, TEXT_MODEL_HEIGHT + UNIT_GAP );
+		panel.add(area);
+		return panel;
+	}
+	
 }

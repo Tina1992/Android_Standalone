@@ -2,38 +2,20 @@ package com.example.prediction;
 
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.EventQueue;
 import java.awt.FlowLayout;
-import java.awt.Point;
-import java.awt.Rectangle;
+import java.awt.image.BufferedImage;
 
+import javax.imageio.ImageIO;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
-import javax.swing.JViewport;
 import javax.swing.ScrollPaneConstants;
 
 public class ModelfitWindows {
 
 	private JFrame frame;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					ModelfitWindows window = new ModelfitWindows();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the application.
@@ -41,6 +23,7 @@ public class ModelfitWindows {
 	 */
 	public ModelfitWindows() throws Exception {
 		initialize();
+		frame.setVisible(true);
 	}
 
 	/**
@@ -48,10 +31,10 @@ public class ModelfitWindows {
 	 * @throws Exception 
 	 */
 	private void initialize() throws Exception {
-		frame = WindowPreferences.mainFrame("/resources/background.jpg", FlowLayout.CENTER);
-		frame.getContentPane().add(configHeader());
-		frame.getContentPane().add(configScroll());
-		frame.getContentPane().add(configOK());
+		frame = WindowPreferences.mainFrame("/resources/background.jpg");
+		frame.getContentPane().add(new AlphaContainer(configHeader()) );
+		frame.getContentPane().add(new AlphaContainer(configScroll()) );
+		frame.getContentPane().add(new AlphaContainer(configOK()) );
 	}
 	
 	private JPanel configHeader() throws Exception{
@@ -71,19 +54,11 @@ public class ModelfitWindows {
 		panel.add(configImage2());
 		JScrollPane scroll_panel = new JScrollPane();
 		scroll_panel.setPreferredSize(new Dimension(WindowPreferences.DEFAULT_WIDTH_P,400));
-		
 		scroll_panel.setBackground(new Color(0,0,0,10));
 		scroll_panel.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		scroll_panel.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		JScrollBar vertical = scroll_panel.getVerticalScrollBar();
 		scroll_panel.setViewportView(panel);
-		
-		/*vertical.setValue(0);
-		
-		JViewport jv = scroll_panel.getViewport();
-		jv.setViewPosition(new Point(-100,0));
-		System.out.println(jv.getViewPosition());*/
-		
 		
 		return scroll_panel;
 	}
@@ -98,7 +73,8 @@ public class ModelfitWindows {
 	}
 	
 	private JPanel configImage1() throws Exception{
-		JPanel panel_fitdatacompare = WindowPreferences.defaultImage("/resources/fitdata_compare.png",WindowPreferences.IMG_FITCOMPARE_HEIGHT);
+		BufferedImage img = ImageIO.read(ConfiguresWindows.class.getResource("/resources/fitdata_compare.png"));
+		JPanel panel_fitdatacompare = WindowPreferences.defaultImage(img,WindowPreferences.IMG_FITCOMPARE_HEIGHT);
 		return panel_fitdatacompare;
 	}
 	
@@ -121,7 +97,8 @@ public class ModelfitWindows {
 	}
 	
 	private JPanel configImage2() throws Exception{
-		JPanel panel_fitdatadegree = WindowPreferences.defaultImage("/resources/fitdata_degree.png",WindowPreferences.IMG_FITDEGREE_HEIGHT);
+		BufferedImage img = ImageIO.read(ConfiguresWindows.class.getResource("/resources/fitdata_compare.png"));
+		JPanel panel_fitdatadegree = WindowPreferences.defaultImage(img,WindowPreferences.IMG_FITDEGREE_HEIGHT);
 		return panel_fitdatadegree;
 	}
 	
