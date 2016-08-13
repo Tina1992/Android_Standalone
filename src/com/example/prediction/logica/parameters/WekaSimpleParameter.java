@@ -95,6 +95,9 @@ public class WekaSimpleParameter extends AbsWekaParameter {
 		if (getMinValor() == -1) { // No tiene limite mínimo
 			return min;
 		} else {
+			if (min>getMaxValue()){
+				return getMinValor();
+			}
 			if (min < getMinValor())
 				return getMinValor();
 		}
@@ -110,6 +113,9 @@ public class WekaSimpleParameter extends AbsWekaParameter {
 			else
 				return max;
 		} else {
+			if (max < getMinValor()){
+				return getMaxValue();
+			}
 			if (max > getMaxValue())
 				return getMaxValue();
 		}

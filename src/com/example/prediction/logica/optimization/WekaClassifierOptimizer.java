@@ -14,7 +14,7 @@ import weka.core.Instances;
 public class WekaClassifierOptimizer extends AbsWekaOptimizer {
 
 	private static final int FOLDS = 5;
-	private static final int DEFAULT_CLASSIFIER_STEPS = 6;
+	private static final int DEFAULT_CLASSIFIER_STEPS = 10;
 	
 	public WekaClassifierOptimizer(double min, double max){
 		minValue=min;
@@ -42,7 +42,7 @@ public class WekaClassifierOptimizer extends AbsWekaOptimizer {
 					val = ((WekaSimpleParameter) p).getParameterString().charAt(1) + " " + minInt.intValue() + " " + maxInt.intValue() + " "
 							+ DEFAULT_CLASSIFIER_STEPS;
 				} else {
-					val = ((WekaSimpleParameter) p).getParameterString().charAt(1) + " " + ((WekaSimpleParameter) p).getMinValor() + " " + max + " "
+					val = ((WekaSimpleParameter) p).getParameterString().charAt(1) + " " + min + " " + max + " "
 							+ DEFAULT_CLASSIFIER_STEPS;
 				}
 				cvps.addCVParameter(val);
