@@ -50,11 +50,11 @@ public class FilteredSchemesWindows {
 		
 		frame = WindowPreferences.mainFrame("/resources/background.jpg");
 		
-		frame.getContentPane().add(configHeader());
-		frame.getContentPane().add(configOptions());
-		frame.getContentPane().add(configImage());
-		frame.getContentPane().add(configSelectScheme());
-		frame.getContentPane().add(configExit());
+		frame.getContentPane().add(new AlphaContainer(configHeader()));
+		frame.getContentPane().add(new AlphaContainer(configOptions()));
+		frame.getContentPane().add(new AlphaContainer(configImage()));
+		frame.getContentPane().add(new AlphaContainer(configSelectScheme()));
+		frame.getContentPane().add(new AlphaContainer(configExit()));
 	}
 	
 	private JPanel configHeader() throws Exception{
@@ -67,7 +67,7 @@ public class FilteredSchemesWindows {
 
 	private JPanel configOptions() throws Exception {
 		JPanel panel_options = WindowPreferences.defaultPanel(0, 0, FlowLayout.RIGHT,WindowPreferences.DEFAULT_HEIGHT_P);
-		panel_options.add(WindowPreferences.defaultButton("/resources/icon_alert_save.png"));
+		panel_options.add(new AlphaContainer(WindowPreferences.defaultButton("/resources/icon_alert_save.png")));
 		JButton nextBu=WindowPreferences.defaultButton("/resources/icon_next.png");
 		nextBu.addMouseListener(new MouseAdapter(){
 			@Override
@@ -85,7 +85,7 @@ public class FilteredSchemesWindows {
 				}
 			}
 		});
-		panel_options.add(nextBu);
+		panel_options.add(new AlphaContainer(nextBu));
 		return panel_options;
 	}
 
@@ -128,8 +128,8 @@ public class FilteredSchemesWindows {
 
 	private JPanel configExit() throws Exception{
 		JPanel panel_exit = WindowPreferences.defaultPanel(0, 0, FlowLayout.RIGHT, WindowPreferences.DEFAULT_HEIGHT_P);
-		panel_exit.add(WindowPreferences.defaultButton("/resources/icon_exit.png"));
-		
+		panel_exit.setLayout(new FlowLayout(5,5,FlowLayout.LEFT));
+		panel_exit.add(new AlphaContainer(WindowPreferences.defaultButton("/resources/icon_exit.png")));
 		return panel_exit;
 	}
 }

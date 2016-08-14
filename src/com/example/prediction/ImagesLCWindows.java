@@ -5,7 +5,6 @@ import java.awt.FlowLayout;
 import java.awt.Image;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.util.Vector;
 
@@ -27,7 +26,6 @@ public class ImagesLCWindows {
 	JLabel image;
 
 	private BufferedImage image_learningcurve;
-
 	private BufferedImage image_errorprediction;
 
 	/**

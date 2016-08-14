@@ -12,7 +12,6 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
 
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
@@ -110,7 +109,6 @@ public class WindowPreferences {
 	}
 	
 	public static JPanel defaultImage(BufferedImage image, int height) throws Exception{
-		//Image img = ImageIO.read(ConfiguresWindows.class.getResource(ImageID));
 		JPanel panel = WindowPreferences.defaultPanel(0, FlowLayout.CENTER, DEFAULT_WIDTH_P, height);		
 		JLabel label = new JLabel(new ImageIcon(image.getScaledInstance(DEFAULT_WIDTH_P,HEIGHT_I, Image.SCALE_SMOOTH)) );
 		panel.add(label);
