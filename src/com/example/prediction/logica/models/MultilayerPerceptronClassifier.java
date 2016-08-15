@@ -28,10 +28,12 @@ public class MultilayerPerceptronClassifier extends AbsWekaClassifier {
 		super(new MultilayerPerceptron(), new WekaClassifierOptimizer(MIN_VALUE,MAX_VALUE), index);
 		WekaSimpleParameter l = new WekaSimpleParameter('L', DEFAULT_LR, "L"/* "Learning Rate" */);
 		l.setMaxValue(1);
-		addParameter(l); /* 0-1 Double */
+		l.setMinValor((float) 1e-8);
+		addParameter(l); 
 		WekaSimpleParameter m = new WekaSimpleParameter('M', DEFAULT_M, "M"/* "Momentum" */);
+		m.setMinValor((float) 1e-8);
 		m.setMaxValue(1);
-		addParameter(m); /* 0-1 Double */
+		addParameter(m); 
 		/*
 		 * addParameter(new WekaSimpleParameter('N', DEFAULT_TT, "N")); //
 		 * "Training Time" - No tiene limites - Integer WekaSimpleParameter
