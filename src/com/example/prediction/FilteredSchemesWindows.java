@@ -121,7 +121,21 @@ public class FilteredSchemesWindows {
 			
 		});
 		panel_select.add(choice);
-		panel_select.add(WindowPreferences.defaultButton("/resources/icon_check.png"));
+		JButton checkButton=WindowPreferences.defaultButton("/resources/icon_check.png");
+		checkButton.addMouseListener(new MouseAdapter(){
+			@Override
+			public void mousePressed(MouseEvent e){
+				//DE ESTA MANERA FUNCIONA EL HACER CLICK.  
+				try {
+					ImagesLCWindows image=new ImagesLCWindows();
+					frame.setVisible(false);
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
+		panel_select.add(checkButton);
 		
 		return panel_select;
 	}

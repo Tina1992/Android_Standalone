@@ -121,7 +121,7 @@ public class LineGraphics extends AbsGraphics {
 		    	  max = Math.max(max,actualValue);
 	  	    	  min = Math.min(min, actualValue);
 			}
-			scheme.calculateModeler(trainingSet);
+			scheme.buildModeler(trainingSet);
 			predicted = scheme.getPredictedValue(trainingSet);
 	      	for(Integer v=0; v < instances; v++){
 	      		Integer index = v+1;
@@ -143,8 +143,8 @@ public class LineGraphics extends AbsGraphics {
 		int groupInstances =5;// Config.Graphic.GRAPHIC_LINE_INSTANCES_LEARNING_CURVE;
 		//int last = trainingSet.numInstances();
 		SimpleERMetric rae=new SimpleERMetric();
-		int traininglimit=(int) Math.ceil(trainingSet.numInstances()*0.6);
-		int CVlimit = (int) Math.ceil(trainingSet.numInstances()*0.8);
+		int traininglimit=(int) Math.ceil(trainingSet.numInstances()*0.5);
+		int CVlimit = (int) Math.ceil(trainingSet.numInstances()*0.9);
 		AbsDatabase newTrainingSet = trainingSet.subDatabase(0, traininglimit);
 		AbsDatabase CVSet = trainingSet.subDatabase(traininglimit, CVlimit);
 		

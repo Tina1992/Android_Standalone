@@ -122,7 +122,12 @@ public class OptimizingSchemeWindows {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				
+				try {
+					ImagesLCWindows LCWindows=new ImagesLCWindows();
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 			
 		});

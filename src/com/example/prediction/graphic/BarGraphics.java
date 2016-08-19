@@ -85,7 +85,7 @@ public class BarGraphics extends AbsGraphics {
 			else
 				index1=j;
 			if(bestResults.elementAt(index1) == i || (dataset.getValue(i, j)).doubleValue() < umbral )	
-				return new StandardCategoryItemLabelGenerator("{2}", new DecimalFormat("##.#####"));
+				return new StandardCategoryItemLabelGenerator("{2}", new DecimalFormat("##.##"));
 			return null;
 		} 
 	}
