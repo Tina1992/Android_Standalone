@@ -5,10 +5,10 @@ import java.awt.Color;
 public class Config {
 
 	public static class InitialSettings {
-		private static String DIR_STORAGE = "C:\\ProgramData\\BlueStacks\\UserData\\SharedFolder\\";//System.getProperty("user.dir");// Environment.getExternalStorageDirectory().toString()
+		private static String DIR_STORAGE = "C:\\Users\\usuario\\Desktop\\Dataset tesis\\";//System.getProperty("user.dir");// Environment.getExternalStorageDirectory().toString()
 																			// +
 																			// "/";
-		private static String DIR_WORKING = "C:\\ProgramData\\BlueStacks\\UserData\\SharedFolder\\";//System.getProperty("user.dir");// Environment.getExternalStorageDirectory().toString()
+		private static String DIR_WORKING = "C:\\Users\\usuario\\Desktop\\Dataset tesis\\";//System.getProperty("user.dir");// Environment.getExternalStorageDirectory().toString()
 																			// +
 																			// "/"
 																			// ;
@@ -100,7 +100,7 @@ public class Config {
 
 		public static final int GRAPHIC_LINE_HEIGHT = 367;
 		public static final int GRAPHIC_LINE_WIDTH = 560;
-		public static final int GRAPHIC_LINE_LIMIT_INSTANCES = 100;
+		public static final int GRAPHIC_LINE_LIMIT_INSTANCES = 800;
 		public static final int GRAPHIC_LINE_INSTANCES_LEARNING_CURVE = 5;
 
 		public static final float GRAPHIC_LINE_STROKE_REALVALUES = 3F;

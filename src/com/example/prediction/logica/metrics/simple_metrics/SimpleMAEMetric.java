@@ -23,7 +23,7 @@ public class SimpleMAEMetric extends AbsSimpleMetric{
 		for (int loc=0; loc<reals.size();loc++){
 			r+=Math.abs(reals.get(loc)-predicted.get(loc));
 		}
-		return r/reals.size();
+		return r/reals.size()*1000000;
 	}
 
 }

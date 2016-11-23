@@ -13,14 +13,14 @@ public class LinearRegClassifier extends AbsWekaClassifier {
 	 */
 
 	private static final double DEFAULT_RIDGE = 1;
-	private static final double MIN_VALUE=0;
-	private static final double MAX_VALUE=5;
+	private static final double MIN_VALUE=-5;
+	private static final double MAX_VALUE=-0.1;
 	
 	/**/
 	public LinearRegClassifier(int index) {
 		super(new LinearRegression(), new WekaClassifierOptimizer(MIN_VALUE, MAX_VALUE), index);
 		WekaSimpleParameter wsp=new WekaSimpleParameter('R', DEFAULT_RIDGE, "R");
-		wsp.setMinValor((float) 0.1);
+		wsp.setMinValor((float) -5);
 		addParameter(wsp);	/*No tiene limites - Double*/
 	}
 

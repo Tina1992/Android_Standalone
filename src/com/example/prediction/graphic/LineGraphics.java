@@ -140,6 +140,8 @@ public class LineGraphics extends AbsGraphics {
 
 	private void configureLearningCurve(AbsDatabase trainingSet) throws Exception {
 		dataset = new DefaultCategoryDataset();
+		max=Double.MIN_NORMAL;
+		min=Double.MAX_VALUE;
 		int groupInstances =5;// Config.Graphic.GRAPHIC_LINE_INSTANCES_LEARNING_CURVE;
 		//int last = trainingSet.numInstances();
 		SimpleERMetric rae=new SimpleERMetric();
