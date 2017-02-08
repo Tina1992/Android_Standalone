@@ -5,10 +5,10 @@ import java.awt.Color;
 public class Config {
 
 	public static class InitialSettings {
-		private static String DIR_STORAGE = "C:\\Users\\usuario\\Desktop\\Dataset tesis\\";//System.getProperty("user.dir");// Environment.getExternalStorageDirectory().toString()
+		private static String DIR_STORAGE = "C:\\Users\\usuario\\Desktop\\Tesis tests\\";//System.getProperty("user.dir");// Environment.getExternalStorageDirectory().toString()
 																			// +
 																			// "/";
-		private static String DIR_WORKING = "C:\\Users\\usuario\\Desktop\\Dataset tesis\\";//System.getProperty("user.dir");// Environment.getExternalStorageDirectory().toString()
+		private static String DIR_WORKING = "C:\\Users\\usuario\\Desktop\\Tesis tests\\";//System.getProperty("user.dir");// Environment.getExternalStorageDirectory().toString()
 																			// +
 																			// "/"
 																			// ;

@@ -53,7 +53,9 @@ public class WekaKernelOptimizer extends AbsWekaOptimizer {
 		pukparams.add(new WekaSimpleParameter('O', 1.0, "omega"));
 		pukparams.add(new WekaSimpleParameter('S', 1.0, "sigma"));
 		Vector<AbsWekaParameter> rbfkparams = new Vector<AbsWekaParameter>();
-		rbfkparams.add(new WekaSimpleParameter('G', 1.0, "gamma"));
+		WekaSimpleParameter parameter = new WekaSimpleParameter('G', 1.0, "gamma");
+		parameter.setMinValor((float)1.00);
+		rbfkparams.add(parameter);
 
 		npkparam.setKernelOptions(exponents);
 		pkparam.setKernelOptions(exponents);

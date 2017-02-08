@@ -102,8 +102,8 @@ public class SimpleMenuFrame extends JDialog {
 			//panel.setPreferredSize(new Dimension(width,300));
 			JScrollPane panel_scroll = new JScrollPane();
 			panel_scroll.setViewportView(panel);
-			panel_scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-			panel_scroll.setPreferredSize(new Dimension(width,150));
+			//panel_scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+			panel_scroll.setPreferredSize(new Dimension(width*3,150));
 			
 			this.setContentPane(panel_scroll);
 			panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));

@@ -304,7 +304,7 @@ public class ConfiguresWindows {
                 	else
                 	{
 
-                		m.saveModel(Config.InitialSettings.getDirWorking()+m.getName()+".txt");
+                		m.saveModel(Config.InitialSettings.getDirWorking()+m.getName()+"-"+info.getFileDatasetSelected().getName()+".txt");
                 	}
                 }
                 info.setFilteredBestSchemes();
