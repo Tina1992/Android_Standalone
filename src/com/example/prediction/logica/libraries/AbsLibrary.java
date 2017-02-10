@@ -11,8 +11,7 @@ public abstract class AbsLibrary {
 	
 	private String ID;											
 	
-	protected AbsDatabase trainingSet;
-	protected AbsEvaluation evaluator;					
+	protected AbsDatabase trainingSet;				
 	protected MetricsCollection metricsEvaluation;	
 	protected Vector<Integer> acceptedModelers = new Vector<Integer>();	
 
@@ -20,7 +19,6 @@ public abstract class AbsLibrary {
 	protected Vector<String> categoricalTypes;
 	
 	public AbsLibrary(String ID){
-		createEvaluator();
 		createMetricsEvaluation();
 		createDatabase();
 		setAcceptedModelers();
@@ -33,10 +31,6 @@ public abstract class AbsLibrary {
 	
 	public AbsDatabase getDatasetObject(){
 		return trainingSet;
-	}
-	
-	public AbsEvaluation getEvaluator(){
-		return evaluator;
 	}
 	
 	public MetricsCollection getMetricsEvaluationObject(){
@@ -57,7 +51,6 @@ public abstract class AbsLibrary {
 
 	
 	public abstract void createDatabase();
-	public abstract void createEvaluator();
 	public abstract void createMetricsEvaluation();
 	public abstract void setAcceptedModelers();
 	public abstract void setNumericalTypes();

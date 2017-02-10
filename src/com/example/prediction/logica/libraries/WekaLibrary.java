@@ -95,12 +95,6 @@ public class WekaLibrary extends AbsLibrary{
 	}
 
 	@Override
-	public void createEvaluator() {
-		// TODO Auto-generated method stub
-		this.evaluator = new EvaluationWeka();
-	}
-
-	@Override
 	public void createMetricsEvaluation() {
 		// TODO Auto-generated method stub
 		this.metricsEvaluation = new WekaMetricsCollection();
