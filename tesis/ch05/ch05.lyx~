@@ -1,0 +1,2985 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\use_default_options true
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Evaluación
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Evaluación"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En este capítulo se describe el procedimiento de evaluación que se lleva
+ a cabo y una descripción completa sobre los escenarios considerados y cada
+ uno de los dataset involucrados.
+ También, se presentan los resultados obtenidos junto con las inferencias
+ y relaciones que se han determinado entre las técnicas y el contexto en
+ el que se aplican.
+ 
+\end_layout
+
+\begin_layout Standard
+El capítulo se organiza de la siguiente manera: en la sección 5.1 se detalla
+ la metodología de evaluación propuesta para analizar la eficacia de los
+ modelos de predicción, en esta se incluye información complementaria y
+ particular que fue tomada en cuenta para llevar a cabo la evaluación mediante
+ sub-secciones individuales, de esta manera se especifican, las métricas
+ usadas, el formato de los resultados obtenidos, la determinación empleada
+ para la configuración de los parámetros más fundamentales de cada técnica
+ y las características de los dispositivos móviles usados para las pruebas.
+ 
+\end_layout
+
+\begin_layout Standard
+En la sección 5.2 se presentan los escenarios de estudio considerados, brindando
+ una descripción detallada de los dataset involucrados junto a gráficas
+ y análisis sobre la distribución de los datos, con el fin de comprender
+ mejor el desempeño de las tecnicas de regresion analizadas.
+ Los modelos de predicción obtenidos son expuestos en la sección 5.3 desglosados
+ por escenario para analizar cómo impacta en el desempeño de las técnicas,
+ las particularidades de cada dominio.
+ Finalmente en la sección 5.4 se obtienen las conclusiones del capítulo.
+ 
+\end_layout
+
+\begin_layout Section
+Metodología de Evaluación
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Ambiente-de-pruebas"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Existen diversas formas que permiten evaluar la eficacia del clasificador.
+ La calidad de los modelos será evaluada a través de seis métricas de regresión
+ que representan de forma distinta el error de predicción.
+ Así mismo, para un análisis más profundo sobre las distintas técnicas y
+ su desempeño se usaron cuatro escenarios o contextos dispares entre sí
+ para determinar, de ser posible, las técnicas que mejor se adecuan a un
+ escenario (por su naturaleza), o por el contrario, no aplican adecuadamente
+ ante un escenario particular.
+ 
+\end_layout
+
+\begin_layout Standard
+Cada modelo es definido por una técnica X (regresión lineal, red neuronal,
+ etc.) que se aplica para predecir una propiedad Y, (tiempo de respuesta
+ y precisión) de un componente Z.
+ Cada uno de los contextos empleados incluyen tres o cuatro datasets, en
+ algunos casos para individualizar el análisis hacia los componentes específicos
+, en otros, para separar las pruebas realizadas en móviles distintos.
+ 
+\end_layout
+
+\begin_layout Standard
+En todo el conjunto de dataset, se añadió el tiempo de respuesta como propiedad
+ a predecir, y sólo en aquellos donde el contexto lo permitía se incorporó
+ como propiedad la optimalidad o precisión en el resultado arrojado por
+ el componente.
+ 
+\end_layout
+
+\begin_layout Subsection
+Métricas de evaluación
+\end_layout
+
+\begin_layout Standard
+Tras construir una serie de modelos de regresión diferentes, existe una
+ gran cantidad de criterios por los cuales pueden ser evaluados y comparados.
+ Todos los indicadores comparan los valores reales con sus estimaciones,
+ pero lo hacen de una manera ligeramente diferente.
+ 
+\end_layout
+
+\begin_layout Standard
+MAE representa el promedio del error absoluto (diferencia entre los valores
+ predichos y los observados), e indica cuán grande es el error que puede
+ esperarse de la predicción.
+ Al tratarse de una métrica basada en el error medio puede subestimar el
+ impacto de errores grandes pero infrecuentes.
+ Si el análisis se centra demasiado en la media arrojará conclusiones precipitad
+as, por lo tanto para ajustar errores grandes y raros, se calcula el error
+ cuadrático medio (RMSE).
+ Mediante la cuadratura de los errores en lugar de la media y luego tomar
+ la raíz cuadrada de la media, se llega a una medida del tamaño del error
+ que da más peso a los errores grandes e infrecuentes que la media.
+ 
+\end_layout
+
+\begin_layout Standard
+La comparación entre las métricas RMSE y MAE puede ser útil para determinar
+ si un dataset contiene errores significativos y poco frecuentes, cuanto
+ mayor sea la diferencia entre ambos indicadores, más inconsistente es el
+ tamaño del error.
+\end_layout
+
+\begin_layout Standard
+El coeficiente de correlación (CC) es analizado en conjunto con el indicador
+ RMSE ya que existe una estrecha relación entre ambos.
+ Por ejemplo, si CC es 1, RMSE debe ser 0, ya que todos los puntos se encuentran
+ en la línea de la función de regresión; cuanto más cercano sea el valor
+ de CC a 1 o -1, más próximos son los valores observados a la línea de predicció
+n, y por tanto menor será el error absoluto reflejado en RMSE.
+ 
+\end_layout
+
+\begin_layout Standard
+Por otro lado, complementariamente se utilizan indicadores relativos en
+ lugar de absolutos como los descriptos anteriormente, ya que ponderan el
+ error de predicción respecto a la variación estándar de las observaciones.
+ De esta manera se obtienen indicadores RAE y RRSE de valores entre 0 y
+ 1 para obtener una visión de las observaciones respecto a la media.
+ 
+\end_layout
+
+\begin_layout Subsection
+Formato de los resultados
+\end_layout
+
+\begin_layout Standard
+La herramienta devuelve como resultado un archivo en formato TXT almacenando,
+ por un lado, los valores resultantes de los parámetros fundamentales de
+ cada técnica y, por otro lado, la descripción del modelo construido.
+ La herramienta genera un archivo por cada técnica elegida por el usuario
+ para optimizar, en la dirección especificada en la configuración bajo el
+ nombre de la técnica.
+ La figura 5.1 permite una descripción gráfica de lo expresado anteriormente,
+ donde detalla A) los parámetros configurables, B) Nombre del modelo y C)
+ la función definida para el atributo de predicción.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/linear-regression-result.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ejemplo de resultado del modelo ‘Linear Regression’.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:linear-regression-result"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La manera en que los datos son expuestos al usuario no representa un formato
+ compatible para cualquier herramienta sobre aprendizaje de máquina, esto
+ se debe a que no existe actualmente, un formato estándar para almacenar
+ los modelos, y esta discrepancia entre las herramientas disponibles exige
+ un seteo manual de las técnicas por cada evaluación que se realice
+\end_layout
+
+\begin_layout Subsection
+Parámetros de configuraciónde las técnicas
+\end_layout
+
+\begin_layout Standard
+La optimización y posterior obtención de un modelo de calidad tiene lugar
+ a partir del establecimiento de diversos parámetros de configuración.
+ 
+\end_layout
+
+\begin_layout Standard
+Estos parámetros pueden requerir distintos valores adaptándose a condiciones
+ particulares de los datos que optimicen el resultado de la predicción.
+ Para brindar más detalle de estos parámetros, el Cuadro 5.1 presenta la
+ lista completa de parámetros propios de cada técnica, el valor por defecto
+ adoptado para cada una y el rango de valores establecido con el cual se
+ determinará el mejor valor resultante.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="11" columns="6">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Técnica
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Parámetro
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Valor por defecto
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rango de Configuración
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Linear Regression
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ridge
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+R
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MultiLayer Perceptron
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Learning Rate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+LR
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.05
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Momentum
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+M
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.05
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Training Time
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+TT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+200
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Stochastic Gradient Descent
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Learning
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+L
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.01
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.01
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Lambda
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+R
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.05
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.01
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Simple k-cluster
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cluster Numbers
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+N
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+30
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Support Vector Machine
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Complexy
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+25
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Exponent
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+E
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Kernel
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+K
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Normalized PolyKernel
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Parámetros de configuración de las técnicas de regresión
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="6">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Kernel
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Parámetro
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Valor por defecto
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rango de Configuración
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+NormalizedPolyKernel
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Exponent
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+E
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PolyKernel
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Exponent
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+E
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Puk
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Omega
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sigma
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+S
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RBFKernel
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sigma
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+S
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Gamma
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+G
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.01
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Parámetros de configuración de los kernels para el SVM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El proceso de optimización de las técnicas utiliza el rango de configuración
+ establecido para iterar en pasos tomando valores intermedios y evaluando
+ la calidad de la técnica con tales configuraciones, finalmente se contrastan
+ entre sí y se determina la mejor configuración para un dataset y atributo
+ a predecir particular.
+ 
+\end_layout
+
+\begin_layout Standard
+Los rangos para cada técnica se establecieron tras un análisis exhaustivo
+ de la influencia de estos valores sobre los datos.
+ Los rangos de prueba se definieron de manera aleatoria en conjunto de fundament
+os teóricos asociados a cada técnica, al mismo tiempo que el análisis de
+ un rango ya propuesto servía como base para definir uno nuevo.
+ Los análisis se llevaron a cabo sobre 20 archivos dataset dispuestos para
+ esta tesis.
+ 
+\end_layout
+
+\begin_layout Standard
+Por otro lado, los valores elegidos por defecto fueron tomados de los valores
+ propuestos por la herramienta Weka, a excepción del parámetro ‘Training
+ Time’ de la técnica ‘MultiLayer Perceptron’ que fue reducido de 500 a 200
+ para mejorar la performance de tiempo del algoritmo.
+ 
+\end_layout
+
+\begin_layout Standard
+Para el caso de la técnica ‘Support Vector Machine’ la configuración es
+ más compleja ya que involucra parámetros propios simples y un kernel con
+ parámetros específicos.
+ Para la técnica ‘SMO’, el parámetro ‘gamma’ y ‘complexy’ fueron analizados
+ en conjunto con el apoyo de fundamentos teoría y empíricas.
+ La figura 5.2 refleja el impacto que tienen los parámetros sobre la clasificació
+n de los datos.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/RBF-parameters-SVM.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Efecto de los parámetros de la técnica SVM.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:RBF-parameters-SVM"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las mejores opciones para configurar los parámetros se obtienen observando
+ la diagonal en donde los valores se incrementan a la par, la primer imagen
+ de la cuadrícula aplica una clasificación muy simple sobre los datos, dejando
+ en evidencia un alto grado de error en las predicciones.
+ La última imagen, en cambio, muestra un claro ejemplo de ‘overfit’, por
+ lo que no resulta ser una buena opción a la hora de buscar generalización.
+ La imagen central resulta entonces, ser la más apropiada para definir los
+ valores por defecto para estos parámetros.
+ Por otro lado, la optimización para el parámetro ‘complexy’ se determinó
+ bajo el rango 0 - 25 debido a pruebas empíricas realizadas sobre el conjunto
+ base de dataset.
+ 
+\end_layout
+
+\begin_layout Standard
+Respecto a la optimización del kernel, los cuatro algoritmos considerados
+ fueron analizados mediante la técnica prueba y error y de esa forma, se
+ determinaron los valores por defecto para los parámetros propios de cada
+ uno.
+ Del análisis se desprenden algunas conclusiones consecuentes: 
+\end_layout
+
+\begin_layout Itemize
+Algoritmo ‘Normalized Polynomial’: El valor por defecto para el parámetro
+ ‘exponent’ es 2.0 y hasta valores de 5.0 los resultados esperados son buenos.
+ 
+\end_layout
+
+\begin_layout Itemize
+Algoritmo PolyKernel‘’: El valor por defecto para el parámetro ‘exponent’
+ es 1.0.
+ Si el valor se incrementa se obtienen mejores resultados, sin embargo para
+ valores mayores a 5.0 el error de predicción comienza a aumentar gradualmente.
+ 
+\end_layout
+
+\begin_layout Itemize
+Algoritmo ‘Puk’: El valor por defecto para el parámetro ‘omega’ es 1.0, la
+ modificación de este valor es indiferente a los resultados por lo que no
+ aplica a la optimización.
+ Respecto a ‘sigma’ se adopta el valor 0.01 ya que el incremento en este
+ valor no produce buenos resultados.
+ 
+\end_layout
+
+\begin_layout Itemize
+Algoritmo ‘RBF’: Partiendo de un valor ‘gamma’ de 0.01 se obtienen buenos
+ resultados, e incluso incrementando este valor a razón de 0.01 los resultados
+ tienden a mejorar.
+ 
+\end_layout
+
+\begin_layout Subsection
+Características de los dispositivos móviles usados
+\end_layout
+
+\begin_layout Standard
+En la mayoría de las pruebas se han utilizado dos dispositivos móviles fundament
+ales, el modelo K3 Note de la marca Lenovo y el modelo Galaxy S3 de la marca
+ Samsung principalmente por las características del procesador y memoria
+ interna.
+ El móvil lenovo es superior debido a sus 8 núcleos de procesamiento frente
+ a los 4 núcleos del Samsung y a una memoria RAM con el doble de capacidad.
+ 
+\end_layout
+
+\begin_layout Standard
+También se utilizaron tres modelos más sólo para el escenario del problema
+ del viajante.
+ Todas las especificaciones son expuestas en el cuadro 5.2.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="6">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CPU Procesador/ Núcleos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GPU tarjeta gráfica
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Memoria RAM
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Memoria interna
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Memoria expansible
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Lenovo K3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.7Ghz Octa-Core ARM Cortex-A53
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ARM Mali-T760 MP2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2GB LPDDR3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+16GB(12GB accesible al usuario)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Hasta 32 GB microSD, microSDHC
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Samsung Galaxy S3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Quad-Core 1.4 GHz Cortex-A9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mali-400MP
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 GB 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12/32/64 GB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Hasta 64 GB microSD
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Samsung Galaxy S4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Qualcomm APQ8064T Snapdragon 600 1.9Ghz / 4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PowerVR SGX 544MP / Adreno 320
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2GB LPDDR3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12/32/64 GB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Hasta 64 GB microSD
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Samsung Galaxy S5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Qualcomm MSM8974AC Snapdragon 801 2.5Ghz / 4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Adreno 300
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2GB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+32 GB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Hasta 128 GB microSD
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Samsung Galaxy S6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.1Ghz Samsung Exynos / 8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mali-T760
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3GB LPDDR4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12/32/64 GB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ninguna
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Especificaciones de los dispositivos móviles utilizados.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Escenarios
+\end_layout
+
+\begin_layout Standard
+Definidas las métricas, la metodología de evaluación y los parámetros de
+ configuración, en la presente sección se detallarán los escenarios o dominios
+ estudiados a partir de una descripción detallada de los dataset formados,
+ cada uno de los componentes involucrados y los atributos de entrada considerado
+s formando un contexto particular para la predicción.
+ Por otro lado, se analizará el comportamiento o formato que adquieren los
+ datos sobre los atributos predichos para comprender el desempeño de las
+ diferentes técnicas sobre los mismos y la manera en que éstos adecuan sus
+ predicciones.
+ 
+\end_layout
+
+\begin_layout Subsection
+Escenario 1: Algoritmos para el problema del viajante
+\end_layout
+
+\begin_layout Standard
+Los dataset para este dominio han sido formados tras la ejecución de seis
+ algoritmos de resolución sobre 32 entradas del problema pertenecientes
+ a la librería TSPLIB dando lugar a un total de 192 instancias por dataset;
+ las pruebas fueron llevadas a cabo sobre el dispositivo móvil Samsung Galaxy
+ S4, y repetidas en los dispositivos S5 y S6, obteniendo así, tres dataset
+ análogos que incluyen como propiedades 7 atributos, Id de operación, nombre
+ de componente (algoritmo), entrada del problema (nombre de archivo), exactitud
+ y precisión en el resultado, tiempo de respuesta y valor solución.
+ Todos los dataset han sido almacenados en archivos con formato CSV bajo
+ el nombre ‘'Sx-results’ según el modelo de dispositivo utilizado.
+ 
+\end_layout
+
+\begin_layout Standard
+Los componentes involucrados incluyen el algoritmo del vecino más cercano,
+ Programación Lineal, Mejor ajuste, Kruskal, Prim, y el algoritmo de Transformac
+ión Local.
+ El algoritmo de Backtracking fue descartado de la lista debido al gran
+ consumo de memoria en los dispositivos imposibilitando el desarrollo de
+ las pruebas.
+ 
+\end_layout
+
+\begin_layout Standard
+En cuanto a la precisión y exactitud de las respuestas se consideraron tres
+ indicadores que toman en cuenta las repeticiones en la respuesta y la totalidad
+ o falta de los vértices incluidos.
+ El indicador TP (‘true positive’), para los vértices incluidos en la solución,
+ FP(‘false positive’), para las repeticiones de vértices y FN (‘False Negative’’
+) para los vértices no incorporados en la solución.
+ Por lo tanto, se consideró: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+FUNCION FUNCTION
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A modo de ejemplo, se presenta en la figura 5.3 un grafo con comienzo en
+ la ciudad A.
+ Suponiendo que un algoritmo de resolución arroja el siguiente camino solución:
+ {A, B, D, A}, se obtiene una precisión del 100% al tener un valor de TP
+ = 3 y un valor de FP = 0 ya que no hay vértices repetidos en la solución,
+ sin embargo, la solución no es correcta ya que no incluye la totalidad
+ de vértices del conjunto (excluye al vértice C).
+ En cambio, al calcular la exactitud se obtiene un valor del 66% al tener
+ un valor de TP = 4, FP = 1 y FN = 1 brindando un concepto más realista.
+ 
+\end_layout
+
+\begin_layout Standard
+El uso del indicador de precisión o el de exactitud dependerá del contexto
+ en el que se aplique.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/TPS-graph-problem.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ejemplo de grafo para el problema del viajante.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:TPS-graph-problem"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El objetivo de este escenario es la creación de modelos capaces de predecir
+ el tiempo de latencia de cada algoritmo de resolución frente a distintas
+ características de las entradas, y modelos para predecir la precisión en
+ los caminos retornados.
+ En la figura 5.4 expuesta a continuación se muestra el comportamiento del
+ conjunto de datos de entrenamiento ejecutado en el dispositivo Samsung
+ Galaxy S4; ambos dataset restantes no son expuestos ya que presentan mínimas
+ diferencias.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/TPS-dataset-behaviour.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comportamiento del dataset para el escenario del problema del viajante.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:TPS-dataset-behaviour"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A primera vista la figura 5.4 permite observar una gran concentración de
+ datos sobre los extremos para los valores de precisión y tiempo de respuesta.
+ En el primer caso, aproximadamente un 94% de los datos toman el valor 1,
+ y en el segundo caso, un 88% de los datos toman valores entre 0 y 6.77 segundos.
+ Este comportamiento uniforme y poco distribuido de los datos obstaculiza
+ el desarrollo de un buen modelo predictivo.
+ 
+\end_layout
+
+\begin_layout Standard
+Respecto al atributo ‘accuracy’, si bien presenta más dispersión entre los
+ datos, aproximadamente un 82% circunda alrededor del valor 1 y un 15% sobre
+ valores cercanos a 0.008.
+ 
+\end_layout
+
+\begin_layout Subsection
+Escenario 2: Servicios para detección de rostros
+\end_layout
+
+\begin_layout Standard
+Hoy en día muchas soluciones para detección de rostro se proporcionan como
+ servicios Web, que aunque no son tan rápidos y usables sin conexión a Internet
+ como las bibliotecas de software, resultan generalmente más precisos y
+ proporcionan características muy peculiares del rostro.
+ Sin embargo, el rendimiento y la precisión de los servicios varían según
+ las propiedades de la imagen (tamaño, foco, oclusiones) y contexto de ejecución
+ (capacidad de la CPU, conexión de red).
+ Por lo tanto el objetivo de este escenario es crear modelos para predecir
+ el tiempo de respuesta a partir de características variables de la imagen
+ de entrada y de los parámetros de configuración del componente en cuestión.
+\end_layout
+
+\begin_layout Standard
+Los dataset para este dominio han sido formados tras la ejecución de diferentes
+ componentes para detección de rostros en imágenes en un único dispositivo
+ móvil (Lenovo K3 Note), por tal motivo no se incluyen en los archivos caracterí
+sticas propias del móvil ya que significan valores constantes en la predicción.
+ 
+\end_layout
+
+\begin_layout Standard
+Los componentes involucrados incluyen un servicio o proceso Android (Google
+ Play Services (GMS) face detector) y tres servicios Web (FaceRect API,
+ Sky Biometry API y Microsoft Face API).
+ Estos cuatro componentes serán evaluados a partir de subconjunto de 290
+ imágenes pertenecientes al dataset llamado FDDB [24] con características
+ muy variadas .
+ 
+\end_layout
+
+\begin_layout Standard
+Cada servicio es llamado especificando una imagen y un conjunto de parámetros
+ booleanos (a través del valor 0 y 1) que determinan las funciones requeridas
+ del algoritmo determinado.
+ 
+\end_layout
+
+\begin_layout Standard
+En los cuatro servicios, el tiempo de respuesta es una variable continua
+ y registrada en milisegundos.
+ A continuación se detallan las principales características de los dataset
+ creados para cada servicio: 
+\end_layout
+
+\begin_layout Paragraph
+GMS
+\end_layout
+
+\begin_layout Standard
+El algoritmo permite setear tres parámetros diferentes (‘allLandmarks’ ,
+ ‘allClassifications’ , ‘accurateMode’) dando lugar a 8 configuraciones
+ posibles por imagen.
+ Para el servicio GMS se utilizaron 290 imágenes originando un dataset de
+ 2320 instancias.
+ Archivo Dataset: “ResponseTime - Google Play Service face detector.csv”.
+\end_layout
+
+\begin_layout Paragraph
+FaceRect API
+\end_layout
+
+\begin_layout Standard
+El algoritmo permite setear sólo una opción (‘features’) por imagen, de
+ modo que se construyó un dataset con sólo dos propiedades, incluyendo el
+ tiempo de respuesta y un total de 54 instancias.
+ Archivo Dataset: “ResponseTime - FaceRect API.csv”.
+\end_layout
+
+\begin_layout Paragraph
+Sky Biometry API
+\end_layout
+
+\begin_layout Standard
+El algoritmo permite setear siete parámetros diferentes dando lugar a 128
+ configuraciones posibles por imagen (‘aggressive’ , ‘gender’ , ‘glasses’
+ , ‘smiling’ , ‘mood’ , ‘age’ , ‘eyes’).
+ Para el servicio Sky Biometry se utilizaron 30 imágenes originando un dataset
+ de 3840 instancias y se incluyen 8 propiedades, además de los parámetros
+ configurables del tipo binario se añade el tiempo de respuesta.
+ Archivo Dataset: “ResponseTime - SkyBiometry API.csv”.
+\end_layout
+
+\begin_layout Paragraph
+Microsoft Face API
+\end_layout
+
+\begin_layout Standard
+image, ‘landmarks’, ‘age’, ‘gender’, ‘facialHair’, ‘smile’, ‘headPose’.
+ El dataset está formado por 1826 instancias y siete propiedades, además
+ de los parámetros configurables como atributos binarios se incluye el tiempo
+ de respuesta.
+ Archivo Dataset: “ResponseTime - Microsoft Face API.csv”.
+\end_layout
+
+\begin_layout Standard
+En la figura 5.5 que se muestra a continuación se expone el comportamiento
+ de los datos del atributo ‘Tiempo de respuesta’ para cada uno de los servicios,
+ en referencia con la imagen A) FaceRect API, B) Microsoft Face API, C)
+ Google Play Service y D) Sky Biometry API.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/face-services-dataset-behaviour.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comportamiento del atributo ‘Tiempo de respuesta’ de los servicios de detección
+ de rostros.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:face-services-dataset-behaviour"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El servicio Sky Biometry presenta entre sus datos un 5% de valores infrecuentes
+ y en esos casos valores extremos, siendo el único servicio en presentar
+ estas características.
+ 
+\end_layout
+
+\begin_layout Standard
+El servicio de Microsoft Face arrojó valores de tiempo de respuesta uniformement
+e distribuidos en el intervalo tomando la forma de campana de Gauss, los
+ datos se distribuyen simétricamente sobre el intervalo, es decir, no hay
+ presencia de sesgos hacia la izquierda o hacia la derecha.
+ Google Play también tiene una distribución de Gauss con sesgo hacia la
+ izquierda.
+ Puede observarse que presenta un intervalo muy amplio, de modo que las
+ propiedades configurables del algoritmo incrementan considerablemente el
+ tiempo de operación.
+ Sin embargo, al contrastarlo con el servicio de FaceRect, el mínimo de
+ tiempo requerido por este servicio es mucho mayor que el tiempo máximo
+ arrojado por el de Google Play, aún así cualquier análisis sobre el servicio
+ FaceRect puede ser precipitado, ya que se evaluó con un bajo número de
+ instancias.
+ 
+\end_layout
+
+\begin_layout Subsection
+Escenario 3: Problema de la mochila
+\end_layout
+
+\begin_layout Standard
+La evaluación de este dominio se llevó a cabo en dos modelos distintos de
+ dispositivos móviles (Samsung Galaxy S3 y Lenovo K3 Note) cuyo objetivo
+ es crear modelos de predicción del tiempo de respuesta y la optimalidad
+ del componente, es decir, la relación entre la solución encontrada y la
+ solución óptima retornando un valor entre cero y uno.
+ 
+\end_layout
+
+\begin_layout Standard
+Para este dominio se implementaron dos algoritmos de resolución al problema
+ como componentes, el algoritmo greedy de complejidad O(n2 log(n)) y el
+ algoritmo backtracking que encuentra la solución óptima pero en tiempo
+ exponencial O(2n).
+ Ambos componentes fueron implementados puramente en Java.
+ 
+\end_layout
+
+\begin_layout Standard
+Las instancias del problemas se obtuvieron aleatoriamente de las cuales
+ se consideraron los siguientes atributos: 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Primero ID de Operación.
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+'KnapsackWeightRatio’: teniendo en cuenta W como el peso límite de la mochila
+ y bi los pesos individuales de cada ítem, se calcula bajo la fórmula 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+FORMULA
+\end_layout
+
+\end_inset
+
+ arrojando valores entre 0 y 1
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Número de ítems en la mochila denotado como N.
+ 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Tiempo de respuesta registrado en segundos.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Segundo Nombre de Componente.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Optimalidad o precisión de los componentes siempre medida respecto a la
+ solución brindada por el algoritmo Backtracking.
+ 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Valor solución al problema.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Respecto a las características propias del dispositivo de ejecución, sólo
+ se tomó en cuenta la frecuencia de CPU ya que ambos algoritmos son single
+ threads y corren en CPU, con la suposición que la frecuencia de CPU incide
+ sobre la predicción.
+ 
+\end_layout
+
+\begin_layout Standard
+Se formaron cuatro dataset para este escenario, dos por cada uno de los
+ dispositivos móviles evaluados.
+ Bajo el nombre “Optimality and Response time - dispositivo XXX” se crearon
+ datasets de 720 instancias (360 para cada uno de los componentes) y siete
+ propiedades como se describieron anteriormente (Grupo A y B).
+ Las entradas del problema fueron consideradas desde un mínimo de 5 hasta
+ un tamaño máximo de 24 ítems límite impuesto debido a la complejidad del
+ algoritmo backtracking y su correspondiente latencia exponencial.
+ Por cada ítem se evaluaron 18 entradas al problema.
+ 
+\end_layout
+
+\begin_layout Standard
+Por otro lado, bajo el nombre “Response time - Greedy algorithm - dispositivo
+ XXX”, se crearon datasets de 4704 instancias y cuatro propiedades (Grupo
+ A) con entradas del problema de tamaño mínimo de 5 ítems, e incrementalmente
+ hasta un máximo de 200, con 24 entradas dedicadas a cada número de ítem.
+ 
+\end_layout
+
+\begin_layout Standard
+A continuación en la figura 5.6 se muestra el comportamiento de los datos
+ del atributo ‘Tiempo de respuesta’, en referencia a la imagen, A) ‘Opt
+ & Resp Lenovo K3’, B) ‘Opt & Resp Samsung Galaxy S3’, C) Greedy Lenovo
+ K3 y D) Greedy Samsung S3.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/Knapsack-dataset-behaviour.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comportamiento del atributo ‘Tiempo de respuesta’ para el problema de la
+ mochila.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Knapsack-dataset-behaviour"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En la ejecución de los algoritmos de Backtracking y Greedy en ambos dispositivos
+ (Imagen A y B) se observa una concentración aproximada del 93% de los datos
+ en un intervalo muy pequeño y un 5% de los datos se encuentran en el intervalo
+ mayor a 1 segundo, por lo cual podría concluirse que son valores atípicos
+ o poco frecuentes.
+ Este comportamiento muy homogéneo de los datos, dificultará la construcción
+ de un modelo predictivo de alta calidad.
+ Por otro lado, los dataset que incluyen al algoritmo Greedy, presentan
+ más dispersión de los datos cuya distribución toma forma exponencial (Imagen
+ C) y forma de campana de Gauss con sesgo hacia la izquierda (Imagen D).
+ La heterogeneidad en los datos puede posibilitar la construcción de un
+ buen modelo.
+ Respecto al análisis de los valores registrados, se puede observar que
+ las mismas pruebas ejecutadas en el dispositivo Samsung Galaxy S3 consumen
+ notoriamente más tiempo de operación.
+\end_layout
+
+\begin_layout Standard
+Por otro lado, se expone también en la figura 5.7 el comportamiento para
+ el atributo optimalidad de los dataset que incluyen ambos algoritmos.
+ (Backtracking y Greedy).
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/Knapsack-optimi-dataset-behaviour.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comportamiento del atributo ‘Optimalidad’ para el problema de la mochila
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Knapsack-optimi-dataset-behaviour"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las pruebas ejecutadas en el modelo K3 de Lenovo arrojaron valores de optimalida
+d muy altos, un 80% de los datos con optimalidad del 100%, y menos del 5%
+ del total adquiere valores por debajo de 0.95.
+ Esta cifra incluye valores extremos que representan el 1% de la totalidad
+ de observaciones.
+ Por lo tanto, la solución brindada por el algoritmo Greedy es generalmente
+ óptima.
+ Por otro lado, las pruebas ejecutadas en el dispositivo Samsung Galaxy
+ arrojaron un grado de optimalidad del 69%, y sólo un 12% de los datos correspon
+den a valores entre 0.9 y 1.0, sin incluir este último.
+ Se presume que el dataset presenta algunas anomalías ya que un 10% de los
+ datos tienen valores superiores a 1.0, contraponiendo el concepto de optimalidad.
+ 
+\end_layout
+
+\begin_layout Subsection
+Escenario 4: Multiplicación de matrices
+\end_layout
+
+\begin_layout Standard
+Los dataset para este dominio han sido formados tras la ejecución de diferentes
+ algoritmos de multiplicación de matrices, con tamaños variados de matrices
+ sobre 2 modelos de dispositivos móviles, Lenovo K3 y Samsung Galaxy S3.
+ Lo interesante de este dataset, es que los algoritmos fueron implementados
+ con diferentes librerías y diseñados para ser ejecutados por diferente
+ elementos de hardware (CPU, GPU, etc).
+ 
+\end_layout
+
+\begin_layout Standard
+Los componentes o algoritmos considerados para este dominio se describen
+ a continuación: 
+\end_layout
+
+\begin_layout Description
+MatrixMultiplication implementación simple desarrollada puramente en lenguaje
+ Java.
+ 
+\end_layout
+
+\begin_layout Description
+MatrixMultiplicationMultiThread corresponde a la misma versión del componente
+ anterior paralelizada en ocho threads de ejecución.
+ 
+\end_layout
+
+\begin_layout Description
+MatrixMultiplicationRenderScript es una versión implementada con RenderScript
+ , de modo que si el dispositivo tiene un GPU compatible con RenderScript,
+ éste lo ejecutará.
+ Por tal razón el tiempo de operación es mucho más rápida.
+ 
+\end_layout
+
+\begin_layout Description
+NativeMatrixMultiplication es una versión que usa JNI para que la multiplicación
+ se realice sobre código nativo desarrollado en lenguaje C++, el cual se
+ compila específicamente según cada arquitectura de CPU (Armeabi, x86, etc).
+ 
+\end_layout
+
+\begin_layout Description
+MatrixMultiplicationwithEigen versión que usa JNI para ejecutar la multiplicació
+n de matrices provista por la librería nativa Eigen.
+ 
+\end_layout
+
+\begin_layout Description
+MatrixMultiplicationwithOpenCV versión que usa JNI para ejecutar la multiplicaci
+ón a través de la librería OpenCV .
+ 
+\end_layout
+
+\begin_layout Standard
+Las entradas del problema utilizadas para la evaluación fueron generadas
+ aleatoriamente a partir de las dimensiones (tamaño) de las matrices involucrada
+s.
+ De cada problema, las propiedades que se tomaron en cuenta fueron: el número
+ de columnas de la primer matriz (‘AColumn’), el número de filas y el de
+ columnas de la segunda matriz (‘ARow’ y ‘BColumn’), la complejidad temporal
+ de la operación definida como O(AColumn x ARow x BColumn), el nombre del
+ componente y el tiempo de respuesta de la operación registrada en segundos.
+ 
+\end_layout
+
+\begin_layout Standard
+No fueron incluidos atributos relativos al dispositivo de ejecución, sin
+ embargo podrían considerarse propiedades como número de cores de CPU, cores
+ de GPU, frecuencia, etc.
+ ya que se piensa son buenos predictores de tiempo para algunos algoritmos.
+ 
+\end_layout
+
+\begin_layout Standard
+Los dataset bajo el nombre ‘Response time NxNxN - Samsung Galaxy S3’ y ‘Response
+ time NxNxN - Lenovo K3 Note’ se componen de 894 instancias lo cual comprende
+ un total de 149 entradas por cada uno de los seis componentes.
+ 
+\end_layout
+
+\begin_layout Standard
+Por otro lado, los dataset bajo el nombre de ‘Response time NxMxL - Sin
+ RenderScript component - Samsung Galaxy S3’ y ‘Response time NxMxL - Sin
+ RenderScript component - Lenovo K3 Note’ excluyen, la versión implementada
+ con RenderScript y comprenden 745 instancias.
+\end_layout
+
+\begin_layout Standard
+A continuación en la figura 5.8 se muestra el comportamiento del atributo
+ ‘Tiempo de respuesta’ de los dataset formados para este dominio, en referencia
+ a la imagen, A) Sin componente RenderScript en Lenovo K3, B) Sin componente
+ RenderScript en Samsung Galaxy S3, C) Todos los componentes en Lenovo K3
+ y D) Todos los componentes en Samsung Galaxy S3.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/matrix-dataset-behaviour.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comportamiento del atributo ‘Tiempo de respuesta’ para el problema de la
+ multiplicación de matrices.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:matrix-dataset-behaviour"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En todos los casos puede observarse una distribución exponencial de los
+ datos incluyendo valores extremos o infrecuentes.
+ Respecto a los valores de tiempo registrados, puede notarse a simple vista
+ que las pruebas ejecutadas en el dispositivo Lenovo K3 consumen menor tiempo
+ en contraste con el dispositivo Samsung Galaxy S3.
+ 
+\end_layout
+
+\begin_layout Standard
+Lo interesante de este escenario es que permite la creación de modelos simples,
+ por ejemplo, a partir de la técnica ‘Linear Regression’ que arroje los
+ mismos o mejores resultados que otras técnicas más complejas ya que entre
+ los términos de la función de predicción se expresa la complejidad del
+ algoritmo de matrices.
+ Incluso, se podrían usar técnicas específicas para cada componentes evaluando
+ y analizando el impacto sobre la predicción.
+ Por ejemplo, para el componente ‘Multiplicación MultiThread’ en la técnica
+ ‘Linear Regression’ puede considerarse el número de threads; para el componente
+ con RenderScript puede considerarse alguna característica propia del GPU
+ donde se ejecuta si implica alguna mejora en los resultados predictivos.
+ 
+\end_layout
+
+\begin_layout Section
+Resultados y discusión
+\end_layout
+
+\begin_layout Standard
+En esta sección final de la evaluación se agrupan los resultados para contrastar
+ los escenarios entre sí con el fin de determinar relaciones entre las técnicas,
+ el contexto o dominio en el que se aplican y el desempeño sobre los atributos
+ que predicen, esto es, si la técnica se ajusta más adecuadamente a un tipo
+ de atributo o a otro, a modo de inferir las conclusiones pertinentes.
+ Además, se analizan detalles sobre la performance del proceso de optimización
+ de las técnicas respecto al tiempo de cómputo que insumen y su relación
+ con el tamaño del dataset que procesa.
+ 
+\end_layout
+
+\begin_layout Subsection
+Resultados para el problema del viajante.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/response-TSP.png
+	scale 55
+	BoundingBox 0bp 0bp 596bp 619bp
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultados del atributo Tiempo de respuesta para el escenario ‘problema
+ del viajante’.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/precision-TPS.png
+	scale 55
+	BoundingBox 0bp 0bp 596bp 619bp
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultados del atributo precisión para el escenario ‘problema del viajante’.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Resultados para los servicios de detección de rostros.
+\end_layout
+
+\begin_layout Standard
+Durante el proceso de formación de los dataset, se consideró en primer medida,
+ la incorporación de variables sobre la imagen, como el tamaño, la intensidad
+ de color, entre otras.
+ Sin embargo, fueron descartadas en la versión final ya que no demostraron
+ influir sobre la precisión y el tiempo de respuesta al alcanzar un grado
+ de correlación por debajo de 0.05 entre las variables de la imagen y las
+ variables a predecir.
+ Sólo los parámetros de configuración con los que se invocan a la función
+ de detección de cada componente afectaron directamente al tiempo de respuesta
+ requerido por el servicio.
+ Los resultados de los modelos obtenidos para la predicción del atributo
+ ‘Tiempo de respuesta’ se exponen en el cuadro 5.X 
+\end_layout
+
+\begin_layout Standard
+Modelos Tiempo de respuesta
+\end_layout
+
+\begin_layout Subsection
+Resultados para los servicios de detección de rostros.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/response-face.png
+	scale 55
+	BoundingBox 0bp 0bp 596bp 619bp
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultados del atributo ‘Tiempo de respuesta’ para los servicios de detección
+ de rostros.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Resultados para el problema de la mochila.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/response-knapsack.png
+	scale 55
+	BoundingBox 0bp 0bp 596bp 619bp
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultados del atributo Tiempo de respuesta para el escenario ‘problema
+ de la mochila’.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/precision-knapsack.png
+	scale 55
+	BoundingBox 0bp 0bp 596bp 619bp
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultados del atributo precisión para el escenario ‘problema de la mochila’.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Resultados para el problema de la multiplicación de matrices.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/reponse-matrix.png
+	scale 55
+	BoundingBox 0bp 0bp 596bp 619bp
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultados del escenario ‘Multiplicación de matrices’
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

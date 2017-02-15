@@ -1,0 +1,2235 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\use_default_options true
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type numerical
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\author -28351556 "Alejandro Zunino,,," 
+\author 1188755597 "usuario" 
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Trabajos Relacionados
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Trabajos-Relacionados"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1188755597 1487110454
+El enfoque propuesto básicamente es un proceso de aprendizaje de máquina
+ que incluye una herramienta para recolectar mediciones de performance en
+ Android (y Java), y otra herramienta para entrenar y evaluar modelos de
+ predicción con diferentes técnicas de aprendizaje automático.
+ Por lo tanto, este capítulo se dividirá en dos secciones para describir
+ en la sección 3.1 un conjunto de herramientas sobre benchmarks en Android
+ y en la sección 3.2 se presentarán algunos trabajos ya realizados que llevan
+ a cabo la predicción de atributos a través de modelos.
+\change_unchanged
+
+\end_layout
+
+\begin_layout Section
+Herramientas de benchmarks para Android
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Herramientas-de-benchmarks-para-Android"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las herramientas de benchmarking han ido incrementando su popularidad ya
+ que ofrecen a los usuarios la posibilidad de analizar a fondo todos los
+ aspectos de un dispositivo android arrojando datos numéricos acerca de
+ la potencia, eficiencia y capacidad de los mismos.
+ La recolección y conocimiento de estas propiedades no funcionales son relevante
+s y necesarios al momento de determinar cuál dispositivo será el más adecuado
+ para satisfacer la carga de trabajo esperada.
+ A continuación se describen algunas herramientas de benchmarking.
+ 
+\end_layout
+
+\begin_layout Subsection
+Performance Monitors de Android 
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Performance-Monitors-de-Android "
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es una herramienta integrada en el ambiente de desarrollo “Android Studio”
+ y cuenta con varias sub herramientas que proveen información en tiempo
+ real sobre la aplicación, estos datos capturados se almacenan en archivos
+ para luego analizarlos en diferentes vistas.
+ ‘Android Monitor’ utiliza la Máquina Virtual (VM) del dispositivo o emulador
+ dependiendo de la versión del sistema Android, tal como se detalla en el
+ cuadro 3.1 
+\end_layout
+
+\begin_layout Subsubsection
+Propósito general 
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Propósito-general"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Un paso fundamental para lograr aplicaciones eficientes en batería es el
+ análisis de las fuentes de consumo de energía de los dispositivos.
+ Conocer qué componentes del dispositivo son los que mayor incidencia tienen
+ en el gasto energético
+\change_deleted -28351556 1387367755
+,
+\change_unchanged
+ es crucial para desarrollar aplicaciones eficientes en batería
+\change_deleted -28351556 1387367763
+, de cualquier tipo
+\change_unchanged
+.
+ En esta dirección,
+\change_inserted -28351556 1387367766
+ 
+\change_deleted -28351556 1387367766
+
+\begin_inset space ~
+\end_inset
+
+
+\change_unchanged
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Zhang2010,Carroll2010"
+
+\end_inset
+
+
+\change_deleted -28351556 1387367767
+ 
+\change_inserted -28351556 1387367767
+
+\begin_inset space ~
+\end_inset
+
+
+\change_unchanged
+explican cómo el display de un smartphone puede incidir significativamente,
+ usualmente variando en el rango de 0-0.5 W, dependiendo del nivel de brillo.
+ El procesador y las memorias también se encuentran entre los elementos
+ de mayor consumo, alcanzando niveles similares a los del display, encontrándose
+ linealmente relacionados con la carga, y cúbicamente relacionados con la
+ frecuencia
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Shye2009,Zhang2010"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Una tendencia que se presenta en los dispositivos actuales es la creciente
+ utilización de Internet.
+ Actualmente, muchos usuarios permanecen conectados de manera constante
+ a servicios de noticias, mails, redes sociales, etc.
+ En
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Balasubramanian2009"
+
+\end_inset
+
+ se analizan las tres tecnologías de comunicación más difundidas, 3G, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{GSM}
+\end_layout
+
+\end_inset
+
+ y Wi-Fi.
+ Por un lado, se identifica que las conexiones que emplean tecnologías 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{UTMS}
+\end_layout
+
+\end_inset
+
+ introducen un gasto adicional debido a que se mantienen en estados de alto
+ consumo, incluso habiendo completado la transferencia.
+ Este consumo realizado después de efectuar la transferencia, es denominado
+ 
+\shape italic
+tail energy
+\shape default
+.
+ En particular, para el caso de 3G, cuando se realizan ráfagas cortas el
+ desperdicio de energía puede llegar a ser el 60% del total.
+ Para el caso de Wi-Fi, la energía utilizada para asociarse es similar a
+ la desperdiciada por 3G, pero a diferencia de 
+\change_deleted -28351556 1387367827
+e
+\change_inserted -28351556 1387367828
+´e
+\change_unchanged
+ste, incurre en un gasto mucho menor en las trasferencias de datos.
+ Utilizando esta información, en
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Balasubramanian2009"
+
+\end_inset
+
+ se propone un protocolo de planificación denominado TailEnder, que organiza
+ las trasferencias con el objetivo de minimizar el consumo de energía.
+ Este análisis parte de la base de que la forma en la que son ejecutadas
+ las trasferencias
+\change_deleted -28351556 1387367847
+,
+\change_unchanged
+ influye en el consumo.
+ Por ejemplo, para el caso de aplicaciones que toleran una determinada demora,
+ es mejor realizar varias transferencias juntas, resultando en un único
+ desperdicio de energía al final de la transferencia, en contraposición
+ a realizarlas por separado y tener N
+\change_deleted -28351556 1387368369
+ 
+\change_inserted -28351556 1387368369
+
+\begin_inset space ~
+\end_inset
+
+
+\change_unchanged
+desperdicios de energía.
+ Por otra parte para aplicaciones que se benefician del prefetching, (una
+ técnica que consiste realizar predicciones y descargar información por
+ anticipado, en base al análisis de la consultas y los patrones de comportamient
+o de los usuarios, con el objetivo de reducir la demora en las respuestas),
+ TailEnder determina qué datos se deben seleccionar para el prefetch, minimizand
+o el consumo de energía.
+ Se realizan evaluaciones del mismo, utilizando tres casos principales:
+ servicios de noticias, email, y búsquedas web.
+ Los resultados arrojan una mejora con respecto al protocolo de planificación
+ por defecto de 3G, que van desde el 42% en el primer caso, un 35% para
+ el caso de aplicaciones de email, y finalmente, un 40% para el caso de
+ las búsquedas web.
+ 
+\end_layout
+
+\begin_layout Standard
+En
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Rice2010,Perrucci2009"
+
+\end_inset
+
+ se estudia el consumo energético de las redes 3G, 2G, y 802.11.
+ En el primer trabajo se comparan 3G versus 2G, utilizando algunos de los
+ servicios más comunes como 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SMS}
+\end_layout
+
+\end_inset
+
+, servicios de voz, y descarga de datos.
+ Se concluye que 2G insume un gasto menor que 3G para el caso de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SMS}
+\end_layout
+
+\end_inset
+
+ o servicios de voz.
+ Con respecto a las trasferencias de datos, 3G resulta ser superior, realizando
+ transferencias a mayor velocidad, y con menor consumo.
+ Para el caso de redes 802.11, en
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Rice2010"
+
+\end_inset
+
+ se mide la cantidad de energía necesaria para asociarse con un punto de
+ acceso utilizando direccionamiento 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{IP}
+\end_layout
+
+\end_inset
+
+ dinámico y estático, sobre el sistema operativo Android.
+ Los resultados indican que addressing estático consume cuatro veces menos
+ energía que su contraparte dinámica.
+ Con el objetivo de minimizar el costo de la asociación, se propone eliminar
+ la etapa 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ARP}
+\end_layout
+
+\end_inset
+
+ Probe del proceso, reduciendo el consumo de la alternativa dinámica cerca
+ de un 400%.
+ Por otra parte, se analiza el costo energético de las transmisiones, indicando
+ que la energía empleada para transmitir un byte no se comporta de manera
+ intuitiva a medida que se aumenta el tamaño de la transferencia en ciertos
+ dispositivos (G1 ,HTC Magic, HTC Hero), donde se identificó un aumento
+ abrupto en el consumo de energía cuando se envían paquetes de 8kb en adelante.
+ Sin embargo, en otros dispositivos (Nexus), la curva de consumo se comporta
+ intuitivamente, mostrando menor gasto de energía por byte, a medida que
+ aumenta el volumen de datos.
+ Finalmente se mide el impacto del tamaño del buffer de salida en el consumo.
+ A medida que el mismo aumenta, la energía empleada disminuye, concluyendo
+ en que el tamaño óptimo es el máximo permitido por el frame de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{TCP}
+\end_layout
+
+\end_inset
+
+ (1448 bytes).
+\end_layout
+
+\begin_layout Standard
+Tomando como punto de partida el análisis que se realiza en
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Balasubramanian2009"
+
+\end_inset
+
+, que indica que la forma en la que se realicen las transferencias influye
+ en el consumo de energía, surgen investigaciones que extienden la idea.
+ En
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Kelenyi2009"
+
+\end_inset
+
+ se presenta un cliente bit torrent para dispositivos con energía limitada.
+ El mismo organiza las diferentes trasferencias para lograr ráfagas de alta
+ velocidad en los intercambios de datos, minimizando el desperdicio de energía.
+ Los resultados indican una reducción en el consumo de hasta un 50% con
+ respecto a los clientes bit torrent convencionales.
+\end_layout
+
+\begin_layout Standard
+Por otra parte, existen investigaciones que estudian el desperdicio de energía
+ que puede generar el tráfico de red innecesario en las aplicaciones.
+ En
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Zhang2012"
+
+\end_inset
+
+ se presenta ADELE, una aplicación para detectar estos problemas.
+ El propósito de esta herramienta es principalmente asistir a los desarrolladore
+s para encontrar errores en el diseño o implementación de las aplicaciones
+ que realicen trasferencias de datos innecesarias, que no generan cambios
+ visibles por el usuario.
+ ADELE coloca 
+\shape italic
+tags
+\shape default
+ en los paquetes de red entrantes a la aplicación para poder rastrear si
+ los mismos realizan, directa, o indirectamente, algún cambio perceptible
+ por los usuarios.
+ Para lograr esto, ADELE mantiene un registro de los 
+\shape italic
+tags
+\shape default
+ entrantes, y genera o propaga nuevos 
+\shape italic
+tags
+\shape default
+ a partir de ellos, permitiendo realizar un seguimiento de los cambios que
+ puede originar un paquete.
+ Por ejemplo, si un paquete entrante cambia el valor de una variable, que
+ a su vez es combinada con otra para cambiar la posición de un objeto en
+ pantalla, se debe poder determinar qué paquete originó el movimiento del
+ componente en pantalla.
+ A través de la utilización de ADELE en 15
+\change_deleted -28351556 1387369593
+ 
+\change_inserted -28351556 1387369593
+
+\begin_inset space ~
+\end_inset
+
+
+\change_unchanged
+aplicaciones, se identifican cuatro categorías de problemas que causan desperdic
+ios de energía: mala utilización de los 
+\shape italic
+callback
+\shape default
+ de las APIs, actualización ineficiente de los datos que ignora el estado
+ de la aplicación y el dispositivo, descargas redundantes, y 
+\shape italic
+prefetching
+\shape default
+ agresivos.
+ Eliminar los tres primeros tipos de problema, reduce el consumo de energía
+ de las transmisiones de red alrededor de un
+\change_deleted -28351556 1387369605
+ 
+\change_inserted -28351556 1387369605
+
+\begin_inset space ~
+\end_inset
+
+
+\change_unchanged
+62.1%, mientras que mejorar el 
+\shape italic
+prefetching
+\shape default
+ reduce el consumo en aproximadamente un
+\change_deleted -28351556 1387369608
+ 
+\change_inserted -28351556 1387369608
+
+\begin_inset space ~
+\end_inset
+
+
+\change_unchanged
+52.7%.
+\end_layout
+
+\begin_layout Standard
+Sin embargo, a medida que las investigaciones se tornan más específicas,
+ los análisis indican que las contribuciones de los trabajos anteriormente
+ referenciados, son aún incipientes.
+ Las interdependencias entre las aplicaciones y las interacciones del usuario
+ con las mismas, también influyen en el consumo de batería.
+ Por ejemplo, existen usuarios que invierten gran cantidad de tiempo navegando
+ en Internet, con un gran intercambio de datos 3G.
+ Sin embargo, otros usuarios pasan la mayor parte del tiempo realizando
+ llamadas.
+ En este contexto, la aplicación de políticas estáticas para la asignación
+ de energía a las aplicaciones
+\change_deleted -28351556 1387369632
+,
+\change_unchanged
+ son poco efectivas.
+ En
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Vallina-Rodriguez2010"
+
+\end_inset
+
+ se plantea generar esquemas dinámicos de scheduling, basados en el comportamien
+to de cada usuario particular, que tengan en cuenta las interrelaciones
+ entre diferentes procesos, y las alteraciones que genera la interacción
+ con los mismos.
+\end_layout
+
+\begin_layout Standard
+En resumen, se presentaron estudios de c
+\change_inserted -28351556 1387369652
+ó
+\change_deleted -28351556 1387369648
+o
+\change_unchanged
+mo diferentes formas de realizar las transacciones de datos, pueden afectar
+ el desperdicio de energía.
+ También se identificó que las redes 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{UTMS}
+\end_layout
+
+\end_inset
+
+, en especial 3G, consumen gran cantidad de energía en las trasferencias
+ respecto de Wi-Fi.
+ Por último se presentó un estudio que analiza los desperdicios de energía
+ que generan las trasferencias de red innecesarias en las aplicaciones,
+ 
+\change_deleted -28351556 1387369735
+que
+\change_inserted -28351556 1387369735
+para
+\change_unchanged
+ asist
+\change_inserted -28351556 1387369738
+ir
+\change_deleted -28351556 1387369737
+e
+\change_unchanged
+ a los desarrolladores 
+\change_deleted -28351556 1387369745
+para
+\change_inserted -28351556 1387369745
+a
+\change_unchanged
+ encontrar posibles errores en la aplicación.
+ A continuación, se describen los avances específicos en el área de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SOC}
+\end_layout
+
+\end_inset
+
+, también haciendo énfasis en el rendimiento energético.
+\end_layout
+
+\begin_layout Subsubsection
+SOC 
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:SOC"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Con el gran crecimiento de Internet y el aumento del ancho de banda de las
+ conexiones hogareñas, la interacción con servicios externos es algo común
+ hoy en día.
+ En particular, los dispositivos móviles están interactuando constantemente
+ con servicios, a través de conexiones inalámbricas.
+ Por este motivo, surge la necesidad de investigar el ahorro de energía
+ para 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SOC}
+\end_layout
+
+\end_inset
+
+, especialmente en conjunción con estos dispositivos.
+ En
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Papageorgiou2012"
+
+\end_inset
+
+ se evalúan diferentes “invocation patterns”, variando parámetros como el
+ tiempo entre invocaciones, y si los servicios utilizan mecanismos de caché
+ o no.
+ Los resultados indican que el tiempo entre invocaciones es un factor determinan
+te en conexiones 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{UTMS}
+\end_layout
+
+\end_inset
+
+, con ahorros de energía de hasta un
+\change_deleted -28351556 1387370946
+ 
+\change_inserted -28351556 1387370946
+
+\begin_inset space ~
+\end_inset
+
+
+\change_unchanged
+50%.
+ Para redes Wi-Fi, el ahorro es menor, debido a que no se mantiene en estados
+ de alto consumo de energía después de haber completado la transferencia,
+ como en el caso de las redes 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{UTMS}
+\end_layout
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Balasubramanian2009"
+
+\end_inset
+
+.
+ Es importante resaltar que los resultados también indican que la utilización
+ de mecanismos de caché no es un factor realmente influyente en el consumo
+ de energía, al menos para pequeñas transferencias.
+\end_layout
+
+\begin_layout Standard
+Por otra parte, en
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Pilioura2005"
+
+\end_inset
+
+ se investiga la utilización de servicios sobre redes inalámbricas, analizando
+ las posibles restricciones que 
+\change_deleted -28351556 1387370964
+e
+\change_inserted -28351556 1387370968
+é
+\change_unchanged
+stas presentan, como disponibilidad y ancho de banda limitado.
+ Más específicamente, se presentan tres arquitecturas, dos para soportar
+ la invocación dinámica de servicios desde dispositivos móviles, y una para
+ proveer los servicios desde el propio dispositivo.
+ Se analizan tres alternativas, light-WS, fat-WS y WS-Provider.
+ Para el primer caso se presenta una arquitectura que introduce la utilización
+ de un proxy para disminuir el cómputo realizado en el dispositivo.
+ El problema de este enfoque es la centralización del servicio, que disminuye
+ la tolerancia a fallas y aumenta los cuellos de botella.
+ En el segundo caso el dispositivo móvil es el que interactúa directamente
+ con el directorio de servicios para realizar una búsqueda, y posteriormente
+ con el proveedor del servicio, planteando una arquitectura totalmente descentra
+lizada y tolerante a fallas, pero aumentando el cómputo necesario 
+\change_inserted -28351556 1387371010
+en 
+\change_unchanged
+el dispositivo.
+ Por último, se evalúa la alternativa en la cual el dispositivo móvil juega
+ el rol de proveedor de servicios, lo que introduce la necesidad de componentes
+ adicionales para enfrentar el problema de la disponibilidad, y la variación
+ en las direcciones 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{IP}
+\end_layout
+
+\end_inset
+
+ del mismo, producto de la movilidad.
+ Se realizan comparaciones con respecto a un servicio provisto por una PC
+ de escritorio que indican que el factor principal en la perdida de rendimiento
+ en la alternativa móvil, es producto de la constante actualización de las
+ diferentes direcciones del proveedor móvil.
+\end_layout
+
+\begin_layout Standard
+Adicionalmente, en
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Halteren2006"
+
+\end_inset
+
+ se describe una plataforma para proveer servicios desde dispositivos móviles,
+ sobre la base de Jini Surrogate Architecture Specification
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://svn.apache.org/repos/asf/river/jtsk/skunk/surrogate/refdocs/sa.pdf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+ En esta plataforma, un servicio posee un 
+\shape italic
+surrogate
+\shape default
+ que ejecuta en un servidor conectado a la red.
+ Con esta disposición, los clientes se comunican con el servicio a través
+ del 
+\shape italic
+surrogate
+\shape default
+, mientras que la 
+\change_deleted -28351556 1387372143
+comunicacion
+\change_inserted -28351556 1387372143
+comunicación
+\change_unchanged
+ entre el servicio y el 
+\shape italic
+surrogate
+\shape default
+ se realiza mediante 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HTTP}
+\end_layout
+
+\end_inset
+
+.
+ Este enfoque es similar al presentado en
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Pilioura2005"
+
+\end_inset
+
+ que propone la utilización de un proxy (en este caso el 
+\shape italic
+surrogate
+\shape default
+) para la invocación de servicios.
+ Aunque en es
+\change_deleted -28351556 1387372163
+t
+\change_unchanged
+e 
+\change_deleted -28351556 1387372165
+caso
+\change_inserted -28351556 1387372166
+trabajo
+\change_unchanged
+ se hace énfasis en proveer servicios desde el dispositivo, la misma idea
+ puede utilizarse para la invocación de los mismos.
+ Los 
+\shape italic
+surrogate
+\shape default
+ son adaptadores que permiten que dispositivos que no son compatibles con
+ Jini (ya sea porque no poseen máquina virtual Java o no incluyen las APIs
+ de Jini) puedan unirse a la red.
+ Sin embargo, también pueden reducir el cómputo realizado en el dispositivo,
+ ya que pueden delegarse operaciones computacionalmente costosas, o utilizar
+ mecanismos de caché, para reducir el gasto energético.
+ Finalmente se analizan algunos escenarios de aplicación, pero no se realiza
+ ningún estudio sobre la performance del enfoque propuesto.
+\end_layout
+
+\begin_layout Standard
+En la misma dirección,
+\change_inserted -28351556 1387372196
+ 
+\change_deleted -28351556 1387372196
+
+\begin_inset space ~
+\end_inset
+
+
+\change_unchanged
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Rendon2005"
+
+\end_inset
+
+
+\change_deleted -28351556 1387372198
+ 
+\change_inserted -28351556 1387372198
+
+\begin_inset space ~
+\end_inset
+
+
+\change_unchanged
+propone dos arquitecturas para consumir 
+\change_deleted -28351556 1387372207
+web services
+\change_inserted -28351556 1387372209
+servicios Web
+\change_unchanged
+ desde dispositivos móviles.
+ En las mismas se utiliza WSA
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.oracle.com/technetwork/java/wsa-139345.html
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ y 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SMS}
+\end_layout
+
+\end_inset
+
+ con el objetivo de abarcar tanto
+\change_deleted -28351556 1387372217
+,
+\change_unchanged
+ dispositivos de altas 
+\change_inserted -28351556 1387372223
+como de
+\change_deleted -28351556 1387372224
+o
+\change_unchanged
+ bajas prestaciones, respectivamente.
+ WSA proporciona un soporte básico para la invocación de servicios y el
+ 
+\shape italic
+parsing
+\shape default
+ de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{XML}
+\end_layout
+
+\end_inset
+
+.
+ Para que la aplicación pueda utilizar WSA se debe incluir un 
+\shape italic
+stub
+\shape default
+ que se genera utilizando una herramienta en la etapa de desarrollo, para
+ luego ser de
+\change_deleted -28351556 1387372247
+ployado
+\change_inserted -28351556 1387372249
+splegado
+\change_unchanged
+ en el dispositivo.
+ La aplicación puede entonces utilizar el 
+\shape italic
+stub
+\shape default
+ para parsear mensajes 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SOAP}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.w3.org/TR/soap/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ utilizando 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{JAXP}
+\end_layout
+
+\end_inset
+
+ y consumir servicios con 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{JAX-RPC}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://jcp.org/en/jsr/detail?id=224
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+ En contraposición, para acceder a los servicios utilizando 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SMS}
+\end_layout
+
+\end_inset
+
+ se utilizó un gateway que traduce mensajes en peticiones 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HTTP}
+\end_layout
+
+\end_inset
+
+ para conectarse con un servidor encargado de traducir peticiones 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HTTP}
+\end_layout
+
+\end_inset
+
+ en mensajes 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SOAP}
+\end_layout
+
+\end_inset
+
+, y viceversa.
+ Es importante aclarar que cada vez que se desea consumir un servicio diferente
+ es necesaria la modificación de código y la reconfiguración tanto para
+ el caso de WSA, como para 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SMS}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Luqun2004"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+también presenta dos arquitecturas para la invocación de servicios desde
+ dispositivos móviles.
+ Por un lado se estudia la invocación directa, manteniendo el esquema clásico
+ de aplicaciones orientadas a servicios, donde participan el servidor de
+ registro o broker, el consumidor y el proveedor.
+ El acceso a los servicios se realiza mediante la biblioteca KSOAP
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://ksoap2.sourceforge.net/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+ En el segundo caso, se introduce un componente intermedio que actúa de
+ proxy o gateway, cumpliendo el rol de consumidor en el esquema clásico,
+ y de intermediario entre el dispositivo y los proveedores.
+ Esta arquitectura también es similar a la que se describe en
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Pilioura2005"
+
+\end_inset
+
+, planteando la utilización de un proxy para la invocación de servicios.
+ La ventaja principal de este enfoque es que se pueden delegar tareas computacio
+nalmente costosas para reducir el consumo de energía, e incluso, mejorar
+ los tiempos de respuesta.
+ Los resultados de las pruebas arrojan que la utilización de un gateway
+ puede mejorar hasta en un 100% la latencia en la respuesta del servicio.
+\end_layout
+
+\begin_layout Standard
+En
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Artail2012"
+
+\end_inset
+
+ se extiende el enfoque indirecto presentado en
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Luqun2004"
+
+\end_inset
+
+ y se estudia otra alternativa para la invocación dinámica de servicios.
+ Se introduce un servidor 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MIM}
+\end_layout
+
+\end_inset
+
+ que realiza las operaciones de descubrimiento y generación dinámica del
+ proxy, disminuyendo el costo computacional y minimizando el tráfico de
+ red necesario en el dispositivo.
+ El mismo provee un servicio que toma como parámetro una cadena de caracteres
+ y la procesa, descargando los documentos en formato 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{WSDL}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.w3.org/TR/wsdl
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ correspondientes al conjunto de servicios que mejor se corresponda con
+ el criterio de búsqueda.
+ Luego, se analizan los documentos 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{WSDL}
+\end_layout
+
+\end_inset
+
+ candidatos con el objetivo de seleccionar el que mejor correlación tiene
+ con la cadena de búsqueda, respondiendo al cliente con la estructura del
+ método seleccionado.
+ El cliente adapta su 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{GUI}
+\end_layout
+
+\end_inset
+
+ para presentar al usuario los parámetros necesarios para la invocación
+ del servicio.
+ En paralelo, utilizando el documento 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{WSDL}
+\end_layout
+
+\end_inset
+
+ se genera y compila el proxy, para luego ser enviado al dispositivo.
+ La ventaja principal de este enfoque, es que se delegan operaciones que
+ requieren gran cantidad de poder de procesamiento, como la generación de
+ código y compilación en tiempo de ejecución para generar el proxy, minimizando
+ el costo energético de realizar la invocación dinámica desde el dispositivo.
+ Es importante aclarar que para mejorar el rendimiento, también se introduce
+ un mecanismo de cache en el servidor 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MIM}
+\end_layout
+
+\end_inset
+
+, con el propósito de reducir las transferencias de red producto de la descarga
+ de documentos 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{WSDL}
+\end_layout
+
+\end_inset
+
+.
+ Con este esquema, se lograron ahorros de hasta
+\change_deleted -28351556 1387393040
+ 
+\change_inserted -28351556 1387393040
+
+\begin_inset space ~
+\end_inset
+
+
+\change_unchanged
+10J, suficiente para atender hasta 80
+\change_deleted -28351556 1387393043
+ 
+\change_inserted -28351556 1387393043
+
+\begin_inset space ~
+\end_inset
+
+
+\change_unchanged
+peticiones adicionales.
+\end_layout
+
+\begin_layout Standard
+Es importante destacar que las invocaciones de servicios no son el único
+ factor que afecta el consumo de energía.
+ Para utilizar un servicio, muchas veces es necesario encontrarlo utilizando
+ algún protocolo para el descubrimiento de servicios (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{UDDI}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{UPnP}
+\end_layout
+
+\end_inset
+
+, JINI, etc.).
+ En este sentido,
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Charlet2008"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+estudia el impacto que tienen estos protocolos en el gasto de energía, combinado
+s con las distintas opciones de comunicación de los dispositivos (Wi-Fi,
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{GPRS}
+\end_layout
+
+\end_inset
+
+, Bluethooth), para poder determinar qué interfaces de comunicación se adaptan
+ mejor a cada etapa en el proceso de ejecución de un servicio (anuncio,
+ descubrimiento, consumo) buscando minimizar la energía empleada en cada
+ una de ellas y analizando las incompatibilidades con los diferentes protocolos
+ de descubrimiento.
+ Se propone la utilización de Bluethooth para el descubrimiento, y Wi-Fi
+ para el consumo de servicios.
+ El problema es que no siempre los protocolos, o la red, permiten que ambas,
+ o alguna de ellas estén disponibles.
+\end_layout
+
+\begin_layout Standard
+Sin embargo, las cuestiones presentadas en las investigaciones anteriormente
+ 
+\change_deleted -28351556 1387394032
+referenciadas
+\change_inserted -28351556 1387394034
+mencionadas
+\change_unchanged
+, no son los únicos factores que afectan el consumo energético de los dispositiv
+os.
+ En las últimas décadas, con el furor de los dispositivos móviles, se vuelve
+ importante la adaptabilidad de los servicios en las diferentes plataformas.
+ La conexión que ofrecen estos dispositivos es inalámbrica, con lo cual
+ surgen ciertos parámetros adicionales que deben ser estudiados, como la
+ disponibilidad del servicio, la posición, las características del dispositivo,
+ etc.
+ Esto conduce a pensar que la respuesta de un servicio se debería adaptar
+ a estos parámetros.
+ Por ejemplo, si se considera el pronóstico del tiempo, el mismo podría
+ variar dependiendo de la posición donde el dispositivo móvil que invoca
+ se encuentre.
+ También es necesario considerar que la respuesta de un servicio probablemente
+ no sea la misma para un dispositivo móvil, con una pantalla pequeña, que
+ para una PC de escritorio.
+ Así, en
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Ortiz2010"
+
+\end_inset
+
+ se plantea una metodologia 
+\shape italic
+model-driven
+\shape default
+ que permite de manera transparente, mediante la utilización de información
+ opcional en los headers 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SOAP}
+\end_layout
+
+\end_inset
+
+ y técnicas de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{AOP}
+\end_layout
+
+\end_inset
+
+, que la respuesta de un servicio varíe dependiendo del dispositivo, sin
+ que los consumidores del mismo tengan que preocuparse por manejar las múltiples
+ posibles respuestas a nivel aplicación cliente.
+ Esto permite que un servicio no s
+\change_inserted -28351556 1387394910
+ó
+\change_deleted -28351556 1387394909
+o
+\change_unchanged
+lo se adapte en términos de usabilidad, sino que también permita, por ejemplo,
+ variar parámetros como el tamaño de la trasferencia de datos (reduciendo
+ el tamaño de las imágenes, enviando menor cantidad de información, etc.),
+ con el objetivo de reducir el consumo energético.
+\end_layout
+
+\begin_layout Standard
+Hasta ahora, se estudiaron trabajos que apuntan a disminuir el consumo de
+ energía de los componentes de software del dispositivo, ya sean de aplicación
+ general, o específicos de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SOC}
+\end_layout
+
+\end_inset
+
+.
+ En esta última, se proponen avances, principalmente, mediante la utilización
+ de proxys para reducir el cómputo realizado.
+ Por otra parte, también se presentaron estudios que indican que el orden
+ en el que se realizan las llamadas a los servicios también afecta el consumo.
+ Finalmente, se 
+\change_deleted -28351556 1387394946
+exhibieron
+\change_inserted -28351556 1387394948
+discutieron
+\change_unchanged
+ investigaciones que analizan que interfaces se comportan mejor para realizar
+ operaciones de descubrimiento y consumo de servicios, concluyendo que Bluethoot
+h es la mejor alternativa para el primer caso, y Wi-Fi para el segundo.
+ En la siguiente sección se presenta otra alternativa para disminuir la
+ energía empleada, permitiendo delegar la ejecución de ciertas porciones
+ de código a otros dispositivos.
+ Esta alternativa, ha dado lugar a numerosos trabajos, los cuales se describen
+ a continuación.
+\end_layout
+
+\begin_layout Subsection
+Offloading 
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Offloading"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La evolución constante de los dispositivos móviles ha llevado a que los
+ usuarios esperen que las aplicaciones sean ejecutadas con la misma performance
+ que en otros dispositivos tales como computadoras personales.
+ Sin embargo, como ya se mencionó anteriormente, los dispositivos móviles
+ cuentan con recursos limitados, lo que presenta un desafío importante.
+ Entonces, una solución muy utilizada por la comunidad de desarrolladores
+ es la de delegar la ejecución de algunas partes de código a otros dispositivos
+ no móviles
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Mohsen2011"
+
+\end_inset
+
+.
+ También se puede utilizar esta técnica para lograr una reducción en el
+ consumo energético por parte de las aplicaciones móviles intensivas.
+\end_layout
+
+\begin_layout Standard
+Si bien el uso de Cloud Computing
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Buyya2013"
+
+\end_inset
+
+ se ha presentado como una opción a la hora de delegar la ejecución de las
+ tareas por parte de los dispositivos móviles, se presentan una serie de
+ problemas que se describen a continuación.
+ Primero, generalmente debe pagarse por el uso de los servicios de los Clouds.
+ Adicionalmente, para utilizar estos servicios los dispositivos móviles
+ deben realizar transferencias de datos adicionales, creando un trade-off
+ entre el costo energético de realizar el cómputo en el dispositivo, o de
+ manera remota.
+ Asimismo, las conexiones 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{UTMS}
+\end_layout
+
+\end_inset
+
+ poseen gran consumo de energía, un escaso ancho de banda y altas latencias
+ en comparación con otros tipos de conexiones.
+\end_layout
+
+\begin_layout Standard
+Además, es necesario analizar en qué situaciones es razonable utilizar offloadin
+g.
+ Esto puede realizarse evaluando, por ejemplo, el tiempo de ejecución de
+ la tarea.
+ En este caso una tarea es una porción de código que puede ser ejecutada
+ en otro dispositivo.
+ Por ejemplo, si consideramos el Gomoku
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://en.wikipedia.org/wiki/Gomoku
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, una tarea podría ser el algoritmo de inteligencia artificial que se utiliza
+ cuando se desea jugar contra la máquina.
+ También podría ser la lógica entera del juego, manteniendo en los clientes
+ solo las interfaces.
+ Adicionalmente, existen implementaciones del mismo que ponen en práctica
+ estas cuestiones
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+https://code.google.com/p/dpartner/wiki/Partitioning_Gomoku
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+ Es importante tener en cuenta que la granularidad y el costo computacional
+ de la tarea es un factor determinante a la hora de decidir si es conveniente
+ realizar el cómputo en otro dispositivo.
+ Para evaluar esto, es necesario tener en cuenta el tiempo de ejecución
+ de la tarea
+\begin_inset space ~
+\end_inset
+
+(
+\emph on
+TE
+\emph default
+), la cantidad de datos y código a transmitir
+\begin_inset space ~
+\end_inset
+
+(
+\emph on
+DT
+\emph default
+), la cantidad de bytes recibidos como resultado
+\begin_inset space ~
+\end_inset
+
+(
+\emph on
+DR
+\emph default
+), el ancho de banda de transmisión
+\begin_inset space ~
+\end_inset
+
+(
+\emph on
+AB
+\emph default
+) y el ancho de banda de la red de recepción
+\begin_inset space ~
+\end_inset
+
+(
+\emph on
+BR
+\emph default
+).
+ Entonces, se obtiene 
+\begin_inset Formula $T_{offloading}=DT/AB+DR/BR+TE$
+\end_inset
+
+ y el offloading es conveniente cuando el tiempo de ejecución en el dispositivo
+ móvil es mayor al calculado anteriormente
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Mohsen2011"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+En los siguientes párrafos se presenta una breve introducción a diversos
+ trabajos relacionados con offloading.
+ Estos trabajos brindan propuestas concretas para la realización de esta
+ técnica en la práctica.
+ 
+\end_layout
+
+\begin_layout Standard
+En
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Flinn2002"
+
+\end_inset
+
+ se presenta Spectra, una de las primeras propuestas centrada en la reducción
+ de la latencia y el consumo de energía.
+ Spectra propone una función para estimar los recursos necesarios para ejecutar
+ una aplicación.
+ Esta función efectúa un seguimiento del comportamiento de la aplicación,
+ mide el consumo de recursos y utiliza un modelo de regresión lineal de
+ la demanda de recursos junto con los parámetros de entrada para la predicción
+ de las demandas futuras.
+ Para medir el consumo de energía de cada tarea, Spectra monitorea el nivel
+ de la batería antes y después de la ejecución.
+ Por lo tanto, si algunas tareas se ejecutan en paralelo, Spectra debe desechar
+ los datos recolectados aumentando el tiempo requerido para alcanzar una
+ buena estimación sobre el consumo de energía de cada tarea.
+ Todos los comandos utilizados para la comunicación con la aplicación deben
+ estar incorporados en el código de la misma, lo que introduce la desventaja
+ de la modificación de código a la hora de realizar cambios en los mismos.
+\end_layout
+
+\begin_layout Standard
+Chroma
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Balan2007,Balan2002"
+
+\end_inset
+
+ intenta mejorar Spectra mediante la reducción de carga para los desarrolladores.
+ El usuario define una función de utilidad para cada tarea que describe
+ el peso de cada factor (velocidad de CPU y energía por ejemplo) para la
+ toma de decisiones por Chroma.
+ Para elegir entre las tácticas, Chroma utiliza una función de utilidad
+ fija con el mismo peso de la fidelidad y la latencia, pero no tiene en
+ cuenta el consumo de batería.
+ Por lo tanto, se usa una táctica que maximiza la tasa de fidelidad/latencia.
+ Al igual que en el caso de Spectra, Chroma utiliza un enfoque basado en
+ la historia para predecir la demanda futura de recursos
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Balan2007,Balan2002"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Goyal y Carter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Goyal2004"
+
+\end_inset
+
+ utilizan un esquema de máquina virtual y presentan un sistema para aumentar
+ el rendimiento y reducir el consumo de energía, siendo necesaria una conexión
+ a Internet.
+ El mismo cuenta con un servidor de descubrimiento de servicios.
+ Cuando un dispositivo móvil tiene la intención de utilizar el sistema envía
+ una solicitud al servidor de descubrimiento y recibe la dirección
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{IP}
+\end_layout
+
+\end_inset
+
+ y número de puerto de un servidor apropiado.
+ A continuación, el dispositivo móvil solicita un servidor virtual con garantías
+ específicas de recursos para realizar la tarea.
+\end_layout
+
+\begin_layout Standard
+Slingshot
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Su2005"
+
+\end_inset
+
+, al igual que el caso anterior, es un sistema basado en máquinas virtuales.
+ En este caso, el dispositivo móvil y los servidores deben estar conectados
+ a Internet.
+ Se supone que un servidor doméstico fiable siempre es accesible a través
+ de Internet y, en caso de no estarlo, hay un sustituto en la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{LAN}
+\end_layout
+
+\end_inset
+
+.
+ Al ejecutar una tarea intensiva computacionalmente, Slingshot envía la
+ tarea al servidor principal y todos sus sustitutos disponibles.
+ Luego, se utiliza la respuesta obtenida más rápidamente.
+\end_layout
+
+\begin_layout Standard
+MAUI realiza offloading de baja granularidad, es decir, métodos de una tarea,
+ para reducir el consumo de energía de los dispositivos móviles
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Cuervo2010"
+
+\end_inset
+
+.
+ Su funcionamiento se basa en proporcionar un grafo de los métodos de programa
+ y dividirlos dependiendo de si la ejecución es local o remota.
+ En el lado del dispositivo móvil, MAUI consta de tres módulos, una interfaz
+ a la unidad de decisión que reside en el lado del servidor, un proxy que
+ es responsable de controlar un método candidato para el offloading, y un
+ 
+\shape italic
+profiler
+\shape default
+ que recoge la información acerca de la energía y los datos necesarios.
+ MAUI utiliza un modelo lineal del consumo de energía y un enfoque basado
+ en la historia para predecir el tiempo de ejecución de las tareas.
+\end_layout
+
+\begin_layout Standard
+Scavenger, presentado en
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Kristensen2010"
+
+\end_inset
+
+, es un sistema centrado en el aumento de la potencia del CPU de los dispositivo
+s móviles y la disminución de la latencia del tiempo de respuesta de la
+ aplicación.
+ Scavenger presenta un 
+\shape italic
+profiler
+\shape default
+ de doble enfoque adaptativo que se basa en estimar el tiempo de ejecución
+ de la aplicación conforme al tamaño de la entrada y la arquitectura utilizada
+ para la ejecución.
+ En el lado servidor está el Scavenger front-end que se comunica con el
+ dispositivo móvil a través de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{RPC}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://en.wikipedia.org/wiki/Remote_procedure_call
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+AIOLOS
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Verbelen20122629"
+
+\end_inset
+
+ es un 
+\shape italic
+middleware
+\shape default
+ para plataformas Android.
+ AIOLOS utiliza un modelo de estimación de los tiempos de ejecución que
+ tiene en cuenta los recursos del servidor y el estado de la red para decidir
+ en tiempo real si una tarea debe ser realizada o no en el móvil.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Verbelen20122629"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+también presenta las herramientas de desarrollo para integrar AIOLOS en
+ la plataforma Android, facilitando el desarrollo de aplicaciones.
+\end_layout
+
+\begin_layout Standard
+Habiéndose presentado algunas de las soluciones más relevantes en cuanto
+ a técnicas de offloading para dispositivos móviles, se describen algunos
+ problemas comunes que aparecen a la hora de intentar reducir el costo de
+ ejecución de tareas en dispositivos móviles.
+ En primer lugar, debe tenerse una buena estimación de los costos de las
+ ejecuciones tanto locales como remotas para tomar la decisión de realizar
+ o no el offloading de una tarea.
+ Como se mostró, todos los trabajos mencionados utilizan un componente decisorio
+ basado en la historia para realizar predicciones.
+ Entonces, las predicciones para las primeras ejecuciones nunca resultan
+ del todo precisas.
+ Adicionalmente, mantener estos registros en los dispositivos móviles puede
+ llevar a colapsar su sistema de almacenamiento a causa de la gran cantidad
+ de información histórica.
+ Para solucionar este último problema, algunos sistemas como Scavenger utilizan
+ un sistema de caché y desalojo.
+ Finalmente, se tiene otro problema que es el que se presenta cuando una
+ tarea posee una amplia gama de valores de entrada y no se considera el
+ efecto de introducir estos datos en el cálculo de costos de la ejecución
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Mohsen2011"
+
+\end_inset
+
+.
+ Estas cuestiones plantean que deben considerarse las grandes dificultades
+ que pueden surgir a la hora de utilizar el offloading como técnica para
+ la reducción del consumo de batería.
+\end_layout
+
+\begin_layout Section
+Conclusiones 
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Conclusiones"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En este capítulo se discutieron los trabajos más relevantes en cuanto al
+ problema del ahorro de energía en dispositivos móviles.
+ Inicialmente se presentaron trabajos que buscaban reducir el consumo energético
+ con foco en el dispositivo, distinguiéndose dos categorías: de propósito
+ general y específicas de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SOC}
+\end_layout
+
+\end_inset
+
+.
+ La literatura relevada indica que se existen técnicas para ordenar inteligentem
+ente las transacciones de datos del dispositivo, con el objetivo de minimizar
+ el consumo.
+ También se ha analizado el impacto de las transferencias en redes 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{UTMS}
+\end_layout
+
+\end_inset
+
+, y el consumo de energía generado por redes 802.11.
+ Adicionalmente se han expuesto políticas de planificación dinámicas para
+ dar prioridad a las aplicaciones más utilizadas por el usuario, disminuyendo
+ el desperdicio de batería.
+ Por otra parte, en lo que refiere a estudios específicos de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SOC}
+\end_layout
+
+\end_inset
+
+, extendiendo la idea de la importancia en el orden de las trasferencias
+ de datos, se ha analizado cómo diferentes patrones de invocación afectan
+ el consumo.
+ Mientras que, por otro lado, se plantean arquitecturas que proponen la
+ utilización de proxys para disminuir la energía empleada en la invocación.
+ 
+\end_layout
+
+\begin_layout Standard
+Apartándose de la perspectiva local al dispositivo, surgen técnicas de 
+\shape italic
+offloading
+\shape default
+ que proponen reducir el cómputo realizado en el dispositivo, mediante la
+ ejecución de diferentes partes de código en otros dispositivos no móviles.
+ El eje de las investigaciones de esta categoría es una cota que indica
+ cuándo se vuelve eficiente aplicar este tipo de técnicas dependiendo del
+ tamaño del cómputo en cuestión.
+ 
+\end_layout
+
+\begin_layout Standard
+Por otra parte, a pesar de la gran cantidad de investigaciones recientes
+ en el área, no se examinan las posibles implicancias de las adaptaciones
+ en los tipos de datos necesarias para consumir un servicio.
+ Actualmente, la gran mayoría de los Servicios Web están implementados mediante
+ la utilización del protocolo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SOAP}
+\end_layout
+
+\end_inset
+
+.
+ Esto plantea la necesidad de analizar detalladamente las posibles mejoras
+ en el gasto energético que estos generan.
+ En este trabajo se presenta un análisis de las consecuencias de las diferentes
+ adaptaciones, y se estudia una alternativa que permite comparar el costo
+ de las mismas, posibilitando en un futuro, seleccionar un servicio de entre
+ varios candidatos que proveen similar funcionalidad teniendo en cuenta
+ del costo de energía necesario para consumirlo.
+\end_layout
+
+\begin_layout Standard
+En el siguiente capítulo se presentan los objetivos de este trabajo.
+ También se exhibe el modelo formal de estimaciones del costo energético
+ de los 
+\shape italic
+mashup
+\shape default
+ de servicios, siendo este el tema central de este trabajo.
+ Adicionalmente se describe el contexto que este modelo considera como punto
+ de partida para realizar las estimaciones.
+\end_layout
+
+\end_body
+\end_document

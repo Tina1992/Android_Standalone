@@ -1,0 +1,1039 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\begin_preamble
+\usepackage{multirow}
+\usepackage{multicol} 
+\usepackage{colortbl}
+\usepackage[printonlyused]{acronym}
+\usepackage{pslatex}
+\usepackage{txfonts}
+\usepackage[small,bf]{caption}
+\usepackage{acronym}
+\usepackage{mathpazo}
+\usepackage{listings}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage[Lenny]{fncychap}
+\usepackage{fancyhdr}
+\lstloadlanguages{Java}
+\restylefloat{algorithm}
+\floatstyle{plain}
+\definecolor{gray}{gray}{0.7}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type numerical
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\lang spanish
+Universidad Nacional del Centro de la Provincia De Buenos Aires
+\begin_inset Newline newline
+\end_inset
+
+Facultad de Ciencias Exactas - Departamento de Computación y Sistemas
+\begin_inset Newline newline
+\end_inset
+
+Ingeniería de Sistemas
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\lang spanish
+\begin_inset Graphics
+	filename images/unicen.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+\begin_inset VSpace 1.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size huge
+\lang spanish
+Técnicas de aprendizaje para predecir atributos no funcionales en componentes
+ de aplicaciones Android
+\size default
+
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+\lang spanish
+por
+\begin_inset Newline newline
+\end_inset
+
+
+\size larger
+Agüero, Silvana
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size larger
+\lang spanish
+Minvielle, Martina
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size larger
+\lang spanish
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+Director: Dr.
+ Alejandro Zunino 
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size larger
+\lang spanish
+Co-Director: Ing.
+ Emiliano Sanchez
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\lang spanish
+Trabajo final de carrera presentado como requisito parcial
+\begin_inset Newline newline
+\end_inset
+
+para optar por el título de
+\begin_inset Newline newline
+\end_inset
+
+Ingeniera de Sistemas
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+\lang spanish
+Tandil, Marzo de 2017
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{Resumen}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+Resumen
+\end_layout
+
+\begin_layout Standard
+Durante los últimos años el desarrollo de aplicaciones en sistemas Android
+ ha ido creciendo exponencialmente debido a la gran capacidad de cómputo
+ que han adquirido los dispositivos móviles, haciendo que la reutilización
+ de software mediante la integración de componentes de terceros se torne
+ una práctica muy común.
+ De este modo la misma funcionalidad suele ser ofrecida por componentes
+ alternativos que difieren en sus propiedades no-funcionales o atributos
+ de calidad, componentes con sus propias características, limitaciones y
+ prestaciones, simplemente “cajas negras” a la vista del desarrollador.
+ Por lo tanto, la elección del servicio más adecuado para ejecutarse en
+ un determinado contexto, no es tarea sencilla.
+ 
+\end_layout
+
+\begin_layout Standard
+Las limitaciones de hardware de los dispositivos móviles hace incapaz la
+ ejecución o prueba de todos los servicios para determinar, luego, el más
+ adecuado de acuerdo a su calidad de servicio y a la funcionalidad requerida.
+ En este punto, es donde toma importancia el proceso de aprendizaje automático.
+ 
+\end_layout
+
+\begin_layout Standard
+A través de la aplicación de modelos predictivos basados en la experiencia,
+ es posible determinar el servicio que más satisface las condiciones del
+ entorno, en base a un conjunto de restricciones del contexto de ejecución,
+ a un conjunto de características de entrada y un conjunto de servicios
+ que ofrecen la misma funcionalidad.
+ Ya que estas condiciones o necesidades varían, el objetivo del aprendizaje
+ de máquina es el desarrollo de sistemas que puedan cambiar su comportamiento
+ (decisión) de manera autónoma basados en su experiencia (información generaliza
+da).
+ El aprendizaje de máquina está principalmente centrado en el estudio de
+ la complejidad computacional y enfocado en el diseño de soluciones factibles
+ a esos problemas.
+ 
+\end_layout
+
+\begin_layout Standard
+El presente trabajo presenta un enfoque basado en tres fases complementarias
+ y se proponen dos herramientas diseñadas para cumplir con los objetivos
+ de las dos primeras fases.
+ De este modo, se expone una herramienta de medición que facilita la obtención
+ de indicadores de propiedades de componentes Android y otra herramienta
+ que propone diferentes técnicas de regresión sobre las mediciones obtenidas
+ previamente.
+ Así, se logra construir modelos predictivos sobre alguna propiedad de interés
+ de algún componente específico.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+\begin_inset Newpage newpage
+\end_inset
+
+
+\lang american
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{Agradecimientos}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+
+\lang spanish
+Agradecimientos
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+\begin_inset Newpage newpage
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{Índice de Figuras}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+\begin_inset FloatList figure
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang american
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang american
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{Índice de Cuadros}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+\begin_inset FloatList table
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{Glosario}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagestyle{plain}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+
+\lang spanish
+Glosario
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{acronym}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{ADB}{Android Debug Bridge}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{ART}{Android Runtime}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{API}{Application Programmatic Interface}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{CPU}{Central Processing Unit}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{DVM}{Dalvik Virtual Machine}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{EPM}{Empirical Performance Model}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{FTP}{File Transfer Protocol}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{GC}{Garbage Collector}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{GLMM}{Generalized Linear Mixed Models}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{GPU}{Graphics Processor Unit}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{HTTP}{Hypertext Transfer Protocol}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{HTTPS}{Hypertext Transfer Protocol Secure}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{IDE}{Integrated Development Environment}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{iOS}{Iphone Operating System}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{JAR}{Java ARchive}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{Java SE}{Java Standard Edition}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{Java ME}{Java Micro Edition}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{JDBC}{Java Database Connectivity}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{JDK}{Java Development Kit}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{JMH}{Java Microbenchmark Harness}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{JMS}{Java Message Service}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{JNI}{Java Native Interface}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{JRE}{Java Runtime Environment}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{JSON}{JavaScript Object Notation}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{JVM}{Java Virtual Machine}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{LDAP}{Lightweight Directory Access Protocol}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{MARS}{Multivariate Adaptive Regression Splines}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{MLP}{MultiLayer Perceptron}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{POP3}{Post Office Protocol}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{SQL}{Structured Query Language}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{UML}{Unified Modeling Language}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{acronym}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang american
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mainmatter
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+thepage{
+\backslash
+arabic{page}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{page}{1}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagestyle{fancy}  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fancyhead{}  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fancyhead[RO]{
+\backslash
+rightmark} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fancyhead[LE]{
+\backslash
+leftmark}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acresetall
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+\begin_inset CommandInset include
+LatexCommand include
+filename "ch01/ch01.lyx"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acresetall
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+\begin_inset CommandInset include
+LatexCommand include
+filename "ch02/ch02.lyx"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acresetall
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand include
+filename "ch03/ch03.lyx"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acresetall
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+\begin_inset CommandInset include
+LatexCommand include
+filename "ch04/ch04.lyx"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acresetall
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand include
+filename "ch05/ch05.lyx"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acresetall
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand include
+filename "ch06/ch06.lyx"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acresetall
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang american
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "Bibliograf-ía"
+options "bibtotoc,plainnat"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang american
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acresetall
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\start_of_appendix
+
+\lang spanish
+\begin_inset CommandInset include
+LatexCommand include
+filename "appendix/appendixA.lyx"
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand include
+filename "appendix/appendixB.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

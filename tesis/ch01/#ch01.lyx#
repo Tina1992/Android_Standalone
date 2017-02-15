@@ -1,0 +1,416 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\use_default_options true
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Introducción
+\end_layout
+
+\begin_layout Standard
+En los últimos años las aplicaciones móviles se han puesto en el centro
+ de la escena debido a la proliferación de los dispositivos móviles y su
+ creciente capacidad de cómputo y almacenamiento 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Zunino2011"
+
+\end_inset
+
+.
+ Estos dispositivos pasaron de ser terminales con capacidades limitadas,
+ generalmente de propósito específico, como agendas electrónicas o teléfonos
+ celulares, a ser pequeñas computadoras de propósito general con grandes
+ capacidades de procesamiento, almacenamiento y acceso a Internet, como
+ tablets y smartphones.
+ 
+\end_layout
+
+\begin_layout Standard
+Los dispositivos móviles de hoy en día utilizan sistemas operativos similares
+ a las computadoras personales, como Android y iOS.
+ Por lo tanto, pueden ejecutar software al que hace unos años atrás solo
+ se encontraba en dichas computadoras.
+ Esto, sumado a su costo accesible, pequeño tamaño, movilidad y ubicuidad
+ de las conexiones móviles de alta velocidad, ha impulsado el desarrollo
+ de las aplicaciones móviles para una amplia variedad de fines, incluyendo
+ entretenimiento, juegos, comunicaciones, redes sociales, comercio electrónico,
+ turismo, educación, y mucho más.
+ 
+\end_layout
+
+\begin_layout Standard
+Para reducir los costos y tiempos de desarrollo, es común la reutilización
+ de software mediante la integración de componentes de terceros.
+ Un componente 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Petritsch2016"
+
+\end_inset
+
+ es una entidad de software en tiempo de ejecución que encapsula un servicio,
+ es decir, un conjunto de funciones y datos, a través de una interfaz específica
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{API}
+\end_layout
+
+\end_inset
+
+.
+ Los componentes se pueden clasificar de acuerdo al ambiente en el que residen
+ durante su ejecución, distinguiéndose así aquellos que se ejecutan en nodos
+ remotos, como los denominados Servicios Web 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Addison2003"
+
+\end_inset
+
+, de aquellos que residen en el dispositivo, como procesos en segundo plano,
+ bibliotecas de enlace dinámico, o simples objetos Java.
+ 
+\end_layout
+
+\begin_layout Standard
+Las funcionalidades que implementan estos componentes buscan satisfacer
+ las necesidades comunes de muchas aplicaciones, como el procesamiento de
+ texto e imágenes, almacenamiento de datos en la nube, identificación de
+ usuarios, algoritmos de optimización, etc.
+ La misma funcionalidad suele ser ofrecida por componentes alternativos
+ que difieren en sus propiedades no-funcionales o atributos de calidad [4].
+ Estas propiedades son los aspectos que utilizan los desarrolladores para
+ juzgar su funcionamiento, tales como performance (por ej., tiempo de respuesta),
+ disponibilidad (por ej., tasa de errores) o precisión de la respuesta (para
+ el caso de aquellos componentes que procesan datos de entrada para obtener
+ un resultado de salida).
+ 
+\end_layout
+
+\begin_layout Standard
+Los dispositivos móviles tienen limitaciones en conflicto como la energía,
+ el acceso a la red y la capacidad de cálculo que determinan el contexto
+ de ejecución de estos componentes y que afecta considerablemente los atributos
+ de calidad de los mismos y de las aplicaciones que los invocan.
+ Por lo tanto, es importante elegir los componentes adecuados de acuerdo
+ con su calidad de servicio además de la funcionalidad requerida.
+ 
+\end_layout
+
+\begin_layout Standard
+Sin embargo, estos componentes suelen ser "cajas negras" para los desarrolladore
+s de aplicaciones móviles, que tienen acceso a la definición de sus 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{API}
+\end_layout
+
+\end_inset
+
+s pero no así a su implementación interna, por lo que no cuentan con información
+ de sus atributos dinámicos para elegir el componente adecuado en cada contexto
+ de ejecución.
+\end_layout
+
+\begin_layout Section
+Motivación
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Motivación"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para predecir la performance de un sistema, algunos enfoques definen un
+ modelo del mismo como función de agregación que considera el desempeño
+ individual de sus componentes.
+ Así, por ejemplo, el tiempo de respuesta de un “mashup” de servicios Web
+ puede determinarse como la suma de los tiempos de respuesta de los servicios
+ invocados 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Rosenberg2009"
+
+\end_inset
+
+.
+ Lo mismo se puede aplicar sobre otras propiedades de arquitecturas y aplicacion
+es que involucran el ensamblado de diferentes componentes 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Crnkovic2011"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Sanchez2015"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Muchos estudios se enfocan en el análisis y predicción de los aspectos dinámicos
+ de componentes individuales, siendo las técnicas de aprendizaje de máquina,
+ y en particular las de regresión, las más utilizadas.
+ La mayor parte de estos estudios se enfocan en algoritmos de optimización
+ e inteligencia artificial 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Hutter2014"
+
+\end_inset
+
+, donde se destaca el trade-off entre los tiempos de ejecución y la precisión
+ o calidad de las respuestas obtenidas.
+ En estos trabajos, se obtienen mediciones a partir de sucesivas ejecuciones
+ de los algoritmos y se entrenan modelos con estas mediciones.
+ Los modelos son funciones que dado determinado algoritmo e instancia de
+ un problema permiten estimar su desempeño.
+ Generalmente, diferentes algoritmos se desempeñan mejor que otros para
+ distintas instancias, por lo que los modelos resultan útiles como criterio
+ de decisión en la selección y parametrización automática de algoritmos,
+ la asignación óptima de tareas en contextos Grid, entre otros escenarios.
+ 
+\end_layout
+
+\begin_layout Standard
+La predicción de performance también se ha extendido a servicios Web 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Zheng2013"
+
+\end_inset
+
+ en una modalidad conocida como predicción colaborativa, en donde las mediciones
+ son recolectadas y compartidas por múltiples nodos distribuidos en todo
+ el mundo.
+ En este caso, los modelos permiten determinar latencia, disponibilidad,
+ y otras propiedades de un servicio a partir de la ubicación geográfica
+ del cliente que lo invoca y otras características del contexto.
+ 
+\end_layout
+
+\begin_layout Standard
+En las aplicaciones móviles, donde el contexto de ejecución y disponibilidad
+ de los recursos puede variar rápidamente (cambio de red de acceso a internet,
+ reducción de la batería, uso limitado de memoria y 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{CPU}
+\end_layout
+
+\end_inset
+
+, etc) y diferentes componentes consumen estos recursos de diferente forma,
+ es interesante el uso de estos modelos como criterio de calidad para la
+ selección de servicios y componentes, tanto en tiempo de desarrollo como
+ en tiempo de ejecución.
+ Por esta razón, se plantea la posibilidad de desarrollar un enfoque para
+ construir y evaluar modelos de predicción en el contexto de aplicaciones
+ móviles.
+ 
+\end_layout
+
+\begin_layout Section
+Objetivos y Solución propuesta
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Objetivos-Solución-propuesta"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El objetivo del trabajo consiste en desarrollar un enfoque para la elaboración
+ de modelos de predicción de propiedades dinámicas de componentes accedidos
+ por aplicaciones móviles.
+ Basándonos en el hecho de que Android es el sistema operativo más difundido
+ para dispositivos móviles, el enfoque se pondrá a prueba sobre diferentes
+ casos de estudio en este sistema operativo.
+ El enfoque se basa en un proceso de aprendizaje de máquina.
+ Dado un conjunto de componentes que implementan la misma funcionalidad
+ y de los cuales queremos predecir propiedades dinámicas, el método propuesto
+ es el siguiente: Usar conocimiento del dominio para seleccionar características
+ del contexto y de los datos de entrada del componente que puedan ser indicativo
+s de su desempeño.
+ Generar un conjunto de datos de entrada representativos del espacio de
+ entrada para la evaluación de los componentes.
+ Ejecutar los componentes con las entradas generadas y tomar mediciones
+ de las características identificadas en el punto 1 más las propiedades
+ de interés a predecir: tiempo de respuesta, calidad de la respuesta, etc.
+ Usar estas mediciones con técnicas de aprendizaje de máquina para entrenar
+ y evaluar modelos de predicción.
+ El enfoque propuesto se pondrá a prueba sobre grupos de componentes y servicios
+ reales que implementan funcionalidades de interés para desarrolladores
+ de aplicaciones móviles.
+ Esta evaluación no sólo involucrará diferentes dominios, sino también diferente
+s técnicas, como regresiones y redes neuronales, sobre diferentes propiedades
+ de interés.
+ Para llevar a cabo la medición de los componentes se implementará una herramien
+ta de test de performance para la plataforma Android, y se utilizará software
+ de aprendizaje de máquina como Weka 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Hall+FHPRW:2009"
+
+\end_inset
+
+.
+ En conclusión, se espera poder proveer un análisis de los dominios y técnicas
+ consideradas, como así también compararlas tanto en términos de precisión
+ como también en cuanto a su generalización a diferentes contextos de ejecución
+ (dispositivos) y datos de entrada
+\end_layout
+
+\begin_layout Section
+Organización
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Organización"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El resto del trabajo se organiza en 5 capítulos.
+ A continuación se da un breve resumen de los temas que se abordan en cada
+ uno de ellos.
+ 
+\end_layout
+
+\begin_layout Standard
+En el capítulo 2 se presenta el marco teórico, donde se definen los conceptos
+ utilizados a lo largo de todo el informe, tales como: Android, desempeño,
+ precisión, aprendizaje de máquina, regresión, modelos, componentes.
+ 
+\end_layout
+
+\begin_layout Standard
+En el capítulo 3 se presentan herramientas de benchmarks tanto para el sistema
+ Android como para Java y se exponen algunos trabajos relacionados desde
+ diferentes perspectivas, predicciones que incluyen modelos de performance
+ y precisión como aproximación de éxito de los resultados, no sólo en algoritmos
+ de optimización sino también en servicios Web.
+ 
+\end_layout
+
+\begin_layout Standard
+En el capítulo 4 se describe el enfoque y las herramientas utilizadas.
+ Se detalla la arquitectura e implementación de las mismas, ahondando en
+ las decisiones de diseño que se consideran importantes para el entendimiento
+ y reutilización de las mismas.
+ 
+\end_layout
+
+\begin_layout Standard
+En el capítulo 5 se presenta la evaluación de los modelos obtenidos a partir
+ de todo el framework presentado.
+ Se presentan las variables consideradas en los escenarios evaluados, los
+ modelos que han sido analizados y las conclusiones alcanzadas, presentando
+ justificativo para la selección de los mejores modelos predictivos alcanzados.
+ [Incluir porcentajes de los mejores modelos] 
+\end_layout
+
+\begin_layout Standard
+Finalmente, en el capítulo 6 se exponen las conclusiones del trabajo realizado,
+ las limitaciones actuales del enfoque y la herramienta, y posibles líneas
+ de trabajo futuro.
+\end_layout
+
+\end_body
+\end_document

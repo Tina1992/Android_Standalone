@@ -1,0 +1,850 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\use_default_options true
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Implementación de los algoritmos de resolución de TSP 
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Ambiente-de-desarrollo"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El Problema del Agente Viajero (TSP -Travelling salesman Problem -) corresponde
+ a uno de los problemas de optimización más estudiados de la clase NP-Completos;
+ es un problema de minimización que comienza y termina en un vértice específico
+ y se visita el resto de los vértices exactamente una vez.
+ El TSP puede ser modelado como un grafo ponderado no dirigido, de manera
+ que las ciudades sean los vértices del grafo, los caminos son las aristas
+ y las distancias de los caminos son los pesos de las aristas.
+\end_layout
+
+\begin_layout Section*
+Algoritmos de resolución
+\end_layout
+
+\begin_layout Subsection*
+1.
+ Best Fit - Bin Packing -
+\end_layout
+
+\begin_layout Standard
+Best fit es uno de los algoritmos heurísticos más simples,brinda soluciones
+ óptimas (aproximadas) aunque el algoritmo no asegura el retorno de la mejor
+ solución.
+ Para dominios de grafos no completos incluso, el camino solución puede
+ contener arcos con costo infinito (ausencia de arista).
+ Partiendo del punto ‘A’ se analiza el trayecto más corto a la siguiente
+ ciudad, sea ésta por ejemplo la ciudad C, ambas ciudades se añaden al conjunto
+ Solución: {A, C, A} 
+\end_layout
+
+\begin_layout Standard
+En cada paso del algoritmo las ciudades son seleccionadas de acuerdo al
+ costo de sus trayectos y son incorporadas al conjunto Solución en base
+ al cálculo de la distancia marginal de las intersecciones.
+ 
+\end_layout
+
+\begin_layout Standard
+La distancia marginal representa la variación en el costo total teniendo
+ en cuenta el costo directo entre A y C y el costo del camino entre A y
+ C pasando por B.
+ (A,B,C).
+ El par de ciudades A y C son seleccionadas de forma tal que hagan mínimo
+ el costo del paso por la ciudad B.- 
+\end_layout
+
+\begin_layout Standard
+Ejemplo
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="5">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+B
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+D
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+E
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+25
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+B
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+18
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+D
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+S: { A, C, A} 
+\end_layout
+
+\begin_layout Standard
+Selección ciudad E: 
+\end_layout
+
+\begin_layout Standard
+Trayectos: AC - CA
+\end_layout
+
+\begin_layout Standard
+En tal caso, los trayectos son análogos como así también la distancia marginal:
+ E se añade entre las ciudades C y A.
+ 
+\end_layout
+
+\begin_layout Standard
+S: { A,C,E,A} 
+\end_layout
+
+\begin_layout Standard
+Costo: 28 
+\end_layout
+
+\begin_layout Standard
+En el siguiente paso la ciudad B es seleccionada: 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Trayectos: AC: D = costo(A,B) + costo(B, C) - costo(A,C) = 19 
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Resultando S: {A, B, C, E, A} Costo ahora:28+19=47 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+CE:D=costo(C,B) + costo(B, E) - costo(C,E) = 21 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Resultando S: {A, C, B, E, A} Costo ahora:28+21=49
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+EA:D=costo(E,B) + costo(B, A) - costo(E,A) = -18 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Resultando S: {A, C, E, B, A} Costo ahora:28-18=10
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+B es añadida entre las ciudades del trayecto cuya distancia es menor, en
+ el ejemplo ilustrado, la opción del tercer trayecto.
+\end_layout
+
+\begin_layout Subsection*
+2.
+ Vecino más cercano
+\end_layout
+
+\begin_layout Standard
+Partiendo de alguna ciudad arbitraria se analizan todos los vértices adyacentes
+ y aún no visitados, y se añade a la solución aquel vértice cuya arista
+ de costo sea la mínima.
+ Tal análisis prosigue a partir del último vértice añadido hasta haber visitado
+ todas las ciudades.
+ 
+\end_layout
+
+\begin_layout Standard
+A menudo, el TSP sigue un modelo de grafo completo donde cada par de vértices
+ es conectado por una arista, en tal caso el algoritmo brinda soluciones
+ óptimas partiendo desde y hacia la ciudad inicial pasando exactamente una
+ vez por cada ciudad restante.
+ 
+\end_layout
+
+\begin_layout Standard
+Por otro lado,en modelos donde no existe camino entre algunos pares de ciudades,
+ la elección iterativa de la arista de mínimo costo sin una vista global
+ del modelo, puede apartar vértices de la solución retornando soluciones
+ parciales.
+ 
+\end_layout
+
+\begin_layout Standard
+Ejemplo
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/TPS-graph-example.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Solución: A -> B -> C -> D -> A 
+\end_layout
+
+\begin_layout Standard
+Costo: 97
+\end_layout
+
+\begin_layout Subsection*
+3.
+ Programación Lineal
+\end_layout
+
+\begin_layout Standard
+El TSP puede ser formulado de manera teórica mediante una (o varias) formulacion
+es lineales enteras usando programación lineal en enteros.
+ Se plantean las variables del problema: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+vértices: 0..
+ n 	
+\end_layout
+
+\begin_layout Plain Layout
+
+Xij = 1 | Xij = 0					            																									para i,j = 0...n
+\end_layout
+
+\begin_layout Plain Layout
+
+La arista (i,j) pertenece(1)/ no pertenece (0) al conjunto solución.
+\end_layout
+
+\begin_layout Plain Layout
+
+Cij Distancia desde la ciudad i hasta j	     																								  para
+ i,j = 0...n	 
+\end_layout
+
+\begin_layout Plain Layout
+
+aristas número total de aristas.
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+aristasReq número mínimo de aristas para solución.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El planteo del modelo ahora es el siguiente: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+FUNCION
+\end_layout
+
+\begin_layout Plain Layout
+FUNCION
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+4.
+ Backtracking
+\end_layout
+
+\begin_layout Standard
+Backtracking es un algoritmo general para encontrar todas o algunas soluciones
+ para problemas computacionales con notables restricciones de satisfacción
+ para dicho problema.El método de búsqueda es incremental de los candidatos
+ a la solución, abandonando aquellos (“backtrackeando”) tan pronto como
+ se determina que dicha solución no es o va a ser válida.
+ 
+\end_layout
+
+\begin_layout Standard
+En el caso del TSP, los posibles candidatos a la solución se determinan
+ mediante el grado de incidencia de todos los nodos que componen el grafo.
+ Ya que la ciudad sólo debe ser visitada una vez, el grado de incidencia
+ de cada ciudad debe ser igual a 2, por lo que aquellas ciudades que no
+ han sido visitadas (grado de incidencia 0) o aquellas que sólo han sido
+ destino (grado de incidencia 1) son candidatas a componer la solución.
+\end_layout
+
+\begin_layout Standard
+Pseudo-código: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+backtracking(costoAct, minCost, lastV, currPath, bestPath, costoAct) 
+\end_layout
+
+\begin_layout Plain Layout
+
+si costoAct<minCost			//Poda por costo que se arrastra 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	si !solucion(currPath) 		
+\end_layout
+
+\begin_layout Plain Layout
+
+		generarAristasFactibles(lastV) 		
+\end_layout
+
+\begin_layout Plain Layout
+
+		Por v:AristasFactibles 			
+\end_layout
+
+\begin_layout Plain Layout
+
+			costoAct+=v.costo; 			
+\end_layout
+
+\begin_layout Plain Layout
+
+			currPath= currPath + {v}; 			
+\end_layout
+
+\begin_layout Plain Layout
+
+			backtracking(costoAct, minCost, v.Destine, currPath); 			
+\end_layout
+
+\begin_layout Plain Layout
+
+			costoAct-=v.costo; 			
+\end_layout
+
+\begin_layout Plain Layout
+
+			currPath=currPath - {v}; 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	sino 		
+\end_layout
+
+\begin_layout Plain Layout
+
+		bestPath=currPath;		//Setear la solución ya encontrada 		
+\end_layout
+
+\begin_layout Plain Layout
+
+		minCost=costoAct;
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+TSP simétrico 
+\end_layout
+
+\begin_layout Standard
+El TSP simétrico es una variedad del problema TSP que para todas las aristas
+ se cumple la desigualdad triangular o de Minkowski: 
+\end_layout
+
+\begin_layout Standard
+(a,c) < (a,b)+(b,c) 
+\end_layout
+
+\begin_layout Standard
+Considerando que no todos los grafos creados cumplen con dicha condición,
+ y que aún así hay que devolver un resultado óptimo, se considera prioridad
+ la distancia entre los nodos y no si los mismos se repiten o no.
+\end_layout
+
+\begin_layout Subsubsection*
+4.
+ Árbol de recubrimiento 
+\end_layout
+
+\begin_layout Standard
+Para resolver el Metric TSP, se puede utilizar el método de árbol de recubrimien
+to mínimo.
+ El mismo se puede obtener mediante Prim o Kruskal para, luego de eso, nos
+ aseguramos que el grafo será simétrico mediante la duplicación de cada
+ arista.
+ Gracias a esto, podemos recorrerlo mediante un algoritmo recursivo y obtenemos
+ el ciclo euleriano del mismo.
+ Para finalizar la resolución y mediante la desigualdad antes planteada,
+ se omiten los nodos repetidos, obteniendo el ciclo hamiltoniano.
+\end_layout
+
+\begin_layout Subsubsection*
+4.1 Prim
+\end_layout
+
+\begin_layout Standard
+El algoritmo Prim toma un tomar un vértice arbitrario de los ya visitados
+ y lo une con el vértice no visitado mediante el menor arco que salga de
+ él.
+\end_layout
+
+\begin_layout Standard
+Pseudocódigo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Prim(firstCity){ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	visited={firstCity}; 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	while (visited!=allCities){ 		
+\end_layout
+
+\begin_layout Plain Layout
+
+		edge=obtenerMinEdge(visited); 		
+\end_layout
+
+\begin_layout Plain Layout
+
+		sol= sol ∪ {edge}; 		
+\end_layout
+
+\begin_layout Plain Layout
+
+		visited= visited  ∪ {edge.destino};
+\end_layout
+
+\begin_layout Plain Layout
+
+	} 	
+\end_layout
+
+\begin_layout Plain Layout
+
+return sol; }
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+4.2 Kruskal
+\end_layout
+
+\begin_layout Standard
+Kruskal mientras tanto tiene ordenados las aristas por costo y va agregando
+ a la solución aquellos que ya han sido visitados con los que no.
+\end_layout
+
+\begin_layout Standard
+Pseudocódigo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Kruskal(firstCity){ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	visited={firstCity}; 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	edges=getSortedEdges(); 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	∀ e ∈ edges{ 		
+\end_layout
+
+\begin_layout Plain Layout
+
+		if (e ∈ (visited)x(not_visited)) 			
+\end_layout
+
+\begin_layout Plain Layout
+
+		sol=sol ∪ {e}; 			visited=visited ∪ {e.destino} 		} return sol; }
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
