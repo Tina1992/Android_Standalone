@@ -293,7 +293,11 @@ Durante los últimos años el desarrollo de aplicaciones en sistemas Android
  De este modo la misma funcionalidad suele ser ofrecida por componentes
  alternativos que difieren en sus propiedades no-funcionales o atributos
  de calidad, componentes con sus propias características, limitaciones y
- prestaciones, simplemente “cajas negras” a la vista del desarrollador.
+ prestaciones, simplemente 
+\emph on
+cajas negras 
+\emph default
+a la vista del desarrollador.
  Por lo tanto, la elección del servicio más adecuado para ejecutarse en
  un determinado contexto, no es tarea sencilla.
  
@@ -540,7 +544,21 @@ acro{API}{Application Programmatic Interface}
 
 
 \backslash
+acro{CC}{Correlation Coefficient}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
 acro{CPU}{Central Processing Unit}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{CSV}{Comma-Separated Values}
 \end_layout
 
 \begin_layout Plain Layout
@@ -555,6 +573,20 @@ acro{DVM}{Dalvik Virtual Machine}
 
 \backslash
 acro{EPM}{Empirical Performance Model}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{FN}{False Negative}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{FP}{False Positive}
 \end_layout
 
 \begin_layout Plain Layout
@@ -701,6 +733,13 @@ acro{LDAP}{Lightweight Directory Access Protocol}
 
 
 \backslash
+acro{MAE}{Mean Absolute Error}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
 acro{MARS}{Multivariate Adaptive Regression Splines}
 \end_layout
 
@@ -722,6 +761,48 @@ acro{POP3}{Post Office Protocol}
 
 
 \backslash
+acro{REST}{Representational State Transfer}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{RMSE}{Root Mean Absolute Error}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{SMO}{Sequential Minimal Optimization}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{RAE}{Relative Absolute Error}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{RBF}{Radial Basis Function}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{RRSE}{Root Relative Squared Error}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
 acro{SQL}{Structured Query Language}
 \end_layout
 
@@ -729,7 +810,35 @@ acro{SQL}{Structured Query Language}
 
 
 \backslash
+acro{SVM}{Support Vector Machine}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{TP}{True Positive}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{TSP}{Travelling Salesman Problem}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
 acro{UML}{Unified Modeling Language}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{VM}{Virtual Machine}
 \end_layout
 
 \begin_layout Plain Layout

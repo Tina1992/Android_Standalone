@@ -65,7 +65,6 @@
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
-\author 1188755597 "usuario" 
 \end_header
 
 \begin_body
@@ -82,18 +81,28 @@ name "chap:Trabajos-Relacionados"
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 1188755597 1487110454
 El enfoque propuesto básicamente es un proceso de aprendizaje de máquina
  que incluye una herramienta para recolectar mediciones de performance en
  Android (y Java), y otra herramienta para entrenar y evaluar modelos de
  predicción con diferentes técnicas de aprendizaje automático.
  Por lo tanto, este capítulo se dividirá en dos secciones para describir
- en la sección 3.1 un conjunto de herramientas sobre benchmarks en Android
- y en la sección 3.2 se presentarán algunos trabajos ya realizados que llevan
- a cabo la predicción de atributos a través de modelos.
-\change_unchanged
+ en la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Herramientas-de-benchmarks-para-Android"
 
+\end_inset
+
+ un conjunto de herramientas sobre benchmarks en Android y en la sección
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Predicción-de-propiedades-no-funcionales-con-aprendizaje-de-máquina"
+
+\end_inset
+
+se presentarán algunos trabajos ya realizados que llevan a cabo la predicción
+ de atributos a través de modelos.
 \end_layout
 
 \begin_layout Section
@@ -131,221 +140,91 @@ name "sub:Performance-Monitors-de-Android "
 \end_layout
 
 \begin_layout Standard
-Es una herramienta integrada en el ambiente de desarrollo “Android Studio”
+Es una herramienta integrada en el ambiente de desarrollo 
+\emph on
+Android Studio
+\emph default
  y cuenta con varias sub herramientas que proveen información en tiempo
  real sobre la aplicación, estos datos capturados se almacenan en archivos
  para luego analizarlos en diferentes vistas.
- ‘Android Monitor’ utiliza la Máquina Virtual (VM) del dispositivo o emulador
- dependiendo de la versión del sistema Android, tal como se detalla en el
- siguiente cuadro
-\end_layout
-
-\begin_layout Standard
-\begin_inset Tabular
-<lyxtabular version="3" rows="4" columns="3">
-<features rotate="0" tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Versión Android
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-API(nivel)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-VM
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-4.3
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-18 (e inferior)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Dalvik VM
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-4.4
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-19
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Dalvik por defecto - ART VM opcional
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-5
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-21 (y superior)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-ART VM
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-En base a las vistas ofrecidas por la herramienta que deseen utilizarse
- y a determinadas características que maneje la aplicación, se deben configurar
- las propiedades requeridas para su uso descritas en el cuadro 3.2.
- Se pueden realizar pruebas de rendimiento sobre dispositivos Android conectados
+ Pueden realizarse pruebas de rendimiento sobre dispositivos Android conectados
  directamente a la aplicación o simulados a través de un emulador, en ambos
- casos se debe tener en cuenta que ´Android Device Monitor’ no puede ser
- utilizada.
- ADM es una herramienta standalone que permite depurar y analizar la aplicación
- sin necesidad de instalaciones en ambientes de desarrollo integrados.
+ casos se debe tener en cuenta que 
+\emph on
+Android Device Monitor 
+\emph default
+no puede ser utilizada.
+ 
+\emph on
+Android Monitor
+\emph default
+ utiliza la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{VM}
+\end_layout
+
+\end_inset
+
+ del dispositivo o emulador dependiendo de la versión del sistema Android.
  
 \end_layout
 
-\begin_layout Subsubsection*
-Propiedades que se pueden medir
-\end_layout
-
-\begin_layout Itemize
-LogCat monitor: Cuando la aplicación emite una excepción, se muestra un
- mensaje en esta vista junto con el detalle del seguimiento de la pila y
- un enlace al código asociado.
- Esta característica es útil para detectar y eliminar errores y mejorar
- el funcionamiento de la aplicación.
+\begin_layout Standard
+A través de cinco vistas diferentes se accede a la información sobre la
+ aplicación evaluada.
+ 
+\emph on
+LogCat
+\emph default
+ muestra en detalle las excepciones emitidas por la aplicación, útil para
+ detectar y eliminar errores que mejoren el funcionamiento de la aplicación.
  
 \end_layout
 
-\begin_layout Itemize
-Memory Monitor: permite visualizar gráficamente la memoria disponible y
- ocupada a lo largo del tiempo, los eventos realizados de garbage collection
- (GC), comprobar si los puntos de latencia de la aplicación se deben a un
- uso excesivo de garbage collection o si los puntos donde la aplicación
- deja de funcionar se debe a falta de memoria disponible.
- 
+\begin_layout Standard
+Durante la ejecución de la aplicación también hay seguimiento gráfico del
+ consumo de memoria junto con los eventos de garbage collection (
+\emph on
+GC
+\emph default
+) para detectar relaciones entre éstos y los puntos de latencia, el porcentaje
+ total de uso de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{CPU}
 \end_layout
 
-\begin_layout Itemize
-CPU Monitor: permite controlar fácilmente el uso de la CPU de la aplicación.
- Se muestra el uso de la CPU en tiempo real y muestra el porcentaje de tiempo
- de CPU total (incluyendo todos los núcleos) que se utiliza en el modo de
- usuario y el kernel.
- En el modo de usuario, el código debe utilizar las API del sistema para
- el acceso al hardware o a la memoria teniendo acceso sólo a la memoria
- virtual.
- En este modo, si la aplicación se detiene, es posible recuperarla.
- En el modo kernel, el código puede acceder directamente al hardware, incluyendo
- direcciones de memoria física y si por algún motivo la aplicación deja
- de funcionar, el dispositivo se detiene.
- 
-\end_layout
+\end_inset
 
-\begin_layout Itemize
-GPU Monitor: brinda una representación visual rápida acerca del tiempo que
- requiere formar cada frame de la interfaz gráfica, en otras palabras, permite
- visualizar la cantidad de tiempo que le lleva al thread preparar, procesar
- y ejecutar los comandos gráficos.
- Esta vista provee una idea general sobre la performance de la interfaz,
- identificando procesos de renderizado excesivos en el tiempo y si estos
- picos en el proceso de renderización del frame son causados en torno al
- usuario o a acciones del programa.
- 
-\end_layout
-
-\begin_layout Itemize
-Network Monitor: permite realizar un seguimiento de cada solicitud de red
- que es realizada, al mismo tiempo que permite controlar la manera y el
- momento en que se llevan a cabo las transferencias de datos en la aplicación
+ (incluyendo todos los núcleos) que se utiliza en modo de usuario y modo
+ kernel, una visión general de la performance de la interfaz incluyendo
+ la cantidad de tiempo que le lleva al thread preparar, procesar y ejecutar
+ los comandos gráficos, y finalmente, el seguimiento de cada solicitud de
+ red que es realizada, al mismo tiempo que permite controlar la manera y
+ el momento en que se llevan a cabo las transferencias de datos en la aplicación
  para optimizar el código subyacente de manera apropiada.
- Mediante el control de la frecuencia de las transferencias de datos, y
- la cantidad de datos transferidos durante cada conexión, se pueden identificar
- áreas de la aplicación que se podrían implementar de manera más eficiente
- y así, requerir menos energía de la batería.
- Generalmente, el propósito es detectar picos cortos que podrían ser demorados
- o que podrían retrasar la transferencia.
- Adicionalmente, la herramienta´Android Monitor´provee funciones para examinar
- información relevante sobre el estado de los servicios del sistema, y permite
- realizar capturas y videos de la pantalla.
+ 
+\end_layout
+
+\begin_layout Standard
+Adicionalmente, la herramienta 
+\emph on
+Android Monitor
+\emph default
+ provee funciones para examinar información relevante sobre el estado de
+ los servicios del sistema, y permite realizar capturas y videos de la pantalla.
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -360,168 +239,62 @@ name "sub:Benchit"
 \end_layout
 
 \begin_layout Standard
-“Benchit” es una librería Open Source implementada en lenguaje Java de Benchmark
-ing para Android.
+
+\emph on
+Benchit
+\emph default
+ es una librería Open Source implementada en lenguaje Java de Benchmarking
+ para Android.
  El uso de esta herramienta se hace mediante un repositorio maven llamado
- JitPack (accedido a través de la URL "https://jitpack.io") el cual contiene
- el proyecto ‘T-Spoon/Benchit’.
- JitPack puede utilizarse tanto en proyectos Android como en la Máquina
- Virtual de Java y provee artefactos listos para su uso como archivos jar
- y aar.
- El proyecto ha ido configurado bajo las características expuestas a continuació
-n:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Tabular
-<lyxtabular version="3" rows="5" columns="2">
-<features rotate="0" tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
+ 
+\emph on
+JitPack
+\emph default
+ (accedido a través de la URL 
+\emph on
+https://jitpack.io
+\emph default
+) el cual contiene el proyecto 
+\emph on
+T-Spoon/Benchit
+\emph default
+.
+ JitPack puede utilizarse tanto en proyectos Android como en la 
+\begin_inset ERT
+status open
 
 \begin_layout Plain Layout
-Propiedad
+
+
+\backslash
+ac{VM}
 \end_layout
 
 \end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
 
-\begin_layout Plain Layout
-Versión
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Compile SDK
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-22
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Build Tools
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-22.0.1
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Min SDK
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-8
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Target SDK
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-22
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection*
-Propiedades que se pueden medir
+ de Java y provee artefactos listos para su uso como archivos jar y aar.
+ El proyecto ha sido configurado para ejecutarse a partir de la versión
+ 8 de Android.
+ 
 \end_layout
 
 \begin_layout Standard
 Benchit es un framework rápido y sencillo ya que permite añadir benchmarks
  en áreas de código deseadas para determinar el tiempo o latencia de la
  operación.
- 
-\end_layout
-
-\begin_layout Standard
-Una forma sencilla de utilizar esta librería es a través de iteraciones
- sobre una misma sección de código delimitadas entre las llamadas ‘Benchit.begin(
-String tag)’ y ‘Benchit.end(String tag).log()’.
+ Una forma sencilla de utilizar esta librería es a través de iteraciones
+ sobre una misma sección de código.
  De esta forma, con cada iteración, la herramienta va almacenando el tiempo
  de ejecución del código (diferencia entre el tiempo de comienzo y tiempo
  de fin).
- Al término de las iteraciones, mediante la llamada ´Benchit.analyze(String
- tag).log()’ se podrá observar el resultado en la herramienta LogCat.
- El resultado muestra tres propiedades: promedio, rango y desviación standard
- en el siguiente formato: 
-\end_layout
-
-\begin_layout Standard
-D/Benchit﹕[benchmark-name] --> Sample Size[10], Average[22ms], Range[20ms
- --> 33ms], Deviation[4ms] 
-\end_layout
-
-\begin_layout Standard
-La herramienta, también provee la posibilidad de realizar comparaciones
- entre todos o algunos benchmarks del código mostrando los resultados en
- el LogCat de manera ordenada.
- El orden de los resultados lo determina el usuario en base a la propiedad
- y tipo de orden (ascendente o descendente) que prefiera.
+ Al término de las iteraciones, se podrá observar el resultado en la herramienta
+ LogCat mostrando tres propiedades: promedio, rango y desviación estándar.
+ La herramienta, también provee la posibilidad de realizar comparaciones
+ entre todos o algunos benchmarks del código mostrando los resultados de
+ manera ordenada.
  Esta opción es útil, por ejemplo, al momento de comparar el desempeño de
  varios algoritmos o sentencias que realicen la misma acción de forma diferente.
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -536,23 +309,17 @@ name "sub:Google-caliper"
 \end_layout
 
 \begin_layout Standard
-Google Caliper es un framework open source para implementar, ejecutar y
- visualizar resultados de microbenchmarks en aplicaciones Java, aunque brinda
- soporte para proyectos android accediendo a través de la rama de la versión
- 0.5 ya que la rama 1.0 no funciona correctamente en android.
+
+\emph on
+Google Caliper
+\emph default
+ es un framework open source para implementar, ejecutar y visualizar resultados
+ de microbenchmarks en aplicaciones Java, aunque brinda soporte para proyectos
+ android accediendo a través de la rama de la versión 0.5 ya que la rama
+ 1.0 no funciona correctamente en Android.
  Existen dos alternativas de acceso al proyecto a través del repositorio
  maven o el repositorio git.
- La integración del proyecto Caliper se logra añadiendo dos archivos del
- tipo JAR como dependencias, “allocation.jar” y “caliper-0.0.jar”.
- 
-\end_layout
-
-\begin_layout Subsubsection*
-Propiedades que se pueden medir
-\end_layout
-
-\begin_layout Standard
-Caliper permite obtener diferentes medidas del código Java, principalmente
+ Caliper permite obtener diferentes medidas del código Java, principalmente
  microbenchmarks, pero también tiene soporte para otros tipos de medidas
  incluyendo memoria disponible, ocupada, u otras medidas arbitrarias de
  dominio específico como por ejemplo el radio de compresión.
@@ -571,60 +338,73 @@ name "sub:Java-Microbenchmark-Harness"
 \end_layout
 
 \begin_layout Standard
-Java Microbenchmark Harness o simplemente JMH, es una herramienta que facilita
- la implementación de benchmarks en forma correcta.
+Java Microbenchmark Harness (
+\emph on
+JMH
+\emph default
+), es una herramienta que facilita la implementación de benchmarks en forma
+ correcta.
  El término correcto hace alusión a las optimizaciones que tanto la máquina
  virtual como el hardware subyacente aplican sobre el código durante la
  ejecución de los benchmarks y que no se aplican en sistemas de producción
  real, infiriendo en conclusiones erróneas sobre el rendimiento.
- JMH fue diseñada por los mismos desarrolladores de la máquina virtual de
- Java posibilitando la construcción, ejecución y análisis de benchmarks
- no sólo escritos en lenguaje Java sino en otros lenguajes soportados por
- la máquina virtual.
- El acceso a la herramienta se realiza a través del repositorio Maven, generando
- un nuevo proyecto JMH a partir del proyecto modelo.
- El proyecto generado contendrá una clase llamada ´MyBenchmark.java´ que
- funciona como template para implementar benchmarks directamente en ella
- o crear nuevas clases a partir de la generada.
-\end_layout
-
-\begin_layout Subsubsection*
-Propiedades que se pueden medir
+ 
+\emph on
+JMH
+\emph default
+ fue diseñada por los mismos desarrolladores de la máquina virtual de Java
+ posibilitando la construcción, ejecución y análisis de benchmarks no sólo
+ escritos en lenguaje Java sino en otros lenguajes soportados por la máquina
+ virtual.
+ 
 \end_layout
 
 \begin_layout Standard
-La librería JMH ofrece cinco tipos de medidas sobre el código.
- Estos atributos o modos como se denominan en la herramienta se especifican
- por medio de anotaciones Java en el encabezado del método principal de
- la clase “MyBenchmark” llamado “testMethod()”.
- A modo de ejemplo, la siguiente anotación define la medida elegida “Throughput”
-: @BenchmarkMode(Mode.Throughput).
- Las propiedades provistas por la herramienta son detalladas a continuación:
+La librería 
+\emph on
+JMH
+\emph default
+ ofrece cinco tipos de medidas sobre el código (modos) especificados por
+ medio de anotaciones Java.
  
 \end_layout
 
-\begin_layout Itemize
-“Throughput”: mide el número de operaciones por segundo, en otras palabras,
- un estimativo sobre la cantidad de veces por segundo que el componente
- al que se le aplicó un benchmark podría ser ejecutado.
+\begin_layout Description
+Throughput mide el número de operaciones por segundo, un estimativo sobre
+ la cantidad de veces por segundo que el componente podría ser ejecutado.
  
 \end_layout
 
-\begin_layout Itemize
-“Average time”: mide el tiempo promedio que el componente requiere para
- ejecutarse.
+\begin_layout Description
+Average
+\begin_inset space ~
+\end_inset
+
+time mide el tiempo promedio que el componente requiere para ejecutarse.
+\end_layout
+
+\begin_layout Description
+Sample
+\begin_inset space ~
+\end_inset
+
+time mide el tiempo efectivo que el componente requirió en ejecutarse, incluyend
+o tiempo máximo y mínimo.
  
 \end_layout
 
-\begin_layout Itemize
-“Sample time”: mide el tiempo efectivo que el componente requirió en ejecutarse,
- incluyendo tiempo máximo y mínimo.
+\begin_layout Description
+Single
+\begin_inset space ~
+\end_inset
+
+Shot mide el tiempo de ejecución de un simple método benchmark.
  
 \end_layout
 
-\begin_layout Itemize
-“Single Shot”: mide el tiempo de ejecución de un simple método benchmark.
- “All”: computa y retorna todas las mediciones anteriores.
+\begin_layout Description
+All computa y retorna todas las mediciones anteriores.
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -639,9 +419,15 @@ name "sub:JMeter"
 \end_layout
 
 \begin_layout Standard
-JMeter es una herramienta Open Source diseñada por Apache e implementada
- completamente en lenguaje Java para realizar pruebas de carga y medidas
- de rendimiento.
+
+\emph on
+JMeter
+\emph default
+ es una herramienta Open Source diseñada por Apache e implementada completamente
+ en lenguaje Java para realizar pruebas de carga y medidas de rendimiento.
+ Apache JMeter puede utilizar para simular un gran volumen de carga en un
+ servidor o grupo de servidores y en la red y probar su resistencia o analizar
+ el rendimiento general bajo diferentes tipos de carga.
  En un principio, fue diseñada para realizar pruebas de rendimiento sobre
  aplicaciones Web pero luego ha sido extendida a otras funciones para cubrir
  diferentes categorías de testing, tal es el caso de los análisis de carga,
@@ -651,35 +437,92 @@ JMeter es una herramienta Open Source diseñada por Apache e implementada
  Puede ser ejecutada bajo cualquier entorno o estación que acepte la máquina
  virtual de Java como es el caso de los sistemas operativos Windows, Linux
  y Mac.
- A grandes rasgos, la herramienta simula un grupo de usuarios que envían
- peticiones a un servidor y retorna un conjunto de estadísticas sobre el
- desempeño y funcionalidad por medio de gráficos, tablas, etc.
- El proyecto se instala fácilmente a partir de la siguiente URL: “http://jmeter.a
-pache.org/download_jmeter.cgi”.
- Al tratarse de un framework basado en java, el único requerimiento es la
- instalación de la herramienta JDK a partir de la versión 6.
- 
-\end_layout
-
-\begin_layout Subsubsection*
-Propiedades que se puede medir
 \end_layout
 
 \begin_layout Standard
-Apache JMeter puede realizar pruebas tanto en recursos estáticos como dinámicos.
- Se puede utilizar para simular un gran volumen de carga en un servidor
- o grupo de servidores y en la red y probar su resistencia o analizar el
- rendimiento general bajo diferentes tipos de carga.
- Los recursos que pueden evaluarse podrían ser servicios web (SOAP/ REST),
- lenguajes web dinámicos (PHP - Java - ASP.NET, archivos), base de datos
- vía JDBC y consultas a la base, conexiones generales bajo los protocolos
- FTP, LDAP, JMS, HTTP, HTTPS, TCP, protocolos de mensajerías como SMTP,
- POP3, IMAP y comandos y scripts de shell.
+A grandes rasgos, la herramienta simula un grupo de usuarios que envían
+ peticiones a un servidor y retorna un conjunto de estadísticas sobre el
+ desempeño y funcionalidad por medio de gráficos, tablas, etc, tanto sobre
+ recursos estáticos y dinámicos.
+ Al tratarse de un framework basado en java, el único requerimiento es la
+ instalación de la herramienta 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{JDK}
+\end_layout
+
+\end_inset
+
+ a partir de la versión 6.
  
 \end_layout
 
+\begin_layout Standard
+El cuadro comparativo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:benchmarks-tools"
+
+\end_inset
+
+ resalta las propiedades o medidas que pueden realizar las herramientas
+ antes mencionadas y los componentes sobre los cuales realizan las mediciones.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/benchmarks_tools.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Información resumida de las herramientas de benchmarking para Android.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:benchmarks-tools"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
-Predicción de propiedades no funcionales con aprendizaje de máquina
+Predicción de propiedades no funcionales con aprendizaje de máquina 
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Predicción-de-propiedades-no-funcionales-con-aprendizaje-de-máquina"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -691,17 +534,41 @@ La predicción de propiedades no funcionales ha contribuido a los arquitectos
  Diferentes trabajos han recurrido al uso de técnicas de aprendizaje de
  máquina para construir modelos de predicción de performance y otros atributos
  de calidad dinámicos.
- Hutter, Xu y Hoos [16] se han referido a estos modelos como modelos empíricos
- de performance (EPM por sus siglas en inglés) ya que requieren la recolección
- de mediciones empíricas sobre los componentes.
+ Hutter, Xu y Hoos 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Hutter2014"
+
+\end_inset
+
+se han referido a estos modelos como modelos empíricos de performance (
+\emph on
+EPM
+\emph default
+ por sus siglas en inglés) ya que requieren la recolección de mediciones
+ empíricas sobre los componentes.
  La principal aplicación de estos modelos probablemente es el problema de
  selección de algoritmos, introducido en 1976 por John R.
- Rice [17].
+ Rice 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Rice1976"
+
+\end_inset
+
+.
  Este problema consiste en seleccionar el algoritmo, o configuración de
  algoritmo, de un portafolio de alternativas que minimice el tiempo de respuesta
 , según la instancia de datos de entrada.
  La predicción del tiempo de respuesta ha sido abordada con éxito usando
- técnicas de aprendizaje supervisado, principalmente de regresión [16].
+ técnicas de aprendizaje supervisado, principalmente de regresión 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Hutter2014"
+
+\end_inset
+
+.
  En estos trabajos, los datos empíricos de entrenamiento son obtenidos en
  contextos de ejecución controlados, para enfocarse en la correlación entre
  la propiedad a predecir y las propiedades de los parámetros de entrada
@@ -720,9 +587,22 @@ Este capítulo describe trabajos que inducen al desarrollo de una herramienta
  ejecución como así también del entorno donde se ejecuta para la aplicación
  de la técnica de aprendizaje de máquina que resulte la más adecuada para
  la predicción.
- Está organizado de la siguiente manera: la sección 3.2.1 presenta tres estudios
- sobre algoritmos de optimización que abarcan la predicción de otro de los
- indicadores más importantes, como lo es la precisión y en la sección 3.2.2
+ Está organizado de la siguiente manera: la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Predicción-de-precisión"
+
+\end_inset
+
+ presenta tres estudios sobre algoritmos de optimización que abarcan la
+ predicción de otro de los indicadores más importantes, como lo es la precisión
+ y en la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Predicción-sobre-Servicios"
+
+\end_inset
+
  presenta dos estudios de propiedades dinámicas sobre Servicios Web.
  
 \end_layout
@@ -730,16 +610,30 @@ Este capítulo describe trabajos que inducen al desarrollo de una herramienta
 \begin_layout Subsection
 Predicción de precisión sobre algoritmos de optimización.
  
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Predicción-de-precisión"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Los modelos de predicción no sólo se utilizan para estimar el tiempo de
  respuesta del desempeño de los componentes, sino también para estimar otras
  propiedades.
- Mark Roberts, Adele Howe y Landon Flom [18] han construido dos modelos
- para la predicción del tiempo de respuesta y para la probabilidad de éxito
- de diferentes algoritmos de planeamiento utilizando técnicas de aprendizaje
- de máquina incluidas en la librería Weka.
+ Mark Roberts, Adele Howe y Landon Flom 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Roberts07learnedmodels"
+
+\end_inset
+
+ han construido dos modelos para la predicción del tiempo de respuesta y
+ para la probabilidad de éxito de diferentes algoritmos de planeamiento
+ utilizando técnicas de aprendizaje de máquina incluidas en la librería
+ Weka.
  Para el aprendizaje fueron utilizados 4726 benchmarks, problemas o instancias
  para ejecutarse sobre 28 algoritmos de planeamiento conocidos.
  Por cada algoritmo y cada problema se registra si un plan fue encontrado
@@ -752,30 +646,71 @@ Los modelos de predicción no sólo se utilizan para estimar el tiempo de
 \end_layout
 
 \begin_layout Standard
-Otros autores (Mersmann; Bischl; Trautmann; Wagner; Bossek y Neumann [19])
- predicen la optimalidad o razón de aproximación de algoritmos para el problema
- del viajante utilizando una técnica de regresión no lineal llamada MARS,
- por sus siglas en inglés.
- El modelo MARS se aplicó con éxito para predecir la calidad de aproximación
- del algoritmo de búsqueda local llamado 2-opt independiente del tamaño
- de la instancia sobre la base de las características de los casos generados
- con una precisión muy alta.
+Otros autores (Mersmann; Bischl; Trautmann; Wagner; Bossek y Neumann 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Mersmann_anovel"
+
+\end_inset
+
+) predicen la optimalidad o razón de aproximación de algoritmos para el
+ problema del viajante utilizando una técnica de regresión no lineal llamada
+ 
+\emph on
+MARS
+\emph default
+, por sus siglas en inglés.
+ El modelo 
+\emph on
+MARS
+\emph default
+ se aplicó con éxito para predecir la calidad de aproximación del algoritmo
+ de búsqueda local llamado 2-opt independiente del tamaño de la instancia
+ sobre la base de las características de los casos generados con una precisión
+ muy alta.
  Se cree firmemente que debiera ser sencillo aplicar la misma metodología
  a otros algoritmos y utilizar estos modelos para derivar una estrategia
  para el problema de selección de algoritmos en el contexto de los problemas
- TSP.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{TSP}
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
 Finalmente, el trabajo desarrollado por los autores Beveridge, Givens, Phillips
- y Draper [20] se analiza la precisión de tres componentes diferentes para
- el reconocimiento de rostros en imágenes, utilizando una técnica de regresión
- lineal denominada GLMM, por Generalized Linear Mixed Models.
+ y Draper 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Beveridge2009"
+
+\end_inset
+
+ se analiza la precisión de tres componentes diferentes para el reconocimiento
+ de rostros en imágenes, utilizando una técnica de regresión lineal denominada
+ GLMM, por Generalized Linear Mixed Models.
  
 \end_layout
 
 \begin_layout Subsection
 Predicción sobre Servicios Web 
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Predicción-sobre-Servicios"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -784,7 +719,15 @@ La predicción de propiedades dinámicas de servicios Web, como su tiempo
  con respecto a componentes locales ya que depende del estado de la infraestruct
 ura de red y el proveedor del servicio, que no se puede monitorear desde
  el dispositivo cliente.
- Un enfoque ingenioso para abordar este problema fue propuesto en [21].
+ Un enfoque ingenioso para abordar este problema fue propuesto en el articulo
+ de Zheng
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Zheng2013"
+
+\end_inset
+
+.
  En este trabajo, los autores se basan en la premisa de que las propiedades
  de performance de los servicios Web varían respecto a características del
  contexto como la ubicación geográfica y el momento del día y la semana
@@ -802,7 +745,21 @@ ura de red y el proveedor del servicio, que no se puede monitorear desde
  la conexión de red y los ambientes heterogéneos entre usuarios y proveedores.
  Los datos se encuentran disponibles públicamente y han sido utilizados
  en varios trabajos para la construcción y comparación de modelos de performance
- con diferentes técnicas de aprendizaje de máquina [22][23].
+ con diferentes técnicas de aprendizaje de máquina 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Albu2013"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Kumar2015"
+
+\end_inset
+
+.
  
 \end_layout
 

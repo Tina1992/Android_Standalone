@@ -234,7 +234,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/linear-regression-result.png
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/linear-regression-result.png
 	scale 55
 
 \end_inset
@@ -946,10 +946,6 @@ Parámetros de configuración de las técnicas de regresión
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -1435,7 +1431,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/RBF-parameters-SVM.png
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/RBF-parameters-SVM.png
 	scale 55
 
 \end_inset
@@ -2013,13 +2009,9 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/TPS-graph-problem.png
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/TPS-graph-problem.png
 	scale 55
 
 \end_inset
@@ -2043,10 +2035,6 @@ name "fig:TPS-graph-problem"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -2076,7 +2064,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/TPS-dataset-behaviour.png
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/TPS-dataset-behaviour.png
 	scale 55
 
 \end_inset
@@ -2241,7 +2229,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/face-services-dataset-behaviour.png
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/face-services-dataset-behaviour.png
 	scale 55
 
 \end_inset
@@ -2428,7 +2416,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/Knapsack-dataset-behaviour.png
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/Knapsack-dataset-behaviour.png
 	scale 55
 
 \end_inset
@@ -2496,7 +2484,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/Knapsack-optimi-dataset-behaviour.png
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/Knapsack-optimi-dataset-behaviour.png
 	scale 55
 
 \end_inset
@@ -2654,7 +2642,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/matrix-dataset-behaviour.png
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/matrix-dataset-behaviour.png
 	scale 55
 
 \end_inset
@@ -2740,7 +2728,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/response-TSP.png
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/response-TSP.png
 	scale 55
 	BoundingBox 0bp 0bp 596bp 619bp
 
@@ -2768,6 +2756,26 @@ Resultados del atributo Tiempo de respuesta para el escenario ‘problema
 \end_layout
 
 \begin_layout Standard
+Conclusiones:
+\end_layout
+
+\begin_layout Standard
+Resaltar que los dos mejores son SMO y Neural ----> Overfitting
+\end_layout
+
+\begin_layout Standard
+Mejor: Linear Regression
+\end_layout
+
+\begin_layout Standard
+Peor: K-means clusterer
+\end_layout
+
+\begin_layout Standard
+SMO mucho tiempo con respecto al neural
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
@@ -2776,7 +2784,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/precision-TPS.png
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/precision-TPS.png
 	scale 55
 	BoundingBox 0bp 0bp 596bp 619bp
 
@@ -2795,6 +2803,31 @@ Resultados del atributo precisión para el escenario ‘problema del viajante’
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Mejor: Gradiente
+\end_layout
+
+\begin_layout Standard
+Mismo que arriba
+\end_layout
+
+\begin_layout Standard
+TSPLib mejor teorico linear
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+RANGO DE VALORES DE TIEMPO DE RESPUESTA PARA ANALISIS
 \end_layout
 
 \end_inset
@@ -2838,7 +2871,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/response-face.png
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/response-face.png
 	scale 55
 	BoundingBox 0bp 0bp 596bp 619bp
 
@@ -2878,7 +2911,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/response-knapsack.png
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/response-knapsack.png
 	scale 55
 	BoundingBox 0bp 0bp 596bp 619bp
 
@@ -2915,7 +2948,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/precision-knapsack.png
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/precision-knapsack.png
 	scale 55
 	BoundingBox 0bp 0bp 596bp 619bp
 
@@ -2955,7 +2988,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/reponse-matrix.png
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/reponse-matrix.png
 	scale 55
 	BoundingBox 0bp 0bp 596bp 619bp
 

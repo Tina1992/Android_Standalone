@@ -93,15 +93,22 @@ En este capítulo se describe el enfoque propuesto para extraer información
 
 \begin_layout Standard
 El enfoque plantea llevar a cabo la predicción de propiedades no-funcionales
- mediante un proceso de aprendizaje de máquina a través de i) la recolección
- de indicadores o mediciones tomados a partir de la información provista
- de la ejecución de piezas de software, considerando atributos de componentes,
- atributos inherentes al problema de entrada, y atributos de la operación
- y resultados de la ejecución, y ii) la construcción de modelos como un
- proceso interactivo con el usuario a partir de la configuración inicial
- de los datos, la optimización automática de los parámetros de acuerdo a
- las tasas de error arrojadas por métricas de evaluación y el ajuste final
- del modelo a través del análisis de las curvas de aprendizaje.
+ mediante un proceso de aprendizaje de máquina a través de 
+\emph on
+i
+\emph default
+) la recolección de indicadores o mediciones tomados a partir de la información
+ provista de la ejecución de piezas de software, considerando atributos
+ de componentes, atributos inherentes al problema de entrada, y atributos
+ de la operación y resultados de la ejecución, y 
+\emph on
+ii
+\emph default
+) la construcción de modelos como un proceso interactivo con el usuario
+ a partir de la configuración inicial de los datos, la optimización automática
+ de los parámetros de acuerdo a las tasas de error arrojadas por métricas
+ de evaluación y el ajuste final del modelo a través del análisis de las
+ curvas de aprendizaje.
  
 \end_layout
 
@@ -109,15 +116,20 @@ El enfoque plantea llevar a cabo la predicción de propiedades no-funcionales
 Como soporte para el enfoque, se desarrollaron dos herramientas independientes
  entre sí y diseñadas para efectuar el objetivo y conexión de las dos fases
  propuestas.
- Por un lado, se desarrolló una herramienta denominada “Android Performance
- Testing and Prediction” cuyo diseño se adapta fácilmente a la implementación
- de cualquier dominio computacional del que se quiera obtener indicadores
- de desempeño.
+ Por un lado, se desarrolló una herramienta denominada 
+\emph on
+Android Performance Testing and Prediction
+\emph default
+ cuyo diseño se adapta fácilmente a la implementación de cualquier dominio
+ computacional del que se quiera obtener indicadores de desempeño.
  Al tratarse de un framework implementado para el sistema Android, permite
  obtener de manera directa los benchmarks del dispositivo de interés para
  el análisis.
- Por otro lado, se desarrolló una herramienta standalone denominada “NOMBRE_TESI
-S” diseñada para brindar soporte al uso de las funciones de cualquier librería
+ Por otro lado, se desarrolló una herramienta standalone denominada 
+\emph on
+Nekonata
+\emph default
+ diseñada para brindar soporte al uso de las funciones de cualquier librería
  que realice aprendizaje automático y minería de datos escritas en lenguaje
  Java y que consiste en dos fases, una primer etapa para la construcción
  del modelo a partir del conjunto fuente de benchmarks mediante un proceso
@@ -130,15 +142,46 @@ ng consecuentes del entrenamiento.
 
 \begin_layout Standard
 Estas cuestiones se describen en detalle de la siguiente manera.
- En la sección 4.1 se enumeran algunos de los usos prácticos de los modelos
- incluyendo aplicaciones de la propuesta.
- Luego, en la sección 4.2 se profundiza sobre las distintas etapas del enfoque
- y flujo de trabajo.
- En la sección 4.3 se describen cada uno de los frameworks desarrollados,
- presentando la herramienta para la recolección de datos en la subsección
- 4.3.1.
- y finalmente, en la sección 4.3.2 se presenta la herramienta para la construcción
- de modelos evaluativos.
+ En la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Aplicaciones-de-la"
+
+\end_inset
+
+ se enumeran algunos de los usos prácticos de los modelos incluyendo aplicacione
+s de la propuesta.
+ Luego, en la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Etapas-del-método"
+
+\end_inset
+
+ se profundiza sobre las distintas etapas del enfoque y flujo de trabajo.
+ En la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Herramientas"
+
+\end_inset
+
+ se describen cada uno de los frameworks desarrollados, presentando la herramien
+ta para la recolección de datos en la subsección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Framework-de-medición"
+
+\end_inset
+
+ y finalmente, en la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Herramienta-de-entrenamiento"
+
+\end_inset
+
+ se presenta la herramienta para la construcción de modelos evaluativos.
  
 \end_layout
 
@@ -146,7 +189,7 @@ Estas cuestiones se describen en detalle de la siguiente manera.
 Aplicaciones de la propuesta 
 \begin_inset CommandInset label
 LatexCommand label
-name "sec:Objetivos"
+name "sec:Aplicaciones-de-la"
 
 \end_inset
 
@@ -182,26 +225,95 @@ Desafortunadamente, estos algoritmos pueden exhibir variaciones extremas
 \end_layout
 
 \begin_layout Standard
-La construcción de tales modelos conocidos como “modelos de actuación empírica”
- (EPM por sus siglas en inglés) ha ido creciendo y motivada debido a la
- utilidad que presentan frente a una gran variedad de contextos prácticos.
+La construcción de tales modelos conocidos como 
+\emph on
+modelos de actuación empírica 
+\emph default
+(EPM por sus siglas en inglés) ha ido creciendo y motivada debido a la utilidad
+ que presentan frente a una gran variedad de contextos prácticos.
  A continuación, se detallan algunos:
 \end_layout
 
-\begin_layout Itemize
-Selección de algoritmos: como se ha tratado en algunos trabajos [16], los
- modelos de predicción son útiles para la selección automática de algoritmos
- y la configuración en una variedad de formas (un problema clásico de selección
- del mejor algoritmo entre un determinado conjunto); a través de EPM se
- logra predecir el rendimiento de cada uno de estos algoritmos candidatos
+\begin_layout Description
+Selección
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+algoritmos Como se ha tratado en algunos trabajos 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Hutter2014"
+
+\end_inset
+
+, los modelos de predicción son útiles para la selección automática de algoritmo
+s y la configuración en una variedad de formas (un problema clásico de selección
+ del mejor algoritmo entre un determinado conjunto); a través de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{EPM}
+\end_layout
+
+\end_inset
+
+ se logra predecir el rendimiento de cada uno de estos algoritmos candidatos
  y mediante un análisis comparativo, seleccionar el más apropiado considerando
  la instancia del problema y las características del hardware.
  
 \end_layout
 
-\begin_layout Itemize
-Ajustes de parámetros y configuración automática del algoritmo: EPM sirve
- a dos propósitos fundamentales, por un lado, modelar el comportamiento
+\begin_layout Description
+Ajustes
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+parámetros
+\begin_inset space ~
+\end_inset
+
+y
+\begin_inset space ~
+\end_inset
+
+configuración
+\begin_inset space ~
+\end_inset
+
+automática
+\begin_inset space ~
+\end_inset
+
+del
+\begin_inset space ~
+\end_inset
+
+algoritmo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{EPM}
+\end_layout
+
+\end_inset
+
+ sirve a dos propósitos fundamentales, por un lado, modelar el comportamiento
  o funcionalidad de un algoritmo parametrizado en base a la configuración
  de tales parámetros, en cuyo caso se puede alternar entre el aprendizaje
  del modelo y su uso para identificar configuraciones interesantes para
@@ -214,19 +326,89 @@ te en las características de las instancias del problema y la configuración
  
 \end_layout
 
-\begin_layout Itemize
-Generación de benchmarks fuertes: Un modelo predictivo para uno o más algoritmos
- se puede utilizar para establecer los parámetros de los generadores de
- benchmarks existentes con el fin de crear instancias asociadas al algoritmo
- particular.
+\begin_layout Description
+Generación
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+benchmarks
+\begin_inset space ~
+\end_inset
+
+fuertes Un modelo predictivo para uno o más algoritmos se puede utilizar
+ para establecer los parámetros de los generadores de benchmarks existentes
+ con el fin de crear instancias asociadas al algoritmo particular.
  
 \end_layout
 
-\begin_layout Itemize
-Obtener una visión general de las instancias y el rendimiento de los algoritmos:
- EPM se puede utilizar para evaluar las características de la instancia
- y los valores de los parámetros del algoritmo que más impactan en el rendimient
-o.
+\begin_layout Description
+Obtener
+\begin_inset space ~
+\end_inset
+
+una
+\begin_inset space ~
+\end_inset
+
+visión
+\begin_inset space ~
+\end_inset
+
+general
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+las
+\begin_inset space ~
+\end_inset
+
+instancias
+\begin_inset space ~
+\end_inset
+
+y
+\begin_inset space ~
+\end_inset
+
+el
+\begin_inset space ~
+\end_inset
+
+rendimiento
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+los
+\begin_inset space ~
+\end_inset
+
+algoritmos 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{EPM}
+\end_layout
+
+\end_inset
+
+ se puede utilizar para evaluar las características de la instancia y los
+ valores de los parámetros del algoritmo que más impactan en el rendimiento.
  Algunos modelos son compatibles con este tipo de evaluaciones directamente.
  Para otros modelos, existen métodos de selección de atributos (características
  genéricas) para identificar un grupo más reducido de entradas del modelo
@@ -235,31 +417,73 @@ o.
  
 \end_layout
 
-\begin_layout Itemize
-Selección de Servicio y composición: cuando varios servicios web implementan
- la misma funcionalidad, los modelos de rendimiento resultan ser un buen
- criterio para escoger el mejor candidato entre ellos.
+\begin_layout Description
+Selección
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+Servicio
+\begin_inset space ~
+\end_inset
+
+y
+\begin_inset space ~
+\end_inset
+
+composición Cuando varios servicios web implementan la misma funcionalidad,
+ los modelos de rendimiento resultan ser un buen criterio para escoger el
+ mejor candidato entre ellos.
  Incluso en tiempo de ejecución, los proveedores de servicio pueden cambiarse
  si las condiciones del contexto y los parámetros de entrada se modifican.
  
 \end_layout
 
-\begin_layout Itemize
-Programación de tareas en redes móviles: suponiendo un conjunto de tareas
- que deben asignarse entre un conjunto de dispositivos, los modelos de rendimien
-to podrían obtener una medida exacta del tiempo de respuesta que cada tarea
- requerirá sobre cada dispositivo con el fin de minimizar el tiempo total
- de secuenciación de las tareas.
+\begin_layout Description
+Programación
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+tareas
+\begin_inset space ~
+\end_inset
+
+en
+\begin_inset space ~
+\end_inset
+
+redes
+\begin_inset space ~
+\end_inset
+
+móviles Suponiendo un conjunto de tareas que deben asignarse entre un conjunto
+ de dispositivos, los modelos de rendimiento podrían obtener una medida
+ exacta del tiempo de respuesta que cada tarea requerirá sobre cada dispositivo
+ con el fin de minimizar el tiempo total de secuenciación de las tareas.
  
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Description
 Otros.
  
 \end_layout
 
 \begin_layout Section
 Etapas del método
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Etapas-del-método"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -268,8 +492,15 @@ ias.
  Este ciclo o flujo de trabajo da lugar a tres etapas bien definidas por
  cada dominio o escenario de estudio, desde la obtención de indicadores
  hasta la predicción de propiedades no funcionales en entornos de aplicación.
- La figura 4.1 muestra un esquema conceptual del enfoque, cuyas etapas se
- describen a continuación:
+ La figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:method-stages"
+
+\end_inset
+
+ muestra un esquema conceptual del enfoque, cuyas etapas se describen a
+ continuación:
 \end_layout
 
 \begin_layout Standard
@@ -314,8 +545,8 @@ name "fig:method-stages"
 
 \end_layout
 
-\begin_layout Itemize
-Testing: el proceso comienza con la creación de datasets.
+\begin_layout Description
+Testing El proceso comienza con la creación de datasets.
  Cada dataset pertenece a un escenario o dominio diferente del cual se extraen
  todas las características que podrían influir sobre el desempeño del componente.
  Durante la ejecución de cada servicio o pieza de software se van realizando
@@ -324,8 +555,8 @@ o cada uno de estos benchmarks en un archivo para su posterior análisis.
  
 \end_layout
 
-\begin_layout Itemize
-Learning: a partir del conjunto de benchmarks obtenidos, se aplican técnicas
+\begin_layout Description
+Learning A partir del conjunto de benchmarks obtenidos, se aplican técnicas
  de aprendizaje de máquina para la extracción de conocimiento de estos datos
  y construir, consecuentemente, modelos predictivos que mejor se ajusten
  a la generalización de la información mediante un proceso de entrenamiento
@@ -333,8 +564,8 @@ Learning: a partir del conjunto de benchmarks obtenidos, se aplican técnicas
  
 \end_layout
 
-\begin_layout Itemize
-Predict: Finalmente, se pretende utilizar estos modelos de predicción en
+\begin_layout Description
+Predict Finalmente, se pretende utilizar estos modelos de predicción en
  entornos de aplicación que permitan la selección del componente más adecuado
  en base a un conjunto de propiedades del problema de entrada, las propiedades
  internas del dispositivo en el cual se llevará a cabo la ejecución, y un
@@ -346,6 +577,13 @@ Predict: Finalmente, se pretende utilizar estos modelos de predicción en
 
 \begin_layout Section
 Herramientas
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Herramientas"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -353,15 +591,36 @@ El trabajo presentado conforma dos de las tres fases propuestas para el
  enfoque global del desarrollo.
  La primer fase se lleva a cabo en un framework particular para la medición
  de propiedades de componentes Android que será detallada en la sección
- 4.3.1.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Framework-de-medición"
+
+\end_inset
+
+.
  La segunda fase para la construcción de modelos predictivos a través de
  técnicas de aprendizaje de máquina se desarrolla en una segunda herramienta
- la cual será detallada en la sección 4.3.2.
+ la cual será detallada en la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Herramienta-de-entrenamiento"
+
+\end_inset
+
+.
  
 \end_layout
 
 \begin_layout Subsection
 Framework de medición para Android
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Framework-de-medición"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection*
@@ -2125,6 +2384,13 @@ El servicio se implementó a través de una clase llamada ‘GMSFaceAPI’ la
 
 \begin_layout Subsection
 Herramienta de entrenamiento y evaluación de modelos
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Herramienta-de-entrenamiento"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2132,11 +2398,15 @@ El eje que ha guiado el diseño de la herramienta ha sido el brindar soporte
  para el uso de cualquier librería que ofrezca aprendizaje de máquina a
  través de la implementación de todos los conceptos involucrados como objetos
  independientes a los cuales adaptar las funcionalidades de las librerías.
- La herramienta “NOMBRE_TESIS” lleva a cabo dos tipos de procesos en el
- desarrollo de sus funciones, procesos automatizados y procesos que requieren
- la colaboración del usuario con el fin de mejorar los resultados a partir
- de vistas gráficas sobre el comportamiento y características de los modelos
- y además, para incluir en el proceso el interés y criterio del usuario.
+ La herramienta 
+\emph on
+Nekonata
+\emph default
+ lleva a cabo dos tipos de procesos en el desarrollo de sus funciones, procesos
+ automatizados y procesos que requieren la colaboración del usuario con
+ el fin de mejorar los resultados a partir de vistas gráficas sobre el comportam
+iento y características de los modelos y además, para incluir en el proceso
+ el interés y criterio del usuario.
  
 \end_layout
 
@@ -2148,8 +2418,15 @@ El enfoque y objetivo de la herramienta se concluyen en dos etapas, una
 \end_layout
 
 \begin_layout Standard
-En la figura 4.9 se muestran las vistas iniciales de la herramienta , presentació
-n y configuración de datos.
+En la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:prediction-tool"
+
+\end_inset
+
+ se muestran las vistas iniciales de la herramienta , presentación y configuraci
+ón de datos.
  
 \end_layout
 
@@ -2190,10 +2467,6 @@ name "fig:prediction-tool"
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -2226,17 +2499,21 @@ o en múltiples lenguajes de programación.
 a definir los tipos de atributos numéricos y categóricos), finalmente durante
  la etapa de evaluación, es necesario el uso de métricas o indicadores matemátic
 os para evaluar la calidad del clasificador.
- Estos principios permiten generalizar el término “librería” independizando
- la implementación específica de cada biblioteca añadida al sistema.
+ Estos principios permiten generalizar el término 
+\emph on
+librería
+\emph default
+ independizando la implementación específica de cada biblioteca añadida
+ al sistema.
  
 \end_layout
 
 \begin_layout Standard
-La herramienta “NOMBRE_TESIS” utiliza la biblioteca Weka, una plataforma
- de software para el aprendizaje automático y la minería de datos escrito
- en Java y desarrollado en la Universidad de Waikato y popularmente conocida
- ya que contiene una extensa colección de técnicas para preprocesamiento
- de datos y modelado.
+La herramienta Nekonata utiliza la biblioteca Weka, una plataforma de software
+ para el aprendizaje automático y la minería de datos escrito en Java y
+ desarrollado en la Universidad de Waikato y popularmente conocida ya que
+ contiene una extensa colección de técnicas para preprocesamiento de datos
+ y modelado.
  
 \end_layout
 
@@ -2274,9 +2551,9 @@ Modelos
 \end_layout
 
 \begin_layout Standard
-La herramienta “NOMBRE_TESIS” está orientada al aprendizaje supervisado
- de predicción mediante funciones de regresión e incluye la técnica adaptada
- de agrupamiento a través de cluster como alternativa.
+La herramienta Nekonata está orientada al aprendizaje supervisado de predicción
+ mediante funciones de regresión e incluye la técnica adaptada de agrupamiento
+ a través de cluster como alternativa.
  Ambos casos fueron diseñados para incorporar los algoritmos que se deseen
  asegurando el correcto uso de sus funciones.
 \end_layout
@@ -2314,17 +2591,24 @@ Los algoritmos pueden aplicarse utilizando los valores por defecto de los
 \end_layout
 
 \begin_layout Standard
-La herramienta “NOMBRE_TESIS” considera la optimización de algoritmos de
- regresión, clusterers y funciones kernel.
+La herramienta Nekonata considera la optimización de algoritmos de regresión,
+ clusterers y funciones kernel.
  
 \end_layout
 
 \begin_layout Standard
 Las consideraciones mencionadas anteriormente son el punto de partida en
  el mecanismo de aprendizaje.
- El proceso de entrenamiento de modelos (Figura 4.10) básicamente lleva a
- cabo la configuración de todos los datos requeridos para ejecutar los algoritmo
-s clasificadores y obtener, posteriormente los modelos.
+ El proceso de entrenamiento de modelos (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:prediction-workflow"
+
+\end_inset
+
+) básicamente lleva a cabo la configuración de todos los datos requeridos
+ para ejecutar los algoritmos clasificadores y obtener, posteriormente los
+ modelos.
  Estos datos están directamente afectados por la biblioteca de aprendizaje
  automático que se use por lo que se dispondrá de diferentes opciones de
  selección variando entre una librería y otra.
@@ -2338,10 +2622,6 @@ s.
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \align center
@@ -2370,10 +2650,6 @@ name "fig:prediction-workflow"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -2431,8 +2707,11 @@ El dataset de origen, también denominado conjunto de datos de aprendizaje
  o entrenamiento, es utilizado para obtener el modelo predictivo que generalice
  esos datos adecuadamente.
  El término generalizar hace referencia a obtener una función que se ajuste
- a los datos en cuanto minimice el “error empírico” que es el error producido
- por el algoritmo.
+ a los datos en cuanto minimice el 
+\emph on
+error empírico
+\emph default
+ que es el error producido por el algoritmo.
  Se asume que los datos de entrenamiento constituyen una muestra lo suficienteme
 nte representativa para aplicar un clasificador.
  
@@ -2463,17 +2742,30 @@ El proceso de evaluación, entonces, debe utilizar nuevos datos de entrada
 \end_layout
 
 \begin_layout Standard
-El método de validación cruzada utiliza un coeficiente ‘K’ de repetición
- y división; los datos de entrada se dividen en ‘K’ subconjuntos, utilizando
- uno de ellos como dato de prueba y el resto (K-1) como datos de entrenamiento.
- El proceso es repetido durante ‘K’ iteraciones, con cada uno de los posibles
- subconjunto de datos de prueba.
+El método de validación cruzada utiliza un coeficiente 
+\emph on
+K
+\emph default
+ de repetición y división; los datos de entrada se dividen en 
+\emph on
+K
+\emph default
+ subconjuntos, utilizando uno de ellos como dato de prueba y el resto (
+\emph on
+K-1
+\emph default
+) como datos de entrenamiento.
+ El proceso es repetido durante 
+\emph on
+K
+\emph default
+ iteraciones, con cada uno de los posibles subconjunto de datos de prueba.
  Finalmente se calcula la media aritmética de los resultados de cada iteración
  para obtener un único resultado.
  Los resultados de la evaluación son contemplan mediante un conjunto de
  indicadores que se describirán más adelante.
- La herramienta “NOMBRE_TESIS” implementa ambos métodos e incluye la funcionalid
-ad necesaria para acceder a todos los valores predictivos.
+ Nekonata implementa ambos métodos e incluye la funcionalidad necesaria
+ para acceder a todos los valores predictivos.
  
 \end_layout
 
@@ -2490,13 +2782,27 @@ Las métricas usadas para la evaluación de los algoritmos simplemente son
  por cada biblioteca incorporada.
  También, se han definido e incorporado cuatro características globales
  asociadas a las métricas para brindar soporte a otras funcionalidades.
- Toda métrica i) brinda algún tipo de información, acerca del error de predicció
-n o estadísticas o atributos de los datos; ii) tiene una representación
- particular de los indicadores, los valores pueden estar normalizados en
- una escala del 0 al 1, expresados en porcentajes o simplemente adaptados
- a la escala de los datos; iii) definen por su naturaleza un requerimiento
- minimo o maximo de su indicador y iv) son aplicables a un tipo de función
- ya sea regresión o clasificación.
+ Toda métrica 
+\emph on
+i
+\emph default
+) brinda algún tipo de información, acerca del error de predicción o estadística
+s o atributos de los datos; 
+\emph on
+ii
+\emph default
+) tiene una representación particular de los indicadores, los valores pueden
+ estar normalizados en una escala del 0 al 1, expresados en porcentajes
+ o simplemente adaptados a la escala de los datos; 
+\emph on
+iii
+\emph default
+) definen por su naturaleza un requerimiento minimo o maximo de su indicador
+ y 
+\emph on
+iv
+\emph default
+) son aplicables a un tipo de función ya sea regresión o clasificación.
  
 \end_layout
 
@@ -2533,15 +2839,22 @@ La optimización de un algoritmo clasificador para obtener la configuración
  ya que un mismo indicador podría arrojar valores cercanos entre un algoritmo
  y otro favoreciendo equivocadamente a uno de ellos, error que podría notarse
  al compararlos simultáneamente con otras métricas.
- La metodología de operación de esta fase se muestra en la figura 4.11.
+ La metodología de operación de esta fase se muestra en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:models-comparison-workflow"
+
+\end_inset
+
+.
  
 \end_layout
 
 \begin_layout Standard
-La herramienta “NOMBRE_TESIS” hace foco en este detalle y ofrece al usuario
- una vista de imágenes con los indicadores medidos de cada algoritmo seleccionad
-o por el usuario para aplicar el proceso de optimización y elegir, posteriorment
-e, el que resulte más adecuado.
+Nekonata hace foco en este detalle y ofrece al usuario una vista de imágenes
+ con los indicadores medidos de cada algoritmo seleccionado por el usuario
+ para aplicar el proceso de optimización y elegir, posteriormente, el que
+ resulte más adecuado.
  La información gráfica complementaria que se brinda, detalla los algoritmos
  representados por medio de barras y agrupados en categorías separadas de
  acuerdo a cada métrica a modo de facilitar la comparación.
@@ -2556,10 +2869,6 @@ e, el que resulte más adecuado.
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \align center
@@ -2592,10 +2901,6 @@ name "fig:models-comparison-workflow"
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -2610,7 +2915,14 @@ La disposición de todas las métricas de evaluación se han distribuido en
  a valores normalizados entre cero y uno y métricas a valores de escala
  del atributo.
  De esta forma se agrupan en conjuntos los indicadores proclives a compararse
- mutuamente como puede observarse en la figura 4.12.
+ mutuamente como puede observarse en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:screenshot-errors"
+
+\end_inset
+
+.
  
 \end_layout
 
@@ -2628,10 +2940,6 @@ El aporte del usuario se incorporó para personificar el interés y criterio
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \align center
@@ -2664,10 +2972,6 @@ name "fig:screenshot-errors"
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -2683,8 +2987,19 @@ A través del uso de métricas se adquiere una idea estimativa del desempeño
  podría resultar útil conocer el comportamiento general del algoritmo, contrasta
 ndo cada uno de los valores reales del atributo clase con los valores predichos
  por el clasificador, y obtener así una vista exacta de la manera en que
- el clasificador se ajusta a los datos (Figura 4.13).
- Este recurso es usado en la herramienta como un gráfico de dos líneas continuas
+ el clasificador se ajusta a los datos (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:screenshot-error-curve"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+Este recurso es usado en la herramienta como un gráfico de dos líneas continuas
  de distinto color para representar el conjunto de datos de entrenamiento
  y el conjunto de datos predichos.
  Cada punto del dominio corresponde a cada instancia y la unión entre puntos
@@ -2697,10 +3012,6 @@ ndo cada uno de los valores reales del atributo clase con los valores predichos
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \align center
@@ -2733,10 +3044,6 @@ name "fig:screenshot-error-curve"
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -2758,10 +3065,6 @@ El análisis del error de predicción es la base para comprender la calidad
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \align center
@@ -2793,10 +3096,6 @@ name "fig:adjustment-workflow"
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -2808,7 +3107,14 @@ El flujo de desarrollo de esta fase se planteó como un proceso de carácter
  Se puede optar simplemente por almacenar el modelo elegido durante la etapa
  de comparación anterior o repetir las veces que se desee un procedimiento
  de análisis de las curvas de aprendizaje del modelo y las acciones consecuentes
- para reparar los posibles efectos, como se muestra en la figura 4.14.
+ para reparar los posibles efectos, como se muestra en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:adjustment-workflow"
+
+\end_inset
+
+.
  
 \begin_inset Note Note
 status open
@@ -2881,8 +3187,8 @@ Opciones para el usuario
 \end_layout
 
 \begin_layout Standard
-En la herramienta “NOMBRE_TESIS” se han incluido dos acciones posibles para
- reparar, en caso de evidenciar, los efectos de overfit o underfit del modelo.
+En Nekonata se han incluido dos acciones posibles para reparar, en caso
+ de evidenciar, los efectos de overfit o underfit del modelo.
  Estas dos acciones no son mutuamente excluyentes de manera que el usuario
  puede elegir libremente alguna o ambas acciones a la vez, sin embargo,
  la herramienta le recomienda la acción que debería tomar en caso de un
@@ -2911,8 +3217,21 @@ A pesar que la herramienta fue pensada para la predicción de componentes
  de entrenamiento y evaluación de modelos, permitiendo la ejecución independient
 e entre ambas por lo que el puente de comunicación entre ellas es la corresponde
 ncia entre la salida de la primer herramienta con la entrada de la segunda;
- la herramienta de medición crea archivos de formato CSV, los cuales serán
- usados en la herramienta como el conjunto de datos fuente para el entrenamiento.
+ la herramienta de medición crea archivos de formato 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{CSV}
+\end_layout
+
+\end_inset
+
+, los cuales serán usados en la herramienta como el conjunto de datos fuente
+ para el entrenamiento.
  
 \end_layout
 
@@ -2921,23 +3240,65 @@ Entorno y tecnologías
 \end_layout
 
 \begin_layout Standard
-Para la implementación del framework “NOMBRE_TESIS” se utilizó el entorno
- de desarrollo Eclipse cuyo lenguaje de programación es Java.
- El proyecto ha sido configurado con la versión JDK 1.7 y JRE 1.8 y además,
- se han incorporado tecnologías de terceros para el entorno las cuáles cumplen
- distintos roles en la herramienta.
+Para la implementación del framework Nekonata se utilizó el entorno de desarroll
+o Eclipse cuyo lenguaje de programación es Java.
+ El proyecto ha sido configurado con la versión 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{JDK}
+\end_layout
+
+\end_inset
+
+ 1.7 y 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{JRE}
+\end_layout
+
+\end_inset
+
+ 1.8 y además, se han incorporado tecnologías de terceros para el entorno
+ las cuáles cumplen distintos roles en la herramienta.
  
 \end_layout
 
 \begin_layout Standard
 Para el diseño de la interfaz gráfica se utilizó mayormente la librería
- SWING de java incorporada en el JDK aunque también se incluyeron componentes
- de la librería nativa AWT.
+ SWING de java incorporada en el 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{JDK}
+\end_layout
+
+\end_inset
+
+ aunque también se incluyeron componentes de la librería nativa AWT.
  La principal ventaja de la librería SWING es brindar una interfaz adaptada
  a cada sistema operativo sin necesidad de cambio de código, es decir independie
 nte a la plataforma.
- Complementariamente se incorporaron las dos siguientes librerías: ‘jgoodies-for
-ms-1.8.0.jar’ y ‘miglayout15-swing.jar’
+ Complementariamente se incorporaron las dos siguientes librerías: 
+\emph on
+jgoodies-forms-1.8.0.jar
+\emph default
+ y 
+\emph on
+miglayout15-swing.jar
 \end_layout
 
 \begin_layout Standard
@@ -2958,10 +3319,13 @@ Por otro lado, para la creación de vistas para el usuario se incorporó la
 Respecto al uso de técnicas de aprendizaje de máquina, actualmente existen
  muchas tecnologías y frameworks que proveen esta funcionalidad para utilizar
  en entornos Java, sin embargo, como se ha adelantado anteriormente en la
- herramienta sólo se incluyó la biblioteca Weka en la versión 3.8 y se añadió
- también un paquete para la optimización de parámetros perteneciente a la
- misma librería denominado MULTISEARCH en su versión más actual del mes
- de agosto del 2016.
+ herramienta sólo se incluyó la biblioteca 
+\emph on
+Weka
+\emph default
+ en la versión 3.8 y se añadió también un paquete para la optimización de
+ parámetros perteneciente a la misma librería denominado MULTISEARCH en
+ su versión más actual del mes de agosto del 2016.
  
 \end_layout
 
@@ -2991,8 +3355,7 @@ La finalidad de la etapa de implementación fue un buen framework de trabajo
 
 \begin_layout Standard
 Aplicando los conceptos teóricos antes presentados, se exponen a continuación
- los paquetes y las clases principales que componen el desarrollo de NOMbRE_TESI
-S.
+ los paquetes y las clases principales que componen el desarrollo de Nekonata.
  
 \end_layout
 
@@ -3004,8 +3367,12 @@ Databases
 Como ya se mencionó anteriormente se desea poder administrar, leer y escribir
  datasets de forma dinámica y segura.
  Para esto, se creó una estructura para almacenar cada individuo (instancia)
- con una estructura Hashtable, con los nombres de los atributos como claves
- de los valores numéricos que representan a cada uno de ellos.
+ con una estructura 
+\emph on
+Hashtable
+\emph default
+, con los nombres de los atributos como claves de los valores numéricos
+ que representan a cada uno de ellos.
 \end_layout
 
 \begin_layout Standard
@@ -3069,10 +3436,6 @@ ndo que estos últimos se utilizan para la regresión).
 \end_layout
 
 \begin_layout Standard
-modelers-class-diagram
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -3117,8 +3480,15 @@ name "fig:modelers-class-diagram"
 A partir de esto, implementando los métodos abstractos presentados, se pueden
  incluir cualquier método de clasificación requerido, siempre considerando
  importante que retorne un valor denso.
- Actualmente, los modelos implementados son los presentados en el capítulo
- 2.
+ Actualmente, los modelos implementados son los presentados en la sección
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Funciones-contempladas"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -3163,8 +3533,14 @@ name "fig:all-modelers-class-diagram"
 \end_layout
 
 \begin_layout Standard
-Como se puede apreciar en la figura BLABLA , se realizó una abstracción
- intermedia considerando la librería Weka.
+Como se puede apreciar en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:all-modelers-class-diagram"
+
+\end_inset
+
+ , se realizó una abstracción intermedia considerando la librería Weka.
  Esto se debe principalmente al comportamiento en común que tenían dichos
  modelos, pero no es mandatoria dicha abstracción al agregar una nueva librería
  o al agregar nuevos modelos.
@@ -3204,8 +3580,20 @@ Parámetros simples: Son aquellos que sólo tienen un valor numérico y que
 \end_layout
 
 \begin_layout Enumerate
-Parámetros kernel: Son funciones matemáticas que se emplean en las Máquinas
- de Soporte Vectorial.
+Parámetros kernel: Son funciones matemáticas que se emplean en las 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SVM}
+\end_layout
+
+\end_inset
+
+.
  Estas funciones son las que le permiten convertir lo que sería un problema
  de clasificación no lineal en el espacio dimensional original, a un sencillo
  problema de clasificación lineal en un espacio dimensional mayor.
@@ -3217,7 +3605,14 @@ Parámetros kernel: Son funciones matemáticas que se emplean en las Máquinas
 Observando ambos puntos, se puede apreciar una composición de parámetros
  ya que las funciones se conforman por parámetros simples y los parámetros
  kernel son funciones internas.
- Esto se puede observar en la figura BLABLA .
+ Esto se puede observar en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:parameters-class-diagram"
+
+\end_inset
+
+ .
  
 \end_layout
 
@@ -3326,9 +3721,16 @@ La implementación presentada surge a partir de la forma de implementación
  no podría ser valorado.
  La implementación planteada permite que este modelo quede a la altura de
  los otros presentados y que, si se desea, se pueden crear nuevas métricas
- sin tener la clase AbsEvaluation que represente esta relación.
- Sólo sería necesario crear la métrica heredando de AbsSimpleMetric e implementa
-r la forma de cálculo requerida.
+ sin tener la clase 
+\emph on
+AbsEvaluation
+\emph default
+ que represente esta relación.
+ Sólo sería necesario crear la métrica heredando de 
+\emph on
+AbsSimpleMetric
+\emph default
+ e implementar la forma de cálculo requerida.
 \end_layout
 
 \begin_layout Paragraph*
@@ -3473,21 +3875,53 @@ r dos métodos que devuelven dos conceptos principales.
 \end_layout
 
 \begin_layout Standard
-Ya implementado se provee el conjunto SimpleMetricsCollection que permiten
- valorizar cualquier modelo, ademas del WekaMetricsCollection que sólo contiene
- la metricas basadas en el WekaEvaluation.
+Ya implementado se provee el conjunto 
+\emph on
+SimpleMetricsCollection
+\emph default
+ que permiten valorizar cualquier modelo, ademas del 
+\emph on
+WekaMetricsCollection
+\emph default
+ que sólo contiene la metricas basadas en el 
+\emph on
+WekaEvaluation
+\emph default
+.
  
 \end_layout
 
 \begin_layout Standard
 La última función que se debe implementar de forma ineludible retorna un
  vector de constantes.
- Estas constantes deben estar declaradas en la clase Config.Modeler con el
- formato: 
+ Estas constantes deben estar declaradas en la clase 
+\emph on
+Config.Modeler
+\emph default
+ con el formato: 
 \end_layout
 
 \begin_layout Standard
-“Nombre a mostrar en la aplicación”: constante 
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+Nombre a mostrar en la aplicación: constante 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3499,10 +3933,12 @@ Las mismas declaran los modelos que son aceptados por la liberia.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
+
 public abstract Vector<AbsModeler> createModelers(Vector<Integer> selectedModels
 , int index); 
 \end_layout
