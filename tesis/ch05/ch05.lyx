@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass book
 \use_default_options true
 \maintain_unincluded_children false
@@ -9,16 +11,16 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -197,7 +199,7 @@ En todo el conjunto de dataset, se añadió el tiempo de respuesta como propieda
 Métricas de evaluación
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Métricas-de-evaluación"
+name "subsec:Métricas-de-evaluación"
 
 \end_inset
 
@@ -440,7 +442,7 @@ ac{RRSE}
 Formato de los resultados
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Formato-de-los"
+name "subsec:Formato-de-los"
 
 \end_inset
 
@@ -521,7 +523,7 @@ La manera en que los datos son expuestos al usuario no representa un formato
 Parámetros de configuraciónde las técnicas
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Parámetros-de-configuraciónde"
+name "subsec:Parámetros-de-configuraciónde"
 
 \end_inset
 
@@ -799,7 +801,7 @@ gamma
 Características de los dispositivos móviles usados
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Características-de-los"
+name "subsec:Características-de-los"
 
 \end_inset
 
@@ -899,11 +901,43 @@ s formando un contexto particular para la predicción.
 Escenario 1: Algoritmos para el problema del viajante
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Escenario-1:-Algoritmos"
+name "subsec:Escenario-1:-Algoritmos"
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+En el campo de la teoría de complejidad computacional, el problema del viajante
+ o TSP por sus siglas en inglés, es tratado como un problema NP-Completo
+ y es modelado como un grafo de manera que las ciudades son sus vértices,
+ los caminos son las aristas y las distancias entre caminos son los pesos
+ de las aristas.
+ Es un problema de minimización tras la búsqueda de un recorrido completo
+ que comienza y finaliza en un vértice específico y visita el resto de los
+ vértices exactamente una vez con coste mínimo.
+ Existen muchas variantes del problema, una de ellas se trata del TSP simétrico
+ en el cual la distancia entre un par de ciudades es la misma en cada dirección
+ formando un grafo ponderado no dirigido.
+ Esta variante fue la versión considerada por la herramienta.
+ 
+\end_layout
+
+\begin_layout Standard
+Con el fin de garantizar instancias variadas del problema, (diferentes cantidade
+s de ciudades, distintas representaciones y pesos), se incorporó a la herramient
+a una librería llamada TSPLib con múltiples archivos de instancias del problema.
+ La librería cuenta con 111 archivos de formato TSP, y 32 archivos de formato
+ OPT.TOUR que contienen el recorrido óptimo del archivo que referencian.
+ Los ejemplos oscilan desde 14 y hasta 18512 ciudades con un sólo ejemplo
+ extremo de 85900, y utilizan cuatro funciones de cálculo de la distancia
+ entre ciudades: distancia euclidiana, distancia geométrica, distancia pseudo
+ euclidiana y función techo.
+ Para la obtención de las mediciones correspondientes, se realizó una preselecci
+ón de 32 archivos que comprenden ejemplos de entre 22 y 200 ciudades.
+ Cabe destacar que fue necesaria la implementación de un parser para el
+ uso de los archivos.
 \end_layout
 
 \begin_layout Standard
@@ -929,11 +963,7 @@ ac{CSV}
 \end_inset
 
  bajo el nombre ‘'Sx-results’ según el modelo de dispositivo utilizado.
- 
-\end_layout
-
-\begin_layout Standard
-Los componentes involucrados incluyen el algoritmo del vecino más cercano,
+ Los componentes involucrados incluyen el algoritmo del vecino más cercano,
  Programación Lineal, Mejor ajuste, Kruskal, Prim, y el algoritmo de Transformac
 ión Local.
  El algoritmo de Backtracking fue descartado de la lista debido al gran
@@ -1195,7 +1225,7 @@ accuracy
 Escenario 2: Servicios para detección de rostros
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Escenario-2:-Servicios"
+name "subsec:Escenario-2:-Servicios"
 
 \end_inset
 
@@ -1233,35 +1263,79 @@ Los dataset para este dominio han sido formados tras la ejecución de diferentes
  componentes para detección de rostros en imágenes en un único dispositivo
  móvil (Lenovo K3 Note), por tal motivo no se incluyen en los archivos caracterí
 sticas propias del móvil ya que significan valores constantes en la predicción.
- 
-\end_layout
-
-\begin_layout Standard
-Los componentes involucrados incluyen un servicio o proceso Android (Google
+ Los componentes involucrados incluyen un servicio o proceso Android (Google
  Play Services (GMS) face detector) y tres servicios Web (FaceRect API,
  Sky Biometry API y Microsoft Face API).
  Estos cuatro componentes serán evaluados a partir de subconjunto de 290
  imágenes pertenecientes al dataset llamado FDDB [24] con características
- muy variadas .
- 
-\end_layout
-
-\begin_layout Standard
-Cada servicio es llamado especificando una imagen y un conjunto de parámetros
+ muy variadas.
+ Cada servicio es llamado especificando una imagen y un conjunto de parámetros
  booleanos (a través del valor 0 y 1) que determinan las funciones requeridas
  del algoritmo determinado.
+ En los cuatro servicios, el tiempo de respuesta es una variable continua
+ y registrada en milisegundos.
  
 \end_layout
 
 \begin_layout Standard
-En los cuatro servicios, el tiempo de respuesta es una variable continua
- y registrada en milisegundos.
- A continuación se detallan las principales características de los dataset
- creados para cada servicio: 
+A continuación se detallan las principales características de los servicios
+ y los respectivos dataset creados para cada uno:
 \end_layout
 
 \begin_layout Paragraph
 GMS
+\end_layout
+
+\begin_layout Standard
+La compañía Google ha implementado una colección extensa y variada de aplicacion
+es para Android.
+ Entre ellas, ofrece el paquete ‘com.google.android.gms.vision’ el cual proporciona
+ una funcionalidad común para trabajar con detectores de objetos visuales.
+ En la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:GooglePlay-services"
+
+\end_inset
+
+se muestra la forma en que el objeto ‘GoogleAPIClient’ proporciona una interfaz
+ para conectar y hacer llamadas a cualquiera de los servicios de Google
+ Play disponibles tales como ‘Google Play Games’, ‘Google Drive’, ‘Google
+ Maps’, etc 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Esquema conceptual para el uso de servicios de Google Play Services.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:GooglePlay-services"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1292,7 +1366,37 @@ ResponseTime - Google Play Service face detector.csv
 \end_layout
 
 \begin_layout Paragraph
-FaceRect API
+FaceRect API y Sky Biometry API
+\end_layout
+
+\begin_layout Standard
+Los servicios web ‘SkyBiometry’ y ‘FaceRect’ son consumidos directamente
+ desde la aplicación online ‘Mashape’, la cual ofrece una gran variedad
+ de aplicaciones, incluida una colección de Aplicaciones sobre detección
+ y reconocimiento de rostros.
+ SkyBiometry y FaceRect son aplicaciones que utilizan interfaz REST, es
+ decir, los métodos son llamados a través de internet usando los métodos
+ HTTP standard como GET y POST a las direcciones correspondientes.
+ Dependiendo de los parámetros especificados en el request, el servidor
+ puede generar la respuesta tanto en formato JSON como XML.
+ Adicionalmente, se utilizó el servicio GMS Visión de Google a partir de
+ la librería correspondiente.
+ Los tres servicios son descritos en detalle en el apéndice B.
+\end_layout
+
+\begin_layout Standard
+El algoritmo de la aplicación FaceRect permite setear sólo una opción (‘features
+’) por imagen, de modo que se construyó un dataset con sólo dos propiedades,
+ incluyendo el tiempo de respuesta y un total de 54 instancias.
+ Archivo Dataset: “ResponseTime - FaceRect API.csv”.
+ Por otro lado, el algoritmo de Sky Biometry permite setear siete parámetros
+ diferentes dando lugar a 128 configuraciones posibles por imagen (‘aggressive’
+ , ‘gender’ , ‘glasses’ , ‘smiling’ , ‘mood’ , ‘age’ , ‘eyes’).
+ Para el servicio Sky Biometry se utilizaron 30 imágenes originando un dataset
+ de 3840 instancias y se incluyen 8 propiedades, además de los parámetros
+ configurables del tipo binario se añade el tiempo de respuesta.
+ Archivo Dataset: “ResponseTime - SkyBiometry API.csv”.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1314,92 +1418,21 @@ ResponseTime - FaceRect API.csv
 \end_layout
 
 \begin_layout Paragraph
-Sky Biometry API
-\end_layout
-
-\begin_layout Standard
-El algoritmo permite setear siete parámetros diferentes dando lugar a 128
- configuraciones posibles por imagen (
-\emph on
-aggressive
-\emph default
-, 
-\emph on
-gender
-\emph default
-, 
-\emph on
-glasses
-\emph default
-, 
-\emph on
-smiling
-\emph default
-, 
-\emph on
-mood
-\emph default
-, 
-\emph on
-age
-\emph default
-, 
-\emph on
-eyes
-\emph default
-).
- Para el servicio Sky Biometry se utilizaron 30 imágenes originando un dataset
- de 3840 instancias y se incluyen 8 propiedades, además de los parámetros
- configurables del tipo binario se añade el tiempo de respuesta.
- Archivo Dataset: “ResponseTime - SkyBiometry API.csv”.
-\end_layout
-
-\begin_layout Paragraph
 Microsoft Face API
 \end_layout
 
 \begin_layout Standard
-
-\emph on
-image
-\emph default
-, 
-\emph on
-landmarks
-\emph default
-, 
-\emph on
-age
-\emph default
-, 
-\emph on
-gender
-\emph default
-, 
-\emph on
-facialHair
-\emph default
-, 
-\emph on
-smile
-\emph default
-, 
-\emph on
-headPose
-\emph default
-.
+Face API es un servicio web en la nube que provee los algoritmos de detección
+ y reconocimiento de rostros más avanzados.
+ El servicio es consumido a través del sitio de Microsoft y las respuestas
+ son retornadas en formato JSON.
+ El algoritmo permite setear seis propiedades (‘landmarks’, ‘age’, ‘gender’,
+ ‘facialHair’, ‘smile’ y ‘headPose’).
  El dataset está formado por 1826 instancias y siete propiedades, además
  de los parámetros configurables como atributos binarios se incluye el tiempo
  de respuesta.
+ Archivo Dataset: “ResponseTime - Microsoft Face API.csv”.
  
-\end_layout
-
-\begin_layout Standard
-Archivo Dataset: 
-\emph on
-ResponseTime - Microsoft Face API.csv
-\emph default
-.
 \end_layout
 
 \begin_layout Standard
@@ -1491,11 +1524,21 @@ e distribuidos en el intervalo tomando la forma de campana de Gauss, los
 Escenario 3: Problema de la mochila
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Escenario-3:-Problema"
+name "subsec:Escenario-3:-Problema"
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Al igual que el problema del agente viajero, el problema de la mochila o
+ ‘Knapsack problem’ por su nombre en inglés, es un problema NP-Completo
+ de optimización combinatoria, es decir, se busca la mejor solución entre
+ un conjunto finito de posibles soluciones al problema.
+ El problema simula la colocación de ítems u objetos en una mochila de tal
+ forma que se maximice el valor de los ítems que contiene con la restricción
+ de no superar el peso (o volumen) máximo que puede soportar la mochila.
 \end_layout
 
 \begin_layout Standard
@@ -1504,20 +1547,12 @@ La evaluación de este dominio se llevó a cabo en dos modelos distintos de
  es crear modelos de predicción del tiempo de respuesta y la optimalidad
  del componente, es decir, la relación entre la solución encontrada y la
  solución óptima retornando un valor entre cero y uno.
- 
-\end_layout
-
-\begin_layout Standard
-Para este dominio se implementaron dos algoritmos de resolución al problema
+ Para este dominio se implementaron dos algoritmos de resolución al problema
  como componentes, el algoritmo greedy de complejidad O(n2 log(n)) y el
  algoritmo backtracking que encuentra la solución óptima pero en tiempo
  exponencial O(2n).
  Ambos componentes fueron implementados puramente en Java.
- 
-\end_layout
-
-\begin_layout Standard
-Las instancias del problemas se obtuvieron aleatoriamente de las cuales
+ Las instancias del problema se obtuvieron aleatoriamente de las cuales
  se consideraron los siguientes atributos: 
 \end_layout
 
@@ -1536,6 +1571,10 @@ de
 \end_inset
 
 Operación.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1584,6 +1623,10 @@ de
 
 Componente.
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1621,7 +1664,9 @@ Optimality and Response time - dispositivo XXX
  Las entradas del problema fueron consideradas desde un mínimo de 5 hasta
  un tamaño máximo de 24 ítems límite impuesto debido a la complejidad del
  algoritmo backtracking y su correspondiente latencia exponencial.
- Por cada ítem se evaluaron 18 entradas al problema.
+ Por cada ítem se evaluaron 18 entradas al problema generadas aleatoriamente
+ a partir de cuatro valores: cantidad total de ítems, máximo valor y peso
+ de un ítem, y finalmente el peso o capacidad de la mochila.
  
 \end_layout
 
@@ -1632,12 +1677,9 @@ Response time - Greedy algorithm - dispositivo XXX
 \emph default
 , se crearon datasets de 4704 instancias y cuatro propiedades (Grupo A)
  con entradas del problema de tamaño mínimo de 5 ítems, e incrementalmente
- hasta un máximo de 200, con 24 entradas dedicadas a cada número de ítem.
- 
-\end_layout
-
-\begin_layout Standard
-A continuación en la figura 
+ hasta un máximo de 200, con 24 entradas dedicadas a cada número de ítem
+ generadas también aleatoriamente.
+ A continuación en lafigura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Knapsack-dataset-behaviour"
@@ -1648,8 +1690,8 @@ reference "fig:Knapsack-dataset-behaviour"
 \emph on
 Tiempo de respuesta
 \emph default
-, en referencia a la imagen, A) Opt & Resp Lenovo K3, B) Opt & Resp Samsung
- Galaxy S3, C) Greedy Lenovo K3 y D) Greedy Samsung S3.
+, en referencia a la imagen, A) ‘Opt & Resp Lenovo K3’, B) ‘Opt & Resp Samsung
+ Galaxy S3’, C) Greedy Lenovo K3 y D) Greedy Samsung S3.
  
 \end_layout
 
@@ -1790,11 +1832,20 @@ den a valores entre 0.9 y 1.0, sin incluir este último.
 Escenario 4: Multiplicación de matrices
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Escenario-4:-Multiplicación"
+name "subsec:Escenario-4:-Multiplicación"
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+El producto de matrices corresponde a problemas de clase P ya que a diferencia
+ de los problemas NP, su complejidad es polinómica.
+ El producto entre matrices no es conmutativo, depende del orden de las
+ matrices intervinientes y su multiplicación sólo es posible si el número
+ de filas de la primera matriz es igual al número de columnas de la segunda.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -2003,7 +2054,11 @@ ac{JNI}
 \begin_layout Standard
 Las entradas del problema utilizadas para la evaluación fueron generadas
  aleatoriamente a partir de las dimensiones (tamaño) de las matrices involucrada
-s.
+s a partir del número de filas y columnas de la primer matriz denominada
+ matriz A y el número de columnas de la segunda matriz denominada matriz
+ B, esta distinción es importante teniendo en cuenta la propiedad de no
+ conmutatividad del producto de matrices.
+ Adicionalmente, ambas matrices pueden ser configuradas externamente.
  De cada problema, las propiedades que se tomaron en cuenta fueron: el número
  de columnas de la primer matriz (
 \emph on
@@ -2020,11 +2075,7 @@ BColumn
 ), la complejidad temporal de la operación definida como O(AColumn x ARow
  x BColumn), el nombre del componente y el tiempo de respuesta de la operación
  registrada en segundos.
- 
-\end_layout
-
-\begin_layout Standard
-No fueron incluidos atributos relativos al dispositivo de ejecución, sin
+ No fueron incluidos atributos relativos al dispositivo de ejecución, sin
  embargo podrían considerarse propiedades como número de cores de 
 \begin_inset ERT
 status open
@@ -2053,11 +2104,7 @@ ac{GPU}
 
 , frecuencia, etc.
  ya que se piensa son buenos predictores de tiempo para algunos algoritmos.
- 
-\end_layout
-
-\begin_layout Standard
-Los dataset bajo el nombre 
+ Los dataset bajo el nombre 
 \emph on
 Response time NxNxN - Samsung Galaxy S3
 \emph default
@@ -2067,11 +2114,7 @@ Response time NxNxN - Lenovo K3 Note
 \emph default
  se componen de 894 instancias lo cual comprende un total de 149 entradas
  por cada uno de los seis componentes.
- 
-\end_layout
-
-\begin_layout Standard
-Por otro lado, los dataset bajo el nombre de 
+ Por otro lado, los dataset bajo el nombre de 
 \emph on
 Response time NxMxL - Sin RenderScript component - Samsung Galaxy S3
 \emph default
@@ -2080,6 +2123,7 @@ Response time NxMxL - Sin RenderScript component - Samsung Galaxy S3
 Response time NxMxL - Sin RenderScript component - Lenovo K3 Note
 \emph default
  excluyen, la versión implementada con RenderScript y comprenden 745 instancias.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -2209,7 +2253,7 @@ En esta sección final de la evaluación se agrupan los resultados para contrast
 Resultados para el problema del viajante.
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Resultados-para-el"
+name "subsec:Resultados-para-el"
 
 \end_inset
 
@@ -2257,7 +2301,7 @@ Conclusiones:
 \end_layout
 
 \begin_layout Standard
-Resaltar que los dos mejores son SMO y Neural ----> Overfitting
+Resaltar que los dos mejores son SMO y Neural —-> Overfitting
 \end_layout
 
 \begin_layout Standard
