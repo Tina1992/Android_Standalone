@@ -998,8 +998,11 @@ Si se define en forma imprecisa el concepto de aprendizaje como la mejora
  se le puede indicar a un algoritmo la respuesta correcta para un problema,
  así, la próxima vez que se aplique su desempeño será mejor.
  También, podría indicarse un conjunto de respuestas correctas para que
- la máquina “adivine” la forma de obtener estas respuestas para otros problemas
- (generalización).
+ la máquina 
+\emph on
+adivine
+\emph default
+ la forma de obtener estas respuestas para otros problemas (generalización).
  Alternativamente, se puede indicar si la respuesta obtenida es correcta
  o no sin señalar la respuesta real ya que la máquina debería ser capaz
  de encontrarla; una variante podría ser asignarle un puntaje a la respuesta

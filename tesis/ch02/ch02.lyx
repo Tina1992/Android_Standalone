@@ -1332,29 +1332,14 @@ cite{Silverman1986}
  que una variable aleatoria continua X tome un valor cercano a x; especificar
  la función de densidad brinda una descripción natural de la distribución
  de X, y permite encontrar probabilidad asociadas con X de la relación:
- 
 \end_layout
 
 \begin_layout Standard
-\begin_inset space \thinspace{}
-\end_inset
+\begin_inset Formula 
+\[
+P(a<X<b)=\intop f(d)dx\forall a<b
+\]
 
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $P(a<X<b)=\intop f(d)dx$
-\end_inset
-
-
-\begin_inset Formula $\forall a<b$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset space \thinspace{}
 \end_inset
 
 

@@ -993,12 +993,21 @@ False Negative
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
+\begin_inset Formula 
+\[
+Precisión=\frac{TP}{FP+TP}
+\]
 
-\begin_layout Plain Layout
-FUNCION FUNCTION
+\end_inset
+
+
 \end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Exactitud=\frac{TP}{FP+TP+FN}
+\]
 
 \end_inset
 
@@ -1582,13 +1591,7 @@ Operación.
 \labelwidthstring 00.00.0000
 'KnapsackWeightRatio’: teniendo en cuenta W como el peso límite de la mochila
  y bi los pesos individuales de cada ítem, se calcula bajo la fórmula 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-FORMULA
-\end_layout
-
+\begin_inset Formula $KWR=W/b_{1}+b_{2}+...+b_{n}$
 \end_inset
 
  arrojando valores entre 0 y 1
