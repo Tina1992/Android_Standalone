@@ -208,7 +208,7 @@ public class LineGraphics extends AbsGraphics {
 	public JFreeChart graphedLearningCurve(AbsDatabase trainingSet, Vector<AbsModeler> schemes) throws Exception {
 		setSeries(schemes);
 		configureLearningCurve(trainingSet);
-		return getChart(series, 
+		return getChart( 
 				Config.Graphic.GRAPHIC_LINE_TITLE_CHART_LC + " - " + schemes.elementAt(0).getName(),
 				Config.Graphic.GRAPHIC_LINE_TITLE_AXISX,
 				Config.Graphic.GRAPHIC_LINE_TITLE_AXISY );
@@ -217,7 +217,7 @@ public class LineGraphics extends AbsGraphics {
 	public JFreeChart graphedErrorPrediction(AbsDatabase trainingSet, Vector<AbsModeler> schemes, int indexClass) throws Exception{
 		setSeries(schemes);
 		configureErrorPrediction(trainingSet, indexClass);
-		return getChart(series, 
+		return getChart( 
 				Config.Graphic.GRAPHIC_LINE_TITLE_CHART_EP + " - " + schemes.elementAt(0).getName(),
 				Config.Graphic.GRAPHIC_LINE_TITLE_AXISX,
 				Config.Graphic.GRAPHIC_LINE_TITLE_AXISY );

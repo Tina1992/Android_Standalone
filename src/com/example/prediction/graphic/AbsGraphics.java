@@ -41,13 +41,13 @@ public abstract class AbsGraphics {
 		}
 	}
 	
-	protected JFreeChart getChart(Vector<AbsModeler> series, String chartTitle, String axisX, String axisY) throws Exception{
+	protected JFreeChart getChart(String chartTitle, String axisX, String axisY) throws Exception{
 		JFreeChart chart = createChart(chartTitle,axisX,axisY);
 		customizeChart(chart);
 		return chart;	
 	}
 	
-	protected void display(AbsModeler[] series, String chartTitle, String axisX, String axisY, String appTitle) throws Exception{
+	protected void display(String chartTitle, String axisX, String axisY, String appTitle) throws Exception{
 		JFreeChart chart = createChart(chartTitle,axisX,axisY);
 		customizeChart(chart);
 		

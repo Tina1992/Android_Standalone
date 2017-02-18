@@ -66,14 +66,14 @@ public class BarGraphics extends AbsGraphics {
 			}
 			if(column < 4){
 				  if(row == bestResults.elementAt(index1)){
-					   return Config.Graphic.GRAPHIC_BAR_COLOR_BESTRESULT1;
+					  return Config.Graphic.GRAPHIC_BAR_COLOR_BESTRESULT1;
 				   }
 				   if(index2 !=null && row == bestResults.elementAt(index2)){
-					   return Config.Graphic.GRAPHIC_BAR_COLOR_BESTRESULT2;
+					  return Config.Graphic.GRAPHIC_BAR_COLOR_BESTRESULT2;
 					   
 				   }  
 			  }
-				return Config.Graphic.GRAPHIC_BAR_COLOR;																					  
+			return Config.Graphic.GRAPHIC_BAR_COLOR;																					  
 		   }
 		
 		//SHOW VALUES ON BAR WHICH RESULTS ARE BETTER!!
@@ -84,9 +84,9 @@ public class BarGraphics extends AbsGraphics {
 			}
 			else
 				index1=j;
-			if(bestResults.elementAt(index1) == i || (dataset.getValue(i, j)).doubleValue() < umbral )	
+			//if(bestResults.elementAt(index1) == i || (dataset.getValue(i, j)).doubleValue() < umbral )	
 				return new StandardCategoryItemLabelGenerator("{2}", new DecimalFormat("##.##"));
-			return null;
+			//return null;
 		} 
 	}
 
@@ -201,13 +201,11 @@ public class BarGraphics extends AbsGraphics {
 		}
 	    
 	    for(int i=0;i<dataset.getRowCount();i++){
-		    renderer.setSeriesPaint(i, Color.GRAY);			//BUSCAR MEJOR COLOR!!
+		    renderer.setSeriesPaint(i, renderer.getItemPaint(i, 0));			//BUSCAR MEJOR COLOR!!
 		}
 	    
 	    
-	    renderer.setItemLabelsVisible(true);
 	    renderer.setBaseItemLabelsVisible(true);
-	    renderer.setItemLabelFont(new Font("Calibri", Font.ITALIC, 18));
 	    plot.setRenderer(renderer);
 	  
 	    //  chart.getCategoryPlot().setRenderer(render);
@@ -251,7 +249,7 @@ public class BarGraphics extends AbsGraphics {
 
 		configureDataset(trainingSet);
 		bestResults.removeAllElements();
-		return getChart(series, 
+		return getChart(
 				Config.Graphic.GRAPHIC_BAR_TITLE_CHART,
 				Config.Graphic.GRAPHIC_BAR_TITLE_AXISX,  
 				Config.Graphic.GRAPHIC_BAR_TITLE_AXISY );	
