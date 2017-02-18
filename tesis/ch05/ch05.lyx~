@@ -2678,11 +2678,18 @@ Durante el proceso de formación de los dataset, se consideró en primer medida,
  de detección de cada componente afectaron directamente al tiempo de respuesta
  requerido por el servicio.
  Los resultados de los modelos obtenidos para la predicción del atributo
- ‘Tiempo de respuesta’ se exponen en el cuadro 5.X 
-\end_layout
+ 
+\emph on
+Tiempo de respuesta
+\emph default
+ se exponen en el cuadro 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Resultados-response-face"
 
-\begin_layout Standard
-Modelos Tiempo de respuesta
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -2713,6 +2720,13 @@ status open
 \begin_layout Plain Layout
 Resultados del atributo ‘Tiempo de respuesta’ para los servicios de detección
  de rostros.
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Resultados-response-face"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset

@@ -2448,9 +2448,15 @@ CC
 \emph default
 ), lo que representa la exactitud de los datos calculado con respecto a
  los reales.
- Como ya se explicó en {under.}, esto puede parecernos lo más óptimo, pero
- observando las métricas y las curvas de errores, ambos modelos presentan
- un problema de overfitting.
+ Como ya se explicó en la sección
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Ajuste-del-modelo:"
+
+\end_inset
+
+, esto puede parecernos lo más óptimo, pero observando las métricas y las
+ curvas de errores, ambos modelos presentan un problema de overfitting.
  
 \end_layout
 
@@ -2469,6 +2475,9 @@ ya que los niveles de correlación son los mas bajos y los errores los más
 En todos los escenarios presentados, se optó por el caso intermedio de adaptació
 n, considerando que el mismo es el mejor obtenido evitando casos de overfitting
  o underfitting.
+ Este se escogió teniendo en cuenta los valores de CC intermedios, con un
+ error MAE aceptable considerando los valores propios y errores promedios
+ bajos.
  Así, en este caso, el más eficiente es el 
 \emph on
 Linear Regression.
@@ -2483,10 +2492,6 @@ A continuación, se presenta la comparativa entre este último y uno de los
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -2507,10 +2512,6 @@ Comparaciones de las métricas en la herramienta Nekonata.
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -2549,10 +2550,6 @@ Lineas de predicción en la herramienta Nekonata
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -2665,19 +2662,6 @@ LinearRegression
 es sus dos implementaciones (Ridge y SGD).
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-RANGO DE VALORES DE TIEMPO DE RESPUESTA PARA ANALISIS
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsubsection
 Resultados para los servicios de detección de rostros.
 \end_layout
@@ -2694,11 +2678,18 @@ Durante el proceso de formación de los dataset, se consideró en primer medida,
  de detección de cada componente afectaron directamente al tiempo de respuesta
  requerido por el servicio.
  Los resultados de los modelos obtenidos para la predicción del atributo
- ‘Tiempo de respuesta’ se exponen en el cuadro 5.X 
-\end_layout
+ 
+\emph on
+Tiempo de respuesta
+\emph default
+ se exponen en el cuadro 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Resultados-response-face"
 
-\begin_layout Standard
-Modelos Tiempo de respuesta
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -2729,6 +2720,13 @@ status open
 \begin_layout Plain Layout
 Resultados del atributo ‘Tiempo de respuesta’ para los servicios de detección
  de rostros.
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Resultados-response-face"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
