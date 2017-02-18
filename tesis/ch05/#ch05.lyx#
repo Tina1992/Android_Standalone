@@ -2483,8 +2483,8 @@ n, considerando que el mismo es el mejor obtenido evitando casos de overfitting
 Linear Regression.
  
 \emph default
-A continuación, se presenta la comparativa entre este último y uno de los
- que presentan mejor performance.
+A continuación, se presenta el comportamiento de este último con respecto
+ a los valores de referencia.
 \end_layout
 
 \begin_layout Standard
@@ -2494,46 +2494,9 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
-	filename E:/Imagenes/Anime/montage_tomoe_enfant_by_tomoe_x_nanami-d60wwaf.jpg
-	scale 55
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Comparaciones de las métricas en la herramienta Nekonata.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Finalmente, se demuestra el comportamiento de este último con respecto a
- las predicciones que realiza.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename E:/Imagenes/Anime/montage_tomoe_enfant_by_tomoe_x_nanami-d60wwaf.jpg
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/linear-regression-behaviour.PNG
 	scale 55
 
 \end_inset
@@ -2660,6 +2623,8 @@ reference "sub:Regresión-Lineal"
 LinearRegression 
 \emph default
 es sus dos implementaciones (Ridge y SGD).
+ Por último se realiza una comparación entre los dos para llegar a la conclusión
+ de que el mejor
 \end_layout
 
 \begin_layout Subsubsection
