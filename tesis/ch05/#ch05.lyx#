@@ -2623,8 +2623,39 @@ reference "sub:Regresión-Lineal"
 LinearRegression 
 \emph default
 es sus dos implementaciones (Ridge y SGD).
- Por último se realiza una comparación entre los dos para llegar a la conclusión
- de que el mejor
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Figura comparativa de las dos implementaciones de regresión lineal para
+ el problema del vaiajante
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection

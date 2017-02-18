@@ -13,8 +13,8 @@ public class LinearRegClassifier extends AbsWekaClassifier {
 	 */
 
 	private static final double DEFAULT_RIDGE = 1;
-	private static final double MIN_VALUE=0.1;
-	private static final double MAX_VALUE=1;
+	private static final double MIN_VALUE=-5;
+	private static final double MAX_VALUE=5;
 	
 	/**/
 	public LinearRegClassifier(int index) {
