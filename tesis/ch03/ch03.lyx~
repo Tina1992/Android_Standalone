@@ -250,8 +250,11 @@ Benchit
 \emph on
 JitPack
 \emph default
- (accedido a través de la URL "https://jitpack.io") el cual contiene el proyecto
- 
+ (accedido a través de la URL 
+\emph on
+https://jitpack.io
+\emph default
+) el cual contiene el proyecto 
 \emph on
 T-Spoon/Benchit
 \emph default
@@ -531,7 +534,7 @@ La predicción de propiedades no funcionales ha contribuido a los arquitectos
  Diferentes trabajos han recurrido al uso de técnicas de aprendizaje de
  máquina para construir modelos de predicción de performance y otros atributos
  de calidad dinámicos.
- Hutter, Xu y Hoos  
+ Hutter, Xu y Hoos 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Hutter2014"

@@ -70,7 +70,7 @@
 \begin_body
 
 \begin_layout Chapter
-Implementación de los algoritmos de resolución de TSP 
+Descripción de los servicios de detección facial 
 \begin_inset CommandInset label
 LatexCommand label
 name "chap:Ambiente-de-desarrollo"
@@ -80,510 +80,509 @@ name "chap:Ambiente-de-desarrollo"
 
 \end_layout
 
-\begin_layout Standard
-El Problema del Agente Viajero (TSP -Travelling salesman Problem -) corresponde
- a uno de los problemas de optimización más estudiados de la clase NP-Completos;
- es un problema de minimización que comienza y termina en un vértice específico
- y se visita el resto de los vértices exactamente una vez.
- El TSP puede ser modelado como un grafo ponderado no dirigido, de manera
- que las ciudades sean los vértices del grafo, los caminos son las aristas
- y las distancias de los caminos son los pesos de las aristas.
-\end_layout
-
 \begin_layout Section*
-Algoritmos de resolución
+Servicio SkyBiometry
 \end_layout
 
 \begin_layout Subsection*
-1.
- Best Fit - Bin Packing -
+En referencia al uso de la API – Autenticación 
 \end_layout
 
 \begin_layout Standard
-Best fit es uno de los algoritmos heurísticos más simples,brinda soluciones
- óptimas (aproximadas) aunque el algoritmo no asegura el retorno de la mejor
- solución.
- Para dominios de grafos no completos incluso, el camino solución puede
- contener arcos con costo infinito (ausencia de arista).
- Partiendo del punto ‘A’ se analiza el trayecto más corto a la siguiente
- ciudad, sea ésta por ejemplo la ciudad C, ambas ciudades se añaden al conjunto
- Solución: {A, C, A} 
+Cada llamada a la API debe ser autorizada mediante el uso de dos claves:
+ api_key y api_secret.
+ Ambas claves son obtenidas mediante una registración en el sitio oficial
+ de skybiometry (
+\emph on
+www.skybiometry.com
+\emph default
+) a través de una cuenta de email como usuario y una contraseña.
+\end_layout
+
+\begin_layout Subsection*
+Límites de uso 
 \end_layout
 
 \begin_layout Standard
-En cada paso del algoritmo las ciudades son seleccionadas de acuerdo al
- costo de sus trayectos y son incorporadas al conjunto Solución en base
- al cálculo de la distancia marginal de las intersecciones.
+El consumo de este servicio presenta algunas limitaciones que varían en
+ base a la suscripción particular del usuario.
+ En general, las suscripciones gratuitas restringen un límite de 100 llamadas
+ a métodos por hora y de 5000 en el mes.
+ Para el caso del método POST, la limitación se presenta tanto en 100 request
+ a la API para el procesamiento de imágenes individuales como para 1 request
+ con 100 imágenes a procesar.
  
 \end_layout
 
-\begin_layout Standard
-La distancia marginal representa la variación en el costo total teniendo
- en cuenta el costo directo entre A y C y el costo del camino entre A y
- C pasando por B.
- (A,B,C).
- El par de ciudades A y C son seleccionadas de forma tal que hagan mínimo
- el costo del paso por la ciudad B.- 
-\end_layout
-
-\begin_layout Standard
-Ejemplo
-\end_layout
-
-\begin_layout Standard
-\begin_inset Tabular
-<lyxtabular version="3" rows="5" columns="5">
-<features rotate="0" tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-B
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-C
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-D
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-E
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-A
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-2
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-10
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-25
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-B
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-18
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-5
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-5
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-C
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-20
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-2
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-D
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-8
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-S: { A, C, A} 
-\end_layout
-
-\begin_layout Standard
-Selección ciudad E: 
-\end_layout
-
-\begin_layout Standard
-Trayectos: AC - CA
-\end_layout
-
-\begin_layout Standard
-En tal caso, los trayectos son análogos como así también la distancia marginal:
- E se añade entre las ciudades C y A.
- 
-\end_layout
-
-\begin_layout Standard
-S: { A,C,E,A} 
-\end_layout
-
-\begin_layout Standard
-Costo: 28 
-\end_layout
-
-\begin_layout Standard
-En el siguiente paso la ciudad B es seleccionada: 
+\begin_layout Subsection*
+Factores ofrecidos
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-Trayectos: AC: D = costo(A,B) + costo(B, C) - costo(A,C) = 19 
+Respecto
+\begin_inset space ~
+\end_inset
+
+al
+\begin_inset space ~
+\end_inset
+
+cuadrado
+\begin_inset space ~
+\end_inset
+
+del
+\begin_inset space ~
+\end_inset
+
+rostro
+\begin_inset space ~
+\end_inset
+
+detectado:
 \end_layout
 
 \begin_deeper
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-Resultando S: {A, B, C, E, A} Costo ahora:28+19=47 
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-\begin_inset space \thinspace{}
+center
+\begin_inset space ~
 \end_inset
 
-
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-CE:D=costo(C,B) + costo(B, E) - costo(C,E) = 21 
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Resultando S: {A, C, B, E, A} Costo ahora:28+21=49
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-\begin_inset space \thinspace{}
+OBJECT
+\begin_inset space ~
 \end_inset
 
+{
+\begin_inset space ~
+\end_inset
 
+x
+\begin_inset space ~
+\end_inset
+
+:Float,
+\begin_inset space ~
+\end_inset
+
+y
+\begin_inset space ~
+\end_inset
+
+:
+\begin_inset space ~
+\end_inset
+
+Float
+\begin_inset space ~
+\end_inset
+
+} 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-EA:D=costo(E,B) + costo(B, A) - costo(E,A) = -18 
+width.
+\begin_inset space ~
+\end_inset
+
+FLOAT.
+\begin_inset space ~
+\end_inset
+
+0-100%
+\begin_inset space ~
+\end_inset
+
+del
+\begin_inset space ~
+\end_inset
+
+ancho
+\begin_inset space ~
+\end_inset
+
+del
+\begin_inset space ~
+\end_inset
+
+rostro
+\begin_inset space ~
+\end_inset
+
+respecto
+\begin_inset space ~
+\end_inset
+
+al
+\begin_inset space ~
+\end_inset
+
+ancho
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+la
+\begin_inset space ~
+\end_inset
+
+imagen.
+ 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-Resultando S: {A, C, E, B, A} Costo ahora:28-18=10
+height.
+\begin_inset space ~
+\end_inset
+
+FLOAT.
+\begin_inset space ~
+\end_inset
+
+0-100%
+\begin_inset space ~
+\end_inset
+
+del
+\begin_inset space ~
+\end_inset
+
+largo
+\begin_inset space ~
+\end_inset
+
+del
+\begin_inset space ~
+\end_inset
+
+rostro
+\begin_inset space ~
+\end_inset
+
+respecto
+\begin_inset space ~
+\end_inset
+
+al
+\begin_inset space ~
+\end_inset
+
+ancho
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+la
+\begin_inset space ~
+\end_inset
+
+imagen.
 \end_layout
 
 \end_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Otros
+\begin_inset space ~
+\end_inset
+
+puntos
+\begin_inset space ~
+\end_inset
+
+detectados:
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+mouth_center OBJECT { x :Float, y : Float } 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+mouth_left OBJECT { x :Float, y : Float }
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+mouth_right OBJECT { x :Float, y : Float } 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+eye_left OBJECT { x :Float, y : Float } 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+eye_right OBJECT { x :Float, y : Float } 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+nose OBJECT { x :Float, y : Float } 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+ear_left OBJECT { x :Float, y : Float } 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+ear_right OBJECT { x :Float, y : Float } 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+chin OBJECT { x :Float, y : Float } 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+yaw.
+ FLOAT.Perfil.
+ Value -90° a 90° 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+roll.
+ FLOAT.
+ Ángulo de rotación del rostro.
+ Value -90° a 90° 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+pitch.
+ FLOAT.
+ Value -90° a 90° 
+\end_layout
+
+\end_deeper
+\begin_layout Description
+yaw: ángulo positivo en rostros donde predomina el perfil derecho (respecto
+ al sujeto, no a la imagen).
+ Caso contrario, ángulo negativo al predominar el perfil izquierdo.
+ 
+\end_layout
+
+\begin_layout Description
+Roll: Ejemplo ilustrativo.
+ El rectángulo verde representa al rostro detectado por la API cuyo valor
+ roll es igual a -17°, mientras que el rectángulo rojo fue añadido para
+ ilustrar el caso donde el ángulo roll es igual a 0°.
+ Una rotación inversa significa un valor roll positivo.
+ 
+\end_layout
+
+\begin_layout Description
+\begin_inset Graphics
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/face-example.png
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-B es añadida entre las ciudades del trayecto cuya distancia es menor, en
- el ejemplo ilustrado, la opción del tercer trayecto.
+Todos los puntos detectados descritos no especificados corresponden a un
+ formato JSON, cuya clave es el nombre del mismo, y el valor es también
+ un objeto del tipo JSON que contiene los siguientes valores: id:INTEGER,
+ confidence:INTEGER, y:FLOAT, x:FLOAT, a excepción del valor 
+\emph on
+center
+\emph default
+ cuyo objeto JSON contiene sólo los valores: 
+\emph on
+x
+\emph default
+, 
+\emph on
+y
+\emph default
+.
+\end_layout
+
+\begin_layout Description
+Nota1: en caso de valor de atributo no se puede determinar que no se devuelve.
+ Si se determina el valor que se devuelve junto con el valor de confianza
+ como porcentaje de 0 a 100.
+ 
+\end_layout
+
+\begin_layout Description
+Nota2: La API sólo devuelve información necesaria para representar en forma
+ de rectángulo los rostros detectados.
+ Para el resto de opciones, la API sólo devuelve información del punto central
+ en cuestión.
+ 
+\end_layout
+
+\begin_layout Description
+Nota3: Ya que la API automáticamente re-escala las imágenes a 1024 pixeles
+ para su procesamiento interno, todas las coordenadas son provistas de forma
+ porcentual respecto al ancho y largo de la imagen (abstracción).
+ 
+\end_layout
+
+\begin_layout Description
+Nota4: Nota: el atributo face es el valor por defecto y siempre es retornado,
+ independientemente de los atributos especificados.
+ Si el atributo “glasses” fue requerido adicionalmente se retorna el atributo
+ ‘dark_glasses’ para diferenciar entre gafas oscuras y claras.
+ El atributo mood (estado de ánimo) se devuelve junto con 7 más atributos:
+ confianza para cada una de las emociones básicas, además de la confianza
+ neutral_mood.
+ 
 \end_layout
 
 \begin_layout Subsection*
-2.
- Vecino más cercano
+Atributos faciales 
 \end_layout
 
 \begin_layout Standard
-Partiendo de alguna ciudad arbitraria se analizan todos los vértices adyacentes
- y aún no visitados, y se añade a la solución aquel vértice cuya arista
- de costo sea la mínima.
- Tal análisis prosigue a partir del último vértice añadido hasta haber visitado
- todas las ciudades.
- 
+The result of the API call is a JSON or XML object containing the requested
+ information.
+ Cada uno de los atributos son objetos del tipo JSON cuya clave es el nombre
+ del mismo y el valor es también un objeto JSON con dos valores específicos:
+ el primero con clave 
+\emph on
+value
+\emph default
+ y el segundo con clave 
+\emph on
+confidence
+\emph default
+.
+ El valor de confidence es del tipo Integer para representar el porcentaje
+ de probabilidad del valor detectado en el campo 
+\emph on
+value
+\emph default
+.
 \end_layout
 
-\begin_layout Standard
-A menudo, el TSP sigue un modelo de grafo completo donde cada par de vértices
- es conectado por una arista, en tal caso el algoritmo brinda soluciones
- óptimas partiendo desde y hacia la ciudad inicial pasando exactamente una
- vez por cada ciudad restante.
- 
-\end_layout
-
-\begin_layout Standard
-Por otro lado,en modelos donde no existe camino entre algunos pares de ciudades,
- la elección iterativa de la arista de mínimo costo sin una vista global
- del modelo, puede apartar vértices de la solución retornando soluciones
- parciales.
- 
-\end_layout
-
-\begin_layout Standard
-Ejemplo
+\begin_layout Subsection*
+Mensajes de error 
 \end_layout
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/TPS-graph-example.png
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/face-service-errors.png
+	scale 55
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
-Solución: A -> B -> C -> D -> A 
-\end_layout
-
-\begin_layout Standard
-Costo: 97
-\end_layout
-
 \begin_layout Subsection*
-3.
- Programación Lineal
-\end_layout
-
-\begin_layout Standard
-El TSP puede ser formulado de manera teórica mediante una (o varias) formulacion
-es lineales enteras usando programación lineal en enteros.
- Se plantean las variables del problema: 
+Post (Request en lenguaje JAVA)
 \end_layout
 
 \begin_layout Standard
 \begin_inset listings
-inline false
+lstparams "language=Java"
+inline true
 status open
 
 \begin_layout Plain Layout
 
-vértices: 0..
- n 	
+HttpResponse<JsonNode> response = Unirest.post(https://face.p.mashape.com/faces/dete
+ct?api_key=[api_key]&api_secret=[api_secret]) 
 \end_layout
 
 \begin_layout Plain Layout
 
-Xij = 1 | Xij = 0					            																									para i,j = 0...n
-\end_layout
-
-\begin_layout Plain Layout
-
-La arista (i,j) pertenece(1)/ no pertenece (0) al conjunto solución.
-\end_layout
-
-\begin_layout Plain Layout
-
-Cij Distancia desde la ciudad i hasta j	     																								  para
- i,j = 0...n	 
-\end_layout
-
-\begin_layout Plain Layout
-
-aristas número total de aristas.
- 	
-\end_layout
-
-\begin_layout Plain Layout
-
-aristasReq número mínimo de aristas para solución.
+.header(X-Mashape-Key, 7rS5YDw5YHmshtdgMHP2ZYBLAljfp1OxKNzjsn1GJxNBgad6C9)
  
 \end_layout
 
+\begin_layout Plain Layout
+
+.header(Accept, application/json) 
+\end_layout
+
+\begin_layout Plain Layout
+
+.field(attributes, all) 
+\end_layout
+
+\begin_layout Plain Layout
+
+.field(detector, Aggressive)  [ver opciones] 
+\end_layout
+
+\begin_layout Plain Layout
+
+.asJson();        
+\end_layout
+
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
-El planteo del modelo ahora es el siguiente: 
+\begin_layout Description
+Nota: En los espacios [api_key] y [api_secret] deben colocarse las claves
+ correspondientes disponibles con la registración de una cuenta en el sitio
+ www.skybiometry.com 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Opciones: 
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+.field(“files”, Vector<File> imagenes) 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+.field(“files”, File imagen) 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+.field(“urls”, “”url_1”, “url_2”, …) 
+\end_layout
+
+\end_deeper
+\begin_layout Description
+Nota: Los formatos de imagen aceptados por la API son los siguientes: PNG,
+ JPEG, BMP, JPEG2000.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
+La respuesta recibida por el servicio del tipo HttpResponse<JsonNode> puede
+ ser manipulada como un objeto del tipo JSONObject a través de la siguiente
+ codificación: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Java"
+inline true
 status open
 
 \begin_layout Plain Layout
-FUNCION
-\end_layout
 
-\begin_layout Plain Layout
-FUNCION
+JSONObject obj = response.getBody().getObject(); 
 \end_layout
 
 \end_inset
@@ -592,190 +591,134 @@ FUNCION
 \end_layout
 
 \begin_layout Subsection*
-4.
- Backtracking
+Parse - Overview 
 \end_layout
 
 \begin_layout Standard
-Backtracking es un algoritmo general para encontrar todas o algunas soluciones
- para problemas computacionales con notables restricciones de satisfacción
- para dicho problema.El método de búsqueda es incremental de los candidatos
- a la solución, abandonando aquellos (“backtrackeando”) tan pronto como
- se determina que dicha solución no es o va a ser válida.
+La respuesta en formato JSONObject contiene en primera parte un objeto del
+ tipo JSONObject con clave 
+\emph on
+photos
+\emph default
+ y cuyo valor, representado en formato JSONArray, contiene toda la información
+ detectada desde las imágenes.
+ Cada elemento del arreglo representa un archivo de imagen; a su vez, estos
+ elementos contienen un objeto del tipo JSONObject cuya clave es 
+\emph on
+tags
+\emph default
+ y su valor es un JSONArray para representar cada una de los rostros detectados
+ en la imagen particular; a su vez contiene la información de ancho y largo
+ asociado.
  
 \end_layout
 
 \begin_layout Standard
-En el caso del TSP, los posibles candidatos a la solución se determinan
- mediante el grado de incidencia de todos los nodos que componen el grafo.
- Ya que la ciudad sólo debe ser visitada una vez, el grado de incidencia
- de cada ciudad debe ser igual a 2, por lo que aquellas ciudades que no
- han sido visitadas (grado de incidencia 0) o aquellas que sólo han sido
- destino (grado de incidencia 1) son candidatas a componer la solución.
+En segunda parte, seguido de 
+\emph on
+photos
+\emph default
+ se anexan en la respuesta la información relacionada a la operación http.
 \end_layout
 
 \begin_layout Standard
-Pseudo-código: 
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-backtracking(costoAct, minCost, lastV, currPath, bestPath, costoAct) 
-\end_layout
-
-\begin_layout Plain Layout
-
-si costoAct<minCost			//Poda por costo que se arrastra 	
-\end_layout
-
-\begin_layout Plain Layout
-
-	si !solucion(currPath) 		
-\end_layout
-
-\begin_layout Plain Layout
-
-		generarAristasFactibles(lastV) 		
-\end_layout
-
-\begin_layout Plain Layout
-
-		Por v:AristasFactibles 			
-\end_layout
-
-\begin_layout Plain Layout
-
-			costoAct+=v.costo; 			
-\end_layout
-
-\begin_layout Plain Layout
-
-			currPath= currPath + {v}; 			
-\end_layout
-
-\begin_layout Plain Layout
-
-			backtracking(costoAct, minCost, v.Destine, currPath); 			
-\end_layout
-
-\begin_layout Plain Layout
-
-			costoAct-=v.costo; 			
-\end_layout
-
-\begin_layout Plain Layout
-
-			currPath=currPath - {v}; 	
-\end_layout
-
-\begin_layout Plain Layout
-
-	sino 		
-\end_layout
-
-\begin_layout Plain Layout
-
-		bestPath=currPath;		//Setear la solución ya encontrada 		
-\end_layout
-
-\begin_layout Plain Layout
-
-		minCost=costoAct;
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection*
-TSP simétrico 
-\end_layout
-
-\begin_layout Standard
-El TSP simétrico es una variedad del problema TSP que para todas las aristas
- se cumple la desigualdad triangular o de Minkowski: 
-\end_layout
-
-\begin_layout Standard
-(a,c) < (a,b)+(b,c) 
-\end_layout
-
-\begin_layout Standard
-Considerando que no todos los grafos creados cumplen con dicha condición,
- y que aún así hay que devolver un resultado óptimo, se considera prioridad
- la distancia entre los nodos y no si los mismos se repiten o no.
-\end_layout
-
-\begin_layout Subsubsection*
-4.
- Árbol de recubrimiento 
-\end_layout
-
-\begin_layout Standard
-Para resolver el Metric TSP, se puede utilizar el método de árbol de recubrimien
-to mínimo.
- El mismo se puede obtener mediante Prim o Kruskal para, luego de eso, nos
- aseguramos que el grafo será simétrico mediante la duplicación de cada
- arista.
- Gracias a esto, podemos recorrerlo mediante un algoritmo recursivo y obtenemos
- el ciclo euleriano del mismo.
- Para finalizar la resolución y mediante la desigualdad antes planteada,
- se omiten los nodos repetidos, obteniendo el ciclo hamiltoniano.
-\end_layout
-
-\begin_layout Subsubsection*
-4.1 Prim
-\end_layout
-
-\begin_layout Standard
-El algoritmo Prim toma un tomar un vértice arbitrario de los ya visitados
- y lo une con el vértice no visitado mediante el menor arco que salga de
- él.
-\end_layout
-
-\begin_layout Standard
-Pseudocódigo:
+Ejemplo codificación básica: 
 \end_layout
 
 \begin_layout Standard
 \begin_inset listings
-inline false
+lstparams "language=Java"
+inline true
 status open
 
 \begin_layout Plain Layout
 
-Prim(firstCity){ 	
+JSONArray imágenes = obj.get(photos); 
 \end_layout
 
 \begin_layout Plain Layout
 
-	visited={firstCity}; 	
+for(int p=0; p<imágenes.length(); p++) { 
 \end_layout
 
 \begin_layout Plain Layout
 
-	while (visited!=allCities){ 		
+	//Obtención de cada una de las imágenes  	
 \end_layout
 
 \begin_layout Plain Layout
 
-		edge=obtenerMinEdge(visited); 		
+	JSONObject imagen=imagenes.getJSONObject(p);   
 \end_layout
 
 \begin_layout Plain Layout
 
-		sol= sol ∪ {edge}; 		
+	//Ejemplo obtención del ancho de la imagen 
 \end_layout
 
 \begin_layout Plain Layout
 
-		visited= visited  ∪ {edge.destino};
+	int imgWidth = (int) imagen.get(width); 
+\end_layout
+
+\begin_layout Plain Layout
+
+	//Obtención de los rostros detectados en la imagen 
+\end_layout
+
+\begin_layout Plain Layout
+
+	JSONArray rostros = imagen.getJSONArray(tags); 
+\end_layout
+
+\begin_layout Plain Layout
+
+	for(int r=0; r<rostros.lenght(); r++) { 
+\end_layout
+
+\begin_layout Plain Layout
+
+		//Obtención de cada uno de los rostros detectados 
+\end_layout
+
+\begin_layout Plain Layout
+
+		rostro=rostros.getJSONObject(r);     	 
+\end_layout
+
+\begin_layout Plain Layout
+
+		//Ejemplo obtención de los puntos detectados JSONObject 
+\end_layout
+
+\begin_layout Plain Layout
+
+		mouth = rostro.getJSONObject(mouth_center); 
+\end_layout
+
+\begin_layout Plain Layout
+
+		int coordX= (int) mouth.get(“x”); 
+\end_layout
+
+\begin_layout Plain Layout
+
+		int coordY= (int) mouth.get(“y”); 
+\end_layout
+
+\begin_layout Plain Layout
+
+		//Ejemplo obtención de los atributos faciales JSONObject 
+\end_layout
+
+\begin_layout Plain Layout
+
+		atributos=imagen.getJSONObject(“attributes”); 
+\end_layout
+
+\begin_layout Plain Layout
+
+		String valor = atributos.getJSONObject(“mood”).getString(“value”); 
 \end_layout
 
 \begin_layout Plain Layout
@@ -785,7 +728,7 @@ Prim(firstCity){
 
 \begin_layout Plain Layout
 
-return sol; }
+} 
 \end_layout
 
 \end_inset
@@ -793,57 +736,865 @@ return sol; }
 
 \end_layout
 
-\begin_layout Subsubsection*
-4.2 Kruskal
+\begin_layout Section*
+Servicio FaceRect
+\end_layout
+
+\begin_layout Subsection*
+En referencia al uso de la API 
 \end_layout
 
 \begin_layout Standard
-Kruskal mientras tanto tiene ordenados las aristas por costo y va agregando
- a la solución aquellos que ya han sido visitados con los que no.
+El consumo de esta API requiere la registración de una cuenta en el sitio
+ Mashape.
+ La registración se realiza con email y contraseña y se realiza de manera
+ gratuita e instantánea.
+ El servicio no restringe el número de request a la API pero permite el
+ procesamiento de sólo una imagen por request realizado.
+ 
 \end_layout
 
+\begin_layout Subsection*
+Factores ofrecidos 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Rostro
+\begin_inset space ~
+\end_inset
+
+detectado: 
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Orientation: tipo String.
+ Valores posibles:<frontal, profile-right, profile-left> 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+x: tipo Integer 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+y: tipo Integer 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+width: tipo Integer 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+height: tipo Integer 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Features: (opcional) 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+eyes 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+nose 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+mouth
+\end_layout
+
+\end_deeper
 \begin_layout Standard
-Pseudocódigo:
+Los 
+\emph on
+features
+\emph default
+ son analizados por la API sólo en rostros cuya orientación sea frontal.
+ El formato de respuesta de los mismos son del tipo JSONObject en el caso
+ de 
+\emph on
+nose
+\emph default
+ y 
+\emph on
+mouth
+\emph default
+.
+ Para el caso de 
+\emph on
+eyes
+\emph default
+ se devuelve un objeto del tipo JSONArray, cuyos elementos (1 o 2) son del
+ tipo JSONObject.
+ La API representa el rostro y los features detectados en forma de rectángulos,
+ por lo que incorpora en sus respuestas las coordenadas 
+\emph on
+x
+\emph default
+, 
+\emph on
+y
+\emph default
+ (esquina superior izquierda respecto a la imagen) y los tamaños 
+\emph on
+width
+\emph default
+, 
+\emph on
+height
+\emph default
+ del rectángulo en cuestión.
+\end_layout
+
+\begin_layout Subsection*
+Post (Request en lenguaje JAVA)
 \end_layout
 
 \begin_layout Standard
 \begin_inset listings
+lstparams "language=Java"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+HttpResponse<JsonNode> response = Unirest.post(ENDPOINT) 
+\end_layout
+
+\begin_layout Plain Layout
+
+.header(X-Mashape-Key, 7rS5YDw5YHmshtdgMHP2ZYBLAljfp1OxKNzjsn1GJxNBgad6C9)
+ [ver opción correspondiente] 
+\end_layout
+
+\begin_layout Plain Layout
+
+.field(“features”, true) 
+\end_layout
+
+\begin_layout Plain Layout
+
+.asJson();        
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Actualmente la API soporta dos endpoints difiriendo entre sí en el modo
+ en que las imágenes son especificadas en el request.
+ Mediante el método http 
+\emph on
+GET
+\emph default
+ se añade el URL de la imagen (Endpoint: http://apicloud-facerect.p.mashape.com/pro
+cess-url.json); por otra parte con el método 
+\emph on
+POST
+\emph default
+ se añade el archivo correspondiente (Endpoint: http://apicloud-facerect.p.mashape.
+com/process-file.json) De acuerdo con el endpoint especificado se añade la
+ línea correspondiente: 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Opciones
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+.field(“url”, “url_image”) 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+.field(image, new File(<path_image>)) 
+\end_layout
+
+\end_deeper
+\begin_layout Description
+Nota: Para ambos casos, la API restringe el procesamiento de algunas imágenes,
+ permitiendo procesar aquellas cuyo formato sea JPEG, PNG y GIF, la resolución
+ de la misma no supere los 4096 píxeles (4096×4096) y el tamaño sea inferior
+ a 10 MBytes.
+ 
+\end_layout
+
+\begin_layout Standard
+La respuesta recibida por el servicio del tipo HttpResponse<JsonNode> puede
+ ser manipulada como un objeto del tipo JSONObject a través de la siguiente
+ codificación: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Java"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+JSONObject obj = response.getBody().getObject();
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Parse - overview
+\end_layout
+
+\begin_layout Standard
+La respuesta en formato JSONObject contiene dos objetos JSON.
+ El primero, cuya clave es 
+\emph on
+faces
+\emph default
+ contiene toda la información detectada desde la imagen, el segundo objeto
+ cuya clave es 
+\emph on
+image
+\emph default
+ contiene la información acerca del ancho (
+\emph on
+width
+\emph default
+) y largo (
+\emph on
+height
+\emph default
+) de la misma.
+ La información detectada se presenta en un objeto del tipo JSONArray donde
+ cada elemento del arreglo constituye cada uno de los rostros que ha detectada
+ la API; Cada uno de los elementos son JSONObject que contienen la información
+ del rostro (
+\emph on
+orientation
+\emph default
+, 
+\emph on
+x
+\emph default
+, 
+\emph on
+y
+\emph default
+, 
+\emph on
+height
+\emph default
+, 
+\emph on
+width
+\emph default
+) y los 
+\emph on
+features
+\emph default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Ejemplo codificación básica 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Java,breaklines=true"
 inline false
 status open
 
 \begin_layout Plain Layout
 
-Kruskal(firstCity){ 	
+//Ejemplo obtención del ancho de la imagen 
 \end_layout
 
 \begin_layout Plain Layout
 
-	visited={firstCity}; 	
+int imgWidth = (int) obj.getJSONObject(image).get(“width”); 
 \end_layout
 
 \begin_layout Plain Layout
 
-	edges=getSortedEdges(); 	
+//Obtención de los rostros detectados en la imagen 
 \end_layout
 
 \begin_layout Plain Layout
 
-	∀ e ∈ edges{ 		
+JSONArray rostros = obj.getJSONArray(faces); 
 \end_layout
 
 \begin_layout Plain Layout
 
-		if (e ∈ (visited)x(not_visited)) 			
+for(int r=0; r<rostros.lenght(); r++) {  	
 \end_layout
 
 \begin_layout Plain Layout
 
-			sol=sol ∪ {e}; 			
+	//Obtención de cada uno de los rostros detectados 
 \end_layout
 
 \begin_layout Plain Layout
 
-			visited=visited ∪ {e.destino} 		
+	rostro=rostros.getJSONObject(r);     	 
+\end_layout
+
+\begin_layout Plain Layout
+
+	//Ejemplo obtención información del rostro: 
+\end_layout
+
+\begin_layout Plain Layout
+
+	String orientation =(String) rostro.get(“orientation); 
+\end_layout
+
+\begin_layout Plain Layout
+
+	int coordX=(int) rostro.get(“x”); 
+\end_layout
+
+\begin_layout Plain Layout
+
+	//Ejemplo obtención de los features 
+\end_layout
+
+\begin_layout Plain Layout
+
+	JSONObject features = rostro.getJSONObject(“features”); 
+\end_layout
+
+\begin_layout Plain Layout
+
+	JSONArray eyes =features.getJSONArray(“eyes”); 
+\end_layout
+
+\begin_layout Plain Layout
+
+	JSONObject eye_left=eyes.getJSONObject(0); 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Servicio GMS Vision
+\end_layout
+
+\begin_layout Subsection*
+Factores ofrecidos
+\end_layout
+
+\begin_layout Standard
+El detector puede computar los siguientes atributos (accesibles a través
+ de los distintos métodos de la clase).
+\end_layout
+
+\begin_layout Standard
+Profile: rotación del rostro.
+ FLOAT 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Clasificadores:<característica
+\begin_inset space ~
+\end_inset
+
+facial
+\begin_inset space ~
+\end_inset
+
+presente
+\begin_inset space ~
+\end_inset
+
+en
+\begin_inset space ~
+\end_inset
+
+el
+\begin_inset space ~
+\end_inset
+
+rostro> 
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Open eyes: (probabilidad) Constant value: 1 FLOAT (*) 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Smiling: (probabilidad) Constant value: 1 FLOAT (*) 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Height, width: medidos en píxeles.
+ FLOAT 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Position: Punto superior izquierdo del rostro.
+ FLOAT 
+\end_layout
+
+\end_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Landmarks:<Puntos
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+interés
+\begin_inset space ~
+\end_inset
+
+en
+\begin_inset space ~
+\end_inset
+
+el
+\begin_inset space ~
+\end_inset
+
+rostro
+\begin_inset space ~
+\end_inset
+
+detectado>
+\begin_inset space ~
+\end_inset
+
+LIST<Landmark> 
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+BOTTOM_MOUTH Constant Value: 0 CENTER 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+LEFT_CHEEK Constant Value: 1 CENTER 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+LEFT_EAR_TIP Constant Value: 2 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+LEFT_EAR Constant Value: 3
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+MIDPOINT LEFT_EYE Constant Value: 4 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+CENTER LEFT_MOUTH Constant Value: 5 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+NOSE_BASE Constant Value: 6 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+MIDPOINT RIGHT_CHEEK Constant Value: 7 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+CENTER RIGHT_EAR_TIP Constant Value: 8 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+RIGHT_EAR Constant Value: 9 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+MIDPOINT RIGHT_EYE Constant Value: 10 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+CENTER RIGHT_MOUTH Constant Value: 11 
+\end_layout
+
+\end_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Angles:
+\begin_inset space ~
+\end_inset
+
+<Face
+\begin_inset space ~
+\end_inset
+
+Orientation> 
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+EulerY [valor ‘y’ en la imagen] 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+EulerZ [valor ‘r’ en la imagen]
+\end_layout
+
+\end_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+(*) En el trabajo desarrollado se consideró el uso de valores booleanos,
+ determinando a los clasificadores como verdaderos para valores de probabilidad
+ mayor al 50%, en casos contrario se determinaron los mismos como falsos.
+ 
+\end_layout
+
+\begin_layout Description
+Nota: El ángulo EulerZ se encuentra disponible siempre en la detección,
+ mientras que el ángulo EulerY sólo si en el detector se predetermina el
+ modo 
+\emph on
+accurate
+\emph default
+.
+ El concepto de 
+\emph on
+left
+\emph default
+ y 
+\emph on
+right
+\emph default
+ son relativos al sujeto no a la posición cuando se observa la imagen.
+ Las posiciones son accedidas a través del método getPosition() de la clase
+ Landmark; el retorno es del tipo PointF.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Construcción del detector 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Java"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+FaceDetector detector = new FaceDetector.Builder(context) 
+\end_layout
+
+\begin_layout Plain Layout
+
+.setTrackingEnabled(false) 
+\end_layout
+
+\begin_layout Plain Layout
+
+.setMode(int Mode) 
+\end_layout
+
+\begin_layout Plain Layout
+
+.setProminentFaceOnly(true) 
+\end_layout
+
+\begin_layout Plain Layout
+
+.setClassificationType(int classificationType) 
+\end_layout
+
+\begin_layout Plain Layout
+
+.setLandmarkType(int landmarkType) 
+\end_layout
+
+\begin_layout Plain Layout
+
+.build(); 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es necesario especificar en el detector el entorno de nuestra aplicación
+ (mediante el uso de la clase android.utils.Context) 
+\end_layout
+
+\begin_layout Standard
+Es posible obtener el entorno de la app a través del método 
+\emph on
+getApplicationContext()
+\emph default
+ de la clase Activity.
+ 
+\end_layout
+
+\begin_layout Standard
+El contexto es sólo una interfaz cuya implementación está prevista por el
+ sistema android y permite el acceso a los recursos y clases específicas
+ de la aplicación, como así también realizar operaciones tales como el despacho
+ de actividades, la difusión y recibimiento de objetos del tipo Intent,
+ etc.
+ 
+\end_layout
+
+\begin_layout Standard
+El servicio dispone de la posibilidad de elegir la preferencia de procesamiento
+ en la detección, 
+\emph on
+FAST_MODE
+\emph default
+ prioriza la rapidez en el análisis por sobre la cantidad de rostros detectados
+ y su precisión, contrariamente el servicio dispone del modo 
+\emph on
+ACCURATE_MODE
+\end_layout
+
+\begin_layout Standard
+Habilitar la opción 
+\emph on
+tracking enabled
+\emph default
+ es recomendable para la detección de imágenes individuales no relacionadas
+ (a diferencia de un vídeo o una serie de imágenes fijas capturadas consecutivam
+ente).
+ 
+\end_layout
+
+\begin_layout Standard
+Tanto los clasificadores y landmarks pueden especificarse uno a uno añadiendo
+ las líneas correspondientes en el constructor; adicionalmente la clase
+ FaceDetector proporciona las siguientes constantes: 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\emph on
+ALL_CLASSIFICATIONS 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\emph on
+ALL_LANDMARKS 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\emph on
+NO_CLASSIFICATIONS 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\emph on
+NO_LANDMARKS 
+\end_layout
+
+\begin_layout Standard
+El servicio no ofrece la capacidad de setar los landmark y clasificadores
+ bajo demanda, sino que son definidos estáticamente al momento de crear
+ el detector; esta restricción condiciona el tiempo de respuesta del servicio
+ ya que el requerimiento de al menos un landmark, por ejemplo, significa
+ el uso de la variable 
+\emph on
+FaceDetector.ALL_LANDMARKS
+\emph default
+, incrementando así el tiempo de procesamiento de la imagen.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Uso del detector
+\end_layout
+
+\begin_layout Standard
+El detector se puede llamar de forma sincronizada con un objeto del tipo
+ Frame para detectar las caras.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Java"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+Frame frame = new Frame.Builder().setBitmap(<file_image>).build(); 
+\end_layout
+
+\begin_layout Plain Layout
+
+SparseArray<Face> faces = detector.detect(frame); 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Ejemplo codificación básica
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Java"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+for(int i=0;i<faces.size();i++){ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	//Obtención de cada uno de los rostros detectados en la imagen 
+\end_layout
+
+\begin_layout Plain Layout
+
+	Face rostro=faces.valueAt(i); 
+\end_layout
+
+\begin_layout Plain Layout
+
+	//Obtención del rectángulo del rostro 
+\end_layout
+
+\begin_layout Plain Layout
+
+	Float coordX=rostro.getPosition().x; 
+\end_layout
+
+\begin_layout Plain Layout
+
+	Float coordY=rostro.getPosition().y; 
+\end_layout
+
+\begin_layout Plain Layout
+
+	Float width=rostro.getWidth(); 
+\end_layout
+
+\begin_layout Plain Layout
+
+	Float height=rostro.getHeight(); 
+\end_layout
+
+\begin_layout Plain Layout
+
+	//Obtención del ángulo EulerZ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	Float angleZ=rostro.getEulerZ(); 
+\end_layout
+
+\begin_layout Plain Layout
+
+	//Obtención del clasificador ‘eyes open’ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	Float probEyeRight=rostro.getIsRightEyeOpenProbability(); 
+\end_layout
+
+\begin_layout Plain Layout
+
+	Float probEyeLeft=rostro.getIsLeftEyeOpenProbability(); 
+\end_layout
+
+\begin_layout Plain Layout
+
+	//Obtención de los Landmarks detectados: 
+\end_layout
+
+\begin_layout Plain Layout
+
+	List<Landmark> landmarks=rostro.getLandmarks(); 	 
+\end_layout
+
+\begin_layout Plain Layout
+
+	//Obtención de cada uno de los landmark 
+\end_layout
+
+\begin_layout Plain Layout
+
+	for(int j=0;j<landmarks.size();j++){ 
+\end_layout
+
+\begin_layout Plain Layout
+
+		int LandmarkType=landmarks.get(j).getType(); 
+\end_layout
+
+\begin_layout Plain Layout
+
+		PointF Landmarkposition=landmarks.get(j).getPosition(); 
 \end_layout
 
 \begin_layout Plain Layout
@@ -853,67 +1604,12 @@ Kruskal(firstCity){
 
 \begin_layout Plain Layout
 
-	return sol; }
+} 
 \end_layout
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-La única diferencia entre ambos algoritmos de recubrimiento es la forma
- de trabajo de los mismos y en consecuencia su complejidad.
-\end_layout
-
-\begin_layout Subsubsection*
-4.3 Transformaciones Lineales
-\end_layout
-
-\begin_layout Standard
-Las transformaciones locales se utilizan para mejorar el hamiltoniano obtenido
- por los algoritmos antes presentados.
- Para introducir el algoritmo, consideremos la siguiente situación:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/TPS-local-transformations.png
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Los nodos unidos en el ciclo hamiltoniano son (A,B) ...
- (C,D) - línea no punteada en el grafo.
- 
-\end_layout
-
-\begin_layout Standard
-Ahora bien, para aplicar transformaciones locales se debe verificar: 
-\end_layout
-
-\begin_layout Standard
-(A,C)+(B,D)<(A,B)+(C,D) 
-\end_layout
-
-\begin_layout Standard
-De suceder esto, se pueden modificar los arcos y obtener:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/TPS-local-transformations2.png
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-El resultado es un grafo con menor costo que el anterior presentado.
 \end_layout
 
 \end_body

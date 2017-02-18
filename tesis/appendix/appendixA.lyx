@@ -81,13 +81,30 @@ name "chap:Ambiente-de-desarrollo"
 \end_layout
 
 \begin_layout Standard
-El Problema del Agente Viajero (TSP -Travelling salesman Problem -) corresponde
- a uno de los problemas de optimización más estudiados de la clase NP-Completos;
- es un problema de minimización que comienza y termina en un vértice específico
- y se visita el resto de los vértices exactamente una vez.
- El TSP puede ser modelado como un grafo ponderado no dirigido, de manera
- que las ciudades sean los vértices del grafo, los caminos son las aristas
- y las distancias de los caminos son los pesos de las aristas.
+El Problema del Agente Viajero (
+\emph on
+TSP -Travelling salesman Problem
+\emph default
+) corresponde a uno de los problemas de optimización más estudiados de la
+ clase NP-Completos; es un problema de minimización que comienza y termina
+ en un vértice específico y se visita el resto de los vértices exactamente
+ una vez.
+ El 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{TSP}
+\end_layout
+
+\end_inset
+
+ puede ser modelado como un grafo ponderado no dirigido, de manera que las
+ ciudades sean los vértices del grafo, los caminos son las aristas y las
+ distancias de los caminos son los pesos de las aristas.
 \end_layout
 
 \begin_layout Section*
@@ -105,9 +122,16 @@ Best fit es uno de los algoritmos heurísticos más simples,brinda soluciones
  solución.
  Para dominios de grafos no completos incluso, el camino solución puede
  contener arcos con costo infinito (ausencia de arista).
- Partiendo del punto ‘A’ se analiza el trayecto más corto a la siguiente
- ciudad, sea ésta por ejemplo la ciudad C, ambas ciudades se añaden al conjunto
- Solución: {A, C, A} 
+ Partiendo del punto 
+\emph on
+A
+\emph default
+ se analiza el trayecto más corto a la siguiente ciudad, sea ésta por ejemplo
+ la ciudad 
+\emph on
+C
+\emph default
+, ambas ciudades se añaden al conjunto Solución: {A, C, A} 
 \end_layout
 
 \begin_layout Standard
@@ -119,11 +143,42 @@ En cada paso del algoritmo las ciudades son seleccionadas de acuerdo al
 
 \begin_layout Standard
 La distancia marginal representa la variación en el costo total teniendo
- en cuenta el costo directo entre A y C y el costo del camino entre A y
- C pasando por B.
+ en cuenta el costo directo entre 
+\emph on
+A
+\emph default
+ y 
+\emph on
+C
+\emph default
+ y el costo del camino entre 
+\emph on
+A
+\emph default
+ y 
+\emph on
+C
+\emph default
+ pasando por 
+\emph on
+B
+\emph default
+.
  (A,B,C).
- El par de ciudades A y C son seleccionadas de forma tal que hagan mínimo
- el costo del paso por la ciudad B.- 
+ El par de ciudades 
+\emph on
+A
+\emph default
+ y 
+\emph on
+C
+\emph default
+ son seleccionadas de forma tal que hagan mínimo el costo del paso por la
+ ciudad 
+\emph on
+B
+\emph default
+.- 
 \end_layout
 
 \begin_layout Standard
@@ -413,10 +468,18 @@ En el siguiente paso la ciudad B es seleccionada:
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-Trayectos: AC: D = costo(A,B) + costo(B, C) - costo(A,C) = 19 
+Trayectos: 
 \end_layout
 
 \begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $AC:D=costo(A,B)+costo(B,C)-costo(A,C)=19$
+\end_inset
+
+
+\end_layout
+
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
 Resultando S: {A, B, C, E, A} Costo ahora:28+19=47 
@@ -432,7 +495,10 @@ Resultando S: {A, B, C, E, A} Costo ahora:28+19=47
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-CE:D=costo(C,B) + costo(B, E) - costo(C,E) = 21 
+\begin_inset Formula $CE:D=costo(C,B)+costo(B,E)-costo(C,E)=21$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Labeling
@@ -450,7 +516,10 @@ Resultando S: {A, C, B, E, A} Costo ahora:28+21=49
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-EA:D=costo(E,B) + costo(B, A) - costo(E,A) = -18 
+\begin_inset Formula $EA:D=costo(E,B)+costo(B,A)-costo(E,A)=-18$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Labeling
@@ -479,10 +548,23 @@ Partiendo de alguna ciudad arbitraria se analizan todos los vértices adyacentes
 \end_layout
 
 \begin_layout Standard
-A menudo, el TSP sigue un modelo de grafo completo donde cada par de vértices
- es conectado por una arista, en tal caso el algoritmo brinda soluciones
- óptimas partiendo desde y hacia la ciudad inicial pasando exactamente una
- vez por cada ciudad restante.
+A menudo, el 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{TSP}
+\end_layout
+
+\end_inset
+
+ sigue un modelo de grafo completo donde cada par de vértices es conectado
+ por una arista, en tal caso el algoritmo brinda soluciones óptimas partiendo
+ desde y hacia la ciudad inicial pasando exactamente una vez por cada ciudad
+ restante.
  
 \end_layout
 
@@ -521,14 +603,28 @@ Costo: 97
 \end_layout
 
 \begin_layout Standard
-El TSP puede ser formulado de manera teórica mediante una (o varias) formulacion
-es lineales enteras usando programación lineal en enteros.
+El 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{TSP}
+\end_layout
+
+\end_inset
+
+ puede ser formulado de manera teórica mediante una (o varias) formulaciones
+ lineales enteras usando programación lineal en enteros.
  Se plantean las variables del problema: 
 \end_layout
 
 \begin_layout Standard
 \begin_inset listings
-inline false
+lstparams "basicstyle={\footnotesize}"
+inline true
 status open
 
 \begin_layout Plain Layout
@@ -539,7 +635,7 @@ vértices: 0..
 
 \begin_layout Plain Layout
 
-Xij = 1 | Xij = 0					            																									para i,j = 0...n
+Xij = 1 | Xij = 0					            																								para i,j = 0...n
 \end_layout
 
 \begin_layout Plain Layout
@@ -549,7 +645,7 @@ La arista (i,j) pertenece(1)/ no pertenece (0) al conjunto solución.
 
 \begin_layout Plain Layout
 
-Cij Distancia desde la ciudad i hasta j	     																								  para
+Cij Distancia desde la ciudad i hasta j	     																							   para
  i,j = 0...n	 
 \end_layout
 
@@ -570,27 +666,6 @@ aristasReq número mínimo de aristas para solución.
 
 \end_layout
 
-\begin_layout Standard
-El planteo del modelo ahora es el siguiente: 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-FUNCION
-\end_layout
-
-\begin_layout Plain Layout
-FUNCION
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection*
 4.
  Backtracking
@@ -600,14 +675,30 @@ FUNCION
 Backtracking es un algoritmo general para encontrar todas o algunas soluciones
  para problemas computacionales con notables restricciones de satisfacción
  para dicho problema.El método de búsqueda es incremental de los candidatos
- a la solución, abandonando aquellos (“backtrackeando”) tan pronto como
- se determina que dicha solución no es o va a ser válida.
+ a la solución, abandonando aquellos (
+\emph on
+backtrackeando
+\emph default
+) tan pronto como se determina que dicha solución no es o va a ser válida.
  
 \end_layout
 
 \begin_layout Standard
-En el caso del TSP, los posibles candidatos a la solución se determinan
- mediante el grado de incidencia de todos los nodos que componen el grafo.
+En el caso del 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{TSP}
+\end_layout
+
+\end_inset
+
+, los posibles candidatos a la solución se determinan mediante el grado
+ de incidencia de todos los nodos que componen el grafo.
  Ya que la ciudad sólo debe ser visitada una vez, el grado de incidencia
  de cada ciudad debe ser igual a 2, por lo que aquellas ciudades que no
  han sido visitadas (grado de incidencia 0) o aquellas que sólo han sido
@@ -620,7 +711,7 @@ Pseudo-código:
 
 \begin_layout Standard
 \begin_inset listings
-inline false
+inline true
 status open
 
 \begin_layout Plain Layout
@@ -703,7 +794,14 @@ El TSP simétrico es una variedad del problema TSP que para todas las aristas
 \end_layout
 
 \begin_layout Standard
-(a,c) < (a,b)+(b,c) 
+\begin_inset Formula 
+\[
+(a,c)<(a,b)+(b,c)
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -718,8 +816,11 @@ Considerando que no todos los grafos creados cumplen con dicha condición,
 \end_layout
 
 \begin_layout Standard
-Para resolver el Metric TSP, se puede utilizar el método de árbol de recubrimien
-to mínimo.
+Para resolver el 
+\emph on
+Metric TSP
+\emph default
+, se puede utilizar el método de árbol de recubrimiento mínimo.
  El mismo se puede obtener mediante Prim o Kruskal para, luego de eso, nos
  aseguramos que el grafo será simétrico mediante la duplicación de cada
  arista.
@@ -745,7 +846,7 @@ Pseudocódigo:
 
 \begin_layout Standard
 \begin_inset listings
-inline false
+inline true
 status open
 
 \begin_layout Plain Layout
@@ -808,7 +909,7 @@ Pseudocódigo:
 
 \begin_layout Standard
 \begin_inset listings
-inline false
+inline true
 status open
 
 \begin_layout Plain Layout
@@ -896,7 +997,14 @@ Ahora bien, para aplicar transformaciones locales se debe verificar:
 \end_layout
 
 \begin_layout Standard
-(A,C)+(B,D)<(A,B)+(C,D) 
+\begin_inset Formula 
+\[
+(A,C)+(B,D)<(A,B)+(C,D)
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

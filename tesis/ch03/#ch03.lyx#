@@ -65,8 +65,6 @@
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
-\author -28351556 "Alejandro Zunino,,," 
-\author 1188755597 "usuario" 
 \end_header
 
 \begin_body
@@ -83,18 +81,28 @@ name "chap:Trabajos-Relacionados"
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 1188755597 1487110454
 El enfoque propuesto básicamente es un proceso de aprendizaje de máquina
  que incluye una herramienta para recolectar mediciones de performance en
  Android (y Java), y otra herramienta para entrenar y evaluar modelos de
  predicción con diferentes técnicas de aprendizaje automático.
  Por lo tanto, este capítulo se dividirá en dos secciones para describir
- en la sección 3.1 un conjunto de herramientas sobre benchmarks en Android
- y en la sección 3.2 se presentarán algunos trabajos ya realizados que llevan
- a cabo la predicción de atributos a través de modelos.
-\change_unchanged
+ en la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Herramientas-de-benchmarks-para-Android"
 
+\end_inset
+
+ un conjunto de herramientas sobre benchmarks en Android y en la sección
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Predicción-de-propiedades-no-funcionales-con-aprendizaje-de-máquina"
+
+\end_inset
+
+se presentarán algunos trabajos ya realizados que llevan a cabo la predicción
+ de atributos a través de modelos.
 \end_layout
 
 \begin_layout Section
@@ -132,221 +140,91 @@ name "sub:Performance-Monitors-de-Android "
 \end_layout
 
 \begin_layout Standard
-Es una herramienta integrada en el ambiente de desarrollo “Android Studio”
+Es una herramienta integrada en el ambiente de desarrollo 
+\emph on
+Android Studio
+\emph default
  y cuenta con varias sub herramientas que proveen información en tiempo
  real sobre la aplicación, estos datos capturados se almacenan en archivos
  para luego analizarlos en diferentes vistas.
- ‘Android Monitor’ utiliza la Máquina Virtual (VM) del dispositivo o emulador
- dependiendo de la versión del sistema Android, tal como se detalla en el
- siguiente cuadro
-\end_layout
-
-\begin_layout Standard
-\begin_inset Tabular
-<lyxtabular version="3" rows="4" columns="3">
-<features rotate="0" tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Versión Android
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-API(nivel)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-VM
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-4.3
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-18 (e inferior)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Dalvik VM
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-4.4
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-19
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Dalvik por defecto - ART VM opcional
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-5
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-21 (y superior)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-ART VM
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-En base a las vistas ofrecidas por la herramienta que deseen utilizarse
- y a determinadas características que maneje la aplicación, se deben configurar
- las propiedades requeridas para su uso descritas en el cuadro 3.2.
- Se pueden realizar pruebas de rendimiento sobre dispositivos Android conectados
+ Pueden realizarse pruebas de rendimiento sobre dispositivos Android conectados
  directamente a la aplicación o simulados a través de un emulador, en ambos
- casos se debe tener en cuenta que ´Android Device Monitor’ no puede ser
- utilizada.
- ADM es una herramienta standalone que permite depurar y analizar la aplicación
- sin necesidad de instalaciones en ambientes de desarrollo integrados.
+ casos se debe tener en cuenta que 
+\emph on
+Android Device Monitor 
+\emph default
+no puede ser utilizada.
+ 
+\emph on
+Android Monitor
+\emph default
+ utiliza la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{VM}
+\end_layout
+
+\end_inset
+
+ del dispositivo o emulador dependiendo de la versión del sistema Android.
  
 \end_layout
 
-\begin_layout Subsubsection*
-Propiedades que se pueden medir
-\end_layout
-
-\begin_layout Itemize
-LogCat monitor: Cuando la aplicación emite una excepción, se muestra un
- mensaje en esta vista junto con el detalle del seguimiento de la pila y
- un enlace al código asociado.
- Esta característica es útil para detectar y eliminar errores y mejorar
- el funcionamiento de la aplicación.
+\begin_layout Standard
+A través de cinco vistas diferentes se accede a la información sobre la
+ aplicación evaluada.
+ 
+\emph on
+LogCat
+\emph default
+ muestra en detalle las excepciones emitidas por la aplicación, útil para
+ detectar y eliminar errores que mejoren el funcionamiento de la aplicación.
  
 \end_layout
 
-\begin_layout Itemize
-Memory Monitor: permite visualizar gráficamente la memoria disponible y
- ocupada a lo largo del tiempo, los eventos realizados de garbage collection
- (GC), comprobar si los puntos de latencia de la aplicación se deben a un
- uso excesivo de garbage collection o si los puntos donde la aplicación
- deja de funcionar se debe a falta de memoria disponible.
- 
+\begin_layout Standard
+Durante la ejecución de la aplicación también hay seguimiento gráfico del
+ consumo de memoria junto con los eventos de garbage collection (
+\emph on
+GC
+\emph default
+) para detectar relaciones entre éstos y los puntos de latencia, el porcentaje
+ total de uso de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{CPU}
 \end_layout
 
-\begin_layout Itemize
-CPU Monitor: permite controlar fácilmente el uso de la CPU de la aplicación.
- Se muestra el uso de la CPU en tiempo real y muestra el porcentaje de tiempo
- de CPU total (incluyendo todos los núcleos) que se utiliza en el modo de
- usuario y el kernel.
- En el modo de usuario, el código debe utilizar las API del sistema para
- el acceso al hardware o a la memoria teniendo acceso sólo a la memoria
- virtual.
- En este modo, si la aplicación se detiene, es posible recuperarla.
- En el modo kernel, el código puede acceder directamente al hardware, incluyendo
- direcciones de memoria física y si por algún motivo la aplicación deja
- de funcionar, el dispositivo se detiene.
- 
-\end_layout
+\end_inset
 
-\begin_layout Itemize
-GPU Monitor: brinda una representación visual rápida acerca del tiempo que
- requiere formar cada frame de la interfaz gráfica, en otras palabras, permite
- visualizar la cantidad de tiempo que le lleva al thread preparar, procesar
- y ejecutar los comandos gráficos.
- Esta vista provee una idea general sobre la performance de la interfaz,
- identificando procesos de renderizado excesivos en el tiempo y si estos
- picos en el proceso de renderización del frame son causados en torno al
- usuario o a acciones del programa.
- 
-\end_layout
-
-\begin_layout Itemize
-Network Monitor: permite realizar un seguimiento de cada solicitud de red
- que es realizada, al mismo tiempo que permite controlar la manera y el
- momento en que se llevan a cabo las transferencias de datos en la aplicación
+ (incluyendo todos los núcleos) que se utiliza en modo de usuario y modo
+ kernel, una visión general de la performance de la interfaz incluyendo
+ la cantidad de tiempo que le lleva al thread preparar, procesar y ejecutar
+ los comandos gráficos, y finalmente, el seguimiento de cada solicitud de
+ red que es realizada, al mismo tiempo que permite controlar la manera y
+ el momento en que se llevan a cabo las transferencias de datos en la aplicación
  para optimizar el código subyacente de manera apropiada.
- Mediante el control de la frecuencia de las transferencias de datos, y
- la cantidad de datos transferidos durante cada conexión, se pueden identificar
- áreas de la aplicación que se podrían implementar de manera más eficiente
- y así, requerir menos energía de la batería.
- Generalmente, el propósito es detectar picos cortos que podrían ser demorados
- o que podrían retrasar la transferencia.
- Adicionalmente, la herramienta´Android Monitor´provee funciones para examinar
- información relevante sobre el estado de los servicios del sistema, y permite
- realizar capturas y videos de la pantalla.
+ 
+\end_layout
+
+\begin_layout Standard
+Adicionalmente, la herramienta 
+\emph on
+Android Monitor
+\emph default
+ provee funciones para examinar información relevante sobre el estado de
+ los servicios del sistema, y permite realizar capturas y videos de la pantalla.
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -361,168 +239,62 @@ name "sub:Benchit"
 \end_layout
 
 \begin_layout Standard
-“Benchit” es una librería Open Source implementada en lenguaje Java de Benchmark
-ing para Android.
+
+\emph on
+Benchit
+\emph default
+ es una librería Open Source implementada en lenguaje Java de Benchmarking
+ para Android.
  El uso de esta herramienta se hace mediante un repositorio maven llamado
- JitPack (accedido a través de la URL "https://jitpack.io") el cual contiene
- el proyecto ‘T-Spoon/Benchit’.
- JitPack puede utilizarse tanto en proyectos Android como en la Máquina
- Virtual de Java y provee artefactos listos para su uso como archivos jar
- y aar.
- El proyecto ha ido configurado bajo las características expuestas a continuació
-n:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Tabular
-<lyxtabular version="3" rows="5" columns="2">
-<features rotate="0" tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
+ 
+\emph on
+JitPack
+\emph default
+ (accedido a través de la URL 
+\emph on
+https://jitpack.io
+\emph default
+) el cual contiene el proyecto 
+\emph on
+T-Spoon/Benchit
+\emph default
+.
+ JitPack puede utilizarse tanto en proyectos Android como en la 
+\begin_inset ERT
+status open
 
 \begin_layout Plain Layout
-Propiedad
+
+
+\backslash
+ac{VM}
 \end_layout
 
 \end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
 
-\begin_layout Plain Layout
-Versión
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Compile SDK
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-22
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Build Tools
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-22.0.1
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Min SDK
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-8
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Target SDK
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-22
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection*
-Propiedades que se pueden medir
+ de Java y provee artefactos listos para su uso como archivos jar y aar.
+ El proyecto ha sido configurado para ejecutarse a partir de la versión
+ 8 de Android.
+ 
 \end_layout
 
 \begin_layout Standard
 Benchit es un framework rápido y sencillo ya que permite añadir benchmarks
  en áreas de código deseadas para determinar el tiempo o latencia de la
  operación.
- 
-\end_layout
-
-\begin_layout Standard
-Una forma sencilla de utilizar esta librería es a través de iteraciones
- sobre una misma sección de código delimitadas entre las llamadas ‘Benchit.begin(
-String tag)’ y ‘Benchit.end(String tag).log()’.
+ Una forma sencilla de utilizar esta librería es a través de iteraciones
+ sobre una misma sección de código.
  De esta forma, con cada iteración, la herramienta va almacenando el tiempo
  de ejecución del código (diferencia entre el tiempo de comienzo y tiempo
  de fin).
- Al término de las iteraciones, mediante la llamada ´Benchit.analyze(String
- tag).log()’ se podrá observar el resultado en la herramienta LogCat.
- El resultado muestra tres propiedades: promedio, rango y desviación standard
- en el siguiente formato: 
-\end_layout
-
-\begin_layout Standard
-D/Benchit﹕[benchmark-name] --> Sample Size[10], Average[22ms], Range[20ms
- --> 33ms], Deviation[4ms] 
-\end_layout
-
-\begin_layout Standard
-La herramienta, también provee la posibilidad de realizar comparaciones
- entre todos o algunos benchmarks del código mostrando los resultados en
- el LogCat de manera ordenada.
- El orden de los resultados lo determina el usuario en base a la propiedad
- y tipo de orden (ascendente o descendente) que prefiera.
+ Al término de las iteraciones, se podrá observar el resultado en la herramienta
+ LogCat mostrando tres propiedades: promedio, rango y desviación estándar.
+ La herramienta, también provee la posibilidad de realizar comparaciones
+ entre todos o algunos benchmarks del código mostrando los resultados de
+ manera ordenada.
  Esta opción es útil, por ejemplo, al momento de comparar el desempeño de
  varios algoritmos o sentencias que realicen la misma acción de forma diferente.
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -537,23 +309,17 @@ name "sub:Google-caliper"
 \end_layout
 
 \begin_layout Standard
-Google Caliper es un framework open source para implementar, ejecutar y
- visualizar resultados de microbenchmarks en aplicaciones Java, aunque brinda
- soporte para proyectos android accediendo a través de la rama de la versión
- 0.5 ya que la rama 1.0 no funciona correctamente en android.
+
+\emph on
+Google Caliper
+\emph default
+ es un framework open source para implementar, ejecutar y visualizar resultados
+ de microbenchmarks en aplicaciones Java, aunque brinda soporte para proyectos
+ android accediendo a través de la rama de la versión 0.5 ya que la rama
+ 1.0 no funciona correctamente en Android.
  Existen dos alternativas de acceso al proyecto a través del repositorio
  maven o el repositorio git.
- La integración del proyecto Caliper se logra añadiendo dos archivos del
- tipo JAR como dependencias, “allocation.jar” y “caliper-0.0.jar”.
- 
-\end_layout
-
-\begin_layout Subsubsection*
-Propiedades que se pueden medir
-\end_layout
-
-\begin_layout Standard
-Caliper permite obtener diferentes medidas del código Java, principalmente
+ Caliper permite obtener diferentes medidas del código Java, principalmente
  microbenchmarks, pero también tiene soporte para otros tipos de medidas
  incluyendo memoria disponible, ocupada, u otras medidas arbitrarias de
  dominio específico como por ejemplo el radio de compresión.
@@ -572,60 +338,73 @@ name "sub:Java-Microbenchmark-Harness"
 \end_layout
 
 \begin_layout Standard
-Java Microbenchmark Harness o simplemente JMH, es una herramienta que facilita
- la implementación de benchmarks en forma correcta.
+Java Microbenchmark Harness (
+\emph on
+JMH
+\emph default
+), es una herramienta que facilita la implementación de benchmarks en forma
+ correcta.
  El término correcto hace alusión a las optimizaciones que tanto la máquina
  virtual como el hardware subyacente aplican sobre el código durante la
  ejecución de los benchmarks y que no se aplican en sistemas de producción
  real, infiriendo en conclusiones erróneas sobre el rendimiento.
- JMH fue diseñada por los mismos desarrolladores de la máquina virtual de
- Java posibilitando la construcción, ejecución y análisis de benchmarks
- no sólo escritos en lenguaje Java sino en otros lenguajes soportados por
- la máquina virtual.
- El acceso a la herramienta se realiza a través del repositorio Maven, generando
- un nuevo proyecto JMH a partir del proyecto modelo.
- El proyecto generado contendrá una clase llamada ´MyBenchmark.java´ que
- funciona como template para implementar benchmarks directamente en ella
- o crear nuevas clases a partir de la generada.
-\end_layout
-
-\begin_layout Subsubsection*
-Propiedades que se pueden medir
+ 
+\emph on
+JMH
+\emph default
+ fue diseñada por los mismos desarrolladores de la máquina virtual de Java
+ posibilitando la construcción, ejecución y análisis de benchmarks no sólo
+ escritos en lenguaje Java sino en otros lenguajes soportados por la máquina
+ virtual.
+ 
 \end_layout
 
 \begin_layout Standard
-La librería JMH ofrece cinco tipos de medidas sobre el código.
- Estos atributos o modos como se denominan en la herramienta se especifican
- por medio de anotaciones Java en el encabezado del método principal de
- la clase “MyBenchmark” llamado “testMethod()”.
- A modo de ejemplo, la siguiente anotación define la medida elegida “Throughput”
-: @BenchmarkMode(Mode.Throughput).
- Las propiedades provistas por la herramienta son detalladas a continuación:
+La librería 
+\emph on
+JMH
+\emph default
+ ofrece cinco tipos de medidas sobre el código (modos) especificados por
+ medio de anotaciones Java.
  
 \end_layout
 
-\begin_layout Itemize
-“Throughput”: mide el número de operaciones por segundo, en otras palabras,
- un estimativo sobre la cantidad de veces por segundo que el componente
- al que se le aplicó un benchmark podría ser ejecutado.
+\begin_layout Description
+Throughput mide el número de operaciones por segundo, un estimativo sobre
+ la cantidad de veces por segundo que el componente podría ser ejecutado.
  
 \end_layout
 
-\begin_layout Itemize
-“Average time”: mide el tiempo promedio que el componente requiere para
- ejecutarse.
+\begin_layout Description
+Average
+\begin_inset space ~
+\end_inset
+
+time mide el tiempo promedio que el componente requiere para ejecutarse.
+\end_layout
+
+\begin_layout Description
+Sample
+\begin_inset space ~
+\end_inset
+
+time mide el tiempo efectivo que el componente requirió en ejecutarse, incluyend
+o tiempo máximo y mínimo.
  
 \end_layout
 
-\begin_layout Itemize
-“Sample time”: mide el tiempo efectivo que el componente requirió en ejecutarse,
- incluyendo tiempo máximo y mínimo.
+\begin_layout Description
+Single
+\begin_inset space ~
+\end_inset
+
+Shot mide el tiempo de ejecución de un simple método benchmark.
  
 \end_layout
 
-\begin_layout Itemize
-“Single Shot”: mide el tiempo de ejecución de un simple método benchmark.
- “All”: computa y retorna todas las mediciones anteriores.
+\begin_layout Description
+All computa y retorna todas las mediciones anteriores.
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -640,9 +419,15 @@ name "sub:JMeter"
 \end_layout
 
 \begin_layout Standard
-JMeter es una herramienta Open Source diseñada por Apache e implementada
- completamente en lenguaje Java para realizar pruebas de carga y medidas
- de rendimiento.
+
+\emph on
+JMeter
+\emph default
+ es una herramienta Open Source diseñada por Apache e implementada completamente
+ en lenguaje Java para realizar pruebas de carga y medidas de rendimiento.
+ Apache JMeter puede utilizar para simular un gran volumen de carga en un
+ servidor o grupo de servidores y en la red y probar su resistencia o analizar
+ el rendimiento general bajo diferentes tipos de carga.
  En un principio, fue diseñada para realizar pruebas de rendimiento sobre
  aplicaciones Web pero luego ha sido extendida a otras funciones para cubrir
  diferentes categorías de testing, tal es el caso de los análisis de carga,
@@ -652,42 +437,89 @@ JMeter es una herramienta Open Source diseñada por Apache e implementada
  Puede ser ejecutada bajo cualquier entorno o estación que acepte la máquina
  virtual de Java como es el caso de los sistemas operativos Windows, Linux
  y Mac.
- A grandes rasgos, la herramienta simula un grupo de usuarios que envían
- peticiones a un servidor y retorna un conjunto de estadísticas sobre el
- desempeño y funcionalidad por medio de gráficos, tablas, etc.
- El proyecto se instala fácilmente a partir de la siguiente URL: “http://jmeter.a
-pache.org/download_jmeter.cgi”.
- Al tratarse de un framework basado en java, el único requerimiento es la
- instalación de la herramienta JDK a partir de la versión 6.
- 
-\end_layout
-
-\begin_layout Subsubsection*
-Propiedades que se puede medir
 \end_layout
 
 \begin_layout Standard
-Apache JMeter puede realizar pruebas tanto en recursos estáticos como dinámicos.
- Se puede utilizar para simular un gran volumen de carga en un servidor
- o grupo de servidores y en la red y probar su resistencia o analizar el
- rendimiento general bajo diferentes tipos de carga.
- Los recursos que pueden evaluarse podrían ser servicios web (SOAP/ REST),
- lenguajes web dinámicos (PHP - Java - ASP.NET, archivos), base de datos
- vía JDBC y consultas a la base, conexiones generales bajo los protocolos
- FTP, LDAP, JMS, HTTP, HTTPS, TCP, protocolos de mensajerías como SMTP,
- POP3, IMAP y comandos y scripts de shell.
+A grandes rasgos, la herramienta simula un grupo de usuarios que envían
+ peticiones a un servidor y retorna un conjunto de estadísticas sobre el
+ desempeño y funcionalidad por medio de gráficos, tablas, etc, tanto sobre
+ recursos estáticos y dinámicos.
+ Al tratarse de un framework basado en java, el único requerimiento es la
+ instalación de la herramienta 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{JDK}
+\end_layout
+
+\end_inset
+
+ a partir de la versión 6.
  
+\end_layout
+
+\begin_layout Standard
+El cuadro comparativo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:benchmarks-tools"
+
+\end_inset
+
+ resalta las propiedades o medidas que pueden realizar las herramientas
+ antes mencionadas y los componentes sobre los cuales realizan las mediciones.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/benchmarks_tools.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Información resumida de las herramientas de benchmarking para Android.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:benchmarks-tools"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
-Predicción de propiedades no funcionales con aprendizaje de máquina
-\end_layout
-
-\begin_layout Subsubsection
-Propósito general 
+Predicción de propiedades no funcionales con aprendizaje de máquina 
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Propósito-general"
+name "sec:Predicción-de-propiedades-no-funcionales-con-aprendizaje-de-máquina"
 
 \end_inset
 
@@ -695,1470 +527,93 @@ name "sub:Propósito-general"
 \end_layout
 
 \begin_layout Standard
-Un paso fundamental para lograr aplicaciones eficientes en batería es el
- análisis de las fuentes de consumo de energía de los dispositivos.
- Conocer qué componentes del dispositivo son los que mayor incidencia tienen
- en el gasto energético
-\change_deleted -28351556 1387367755
-,
-\change_unchanged
- es crucial para desarrollar aplicaciones eficientes en batería
-\change_deleted -28351556 1387367763
-, de cualquier tipo
-\change_unchanged
-.
- En esta dirección,
-\change_inserted -28351556 1387367766
- 
-\change_deleted -28351556 1387367766
-
-\begin_inset space ~
-\end_inset
-
-
-\change_unchanged
-
+La predicción de propiedades no funcionales ha contribuido a los arquitectos
+ de software en la evaluación de sus sistemas durante la etapa de diseño,
+ y guiar las decisiones respecto a los componentes que deben integrarse
+ a la arquitectura del sistema de acuerdo a los requerimientos de calidad
+ esperados.
+ Diferentes trabajos han recurrido al uso de técnicas de aprendizaje de
+ máquina para construir modelos de predicción de performance y otros atributos
+ de calidad dinámicos.
+ Hutter, Xu y Hoos 
 \begin_inset CommandInset citation
-LatexCommand citet
-key "Zhang2010,Carroll2010"
+LatexCommand citep
+key "Hutter2014"
 
 \end_inset
 
-
-\change_deleted -28351556 1387367767
- 
-\change_inserted -28351556 1387367767
-
-\begin_inset space ~
-\end_inset
-
-
-\change_unchanged
-explican cómo el display de un smartphone puede incidir significativamente,
- usualmente variando en el rango de 0-0.5 W, dependiendo del nivel de brillo.
- El procesador y las memorias también se encuentran entre los elementos
- de mayor consumo, alcanzando niveles similares a los del display, encontrándose
- linealmente relacionados con la carga, y cúbicamente relacionados con la
- frecuencia
-\begin_inset space ~
-\end_inset
-
-
+se han referido a estos modelos como modelos empíricos de performance (
+\emph on
+EPM
+\emph default
+ por sus siglas en inglés) ya que requieren la recolección de mediciones
+ empíricas sobre los componentes.
+ La principal aplicación de estos modelos probablemente es el problema de
+ selección de algoritmos, introducido en 1976 por John R.
+ Rice 
 \begin_inset CommandInset citation
-LatexCommand citet
-key "Shye2009,Zhang2010"
+LatexCommand citep
+key "Rice1976"
 
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-Una tendencia que se presenta en los dispositivos actuales es la creciente
- utilización de Internet.
- Actualmente, muchos usuarios permanecen conectados de manera constante
- a servicios de noticias, mails, redes sociales, etc.
- En
-\begin_inset space ~
-\end_inset
-
-
+ Este problema consiste en seleccionar el algoritmo, o configuración de
+ algoritmo, de un portafolio de alternativas que minimice el tiempo de respuesta
+, según la instancia de datos de entrada.
+ La predicción del tiempo de respuesta ha sido abordada con éxito usando
+ técnicas de aprendizaje supervisado, principalmente de regresión 
 \begin_inset CommandInset citation
-LatexCommand citet
-key "Balasubramanian2009"
-
-\end_inset
-
- se analizan las tres tecnologías de comunicación más difundidas, 3G, 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{GSM}
-\end_layout
-
-\end_inset
-
- y Wi-Fi.
- Por un lado, se identifica que las conexiones que emplean tecnologías 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{UTMS}
-\end_layout
-
-\end_inset
-
- introducen un gasto adicional debido a que se mantienen en estados de alto
- consumo, incluso habiendo completado la transferencia.
- Este consumo realizado después de efectuar la transferencia, es denominado
- 
-\shape italic
-tail energy
-\shape default
-.
- En particular, para el caso de 3G, cuando se realizan ráfagas cortas el
- desperdicio de energía puede llegar a ser el 60% del total.
- Para el caso de Wi-Fi, la energía utilizada para asociarse es similar a
- la desperdiciada por 3G, pero a diferencia de 
-\change_deleted -28351556 1387367827
-e
-\change_inserted -28351556 1387367828
-´e
-\change_unchanged
-ste, incurre en un gasto mucho menor en las trasferencias de datos.
- Utilizando esta información, en
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Balasubramanian2009"
-
-\end_inset
-
- se propone un protocolo de planificación denominado TailEnder, que organiza
- las trasferencias con el objetivo de minimizar el consumo de energía.
- Este análisis parte de la base de que la forma en la que son ejecutadas
- las trasferencias
-\change_deleted -28351556 1387367847
-,
-\change_unchanged
- influye en el consumo.
- Por ejemplo, para el caso de aplicaciones que toleran una determinada demora,
- es mejor realizar varias transferencias juntas, resultando en un único
- desperdicio de energía al final de la transferencia, en contraposición
- a realizarlas por separado y tener N
-\change_deleted -28351556 1387368369
- 
-\change_inserted -28351556 1387368369
-
-\begin_inset space ~
-\end_inset
-
-
-\change_unchanged
-desperdicios de energía.
- Por otra parte para aplicaciones que se benefician del prefetching, (una
- técnica que consiste realizar predicciones y descargar información por
- anticipado, en base al análisis de la consultas y los patrones de comportamient
-o de los usuarios, con el objetivo de reducir la demora en las respuestas),
- TailEnder determina qué datos se deben seleccionar para el prefetch, minimizand
-o el consumo de energía.
- Se realizan evaluaciones del mismo, utilizando tres casos principales:
- servicios de noticias, email, y búsquedas web.
- Los resultados arrojan una mejora con respecto al protocolo de planificación
- por defecto de 3G, que van desde el 42% en el primer caso, un 35% para
- el caso de aplicaciones de email, y finalmente, un 40% para el caso de
- las búsquedas web.
- 
-\end_layout
-
-\begin_layout Standard
-En
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Rice2010,Perrucci2009"
-
-\end_inset
-
- se estudia el consumo energético de las redes 3G, 2G, y 802.11.
- En el primer trabajo se comparan 3G versus 2G, utilizando algunos de los
- servicios más comunes como 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{SMS}
-\end_layout
-
-\end_inset
-
-, servicios de voz, y descarga de datos.
- Se concluye que 2G insume un gasto menor que 3G para el caso de 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{SMS}
-\end_layout
-
-\end_inset
-
- o servicios de voz.
- Con respecto a las trasferencias de datos, 3G resulta ser superior, realizando
- transferencias a mayor velocidad, y con menor consumo.
- Para el caso de redes 802.11, en
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Rice2010"
-
-\end_inset
-
- se mide la cantidad de energía necesaria para asociarse con un punto de
- acceso utilizando direccionamiento 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{IP}
-\end_layout
-
-\end_inset
-
- dinámico y estático, sobre el sistema operativo Android.
- Los resultados indican que addressing estático consume cuatro veces menos
- energía que su contraparte dinámica.
- Con el objetivo de minimizar el costo de la asociación, se propone eliminar
- la etapa 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{ARP}
-\end_layout
-
-\end_inset
-
- Probe del proceso, reduciendo el consumo de la alternativa dinámica cerca
- de un 400%.
- Por otra parte, se analiza el costo energético de las transmisiones, indicando
- que la energía empleada para transmitir un byte no se comporta de manera
- intuitiva a medida que se aumenta el tamaño de la transferencia en ciertos
- dispositivos (G1 ,HTC Magic, HTC Hero), donde se identificó un aumento
- abrupto en el consumo de energía cuando se envían paquetes de 8kb en adelante.
- Sin embargo, en otros dispositivos (Nexus), la curva de consumo se comporta
- intuitivamente, mostrando menor gasto de energía por byte, a medida que
- aumenta el volumen de datos.
- Finalmente se mide el impacto del tamaño del buffer de salida en el consumo.
- A medida que el mismo aumenta, la energía empleada disminuye, concluyendo
- en que el tamaño óptimo es el máximo permitido por el frame de 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{TCP}
-\end_layout
-
-\end_inset
-
- (1448 bytes).
-\end_layout
-
-\begin_layout Standard
-Tomando como punto de partida el análisis que se realiza en
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Balasubramanian2009"
-
-\end_inset
-
-, que indica que la forma en la que se realicen las transferencias influye
- en el consumo de energía, surgen investigaciones que extienden la idea.
- En
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Kelenyi2009"
-
-\end_inset
-
- se presenta un cliente bit torrent para dispositivos con energía limitada.
- El mismo organiza las diferentes trasferencias para lograr ráfagas de alta
- velocidad en los intercambios de datos, minimizando el desperdicio de energía.
- Los resultados indican una reducción en el consumo de hasta un 50% con
- respecto a los clientes bit torrent convencionales.
-\end_layout
-
-\begin_layout Standard
-Por otra parte, existen investigaciones que estudian el desperdicio de energía
- que puede generar el tráfico de red innecesario en las aplicaciones.
- En
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Zhang2012"
-
-\end_inset
-
- se presenta ADELE, una aplicación para detectar estos problemas.
- El propósito de esta herramienta es principalmente asistir a los desarrolladore
-s para encontrar errores en el diseño o implementación de las aplicaciones
- que realicen trasferencias de datos innecesarias, que no generan cambios
- visibles por el usuario.
- ADELE coloca 
-\shape italic
-tags
-\shape default
- en los paquetes de red entrantes a la aplicación para poder rastrear si
- los mismos realizan, directa, o indirectamente, algún cambio perceptible
- por los usuarios.
- Para lograr esto, ADELE mantiene un registro de los 
-\shape italic
-tags
-\shape default
- entrantes, y genera o propaga nuevos 
-\shape italic
-tags
-\shape default
- a partir de ellos, permitiendo realizar un seguimiento de los cambios que
- puede originar un paquete.
- Por ejemplo, si un paquete entrante cambia el valor de una variable, que
- a su vez es combinada con otra para cambiar la posición de un objeto en
- pantalla, se debe poder determinar qué paquete originó el movimiento del
- componente en pantalla.
- A través de la utilización de ADELE en 15
-\change_deleted -28351556 1387369593
- 
-\change_inserted -28351556 1387369593
-
-\begin_inset space ~
-\end_inset
-
-
-\change_unchanged
-aplicaciones, se identifican cuatro categorías de problemas que causan desperdic
-ios de energía: mala utilización de los 
-\shape italic
-callback
-\shape default
- de las APIs, actualización ineficiente de los datos que ignora el estado
- de la aplicación y el dispositivo, descargas redundantes, y 
-\shape italic
-prefetching
-\shape default
- agresivos.
- Eliminar los tres primeros tipos de problema, reduce el consumo de energía
- de las transmisiones de red alrededor de un
-\change_deleted -28351556 1387369605
- 
-\change_inserted -28351556 1387369605
-
-\begin_inset space ~
-\end_inset
-
-
-\change_unchanged
-62.1%, mientras que mejorar el 
-\shape italic
-prefetching
-\shape default
- reduce el consumo en aproximadamente un
-\change_deleted -28351556 1387369608
- 
-\change_inserted -28351556 1387369608
-
-\begin_inset space ~
-\end_inset
-
-
-\change_unchanged
-52.7%.
-\end_layout
-
-\begin_layout Standard
-Sin embargo, a medida que las investigaciones se tornan más específicas,
- los análisis indican que las contribuciones de los trabajos anteriormente
- referenciados, son aún incipientes.
- Las interdependencias entre las aplicaciones y las interacciones del usuario
- con las mismas, también influyen en el consumo de batería.
- Por ejemplo, existen usuarios que invierten gran cantidad de tiempo navegando
- en Internet, con un gran intercambio de datos 3G.
- Sin embargo, otros usuarios pasan la mayor parte del tiempo realizando
- llamadas.
- En este contexto, la aplicación de políticas estáticas para la asignación
- de energía a las aplicaciones
-\change_deleted -28351556 1387369632
-,
-\change_unchanged
- son poco efectivas.
- En
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Vallina-Rodriguez2010"
-
-\end_inset
-
- se plantea generar esquemas dinámicos de scheduling, basados en el comportamien
-to de cada usuario particular, que tengan en cuenta las interrelaciones
- entre diferentes procesos, y las alteraciones que genera la interacción
- con los mismos.
-\end_layout
-
-\begin_layout Standard
-En resumen, se presentaron estudios de c
-\change_inserted -28351556 1387369652
-ó
-\change_deleted -28351556 1387369648
-o
-\change_unchanged
-mo diferentes formas de realizar las transacciones de datos, pueden afectar
- el desperdicio de energía.
- También se identificó que las redes 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{UTMS}
-\end_layout
-
-\end_inset
-
-, en especial 3G, consumen gran cantidad de energía en las trasferencias
- respecto de Wi-Fi.
- Por último se presentó un estudio que analiza los desperdicios de energía
- que generan las trasferencias de red innecesarias en las aplicaciones,
- 
-\change_deleted -28351556 1387369735
-que
-\change_inserted -28351556 1387369735
-para
-\change_unchanged
- asist
-\change_inserted -28351556 1387369738
-ir
-\change_deleted -28351556 1387369737
-e
-\change_unchanged
- a los desarrolladores 
-\change_deleted -28351556 1387369745
-para
-\change_inserted -28351556 1387369745
-a
-\change_unchanged
- encontrar posibles errores en la aplicación.
- A continuación, se describen los avances específicos en el área de 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{SOC}
-\end_layout
-
-\end_inset
-
-, también haciendo énfasis en el rendimiento energético.
-\end_layout
-
-\begin_layout Subsubsection
-SOC 
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:SOC"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Con el gran crecimiento de Internet y el aumento del ancho de banda de las
- conexiones hogareñas, la interacción con servicios externos es algo común
- hoy en día.
- En particular, los dispositivos móviles están interactuando constantemente
- con servicios, a través de conexiones inalámbricas.
- Por este motivo, surge la necesidad de investigar el ahorro de energía
- para 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{SOC}
-\end_layout
-
-\end_inset
-
-, especialmente en conjunción con estos dispositivos.
- En
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Papageorgiou2012"
-
-\end_inset
-
- se evalúan diferentes “invocation patterns”, variando parámetros como el
- tiempo entre invocaciones, y si los servicios utilizan mecanismos de caché
- o no.
- Los resultados indican que el tiempo entre invocaciones es un factor determinan
-te en conexiones 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{UTMS}
-\end_layout
-
-\end_inset
-
-, con ahorros de energía de hasta un
-\change_deleted -28351556 1387370946
- 
-\change_inserted -28351556 1387370946
-
-\begin_inset space ~
-\end_inset
-
-
-\change_unchanged
-50%.
- Para redes Wi-Fi, el ahorro es menor, debido a que no se mantiene en estados
- de alto consumo de energía después de haber completado la transferencia,
- como en el caso de las redes 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{UTMS}
-\end_layout
-
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Balasubramanian2009"
+LatexCommand citep
+key "Hutter2014"
 
 \end_inset
 
 .
- Es importante resaltar que los resultados también indican que la utilización
- de mecanismos de caché no es un factor realmente influyente en el consumo
- de energía, al menos para pequeñas transferencias.
-\end_layout
-
-\begin_layout Standard
-Por otra parte, en
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Pilioura2005"
-
-\end_inset
-
- se investiga la utilización de servicios sobre redes inalámbricas, analizando
- las posibles restricciones que 
-\change_deleted -28351556 1387370964
-e
-\change_inserted -28351556 1387370968
-é
-\change_unchanged
-stas presentan, como disponibilidad y ancho de banda limitado.
- Más específicamente, se presentan tres arquitecturas, dos para soportar
- la invocación dinámica de servicios desde dispositivos móviles, y una para
- proveer los servicios desde el propio dispositivo.
- Se analizan tres alternativas, light-WS, fat-WS y WS-Provider.
- Para el primer caso se presenta una arquitectura que introduce la utilización
- de un proxy para disminuir el cómputo realizado en el dispositivo.
- El problema de este enfoque es la centralización del servicio, que disminuye
- la tolerancia a fallas y aumenta los cuellos de botella.
- En el segundo caso el dispositivo móvil es el que interactúa directamente
- con el directorio de servicios para realizar una búsqueda, y posteriormente
- con el proveedor del servicio, planteando una arquitectura totalmente descentra
-lizada y tolerante a fallas, pero aumentando el cómputo necesario 
-\change_inserted -28351556 1387371010
-en 
-\change_unchanged
-el dispositivo.
- Por último, se evalúa la alternativa en la cual el dispositivo móvil juega
- el rol de proveedor de servicios, lo que introduce la necesidad de componentes
- adicionales para enfrentar el problema de la disponibilidad, y la variación
- en las direcciones 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{IP}
-\end_layout
-
-\end_inset
-
- del mismo, producto de la movilidad.
- Se realizan comparaciones con respecto a un servicio provisto por una PC
- de escritorio que indican que el factor principal en la perdida de rendimiento
- en la alternativa móvil, es producto de la constante actualización de las
- diferentes direcciones del proveedor móvil.
-\end_layout
-
-\begin_layout Standard
-Adicionalmente, en
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Halteren2006"
-
-\end_inset
-
- se describe una plataforma para proveer servicios desde dispositivos móviles,
- sobre la base de Jini Surrogate Architecture Specification
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Flex URL
-status collapsed
-
-\begin_layout Plain Layout
-
-http://svn.apache.org/repos/asf/river/jtsk/skunk/surrogate/refdocs/sa.pdf
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-.
- En esta plataforma, un servicio posee un 
-\shape italic
-surrogate
-\shape default
- que ejecuta en un servidor conectado a la red.
- Con esta disposición, los clientes se comunican con el servicio a través
- del 
-\shape italic
-surrogate
-\shape default
-, mientras que la 
-\change_deleted -28351556 1387372143
-comunicacion
-\change_inserted -28351556 1387372143
-comunicación
-\change_unchanged
- entre el servicio y el 
-\shape italic
-surrogate
-\shape default
- se realiza mediante 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{HTTP}
-\end_layout
-
-\end_inset
-
-.
- Este enfoque es similar al presentado en
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Pilioura2005"
-
-\end_inset
-
- que propone la utilización de un proxy (en este caso el 
-\shape italic
-surrogate
-\shape default
-) para la invocación de servicios.
- Aunque en es
-\change_deleted -28351556 1387372163
-t
-\change_unchanged
-e 
-\change_deleted -28351556 1387372165
-caso
-\change_inserted -28351556 1387372166
-trabajo
-\change_unchanged
- se hace énfasis en proveer servicios desde el dispositivo, la misma idea
- puede utilizarse para la invocación de los mismos.
- Los 
-\shape italic
-surrogate
-\shape default
- son adaptadores que permiten que dispositivos que no son compatibles con
- Jini (ya sea porque no poseen máquina virtual Java o no incluyen las APIs
- de Jini) puedan unirse a la red.
- Sin embargo, también pueden reducir el cómputo realizado en el dispositivo,
- ya que pueden delegarse operaciones computacionalmente costosas, o utilizar
- mecanismos de caché, para reducir el gasto energético.
- Finalmente se analizan algunos escenarios de aplicación, pero no se realiza
- ningún estudio sobre la performance del enfoque propuesto.
-\end_layout
-
-\begin_layout Standard
-En la misma dirección,
-\change_inserted -28351556 1387372196
+ En estos trabajos, los datos empíricos de entrenamiento son obtenidos en
+ contextos de ejecución controlados, para enfocarse en la correlación entre
+ la propiedad a predecir y las propiedades de los parámetros de entrada
+ del componente o algoritmo.
+ Una limitación de estos modelos es que no generalizan la predicción de
+ las propiedades de performance al contexto de ejecución, es decir, no considera
+n características del dispositivo y el ambiente de ejecución que influyen
+ sobre el desempeño del componente, como su capacidad de cómputo y la disponibil
+idad de recursos.
  
-\change_deleted -28351556 1387372196
-
-\begin_inset space ~
-\end_inset
-
-
-\change_unchanged
-
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Rendon2005"
-
-\end_inset
-
-
-\change_deleted -28351556 1387372198
- 
-\change_inserted -28351556 1387372198
-
-\begin_inset space ~
-\end_inset
-
-
-\change_unchanged
-propone dos arquitecturas para consumir 
-\change_deleted -28351556 1387372207
-web services
-\change_inserted -28351556 1387372209
-servicios Web
-\change_unchanged
- desde dispositivos móviles.
- En las mismas se utiliza WSA
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset Flex URL
-status collapsed
-
-\begin_layout Plain Layout
-
-http://www.oracle.com/technetwork/java/wsa-139345.html
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- y 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{SMS}
-\end_layout
-
-\end_inset
-
- con el objetivo de abarcar tanto
-\change_deleted -28351556 1387372217
-,
-\change_unchanged
- dispositivos de altas 
-\change_inserted -28351556 1387372223
-como de
-\change_deleted -28351556 1387372224
-o
-\change_unchanged
- bajas prestaciones, respectivamente.
- WSA proporciona un soporte básico para la invocación de servicios y el
- 
-\shape italic
-parsing
-\shape default
- de 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{XML}
-\end_layout
-
-\end_inset
-
-.
- Para que la aplicación pueda utilizar WSA se debe incluir un 
-\shape italic
-stub
-\shape default
- que se genera utilizando una herramienta en la etapa de desarrollo, para
- luego ser de
-\change_deleted -28351556 1387372247
-ployado
-\change_inserted -28351556 1387372249
-splegado
-\change_unchanged
- en el dispositivo.
- La aplicación puede entonces utilizar el 
-\shape italic
-stub
-\shape default
- para parsear mensajes 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{SOAP}
-\end_layout
-
-\end_inset
-
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset Flex URL
-status collapsed
-
-\begin_layout Plain Layout
-
-http://www.w3.org/TR/soap/
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- utilizando 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{JAXP}
-\end_layout
-
-\end_inset
-
- y consumir servicios con 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{JAX-RPC}
-\end_layout
-
-\end_inset
-
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset Flex URL
-status collapsed
-
-\begin_layout Plain Layout
-
-http://jcp.org/en/jsr/detail?id=224
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-.
- En contraposición, para acceder a los servicios utilizando 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{SMS}
-\end_layout
-
-\end_inset
-
- se utilizó un gateway que traduce mensajes en peticiones 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{HTTP}
-\end_layout
-
-\end_inset
-
- para conectarse con un servidor encargado de traducir peticiones 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{HTTP}
-\end_layout
-
-\end_inset
-
- en mensajes 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{SOAP}
-\end_layout
-
-\end_inset
-
-, y viceversa.
- Es importante aclarar que cada vez que se desea consumir un servicio diferente
- es necesaria la modificación de código y la reconfiguración tanto para
- el caso de WSA, como para 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{SMS}
-\end_layout
-
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Luqun2004"
+Este capítulo describe trabajos que inducen al desarrollo de una herramienta
+ capaz de generalizar cualquier característica propia del componente de
+ ejecución como así también del entorno donde se ejecuta para la aplicación
+ de la técnica de aprendizaje de máquina que resulte la más adecuada para
+ la predicción.
+ Está organizado de la siguiente manera: la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Predicción-de-precisión"
 
 \end_inset
 
-
-\begin_inset space ~
-\end_inset
-
-también presenta dos arquitecturas para la invocación de servicios desde
- dispositivos móviles.
- Por un lado se estudia la invocación directa, manteniendo el esquema clásico
- de aplicaciones orientadas a servicios, donde participan el servidor de
- registro o broker, el consumidor y el proveedor.
- El acceso a los servicios se realiza mediante la biblioteca KSOAP
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset Flex URL
-status collapsed
-
-\begin_layout Plain Layout
-
-http://ksoap2.sourceforge.net/
-\end_layout
+ presenta tres estudios sobre algoritmos de optimización que abarcan la
+ predicción de otro de los indicadores más importantes, como lo es la precisión
+ y en la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Predicción-sobre-Servicios"
 
 \end_inset
 
-
-\end_layout
-
-\end_inset
-
-.
- En el segundo caso, se introduce un componente intermedio que actúa de
- proxy o gateway, cumpliendo el rol de consumidor en el esquema clásico,
- y de intermediario entre el dispositivo y los proveedores.
- Esta arquitectura también es similar a la que se describe en
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Pilioura2005"
-
-\end_inset
-
-, planteando la utilización de un proxy para la invocación de servicios.
- La ventaja principal de este enfoque es que se pueden delegar tareas computacio
-nalmente costosas para reducir el consumo de energía, e incluso, mejorar
- los tiempos de respuesta.
- Los resultados de las pruebas arrojan que la utilización de un gateway
- puede mejorar hasta en un 100% la latencia en la respuesta del servicio.
-\end_layout
-
-\begin_layout Standard
-En
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Artail2012"
-
-\end_inset
-
- se extiende el enfoque indirecto presentado en
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Luqun2004"
-
-\end_inset
-
- y se estudia otra alternativa para la invocación dinámica de servicios.
- Se introduce un servidor 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{MIM}
-\end_layout
-
-\end_inset
-
- que realiza las operaciones de descubrimiento y generación dinámica del
- proxy, disminuyendo el costo computacional y minimizando el tráfico de
- red necesario en el dispositivo.
- El mismo provee un servicio que toma como parámetro una cadena de caracteres
- y la procesa, descargando los documentos en formato 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{WSDL}
-\end_layout
-
-\end_inset
-
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset Flex URL
-status collapsed
-
-\begin_layout Plain Layout
-
-http://www.w3.org/TR/wsdl
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- correspondientes al conjunto de servicios que mejor se corresponda con
- el criterio de búsqueda.
- Luego, se analizan los documentos 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{WSDL}
-\end_layout
-
-\end_inset
-
- candidatos con el objetivo de seleccionar el que mejor correlación tiene
- con la cadena de búsqueda, respondiendo al cliente con la estructura del
- método seleccionado.
- El cliente adapta su 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{GUI}
-\end_layout
-
-\end_inset
-
- para presentar al usuario los parámetros necesarios para la invocación
- del servicio.
- En paralelo, utilizando el documento 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{WSDL}
-\end_layout
-
-\end_inset
-
- se genera y compila el proxy, para luego ser enviado al dispositivo.
- La ventaja principal de este enfoque, es que se delegan operaciones que
- requieren gran cantidad de poder de procesamiento, como la generación de
- código y compilación en tiempo de ejecución para generar el proxy, minimizando
- el costo energético de realizar la invocación dinámica desde el dispositivo.
- Es importante aclarar que para mejorar el rendimiento, también se introduce
- un mecanismo de cache en el servidor 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{MIM}
-\end_layout
-
-\end_inset
-
-, con el propósito de reducir las transferencias de red producto de la descarga
- de documentos 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{WSDL}
-\end_layout
-
-\end_inset
-
-.
- Con este esquema, se lograron ahorros de hasta
-\change_deleted -28351556 1387393040
+ presenta dos estudios de propiedades dinámicas sobre Servicios Web.
  
-\change_inserted -28351556 1387393040
-
-\begin_inset space ~
-\end_inset
-
-
-\change_unchanged
-10J, suficiente para atender hasta 80
-\change_deleted -28351556 1387393043
- 
-\change_inserted -28351556 1387393043
-
-\begin_inset space ~
-\end_inset
-
-
-\change_unchanged
-peticiones adicionales.
-\end_layout
-
-\begin_layout Standard
-Es importante destacar que las invocaciones de servicios no son el único
- factor que afecta el consumo de energía.
- Para utilizar un servicio, muchas veces es necesario encontrarlo utilizando
- algún protocolo para el descubrimiento de servicios (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{UDDI}
-\end_layout
-
-\end_inset
-
-, 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{UPnP}
-\end_layout
-
-\end_inset
-
-, JINI, etc.).
- En este sentido,
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Charlet2008"
-
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-estudia el impacto que tienen estos protocolos en el gasto de energía, combinado
-s con las distintas opciones de comunicación de los dispositivos (Wi-Fi,
- 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{GPRS}
-\end_layout
-
-\end_inset
-
-, Bluethooth), para poder determinar qué interfaces de comunicación se adaptan
- mejor a cada etapa en el proceso de ejecución de un servicio (anuncio,
- descubrimiento, consumo) buscando minimizar la energía empleada en cada
- una de ellas y analizando las incompatibilidades con los diferentes protocolos
- de descubrimiento.
- Se propone la utilización de Bluethooth para el descubrimiento, y Wi-Fi
- para el consumo de servicios.
- El problema es que no siempre los protocolos, o la red, permiten que ambas,
- o alguna de ellas estén disponibles.
-\end_layout
-
-\begin_layout Standard
-Sin embargo, las cuestiones presentadas en las investigaciones anteriormente
- 
-\change_deleted -28351556 1387394032
-referenciadas
-\change_inserted -28351556 1387394034
-mencionadas
-\change_unchanged
-, no son los únicos factores que afectan el consumo energético de los dispositiv
-os.
- En las últimas décadas, con el furor de los dispositivos móviles, se vuelve
- importante la adaptabilidad de los servicios en las diferentes plataformas.
- La conexión que ofrecen estos dispositivos es inalámbrica, con lo cual
- surgen ciertos parámetros adicionales que deben ser estudiados, como la
- disponibilidad del servicio, la posición, las características del dispositivo,
- etc.
- Esto conduce a pensar que la respuesta de un servicio se debería adaptar
- a estos parámetros.
- Por ejemplo, si se considera el pronóstico del tiempo, el mismo podría
- variar dependiendo de la posición donde el dispositivo móvil que invoca
- se encuentre.
- También es necesario considerar que la respuesta de un servicio probablemente
- no sea la misma para un dispositivo móvil, con una pantalla pequeña, que
- para una PC de escritorio.
- Así, en
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Ortiz2010"
-
-\end_inset
-
- se plantea una metodologia 
-\shape italic
-model-driven
-\shape default
- que permite de manera transparente, mediante la utilización de información
- opcional en los headers 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{SOAP}
-\end_layout
-
-\end_inset
-
- y técnicas de 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{AOP}
-\end_layout
-
-\end_inset
-
-, que la respuesta de un servicio varíe dependiendo del dispositivo, sin
- que los consumidores del mismo tengan que preocuparse por manejar las múltiples
- posibles respuestas a nivel aplicación cliente.
- Esto permite que un servicio no s
-\change_inserted -28351556 1387394910
-ó
-\change_deleted -28351556 1387394909
-o
-\change_unchanged
-lo se adapte en términos de usabilidad, sino que también permita, por ejemplo,
- variar parámetros como el tamaño de la trasferencia de datos (reduciendo
- el tamaño de las imágenes, enviando menor cantidad de información, etc.),
- con el objetivo de reducir el consumo energético.
-\end_layout
-
-\begin_layout Standard
-Hasta ahora, se estudiaron trabajos que apuntan a disminuir el consumo de
- energía de los componentes de software del dispositivo, ya sean de aplicación
- general, o específicos de 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{SOC}
-\end_layout
-
-\end_inset
-
-.
- En esta última, se proponen avances, principalmente, mediante la utilización
- de proxys para reducir el cómputo realizado.
- Por otra parte, también se presentaron estudios que indican que el orden
- en el que se realizan las llamadas a los servicios también afecta el consumo.
- Finalmente, se 
-\change_deleted -28351556 1387394946
-exhibieron
-\change_inserted -28351556 1387394948
-discutieron
-\change_unchanged
- investigaciones que analizan que interfaces se comportan mejor para realizar
- operaciones de descubrimiento y consumo de servicios, concluyendo que Bluethoot
-h es la mejor alternativa para el primer caso, y Wi-Fi para el segundo.
- En la siguiente sección se presenta otra alternativa para disminuir la
- energía empleada, permitiendo delegar la ejecución de ciertas porciones
- de código a otros dispositivos.
- Esta alternativa, ha dado lugar a numerosos trabajos, los cuales se describen
- a continuación.
 \end_layout
 
 \begin_layout Subsection
-Offloading 
+Predicción de precisión sobre algoritmos de optimización.
+ 
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Offloading"
+name "sub:Predicción-de-precisión"
 
 \end_inset
 
@@ -2166,50 +621,58 @@ name "sub:Offloading"
 \end_layout
 
 \begin_layout Standard
-La evolución constante de los dispositivos móviles ha llevado a que los
- usuarios esperen que las aplicaciones sean ejecutadas con la misma performance
- que en otros dispositivos tales como computadoras personales.
- Sin embargo, como ya se mencionó anteriormente, los dispositivos móviles
- cuentan con recursos limitados, lo que presenta un desafío importante.
- Entonces, una solución muy utilizada por la comunidad de desarrolladores
- es la de delegar la ejecución de algunas partes de código a otros dispositivos
- no móviles
-\begin_inset space ~
-\end_inset
-
-
+Los modelos de predicción no sólo se utilizan para estimar el tiempo de
+ respuesta del desempeño de los componentes, sino también para estimar otras
+ propiedades.
+ Mark Roberts, Adele Howe y Landon Flom 
 \begin_inset CommandInset citation
-LatexCommand citet
-key "Mohsen2011"
+LatexCommand citep
+key "Roberts07learnedmodels"
 
 \end_inset
 
-.
- También se puede utilizar esta técnica para lograr una reducción en el
- consumo energético por parte de las aplicaciones móviles intensivas.
+ han construido dos modelos para la predicción del tiempo de respuesta y
+ para la probabilidad de éxito de diferentes algoritmos de planeamiento
+ utilizando técnicas de aprendizaje de máquina incluidas en la librería
+ Weka.
+ Para el aprendizaje fueron utilizados 4726 benchmarks, problemas o instancias
+ para ejecutarse sobre 28 algoritmos de planeamiento conocidos.
+ Por cada algoritmo y cada problema se registra si un plan fue encontrado
+ (éxito) a través de los valores verdadero o falso y se registra el tiempo
+ (en segundos) requerido en completar la ejecución.
+ Ya que cada algoritmo define su propia forma en que un resultado es exitoso
+ o no, de forma automática obtienen las métricas de precisión porcentuales
+ sobre la salida.
+ 
 \end_layout
 
 \begin_layout Standard
-Si bien el uso de Cloud Computing
-\begin_inset space ~
-\end_inset
-
-
+Otros autores (Mersmann; Bischl; Trautmann; Wagner; Bossek y Neumann 
 \begin_inset CommandInset citation
-LatexCommand citet
-key "Buyya2013"
+LatexCommand citep
+key "Mersmann_anovel"
 
 \end_inset
 
- se ha presentado como una opción a la hora de delegar la ejecución de las
- tareas por parte de los dispositivos móviles, se presentan una serie de
- problemas que se describen a continuación.
- Primero, generalmente debe pagarse por el uso de los servicios de los Clouds.
- Adicionalmente, para utilizar estos servicios los dispositivos móviles
- deben realizar transferencias de datos adicionales, creando un trade-off
- entre el costo energético de realizar el cómputo en el dispositivo, o de
- manera remota.
- Asimismo, las conexiones 
+) predicen la optimalidad o razón de aproximación de algoritmos para el
+ problema del viajante utilizando una técnica de regresión no lineal llamada
+ 
+\emph on
+MARS
+\emph default
+, por sus siglas en inglés.
+ El modelo 
+\emph on
+MARS
+\emph default
+ se aplicó con éxito para predecir la calidad de aproximación del algoritmo
+ de búsqueda local llamado 2-opt independiente del tamaño de la instancia
+ sobre la base de las características de los casos generados con una precisión
+ muy alta.
+ Se cree firmemente que debiera ser sencillo aplicar la misma metodología
+ a otros algoritmos y utilizar estos modelos para derivar una estrategia
+ para el problema de selección de algoritmos en el contexto de los problemas
+ 
 \begin_inset ERT
 status open
 
@@ -2217,443 +680,34 @@ status open
 
 
 \backslash
-ac{UTMS}
-\end_layout
-
-\end_inset
-
- poseen gran consumo de energía, un escaso ancho de banda y altas latencias
- en comparación con otros tipos de conexiones.
-\end_layout
-
-\begin_layout Standard
-Además, es necesario analizar en qué situaciones es razonable utilizar offloadin
-g.
- Esto puede realizarse evaluando, por ejemplo, el tiempo de ejecución de
- la tarea.
- En este caso una tarea es una porción de código que puede ser ejecutada
- en otro dispositivo.
- Por ejemplo, si consideramos el Gomoku
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset Flex URL
-status collapsed
-
-\begin_layout Plain Layout
-
-http://en.wikipedia.org/wiki/Gomoku
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-, una tarea podría ser el algoritmo de inteligencia artificial que se utiliza
- cuando se desea jugar contra la máquina.
- También podría ser la lógica entera del juego, manteniendo en los clientes
- solo las interfaces.
- Adicionalmente, existen implementaciones del mismo que ponen en práctica
- estas cuestiones
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset Flex URL
-status collapsed
-
-\begin_layout Plain Layout
-
-https://code.google.com/p/dpartner/wiki/Partitioning_Gomoku
-\end_layout
-
-\end_inset
-
-
+ac{TSP}
 \end_layout
 
 \end_inset
 
 .
- Es importante tener en cuenta que la granularidad y el costo computacional
- de la tarea es un factor determinante a la hora de decidir si es conveniente
- realizar el cómputo en otro dispositivo.
- Para evaluar esto, es necesario tener en cuenta el tiempo de ejecución
- de la tarea
-\begin_inset space ~
-\end_inset
+\end_layout
 
-(
-\emph on
-TE
-\emph default
-), la cantidad de datos y código a transmitir
-\begin_inset space ~
-\end_inset
-
-(
-\emph on
-DT
-\emph default
-), la cantidad de bytes recibidos como resultado
-\begin_inset space ~
-\end_inset
-
-(
-\emph on
-DR
-\emph default
-), el ancho de banda de transmisión
-\begin_inset space ~
-\end_inset
-
-(
-\emph on
-AB
-\emph default
-) y el ancho de banda de la red de recepción
-\begin_inset space ~
-\end_inset
-
-(
-\emph on
-BR
-\emph default
-).
- Entonces, se obtiene 
-\begin_inset Formula $T_{offloading}=DT/AB+DR/BR+TE$
-\end_inset
-
- y el offloading es conveniente cuando el tiempo de ejecución en el dispositivo
- móvil es mayor al calculado anteriormente
-\begin_inset space ~
-\end_inset
-
-
+\begin_layout Standard
+Finalmente, el trabajo desarrollado por los autores Beveridge, Givens, Phillips
+ y Draper 
 \begin_inset CommandInset citation
-LatexCommand citet
-key "Mohsen2011"
+LatexCommand citep
+key "Beveridge2009"
 
 \end_inset
 
-.
-\end_layout
-
-\begin_layout Standard
-En los siguientes párrafos se presenta una breve introducción a diversos
- trabajos relacionados con offloading.
- Estos trabajos brindan propuestas concretas para la realización de esta
- técnica en la práctica.
+ se analiza la precisión de tres componentes diferentes para el reconocimiento
+ de rostros en imágenes, utilizando una técnica de regresión lineal denominada
+ GLMM, por Generalized Linear Mixed Models.
  
 \end_layout
 
-\begin_layout Standard
-En
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Flinn2002"
-
-\end_inset
-
- se presenta Spectra, una de las primeras propuestas centrada en la reducción
- de la latencia y el consumo de energía.
- Spectra propone una función para estimar los recursos necesarios para ejecutar
- una aplicación.
- Esta función efectúa un seguimiento del comportamiento de la aplicación,
- mide el consumo de recursos y utiliza un modelo de regresión lineal de
- la demanda de recursos junto con los parámetros de entrada para la predicción
- de las demandas futuras.
- Para medir el consumo de energía de cada tarea, Spectra monitorea el nivel
- de la batería antes y después de la ejecución.
- Por lo tanto, si algunas tareas se ejecutan en paralelo, Spectra debe desechar
- los datos recolectados aumentando el tiempo requerido para alcanzar una
- buena estimación sobre el consumo de energía de cada tarea.
- Todos los comandos utilizados para la comunicación con la aplicación deben
- estar incorporados en el código de la misma, lo que introduce la desventaja
- de la modificación de código a la hora de realizar cambios en los mismos.
-\end_layout
-
-\begin_layout Standard
-Chroma
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Balan2007,Balan2002"
-
-\end_inset
-
- intenta mejorar Spectra mediante la reducción de carga para los desarrolladores.
- El usuario define una función de utilidad para cada tarea que describe
- el peso de cada factor (velocidad de CPU y energía por ejemplo) para la
- toma de decisiones por Chroma.
- Para elegir entre las tácticas, Chroma utiliza una función de utilidad
- fija con el mismo peso de la fidelidad y la latencia, pero no tiene en
- cuenta el consumo de batería.
- Por lo tanto, se usa una táctica que maximiza la tasa de fidelidad/latencia.
- Al igual que en el caso de Spectra, Chroma utiliza un enfoque basado en
- la historia para predecir la demanda futura de recursos
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Balan2007,Balan2002"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Goyal y Carter
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Goyal2004"
-
-\end_inset
-
- utilizan un esquema de máquina virtual y presentan un sistema para aumentar
- el rendimiento y reducir el consumo de energía, siendo necesaria una conexión
- a Internet.
- El mismo cuenta con un servidor de descubrimiento de servicios.
- Cuando un dispositivo móvil tiene la intención de utilizar el sistema envía
- una solicitud al servidor de descubrimiento y recibe la dirección
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{IP}
-\end_layout
-
-\end_inset
-
- y número de puerto de un servidor apropiado.
- A continuación, el dispositivo móvil solicita un servidor virtual con garantías
- específicas de recursos para realizar la tarea.
-\end_layout
-
-\begin_layout Standard
-Slingshot
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Su2005"
-
-\end_inset
-
-, al igual que el caso anterior, es un sistema basado en máquinas virtuales.
- En este caso, el dispositivo móvil y los servidores deben estar conectados
- a Internet.
- Se supone que un servidor doméstico fiable siempre es accesible a través
- de Internet y, en caso de no estarlo, hay un sustituto en la 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{LAN}
-\end_layout
-
-\end_inset
-
-.
- Al ejecutar una tarea intensiva computacionalmente, Slingshot envía la
- tarea al servidor principal y todos sus sustitutos disponibles.
- Luego, se utiliza la respuesta obtenida más rápidamente.
-\end_layout
-
-\begin_layout Standard
-MAUI realiza offloading de baja granularidad, es decir, métodos de una tarea,
- para reducir el consumo de energía de los dispositivos móviles
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Cuervo2010"
-
-\end_inset
-
-.
- Su funcionamiento se basa en proporcionar un grafo de los métodos de programa
- y dividirlos dependiendo de si la ejecución es local o remota.
- En el lado del dispositivo móvil, MAUI consta de tres módulos, una interfaz
- a la unidad de decisión que reside en el lado del servidor, un proxy que
- es responsable de controlar un método candidato para el offloading, y un
- 
-\shape italic
-profiler
-\shape default
- que recoge la información acerca de la energía y los datos necesarios.
- MAUI utiliza un modelo lineal del consumo de energía y un enfoque basado
- en la historia para predecir el tiempo de ejecución de las tareas.
-\end_layout
-
-\begin_layout Standard
-Scavenger, presentado en
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Kristensen2010"
-
-\end_inset
-
-, es un sistema centrado en el aumento de la potencia del CPU de los dispositivo
-s móviles y la disminución de la latencia del tiempo de respuesta de la
- aplicación.
- Scavenger presenta un 
-\shape italic
-profiler
-\shape default
- de doble enfoque adaptativo que se basa en estimar el tiempo de ejecución
- de la aplicación conforme al tamaño de la entrada y la arquitectura utilizada
- para la ejecución.
- En el lado servidor está el Scavenger front-end que se comunica con el
- dispositivo móvil a través de 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{RPC}
-\end_layout
-
-\end_inset
-
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset Flex URL
-status collapsed
-
-\begin_layout Plain Layout
-
-http://en.wikipedia.org/wiki/Remote_procedure_call
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Standard
-AIOLOS
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Verbelen20122629"
-
-\end_inset
-
- es un 
-\shape italic
-middleware
-\shape default
- para plataformas Android.
- AIOLOS utiliza un modelo de estimación de los tiempos de ejecución que
- tiene en cuenta los recursos del servidor y el estado de la red para decidir
- en tiempo real si una tarea debe ser realizada o no en el móvil.
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Verbelen20122629"
-
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-también presenta las herramientas de desarrollo para integrar AIOLOS en
- la plataforma Android, facilitando el desarrollo de aplicaciones.
-\end_layout
-
-\begin_layout Standard
-Habiéndose presentado algunas de las soluciones más relevantes en cuanto
- a técnicas de offloading para dispositivos móviles, se describen algunos
- problemas comunes que aparecen a la hora de intentar reducir el costo de
- ejecución de tareas en dispositivos móviles.
- En primer lugar, debe tenerse una buena estimación de los costos de las
- ejecuciones tanto locales como remotas para tomar la decisión de realizar
- o no el offloading de una tarea.
- Como se mostró, todos los trabajos mencionados utilizan un componente decisorio
- basado en la historia para realizar predicciones.
- Entonces, las predicciones para las primeras ejecuciones nunca resultan
- del todo precisas.
- Adicionalmente, mantener estos registros en los dispositivos móviles puede
- llevar a colapsar su sistema de almacenamiento a causa de la gran cantidad
- de información histórica.
- Para solucionar este último problema, algunos sistemas como Scavenger utilizan
- un sistema de caché y desalojo.
- Finalmente, se tiene otro problema que es el que se presenta cuando una
- tarea posee una amplia gama de valores de entrada y no se considera el
- efecto de introducir estos datos en el cálculo de costos de la ejecución
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Mohsen2011"
-
-\end_inset
-
-.
- Estas cuestiones plantean que deben considerarse las grandes dificultades
- que pueden surgir a la hora de utilizar el offloading como técnica para
- la reducción del consumo de batería.
-\end_layout
-
-\begin_layout Section
-Conclusiones 
+\begin_layout Subsection
+Predicción sobre Servicios Web 
 \begin_inset CommandInset label
 LatexCommand label
-name "sec:Conclusiones"
+name "sub:Predicción-sobre-Servicios"
 
 \end_inset
 
@@ -2661,116 +715,53 @@ name "sec:Conclusiones"
 \end_layout
 
 \begin_layout Standard
-En este capítulo se discutieron los trabajos más relevantes en cuanto al
- problema del ahorro de energía en dispositivos móviles.
- Inicialmente se presentaron trabajos que buscaban reducir el consumo energético
- con foco en el dispositivo, distinguiéndose dos categorías: de propósito
- general y específicas de 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{SOC}
-\end_layout
+La predicción de propiedades dinámicas de servicios Web, como su tiempo
+ de respuesta, throughput y probabilidad de fallos, es más compleja de abordar
+ con respecto a componentes locales ya que depende del estado de la infraestruct
+ura de red y el proveedor del servicio, que no se puede monitorear desde
+ el dispositivo cliente.
+ Un enfoque ingenioso para abordar este problema fue propuesto en el articulo
+ de Zheng
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Zheng2013"
 
 \end_inset
 
 .
- La literatura relevada indica que se existen técnicas para ordenar inteligentem
-ente las transacciones de datos del dispositivo, con el objetivo de minimizar
- el consumo.
- También se ha analizado el impacto de las transferencias en redes 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{UTMS}
-\end_layout
-
-\end_inset
-
-, y el consumo de energía generado por redes 802.11.
- Adicionalmente se han expuesto políticas de planificación dinámicas para
- dar prioridad a las aplicaciones más utilizadas por el usuario, disminuyendo
- el desperdicio de batería.
- Por otra parte, en lo que refiere a estudios específicos de 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{SOC}
-\end_layout
+ En este trabajo, los autores se basan en la premisa de que las propiedades
+ de performance de los servicios Web varían respecto a características del
+ contexto como la ubicación geográfica y el momento del día y la semana
+ en el que se realiza una solicitud al servicio.
+ De esta forma, recolectan la información del consumo de servicios de múltiples
+ clientes alrededor del mundo para generalizar modelos de predicción.
+ Este enfoque es conocido como predicción colaborativa ya que los datos
+ empíricos de entrenamiento son brindados por múltiples nodos de manera
+ distribuida.
+ Los autores llevaron a cabo un experimento a gran escala que involucró
+ más de 30 millones de invocaciones a servicios Web en más de 80 países,
+ por usuarios distribuidos en más de 30 países.
+ La observación experimental indica que diferentes usuarios pueden tener
+ diferentes experiencias de uso sobre el mismo servicio, influenciados por
+ la conexión de red y los ambientes heterogéneos entre usuarios y proveedores.
+ Los datos se encuentran disponibles públicamente y han sido utilizados
+ en varios trabajos para la construcción y comparación de modelos de performance
+ con diferentes técnicas de aprendizaje de máquina 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Albu2013"
 
 \end_inset
 
-, extendiendo la idea de la importancia en el orden de las trasferencias
- de datos, se ha analizado cómo diferentes patrones de invocación afectan
- el consumo.
- Mientras que, por otro lado, se plantean arquitecturas que proponen la
- utilización de proxys para disminuir la energía empleada en la invocación.
- 
-\end_layout
 
-\begin_layout Standard
-Apartándose de la perspectiva local al dispositivo, surgen técnicas de 
-\shape italic
-offloading
-\shape default
- que proponen reducir el cómputo realizado en el dispositivo, mediante la
- ejecución de diferentes partes de código en otros dispositivos no móviles.
- El eje de las investigaciones de esta categoría es una cota que indica
- cuándo se vuelve eficiente aplicar este tipo de técnicas dependiendo del
- tamaño del cómputo en cuestión.
- 
-\end_layout
-
-\begin_layout Standard
-Por otra parte, a pesar de la gran cantidad de investigaciones recientes
- en el área, no se examinan las posibles implicancias de las adaptaciones
- en los tipos de datos necesarias para consumir un servicio.
- Actualmente, la gran mayoría de los Servicios Web están implementados mediante
- la utilización del protocolo 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{SOAP}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Kumar2015"
 
 \end_inset
 
 .
- Esto plantea la necesidad de analizar detalladamente las posibles mejoras
- en el gasto energético que estos generan.
- En este trabajo se presenta un análisis de las consecuencias de las diferentes
- adaptaciones, y se estudia una alternativa que permite comparar el costo
- de las mismas, posibilitando en un futuro, seleccionar un servicio de entre
- varios candidatos que proveen similar funcionalidad teniendo en cuenta
- del costo de energía necesario para consumirlo.
-\end_layout
-
-\begin_layout Standard
-En el siguiente capítulo se presentan los objetivos de este trabajo.
- También se exhibe el modelo formal de estimaciones del costo energético
- de los 
-\shape italic
-mashup
-\shape default
- de servicios, siendo este el tema central de este trabajo.
- Adicionalmente se describe el contexto que este modelo considera como punto
- de partida para realizar las estimaciones.
+ 
 \end_layout
 
 \end_body

@@ -528,7 +528,8 @@ es lineales enteras usando programación lineal en enteros.
 
 \begin_layout Standard
 \begin_inset listings
-inline false
+lstparams "basicstyle={\footnotesize}"
+inline true
 status open
 
 \begin_layout Plain Layout
@@ -539,7 +540,7 @@ vértices: 0..
 
 \begin_layout Plain Layout
 
-Xij = 1 | Xij = 0					            																									para i,j = 0...n
+Xij = 1 | Xij = 0					            																								para i,j = 0...n
 \end_layout
 
 \begin_layout Plain Layout
@@ -549,7 +550,7 @@ La arista (i,j) pertenece(1)/ no pertenece (0) al conjunto solución.
 
 \begin_layout Plain Layout
 
-Cij Distancia desde la ciudad i hasta j	     																								  para
+Cij Distancia desde la ciudad i hasta j	     																							   para
  i,j = 0...n	 
 \end_layout
 
@@ -572,6 +573,17 @@ aristasReq número mínimo de aristas para solución.
 
 \begin_layout Standard
 El planteo del modelo ahora es el siguiente: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{i=0}^{n}\sum_{j=0}^{n}C_{ij}0\leq X_{i}\leq
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -620,7 +632,7 @@ Pseudo-código:
 
 \begin_layout Standard
 \begin_inset listings
-inline false
+inline true
 status open
 
 \begin_layout Plain Layout
@@ -745,7 +757,7 @@ Pseudocódigo:
 
 \begin_layout Standard
 \begin_inset listings
-inline false
+inline true
 status open
 
 \begin_layout Plain Layout
@@ -808,7 +820,7 @@ Pseudocódigo:
 
 \begin_layout Standard
 \begin_inset listings
-inline false
+inline true
 status open
 
 \begin_layout Plain Layout
@@ -859,6 +871,61 @@ Kruskal(firstCity){
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+La única diferencia entre ambos algoritmos de recubrimiento es la forma
+ de trabajo de los mismos y en consecuencia su complejidad.
+\end_layout
+
+\begin_layout Subsubsection*
+4.3 Transformaciones Lineales
+\end_layout
+
+\begin_layout Standard
+Las transformaciones locales se utilizan para mejorar el hamiltoniano obtenido
+ por los algoritmos antes presentados.
+ Para introducir el algoritmo, consideremos la siguiente situación:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/TPS-local-transformations.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Los nodos unidos en el ciclo hamiltoniano son (A,B) ...
+ (C,D) - línea no punteada en el grafo.
+ 
+\end_layout
+
+\begin_layout Standard
+Ahora bien, para aplicar transformaciones locales se debe verificar: 
+\end_layout
+
+\begin_layout Standard
+(A,C)+(B,D)<(A,B)+(C,D) 
+\end_layout
+
+\begin_layout Standard
+De suceder esto, se pueden modificar los arcos y obtener:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/TPS-local-transformations2.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El resultado es un grafo con menor costo que el anterior presentado.
 \end_layout
 
 \end_body

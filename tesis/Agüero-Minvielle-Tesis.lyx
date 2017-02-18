@@ -803,6 +803,13 @@ acro{RRSE}{Root Relative Squared Error}
 
 
 \backslash
+acro{SGD}{Stochastic Gradient Descendent}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
 acro{SQL}{Structured Query Language}
 \end_layout
 
@@ -839,6 +846,13 @@ acro{UML}{Unified Modeling Language}
 
 \backslash
 acro{VM}{Virtual Machine}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{XML}{eXtensible Markup Language}
 \end_layout
 
 \begin_layout Plain Layout

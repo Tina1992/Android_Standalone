@@ -1,9 +1,7 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
 \lyxformat 474
 \begin_document
 \begin_header
-\save_transient_properties true
-\origin unavailable
 \textclass book
 \use_default_options true
 \maintain_unincluded_children false
@@ -706,9 +704,11 @@ name "fig:RBF-parameters-SVM"
 
 \end_inset
 
+
 \end_layout
 
 \end_inset
+
 
 \end_layout
 
@@ -840,16 +840,16 @@ status open
 \align center
 \begin_inset Graphics
 	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/used-mobiles.png
+
 \end_inset
 
- un grafo con comienzo en la ciudad A.
- Suponiendo que un algoritmo de resolución arroja el siguiente camino solución:
- {A, B, D, A}, se obtiene una precisión del 100% al tener un valor de 
-\begin_inset ERT
-status open
+
+\end_layout
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
 
+\begin_layout Plain Layout
 Especificaciones de los dispositivos móviles utilizados.
  
 \begin_inset CommandInset label
@@ -990,30 +990,26 @@ False Negative
  Por lo tanto, se consideró: 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Precisión=\frac{TP}{FP+TP}
+\]
+
 \end_inset
 
- = 4, 
-\begin_inset ERT
-status open
 
-\begin_layout Plain Layout
-
-
-\backslash
-ac{FP}
 \end_layout
 
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Exactitud=\frac{TP}{FP+TP+FN}
+\]
+
 \end_inset
 
- = 1 y 
-\begin_inset ERT
-status open
 
-\begin_layout Plain Layout
-
-
-\backslash
-ac{FN}
 \end_layout
 
 \begin_layout Standard
@@ -1322,6 +1318,17 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/GooglePlay-services.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1340,8 +1347,8 @@ name "fig:GooglePlay-services"
 
 \end_layout
 
-
 \begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -1443,7 +1450,7 @@ Face API es un servicio web en la nube que provee los algoritmos de detección
  de los parámetros configurables como atributos binarios se incluye el tiempo
  de respuesta.
  Archivo Dataset: “ResponseTime - Microsoft Face API.csv”.
-
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1535,11 +1542,10 @@ e distribuidos en el intervalo tomando la forma de campana de Gauss, los
 Escenario 3: Problema de la mochila
 \begin_inset CommandInset label
 LatexCommand label
-
 name "subsec:Escenario-3:-Problema"
 
-
 \end_inset
+
 
 \end_layout
 
@@ -1583,9 +1589,6 @@ de
 \end_inset
 
 Operación.
-\begin_inset Separator latexpar
-\end_inset
-
 \end_layout
 
 \begin_deeper
@@ -1593,13 +1596,7 @@ Operación.
 \labelwidthstring 00.00.0000
 'KnapsackWeightRatio’: teniendo en cuenta W como el peso límite de la mochila
  y bi los pesos individuales de cada ítem, se calcula bajo la fórmula 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-FORMULA
-\end_layout
-
+\begin_inset Formula $KWR=W/b_{1}+b_{2}+...+b_{n}$
 \end_inset
 
  arrojando valores entre 0 y 1
@@ -1634,10 +1631,6 @@ de
 
 Componente.
  
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1688,7 +1681,6 @@ Response time - Greedy algorithm - dispositivo XXX
 \emph default
 , se crearon datasets de 4704 instancias y cuatro propiedades (Grupo A)
  con entradas del problema de tamaño mínimo de 5 ítems, e incrementalmente
-
  hasta un máximo de 200, con 24 entradas dedicadas a cada número de ítem
  generadas también aleatoriamente.
  A continuación en lafigura 
@@ -1702,10 +1694,9 @@ reference "fig:Knapsack-dataset-behaviour"
 \emph on
 Tiempo de respuesta
 \emph default
-
 , en referencia a la imagen, A) ‘Opt & Resp Lenovo K3’, B) ‘Opt & Resp Samsung
  Galaxy S3’, C) Greedy Lenovo K3 y D) Greedy Samsung S3.
-
+ 
 \end_layout
 
 \begin_layout Standard
@@ -2088,7 +2079,6 @@ BColumn
 ), la complejidad temporal de la operación definida como O(AColumn x ARow
  x BColumn), el nombre del componente y el tiempo de respuesta de la operación
  registrada en segundos.
-
  No fueron incluidos atributos relativos al dispositivo de ejecución, sin
  embargo podrían considerarse propiedades como número de cores de 
 \begin_inset ERT
@@ -2128,7 +2118,6 @@ Response time NxNxN - Lenovo K3 Note
 \emph default
  se componen de 894 instancias lo cual comprende un total de 149 entradas
  por cada uno de los seis componentes.
-
  Por otro lado, los dataset bajo el nombre de 
 \emph on
 Response time NxMxL - Sin RenderScript component - Samsung Galaxy S3
@@ -2142,7 +2131,6 @@ Response time NxMxL - Sin RenderScript component - Lenovo K3 Note
 \end_layout
 
 \begin_layout Standard
-
 A continuación en la figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2269,7 +2257,6 @@ En esta sección final de la evaluación se agrupan los resultados para contrast
 Resultados para el problema del viajante.
 \begin_inset CommandInset label
 LatexCommand label
-
 name "subsec:Resultados-para-el"
 
 \end_inset
@@ -2335,6 +2322,7 @@ SMO mucho tiempo con respecto al neural
 
 \begin_layout Standard
 \begin_inset Float table
+placement h
 wide false
 sideways false
 status open
@@ -2462,6 +2450,7 @@ Resultados para el problema de la mochila.
 
 \begin_layout Standard
 \begin_inset Float table
+placement h
 wide false
 sideways false
 status open
@@ -2499,6 +2488,7 @@ Resultados del atributo Tiempo de respuesta para el escenario ‘problema
 
 \begin_layout Standard
 \begin_inset Float table
+placement h
 wide false
 sideways false
 status open

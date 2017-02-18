@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
 \lyxformat 474
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass book
 \use_default_options true
 \maintain_unincluded_children false
@@ -9,10 +11,10 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default"
+\font_sans "default"
+\font_typewriter "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
@@ -1330,29 +1332,14 @@ cite{Silverman1986}
  que una variable aleatoria continua X tome un valor cercano a x; especificar
  la función de densidad brinda una descripción natural de la distribución
  de X, y permite encontrar probabilidad asociadas con X de la relación:
- 
 \end_layout
 
 \begin_layout Standard
-\begin_inset space \thinspace{}
-\end_inset
+\begin_inset Formula 
+\[
+P(a<X<b)=\intop f(d)dx\forall a<b
+\]
 
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $P(a<X<b)=\intop f(d)dx$
-\end_inset
-
-
-\begin_inset Formula $\forall a<b$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset space \thinspace{}
 \end_inset
 
 
@@ -1416,7 +1403,7 @@ iii
 Funciones contempladas
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Funciones-contempladas"
+name "subsec:Funciones-contempladas"
 
 \end_inset
 
@@ -2042,35 +2029,23 @@ name "fig:lineals-classifiers"
 \end_layout
 
 \begin_layout Standard
-Analiticamente, se toma la distancia existente entre la línea y el primer
+Analíticamente, se toma la distancia existente entre la línea y el primer
  punto interceptado (en dirección perpendicular), si se ubica una ‘zona
  desierta’ alrededor de la línea, ningún punto ubicado en dicha zona puede
  ser clasificado ya que se encuentra demasiado cerca de la línea.
  Esta región conforma un cilindro simétrico alrededor de la función en 3D
- y un hiper-cilindro en dimensiones mayores.
+ y un hiper - cilindro en dimensiones mayores.
  El radio máximo que puede tener esta región es llamado margen, señalado
- como 
-\emph on
-M
-\emph default
- y los puntos de cada clase más cercanos a la línea de clasificación se
- denominan vectores de soporte.
- 
-\end_layout
-
-\begin_layout Standard
-Si se considera el mejor clasificador como aquel que atraviesa la zona desierta,
- se debe tener en cuenta que el margen debe ser lo más grande posible y
- que si los vectores de soporte son los puntos más importantes de los datos,
- luego del entrenamiento pueden descartarse los puntos que no pertenecen
- al vector y utilizarlos para clasificar, lo cual conlleva una gran eficiencia
- en el almacenamiento de datos.
- 
-\end_layout
-
-\begin_layout Standard
-El algoritmo puede encontrar varios hiperplanos de separación posibles y
- detectar aquel que sea más óptimo.
+ como M y los puntos de cada clase más cercanos a la línea de clasificación
+ se denominan vectores de soporte.
+ Si se considera el mejor clasificador como aquel que atraviesa la zona
+ desierta, se debe tener en cuenta que el margen debe ser lo más grande
+ posible y que si los vectores de soporte son los puntos más importantes
+ de los datos, luego del entrenamiento pueden descartarse los puntos que
+ no pertenecen al vector y utilizarlos para clasificar, lo cual conlleva
+ una gran eficiencia en el almacenamiento de datos.
+ El algoritmo puede encontrar varios hiperplanos de separación posibles
+ y detectar aquel que sea más óptimo.
  En la figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2136,9 +2111,9 @@ t
 
 \end_inset
 
-x + b 
+x + b
 \emph default
-se definen los dos hiperplanos (clasificador).
+ se definen los dos hiperplanos (clasificador).
  Para obtener el punto más cercano desde la línea de clasificación considerando
  la clase 2 (ver figura 
 \begin_inset CommandInset ref
@@ -2149,45 +2124,11 @@ reference "fig:SVM-metology"
 
 ) se recorre en dirección perpendicular partiendo del límite de la clase
  1 hasta llegar al límite de la clase 2, el primer punto interceptado se
- denomina 
-\emph on
-x
-\emph default
-.
- Ya que 
-\emph on
-w
-\emph default
- es perpendicular al clasificador, es perpendicular a los límites 1 y 2,
- por lo tanto el margen 
-\emph on
-M
-\emph default
- se describe en términos de 
-\emph on
-w
-\emph default
-.
- Si 
-\emph on
-w
-\emph default
- es un vector unario, el margen toma el valor de 
-\emph on
-1/||w||
-\emph default
-.
-\end_layout
-
-\begin_layout Standard
-Para obtener un clasificador de buena calidad, se pueden definir un conjunto
+ denomina x.
+ Para obtener un clasificador de buena calidad, se pueden definir un conjunto
  de restricciones que indiquen la manera en que el clasificador podría obtener
  la respuesta correcta.
- 
-\end_layout
-
-\begin_layout Standard
-Por ejemplo, si en lugar de tomar las dos clases como 
+ Por ejemplo, si en lugar de tomar las dos clases como 
 \emph on
 g(x) = 1
 \emph default
@@ -2195,30 +2136,8 @@ g(x) = 1
 \emph on
 g(x) = 0
 \emph default
-, se igualaran a los valores 1 y -1 se obtendrá una respuesta correcta si
- 
-\emph on
-t
-\begin_inset script subscript
-
-\begin_layout Plain Layout
-i
-\end_layout
-
-\end_inset
-
- × y
-\begin_inset script subscript
-
-\begin_layout Plain Layout
-i 
-\end_layout
-
-\end_inset
-
-≥1
-\emph default
-.
+, se podrían igualar a los valores 1 y -1 y así obtener una respuesta correcta
+ diferente.
  Estos tipos de problemas pueden ser resueltos de forma directa y eficiente
  (por ejemplo, en tiempo polinomial), gracias a que existen algoritmos de
  programación cuadrática que brindan soluciones efectivas.
@@ -2239,25 +2158,13 @@ C
 \emph default
 .
  
-\end_layout
-
-\begin_layout Standard
-
 \emph on
 C
 \emph default
  es el parámetro que indica el trade off que existe entre ambos parámetros:
  cuanto más pequeño sea el valor de C más importancia toma el margen sobre
- algunos errores, cuanto más grande se vuelve 
-\emph on
-C
-\emph default
- ocurre lo contrario.
- 
-\end_layout
-
-\begin_layout Standard
-Esto transforma el problema en un clasificador de margen suave ya que se
+ algunos errores, cuanto más grande se vuelve C ocurre lo contrario.
+ Esto transforma el problema en un clasificador de margen suave ya que se
  permiten algunos errores.
  La forma de evitarlos es modificando las características para que los datos
  sean linealmente separables, los datos no pueden inventarse de modo que
@@ -2272,19 +2179,11 @@ Esto transforma el problema en un clasificador de margen suave ya que se
  definida positivamente (positividad de la integral de funciones arbitrarias).
  Incluso, la conjunción de dos funciones kernel significa una nueva función
  kernel.
- 
-\end_layout
-
-\begin_layout Standard
-Elegir la función kernel más conveniente es un problema complejo.
+ Elegir la función kernel más conveniente es un problema complejo.
  A pesar que existen algunas teorías, el proceso más común es la experimentación
  con distintos valores para determinar la función más adecuada utilizando
  el conjunto de validación.
- 
-\end_layout
-
-\begin_layout Standard
-El algoritmo que aplica vectores de soporte se rige bajo todos los conceptos
+ El algoritmo que aplica vectores de soporte se rige bajo todos los conceptos
  expresados a lo largo del apartado para realizar clasificación, pero también
  aplica para realizar regresión sobre los datos, variante que fue utilizada
  en el presente trabajo.

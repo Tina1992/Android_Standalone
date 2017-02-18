@@ -875,7 +875,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/TestingTool-Diagram.png
-	scale 55
+	scale 10
 
 \end_inset
 
@@ -2599,16 +2599,15 @@ Las mismas declaran los modelos que son aceptados por la liberia.
 \end_layout
 
 \begin_layout Standard
-\align center
 \begin_inset listings
-inline false
+lstparams "language=Java,basicstyle={\footnotesize}"
+inline true
 status open
 
 \begin_layout Plain Layout
-\align center
 
 public abstract Vector<AbsModeler> createModelers(Vector<Integer> selectedModels
-, int index); 
+, int index);
 \end_layout
 
 \end_inset

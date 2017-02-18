@@ -1,9 +1,7 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
 \lyxformat 474
 \begin_document
 \begin_header
-\save_transient_properties true
-\origin unavailable
 \textclass book
 \use_default_options true
 \maintain_unincluded_children false
@@ -872,6 +870,17 @@ reference "fig:TestingTool-Diagram"
 wide false
 sideways false
 status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/TestingTool-Diagram.png
+	scale 10
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -2569,12 +2578,7 @@ width "100col%"
 special "none"
 height "1in"
 height_special "totalheight"
-thickness "0.4pt"
-separation "3pt"
-shadowsize "4pt"
-framecolor "black"
-backgroundcolor "none"
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -2592,23 +2596,18 @@ Las mismas declaran los modelos que son aceptados por la liberia.
  la herramienta, las clases de los modelos sean creadas al momento de ser
  seleccionadas.
  Esto se permite implementando la última función: 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
-\align center
 \begin_inset listings
+lstparams "basicstyle={\footnotesize},language=Java"
 inline false
 status open
 
 \begin_layout Plain Layout
-\align center
 
 public abstract Vector<AbsModeler> createModelers(Vector<Integer> selectedModels
-, int index); 
+, int index);
 \end_layout
 
 \end_inset

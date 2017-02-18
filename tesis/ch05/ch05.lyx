@@ -1274,8 +1274,14 @@ sticas propias del móvil ya que significan valores constantes en la predicción
  Play Services (GMS) face detector) y tres servicios Web (FaceRect API,
  Sky Biometry API y Microsoft Face API).
  Estos cuatro componentes serán evaluados a partir de subconjunto de 290
- imágenes pertenecientes al dataset llamado FDDB [24] con características
- muy variadas.
+ imágenes pertenecientes al dataset llamado FDDB 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "fddbTechReport"
+
+\end_inset
+
+ con características muy variadas.
  Cada servicio es llamado especificando una imagen y un conjunto de parámetros
  booleanos (a través del valor 0 y 1) que determinan las funciones requeridas
  del algoritmo determinado.
@@ -1305,10 +1311,13 @@ reference "fig:GooglePlay-services"
 
 \end_inset
 
-se muestra la forma en que el objeto ‘GoogleAPIClient’ proporciona una interfaz
- para conectar y hacer llamadas a cualquiera de los servicios de Google
- Play disponibles tales como ‘Google Play Games’, ‘Google Drive’, ‘Google
- Maps’, etc 
+se muestra la forma en que el objeto 
+\emph on
+GoogleAPIClient
+\emph default
+ proporciona una interfaz para conectar y hacer llamadas a cualquiera de
+ los servicios de Google Play disponibles tales como Google Play Games,
+ Google Drive, Google Maps, etc 
 \end_layout
 
 \begin_layout Standard
@@ -1388,37 +1397,58 @@ FaceRect API y Sky Biometry API
 \end_layout
 
 \begin_layout Standard
-Los servicios web ‘SkyBiometry’ y ‘FaceRect’ son consumidos directamente
- desde la aplicación online ‘Mashape’, la cual ofrece una gran variedad
- de aplicaciones, incluida una colección de Aplicaciones sobre detección
- y reconocimiento de rostros.
+Los servicios web 
+\emph on
+SkyBiometry
+\emph default
+ y 
+\emph on
+FaceRect
+\emph default
+ son consumidos directamente desde la aplicación online 
+\emph on
+Mashape
+\emph default
+, la cual ofrece una gran variedad de aplicaciones, incluida una colección
+ de Aplicaciones sobre detección y reconocimiento de rostros.
  SkyBiometry y FaceRect son aplicaciones que utilizan interfaz REST, es
  decir, los métodos son llamados a través de internet usando los métodos
- HTTP standard como GET y POST a las direcciones correspondientes.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HTTP}
+\end_layout
+
+\end_inset
+
+ standard como GET y POST a las direcciones correspondientes.
  Dependiendo de los parámetros especificados en el request, el servidor
- puede generar la respuesta tanto en formato JSON como XML.
+ puede generar la respuesta tanto en formato JSON como 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{XML}
+\end_layout
+
+\end_inset
+
+.
  Adicionalmente, se utilizó el servicio GMS Visión de Google a partir de
  la librería correspondiente.
  Los tres servicios son descritos en detalle en el apéndice B.
 \end_layout
 
 \begin_layout Standard
-El algoritmo de la aplicación FaceRect permite setear sólo una opción (‘features
-’) por imagen, de modo que se construyó un dataset con sólo dos propiedades,
- incluyendo el tiempo de respuesta y un total de 54 instancias.
- Archivo Dataset: “ResponseTime - FaceRect API.csv”.
- Por otro lado, el algoritmo de Sky Biometry permite setear siete parámetros
- diferentes dando lugar a 128 configuraciones posibles por imagen (‘aggressive’
- , ‘gender’ , ‘glasses’ , ‘smiling’ , ‘mood’ , ‘age’ , ‘eyes’).
- Para el servicio Sky Biometry se utilizaron 30 imágenes originando un dataset
- de 3840 instancias y se incluyen 8 propiedades, además de los parámetros
- configurables del tipo binario se añade el tiempo de respuesta.
- Archivo Dataset: “ResponseTime - SkyBiometry API.csv”.
- 
-\end_layout
-
-\begin_layout Standard
-El algoritmo permite setear sólo una opción (
+El algoritmo de la aplicación FaceRect permite setear sólo una opción (
 \emph on
 features
 \emph default
@@ -1433,6 +1463,53 @@ Archivo Dataset:
 ResponseTime - FaceRect API.csv
 \emph default
 .
+ 
+\end_layout
+
+\begin_layout Standard
+Por otro lado, el algoritmo de Sky Biometry permite setear siete parámetros
+ diferentes dando lugar a 128 configuraciones posibles por imagen (
+\emph on
+aggressive
+\emph default
+, 
+\emph on
+gender
+\emph default
+, 
+\emph on
+glasses
+\emph default
+, 
+\emph on
+smiling
+\emph default
+, 
+\emph on
+mood
+\emph default
+, 
+\emph on
+age
+\emph default
+,
+\emph on
+ eyes
+\emph default
+).
+ Para el servicio Sky Biometry se utilizaron 30 imágenes originando un dataset
+ de 3840 instancias y se incluyen 8 propiedades, además de los parámetros
+ configurables del tipo binario se añade el tiempo de respuesta.
+ 
+\end_layout
+
+\begin_layout Standard
+Archivo Dataset: 
+\emph on
+ResponseTime - SkyBiometry API.csv
+\emph default
+.
+ 
 \end_layout
 
 \begin_layout Paragraph
@@ -1444,12 +1521,43 @@ Face API es un servicio web en la nube que provee los algoritmos de detección
  y reconocimiento de rostros más avanzados.
  El servicio es consumido a través del sitio de Microsoft y las respuestas
  son retornadas en formato JSON.
- El algoritmo permite setear seis propiedades (‘landmarks’, ‘age’, ‘gender’,
- ‘facialHair’, ‘smile’ y ‘headPose’).
+ El algoritmo permite setear seis propiedades (
+\emph on
+landmarks
+\emph default
+, 
+\emph on
+age
+\emph default
+, 
+\emph on
+gender
+\emph default
+, 
+\emph on
+facialHair
+\emph default
+, 
+\emph on
+smile
+\emph default
+ y 
+\emph on
+headPos
+\emph default
+).
  El dataset está formado por 1826 instancias y siete propiedades, además
  de los parámetros configurables como atributos binarios se incluye el tiempo
  de respuesta.
- Archivo Dataset: “ResponseTime - Microsoft Face API.csv”.
+ 
+\end_layout
+
+\begin_layout Standard
+Archivo Dataset: 
+\emph on
+ResponseTime - Microsoft Face API.csv
+\emph default
+.
  
 \end_layout
 
@@ -2288,7 +2396,9 @@ status open
 \begin_layout Plain Layout
 Resultados del atributo Tiempo de respuesta para el escenario ‘problema
  del viajante’.
-\end_layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Resultados-del-atributo"
 
 \end_inset
 
@@ -2300,28 +2410,165 @@ Resultados del atributo Tiempo de respuesta para el escenario ‘problema
 
 \end_layout
 
-\begin_layout Standard
-Conclusiones:
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Resaltar que los dos mejores son SMO y Neural —-> Overfitting
+A partir de la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Resultados-del-atributo"
+
+\end_inset
+
+ se desprenden las conclusiones con respecto al primer escenario.
+ Como primer punto tanto el modelo de 
+\emph on
+MultiLayer Perceptron
+\emph default
+ como el de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SVM}
+\end_layout
+
+\end_inset
+
+ son, claramente, los mejores en cuanto a adaptación al modelo.
+ Ambos presentan una correlación con los datos de 1 (
+\emph on
+CC
+\emph default
+), lo que representa la exactitud de los datos calculado con respecto a
+ los reales.
+ Como ya se explicó en {under.}, esto puede parecernos lo más óptimo, pero
+ observando las métricas y las curvas de errores, ambos modelos presentan
+ un problema de overfitting.
+ 
 \end_layout
 
 \begin_layout Standard
-Mejor: Linear Regression
+Teniendo esto en cuenta, se descartan ambos como los mejores modelos para
+ este tipo de problema.
+ A su vez, se descarta el 
+\emph on
+K-mean Clusterer 
+\emph default
+ya que los niveles de correlación son los mas bajos y los errores los más
+ altos.
 \end_layout
 
 \begin_layout Standard
-Peor: K-means clusterer
+En todos los escenarios presentados, se optó por el caso intermedio de adaptació
+n, considerando que el mismo es el mejor obtenido evitando casos de overfitting
+ o underfitting.
+ Así, en este caso, el más eficiente es el 
+\emph on
+Linear Regression.
+ 
+\emph default
+A continuación, se presenta la comparativa entre este último y uno de los
+ que presentan mejor performance.
 \end_layout
 
 \begin_layout Standard
-SMO mucho tiempo con respecto al neural
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename E:/Imagenes/Anime/montage_tomoe_enfant_by_tomoe_x_nanami-d60wwaf.jpg
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comparaciones de las métricas en la herramienta Nekonata.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finalmente, se demuestra el comportamiento de este último con respecto a
+ las predicciones que realiza.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename E:/Imagenes/Anime/montage_tomoe_enfant_by_tomoe_x_nanami-d60wwaf.jpg
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Lineas de predicción en la herramienta Nekonata
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Con el mismo método de analisis se analizó el dataset TSPlib.csv considerando
+ la precisión del algoritmo.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float table
+placement h
 wide false
 sideways false
 status open
@@ -2356,15 +2603,66 @@ Resultados del atributo precisión para el escenario ‘problema del viajante’
 \end_layout
 
 \begin_layout Standard
-Mejor: Gradiente
+Así, se puede apreciar que los que presentan una mejor adaptación en este
+ caso siguen siendo el 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MLP}
+\end_layout
+
+\end_inset
+
+ y el 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SMO}
+\end_layout
+
+\end_inset
+
+.
+ Aun así, considerando el analisis antes hecho, esta vez el mejor aloritmo
+ es el 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SGD}
+\end_layout
+
+\end_inset
+
+.
+ 
 \end_layout
 
 \begin_layout Standard
-Mismo que arriba
-\end_layout
+Si tenemos en cuenta lo visto en la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Regresión-Lineal"
 
-\begin_layout Standard
-TSPLib mejor teorico linear
+\end_inset
+
+, el mejor algoritmo teórico que mejor se adapta a el problem del viajante
+ es el 
+\emph on
+LinearRegression 
+\emph default
+es sus dos implementaciones (Ridge y SGD).
 \end_layout
 
 \begin_layout Standard
@@ -2449,6 +2747,7 @@ Resultados para el problema de la mochila.
 
 \begin_layout Standard
 \begin_inset Float table
+placement h
 wide false
 sideways false
 status open
@@ -2486,6 +2785,7 @@ Resultados del atributo Tiempo de respuesta para el escenario ‘problema
 
 \begin_layout Standard
 \begin_inset Float table
+placement h
 wide false
 sideways false
 status open

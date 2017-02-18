@@ -92,8 +92,11 @@ En referencia al uso de la API – Autenticación
 Cada llamada a la API debe ser autorizada mediante el uso de dos claves:
  api_key y api_secret.
  Ambas claves son obtenidas mediante una registración en el sitio oficial
- de skybiometry (www.skybiometry.com) a través de una cuenta de email como
- usuario y una contraseña.
+ de skybiometry (
+\emph on
+www.skybiometry.com
+\emph default
+) a través de una cuenta de email como usuario y una contraseña.
 \end_layout
 
 \begin_layout Subsection*
@@ -117,80 +120,232 @@ Factores ofrecidos
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-Respecto al cuadrado del rostro detectado:
+Respecto
+\begin_inset space ~
+\end_inset
+
+al
+\begin_inset space ~
+\end_inset
+
+cuadrado
+\begin_inset space ~
+\end_inset
+
+del
+\begin_inset space ~
+\end_inset
+
+rostro
+\begin_inset space ~
+\end_inset
+
+detectado:
 \end_layout
 
 \begin_deeper
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-center OBJECT { "x" :Float, "y" : Float } 
+center
+\begin_inset space ~
+\end_inset
+
+OBJECT
+\begin_inset space ~
+\end_inset
+
+{
+\begin_inset space ~
+\end_inset
+
+x
+\begin_inset space ~
+\end_inset
+
+:Float,
+\begin_inset space ~
+\end_inset
+
+y
+\begin_inset space ~
+\end_inset
+
+:
+\begin_inset space ~
+\end_inset
+
+Float
+\begin_inset space ~
+\end_inset
+
+} 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
 width.
- FLOAT.
- 0-100% del ancho del rostro respecto al ancho de la imagen.
+\begin_inset space ~
+\end_inset
+
+FLOAT.
+\begin_inset space ~
+\end_inset
+
+0-100%
+\begin_inset space ~
+\end_inset
+
+del
+\begin_inset space ~
+\end_inset
+
+ancho
+\begin_inset space ~
+\end_inset
+
+del
+\begin_inset space ~
+\end_inset
+
+rostro
+\begin_inset space ~
+\end_inset
+
+respecto
+\begin_inset space ~
+\end_inset
+
+al
+\begin_inset space ~
+\end_inset
+
+ancho
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+la
+\begin_inset space ~
+\end_inset
+
+imagen.
  
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
 height.
- FLOAT.
- 0-100% del largo del rostro respecto al largo de la imagen.
+\begin_inset space ~
+\end_inset
+
+FLOAT.
+\begin_inset space ~
+\end_inset
+
+0-100%
+\begin_inset space ~
+\end_inset
+
+del
+\begin_inset space ~
+\end_inset
+
+largo
+\begin_inset space ~
+\end_inset
+
+del
+\begin_inset space ~
+\end_inset
+
+rostro
+\begin_inset space ~
+\end_inset
+
+respecto
+\begin_inset space ~
+\end_inset
+
+al
+\begin_inset space ~
+\end_inset
+
+ancho
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+la
+\begin_inset space ~
+\end_inset
+
+imagen.
 \end_layout
 
 \end_deeper
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-Otros puntos detectados:
+Otros
+\begin_inset space ~
+\end_inset
+
+puntos
+\begin_inset space ~
+\end_inset
+
+detectados:
 \end_layout
 
 \begin_deeper
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-mouth_center OBJECT { "x" :Float, "y" : Float } 
+mouth_center OBJECT { x :Float, y : Float } 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-mouth_left OBJECT { "x" :Float, "y" : Float }
+mouth_left OBJECT { x :Float, y : Float }
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-mouth_right OBJECT { "x" :Float, "y" : Float } 
+mouth_right OBJECT { x :Float, y : Float } 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-eye_left OBJECT { "x" :Float, "y" : Float } 
+eye_left OBJECT { x :Float, y : Float } 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-eye_right OBJECT { "x" :Float, "y" : Float } 
+eye_right OBJECT { x :Float, y : Float } 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-nose OBJECT { "x" :Float, "y" : Float } 
+nose OBJECT { x :Float, y : Float } 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-ear_left OBJECT { "x" :Float, "y" : Float } 
+ear_left OBJECT { x :Float, y : Float } 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-ear_right OBJECT { "x" :Float, "y" : Float } 
+ear_right OBJECT { x :Float, y : Float } 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-chin OBJECT { "x" :Float, "y" : Float } 
+chin OBJECT { x :Float, y : Float } 
 \end_layout
 
 \begin_layout Labeling
@@ -244,9 +399,20 @@ Roll: Ejemplo ilustrativo.
 \begin_layout Standard
 Todos los puntos detectados descritos no especificados corresponden a un
  formato JSON, cuya clave es el nombre del mismo, y el valor es también
- un objeto del tipo JSON que contiene los siguientes valores: "id":INTEGER,
- "confidence":INTEGER, "y":FLOAT, "x":FLOAT, a excepción del valor “center”
- cuyo objeto JSON contiene sólo los valores: “x”, “y”.
+ un objeto del tipo JSON que contiene los siguientes valores: id:INTEGER,
+ confidence:INTEGER, y:FLOAT, x:FLOAT, a excepción del valor 
+\emph on
+center
+\emph default
+ cuyo objeto JSON contiene sólo los valores: 
+\emph on
+x
+\emph default
+, 
+\emph on
+y
+\emph default
+.
 \end_layout
 
 \begin_layout Description
@@ -291,9 +457,21 @@ The result of the API call is a JSON or XML object containing the requested
  information.
  Cada uno de los atributos son objetos del tipo JSON cuya clave es el nombre
  del mismo y el valor es también un objeto JSON con dos valores específicos:
- el primero con clave “value” y el segundo con clave “confidence”.
- El valor de ‘confidence’ es del tipo Integer para representar el porcentaje
- de probabilidad del valor detectado en el campo ‘value’.
+ el primero con clave 
+\emph on
+value
+\emph default
+ y el segundo con clave 
+\emph on
+confidence
+\emph default
+.
+ El valor de confidence es del tipo Integer para representar el porcentaje
+ de probabilidad del valor detectado en el campo 
+\emph on
+value
+\emph default
+.
 \end_layout
 
 \begin_layout Subsection*
@@ -303,6 +481,7 @@ Mensajes de error
 \begin_layout Standard
 \begin_inset Graphics
 	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/face-service-errors.png
+	scale 55
 
 \end_inset
 
@@ -315,34 +494,35 @@ Post (Request en lenguaje JAVA)
 
 \begin_layout Standard
 \begin_inset listings
+lstparams "language=Java,breaklines=true"
 inline false
 status open
 
 \begin_layout Plain Layout
 
-HttpResponse<JsonNode> response = Unirest.post("https://face.p.mashape.com/faces/det
-ect?api_key=[api_key]&api_secret=[api_secret]") 
+HttpResponse<JsonNode> response = Unirest.post(https://face.p.mashape.com/faces/dete
+ct?api_key=[api_key]&api_secret=[api_secret]) 
 \end_layout
 
 \begin_layout Plain Layout
 
-.header("X-Mashape-Key", "7rS5YDw5YHmshtdgMHP2ZYBLAljfp1OxKNzjsn1GJxNBgad6C9")
+.header(X-Mashape-Key, 7rS5YDw5YHmshtdgMHP2ZYBLAljfp1OxKNzjsn1GJxNBgad6C9)
  
 \end_layout
 
 \begin_layout Plain Layout
 
-.header("Accept", "application/json") 
+.header(Accept, application/json) 
 \end_layout
 
 \begin_layout Plain Layout
 
-.field("attributes", "all") 
+.field(attributes, all) 
 \end_layout
 
 \begin_layout Plain Layout
 
-.field("detector", "Aggressive")  [ver opciones] 
+.field(detector, Aggressive)  [ver opciones] 
 \end_layout
 
 \begin_layout Plain Layout
@@ -396,6 +576,7 @@ La respuesta recibida por el servicio del tipo HttpResponse<JsonNode> puede
 
 \begin_layout Standard
 \begin_inset listings
+lstparams "language=Java,breaklines=true"
 inline false
 status open
 
@@ -415,10 +596,17 @@ Parse - Overview
 
 \begin_layout Standard
 La respuesta en formato JSONObject contiene en primera parte un objeto del
- tipo JSONObject con clave “photos” y cuyo valor, representado en formato
- JSONArray, contiene toda la información detectada desde las imágenes.
+ tipo JSONObject con clave 
+\emph on
+photos
+\emph default
+ y cuyo valor, representado en formato JSONArray, contiene toda la información
+ detectada desde las imágenes.
  Cada elemento del arreglo representa un archivo de imagen; a su vez, estos
- elementos contienen un objeto del tipo JSONObject cuya clave es “tags”
+ elementos contienen un objeto del tipo JSONObject cuya clave es 
+\emph on
+tags
+\emph default
  y su valor es un JSONArray para representar cada una de los rostros detectados
  en la imagen particular; a su vez contiene la información de ancho y largo
  asociado.
@@ -426,8 +614,11 @@ La respuesta en formato JSONObject contiene en primera parte un objeto del
 \end_layout
 
 \begin_layout Standard
-En segunda parte, seguido de “photos” se anexan en la respuesta la información
- relacionada a la operación http.
+En segunda parte, seguido de 
+\emph on
+photos
+\emph default
+ se anexan en la respuesta la información relacionada a la operación http.
 \end_layout
 
 \begin_layout Standard
@@ -436,12 +627,13 @@ Ejemplo codificación básica:
 
 \begin_layout Standard
 \begin_inset listings
+lstparams "language=Java,breaklines=true"
 inline false
 status open
 
 \begin_layout Plain Layout
 
-JSONArray imágenes = obj.get("photos"); 
+JSONArray imágenes = obj.get(photos); 
 \end_layout
 
 \begin_layout Plain Layout
@@ -466,7 +658,7 @@ for(int p=0; p<imágenes.length(); p++) {
 
 \begin_layout Plain Layout
 
-	int imgWidth = (int) imagen.get("width"); 
+	int imgWidth = (int) imagen.get(width); 
 \end_layout
 
 \begin_layout Plain Layout
@@ -476,7 +668,7 @@ for(int p=0; p<imágenes.length(); p++) {
 
 \begin_layout Plain Layout
 
-	JSONArray rostros = imagen.getJSONArray("tags"); 
+	JSONArray rostros = imagen.getJSONArray(tags); 
 \end_layout
 
 \begin_layout Plain Layout
@@ -501,7 +693,7 @@ for(int p=0; p<imágenes.length(); p++) {
 
 \begin_layout Plain Layout
 
-		mouth = rostro.getJSONObject("mouth_center"); 
+		mouth = rostro.getJSONObject(mouth_center); 
 \end_layout
 
 \begin_layout Plain Layout
@@ -568,7 +760,11 @@ Factores ofrecidos
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-Rostro detectado: 
+Rostro
+\begin_inset space ~
+\end_inset
+
+detectado: 
 \end_layout
 
 \begin_deeper
@@ -620,14 +816,44 @@ mouth
 
 \end_deeper
 \begin_layout Standard
-Los “features” son analizados por la API sólo en rostros cuya orientación
- sea frontal.
+Los 
+\emph on
+features
+\emph default
+ son analizados por la API sólo en rostros cuya orientación sea frontal.
  El formato de respuesta de los mismos son del tipo JSONObject en el caso
- de “nose” y “mouth”, para el caso de “eyes” se devuelve un objeto del tipo
- JSONArray, cuyos elementos (1 o 2) son del tipo JSONObject.
+ de 
+\emph on
+nose
+\emph default
+ y 
+\emph on
+mouth
+\emph default
+.
+ Para el caso de 
+\emph on
+eyes
+\emph default
+ se devuelve un objeto del tipo JSONArray, cuyos elementos (1 o 2) son del
+ tipo JSONObject.
  La API representa el rostro y los features detectados en forma de rectángulos,
- por lo que incorpora en sus respuestas las coordenadas “x”, “y” (esquina
- superior izquierda respecto a la imagen) y los tamaños “width”, “height”
+ por lo que incorpora en sus respuestas las coordenadas 
+\emph on
+x
+\emph default
+, 
+\emph on
+y
+\emph default
+ (esquina superior izquierda respecto a la imagen) y los tamaños 
+\emph on
+width
+\emph default
+, 
+\emph on
+height
+\emph default
  del rectángulo en cuestión.
 \end_layout
 
@@ -637,17 +863,18 @@ Post (Request en lenguaje JAVA)
 
 \begin_layout Standard
 \begin_inset listings
-inline false
+lstparams "language=Java,breaklines=true"
+inline true
 status open
 
 \begin_layout Plain Layout
 
-HttpResponse<JsonNode> response = Unirest.post("ENDPOINT") 
+HttpResponse<JsonNode> response = Unirest.post(ENDPOINT) 
 \end_layout
 
 \begin_layout Plain Layout
 
-.header("X-Mashape-Key", "7rS5YDw5YHmshtdgMHP2ZYBLAljfp1OxKNzjsn1GJxNBgad6C9")
+.header(X-Mashape-Key, 7rS5YDw5YHmshtdgMHP2ZYBLAljfp1OxKNzjsn1GJxNBgad6C9)
  [ver opción correspondiente] 
 \end_layout
 
@@ -669,11 +896,18 @@ HttpResponse<JsonNode> response = Unirest.post("ENDPOINT")
 \begin_layout Standard
 Actualmente la API soporta dos endpoints difiriendo entre sí en el modo
  en que las imágenes son especificadas en el request.
- Mediante el método http ‘GET’ se añade el URL de la imagen (Endpoint: http://ap
-icloud-facerect.p.mashape.com/process-url.json); por otra parte con el método
- ‘POST’ se añade el archivo correspondiente (Endpoint: http://apicloud-facerect.p.
-mashape.com/process-file.json) De acuerdo con el endpoint especificado se
- añade la línea correspondiente: 
+ Mediante el método http 
+\emph on
+GET
+\emph default
+ se añade el URL de la imagen (Endpoint: http://apicloud-facerect.p.mashape.com/pro
+cess-url.json); por otra parte con el método 
+\emph on
+POST
+\emph default
+ se añade el archivo correspondiente (Endpoint: http://apicloud-facerect.p.mashape.
+com/process-file.json) De acuerdo con el endpoint especificado se añade la
+ línea correspondiente: 
 \end_layout
 
 \begin_layout Labeling
@@ -689,7 +923,7 @@ Opciones
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-.field("image", new File("<path_image>")) 
+.field(image, new File(<path_image>)) 
 \end_layout
 
 \end_deeper
@@ -709,6 +943,7 @@ La respuesta recibida por el servicio del tipo HttpResponse<JsonNode> puede
 
 \begin_layout Standard
 \begin_inset listings
+lstparams "language=Java,breaklines=true"
 inline false
 status open
 
@@ -728,13 +963,52 @@ Parse - overview
 
 \begin_layout Standard
 La respuesta en formato JSONObject contiene dos objetos JSON.
- El primero, cuya clave es “faces” contiene toda la información detectada
- desde la imagen, el segundo objeto cuya clave es “image” contiene la informació
-n acerca del ancho (“width”) y largo (“height”) de la misma.
+ El primero, cuya clave es 
+\emph on
+faces
+\emph default
+ contiene toda la información detectada desde la imagen, el segundo objeto
+ cuya clave es 
+\emph on
+image
+\emph default
+ contiene la información acerca del ancho (
+\emph on
+width
+\emph default
+) y largo (
+\emph on
+height
+\emph default
+) de la misma.
  La información detectada se presenta en un objeto del tipo JSONArray donde
  cada elemento del arreglo constituye cada uno de los rostros que ha detectada
  la API; Cada uno de los elementos son JSONObject que contienen la información
- del rostro (“orientation”, “x”, “y”, “height”, “width”) y los “features”.
+ del rostro (
+\emph on
+orientation
+\emph default
+, 
+\emph on
+x
+\emph default
+, 
+\emph on
+y
+\emph default
+, 
+\emph on
+height
+\emph default
+, 
+\emph on
+width
+\emph default
+) y los 
+\emph on
+features
+\emph default
+.
  
 \end_layout
 
@@ -744,6 +1018,7 @@ Ejemplo codificación básica
 
 \begin_layout Standard
 \begin_inset listings
+lstparams "language=Java,breaklines=true"
 inline false
 status open
 
@@ -754,7 +1029,7 @@ status open
 
 \begin_layout Plain Layout
 
-int imgWidth = (int) obj.getJSONObject("image").get(“width”); 
+int imgWidth = (int) obj.getJSONObject(image).get(“width”); 
 \end_layout
 
 \begin_layout Plain Layout
@@ -764,7 +1039,7 @@ int imgWidth = (int) obj.getJSONObject("image").get(“width”);
 
 \begin_layout Plain Layout
 
-JSONArray rostros = obj.getJSONArray("faces"); 
+JSONArray rostros = obj.getJSONArray(faces); 
 \end_layout
 
 \begin_layout Plain Layout
@@ -789,7 +1064,7 @@ for(int r=0; r<rostros.lenght(); r++) {
 
 \begin_layout Plain Layout
 
-	String orientation =(String) rostro.get(“orientation"); 
+	String orientation =(String) rostro.get(“orientation); 
 \end_layout
 
 \begin_layout Plain Layout
@@ -847,7 +1122,27 @@ Profile: rotación del rostro.
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-Clasificadores:<característica facial presente en el rostro> 
+Clasificadores:<característica
+\begin_inset space ~
+\end_inset
+
+facial
+\begin_inset space ~
+\end_inset
+
+presente
+\begin_inset space ~
+\end_inset
+
+en
+\begin_inset space ~
+\end_inset
+
+el
+\begin_inset space ~
+\end_inset
+
+rostro> 
 \end_layout
 
 \begin_deeper
@@ -876,7 +1171,35 @@ Position: Punto superior izquierdo del rostro.
 \end_deeper
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-Landmarks: <Puntos de interés en el rostro detectado> LIST<Landmark> 
+Landmarks:<Puntos
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+interés
+\begin_inset space ~
+\end_inset
+
+en
+\begin_inset space ~
+\end_inset
+
+el
+\begin_inset space ~
+\end_inset
+
+rostro
+\begin_inset space ~
+\end_inset
+
+detectado>
+\begin_inset space ~
+\end_inset
+
+LIST<Landmark> 
 \end_layout
 
 \begin_deeper
@@ -943,7 +1266,15 @@ CENTER RIGHT_MOUTH Constant Value: 11
 \end_deeper
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-Angles: <Face Orientation> 
+Angles:
+\begin_inset space ~
+\end_inset
+
+<Face
+\begin_inset space ~
+\end_inset
+
+Orientation> 
 \end_layout
 
 \begin_deeper
@@ -969,9 +1300,20 @@ EulerZ [valor ‘r’ en la imagen]
 \begin_layout Description
 Nota: El ángulo EulerZ se encuentra disponible siempre en la detección,
  mientras que el ángulo EulerY sólo si en el detector se predetermina el
- modo “accurate”.
- El concepto de “left” y “right” son relativos al sujeto no a la posición
- cuando se observa la imagen.
+ modo 
+\emph on
+accurate
+\emph default
+.
+ El concepto de 
+\emph on
+left
+\emph default
+ y 
+\emph on
+right
+\emph default
+ son relativos al sujeto no a la posición cuando se observa la imagen.
  Las posiciones son accedidas a través del método getPosition() de la clase
  Landmark; el retorno es del tipo PointF.
  
@@ -983,6 +1325,7 @@ Construcción del detector
 
 \begin_layout Standard
 \begin_inset listings
+lstparams "language=Java,breaklines=true"
 inline false
 status open
 
@@ -1032,8 +1375,11 @@ Es necesario especificar en el detector el entorno de nuestra aplicación
 \end_layout
 
 \begin_layout Standard
-Es posible obtener el entorno de la app a través del método getApplicationContex
-t() de la clase Activity.
+Es posible obtener el entorno de la app a través del método 
+\emph on
+getApplicationContext()
+\emph default
+ de la clase Activity.
  
 \end_layout
 
@@ -1048,15 +1394,24 @@ El contexto es sólo una interfaz cuya implementación está prevista por el
 
 \begin_layout Standard
 El servicio dispone de la posibilidad de elegir la preferencia de procesamiento
- en la detección, ‘FAST_MODE’ prioriza la rapidez en el análisis por sobre
- la cantidad de rostros detectados y su precisión, contrariamente el servicio
- dispone del modo “ACCURATE_MODE”
+ en la detección, 
+\emph on
+FAST_MODE
+\emph default
+ prioriza la rapidez en el análisis por sobre la cantidad de rostros detectados
+ y su precisión, contrariamente el servicio dispone del modo 
+\emph on
+ACCURATE_MODE
 \end_layout
 
 \begin_layout Standard
-Habilitar la opción “tracking enabled” es recomendable para la detección
- de imágenes individuales no relacionadas (a diferencia de un vídeo o una
- serie de imágenes fijas capturadas consecutivamente).
+Habilitar la opción 
+\emph on
+tracking enabled
+\emph default
+ es recomendable para la detección de imágenes individuales no relacionadas
+ (a diferencia de un vídeo o una serie de imágenes fijas capturadas consecutivam
+ente).
  
 \end_layout
 
@@ -1068,21 +1423,29 @@ Tanto los clasificadores y landmarks pueden especificarse uno a uno añadiendo
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
+
+\emph on
 ALL_CLASSIFICATIONS 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
+
+\emph on
 ALL_LANDMARKS 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
+
+\emph on
 NO_CLASSIFICATIONS 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
+
+\emph on
 NO_LANDMARKS 
 \end_layout
 
@@ -1091,8 +1454,11 @@ El servicio no ofrece la capacidad de setar los landmark y clasificadores
  bajo demanda, sino que son definidos estáticamente al momento de crear
  el detector; esta restricción condiciona el tiempo de respuesta del servicio
  ya que el requerimiento de al menos un landmark, por ejemplo, significa
- el uso de la variable FaceDetector.ALL_LANDMARKS, incrementando así el tiempo
- de procesamiento de la imagen.
+ el uso de la variable 
+\emph on
+FaceDetector.ALL_LANDMARKS
+\emph default
+, incrementando así el tiempo de procesamiento de la imagen.
  
 \end_layout
 
@@ -1107,6 +1473,7 @@ El detector se puede llamar de forma sincronizada con un objeto del tipo
 
 \begin_layout Standard
 \begin_inset listings
+lstparams "language=Java,breaklines=true"
 inline false
 status open
 
@@ -1131,6 +1498,7 @@ Ejemplo codificación básica
 
 \begin_layout Standard
 \begin_inset listings
+lstparams "language=Java,breaklines=true"
 inline false
 status open
 
