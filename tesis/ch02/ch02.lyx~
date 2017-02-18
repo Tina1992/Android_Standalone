@@ -1,9 +1,7 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
 \lyxformat 474
 \begin_document
 \begin_header
-\save_transient_properties true
-\origin unavailable
 \textclass book
 \use_default_options true
 \maintain_unincluded_children false
@@ -1422,6 +1420,13 @@ El foco principal del trabajo desarrollado ha sido guiado por la búsqueda
 
 \begin_layout Subsubsection
 Regresión Lineal
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Regresión-Lineal"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
