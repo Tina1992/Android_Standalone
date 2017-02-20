@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass book
 \use_default_options true
 \maintain_unincluded_children false
@@ -9,16 +11,16 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman "default"
-\font_sans "default"
-\font_typewriter "default"
-\font_math "auto"
+\font_roman "" "default"
+\font_sans "" "default"
+\font_typewriter "" "default"
+\font_math "" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -469,6 +471,7 @@ reference "fig:linear-regression-result"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -518,7 +521,7 @@ La manera en que los datos son expuestos al usuario no representa un formato
 \end_layout
 
 \begin_layout Subsection
-Parámetros de configuraciónde las técnicas
+Parámetros de configuración de las técnicas
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:Parámetros-de-configuraciónde"
@@ -552,6 +555,7 @@ reference "tab:Parámetros-de-configuración"
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -560,6 +564,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/configuration-parameters.png
+	scale 50
 
 \end_inset
 
@@ -672,6 +677,7 @@ reference "fig:RBF-parameters-SVM"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -832,6 +838,7 @@ reference "tab:Especificaciones-de-los"
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -1103,6 +1110,7 @@ El uso del indicador de precisión o el de exactitud dependerá del contexto
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -1162,6 +1170,7 @@ reference "fig:TPS-dataset-behaviour"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -1697,6 +1706,10 @@ de
 \end_inset
 
 Operación.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1739,6 +1752,10 @@ de
 
 Componente.
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2451,7 +2468,7 @@ CC
  Como ya se explicó en la sección
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Ajuste-del-modelo:"
+reference "subsec:Ajuste-del-modelo:"
 
 \end_inset
 
@@ -2613,7 +2630,7 @@ ac{SGD}
 Si tenemos en cuenta lo visto en la sección 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Regresión-Lineal"
+reference "subsec:Regresión-Lineal"
 
 \end_inset
 
@@ -2633,6 +2650,17 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/errors-comparison-response-S5.png
+	scale 55
+
+\end_inset
+
 
 \end_layout
 
@@ -2658,7 +2686,7 @@ Figura comparativa de las dos implementaciones de regresión lineal para
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Resultados para los servicios de detección de rostros.
 \end_layout
 
@@ -2688,8 +2716,8 @@ reference "tab:Resultados-response-face"
 
 \end_layout
 
-\begin_layout Subsection
-Resultados para los servicios de detección de rostros.
+\begin_layout Standard
+<Añadir conclusiones>
 \end_layout
 
 \begin_layout Standard
@@ -2737,6 +2765,10 @@ name "tab:Resultados-response-face"
 
 \begin_layout Subsection
 Resultados para el problema de la mochila.
+\end_layout
+
+\begin_layout Standard
+<Añadir conclusiones >
 \end_layout
 
 \begin_layout Standard
@@ -2816,6 +2848,10 @@ Resultados del atributo precisión para el escenario ‘problema de la mochila�
 
 \begin_layout Subsection
 Resultados para el problema de la multiplicación de matrices.
+\end_layout
+
+\begin_layout Standard
+<Añadir conclusiones>
 \end_layout
 
 \begin_layout Standard

@@ -1,9 +1,7 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
 \begin_document
 \begin_header
-\save_transient_properties true
-\origin unavailable
 \textclass book
 \use_default_options true
 \maintain_unincluded_children false
@@ -11,16 +9,16 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman "" "default"
-\font_sans "" "default"
-\font_typewriter "" "default"
-\font_math "" "auto"
+\font_roman "default"
+\font_sans "default"
+\font_typewriter "default"
+\font_math "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100 100
-\font_tt_scale 100 100
+\font_sf_scale 100
+\font_tt_scale 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -471,7 +469,6 @@ reference "fig:linear-regression-result"
 
 \begin_layout Standard
 \begin_inset Float figure
-placement H
 wide false
 sideways false
 status open
@@ -521,7 +518,7 @@ La manera en que los datos son expuestos al usuario no representa un formato
 \end_layout
 
 \begin_layout Subsection
-Parámetros de configuración de las técnicas
+Parámetros de configuraciónde las técnicas
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:Parámetros-de-configuraciónde"
@@ -555,7 +552,6 @@ reference "tab:Parámetros-de-configuración"
 
 \begin_layout Standard
 \begin_inset Float table
-placement H
 wide false
 sideways false
 status open
@@ -564,7 +560,6 @@ status open
 \align center
 \begin_inset Graphics
 	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/configuration-parameters.png
-	scale 50
 
 \end_inset
 
@@ -677,7 +672,6 @@ reference "fig:RBF-parameters-SVM"
 
 \begin_layout Standard
 \begin_inset Float figure
-placement H
 wide false
 sideways false
 status open
@@ -838,7 +832,6 @@ reference "tab:Especificaciones-de-los"
 
 \begin_layout Standard
 \begin_inset Float table
-placement H
 wide false
 sideways false
 status open
@@ -1110,7 +1103,6 @@ El uso del indicador de precisión o el de exactitud dependerá del contexto
 
 \begin_layout Standard
 \begin_inset Float figure
-placement H
 wide false
 sideways false
 status open
@@ -1170,7 +1162,6 @@ reference "fig:TPS-dataset-behaviour"
 
 \begin_layout Standard
 \begin_inset Float figure
-placement H
 wide false
 sideways false
 status open
@@ -1331,7 +1322,6 @@ GoogleAPIClient
 
 \begin_layout Standard
 \begin_inset Float figure
-placement H
 wide false
 sideways false
 status open
@@ -1591,7 +1581,6 @@ Tiempo de respuesta
 
 \begin_layout Standard
 \begin_inset Float figure
-placement H
 wide false
 sideways false
 status open
@@ -1708,10 +1697,6 @@ de
 \end_inset
 
 Operación.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1754,10 +1739,6 @@ de
 
 Componente.
  
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1828,7 +1809,6 @@ Tiempo de respuesta
 
 \begin_layout Standard
 \begin_inset Float figure
-placement H
 wide false
 sideways false
 status open
@@ -1904,7 +1884,6 @@ reference "fig:Knapsack-optimi-dataset-behaviour"
 
 \begin_layout Standard
 \begin_inset Float figure
-placement H
 wide false
 sideways false
 status open
@@ -2279,7 +2258,6 @@ Tiempo de respuesta
 
 \begin_layout Standard
 \begin_inset Float figure
-placement H
 wide false
 sideways false
 status open
@@ -2396,7 +2374,6 @@ name "subsec:Resultados-para-el"
 
 \begin_layout Standard
 \begin_inset Float table
-placement H
 wide false
 sideways false
 status open
@@ -2474,7 +2451,7 @@ CC
  Como ya se explicó en la sección
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "subsec:Ajuste-del-modelo:"
+reference "sub:Ajuste-del-modelo:"
 
 \end_inset
 
@@ -2512,7 +2489,6 @@ A continuación, se presenta el comportamiento de este último con respecto
 
 \begin_layout Standard
 \begin_inset Float figure
-placement H
 wide false
 sideways false
 status open
@@ -2552,7 +2528,7 @@ Con el mismo método de analisis se analizó el dataset TSPlib.csv considerando
 
 \begin_layout Standard
 \begin_inset Float table
-placement H
+placement h
 wide false
 sideways false
 status open
@@ -2637,7 +2613,7 @@ ac{SGD}
 Si tenemos en cuenta lo visto en la sección 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "subsec:Regresión-Lineal"
+reference "sub:Regresión-Lineal"
 
 \end_inset
 
@@ -2652,7 +2628,6 @@ es sus dos implementaciones (Ridge y SGD).
 
 \begin_layout Standard
 \begin_inset Float figure
-placement H
 wide false
 sideways false
 status open
@@ -2694,7 +2669,7 @@ Figura comparativa de las dos implementaciones de regresión lineal para
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Resultados para los servicios de detección de rostros.
 \end_layout
 
@@ -2724,13 +2699,12 @@ reference "tab:Resultados-response-face"
 
 \end_layout
 
-\begin_layout Standard
-<Añadir conclusiones>
+\begin_layout Subsection
+Resultados para los servicios de detección de rostros.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float table
-placement H
 wide false
 sideways false
 status open
@@ -2777,12 +2751,8 @@ Resultados para el problema de la mochila.
 \end_layout
 
 \begin_layout Standard
-<Añadir conclusiones >
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float table
-placement H
+placement h
 wide false
 sideways false
 status open
@@ -2820,7 +2790,7 @@ Resultados del atributo Tiempo de respuesta para el escenario ‘problema
 
 \begin_layout Standard
 \begin_inset Float table
-placement H
+placement h
 wide false
 sideways false
 status open
@@ -2860,12 +2830,7 @@ Resultados para el problema de la multiplicación de matrices.
 \end_layout
 
 \begin_layout Standard
-<Añadir conclusiones>
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float table
-placement H
 wide false
 sideways false
 status open

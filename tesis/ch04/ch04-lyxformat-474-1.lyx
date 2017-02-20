@@ -1,9 +1,7 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
 \begin_document
 \begin_header
-\save_transient_properties true
-\origin unavailable
 \textclass book
 \use_default_options true
 \maintain_unincluded_children false
@@ -11,16 +9,16 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman "" "default"""
-\font_sans "" "default"""
-\font_typewriter "" "default"""
-\font_math "" "auto"""
+\font_roman "default"
+\font_sans "default"
+\font_typewriter "default"
+\font_math "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100 100
-\font_tt_scale 100 100
+\font_sf_scale 100
+\font_tt_scale 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -514,7 +512,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/method-stages.png
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/method-stages.png
 	scale 55
 
 \end_inset
@@ -765,7 +763,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/android-component.png
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/android-component.png
 	scale 55
 
 \end_inset
@@ -1106,7 +1104,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/prediction-tool.png
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/prediction-tool.png
 	scale 55
 
 \end_inset
@@ -1293,7 +1291,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/prediction-workflow.png
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/prediction-workflow.png
 	scale 55
 
 \end_inset
@@ -1540,7 +1538,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/models-comparison-workflow.png
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/models-comparison-workflow.png
 	scale 55
 
 \end_inset
@@ -1611,7 +1609,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/screenshot-errors.png
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/screenshot-errors.png
 	scale 55
 
 \end_inset
@@ -1683,7 +1681,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/screenshot-error-curve.png
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/screenshot-error-curve.png
 	scale 55
 
 \end_inset
@@ -1736,7 +1734,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/adjustment-workflow.png
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/adjustment-workflow.png
 	scale 55
 
 \end_inset
@@ -2059,7 +2057,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/database-class-diagram.png
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/database-class-diagram.png
 	scale 55
 
 \end_inset
@@ -2111,7 +2109,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/modelers-class-diagram.png
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/modelers-class-diagram.png
 	scale 55
 
 \end_inset
@@ -2167,7 +2165,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/all-modelers-class-diagram.png
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/all-modelers-class-diagram.png
 	scale 55
 
 \end_inset
@@ -2292,7 +2290,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/parameters-class-diagram.png
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/parameters-class-diagram.png
 	scale 55
 
 \end_inset
@@ -2345,7 +2343,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/metrics-class-diagram.png
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/metrics-class-diagram.png
 	scale 55
 
 \end_inset
@@ -2448,7 +2446,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/optimizer-class-diagram.png
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/optimizer-class-diagram.png
 	scale 55
 
 \end_inset
@@ -2499,7 +2497,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/library-class-diagram.png
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/library-class-diagram.png
 	scale 55
 
 \end_inset
@@ -2580,11 +2578,6 @@ width "100col%"
 special "none"
 height "1in"
 height_special "totalheight"
-thickness "0.4pt"
-separation "3pt"
-shadowsize "4pt"
-framecolor "black"
-backgroundcolor "none"
 status collapsed
 
 \begin_layout Plain Layout

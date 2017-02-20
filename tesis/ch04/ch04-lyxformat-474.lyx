@@ -1,9 +1,7 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
 \begin_document
 \begin_header
-\save_transient_properties true
-\origin unavailable
 \textclass book
 \use_default_options true
 \maintain_unincluded_children false
@@ -11,16 +9,16 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman "" "default"""
-\font_sans "" "default"""
-\font_typewriter "" "default"""
-\font_math "" "auto"""
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100 100
-\font_tt_scale 100 100
+\font_sf_scale 100
+\font_tt_scale 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -172,14 +170,14 @@ reference "sec:Herramientas"
 ta para la recolección de datos en la subsección 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "subsec:Framework-de-medición"
+reference "sub:Framework-de-medición"
 
 \end_inset
 
  y finalmente, en la sección 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "subsec:Herramienta-de-entrenamiento"
+reference "sub:Herramienta-de-entrenamiento"
 
 \end_inset
 
@@ -514,7 +512,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/method-stages.png
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/method-stages.png
 	scale 55
 
 \end_inset
@@ -596,7 +594,7 @@ El trabajo presentado conforma dos de las tres fases propuestas para el
  
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "subsec:Framework-de-medición"
+reference "sub:Framework-de-medición"
 
 \end_inset
 
@@ -606,7 +604,7 @@ reference "subsec:Framework-de-medición"
  la cual será detallada en la sección 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "subsec:Herramienta-de-entrenamiento"
+reference "sub:Herramienta-de-entrenamiento"
 
 \end_inset
 
@@ -618,7 +616,7 @@ reference "subsec:Herramienta-de-entrenamiento"
 Framework de medición para Android
 \begin_inset CommandInset label
 LatexCommand label
-name "subsec:Framework-de-medición"
+name "sub:Framework-de-medición"
 
 \end_inset
 
@@ -765,7 +763,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/android-component.png
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/android-component.png
 	scale 55
 
 \end_inset
@@ -842,8 +840,10 @@ Diseño e implementación
 \begin_layout Standard
 El framework “Android-Performance-Testing-and-Prediction” está conformado
  por tres proyectos individuales.
- El proyecto “Android-Testing-Tool” constituye el modelo base para llevar
+ El proyecto “Android-Testing-Tool”constituye el modelo base para llevar
  a cabo el proceso de medición de propiedades de cualquier tipo de componente.
+ En el cuadro 4.1 se detalla el conjunto de librerías requeridas para su
+ funcionamiento.
  Los proyectos restantes han sido implementados para desarrollar diferentes
  dominios de aplicación, los cuales incluyen la dependencia al proyecto
  modelo.
@@ -855,15 +855,262 @@ El framework “Android-Performance-Testing-and-Prediction” está conformado
 \end_layout
 
 \begin_layout Standard
-A continuación se expone en la figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:TestingTool-Diagram"
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dependencias
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Librería
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Versión
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+android
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6.0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+android support
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+v4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+httpclient
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.4.1.1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+android async http
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.4.9
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+google play services
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Configuración
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+min Sdk
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+14
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+target Sdk
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+23
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
 
 \end_inset
 
- los principales factores que han servido de guía para el diseño del proyecto
- base “Android-Testing-Tool”.
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Dependencias requeridas por el proyecto Android-Testing-Tool.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+A continuación serán descritos los principales factores que han servido
+ de guía para el diseño del proyecto base “Android-Testing-Tool”.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Componentes
+\end_layout
+
+\begin_layout Standard
+Como se detalla en la figura 4.3, la herramienta utiliza una representación
+ simplificada de los componentes a través de la interfaz parametrizada´Component
+´.
+ Los parámetros que recibe son dos objetos del tipo Input y Output, siendo
+ éstos, instancias de objetos que representan la entrada y salida del problema
+ respectivamente.
+ En caso de utilizar servicios Android o Servicios Web como componentes,
+ además de implementar la interfaz ya mencionada debe extenderse su comportamien
+to a las clases ‘AndroidServiceClient’ y ´WebServiceClient’ respectivamente.
  
 \end_layout
 
@@ -876,8 +1123,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/TestingTool-Diagram.png
-	scale 10
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/android-component-representation.png
+	scale 55
 
 \end_inset
 
@@ -888,10 +1135,10 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama estructural de la herramienta template ‘Android Testing Tool’.
+Representación de los objetos implementados como componentes Android.
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:TestingTool-Diagram"
+name "fig:android-component-representation"
 
 \end_inset
 
@@ -903,41 +1150,17 @@ name "fig:TestingTool-Diagram"
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsubsection*
+Operación
 \end_layout
 
 \begin_layout Standard
-La forma de organizar diferentes modelos de evaluación se realiza a través
- de la creación de planes de prueba, que se configuran y posteriormente
- se ejecutan para obtener un archivo de formato CSV con el resultado de
- todas las mediciones incorporadas al plan de pruebas.
- La herramienta implementa por defecto un objeto llamado “TestPlan” que
- define una ejecución sistemática de las operaciones y métricas sobre ellos.
- Básicamente, un modelo de plan de pruebas se compone de un conjunto posible
- de componentes, un conjunto posible de objetos de entrada, y un conjunto
- posible de métricas para realizar las mediciones, dando la posibilidad
- de configurar estas propiedades a los requerimientos deseados.
- Una vez configurado y ejecutado el plan de pruebas, los resultados con
- las mediciones son almacenados en un objeto denominado ´Results’ y los
- datos son exportados a un archivo de formato CSV para su posterior procesamient
-o.
- 
-\end_layout
-
-\begin_layout Standard
-La herramienta utiliza una representación simplificada de los componentes,
- pudiendo ser éstos servicios Web o simplemente piezas de software implementadas
- por el programador.
- Los parámetros que recibe son dos objetos del tipo Input y Output, siendo
- éstos, instancias de objetos que representan la entrada y salida del problema
- respectivamente.
- Cada uno de los componentes asociados a un problema específico ejecutan
+Cada uno de los componentes asociados a un problema específico ejecutan
  una operación o tarea a través de la llamada al método execute del componente.
  Esta operación es responsable de evaluar la ejecución de la instancia de
  entrada en el componente y retornar un objeto de salida o respuesta del
@@ -949,54 +1172,456 @@ La herramienta utiliza una representación simplificada de los componentes,
  mismos.
  Por otro lado, una instancia de salida encapsula la respuesta o resultado
  de esa operación.
- Durante la ejecución del plan de pruebas (ejecución de cada uno de los
- componentes asociados), se evalúan los indicadores que fueron configurados
- como métricas en el plan.
- Se distinguieron cuatro tipos de métricas en función del elemento de medición,
- determinando el parámetro que recibe: 
+\end_layout
+
+\begin_layout Subsubsection*
+Métricas
 \end_layout
 
 \begin_layout Standard
-1.
- Métricas globales sobre características estáticas del contexto: cualidades
+Como puede observarse en la figura 4.4 a nivel implementación, las métricas
+ se representan a través de objetos cuyo comportamiento se define a través
+ de la interfaz parametrizada que corresponda.
+ La herramienta distingue cuatro tipos de métricas en función del elemento
+ de medición, determinando el parámetro que recibe: 
+\end_layout
+
+\begin_layout Enumerate
+Métricas globales sobre características estáticas del contexto: cualidades
  del entorno de ejecución que se mantienen estáticas (sin cambio) durante
  el plan de pruebas, por ejemplo, modelo del dispositivo, arquitectura de
  la CPU, cantidad de núcleos de CPU, tamaño de memoria, etc.
+ Estos objetos deben implementar la interfaz Metric<Context>, siendo ´Context’
+ la interfaz implementada por Android para acceder a la información global
+ del entorno de la aplicación.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Métricas generales sobre características de la entrada: atributos inherentes
+ al dominio del problema, por ejemplo, en el problema de detección de rostros
+ algunas características podrían ser el nombre de imagen, tamaño o contraste,
+ formato de archivo, etc.
+ Estos objetos deben implementar la interfaz Metric<Input>, siendo Input,
+ una instancia de entrada real del dominio.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Métricas generales del componente: propiedades del componente como el nombre,
+ su ubicación, etc.
+ Estos objetos deben implementar la interfaz Metric<Component<Input, Output>>.
  
 \end_layout
 
 \begin_layout Standard
-2.
- Métricas generales sobre características de la entrada: atributos inherentes
- al dominio del problema, por ejemplo, en el problema de detección de rostros
- algunas características podrían ser el nombre de imagen, tamaño o contraste,
- formato de archivo, etc.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/android-metrics-representation.png
+	scale 55
+
+\end_inset
+
+
 \end_layout
 
-\begin_layout Standard
-3.
- Métricas generales del componente: propiedades del componente como el nombre,
- su ubicación, etc.
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Representación de los objetos implementados como Métricas.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:android-metrics-representation"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 4.
  Métricas de operación: Son medidas que actúan sobre la ejecución del componente
-, por lo cual distinguen en tres tipos diferentes: • Características de
- la salida: características del resultado de la operación como su tamaño,
- calidad, etc.
+, por lo cual distinguen en tres tipos diferentes: 
+\end_layout
+
+\begin_layout Itemize
+Características de la salida: características del resultado de la operación
+ como su tamaño, calidad, etc.
  al igual que las entidades de entrada, son inherentes al dominio del problema.
  En la detección de rostros, por ejemplo, la salida podría ser un vector
  con la ubicación de los puntos detectados y una característica de salida
  interesante podría ser, el tamaño de ese vector, es decir, el número de
  rostros detectados.
- • Características dinámicas del contexto: características del entorno de
- ejecución que pueden variar de una operación a otra, como el uso de CPU,
- el número de procesos en ejecución, tipo de conexión, ubicación del dispositivo
-, etc.
- • Características de desempeño: medidas de interés sobre el rendimiento
- que varían de una operación a otra, como el tiempo de respuesta, el consumo
+ 
+\end_layout
+
+\begin_layout Itemize
+Características dinámicas del contexto: características del entorno de ejecución
+ que pueden variar de una operación a otra, como el uso de CPU, el número
+ de procesos en ejecución, tipo de conexión, ubicación del dispositivo,
+ etc.
+ 
+\end_layout
+
+\begin_layout Itemize
+Características de desempeño: medidas de interés sobre el rendimiento que
+ varían de una operación a otra, como el tiempo de respuesta, el consumo
  de batería, operaciones ejecutadas con éxito o con error, etc.
+\end_layout
+
+\begin_layout Standard
+Estos objetos deben implementar la interfaz OperationMetric<Input, Output>
+ como se muestra en la figura 4.5.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/android-metrics-components-representation.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Representación de las métricas que actúan sobre la ejecución del componente.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:android-metrics-components-representation"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ejecuciones de planes de prueba
+\end_layout
+
+\begin_layout Standard
+La forma de organizar diferentes modelos de evaluación se realiza a través
+ de la creación de planes de prueba, que se configuran y posteriormente
+ se ejecutan para obtener un archivo de formato CSV con el resultado de
+ todas las mediciones incorporadas al plan de pruebas.
+ 
+\end_layout
+
+\begin_layout Standard
+La herramienta implementa por defecto un objeto llamado “TestPlan” que define
+ una ejecución sistemática de las operaciones y métricas sobre ellos.
+ Básicamente, un modelo de plan de pruebas se compone de un conjunto posible
+ de componentes, un conjunto posible de objetos de entrada, y un conjunto
+ posible de métricas para realizar las mediciones, dando la posibilidad
+ de configurar estas propiedades a los requerimientos deseados.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Resultados
+\end_layout
+
+\begin_layout Standard
+Una vez configurado el plan de pruebas, su ejecución se lleva a cabo mediante
+ el objeto Executor definido por la herramienta.
+ Los resultados con las mediciones son almacenados en otro objeto denominado
+ ´Results’ y los datos son exportados a un archivo de formato CSV para su
+ posterior procesamiento.
+ Estos archivos son guardados en un subdirectorio del proyecto correspondiente
+ bajo el nombre “results”.
+\end_layout
+
+\begin_layout Subsubsection*
+Evaluación de servicios remotos
+\end_layout
+
+\begin_layout Standard
+El objetivo de la incorporación de dominios que implican el uso de servicios
+ remotos se basa en la idea de automatizar el testeo continuo de uno o varios
+ servicios, en este caso, aplicaciones que ofrecen reconocimiento facial,
+ teniendo en cuenta las características que estos pueden proveer y aquellas
+ que el usuario de la aplicación desee considerar, de esta manera determinar
+ el servicio más adecuado (según el contexto) para la ejecución de una tarea.
+ Este dominio ha sido diseñado a través de un proyecto individual bajo el
+ nombre de “Evaluation-of-Faces-Detection-Services”.
+ Este proyecto se implementó como un modelo básico y genérico sobre el proceso
+ de detección de rostros.
+ Tal proyecto conforma una estructura general para almacenar y acceder a
+ todos los atributos posibles que cualquier servicio que brinde la funcionalidad
+ de detección de rostros pudiera ofrecer.
+ 
+\end_layout
+
+\begin_layout Standard
+A continuación se describirá la forma en que los principales objetos involucrado
+s en el diseño general de la herramienta fueron usados en este proyecto,
+ junto con un módulo adicional para el registro de información.
+ 
+\end_layout
+
+\begin_layout Paragraph*
+Módulo para el registro de características faciales:
+\end_layout
+
+\begin_layout Standard
+El objeto principal de este módulo del proyecto es brindar la posibilidad
+ de almacenar todos los datos que el servicio de detección facial ofrezca,
+ a pesar que éste no provea algunas de las propiedades contempladas.
+ Para cumplir con tal propósito se diseñaron los siguientes objetos para
+ cubrir las necesidades referentes a las características faciales
+\end_layout
+
+\begin_layout Description
+FacePosition: Almacenamiento de las posiciones respecto a la imagen de los
+ rostros detectados.
+ 
+\end_layout
+
+\begin_layout Description
+FaceRace: Es un objeto del tipo Enumerado para contemplar los diferentes
+ colores de tez.
+ 
+\end_layout
+
+\begin_layout Description
+FaceExpression: Almacenamiento de todas las expresiones faciales de un rostro
+ detectado en particular a través de su nombre y un valor de confianza asociado.
+ 
+\end_layout
+
+\begin_layout Description
+FaceOrientation: Este objeto contempla cuatro posibles orientaciones de
+ un rostro: frontal, perfil derecho, perfil izquierdo y desconocido en el
+ caso que la orientación facial no haya podido ser definida.
+ También, considera tres tipos de ángulos de giro del rostro conocidos por
+ su nombre en inglés como: ‘yaw’, ‘roll’ y ‘pitch’.
+ 
+\end_layout
+
+\begin_layout Description
+FaceLandmark: Este objeto contempla cada uno de los posibles puntos faciales
+ de interés para detectar conocidos por su nombre en inglés como “landmarks”,
+ ojos, nariz, boca, mejillas, cejas, por citar algunos ejemplos, almacenando
+ su nombre identificatorio y sus coordenadas X e Y donde se encuentran en
+ la imagen.
+ 
+\end_layout
+
+\begin_layout Standard
+A través del objeto definido como “FaceImpl” se logra centralizar toda informaci
+ón asociada a la detección de un rostro en particular.
+ El comportamiento de este objeto está definido a través de la interfaz
+ implementada bajo el nombre “Face”.
+ “FaceImpl” incluye en su lista de atributos un objeto del tipo FacePosition,
+ FaceRace,y FaceOrientation, y un conjunto de objetos del tipo FaceExpression
+ y FaceLandmark.
+ Además de estas propiedades, añade nuevos datos de interés sobre el rostro
+ detectado: probabilidad de ojos abiertos, probabilidad de sonrisa, género
+ y cantidad de años estimados.
+ 
+\end_layout
+
+\begin_layout Paragraph*
+Componentes
+\end_layout
+
+\begin_layout Standard
+Se evaluará y analizará la performance de cada uno de los servicios implementado
+s, en base a los parámetros de configuración que acepta cada uno de estos
+ servicios, se generan diferentes instancias de componentes posibles.
+ 
+\end_layout
+
+\begin_layout Paragraph*
+Instancias de entrada
+\end_layout
+
+\begin_layout Standard
+Respecto a las entradas del problema, el sistema a través de la clase “InputFace
+Detection” recibe un archivo como parámetro correspondiente a una imagen
+ para ser procesada.
+ Adicionalmente a la clase ya mencionada, se diseñó una nueva clase llamada
+ “FDDB_DataSetUtils” la cual permite crear una lista de imágenes de entrada
+ a partir de un archivo de formato de texto.
+ 
+\end_layout
+
+\begin_layout Standard
+La clase acepta dos tipos de archivos: uno simple conteniendo una lista
+ con todos los nombres de las imágenes localizadas en el mismo directorio
+ del archivo, y otro archivo más completo, conteniendo además del nombre
+ de la imagen, la cantidad total de rostros presentes y por cada uno de
+ ellos, una línea adicional conteniendo cinco puntos faciales de posición:
+ major_axis_radius, minor_axis_radius, angle, center_x, center_y.
+ Estos puntos son almacenados en objetos del tipo “FacePosition” y a través
+ de la imagen y una lista con los objetos recién mencionados se crea la
+ instancia de entrada correspondiente.
+ 
+\end_layout
+
+\begin_layout Standard
+Por lo tanto, las entradas pueden ser añadidas al plan de pruebas a través
+ de archivos o de manera estática especificando la ruta de cada imagen.
+ 
+\end_layout
+
+\begin_layout Paragraph*
+Instancias de salida
+\end_layout
+
+\begin_layout Standard
+En el caso de los servicios remotos, la respuesta obtenida debe ser previamente
+ parseada antes de poder almacenar la información.
+ En el caso de los servicios locales, sólo deben ser ejecutados.
+ Los resultados, es decir, el conjunto de todos los rostros detectados y
+ su información asociada, se registra mediante el objeto “FaceDetectionResultImp
+l” cuyo comportamiento está definido por la interfaz “FaceDetectionResult”.
+ 
+\end_layout
+
+\begin_layout Paragraph*
+Métricas
+\end_layout
+
+\begin_layout Standard
+A continuación se detallan todas las métricas consideradas en este dominio
+ bajo el ámbito que operan: 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Proceso Implementan 
+\emph on
+OperationMetric<InputFaceDetection, FaceDetectionResult>
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+CorrectDetectedFacesMetric.java 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+DetectedFacesMetrics.java 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+ResponseTimeMetric.java
+\end_layout
+
+\end_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Entrada Implementan Metric<InputFaceDetection>
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+ImageContrastMetric.java 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+ImageEntropyMetric.java 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+ImageFormatMetric.java 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+ImageMeanIntensityMetric.java 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+ImageNumberOfFacesMetric.java 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+ImageNumberOfPixelsMetric.java 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+ImageSizeMetric.java 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+InputNameMetric.java 
+\end_layout
+
+\end_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Componente
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+ComponentNameMetric.java
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph*
+Plan de ejecución
+\end_layout
+
+\begin_layout Standard
+El plan de pruebas diseñado para este dominio es un objeto llamado “TestPlanFace
+Detection”.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Dominios y Servicios implementados
 \end_layout
 
 \begin_layout Standard
@@ -1008,44 +1633,772 @@ El framework de medición ha sido diseñado para soportar distintos dominios
  caso, aplicaciones que ofrecen reconocimiento facial para la evaluación
  de diferentes servicios que ofrecen esta misma funcionalidad, como ya ha
  sido anticipado.
- Los problemas de complejidad NP se contemplan bajo un proyecto individual
+ 
+\end_layout
+
+\begin_layout Standard
+Los problemas de complejidad NP se contemplan bajo un proyecto individual
  llamado “Examples-Android-Testing-Tool” para la evaluación de desempeño
  de distintos algoritmos considerando dos aspectos fundamentales: tiempo
  (aproximación del número de pasos de ejecución que emplea el algoritmo)
  y espacio (aproximación de la cantidad de memoria utilizada).
  Los problemas implementados pertenecen tanto a la clase P como a la clase
  NP-Completos.
- Por otro lado, el objetivo de la incorporación de dominios que implican
- el uso de servicios remotos se basa en la idea de automatizar el testeo
- continuo de uno o varios servicios, en este caso, aplicaciones que ofrecen
- reconocimiento facial, teniendo en cuenta las características que estos
- pueden proveer y aquellas que el usuario de la aplicación desee considerar,
- de esta manera determinar el servicio más adecuado (según el contexto)
- para la ejecución de una tarea.
- Este dominio ha sido diseñado a través de un proyecto individual bajo el
- nombre de “Evaluation-of-Faces-Detection-Services”.
- Este proyecto se implementó como un modelo básico y genérico sobre el proceso
- de detección de rostros.
- Tal proyecto conforma una estructura general para almacenar y acceder a
- todos los atributos posibles que cualquier servicio que brinde la funcionalidad
- de detección de rostros pudiera ofrecer.
- Es importante destacar algunos detalles sobre los componentes, entradas
- y métricas que fueron tomados en cuenta en el diseño del proyecto.
- Cada componente representa un servicio particular, cuya performance es
- evaluada y analizada; en base a los parámetros de configuración que acepta
- cada uno de estos servicios, se generan diferentes instancias de componentes
- posibles, un servicio que admite dos variables de configuración, por ejemplo,
- da lugar a cuatro tipos de componentes como producto de la combinación
- de opciones configurables posibles.
- En cuanto a las entradas del dominio, pueden añadirse al plan de pruebas
- a través de archivos o de manera estática especificando la ruta de cada
- imagen.
- Finalmente, fueron consideradas métricas respecto al proceso u operación
- (rostros correctamente detectados, rostros detectados y Tiempo de respuesta)
- y respecto a la imagen de entrada (contraste, entropía, formato, intensidad
- promedio, cantidad de rostros en la imagen, cantidad de píxeles de la imagen,
- tamaño y nombre).
- Respecto al servicio, sólo se registra el nombre del mismo.
+ 
+\end_layout
+
+\begin_layout Standard
+Respecto a la implementación de servicios, se han utilizado servicios tanto
+ remotos como locales por medio de librerías de dependencia.
+ 
+\end_layout
+
+\begin_layout Standard
+Todos los dominios implementados serán descritos en las subsecciones siguientes.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Problema del agente viajero
+\end_layout
+
+\begin_layout Standard
+En el campo de la teoría de complejidad computacional, el problema del viajante
+ o TSP por sus siglas en inglés, es tratado como un problema NP-Completo
+ y es modelado como un grafo de manera que las ciudades son sus vértices,
+ los caminos son las aristas y las distancias entre caminos son los pesos
+ de las aristas.
+ Es un problema de minimización tras la búsqueda de un recorrido completo
+ que comienza y finaliza en un vértice específico y visita el resto de los
+ vértices exactamente una vez con coste mínimo.
+ Existen muchas variantes del problema, una de ellas se trata del TSP simétrico
+ en el cual la distancia entre un par de ciudades es la misma en cada dirección
+ formando un grafo ponderado no dirigido.
+ Esta variante fue la versión considerada por la herramienta.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Instancias de entrada
+\end_layout
+
+\begin_layout Standard
+Con el fin de garantizar instancias variadas del problema, (diferentes cantidade
+s de ciudades, distintas representaciones y pesos), se incorporó a la herramient
+a una librería llamada TSPLib con múltiples archivos de instancias del problema.
+ La librería cuenta con 111 archivos de formato TSP, y 32 archivos de formato
+ OPT.TOUR que contienen el recorrido óptimo del archivo que referencian.
+ Los ejemplos oscilan desde 14 y hasta 18512 ciudades con un sólo ejemplo
+ extremo de 85900, y utilizan cuatro funciones de cálculo de la distancia
+ entre ciudades: distancia euclidiana, distancia geométrica, distancia pseudo
+ euclidiana y función techo.
+ 
+\end_layout
+
+\begin_layout Standard
+Para la obtención de las mediciones correspondientes, se realizó una preselecció
+n de 32 archivos que comprenden ejemplos de entre 22 y 200 ciudades.
+ Cabe destacar que fue necesaria la implementación de un parser para el
+ uso de los archivos cuyo nombre es ParserDataSetTPSLIB.
+ Complementariamente, se implementó una clase llamada ‘TSPInstance’ para
+ generar instancias arbitrarias del problema a partir de dos atributos:
+ cantidad total de ciudades y ciudad inicial.
+ A través del método ‘generateRandom’ la matriz de costos se genera a través
+ del método ‘Random’ de la clase ‘Math’ modelando un grafo ponderado no
+ dirigido.
+ Por otro lado, es posible la generación de instancias específicas seteando
+ directamente el atributo correspondiente a la matriz de costos 
+\end_layout
+
+\begin_layout Subsubsection*
+Instancias de salida
+\end_layout
+
+\begin_layout Standard
+Tras la ejecución de los componentes, los resultados son almacenados en
+ la clase definida ‘TSPSolution’, la cual contiene una lista con todas las
+ aristas incluidas en la solución y brinda métodos específicos para la obtención
+ de esta lista y el costo total del recorrido
+\end_layout
+
+\begin_layout Subsubsection*
+Diseño de plan de pruebas
+\end_layout
+
+\begin_layout Standard
+Para la modelación del problema del viajante se plantearon siete componentes,
+ cada uno desarrollando un algoritmo de resolución diferente.
+ Las métricas incorporadas al plan pertenecen a tres de los cuatro tipos
+ brindados por la herramienta: respecto a la entrada, sólo se consideró
+ el nombre asociado a la matriz de costos, o del archivo de la librería
+ TSPLIB según corresponda, respecto a los componentes, se consideró el nombre
+ del algoritmo y respecto a la operación de ejecución de cada algoritmo,
+ se incluyeron al plan las siguientes características del resultado: precisión,
+ exactitud, valor del costo resultante y recorrido total.
+ En la figura 4.6 se muestra un esquema del plan de pruebas planteado cuyo
+ nombre es “TSPTestPlan”.
+ 
+\end_layout
+
+\begin_layout Standard
+Los algoritmos de resolución planteados son descritos exhaustivamente en
+ el apéndice A.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/TSP-TestPlan.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Modelo del plan de pruebas para el dominio TSP.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:TSP-TestPlan"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Problema de la mochila
+\end_layout
+
+\begin_layout Standard
+Al igual que el problema del agente viajero, el problema de la mochila o
+ ‘Knapsack problem’ por su nombre en inglés, es un problema NP-Completo
+ de optimización combinatoria, es decir, se busca la mejor solución entre
+ un conjunto finito de posibles soluciones al problema.
+ El problema simula la colocación de ítems u objetos en una mochila de tal
+ forma que se maximice el valor de los ítems que contiene con la restricción
+ de no superar el peso (o volumen) máximo que puede soportar la mochila.
+\end_layout
+
+\begin_layout Subsubsection*
+Instancias de entrada
+\end_layout
+
+\begin_layout Standard
+Se implementó una clase llamada ‘KnapsackInstance’ para generar instancias
+ arbitrarias del problema a través del método ‘generateRandom’.
+ Este método necesita de cuatro valores: cantidad total de ítems, máximo
+ valor y peso de un ítem, y finalmente el peso o capacidad de la mochila.
+ En base a estos parámetros se genera una instancia con tres atributos fundament
+ales: una lista con todos los valores de los ítems, una lista con los pesos
+ de cada ítem y la capacidad de la mochila (valor entre 0.0 y 1.0).
+ La generación de estas instancias se realiza de manera estática desde el
+ plan de pruebas.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Instancias de salida
+\end_layout
+
+\begin_layout Standard
+Para registrar los resultados, se definió una clase denominada ‘KnapsackSolution
+’, la cual, a partir de la ejecución de cada componente, va almacenando
+ los ítems seleccionados para la solución.
+ A través de esta clase se tiene acceso, además del conjunto solución, a
+ la suma total de todos los ítems incorporados a la mochila y a la suma
+ total de sus pesos.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Diseño de plan de pruebas
+\end_layout
+
+\begin_layout Standard
+Para la modelación del problema de la mochila se plantearon sólo dos componentes
+, uno corresponde al desarrollo del algoritmo Greedy y el otro al desarrollo
+ de la técnica de backtracking para la resolución del problema.
+ 
+\end_layout
+
+\begin_layout Standard
+Las métricas incorporadas al plan pertenecen a tres de los cuatro tipos
+ brindados por la herramienta: respecto a la entrada se consideró incorporar
+ como datos la cantidad de ítems y la capacidad de la mochila, respecto
+ a los componentes sólo se considera el nombre del mismo y respecto a la
+ operación de ejecución de cada componente se incluyó el valor solución,
+ es decir, la suma total de los ítems incorporados en la mochila y el tiempo
+ de respuesta.
+ 
+\end_layout
+
+\begin_layout Standard
+En la figura 4.7 se muestra un esquema del plan de pruebas planteado cuyo
+ nombre es ‘TestPlanKnapsackProblem’.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/Knapsack-TestPlan.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Modelo del plan de pruebas para el problema de la mochila.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Knapsack-TestPlan"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Multiplicación de matrices
+\end_layout
+
+\begin_layout Standard
+El producto de matrices corresponde a problemas de clase P ya que a diferencia
+ de los problemas NP, su complejidad es polinómica.
+\end_layout
+
+\begin_layout Standard
+El producto entre matrices no es conmutativo, depende del orden de las matrices
+ intervinientes y su multiplicación sólo es posible si el número de filas
+ de la primer matriz es igual al número de columnas de la segunda.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Instancias de entrada
+\end_layout
+
+\begin_layout Standard
+Se diseñó el objeto “MatrixPair”, que como indica su nombre permite la creación
+ de instancias con dos matrices cuyos valores se pueden originar de manera
+ aleatoria a partir del número de filas y columnas de la primer matriz denominad
+a matriz A y el número de columnas de la segunda matriz denominada matriz
+ B, esta distinción es importante teniendo en cuenta la propiedad de no
+ conmutatividad del producto de matrices.
+ Por otro lado, ambas matrices pueden ser configuradas externamente y seteadas
+ directamente a una instancia “MatrixPair”.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Instancias de salida
+\end_layout
+
+\begin_layout Standard
+En el diseño de este problema no se implementó un objeto específico para
+ almacenar resultados, ya que sólo se trata de otra matriz, producto del
+ resultado de la multiplicación.
+ Por lo tanto, se toma como instancia de salida al tipo de matriz implementada
+ por el lenguaje Java cuyos valores son del tipo primitivo ‘double’.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Diseño de plan de pruebas
+\end_layout
+
+\begin_layout Standard
+Para la modelación del problema de la multiplicación de matrices se plantearon
+ sólo dos componentes, el objeto “MatrixMultiplication” que realiza los
+ cómputos en un sólo thread , y el objeto “MatrixMultiplicationMultiThread”
+ que distribuye el proceso de multiplicación en ocho threads.
+ Las métricas incorporadas al plan son las siguientes: respecto a la entrada
+ se considera el número de columnas y filas de la primer matriz y el número
+ de columnas de la segunda.
+ Respecto a los componentes sólo se considera el nombre del mismo y respecto
+ a la ejecución se incluyó la memoria en uso, la memoria disponible y el
+ tiempo de respuesta.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Servicios web 
+\end_layout
+
+\begin_layout Standard
+Para la modelación de servicios remotos, en el proyecto “Evaluation-of-Face-Dete
+ction-Services” se consideraron sólo dos servicios: ‘SkyBiometry’ y ‘FaceRect’.
+ Tales servicios web son consumidos directamente desde la aplicación online
+ ‘Mashape’, la cual ofrece una gran variedad de aplicaciones, incluida una
+ colección de Aplicaciones sobre detección y reconocimiento de rostros.
+ SkyBiometry y FaceRect son aplicaciones que utilizan interfaz REST, es
+ decir, los métodos son llamados a través de internet usando los métodos
+ HTTP standard como GET y POST a las direcciones correspondientes.
+ Dependiendo de los parámetros especificados en el request, el servidor
+ puede generar la respuesta tanto en formato JSON como XML.
+ Adicionalmente, se utilizó el servicio GMS Visión de Google a partir de
+ la librería correspondiente.
+ Los tres servicios son descritos en detalle en el apéndice B.
+ 
+\end_layout
+
+\begin_layout Subsection*
+FaceRect
+\end_layout
+
+\begin_layout Subsubsection*
+Detalle del servicio
+\end_layout
+
+\begin_layout Standard
+A continuación, se puede observar todos los servicios provistos por esta
+ aplicación: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/FaceRect-servicies.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Servicios ofrecidos por la aplicación FaceRect.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:FaceRect-services"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Opcionalmente, se puede incorporar al proceso de detección tres puntos faciales:
+ nariz, ojos y boca englobados bajo el nombre de “features”.
+ Por defecto esta opción no se considera a menos que el usuario lo especifique
+ en la creación del servicio.
+\end_layout
+
+\begin_layout Subsubsection*
+Detalle de implementación
+\end_layout
+
+\begin_layout Standard
+El servicio se implementó a través de la clase ‘FaceRect’ cuyo único atributo
+ ‘features’ permite seleccionar o no la detección de los puntos faciales.
+ Esta opción es seteada al momento de creación de una instancia dando paso
+ a dos tipos de componentes, un componente sería el servicio FaceRect básico
+ y el otro el servicio FaceRect con los puntos faciales o ‘features’ incluidos.
+\end_layout
+
+\begin_layout Subsection*
+SkyBiometry
+\end_layout
+
+\begin_layout Subsubsection*
+Detalle de servicio
+\end_layout
+
+\begin_layout Standard
+Esta aplicación, en comparacion de ‘FaceRect’ mencionada anteriormente,
+ es más completa en cuanto a las características que puede detectar.
+ 
+\end_layout
+
+\begin_layout Standard
+El servicio permite también, la selección del tipo de detector entre dos
+ opciones: un detector del estilo “normal” (valor por defecto) y un detector
+ del estilo “agresivo”, en comparación más lento aunque más preciso en la
+ calidad de sus respuestas.
+ 
+\end_layout
+
+\begin_layout Standard
+A continuación, se puede observar algunos de los servicios provistos por
+ esta aplicación, quizás los servicios significativamente más importantes:
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/SkyBiometry-services.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Servicios más significativos ofrecidos por la aplicación SkyBiometry.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:SkyBiometry-services"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Opcionalmente, se puede incorporar al proceso de detección los atributos
+ detallados en la imagen siguiente: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/SkyBiometry-optional-services.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Atributos opcionales de la aplicación SkyBiometry.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:SkyBiometry-optional-services"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Detalle de implementación
+\end_layout
+
+\begin_layout Standard
+El servicio fue implementado a través de la clase ‘SkyBiometry’ la cual
+ contiene sólo tres atributos de carácter opcional ofrecido por la aplicación:
+ ‘gender’, ‘glasses’ y ‘smiling’ y un cuarto atributo para referenciar el
+ tipo de detector.
+ Estas opciones son seteadas al momento de creación de una instancia dando
+ paso a dieciséis tipos de componentes, es decir, el servicio con cada combinaci
+ón posible de los atributos configurables.
+ 
+\end_layout
+
+\begin_layout Subsection*
+GMSFaceAPI
+\end_layout
+
+\begin_layout Standard
+La compañía Google ha implementado una colección extensa y variada de aplicacion
+es para Android.
+ Entre ellas, ofrece el paquete ‘com.google.android.gms.vision’ el cual proporciona
+ una funcionalidad común para trabajar con detectores de objetos visuales.
+ En la imagen 4.8 se muestra la forma en que el objeto ‘GoogleAPIClient’
+ proporciona una interfaz para conectar y hacer llamadas a cualquiera de
+ los servicios de Google Play disponibles tales como ‘Google Play Games’,
+ ‘Google Drive’, ‘Google Maps’, etc
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/GooglePlay-services.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Esquema conceptual para el uso de servicios de Google Play Services.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:GooglePlay-services"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Servicios ofrecidos
+\end_layout
+
+\begin_layout Standard
+El detector puede computar los siguientes atributos (accesibles a través
+ de los distintos métodos de la clase).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/GooglePlay-services-options.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Servicios propios del detector de la aplicación GMS.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:GooglePlay-services-options"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Respecto a las propiedades que pueden configurarse en el detector, se detalla:
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/GooglePlay-services-attributes.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Atributos configurables de la aplicación GMS.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:GooglePlay-services-attributes"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/GooglePlay-services-classifiers.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Clasificadores ofrecidos por la aplicación GMS.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:GooglePlay-services-classifiers"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Detalle de implementación
+\end_layout
+
+\begin_layout Standard
+El servicio se implementó a través de una clase llamada ‘GMSFaceAPI’ la
+ cual contiene sólo tres atributos configurables para el servicio: ‘allLandmarks
+’, ‘allClassifications’ y ‘accurateMode’.
+ Estas opciones son seteadas al momento de creación de una instancia dando
+ paso a ocho tipos de componentes, es decir, el servicio con cada combinación
+ posible de los atributos opcionales.
+ Cabe destacar que el uso de este servicio sólo es posible por medio de
+ la incorporación de la librería de google play services al proyecto “Evaluation
+-of-Face-Detection-Services”.
  
 \end_layout
 
@@ -1053,7 +2406,7 @@ El framework de medición ha sido diseñado para soportar distintos dominios
 Herramienta de entrenamiento y evaluación de modelos
 \begin_inset CommandInset label
 LatexCommand label
-name "subsec:Herramienta-de-entrenamiento"
+name "sub:Herramienta-de-entrenamiento"
 
 \end_inset
 
@@ -1106,7 +2459,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/prediction-tool.png
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/prediction-tool.png
 	scale 55
 
 \end_inset
@@ -1293,7 +2646,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/prediction-workflow.png
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/prediction-workflow.png
 	scale 55
 
 \end_inset
@@ -1540,7 +2893,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/models-comparison-workflow.png
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/models-comparison-workflow.png
 	scale 55
 
 \end_inset
@@ -1611,7 +2964,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/screenshot-errors.png
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/screenshot-errors.png
 	scale 55
 
 \end_inset
@@ -1683,7 +3036,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/screenshot-error-curve.png
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/screenshot-error-curve.png
 	scale 55
 
 \end_inset
@@ -1736,7 +3089,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/adjustment-workflow.png
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/adjustment-workflow.png
 	scale 55
 
 \end_inset
@@ -2059,7 +3412,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/database-class-diagram.png
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/database-class-diagram.png
 	scale 55
 
 \end_inset
@@ -2111,7 +3464,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/modelers-class-diagram.png
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/modelers-class-diagram.png
 	scale 55
 
 \end_inset
@@ -2151,7 +3504,7 @@ A partir de esto, implementando los métodos abstractos presentados, se pueden
  
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "subsec:Funciones-contempladas"
+reference "sub:Funciones-contempladas"
 
 \end_inset
 
@@ -2167,7 +3520,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/all-modelers-class-diagram.png
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/all-modelers-class-diagram.png
 	scale 55
 
 \end_inset
@@ -2292,7 +3645,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/parameters-class-diagram.png
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/parameters-class-diagram.png
 	scale 55
 
 \end_inset
@@ -2345,7 +3698,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/metrics-class-diagram.png
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/metrics-class-diagram.png
 	scale 55
 
 \end_inset
@@ -2448,7 +3801,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/optimizer-class-diagram.png
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/optimizer-class-diagram.png
 	scale 55
 
 \end_inset
@@ -2499,7 +3852,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/library-class-diagram.png
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/library-class-diagram.png
 	scale 55
 
 \end_inset
@@ -2580,12 +3933,7 @@ width "100col%"
 special "none"
 height "1in"
 height_special "totalheight"
-thickness "0.4pt"
-separation "3pt"
-shadowsize "4pt"
-framecolor "black"
-backgroundcolor "none"
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -2606,15 +3954,16 @@ Las mismas declaran los modelos que son aceptados por la liberia.
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset listings
-lstparams "language=Java,basicstyle={\footnotesize}"
-inline true
+inline false
 status open
 
 \begin_layout Plain Layout
+\align center
 
 public abstract Vector<AbsModeler> createModelers(Vector<Integer> selectedModels
-, int index);
+, int index); 
 \end_layout
 
 \end_inset
