@@ -8,7 +8,7 @@ import weka.classifiers.functions.SGD;
 public class SGDClassifier extends AbsWekaClassifier {
 
 	private static final double MIN_VALUE = 0;
-	private static final double MAX_VALUE = 0.1;
+	private static final double MAX_VALUE = 0.01;
 	private static final double DEFAULT_LEARNING = 0.01;
 	private static final double DEFAULT_LAMBDA = 0.5;
 
@@ -27,7 +27,7 @@ public class SGDClassifier extends AbsWekaClassifier {
 		classifier=sgd;
 		WekaSimpleParameter l = new WekaSimpleParameter('L', DEFAULT_LEARNING, "L");
 		l.setMinValor(0);
-		l.setMaxValue((float) 0.1);
+		l.setMaxValue((float) 0.01);
 		addParameter(l);
 		WekaSimpleParameter m = new WekaSimpleParameter('R', DEFAULT_LAMBDA, "R");
 		m.setMinValor(0);

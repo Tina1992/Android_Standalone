@@ -73,7 +73,7 @@ public class BarGraphics extends AbsGraphics {
 					   
 				   }  
 			  }
-			return Config.Graphic.GRAPHIC_BAR_COLOR;																					  
+			return new Color(Config.Graphic.GRAPHIC_BAR_COLOR.getRed()+(row*50)%255,Config.Graphic.GRAPHIC_BAR_COLOR.getGreen()+(row*50)%255, Config.Graphic.GRAPHIC_BAR_COLOR.getBlue()+(row*50)%255);																					  
 		   }
 		
 		//SHOW VALUES ON BAR WHICH RESULTS ARE BETTER!!
