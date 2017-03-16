@@ -466,7 +466,7 @@ ac{IDE}
 
 \begin_layout Standard
 Por otra parte, en el contexto de los servicios Web, Android provee soporte
- para clientes 
+ para conexiones 
 \begin_inset ERT
 status open
 
@@ -479,11 +479,7 @@ ac{HTTP}
 
 \end_inset
 
- mediante la clase 
-\emph on
-AndroidHttpClient
-\emph default
-, y por tanto, permite la utilización de servicios Web 
+ , y por tanto, permite la utilización de servicios Web 
 \begin_inset ERT
 status open
 
@@ -571,60 +567,6 @@ s).
  se realiza de diferente manera de acuerdo el tipo de componente que se
  desee activar.
  
-\end_layout
-
-\begin_layout Standard
-La manera en que los componentes interactúan entre sí son resumidos en la
- figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Android-components"
-
-\end_inset
-
- expuesta a continuación.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/android-component.png
-	scale 55
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Diagrama de la arquitectura en capas empleada por Android
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Android-components"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section

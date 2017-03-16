@@ -1,9 +1,7 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
 \begin_document
 \begin_header
-\save_transient_properties true
-\origin unavailable
 \textclass book
 \use_default_options true
 \maintain_unincluded_children false
@@ -11,16 +9,16 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman "" "default"
-\font_sans "" "default"
-\font_typewriter "" "default"
-\font_math "" "auto"
+\font_roman "default"
+\font_sans "default"
+\font_typewriter "default"
+\font_math "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100 100
-\font_tt_scale 100 100
+\font_sf_scale 100
+\font_tt_scale 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -83,13 +81,11 @@ name "chap:Evaluación"
 \end_layout
 
 \begin_layout Standard
-En este capítulo se describe el procedimiento de evaluación que se lleva
- a cabo y una descripción completa sobre los escenarios considerados y cada
- uno de los dataset involucrados.
- También, se presentan los resultados obtenidos junto con las inferencias
- y relaciones que se han determinado entre las técnicas y el contexto en
- el que se aplican.
- 
+En este capitulo se presenta la evaluacion del enfoque propuesto con el
+ objetivo de analizar el desempeño de las tecnicas de aprendizaje de maquina
+ para predecir propiedades no-funcionales en dispositivos móviles.
+ Con este fin, se crearon tres diferentes casos de estudio sobre los que
+ se aplica y analiza el enfoque.
 \end_layout
 
 \begin_layout Standard
@@ -101,18 +97,11 @@ reference "sec:Metodología-de-Evaluación"
 \end_inset
 
  se detalla la metodología de evaluación propuesta para analizar la eficacia
- de los modelos de predicción, en esta se incluye información complementaria
- y particular que fue tomada en cuenta para llevar a cabo la evaluación
- mediante sub-secciones individuales, de esta manera se especifican, las
- métricas usadas, el formato de los resultados obtenidos, la determinación
- empleada para la configuración de los parámetros más fundamentales de cada
- técnica y las características de los dispositivos móviles usados para las
- pruebas.
- 
-\end_layout
-
-\begin_layout Standard
-En la sección 
+ de los modelos de predicción, se incluye información complementaria sobre
+ las métricas usadas, el formato de los resultados obtenidos, los criterios
+ empleados para la configuración de los parámetros de cada técnica y las
+ características de los dispositivos móviles usados para las pruebas.
+ En la sección 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Escenarios"
@@ -120,18 +109,18 @@ reference "sec:Escenarios"
 \end_inset
 
  se presentan los escenarios de estudio considerados, brindando una descripción
- detallada de los dataset involucrados junto a gráficas y análisis sobre
- la distribución de los datos, con el fin de comprender mejor el desempeño
- de las tecnicas de regresion analizadas.
- Los modelos de predicción obtenidos son expuestos en la sección 
+ de los dataset obtenidos junto a gráficas y análisis sobre la distribución
+ de los datos, con el fin de comprender mejor el desempeño de las tecnicas
+ de regresion analizadas.
+ Los resultados obtenidos son expuestos en la sección 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Resultados-y-discusión"
 
 \end_inset
 
- desglosados por escenario para analizar cómo impacta en el desempeño de
- las técnicas, las particularidades de cada dominio.
+ desglosados por escenario para analizar el desempeño de las técnicas sobre
+ cada dominio.
  Finalmente en la sección 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -139,7 +128,7 @@ reference "sec:Conclusiones"
 
 \end_inset
 
- se obtienen las conclusiones del capítulo.
+ se presentan las conclusiones del capítulo.
  
 \end_layout
 
@@ -155,8 +144,7 @@ name "sec:Metodología-de-Evaluación"
 \end_layout
 
 \begin_layout Standard
-Existen diversas formas que permiten evaluar la eficacia del clasificador.
- La calidad de los modelos será evaluada a través de seis métricas de regresión
+La calidad de los modelos será evaluada a través de seis métricas de regresión
  que representan de forma distinta el error de predicción.
  Así mismo, para un análisis más profundo sobre las distintas técnicas y
  su desempeño se usaron cuatro escenarios o contextos dispares entre sí
@@ -181,14 +169,11 @@ Y
 Z
 \emph default
 .
- Cada uno de los contextos empleados incluyen tres o cuatro datasets, en
- algunos casos para individualizar el análisis hacia los componentes específicos
-, en otros, para separar las pruebas realizadas en móviles distintos.
  
 \end_layout
 
 \begin_layout Standard
-En todo el conjunto de dataset, se añadió el tiempo de respuesta como propiedad
+En todos los escenarios se considera el tiempo de respuesta como propiedad
  a predecir, y sólo en aquellos donde el contexto lo permitía se incorporó
  como propiedad la optimalidad o precisión en el resultado arrojado por
  el componente.
@@ -207,8 +192,8 @@ name "subsec:Métricas-de-evaluación"
 \end_layout
 
 \begin_layout Standard
-Tras construir una serie de modelos de regresión diferentes, existe una
- gran cantidad de criterios por los cuales pueden ser evaluados y comparados.
+Existe una gran cantidad de métricas por las cuales pueden evaluarse y comparars
+e los modelos de regresión.
  Todos los indicadores comparan los valores reales con sus estimaciones,
  pero lo hacen de una manera ligeramente diferente.
  
@@ -436,88 +421,6 @@ ac{RRSE}
  de valores entre 0 y 1 para obtener una visión de las observaciones respecto
  a la media.
  
-\end_layout
-
-\begin_layout Subsection
-Formato de los resultados
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:Formato-de-los"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-La herramienta devuelve como resultado un archivo en formato TXT almacenando,
- por un lado, los valores resultantes de los parámetros fundamentales de
- cada técnica y, por otro lado, la descripción del modelo construido.
- La herramienta genera un archivo por cada técnica elegida por el usuario
- para optimizar, en la dirección especificada en la configuración bajo el
- nombre de la técnica.
- La figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:linear-regression-result"
-
-\end_inset
-
- permite una descripción gráfica de lo expresado anteriormente, donde detalla
- A) los parámetros, B) Nombre del modelo y C) la función definida para el
- atributo de predicción.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/linear-regression-result.png
-	scale 55
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Ejemplo de resultado del modelo ‘Linear Regression’.
- 
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:linear-regression-result"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-La manera en que los datos son expuestos al usuario no representa un formato
- compatible para cualquier herramienta sobre aprendizaje de máquina, esto
- se debe a que no existe actualmente, un formato estándar para almacenar
- los modelos, y esta discrepancia entre las herramientas disponibles exige
- un seteo manual de las técnicas por cada evaluación que se realice
 \end_layout
 
 \begin_layout Subsection
@@ -813,13 +716,9 @@ name "subsec:Características-de-los"
 \end_layout
 
 \begin_layout Standard
-En la mayoría de las pruebas se han utilizado dos dispositivos móviles fundament
-ales, el modelo K3 Note de la marca Lenovo y el modelo Galaxy S3 de la marca
- Samsung principalmente por las características del procesador y memoria
- interna.
- El móvil lenovo es superior debido a sus 8 núcleos de procesamiento frente
- a los 4 núcleos del Samsung y a una memoria RAM con el doble de capacidad.
- 
+En la mayoría de las pruebas se han utilizado dos dispositivos móviles,
+ el modelo K3 Note de la marca Lenovo y el modelo Galaxy S3 de la marca
+ Samsung.
 \end_layout
 
 \begin_layout Standard
@@ -844,9 +743,297 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/used-mobiles.png
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="5">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CPU Procesador/Núcleos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GPU tarjeta gráfica
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Memoria RAM
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sistema Operativo
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Lenovo K3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.7Ghz Octa-Core ARM Cortex-A53
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ARM Mali-T760 MP2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2GB LPDDR3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Android 5.0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Samsung Galaxy S3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Quad-Core 1.4 Ghz Cortex-A9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mali-400MP
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1GB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Android 4.3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Samsung Galaxy S4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Qualcomm APQ8064T Snapdragon 600 1.9Ghz /4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PowerVR SGX 544MP / Adreno 320
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2GB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Android 4.2.2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Samsung Galaxy S5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Qualcomm MSM8974AC Snapdragon 801 2.5Ghz /4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Adreno 330
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2GB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Android 4.4.2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Samsung Galaxy S6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.1Ghz Samsung Exynos /8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mali-T760
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3GB LPDDR4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Android 5.0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
 
 \end_inset
 
@@ -891,1078 +1078,16 @@ name "sec:Escenarios"
 
 \begin_layout Standard
 Definidas las métricas, la metodología de evaluación y los parámetros de
- configuración, en la presente sección se detallarán los escenarios o dominios
- estudiados a partir de una descripción detallada de los dataset formados,
- cada uno de los componentes involucrados y los atributos de entrada considerado
-s formando un contexto particular para la predicción.
- Por otro lado, se analizará el comportamiento o formato que adquieren los
- datos sobre los atributos predichos para comprender el desempeño de las
- diferentes técnicas sobre los mismos y la manera en que éstos adecuan sus
- predicciones.
+ configuración, en la presente sección se detallarán los escenarios sobre
+ los que se aplica el enfoque.
+ Por cada escenario se describen los componentes involucrados, el proceso
+ de medición de los mismos y un análisis de los datos obtenidos, formando
+ un dataset particular para evaluar las tecnicas de regresión.
  
 \end_layout
 
 \begin_layout Subsection
-Escenario 1: Algoritmos para el problema del viajante
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:Escenario-1:-Algoritmos"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-En el campo de la teoría de complejidad computacional, el problema del viajante
- o TSP por sus siglas en inglés, es tratado como un problema NP-Completo
- y es modelado como un grafo de manera que las ciudades son sus vértices,
- los caminos son las aristas y las distancias entre caminos son los pesos
- de las aristas.
- Es un problema de minimización tras la búsqueda de un recorrido completo
- que comienza y finaliza en un vértice específico y visita el resto de los
- vértices exactamente una vez con coste mínimo.
- Existen muchas variantes del problema, una de ellas se trata del TSP simétrico
- en el cual la distancia entre un par de ciudades es la misma en cada dirección
- formando un grafo ponderado no dirigido.
- Esta variante fue la versión considerada por la herramienta.
- 
-\end_layout
-
-\begin_layout Standard
-Con el fin de garantizar instancias variadas del problema, (diferentes cantidade
-s de ciudades, distintas representaciones y pesos), se incorporó a la herramient
-a una librería llamada TSPLib con múltiples archivos de instancias del problema.
- La librería cuenta con 111 archivos de formato TSP, y 32 archivos de formato
- OPT.TOUR que contienen el recorrido óptimo del archivo que referencian.
- Los ejemplos oscilan desde 14 y hasta 18512 ciudades con un sólo ejemplo
- extremo de 85900, y utilizan cuatro funciones de cálculo de la distancia
- entre ciudades: distancia euclidiana, distancia geométrica, distancia pseudo
- euclidiana y función techo.
- Para la obtención de las mediciones correspondientes, se realizó una preselecci
-ón de 32 archivos que comprenden ejemplos de entre 22 y 200 ciudades.
- Cabe destacar que fue necesaria la implementación de un parser para el
- uso de los archivos.
-\end_layout
-
-\begin_layout Standard
-Los dataset para este dominio han sido formados tras la ejecución de seis
- algoritmos de resolución sobre 32 entradas del problema pertenecientes
- a la librería TSPLIB dando lugar a un total de 192 instancias por dataset;
- las pruebas fueron llevadas a cabo sobre el dispositivo móvil Samsung Galaxy
- S4, y repetidas en los dispositivos S5 y S6, obteniendo así, tres dataset
- análogos que incluyen como propiedades 7 atributos, Id de operación, nombre
- de componente (algoritmo), entrada del problema (nombre de archivo), exactitud
- y precisión en el resultado, tiempo de respuesta y valor solución.
- Todos los dataset han sido almacenados en archivos con formato 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{CSV}
-\end_layout
-
-\end_inset
-
- bajo el nombre ‘'Sx-results’ según el modelo de dispositivo utilizado.
- Los componentes involucrados incluyen el algoritmo del vecino más cercano,
- Programación Lineal, Mejor ajuste, Kruskal, Prim, y el algoritmo de Transformac
-ión Local.
- El algoritmo de Backtracking fue descartado de la lista debido al gran
- consumo de memoria en los dispositivos imposibilitando el desarrollo de
- las pruebas.
- 
-\end_layout
-
-\begin_layout Standard
-En cuanto a la precisión y exactitud de las respuestas se consideraron tres
- indicadores que toman en cuenta las repeticiones en la respuesta y la totalidad
- o falta de los vértices incluidos.
- El indicador TP (
-\emph on
-true positive
-\emph default
-), para los vértices incluidos en la solución, FP(
-\emph on
-false positive
-\emph default
-), para las repeticiones de vértices y FN (
-\emph on
-False Negative
-\emph default
-) para los vértices no incorporados en la solución.
- Por lo tanto, se consideró: 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-Precisión=\frac{TP}{FP+TP}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-Exactitud=\frac{TP}{FP+TP+FN}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-A modo de ejemplo, se presenta en la figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:TPS-graph-problem"
-
-\end_inset
-
- un grafo con comienzo en la ciudad A.
- Suponiendo que un algoritmo de resolución arroja el siguiente camino solución:
- {A, B, D, A}, se obtiene una precisión del 100% al tener un valor de 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{TP}
-\end_layout
-
-\end_inset
-
- = 3 y un valor de 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{FP}
-\end_layout
-
-\end_inset
-
- = 0 ya que no hay vértices repetidos en la solución, sin embargo, la solución
- no es correcta ya que no incluye la totalidad de vértices del conjunto
- (excluye al vértice C).
- En cambio, al calcular la exactitud se obtiene un valor del 66% al tener
- un valor de 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{TP}
-\end_layout
-
-\end_inset
-
- = 4, 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{FP}
-\end_layout
-
-\end_inset
-
- = 1 y 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{FN}
-\end_layout
-
-\end_inset
-
- = 1 brindando un concepto más realista.
- 
-\end_layout
-
-\begin_layout Standard
-El uso del indicador de precisión o el de exactitud dependerá del contexto
- en el que se aplique.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/TPS-graph-problem.png
-	scale 55
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Ejemplo de grafo para el problema del viajante.
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:TPS-graph-problem"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-El objetivo de este escenario es la creación de modelos capaces de predecir
- el tiempo de latencia de cada algoritmo de resolución frente a distintas
- características de las entradas, y modelos para predecir la precisión en
- los caminos retornados.
- En la figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:TPS-dataset-behaviour"
-
-\end_inset
-
- expuesta a continuación se muestra el comportamiento del conjunto de datos
- de entrenamiento ejecutado en el dispositivo Samsung Galaxy S4; ambos dataset
- restantes no son expuestos ya que presentan mínimas diferencias.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/TPS-dataset-behaviour.png
-	scale 55
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Comportamiento del dataset para el escenario del problema del viajante.
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:TPS-dataset-behaviour"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-A primera vista la figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:TPS-dataset-behaviour"
-
-\end_inset
-
- permite observar una gran concentración de datos sobre los extremos para
- los valores de precisión y tiempo de respuesta.
- En el primer caso, aproximadamente un 94% de los datos toman el valor 1,
- y en el segundo caso, un 88% de los datos toman valores entre 0 y 6.77 segundos.
- Este comportamiento uniforme y poco distribuido de los datos obstaculiza
- el desarrollo de un buen modelo predictivo.
- 
-\end_layout
-
-\begin_layout Standard
-Respecto al atributo 
-\emph on
-accuracy
-\emph default
-, si bien presenta más dispersión entre los datos, aproximadamente un 82%
- circunda alrededor del valor 1 y un 15% sobre valores cercanos a 0.008.
- 
-\end_layout
-
-\begin_layout Subsection
-Escenario 2: Servicios para detección de rostros
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:Escenario-2:-Servicios"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Hoy en día muchas soluciones para detección de rostro se proporcionan como
- servicios Web, que aunque no son tan rápidos y usables sin conexión a Internet
- como las bibliotecas de software, resultan generalmente más precisos y
- proporcionan características muy peculiares del rostro.
- Sin embargo, el rendimiento y la precisión de los servicios varían según
- las propiedades de la imagen (tamaño, foco, oclusiones) y contexto de ejecución
- (capacidad de la 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{CPU}
-\end_layout
-
-\end_inset
-
-, conexión de red).
- Por lo tanto el objetivo de este escenario es crear modelos para predecir
- el tiempo de respuesta a partir de características variables de la imagen
- de entrada y de los parámetros de configuración del componente en cuestión.
-\end_layout
-
-\begin_layout Standard
-Los dataset para este dominio han sido formados tras la ejecución de diferentes
- componentes para detección de rostros en imágenes en un único dispositivo
- móvil (Lenovo K3 Note), por tal motivo no se incluyen en los archivos caracterí
-sticas propias del móvil ya que significan valores constantes en la predicción.
- Los componentes involucrados incluyen un servicio o proceso Android (Google
- Play Services (GMS) face detector) y tres servicios Web (FaceRect API,
- Sky Biometry API y Microsoft Face API).
- Estos cuatro componentes serán evaluados a partir de subconjunto de 290
- imágenes pertenecientes al dataset llamado FDDB 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "fddbTechReport"
-
-\end_inset
-
- con características muy variadas.
- Cada servicio es llamado especificando una imagen y un conjunto de parámetros
- booleanos (a través del valor 0 y 1) que determinan las funciones requeridas
- del algoritmo determinado.
- En los cuatro servicios, el tiempo de respuesta es una variable continua
- y registrada en milisegundos.
- 
-\end_layout
-
-\begin_layout Standard
-A continuación se detallan las principales características de los servicios
- y los respectivos dataset creados para cada uno:
-\end_layout
-
-\begin_layout Paragraph
-GMS
-\end_layout
-
-\begin_layout Standard
-La compañía Google ha implementado una colección extensa y variada de aplicacion
-es para Android.
- Entre ellas, ofrece el paquete ‘com.google.android.gms.vision’ el cual proporciona
- una funcionalidad común para trabajar con detectores de objetos visuales.
- En la figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:GooglePlay-services"
-
-\end_inset
-
-se muestra la forma en que el objeto 
-\emph on
-GoogleAPIClient
-\emph default
- proporciona una interfaz para conectar y hacer llamadas a cualquiera de
- los servicios de Google Play disponibles tales como Google Play Games,
- Google Drive, Google Maps, etc 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/GooglePlay-services.png
-	scale 55
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Esquema conceptual para el uso de servicios de Google Play Services.
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:GooglePlay-services"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-El algoritmo permite setear tres parámetros diferentes (
-\emph on
-allLandmarks
-\emph default
- , 
-\emph on
-allClassifications
-\emph default
- , 
-\emph on
-accurateMode
-\emph default
-) dando lugar a 8 configuraciones posibles por imagen.
- Para el servicio GMS se utilizaron 290 imágenes originando un dataset de
- 2320 instancias.
- 
-\end_layout
-
-\begin_layout Standard
-Archivo Dataset: 
-\emph on
-ResponseTime - Google Play Service face detector.csv
-\emph default
-.
-\end_layout
-
-\begin_layout Paragraph
-FaceRect API y Sky Biometry API
-\end_layout
-
-\begin_layout Standard
-Los servicios web 
-\emph on
-SkyBiometry
-\emph default
- y 
-\emph on
-FaceRect
-\emph default
- son consumidos directamente desde la aplicación online 
-\emph on
-Mashape
-\emph default
-, la cual ofrece una gran variedad de aplicaciones, incluida una colección
- de Aplicaciones sobre detección y reconocimiento de rostros.
- SkyBiometry y FaceRect son aplicaciones que utilizan interfaz REST, es
- decir, los métodos son llamados a través de internet usando los métodos
- 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{HTTP}
-\end_layout
-
-\end_inset
-
- standard como GET y POST a las direcciones correspondientes.
- Dependiendo de los parámetros especificados en el request, el servidor
- puede generar la respuesta tanto en formato JSON como 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{XML}
-\end_layout
-
-\end_inset
-
-.
- Adicionalmente, se utilizó el servicio GMS Visión de Google a partir de
- la librería correspondiente.
- Los tres servicios son descritos en detalle en el apéndice B.
-\end_layout
-
-\begin_layout Standard
-El algoritmo de la aplicación FaceRect permite setear sólo una opción (
-\emph on
-features
-\emph default
-) por imagen, de modo que se construyó un dataset con sólo dos propiedades,
- incluyendo el tiempo de respuesta y un total de 54 instancias.
- 
-\end_layout
-
-\begin_layout Standard
-Archivo Dataset: 
-\emph on
-ResponseTime - FaceRect API.csv
-\emph default
-.
- 
-\end_layout
-
-\begin_layout Standard
-Por otro lado, el algoritmo de Sky Biometry permite setear siete parámetros
- diferentes dando lugar a 128 configuraciones posibles por imagen (
-\emph on
-aggressive
-\emph default
-, 
-\emph on
-gender
-\emph default
-, 
-\emph on
-glasses
-\emph default
-, 
-\emph on
-smiling
-\emph default
-, 
-\emph on
-mood
-\emph default
-, 
-\emph on
-age
-\emph default
-,
-\emph on
- eyes
-\emph default
-).
- Para el servicio Sky Biometry se utilizaron 30 imágenes originando un dataset
- de 3840 instancias y se incluyen 8 propiedades, además de los parámetros
- configurables del tipo binario se añade el tiempo de respuesta.
- 
-\end_layout
-
-\begin_layout Standard
-Archivo Dataset: 
-\emph on
-ResponseTime - SkyBiometry API.csv
-\emph default
-.
- 
-\end_layout
-
-\begin_layout Paragraph
-Microsoft Face API
-\end_layout
-
-\begin_layout Standard
-Face API es un servicio web en la nube que provee los algoritmos de detección
- y reconocimiento de rostros más avanzados.
- El servicio es consumido a través del sitio de Microsoft y las respuestas
- son retornadas en formato JSON.
- El algoritmo permite setear seis propiedades (
-\emph on
-landmarks
-\emph default
-, 
-\emph on
-age
-\emph default
-, 
-\emph on
-gender
-\emph default
-, 
-\emph on
-facialHair
-\emph default
-, 
-\emph on
-smile
-\emph default
- y 
-\emph on
-headPos
-\emph default
-).
- El dataset está formado por 1826 instancias y siete propiedades, además
- de los parámetros configurables como atributos binarios se incluye el tiempo
- de respuesta.
- 
-\end_layout
-
-\begin_layout Standard
-Archivo Dataset: 
-\emph on
-ResponseTime - Microsoft Face API.csv
-\emph default
-.
- 
-\end_layout
-
-\begin_layout Standard
-En la figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:face-services-dataset-behaviour"
-
-\end_inset
-
- que se muestra a continuación se expone el comportamiento de los datos
- del atributo 
-\emph on
-Tiempo de respuesta
-\emph default
- para cada uno de los servicios, en referencia con la imagen A) FaceRect
- API, B) Microsoft Face API, C) Google Play Service y D) Sky Biometry API.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/face-services-dataset-behaviour.png
-	scale 55
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Comportamiento del atributo ‘Tiempo de respuesta’ de los servicios de detección
- de rostros.
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:face-services-dataset-behaviour"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-El servicio Sky Biometry presenta entre sus datos un 5% de valores infrecuentes
- y en esos casos valores extremos, siendo el único servicio en presentar
- estas características.
- 
-\end_layout
-
-\begin_layout Standard
-El servicio de Microsoft Face arrojó valores de tiempo de respuesta uniformement
-e distribuidos en el intervalo tomando la forma de campana de Gauss, los
- datos se distribuyen simétricamente sobre el intervalo, es decir, no hay
- presencia de sesgos hacia la izquierda o hacia la derecha.
- Google Play también tiene una distribución de Gauss con sesgo hacia la
- izquierda.
- Puede observarse que presenta un intervalo muy amplio, de modo que las
- propiedades configurables del algoritmo incrementan considerablemente el
- tiempo de operación.
- Sin embargo, al contrastarlo con el servicio de FaceRect, el mínimo de
- tiempo requerido por este servicio es mucho mayor que el tiempo máximo
- arrojado por el de Google Play, aún así cualquier análisis sobre el servicio
- FaceRect puede ser precipitado, ya que se evaluó con un bajo número de
- instancias.
- 
-\end_layout
-
-\begin_layout Subsection
-Escenario 3: Problema de la mochila
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:Escenario-3:-Problema"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Al igual que el problema del agente viajero, el problema de la mochila o
- ‘Knapsack problem’ por su nombre en inglés, es un problema NP-Completo
- de optimización combinatoria, es decir, se busca la mejor solución entre
- un conjunto finito de posibles soluciones al problema.
- El problema simula la colocación de ítems u objetos en una mochila de tal
- forma que se maximice el valor de los ítems que contiene con la restricción
- de no superar el peso (o volumen) máximo que puede soportar la mochila.
-\end_layout
-
-\begin_layout Standard
-La evaluación de este dominio se llevó a cabo en dos modelos distintos de
- dispositivos móviles (Samsung Galaxy S3 y Lenovo K3 Note) cuyo objetivo
- es crear modelos de predicción del tiempo de respuesta y la optimalidad
- del componente, es decir, la relación entre la solución encontrada y la
- solución óptima retornando un valor entre cero y uno.
- Para este dominio se implementaron dos algoritmos de resolución al problema
- como componentes, el algoritmo greedy de complejidad O(n2 log(n)) y el
- algoritmo backtracking que encuentra la solución óptima pero en tiempo
- exponencial O(2n).
- Ambos componentes fueron implementados puramente en Java.
- Las instancias del problema se obtuvieron aleatoriamente de las cuales
- se consideraron los siguientes atributos: 
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Primero
-\begin_inset space ~
-\end_inset
-
-ID
-\begin_inset space ~
-\end_inset
-
-de
-\begin_inset space ~
-\end_inset
-
-Operación.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-'KnapsackWeightRatio’: teniendo en cuenta W como el peso límite de la mochila
- y bi los pesos individuales de cada ítem, se calcula bajo la fórmula 
-\begin_inset Formula $KWR=W/b_{1}+b_{2}+...+b_{n}$
-\end_inset
-
- arrojando valores entre 0 y 1
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Número de ítems en la mochila denotado como N.
- 
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Tiempo de respuesta registrado en segundos.
- 
-\end_layout
-
-\end_deeper
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Segundo
-\begin_inset space ~
-\end_inset
-
-Nombre
-\begin_inset space ~
-\end_inset
-
-de
-\begin_inset space ~
-\end_inset
-
-Componente.
- 
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Optimalidad o precisión de los componentes siempre medida respecto a la
- solución brindada por el algoritmo Backtracking.
- 
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Valor solución al problema.
- 
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-Respecto a las características propias del dispositivo de ejecución, sólo
- se tomó en cuenta la frecuencia de CPU ya que ambos algoritmos son single
- threads y corren en CPU, con la suposición que la frecuencia de CPU incide
- sobre la predicción.
- 
-\end_layout
-
-\begin_layout Standard
-Se formaron cuatro dataset para este escenario, dos por cada uno de los
- dispositivos móviles evaluados.
- Bajo el nombre 
-\emph on
-Optimality and Response time - dispositivo XXX
-\emph default
- se crearon datasets de 720 instancias (360 para cada uno de los componentes)
- y siete propiedades como se describieron anteriormente (Grupo A y B).
- Las entradas del problema fueron consideradas desde un mínimo de 5 hasta
- un tamaño máximo de 24 ítems límite impuesto debido a la complejidad del
- algoritmo backtracking y su correspondiente latencia exponencial.
- Por cada ítem se evaluaron 18 entradas al problema generadas aleatoriamente
- a partir de cuatro valores: cantidad total de ítems, máximo valor y peso
- de un ítem, y finalmente el peso o capacidad de la mochila.
- 
-\end_layout
-
-\begin_layout Standard
-Por otro lado, bajo el nombre 
-\emph on
-Response time - Greedy algorithm - dispositivo XXX
-\emph default
-, se crearon datasets de 4704 instancias y cuatro propiedades (Grupo A)
- con entradas del problema de tamaño mínimo de 5 ítems, e incrementalmente
- hasta un máximo de 200, con 24 entradas dedicadas a cada número de ítem
- generadas también aleatoriamente.
- A continuación en lafigura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Knapsack-dataset-behaviour"
-
-\end_inset
-
- se muestra el comportamiento de los datos del atributo 
-\emph on
-Tiempo de respuesta
-\emph default
-, en referencia a la imagen, A) ‘Opt & Resp Lenovo K3’, B) ‘Opt & Resp Samsung
- Galaxy S3’, C) Greedy Lenovo K3 y D) Greedy Samsung S3.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/Knapsack-dataset-behaviour.png
-	scale 55
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Comportamiento del atributo ‘Tiempo de respuesta’ para el problema de la
- mochila.
- 
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Knapsack-dataset-behaviour"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-En la ejecución de los algoritmos de Backtracking y Greedy en ambos dispositivos
- (Imagen A y B) se observa una concentración aproximada del 93% de los datos
- en un intervalo muy pequeño y un 5% de los datos se encuentran en el intervalo
- mayor a 1 segundo, por lo cual podría concluirse que son valores atípicos
- o poco frecuentes.
- Este comportamiento muy homogéneo de los datos, dificultará la construcción
- de un modelo predictivo de alta calidad.
- Por otro lado, los dataset que incluyen al algoritmo Greedy, presentan
- más dispersión de los datos cuya distribución toma forma exponencial (Imagen
- C) y forma de campana de Gauss con sesgo hacia la izquierda (Imagen D).
- La heterogeneidad en los datos puede posibilitar la construcción de un
- buen modelo.
- Respecto al análisis de los valores registrados, se puede observar que
- las mismas pruebas ejecutadas en el dispositivo Samsung Galaxy S3 consumen
- notoriamente más tiempo de operación.
-\end_layout
-
-\begin_layout Standard
-Por otro lado, se expone también en la figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Knapsack-optimi-dataset-behaviour"
-
-\end_inset
-
- el comportamiento para el atributo optimalidad de los dataset que incluyen
- ambos algoritmos.
- (Backtracking y Greedy).
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/Knapsack-optimi-dataset-behaviour.png
-	scale 55
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Comportamiento del atributo ‘Optimalidad’ para el problema de la mochila
- 
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Knapsack-optimi-dataset-behaviour"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Las pruebas ejecutadas en el modelo K3 de Lenovo arrojaron valores de optimalida
-d muy altos, un 80% de los datos con optimalidad del 100%, y menos del 5%
- del total adquiere valores por debajo de 0.95.
- Esta cifra incluye valores extremos que representan el 1% de la totalidad
- de observaciones.
- Por lo tanto, la solución brindada por el algoritmo Greedy es generalmente
- óptima.
- Por otro lado, las pruebas ejecutadas en el dispositivo Samsung Galaxy
- arrojaron un grado de optimalidad del 69%, y sólo un 12% de los datos correspon
-den a valores entre 0.9 y 1.0, sin incluir este último.
- Se presume que el dataset presenta algunas anomalías ya que un 10% de los
- datos tienen valores superiores a 1.0, contraponiendo el concepto de optimalidad.
- 
-\end_layout
-
-\begin_layout Subsection
-Escenario 4: Multiplicación de matrices
+Escenario 1: Multiplicación de matrices
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:Escenario-4:-Multiplicación"
@@ -1983,37 +1108,12 @@ El producto de matrices corresponde a problemas de clase P ya que a diferencia
 
 \begin_layout Standard
 Los dataset para este dominio han sido formados tras la ejecución de diferentes
- algoritmos de multiplicación de matrices, con tamaños variados de matrices
- sobre 2 modelos de dispositivos móviles, Lenovo K3 y Samsung Galaxy S3.
- Lo interesante de este dataset, es que los algoritmos fueron implementados
- con diferentes librerías y diseñados para ser ejecutados por diferente
- elementos de hardware (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{CPU}
-\end_layout
-
-\end_inset
-
-, 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{GPU}
-\end_layout
-
-\end_inset
-
-, etc).
+ algoritmos de multiplicación de matrices, con tamaños variados de matrices.
+ Existen dos clases de datasets, aquellos que involucran el component RenderScri
+pt y aquellos que lo excluyen.
+ Para el primer caso se generaron 894 instancias lo cual comprende un total
+ de 149 entradas por componente.
+ Para el segundo caso, el dataset se compone de 745 instancias.
  
 \end_layout
 
@@ -2192,8 +1292,8 @@ s a partir del número de filas y columnas de la primer matriz denominada
  B, esta distinción es importante teniendo en cuenta la propiedad de no
  conmutatividad del producto de matrices.
  Adicionalmente, ambas matrices pueden ser configuradas externamente.
- De cada problema, las propiedades que se tomaron en cuenta fueron: el número
- de columnas de la primer matriz (
+ De cada instancia del problema, las entradas que se tomaron en cuenta fueron:
+ el número de columnas de la primer matriz (
 \emph on
 AColumn
 \emph default
@@ -2205,9 +1305,13 @@ ARow
 \emph on
 BColumn
 \emph default
-), la complejidad temporal de la operación definida como O(AColumn x ARow
- x BColumn), el nombre del componente y el tiempo de respuesta de la operación
- registrada en segundos.
+).
+\end_layout
+
+\begin_layout Standard
+Por último, el dataset incluye atributos de la ejecución del componente;
+ la complejidad temporal de la operación definida como O(AColumn x ARow
+ x BColumn) y el tiempo de respuesta de la operación registrada en segundos.
  No fueron incluidos atributos relativos al dispositivo de ejecución, sin
  embargo podrían considerarse propiedades como número de cores de 
 \begin_inset ERT
@@ -2237,25 +1341,41 @@ ac{GPU}
 
 , frecuencia, etc.
  ya que se piensa son buenos predictores de tiempo para algunos algoritmos.
- Los dataset bajo el nombre 
-\emph on
-Response time NxNxN - Samsung Galaxy S3
-\emph default
- y 
-\emph on
-Response time NxNxN - Lenovo K3 Note
-\emph default
- se componen de 894 instancias lo cual comprende un total de 149 entradas
- por cada uno de los seis componentes.
- Por otro lado, los dataset bajo el nombre de 
-\emph on
-Response time NxMxL - Sin RenderScript component - Samsung Galaxy S3
-\emph default
- y 
-\emph on
-Response time NxMxL - Sin RenderScript component - Lenovo K3 Note
-\emph default
- excluyen, la versión implementada con RenderScript y comprenden 745 instancias.
+ 
+\end_layout
+
+\begin_layout Standard
+Las pruebas fueron ejecutadas sobre 2 modelos de dispositivos móviles, Lenovo
+ K3 y Samsung Galaxy S3.
+ Lo interesante de este dataset, es que los algoritmos fueron implementados
+ con diferentes librerías y diseñados para ser ejecutados por diferente
+ elementos de hardware (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{CPU}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{GPU}
+\end_layout
+
+\end_inset
+
+, etc).
  
 \end_layout
 
@@ -2360,6 +1480,779 @@ ac{GPU}
  
 \end_layout
 
+\begin_layout Subsection
+Escenario 2: Algoritmos para el problema del viajante
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Escenario-1:-Algoritmos"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En el campo de la teoría de complejidad computacional, el problema del viajante
+ o TSP por sus siglas en inglés, es tratado como un problema NP-Completo
+ y es modelado como un grafo de manera que las ciudades son sus vértices,
+ los caminos son las aristas y las distancias entre caminos son los pesos
+ de las aristas.
+ Es un problema de minimización tras la búsqueda de un recorrido completo
+ que comienza y finaliza en un vértice específico y visita el resto de los
+ vértices exactamente una vez con coste mínimo.
+ Existen muchas variantes del problema, una de ellas se trata del TSP simétrico
+ en el cual la distancia entre un par de ciudades es la misma en cada dirección
+ formando un grafo ponderado no dirigido.
+ Esta variante fue la versión considerada por la herramienta.
+ 
+\end_layout
+
+\begin_layout Standard
+Los dataset para este dominio han sido formados tras la ejecución de algoritmos
+ de resolución del problema del viajante.
+ Se generaron archivos de entrenamiento compuestos por 192 instancias, considera
+ndo 32 entradas por componente.
+\end_layout
+
+\begin_layout Standard
+Los componentes o algoritmos considerados para este dominio se describen
+ a continuación: 
+\end_layout
+
+\begin_layout Description
+Best
+\begin_inset space ~
+\end_inset
+
+Fit algoritmo heurístico que selecciona las ciudades de acuerdo al costo
+ de sus trayectos y son incorporadas al conjunto Solución en base al cálculo
+ de la distancia marginal de las intersecciones..
+ 
+\end_layout
+
+\begin_layout Description
+Nearest
+\begin_inset space ~
+\end_inset
+
+neighbour partiendo de alguna ciudad arbitraria se analizan todos los vértices
+ adyacentes y aún no visitados, y se añade a la solución aquel vértice cuya
+ arista de costo sea la mínima.
+ 
+\end_layout
+
+\begin_layout Description
+Lineal
+\begin_inset space ~
+\end_inset
+
+Programming realiza una búsqueda exhaustiva simulando el algoritmo backtracking,
+ considerando restricciones y funciones objetivo como fórmulas matemáticas.
+ 
+\end_layout
+
+\begin_layout Description
+Prim crea un árbol de recubrimiento sobre el grafo y crea un ciclo euleriano
+ mínimo
+\end_layout
+
+\begin_layout Description
+Kruskal algoritmo similar a Prim en funcionamiento pero no en ejecución,
+ variando su complejidad.
+\end_layout
+
+\begin_layout Description
+Local
+\begin_inset space ~
+\end_inset
+
+Transformations A traves de un grafo hammiltoniano, se analizan las aristas
+ cruzadas obteniendo un nuevo ciclo.
+\end_layout
+
+\begin_layout Standard
+Con el fin de garantizar instancias variadas del problema (diferentes cantidades
+ de ciudades, distintas representaciones y pesos) y para la medicion de
+ los componentes, se utiliza la libreria TSPLib que contiene archivos con
+ multiples instancias del problema..
+ La librería cuenta con 111 archivos de formato TSP, y 32 archivos de formato
+ OPT.TOUR que contienen el recorrido óptimo del archivo que referencian.
+ Los ejemplos oscilan desde 14 y hasta 18512 ciudades con un sólo ejemplo
+ extremo de 85900, y utilizan cuatro funciones de cálculo de la distancia
+ entre ciudades: distancia euclidiana, distancia geométrica, distancia pseudo
+ euclidiana y función techo.
+ Para la obtención de las mediciones correspondientes, se realizó una preselecci
+ón de 32 archivos que comprenden ejemplos de entre 22 y 200 ciudades.
+ Cabe destacar que fue necesaria la implementación de un parser para el
+ uso de los archivos.
+ 
+\end_layout
+
+\begin_layout Standard
+Por último, el dataset incluye atributos de la ejecución del componente;
+ exactitud y precisión en el resultado, tiempo de respuesta y valor solución.
+ En cuanto a la precisión y exactitud de las respuestas se consideraron
+ tres indicadores que toman en cuenta las repeticiones en la respuesta y
+ la totalidad o falta de los vértices incluidos.
+ El indicador TP (
+\emph on
+true positive
+\emph default
+), para los vértices incluidos en la solución, FP(
+\emph on
+false positive
+\emph default
+), para las repeticiones de vértices y FN (
+\emph on
+False Negative
+\emph default
+) para los vértices no incorporados en la solución.
+ Por lo tanto, se consideró: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Precisión=\frac{TP}{FP+TP}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Exactitud=\frac{TP}{FP+TP+FN}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A modo de ejemplo, se presenta en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:TPS-graph-problem"
+
+\end_inset
+
+ un grafo con comienzo en la ciudad A.
+ Suponiendo que un algoritmo de resolución arroja el siguiente camino solución:
+ {A, B, D, A}, se obtiene una precisión del 100% al tener un valor de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{TP}
+\end_layout
+
+\end_inset
+
+ = 3 y un valor de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{FP}
+\end_layout
+
+\end_inset
+
+ = 0 ya que no hay vértices repetidos en la solución, sin embargo, la solución
+ no es correcta ya que no incluye la totalidad de vértices del conjunto
+ (excluye al vértice C).
+ En cambio, al calcular la exactitud se obtiene un valor del 66% al tener
+ un valor de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{TP}
+\end_layout
+
+\end_inset
+
+ = 4, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{FP}
+\end_layout
+
+\end_inset
+
+ = 1 y 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{FN}
+\end_layout
+
+\end_inset
+
+ = 1 brindando un concepto más realista.
+ 
+\end_layout
+
+\begin_layout Standard
+El uso del indicador de precisión o el de exactitud dependerá del contexto
+ en el que se aplique.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/TPS-graph-problem.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ejemplo de grafo para el problema del viajante.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:TPS-graph-problem"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las pruebas fueron llevadas a cabo sobre los dispositivos móviles Samsung
+ Galaxy S4, S5 y S6.
+\end_layout
+
+\begin_layout Standard
+El objetivo de este escenario es la creación de modelos capaces de predecir
+ el tiempo de latencia de cada algoritmo de resolución frente a distintas
+ características de las entradas, y modelos para predecir la precisión en
+ los caminos retornados.
+ En la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:TPS-dataset-behaviour"
+
+\end_inset
+
+ expuesta a continuación se muestra el comportamiento del conjunto de datos
+ de entrenamiento ejecutado en el dispositivo Samsung Galaxy S4; ambos dataset
+ restantes no son expuestos ya que presentan mínimas diferencias.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/TPS-dataset-behaviour.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comportamiento del dataset para el escenario del problema del viajante.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:TPS-dataset-behaviour"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A primera vista la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:TPS-dataset-behaviour"
+
+\end_inset
+
+ permite observar una gran concentración de datos sobre los extremos para
+ los valores de precisión y tiempo de respuesta.
+ En el primer caso, aproximadamente un 94% de los datos toman el valor 1,
+ y en el segundo caso, un 88% de los datos toman valores entre 0 y 6.77 segundos.
+ Este comportamiento uniforme y poco distribuido de los datos obstaculiza
+ el desarrollo de un buen modelo predictivo.
+ 
+\end_layout
+
+\begin_layout Standard
+Respecto al atributo 
+\emph on
+accuracy
+\emph default
+, si bien presenta más dispersión entre los datos, aproximadamente un 82%
+ circunda alrededor del valor 1 y un 15% sobre valores cercanos a 0.008.
+ 
+\end_layout
+
+\begin_layout Subsection
+Escenario 3: Servicios para detección de rostros
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Escenario-2:-Servicios"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hoy en día muchas soluciones para detección de rostro se proporcionan como
+ servicios Web, que aunque no son tan rápidos y usables sin conexión a Internet
+ como las bibliotecas de software, resultan generalmente más precisos y
+ proporcionan características muy peculiares del rostro.
+ Sin embargo, el rendimiento y la precisión de los servicios varían según
+ las propiedades de la imagen (tamaño, foco, oclusiones) y contexto de ejecución
+ (capacidad de la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{CPU}
+\end_layout
+
+\end_inset
+
+, conexión de red).
+\end_layout
+
+\begin_layout Standard
+Los dataset para este dominio han sido formados tras la ejecución de diferentes
+ servicios para detección de rostros en imágenes.
+ Los dataset son particulares a cada servicio, y se conforman por diferente
+ cantidad de entradas e instancias.
+\end_layout
+
+\begin_layout Standard
+Los componentes involucrados incluyen un servicio o proceso Android (Google
+ Play Services (GMS) face detector) y tres servicios Web (FaceRect API,
+ Sky Biometry API y Microsoft Face API).
+ 
+\end_layout
+
+\begin_layout Standard
+A continuación se detallan las principales características de los servicios
+ (componentes contemplados):
+\end_layout
+
+\begin_layout Paragraph
+GMS
+\end_layout
+
+\begin_layout Standard
+La compañía Google ha implementado una colección extensa y variada de aplicacion
+es para Android.
+ Entre ellas, ofrece el paquete ‘com.google.android.gms.vision’ el cual proporciona
+ una funcionalidad común para trabajar con detectores de objetos visuales.
+ En la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:GooglePlay-services"
+
+\end_inset
+
+se muestra la forma en que el objeto 
+\emph on
+GoogleAPIClient
+\emph default
+ proporciona una interfaz para conectar y hacer llamadas a cualquiera de
+ los servicios de Google Play disponibles tales como Google Play Games,
+ Google Drive, Google Maps, etc 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/GooglePlay-services.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Esquema conceptual para el uso de servicios de Google Play Services.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:GooglePlay-services"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El algoritmo permite setear tres parámetros diferentes (
+\emph on
+allLandmarks
+\emph default
+ , 
+\emph on
+allClassifications
+\emph default
+ , 
+\emph on
+accurateMode
+\emph default
+) dando lugar a 8 configuraciones posibles por imagen.
+ Para el servicio GMS se utilizaron 290 imágenes originando un dataset de
+ 2320 instancias.
+ 
+\end_layout
+
+\begin_layout Paragraph
+FaceRect API y Sky Biometry API
+\end_layout
+
+\begin_layout Standard
+Los servicios web 
+\emph on
+SkyBiometry
+\emph default
+ y 
+\emph on
+FaceRect
+\emph default
+ son consumidos directamente desde la aplicación online 
+\emph on
+Mashape
+\emph default
+, la cual ofrece una gran variedad de aplicaciones, incluida una colección
+ de Aplicaciones sobre detección y reconocimiento de rostros.
+ SkyBiometry y FaceRect son aplicaciones que utilizan interfaz REST, es
+ decir, los métodos son llamados a través de internet usando los métodos
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HTTP}
+\end_layout
+
+\end_inset
+
+ standard como GET y POST a las direcciones correspondientes.
+ Dependiendo de los parámetros especificados en el request, el servidor
+ puede generar la respuesta tanto en formato JSON como 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{XML}
+\end_layout
+
+\end_inset
+
+.
+ Adicionalmente, se utilizó el servicio GMS Visión de Google a partir de
+ la librería correspondiente.
+ Los tres servicios son descritos en detalle en el apéndice B.
+\end_layout
+
+\begin_layout Standard
+El algoritmo de la aplicación FaceRect permite setear sólo una opción (
+\emph on
+features
+\emph default
+) por imagen, de modo que se construyó un dataset con sólo dos propiedades,
+ incluyendo el tiempo de respuesta y un total de 54 instancias.
+ 
+\end_layout
+
+\begin_layout Standard
+Por otro lado, el algoritmo de Sky Biometry permite setear siete parámetros
+ diferentes dando lugar a 128 configuraciones posibles por imagen (
+\emph on
+aggressive
+\emph default
+, 
+\emph on
+gender
+\emph default
+, 
+\emph on
+glasses
+\emph default
+, 
+\emph on
+smiling
+\emph default
+, 
+\emph on
+mood
+\emph default
+, 
+\emph on
+age
+\emph default
+,
+\emph on
+ eyes
+\emph default
+).
+ Para el servicio Sky Biometry se utilizaron 30 imágenes originando un dataset
+ de 3840 instancias y se incluyen 8 propiedades, además de los parámetros
+ configurables del tipo binario se añade el tiempo de respuesta.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Microsoft Face API
+\end_layout
+
+\begin_layout Standard
+Face API es un servicio web en la nube que provee los algoritmos de detección
+ y reconocimiento de rostros más avanzados.
+ El servicio es consumido a través del sitio de Microsoft y las respuestas
+ son retornadas en formato JSON.
+ El algoritmo permite setear seis propiedades (
+\emph on
+landmarks
+\emph default
+, 
+\emph on
+age
+\emph default
+, 
+\emph on
+gender
+\emph default
+, 
+\emph on
+facialHair
+\emph default
+, 
+\emph on
+smile
+\emph default
+ y 
+\emph on
+headPos
+\emph default
+).
+ El dataset está formado por 1826 instancias y siete propiedades, además
+ de los parámetros configurables como atributos binarios se incluye el tiempo
+ de respuesta.
+ 
+\end_layout
+
+\begin_layout Standard
+Estos cuatro componentes fueron evaluados a partir de subconjunto de 290
+ imágenes pertenecientes al dataset llamado FDDB 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "fddbTechReport"
+
+\end_inset
+
+ con características muy variadas.
+ Cada servicio es llamado especificando una imagen y un conjunto de parámetros
+ booleanos (a través del valor 0 y 1) que determinan las funciones requeridas
+ del algoritmo determinado.
+ En los cuatro servicios, el tiempo de respuesta es una variable continua
+ y registrada en milisegundos.
+ 
+\end_layout
+
+\begin_layout Standard
+Cabe destacar que las pruebas fueron realizadas en un único dispositivo
+ móvil (Lenovo K3 Note), por tal motivo no se incluyen en los archivos caracterí
+sticas propias del móvil ya que significan valores constantes en la predicción.
+ Por lo tanto el objetivo de este escenario es crear modelos para predecir
+ el tiempo de respuesta a partir de características variables de la imagen
+ de entrada y de los parámetros de configuración del componente en cuestión.
+\end_layout
+
+\begin_layout Standard
+En la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:face-services-dataset-behaviour"
+
+\end_inset
+
+ que se muestra a continuación se expone el comportamiento de los datos
+ del atributo 
+\emph on
+Tiempo de respuesta
+\emph default
+ para cada uno de los servicios, en referencia con la imagen A) FaceRect
+ API, B) Microsoft Face API, C) Google Play Service y D) Sky Biometry API.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/face-services-dataset-behaviour.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comportamiento del atributo ‘Tiempo de respuesta’ de los servicios de detección
+ de rostros.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:face-services-dataset-behaviour"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El servicio Sky Biometry presenta entre sus datos un 5% de valores infrecuentes
+ y en esos casos valores extremos, siendo el único servicio en presentar
+ estas características.
+ 
+\end_layout
+
+\begin_layout Standard
+El servicio de Microsoft Face arrojó valores de tiempo de respuesta uniformement
+e distribuidos en el intervalo tomando la forma de campana de Gauss, los
+ datos se distribuyen simétricamente sobre el intervalo, es decir, no hay
+ presencia de sesgos hacia la izquierda o hacia la derecha.
+ Google Play también tiene una distribución de Gauss con sesgo hacia la
+ izquierda.
+ Puede observarse que presenta un intervalo muy amplio, de modo que las
+ propiedades configurables del algoritmo incrementan considerablemente el
+ tiempo de operación.
+ Sin embargo, al contrastarlo con el servicio de FaceRect, el mínimo de
+ tiempo requerido por este servicio es mucho mayor que el tiempo máximo
+ arrojado por el de Google Play, aún así cualquier análisis sobre el servicio
+ FaceRect puede ser precipitado, ya que se evaluó con un bajo número de
+ instancias.
+ 
+\end_layout
+
 \begin_layout Section
 Resultados y discusión
 \begin_inset CommandInset label
@@ -2381,6 +2274,76 @@ En esta sección final de la evaluación se agrupan los resultados para contrast
  de las técnicas respecto al tiempo de cómputo que insumen y su relación
  con el tamaño del dataset que procesa.
  
+\end_layout
+
+\begin_layout Subsection
+Resultados para el problema de la multiplicación de matrices.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/reponse-matrix.png
+	scale 55
+	BoundingBox 0bp 0bp 596bp 619bp
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultados del escenario ‘Multiplicación de matrices’.
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Resultados-del-response-matrix"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Correlacion muy alta entre los atributos y el valor buscaod (response) por
+ lo tanto cualquier modelo es bueno.
+\end_layout
+
+\begin_layout Standard
+El primer caso analizado es el problema de la multiplicación de matrices.
+ En el cuadro 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Resultados-del-response-matrix"
+
+\end_inset
+
+ se pueden apreciar las métricas obtenidas a partir de los modelos calculados.
+ A simple vista, se puede apreciar que todos los modelos obtenidos presentan
+ una gran correlación, significando que el atributo buscado (response time)
+ tiene una gran dependencia de los atributos contemplados.
+ Esto concluye que el tamaño de las matrices multiplicadas influye en el
+ tiempo de respuesta para obtener el producto de dichas matrices y que cualquier
+a de los modelos estudiados funciona de forma eficiente para este problema.
 \end_layout
 
 \begin_layout Subsection
@@ -2446,8 +2409,8 @@ reference "tab:Resultados-del-atributo"
 
 \end_inset
 
- se desprenden las conclusiones con respecto al primer escenario.
- Como primer punto tanto el modelo de 
+ se desprenden las conclusiones respecto al primer escenario.
+ En primer punto tanto el modelo de 
 \emph on
 MultiLayer Perceptron
 \emph default
@@ -2465,43 +2428,41 @@ ac{SVM}
 \end_inset
 
  son, claramente, los mejores en cuanto a adaptación al modelo.
- Ambos presentan una correlación con los datos de 1 (
+ Ambos presentan una correlación de los datos de 1 (
 \emph on
 CC
 \emph default
-), lo que representa la exactitud de los datos calculado con respecto a
- los reales.
- Como ya se explicó en la sección
+), lo que representa la exactitud de los datos predichos en relacion a los
+ reales.
+ Como se ha se explicado en la sección
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "subsec:Ajuste-del-modelo:"
+reference "sub:Ajuste-del-modelo:"
 
 \end_inset
 
-, esto puede parecernos lo más óptimo, pero observando las métricas y las
- curvas de errores, ambos modelos presentan un problema de overfitting.
+, esto puede parecer lo más óptimo, sin embargo observando las métricas
+ y las curvas de errores, ambos modelos presentan el problema de overfitting.
  
 \end_layout
 
 \begin_layout Standard
-Teniendo esto en cuenta, se descartan ambos como los mejores modelos para
- este tipo de problema.
+Teniendo esto en cuenta, se descartan ambos modelos como los mejores para
+ este tipo de problemas.
  A su vez, se descarta el 
 \emph on
 K-mean Clusterer 
 \emph default
-ya que los niveles de correlación son los mas bajos y los errores los más
- altos.
+ya que presenta los niveles de correlación mas bajos y los errores más altos.
 \end_layout
 
 \begin_layout Standard
-En todos los escenarios presentados, se optó por el caso intermedio de adaptació
-n, considerando que el mismo es el mejor obtenido evitando casos de overfitting
- o underfitting.
- Este se escogió teniendo en cuenta los valores de CC intermedios, con un
- error MAE aceptable considerando los valores propios y errores promedios
- bajos.
- Así, en este caso, el más eficiente es el 
+En todos los escenarios presentados, se ha optado por el caso intermedio
+ de adaptación, considerando que el mejor modelo obtenido será aquel que
+ evite casos de overfitting o underfitting, focalizando el análisis en los
+ valores de CC intermedios, con un error MAE aceptable considerando los
+ valores propios y errores promedios bajos.
+ Por lo tanto, en este caso, el modelo más eficiente es el 
 \emph on
 Linear Regression.
  
@@ -2546,8 +2507,8 @@ Lineas de predicción en la herramienta Nekonata
 \end_layout
 
 \begin_layout Standard
-Con el mismo método de analisis se analizó el dataset TSPlib.csv considerando
- la precisión del algoritmo.
+Aplicando el mismo método de analisis anterior, se analizó el dataset TSPlib.csv
+ considerando el atributo precisión del algoritmo.
 \end_layout
 
 \begin_layout Standard
@@ -2587,8 +2548,8 @@ Resultados del atributo precisión para el escenario ‘problema del viajante’
 \end_layout
 
 \begin_layout Standard
-Así, se puede apreciar que los que presentan una mejor adaptación en este
- caso siguen siendo el 
+A través de la figura se aprecia que los modelos que presentan una mejor
+ adaptación para este problema continuan siendo el 
 \begin_inset ERT
 status open
 
@@ -2615,8 +2576,8 @@ ac{SMO}
 \end_inset
 
 .
- Aun así, considerando el analisis antes hecho, esta vez el mejor aloritmo
- es el 
+ Aun así, considerando el analisis realizado previamente, para el atributo
+ precision el mejor algoritmo es el 
 \begin_inset ERT
 status open
 
@@ -2634,17 +2595,17 @@ ac{SGD}
 \end_layout
 
 \begin_layout Standard
-Si tenemos en cuenta lo visto en la sección 
+Teniendo en cuenta los conceptos expuestos en la sección 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Regresión-Lineal"
 
 \end_inset
 
-, el mejor algoritmo teórico que mejor se adapta a el problem del viajante
+, el mejor algoritmo teórico que mejor se adapta al problema del viajante
  es el 
 \emph on
-LinearRegression 
+modelo LinearRegression 
 \emph default
 es sus dos implementaciones (Ridge y SGD).
  
@@ -2725,10 +2686,6 @@ reference "tab:Resultados-response-face"
 \end_layout
 
 \begin_layout Standard
-<Añadir conclusiones>
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float table
 placement H
 wide false
@@ -2772,54 +2729,24 @@ name "tab:Resultados-response-face"
 
 \end_layout
 
-\begin_layout Subsection
-Resultados para el problema de la mochila.
-\end_layout
-
 \begin_layout Standard
-<Añadir conclusiones >
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/response-knapsack.png
-	scale 55
-	BoundingBox 0bp 0bp 596bp 619bp
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Resultados del atributo Tiempo de respuesta para el escenario ‘problema
- de la mochila’.
+Continuando con la misma línea de análisis, los datos exhibidos demuestran
+ que el mejor modelo presentado para predecir el tiempo de respuesta para
+ el problema de detección de rostros es el MultiLayer Perceptron.
+ El algoritmo no sólo ha arrojado los valores más bajos del error de predicción
+ sino que en todos los casos, demuestra una buena adaptación a los dataset
+ que por su naturaleza, difieren en volumen de instancias, cantidad y tipo
+ de atributos.
  
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
+\begin_layout Standard
+A continuación, se presentan las lineas de predicción para demostrar el
+ poder de analisis del modelo.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
+\begin_inset Float figure
 placement H
 wide false
 sideways false
@@ -2828,9 +2755,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/precision-knapsack.png
-	scale 55
-	BoundingBox 0bp 0bp 596bp 619bp
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/response_face_lc.png
+	scale 30
 
 \end_inset
 
@@ -2841,52 +2767,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultados del atributo precisión para el escenario ‘problema de la mochila’.
- 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Resultados para el problema de la multiplicación de matrices.
-\end_layout
-
-\begin_layout Standard
-<Añadir conclusiones>
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/reponse-matrix.png
-	scale 55
-	BoundingBox 0bp 0bp 596bp 619bp
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Resultados del escenario ‘Multiplicación de matrices’
+Figura comparativa de las predicciones realizadas por el MultiLayer Perceptron
 \end_layout
 
 \end_inset
@@ -2908,6 +2789,15 @@ name "sec:Conclusiones"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Support Vector Machine: No se ejecutó por el tiempo de ejecución.
+ --> Muchas instancias (Matrices, Mochila y parte de face)
+\end_layout
+
+\begin_layout Standard
+Mejor algoritmo: Neural Network.1
 \end_layout
 
 \end_body

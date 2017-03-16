@@ -1,9 +1,7 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
 \begin_document
 \begin_header
-\save_transient_properties true
-\origin unavailable
 \textclass book
 \use_default_options true
 \maintain_unincluded_children false
@@ -11,16 +9,16 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman "" "default"""
-\font_sans "" "default"""
-\font_typewriter "" "default"""
-\font_math "" "auto"""
+\font_roman "default"
+\font_sans "default"
+\font_typewriter "default"
+\font_math "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100 100
-\font_tt_scale 100 100
+\font_sf_scale 100
+\font_tt_scale 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -2580,11 +2578,6 @@ width "100col%"
 special "none"
 height "1in"
 height_special "totalheight"
-thickness "0.4pt"
-separation "3pt"
-shadowsize "4pt"
-framecolor "black"
-backgroundcolor "none"
 status collapsed
 
 \begin_layout Plain Layout
@@ -2667,6 +2660,88 @@ name "fig:config-correlation"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsubsection
+Formato de los resultados
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Formato-de-los"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La herramienta devuelve como resultado un archivo en formato TXT almacenando,
+ por un lado, los valores resultantes de los parámetros fundamentales de
+ cada técnica y, por otro lado, la descripción del modelo construido.
+ La herramienta genera un archivo por cada técnica elegida por el usuario
+ para optimizar, en la dirección especificada en la configuración bajo el
+ nombre de la técnica.
+ La figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:linear-regression-result"
+
+\end_inset
+
+ permite una descripción gráfica de lo expresado anteriormente, donde detalla
+ A) los parámetros, B) Nombre del modelo y C) la función definida para el
+ atributo de predicción.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/linear-regression-result.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ejemplo de resultado del modelo ‘Linear Regression’.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:linear-regression-result"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La manera en que los datos son expuestos al usuario no representa un formato
+ compatible para cualquier herramienta sobre aprendizaje de máquina, esto
+ se debe a que no existe actualmente, un formato estándar para almacenar
+ los modelos, y esta discrepancia entre las herramientas disponibles exige
+ un seteo manual de las técnicas por cada evaluación que se realice
 \end_layout
 
 \end_body

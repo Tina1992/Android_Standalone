@@ -2501,6 +2501,13 @@ representa la diferencia entre el valor predicho y el valor verdadero.
 
 \begin_layout Subsection
 Ajuste del modelo: Overfitting y Underfitting
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Ajuste-del-modelo:"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

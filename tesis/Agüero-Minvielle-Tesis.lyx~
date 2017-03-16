@@ -285,29 +285,25 @@ Resumen
 \end_layout
 
 \begin_layout Standard
-Durante los últimos años el desarrollo de aplicaciones en sistemas Android
- ha ido creciendo exponencialmente debido a la gran capacidad de cómputo
- que han adquirido los dispositivos móviles, haciendo que la reutilización
+Durante los últimos años el desarrollo de aplicaciones mobiles ha ido creciendo
+ exponencialmente debido a la proliferación de los dispositivos mobiles
+ y el aumento de su capacidad de cómputo, haciendo que la reutilización
  de software mediante la integración de componentes de terceros se torne
  una práctica muy común.
  De este modo la misma funcionalidad suele ser ofrecida por componentes
  alternativos que difieren en sus propiedades no-funcionales o atributos
- de calidad, componentes con sus propias características, limitaciones y
- prestaciones, simplemente 
-\emph on
-cajas negras 
-\emph default
-a la vista del desarrollador.
+ de calidad.
  Por lo tanto, la elección del servicio más adecuado para ejecutarse en
  un determinado contexto, no es tarea sencilla.
  
 \end_layout
 
 \begin_layout Standard
-Las limitaciones de hardware de los dispositivos móviles hace incapaz la
- ejecución o prueba de todos los servicios para determinar, luego, el más
- adecuado de acuerdo a su calidad de servicio y a la funcionalidad requerida.
- En este punto, es donde toma importancia el proceso de aprendizaje automático.
+Por razones prácticas es costosa la ejecución o prueba de todos los servicios
+ para determinar, luego, el más adecuado de acuerdo a su calidad de servicio
+ y a la funcionalidad requerida.
+ En este punto, es donde toma importancia definir un proceso para la medición
+ y predicción de las propiedades no-funcionales.
  
 \end_layout
 
@@ -321,20 +317,13 @@ A través de la aplicación de modelos predictivos basados en la experiencia,
  de máquina es el desarrollo de sistemas que puedan cambiar su comportamiento
  (decisión) de manera autónoma basados en su experiencia (información generaliza
 da).
- El aprendizaje de máquina está principalmente centrado en el estudio de
- la complejidad computacional y enfocado en el diseño de soluciones factibles
- a esos problemas.
- 
 \end_layout
 
 \begin_layout Standard
-El presente trabajo presenta un enfoque basado en tres fases complementarias
- y se proponen dos herramientas diseñadas para cumplir con los objetivos
- de las dos primeras fases.
- De este modo, se expone una herramienta de medición que facilita la obtención
- de indicadores de propiedades de componentes Android y otra herramienta
- que propone diferentes técnicas de regresión sobre las mediciones obtenidas
- previamente.
+Se proponen dos herramientas para asistir la aplicación del enfoque.
+ Una de ellas facilita la obtención de indicadores de propiedades de componentes
+ Android y la otra herramienta permite utilizar diferentes técnicas de regresión
+ sobre las mediciones obtenidas previamente.
  Así, se logra construir modelos predictivos sobre alguna propiedad de interés
  de algún componente específico.
  
@@ -846,6 +835,13 @@ acro{UML}{Unified Modeling Language}
 
 \backslash
 acro{VM}{Virtual Machine}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{XML}{eXtensible Markup Language}
 \end_layout
 
 \begin_layout Plain Layout

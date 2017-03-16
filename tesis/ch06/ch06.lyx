@@ -89,6 +89,22 @@ Trabajos Futuros
 \end_layout
 
 \begin_layout Standard
+TODO: Muestra representativa de los datasets mayores para el SMO :)
+\end_layout
+
+\begin_layout Standard
+Modificar el codigo para saber cuanto tiempo llevan los algoritmos.
+\end_layout
+
+\begin_layout Standard
+Multithread -> lambda
+\end_layout
+
+\begin_layout Standard
+Comparacion de librerias 
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 

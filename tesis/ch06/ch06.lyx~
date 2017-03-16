@@ -1,5 +1,5 @@
-#LyX 2.0 created this file. For more info see http://www.lyx.org/
-\lyxformat 413
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
 \begin_document
 \begin_header
 \textclass book
@@ -12,13 +12,13 @@
 \font_roman default
 \font_sans default
 \font_typewriter default
+\font_math auto
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
-
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -29,15 +29,24 @@
 \use_hyperref false
 \papersize default
 \use_geometry false
-\use_amsmath 1
-\use_esint 1
-\use_mhchem 1
-\use_mathdots 1
-\cite_engine natbib_authoryear
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
 \suppress_date false
+\justification true
 \use_refstyle 1
 \index Index
 \shortcut idx
@@ -51,7 +60,7 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
-\tracking_changes true
+\tracking_changes false
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
@@ -71,326 +80,8 @@ name "chap:Conclusiones"
 
 \end_layout
 
-\begin_layout Standard
-En este trabajo se presentó un modelo de estimaciones de costo energético
- para el consumo de servicios en aplicaciones DI4WS, un framework de invocación
- que permite un alto desacople entre clientes y proveedores.
- Este modelo brinda la posibilidad de crear prácticas inteligentes que utilicen
- las estimaciones para disminuir el gasto energético en dispositivos móviles.
- 
-\end_layout
-
-\begin_layout Standard
-Ciertamente, la utilización del paradigma 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{SOC}
-\end_layout
-
-\end_inset
-
- se está extendiendo cada vez más, debido a las ventajas que este presenta
- para el desarrollo de aplicaciones, promoviendo la reutilización de componentes.
- En primer lugar, en este trabajo se presentaron las características de
- este paradigma y se describió su arquitectura, analizando los desafíos
- que este presenta.
- Luego, se estudiaron los servicios Web, su materialización más popular,
- examinando los principales artefactos y mecanismos involucrados en estos.
- Entre los artefactos más importantes de esta materialización, se estudió
- 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{WSDL}
-\end_layout
-
-\end_inset
-
- un lenguaje basado en 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{XML}
-\end_layout
-
-\end_inset
-
- para describir servicios Web.
- 
-\end_layout
-
-\begin_layout Standard
-Como resultado de la creciente utilización de 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{SOC}
-\end_layout
-
-\end_inset
-
- en el desarrollo de aplicaciones, hoy en día, los servicios Web son populares
- en diversas áreas, como por ejemplo la de los dispositivos móviles.
- En este sentido, se introdujeron las nociones básicas de los dispositivos
- móviles, estudiando también, el sistema operativo más difundido en estos
- dispositivos, Android.
- Se analizaron las características más importantes del mismo, y se presentaron
- los conceptos necesarios para comprender el funcionamiento de las aplicaciones
- en este sistema.
-\end_layout
-
-\begin_layout Standard
-La utilización de servicios Web en dispositivos móviles presenta ciertos
- desafíos.
- Estos dispositivos cuentan con energía limitada, por tanto, empieza a cobrar
- gran importancia el estudio de las implicancias energéticas que esto tiene,
- principalmente relacionadas con la duración alcanzable de batería.
- En este sentido, se describieron las investigaciones actuales en el área.
- Por un lado, se presentaron los trabajos que apuntaban a reducir el consumo
- energético con foco en el dispositivo, diferenciándose dos categorías,
- es decir de propósito general, y específicas de 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{SOC}
-\end_layout
-
-\end_inset
-
-.
- Con respecto al primer caso, las investigaciones indican que las conexiones
- que emplean la tecnología 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{UTMS}
-\end_layout
-
-\end_inset
-
- son uno de los principales factores que afecta el consumo energético, revelando
- que el orden y el tiempo entre las transferencias juegan un papel crucial
- en el gasto que estas generan.
- Para el segundo caso, debido a que las invocaciones de servicios involucran
- transferencias, los trabajos en el área indican que también los servicios
- Web se ven afectados por el orden en que realizan, en este caso, las invocacion
-es.
- Adicionalmente, otras investigaciones proponen reducir el costo necesario
- para la invocación mediante utilización de proxies.
-\end_layout
-
-\begin_layout Standard
-Por otro lado, otros enfoques proponen reducir el cómputo realizado en el
- dispositivo, mediante la ejecución de porciones de código en otros dispositivos
- no móviles.
- Sin embargo, este tipo de técnicas cobra sentido a partir de cierto umbral
- de complejidad computacional en las aplicaciones.
-\end_layout
-
-\begin_layout Standard
-Más arriba se hizo hincapié en que la utilización del paradigma 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{SOC}
-\end_layout
-
-\end_inset
-
- favorece el desarrollo de aplicaciones a través de la reutilización de
- componentes.
- Sin embargo, es importante que las aplicaciones aíslen sus componentes
- de los contratos provistos por los servicios, utilizándolos de manera transpare
-nte y totalmente desacoplada.
- En este contexto, DI4WS es un enfoque para el desarrollo de aplicaciones
- 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{SOC}
-\end_layout
-
-\end_inset
-
- que mediante la utilización de los patrones 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{DI}
-\end_layout
-
-\end_inset
-
- y Adapter reduce el grado de acoplamiento entre los componentes cliente
- y los contratos de los servicios.
- Así, un desarrollador debe definir en la etapa de diseño las interfaces
- esperadas por el cliente, para después implementar los adaptadores necesarios
- que cumplan con el contrato de un determinado servicio.
- Estos adaptadores forman una capa de adaptadores de servicio, que aísla
- los componentes propios de la aplicación de los contratos provistos por
- terceros.
- Cada adaptador de servicio es un proxy especializado que realiza un conjunto
- 
-\emph on
-micro-operaciones
-\emph default
-, para transformar la signatura de la interfaz esperada por el cliente en
- la interfaz provista por el servicio Web seleccionado.
- 
-\end_layout
-
-\begin_layout Standard
-A pesar de que las investigaciones mencionadas anteriormente atacan el problema
- del consumo energético desde diferentes ángulos, ninguna analiza en detalle
- el impacto de las operaciones involucradas en el proceso de invocación
- a los servicios.
- En este sentido, los adaptadores anteriormente descritos poseen un consumo
- energético asociado, que depende de la cantidad y el tipo de las micro-operacio
-nes involucradas en la adaptación.
- Entonces, el costo energético de estas adaptaciones influye en el proceso
- de invocación de servicios Web, creando un conjunto de alternativas con
- diferente costo energético.
- Consecuentemente, se propuso un modelo que permite estimar el costo energético
- de un 
-\shape italic
-mashup
-\shape default
- de servicios.
- Este modelo apoya sus estimaciones en un catálogo de micro-operaciones,
- previamente definido, que describen una adaptación en términos de operaciones
- elementales.
- El modelo propone entonces, estimar el costo energético de un 
-\shape italic
-mashup
-\shape default
- de servicios en base a la sumatoria de los costos de cada servicio particular,
- que a su vez, se puede describir en términos de la complejidad computacional
- de la adaptación realizada, que depende del costo energético de cada micro-oper
-ación involucrada.
- Finalmente, se exhibió una métrica que compara las estimaciones realizadas
- por el modelo, con el costo real de las alternativas, permitiendo cuantificar
- la validez de las estimaciones.
-\end_layout
-
-\begin_layout Standard
-Por último, se presentaron los experimentos efectuados para validar el enfoque
- propuesto.
- Primero, se realizaron mediciones para establecer el costo de cada micro-operac
-ión.
- Los resultados indicaron que las operaciones con arreglos son las más costosas
- en términos de energía.
- Luego, se creó un caso de estudio con el objetivo de poner a prueba el
- modelo planteado, realizando las estimaciones pertinentes del costo de
- cada 
-\shape italic
-mashup
-\shape default
- de servicios mediante la utilización del costo energético de las micro-operacio
-nes que se midió previamente.
- Con el objetivo de conocer la viabilidad de estas estimaciones, se compararon
- con el costo energético real de cada 
-\shape italic
-mashup
-\shape default
-, utilizando la métrica anteriormente descrita.
- Los resultados indicaron que las estimaciones fueron certeras en un 81%
- de los casos, indicando que, previa generalización del modelo propuesto,
- puede resultar útil para determinar a priori qué servicios son más baratos
- que otros en términos de energía, dadas ciertas interfaces esperadas del
- lado cliente.
- Estas estimaciones también pueden emplearse para dotar a los registros
- de servicios con información adicional acerca del costo de cada servicio.
- Entonces, esto puede ser utilizado para, por ejemplo, seleccionar de manera
- automática un servicio o combinación de ellos a la hora de cubrir una funcional
-idad en una aplicación cliente, donde ésta última solo debe especificar
- el tipo de servicio que requiere, por ejemplo, indicando la interfaz esperada.
- 
-\end_layout
-
 \begin_layout Section
 Limitaciones
-\end_layout
-
-\begin_layout Standard
-La principal limitación que presenta el modelo propuesto en este trabajo,
- parte del problema de la descripción de las adaptaciones en términos de
- micro-operaciones.
- Las micro-operaciones seleccionadas no otorgan la suficiente expresividad
- para describir cualquier adaptación.
- Por ejemplo, no se contempló que una asignación de un elemento de un arreglo,
- posiblemente difiera en costo computacional con respecto a una asignación
- de un atributo de instancia.
- Esto significa que, al no ser del todo precisas las descripciones, las
- estimaciones tampoco lo son.
- Para solventar esto, primero se debería analizar en detalle las operaciones
- elementales que puede involucrar una adaptación.
- Esto es, por un lado, incluir todas las conversiones entre tipos primitivos
- que no se encuentran presentes en el catálogo actual, tomando como entrada
- los tipos de datos más comunes en los lenguajes actuales.
- Luego, sería necesario verificar que las micro-operaciones anteriores permitan
- describir tipos de datos complejos que son comunes en estos lenguajes (por
- ejemplo, String).
- Por otra parte, se deberían analizar detalladamente las micro-operaciones
- que no son de conversión (por ejemplo, las asignaciones, o la creación
- de tipos de datos complejos) identificando las diferentes variantes que
- estas presentan.
- Habiendo enriquecido el catálogo, el siguiente paso sería crear un caso
- de estudio representativo, que ponga a prueba las descripciones anteriormente
- mencionadas, para luego verificar la certeza de las mismas a través de
- la comparación de las estimaciones con respecto a los valores reales.
- 
-\end_layout
-
-\begin_layout Standard
-Otra limitación que se presenta es que las estimaciones no reflejan los
- costos energéticos reales de las alternativas de adaptación dados varios
- proveedores para un mismo servicio, sino que los costos son relativos y
- solo permiten compararlas.
- Este problema parte de que las mediciones del costo energético de las micro-ope
-raciones no fueron realizadas con la suficiente generalidad (por ejemplo,
- considerando más dispositivos para las mediciones), condicionando su aplicación.
- Sin embargo, estas estimaciones no dejan de ser útiles, ya que permiten
- determinar qué alternativas son más costosas que otras.
- Entonces, se deberían refinar las estimaciones, generalizando los experimentos
- y aislando las mediciones del consumo energético de las micro-operaciones
- del resto de los componentes del dispositivo.
 \end_layout
 
 \begin_layout Section
@@ -398,298 +89,27 @@ Trabajos Futuros
 \end_layout
 
 \begin_layout Standard
-Cabe mencionar que existen algunas posibilidades de extensión interesantes
- para este trabajo.
- Como primer objetivo se pretende generalizar el modelo.
- Para poder lograr esto se dotará al catálogo de micro-operaciones con la
- suficiente expresividad para describir de manera más precisa las adaptaciones.
- Por otro lado, se pretende generalizar la medición de las micro-operaciones
- desde el punto de vista del hardware utilizado, contemplando otros smartphones
- y tablets para tal motivo.
- Esto incrementará enormemente la aplicabilidad de los resultados.
+TODO: Muestra representativa de los datasets mayores para el SMO :)
 \end_layout
 
 \begin_layout Standard
-Adicionalmente, se pretende extender 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{WSQBE}
+Modificar el codigo para saber cuanto tiempo llevan los algoritmos.
 \end_layout
 
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand citet
-key "ISF-CrassoZC11"
-
-\end_inset
-
-, incorporando el modelo refinado.
- 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{WSQBE}
+\begin_layout Standard
+Multithread -> lambda
 \end_layout
 
-\end_inset
-
- es un registro para el almacenamiento y búsqueda de servicios Web que se
- basa en el uso de técnicas provenientes del área de Machine Learning tales
- como 
-\shape italic
-text mining
-\shape default
-, 
-\shape italic
-word stemming
-\shape default
- y 
-\shape italic
-word disambiguation
-\shape default
- y provee una efectividad muy superior a otros buscadores similares en términos
- de métricas del área de Recuperación de Información
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand citet
-key "ISF-CrassoZC11"
-
-\end_inset
-
-.
- Entre los aspectos a considerar al extender 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{WSQBE}
+\begin_layout Standard
+Comparacion de librerias 
 \end_layout
 
-\end_inset
+\begin_layout Standard
 
- se pretende:
 \end_layout
 
-\begin_layout Itemize
-Dotar al registro con estimaciones fieles del consumo de energía de los
- clientes de servicios en dispositivos móviles para invocar servicios.
- Para esto se utilizarán las estimaciones provistas por el modelo propuesto.
- Esto es, cuando un cliente presenta la interfaz esperada como entrada para
- la búsqueda del servicio que desea, 
-\begin_inset ERT
-status open
+\begin_layout Standard
 
-\begin_layout Plain Layout
-
-
-\backslash
-ac{WSQBE}
-\end_layout
-
-\end_inset
-
- primero obtiene un conjunto de servicios que cumplen con el criterio de
- búsqueda.
- Luego, estima las micro-operaciones necesarias para adaptar la interfaz
- en cada alternativa, por ejemplo, mediante la utilización de una herramienta
- como la que se presentó en la Sección
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Ambiente-de-pruebas"
-
-\end_inset
-
- del capítulo anterior.
- Finalmente, realiza las estimaciones energéticas utilizando el modelo de
- estimación, respondiendo al cliente con el servicio de menor costo energético.
- 
-\end_layout
-
-\begin_layout Itemize
-Generalizar las investigaciones del punto anterior a servicios basados en
- conceptos 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{REST}
-\end_layout
-
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Fielding2000"
-
-\end_inset
-
-.
- 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{REST}
-\end_layout
-
-\end_inset
-
- a diferencia de 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{SOAP}
-\end_layout
-
-\end_inset
-
- no es un protocolo, sino un estilo arquitectónico que propone ver a los
- servicios como recursos que son accedidos o modificados, generalmente,
- mediante las operaciones 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{HTTP}
-\end_layout
-
-\end_inset
-
- GET, POST, PUT y DELETE.
- Este enfoque presenta una ventaja respecto a 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{SOAP}
-\end_layout
-
-\end_inset
-
- en cuanto al rendimiento, debido a que relaja el proceso de 
-\shape italic
-marshalling
-\shape default
- y disminuye el tamaño de las trasferencias.
- Sin embargo, presenta problemas con servicios que necesitan mantener un
- estado (no 
-\shape italic
-stateless
-\shape default
-).
- Entonces, a partir de lo observado en
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Oh2006,Arroqui2011,Thiagarajan2012"
-
-\end_inset
-
-, donde en ciertos escenarios los servicios basados en 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{REST}
-\end_layout
-
-\end_inset
-
- tienen ventajas en batería, desempeño y/o utilización de red respecto de
- los basados en 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{SOAP}
-\end_layout
-
-\end_inset
-
-, se pretende evaluar empíricamente los tradeoff presentes en la utilización
- de una o otra tecnología de servicios en el contexto de aplicaciones móviles
- de tipo “mashups”.
- Posteriormente, en base a esos resultados se extenderá el modelo de desarrollo
- 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{SOC}
-\end_layout
-
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Crasso2010"
-
-\end_inset
-
- para considerar ese nuevo tipo de servicios.
 \end_layout
 
 \end_body

@@ -1,0 +1,437 @@
+
+\chapter{Descripción de los servicios de detección facial \label{chap:Ambiente-de-desarrollo}}
+
+
+\section*{Servicio SkyBiometry}
+
+
+\subsection*{En referencia al uso de la API \textendash{} Autenticación }
+
+Cada llamada a la API debe ser autorizada mediante el uso de dos claves:
+api\_key y api\_secret. Ambas claves son obtenidas mediante una registración
+en el sitio oficial de skybiometry (\emph{www.skybiometry.com}) a
+través de una cuenta de email como usuario y una contraseña.
+
+
+\subsection*{Límites de uso }
+
+El consumo de este servicio presenta algunas limitaciones que varían
+en base a la suscripción particular del usuario. En general, las suscripciones
+gratuitas restringen un límite de 100 llamadas a métodos por hora
+y de 5000 en el mes. Para el caso del método POST, la limitación se
+presenta tanto en 100 request a la API para el procesamiento de imágenes
+individuales como para 1 request con 100 imágenes a procesar. 
+
+
+\subsection*{Factores ofrecidos}
+\begin{lyxlist}{00.00.0000}
+\item [{Respecto~al~cuadrado~del~rostro~detectado:}]~
+
+\begin{lyxlist}{00.00.0000}
+\item [{center~OBJECT~\{~x~:Float,~y~:~Float~\}}]~
+\item [{width.~FLOAT.~0-100\%~del~ancho~del~rostro~respecto~al~ancho~de~la~imagen.}]~
+\item [{height.~FLOAT.~0-100\%~del~largo~del~rostro~respecto~al~ancho~de~la~imagen.}]~
+\end{lyxlist}
+\item [{Otros~puntos~detectados:}]~
+
+\begin{lyxlist}{00.00.0000}
+\item [{mouth\_center}] OBJECT \{ x :Float, y : Float \} 
+\item [{mouth\_left}] OBJECT \{ x :Float, y : Float \}
+\item [{mouth\_right}] OBJECT \{ x :Float, y : Float \} 
+\item [{eye\_left}] OBJECT \{ x :Float, y : Float \} 
+\item [{eye\_right}] OBJECT \{ x :Float, y : Float \} 
+\item [{nose}] OBJECT \{ x :Float, y : Float \} 
+\item [{ear\_left}] OBJECT \{ x :Float, y : Float \} 
+\item [{ear\_right}] OBJECT \{ x :Float, y : Float \} 
+\item [{chin}] OBJECT \{ x :Float, y : Float \} 
+\item [{yaw.}] FLOAT.Perfil. Value -90\textdegree{} a 90\textdegree{} 
+\item [{roll.}] FLOAT. Ángulo de rotación del rostro. Value -90\textdegree{}
+a 90\textdegree{} 
+\item [{pitch.}] FLOAT. Value -90\textdegree{} a 90\textdegree{} 
+\end{lyxlist}
+\end{lyxlist}
+\begin{description}
+\item [{yaw:}] ángulo positivo en rostros donde predomina el perfil derecho
+(respecto al sujeto, no a la imagen). Caso contrario, ángulo negativo
+al predominar el perfil izquierdo. 
+\item [{Roll:}] Ejemplo ilustrativo. El rectángulo verde representa al
+rostro detectado por la API cuyo valor roll es igual a -17\textdegree ,
+mientras que el rectángulo rojo fue añadido para ilustrar el caso
+donde el ángulo roll es igual a 0\textdegree . Una rotación inversa
+significa un valor roll positivo. 
+\item [{\includegraphics{\string"C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/face-example\string".png}}]~
+\end{description}
+Todos los puntos detectados descritos no especificados corresponden
+a un formato JSON, cuya clave es el nombre del mismo, y el valor es
+también un objeto del tipo JSON que contiene los siguientes valores:
+id:INTEGER, confidence:INTEGER, y:FLOAT, x:FLOAT, a excepción del
+valor \emph{center} cuyo objeto JSON contiene sólo los valores: \emph{x},
+\emph{y}.
+\begin{description}
+\item [{Nota1:}] en caso de valor de atributo no se puede determinar que
+no se devuelve. Si se determina el valor que se devuelve junto con
+el valor de confianza como porcentaje de 0 a 100. 
+\item [{Nota2:}] La API sólo devuelve información necesaria para representar
+en forma de rectángulo los rostros detectados. Para el resto de opciones,
+la API sólo devuelve información del punto central en cuestión. 
+\item [{Nota3:}] Ya que la API automáticamente re-escala las imágenes a
+1024 pixeles para su procesamiento interno, todas las coordenadas
+son provistas de forma porcentual respecto al ancho y largo de la
+imagen (abstracción). 
+\item [{Nota4:}] Nota: el atributo face es el valor por defecto y siempre
+es retornado, independientemente de los atributos especificados. Si
+el atributo \textquotedblleft glasses\textquotedblright{} fue requerido
+adicionalmente se retorna el atributo \textquoteleft dark\_glasses\textquoteright{}
+para diferenciar entre gafas oscuras y claras. El atributo mood (estado
+de ánimo) se devuelve junto con 7 más atributos: confianza para cada
+una de las emociones básicas, además de la confianza neutral\_mood. 
+\end{description}
+
+\subsection*{Atributos faciales }
+
+The result of the API call is a JSON or XML object containing the
+requested information. Cada uno de los atributos son objetos del tipo
+JSON cuya clave es el nombre del mismo y el valor es también un objeto
+JSON con dos valores específicos: el primero con clave \emph{value}
+y el segundo con clave \emph{confidence}. El valor de confidence es
+del tipo Integer para representar el porcentaje de probabilidad del
+valor detectado en el campo \emph{value}.
+
+
+\subsection*{Mensajes de error }
+
+\includegraphics[scale=0.55]{\string"C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/face-service-errors\string".png}
+
+
+\subsection*{Post (Request en lenguaje JAVA)}
+
+\begin{lstlisting}[language=Java,breaklines=true]
+HttpResponse<JsonNode> response = Unirest.post(https://face.p.mashape.com/faces/detect?api_key=[api_key]&api_secret=[api_secret]) 
+.header(X-Mashape-Key, 7rS5YDw5YHmshtdgMHP2ZYBLAljfp1OxKNzjsn1GJxNBgad6C9) 
+.header(Accept, application/json) 
+.field(attributes, all) 
+.field(detector, Aggressive)  [ver opciones] 
+.asJson();        
+\end{lstlisting}
+
+\begin{description}
+\item [{Nota:}] En los espacios {[}api\_key{]} y {[}api\_secret{]} deben
+colocarse las claves correspondientes disponibles con la registración
+de una cuenta en el sitio www.skybiometry.com \end{description}
+\begin{lyxlist}{00.00.0000}
+\item [{Opciones:}]~
+
+\begin{lyxlist}{00.00.0000}
+\item [{.field(\textquotedblleft files\textquotedblright ,}] Vector<File>
+imagenes) 
+\item [{.field(\textquotedblleft files\textquotedblright ,}] File imagen) 
+\item [{.field(\textquotedblleft urls\textquotedblright ,}] \textquotedblleft \textquotedblright url\_1\textquotedblright ,
+\textquotedblleft url\_2\textquotedblright , \dots ) 
+\end{lyxlist}
+\end{lyxlist}
+\begin{description}
+\item [{Nota:}] Los formatos de imagen aceptados por la API son los siguientes:
+PNG, JPEG, BMP, JPEG2000.
+\end{description}
+La respuesta recibida por el servicio del tipo HttpResponse<JsonNode>
+puede ser manipulada como un objeto del tipo JSONObject a través de
+la siguiente codificación: 
+
+\begin{lstlisting}[language=Java,breaklines=true]
+JSONObject obj = response.getBody().getObject(); 
+\end{lstlisting}
+
+
+
+\subsection*{Parse - Overview }
+
+La respuesta en formato JSONObject contiene en primera parte un objeto
+del tipo JSONObject con clave \emph{photos} y cuyo valor, representado
+en formato JSONArray, contiene toda la información detectada desde
+las imágenes. Cada elemento del arreglo representa un archivo de imagen;
+a su vez, estos elementos contienen un objeto del tipo JSONObject
+cuya clave es \emph{tags} y su valor es un JSONArray para representar
+cada una de los rostros detectados en la imagen particular; a su vez
+contiene la información de ancho y largo asociado. 
+
+En segunda parte, seguido de \emph{photos} se anexan en la respuesta
+la información relacionada a la operación http.
+
+Ejemplo codificación básica: 
+
+\begin{lstlisting}[language=Java,breaklines=true]
+JSONArray imágenes = obj.get(photos); 
+for(int p=0; p<imágenes.length(); p++) { 
+	//Obtención de cada una de las imágenes  	
+	JSONObject imagen=imagenes.getJSONObject(p);   
+	//Ejemplo obtención del ancho de la imagen 
+	int imgWidth = (int) imagen.get(width); 
+	//Obtención de los rostros detectados en la imagen 
+	JSONArray rostros = imagen.getJSONArray(tags); 
+	for(int r=0; r<rostros.lenght(); r++) { 
+		//Obtención de cada uno de los rostros detectados 
+		rostro=rostros.getJSONObject(r);     	 
+		//Ejemplo obtención de los puntos detectados JSONObject 
+		mouth = rostro.getJSONObject(mouth_center); 
+		int coordX= (int) mouth.get(x); 
+		int coordY= (int) mouth.get(y); 
+		//Ejemplo obtención de los atributos faciales JSONObject 
+		atributos=imagen.getJSONObject(attributes); 
+		String valor = atributos.getJSONObject(mood).getString(value); 
+	} 	
+} 
+\end{lstlisting}
+
+
+
+\section*{Servicio FaceRect}
+
+
+\subsection*{En referencia al uso de la API }
+
+El consumo de esta API requiere la registración de una cuenta en el
+sitio Mashape. La registración se realiza con email y contraseña y
+se realiza de manera gratuita e instantánea. El servicio no restringe
+el número de request a la API pero permite el procesamiento de sólo
+una imagen por request realizado. 
+
+
+\subsection*{Factores ofrecidos }
+\begin{lyxlist}{00.00.0000}
+\item [{Rostro~detectado:}]~
+
+\begin{lyxlist}{00.00.0000}
+\item [{Orientation:}] tipo String. Valores posibles:<frontal, profile-right,
+profile-left> 
+\item [{x:}] tipo Integer 
+\item [{y:}] tipo Integer 
+\item [{width:}] tipo Integer 
+\item [{height:}] tipo Integer 
+\item [{Features:}] (opcional) 
+\item [{eyes}]~
+\item [{nose}]~
+\item [{mouth}]~
+\end{lyxlist}
+\end{lyxlist}
+Los \emph{features} son analizados por la API sólo en rostros cuya
+orientación sea frontal. El formato de respuesta de los mismos son
+del tipo JSONObject en el caso de \emph{nose} y \emph{mouth}. Para
+el caso de \emph{eyes} se devuelve un objeto del tipo JSONArray, cuyos
+elementos (1 o 2) son del tipo JSONObject. La API representa el rostro
+y los features detectados en forma de rectángulos, por lo que incorpora
+en sus respuestas las coordenadas \emph{x}, \emph{y} (esquina superior
+izquierda respecto a la imagen) y los tamaños \emph{width}, \emph{height}
+del rectángulo en cuestión.
+
+
+\subsection*{Post (Request en lenguaje JAVA)}
+
+\lstinline[language=Java,breaklines=true]!HttpResponse<JsonNode> response = Unirest.post(ENDPOINT) .header(X-Mashape-Key, 7rS5YDw5YHmshtdgMHP2ZYBLAljfp1OxKNzjsn1GJxNBgad6C9) [ver opción correspondiente] .field(features, true) .asJson();        !
+
+Actualmente la API soporta dos endpoints difiriendo entre sí en el
+modo en que las imágenes son especificadas en el request. Mediante
+el método http \emph{GET} se añade el URL de la imagen (Endpoint:
+http://apicloud-facerect.p.mashape.com/process-url.json); por otra
+parte con el método \emph{POST} se añade el archivo correspondiente
+(Endpoint: http://apicloud-facerect.p.mashape.com/process-file.json)
+De acuerdo con el endpoint especificado se añade la línea correspondiente: 
+\begin{lyxlist}{00.00.0000}
+\item [{Opciones}]~
+
+\begin{lyxlist}{00.00.0000}
+\item [{.field(\textquotedblleft url\textquotedblright ,}] \textquotedblleft url\_image\textquotedblright ) 
+\item [{.field(image,}] new File(<path\_image>)) 
+\end{lyxlist}
+\end{lyxlist}
+\begin{description}
+\item [{Nota:}] Para ambos casos, la API restringe el procesamiento de
+algunas imágenes, permitiendo procesar aquellas cuyo formato sea JPEG,
+PNG y GIF, la resolución de la misma no supere los 4096 píxeles (4096\texttimes 4096)
+y el tamaño sea inferior a 10 MBytes. 
+\end{description}
+La respuesta recibida por el servicio del tipo HttpResponse<JsonNode>
+puede ser manipulada como un objeto del tipo JSONObject a través de
+la siguiente codificación: 
+
+\begin{lstlisting}[language=Java,breaklines=true]
+JSONObject obj = response.getBody().getObject();
+\end{lstlisting}
+
+
+
+\subsection*{Parse - overview}
+
+La respuesta en formato JSONObject contiene dos objetos JSON. El primero,
+cuya clave es \emph{faces} contiene toda la información detectada
+desde la imagen, el segundo objeto cuya clave es \emph{image} contiene
+la información acerca del ancho (\emph{width}) y largo (\emph{height})
+de la misma. La información detectada se presenta en un objeto del
+tipo JSONArray donde cada elemento del arreglo constituye cada uno
+de los rostros que ha detectada la API; Cada uno de los elementos
+son JSONObject que contienen la información del rostro (\emph{orientation},
+\emph{x}, \emph{y}, \emph{height}, \emph{width}) y los \emph{features}. 
+
+Ejemplo codificación básica 
+
+\begin{lstlisting}[language=Java,breaklines=true]
+//Ejemplo obtención del ancho de la imagen 
+int imgWidth = (int) obj.getJSONObject(image).get(width); 
+//Obtención de los rostros detectados en la imagen 
+JSONArray rostros = obj.getJSONArray(faces); 
+for(int r=0; r<rostros.lenght(); r++) {  	
+	//Obtención de cada uno de los rostros detectados 
+	rostro=rostros.getJSONObject(r);     	 
+	//Ejemplo obtención información del rostro: 
+	String orientation =(String) rostro.get(orientation); 
+	int coordX=(int) rostro.get(x); 
+	//Ejemplo obtención de los features 
+	JSONObject features = rostro.getJSONObject(features); 
+	JSONArray eyes =features.getJSONArray(eyes); 
+	JSONObject eye_left=eyes.getJSONObject(0); 
+}
+\end{lstlisting}
+
+
+
+\section*{Servicio GMS Vision}
+
+
+\subsection*{Factores ofrecidos}
+
+El detector puede computar los siguientes atributos (accesibles a
+través de los distintos métodos de la clase).
+
+Profile: rotación del rostro. FLOAT 
+\begin{lyxlist}{00.00.0000}
+\item [{Clasificadores:<característica~facial~presente~en~el~rostro>}]~
+
+\begin{lyxlist}{00.00.0000}
+\item [{Open}] eyes: (probabilidad) Constant value: 1 FLOAT ({*}) 
+\item [{Smiling:}] (probabilidad) Constant value: 1 FLOAT ({*}) 
+\item [{Height,}] width: medidos en píxeles. FLOAT 
+\item [{Position:}] Punto superior izquierdo del rostro. FLOAT 
+\end{lyxlist}
+\item [{Landmarks:<Puntos~de~interés~en~el~rostro~detectado>~LIST<Landmark>}]~
+
+\begin{lyxlist}{00.00.0000}
+\item [{BOTTOM\_MOUTH}] Constant Value: 0 CENTER 
+\item [{LEFT\_CHEEK}] Constant Value: 1 CENTER 
+\item [{LEFT\_EAR\_TIP}] Constant Value: 2 
+\item [{LEFT\_EAR}] Constant Value: 3
+\item [{MIDPOINT}] LEFT\_EYE Constant Value: 4 
+\item [{CENTER}] LEFT\_MOUTH Constant Value: 5 
+\item [{NOSE\_BASE}] Constant Value: 6 
+\item [{MIDPOINT}] RIGHT\_CHEEK Constant Value: 7 
+\item [{CENTER}] RIGHT\_EAR\_TIP Constant Value: 8 
+\item [{RIGHT\_EAR}] Constant Value: 9 
+\item [{MIDPOINT}] RIGHT\_EYE Constant Value: 10 
+\item [{CENTER}] RIGHT\_MOUTH Constant Value: 11 
+\end{lyxlist}
+\item [{Angles:~<Face~Orientation>}]~
+
+\begin{lyxlist}{00.00.0000}
+\item [{EulerY}] {[}valor \textquoteleft y\textquoteright{} en la imagen{]} 
+\item [{EulerZ}] {[}valor \textquoteleft r\textquoteright{} en la imagen{]}
+\end{lyxlist}
+\item [{({*})}] En el trabajo desarrollado se consideró el uso de valores
+booleanos, determinando a los clasificadores como verdaderos para
+valores de probabilidad mayor al 50\%, en casos contrario se determinaron
+los mismos como falsos. \end{lyxlist}
+\begin{description}
+\item [{Nota:}] El ángulo EulerZ se encuentra disponible siempre en la
+detección, mientras que el ángulo EulerY sólo si en el detector se
+predetermina el modo \emph{accurate}. El concepto de \emph{left} y
+\emph{right} son relativos al sujeto no a la posición cuando se observa
+la imagen. Las posiciones son accedidas a través del método getPosition()
+de la clase Landmark; el retorno es del tipo PointF. 
+\end{description}
+
+\subsection*{Construcción del detector }
+
+\begin{lstlisting}[language=Java,breaklines=true]
+FaceDetector detector = new FaceDetector.Builder(context) 
+.setTrackingEnabled(false) 
+.setMode(int Mode) 
+.setProminentFaceOnly(true) 
+.setClassificationType(int classificationType) 
+.setLandmarkType(int landmarkType) 
+.build(); 
+\end{lstlisting}
+
+
+Es necesario especificar en el detector el entorno de nuestra aplicación
+(mediante el uso de la clase android.utils.Context) 
+
+Es posible obtener el entorno de la app a través del método \emph{getApplicationContext()}
+de la clase Activity. 
+
+El contexto es sólo una interfaz cuya implementación está prevista
+por el sistema android y permite el acceso a los recursos y clases
+específicas de la aplicación, como así también realizar operaciones
+tales como el despacho de actividades, la difusión y recibimiento
+de objetos del tipo Intent, etc. 
+
+El servicio dispone de la posibilidad de elegir la preferencia de
+procesamiento en la detección, \emph{FAST\_MODE} prioriza la rapidez
+en el análisis por sobre la cantidad de rostros detectados y su precisión,
+contrariamente el servicio dispone del modo \emph{ACCURATE\_MODE}
+
+Habilitar la opción \emph{tracking enabled} es recomendable para la
+detección de imágenes individuales no relacionadas (a diferencia de
+un vídeo o una serie de imágenes fijas capturadas consecutivamente). 
+
+Tanto los clasificadores y landmarks pueden especificarse uno a uno
+añadiendo las líneas correspondientes en el constructor; adicionalmente
+la clase FaceDetector proporciona las siguientes constantes: 
+\begin{lyxlist}{00.00.0000}
+\item [{\emph{ALL\_CLASSIFICATIONS}}]~
+\item [{\emph{ALL\_LANDMARKS}}]~
+\item [{\emph{NO\_CLASSIFICATIONS}}]~
+\item [{\emph{NO\_LANDMARKS}}]~
+\end{lyxlist}
+El servicio no ofrece la capacidad de setar los landmark y clasificadores
+bajo demanda, sino que son definidos estáticamente al momento de crear
+el detector; esta restricción condiciona el tiempo de respuesta del
+servicio ya que el requerimiento de al menos un landmark, por ejemplo,
+significa el uso de la variable \emph{FaceDetector.ALL\_LANDMARKS},
+incrementando así el tiempo de procesamiento de la imagen. 
+
+
+\subsection*{Uso del detector}
+
+El detector se puede llamar de forma sincronizada con un objeto del
+tipo Frame para detectar las caras.
+
+\begin{lstlisting}[language=Java,breaklines=true]
+Frame frame = new Frame.Builder().setBitmap(<file_image>).build(); 
+SparseArray<Face> faces = detector.detect(frame); 
+\end{lstlisting}
+
+
+
+\subsection*{Ejemplo codificación básica}
+
+\begin{lstlisting}[language=Java,breaklines=true]
+for(int i=0;i<faces.size();i++){ 
+	//Obtención de cada uno de los rostros detectados en la imagen 
+	Face rostro=faces.valueAt(i); 
+	//Obtención del rectángulo del rostro 
+	Float coordX=rostro.getPosition().x; 
+	Float coordY=rostro.getPosition().y; 
+	Float width=rostro.getWidth(); 
+	Float height=rostro.getHeight(); 
+	//Obtención del ángulo EulerZ 
+	Float angleZ=rostro.getEulerZ(); 
+	//Obtención del clasificador eyes open 
+	Float probEyeRight=rostro.getIsRightEyeOpenProbability(); 
+	Float probEyeLeft=rostro.getIsLeftEyeOpenProbability(); 
+	//Obtención de los Landmarks detectados: 
+	List<Landmark> landmarks=rostro.getLandmarks(); 	 
+	//Obtención de cada uno de los landmark 
+	for(int j=0;j<landmarks.size();j++){ 
+		int LandmarkType=landmarks.get(j).getType(); 
+		PointF Landmarkposition=landmarks.get(j).getPosition(); 
+	} 
+} 
+\end{lstlisting}
+
