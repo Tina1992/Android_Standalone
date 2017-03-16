@@ -743,16 +743,31 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{.80
+\backslash
+textwidth}{!}{
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="5">
-<features rotate="0" tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle" tabularwidth="20cm">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="0pt">
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -761,7 +776,7 @@ status open
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -770,7 +785,7 @@ CPU Procesador/Núcleos
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -779,7 +794,7 @@ GPU tarjeta gráfica
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -788,7 +803,7 @@ Memoria RAM
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1034,6 +1049,17 @@ Android 5.0
 </cell>
 </row>
 </lyxtabular>
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
 
 \end_inset
 
@@ -1573,7 +1599,7 @@ Transformations A traves de un grafo hammiltoniano, se analizan las aristas
 \begin_layout Standard
 Con el fin de garantizar instancias variadas del problema (diferentes cantidades
  de ciudades, distintas representaciones y pesos) y para la medicion de
- los componentes, se utiliza la libreria TSPLib que contiene archivos con
+ los componentes, se utiliza la librería TSPLib que contiene archivos con
  multiples instancias del problema..
  La librería cuenta con 111 archivos de formato TSP, y 32 archivos de formato
  OPT.TOUR que contienen el recorrido óptimo del archivo que referencian.
@@ -1770,9 +1796,8 @@ Las pruebas fueron llevadas a cabo sobre los dispositivos móviles Samsung
 
 \begin_layout Standard
 El objetivo de este escenario es la creación de modelos capaces de predecir
- el tiempo de latencia de cada algoritmo de resolución frente a distintas
- características de las entradas, y modelos para predecir la precisión en
- los caminos retornados.
+ el tiempo de respuesta de cada algoritmo frente a distintas características
+ de las entradas, y modelos para predecir la calidad en los caminos retornados.
  En la figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1780,10 +1805,7 @@ reference "fig:TPS-dataset-behaviour"
 
 \end_inset
 
- expuesta a continuación se muestra el comportamiento del conjunto de datos
- de entrenamiento ejecutado en el dispositivo Samsung Galaxy S4; ambos dataset
- restantes no son expuestos ya que presentan mínimas diferencias.
- 
+ expuesta a continuación se muestra el comportamiento del conjunto de mediciones.
 \end_layout
 
 \begin_layout Standard
@@ -1867,7 +1889,9 @@ name "subsec:Escenario-2:-Servicios"
 \end_layout
 
 \begin_layout Standard
-Hoy en día muchas soluciones para detección de rostro se proporcionan como
+El segundo escenario comprende un conjunto de servicios Web para la deteccion
+ de rostros en imagenes.
+ Hoy en día muchas soluciones para detección de rostro se proporcionan como
  servicios Web, que aunque no son tan rápidos y usables sin conexión a Internet
  como las bibliotecas de software, resultan generalmente más precisos y
  proporcionan características muy peculiares del rostro.
@@ -2160,8 +2184,8 @@ key "fddbTechReport"
 
 \begin_layout Standard
 Cabe destacar que las pruebas fueron realizadas en un único dispositivo
- móvil (Lenovo K3 Note), por tal motivo no se incluyen en los archivos caracterí
-sticas propias del móvil ya que significan valores constantes en la predicción.
+ móvil (Lenovo K3 Note), por tal motivo no se consideran características
+ propias del móvil ya que significan valores constantes en la predicción.
  Por lo tanto el objetivo de este escenario es crear modelos para predecir
  el tiempo de respuesta a partir de características variables de la imagen
  de entrada y de los parámetros de configuración del componente en cuestión.

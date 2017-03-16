@@ -81,8 +81,8 @@ name "chap:Evaluación"
 \end_layout
 
 \begin_layout Standard
-En este capitulo se presenta la evaluacion del enfoque propuesto con el
- objetivo de analizar el desempeño de las tecnicas de aprendizaje de maquina
+En este capitulo se presenta la evaluación del enfoque propuesto con el
+ objetivo de analizar el desempeño de las técnicas de aprendizaje de maquina
  para predecir propiedades no-funcionales en dispositivos móviles.
  Con este fin, se crearon tres diferentes casos de estudio sobre los que
  se aplica y analiza el enfoque.
@@ -110,8 +110,8 @@ reference "sec:Escenarios"
 
  se presentan los escenarios de estudio considerados, brindando una descripción
  de los dataset obtenidos junto a gráficas y análisis sobre la distribución
- de los datos, con el fin de comprender mejor el desempeño de las tecnicas
- de regresion analizadas.
+ de los datos, con el fin de comprender mejor el desempeño de las técnicas
+ de regresión analizadas.
  Los resultados obtenidos son expuestos en la sección 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -173,10 +173,10 @@ Z
 \end_layout
 
 \begin_layout Standard
-En todo el conjunto de dataset, se añadió el tiempo de respuesta como propiedad
+En todos los escenarios se considera el tiempo de respuesta como propiedad
  a predecir, y sólo en aquellos donde el contexto lo permitía se incorporó
- como propiedad la optimalidad o precisión en el resultado arrojado por
- el componente.
+ como propiedad la optimad o precisión en el resultado arrojado por el component
+e.
  
 \end_layout
 
@@ -421,88 +421,6 @@ ac{RRSE}
  de valores entre 0 y 1 para obtener una visión de las observaciones respecto
  a la media.
  
-\end_layout
-
-\begin_layout Subsection
-Formato de los resultados
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:Formato-de-los"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-La herramienta devuelve como resultado un archivo en formato TXT almacenando,
- por un lado, los valores resultantes de los parámetros fundamentales de
- cada técnica y, por otro lado, la descripción del modelo construido.
- La herramienta genera un archivo por cada técnica elegida por el usuario
- para optimizar, en la dirección especificada en la configuración bajo el
- nombre de la técnica.
- La figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:linear-regression-result"
-
-\end_inset
-
- permite una descripción gráfica de lo expresado anteriormente, donde detalla
- A) los parámetros, B) Nombre del modelo y C) la función definida para el
- atributo de predicción.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/linear-regression-result.png
-	scale 55
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Ejemplo de resultado del modelo ‘Linear Regression’.
- 
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:linear-regression-result"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-La manera en que los datos son expuestos al usuario no representa un formato
- compatible para cualquier herramienta sobre aprendizaje de máquina, esto
- se debe a que no existe actualmente, un formato estándar para almacenar
- los modelos, y esta discrepancia entre las herramientas disponibles exige
- un seteo manual de las técnicas por cada evaluación que se realice
 \end_layout
 
 \begin_layout Subsection
@@ -825,16 +743,31 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{.80
+\backslash
+textwidth}{!}{
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="5">
-<features rotate="0" tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle" tabularwidth="20cm">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="0pt">
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -843,7 +776,7 @@ status open
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -852,7 +785,7 @@ CPU Procesador/Núcleos
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -861,7 +794,7 @@ GPU tarjeta gráfica
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -870,7 +803,7 @@ Memoria RAM
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1120,6 +1053,17 @@ Android 5.0
 \end_inset
 
 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -1160,14 +1104,11 @@ name "sec:Escenarios"
 
 \begin_layout Standard
 Definidas las métricas, la metodología de evaluación y los parámetros de
- configuración, en la presente sección se detallarán los escenarios o dominios
- estudiados a partir de una descripción detallada de los dataset formados,
- cada uno de los componentes involucrados y los atributos de entrada considerado
-s formando un contexto particular para la predicción.
- Por otro lado, se analizará el comportamiento o formato que adquieren los
- datos sobre los atributos predichos para comprender el desempeño de las
- diferentes técnicas sobre los mismos y la manera en que éstos adecuan sus
- predicciones.
+ configuración, en la presente sección se detallarán los escenarios sobre
+ los que se aplica el enfoque.
+ Por cada escenario se describen los componentes involucrados, el proceso
+ de medición de los mismos y un análisis de los datos obtenidos, formando
+ un dataset particular para evaluar las tecnicas de regresión.
  
 \end_layout
 
@@ -1375,7 +1316,7 @@ Las entradas del problema utilizadas para la evaluación fueron generadas
 s a partir del número de filas y columnas de la primer matriz denominada
  matriz A y el número de columnas de la segunda matriz denominada matriz
  B, esta distinción es importante teniendo en cuenta la propiedad de no
- conmutatividad del producto de matrices.
+ conmutabilidad del producto de matrices.
  Adicionalmente, ambas matrices pueden ser configuradas externamente.
  De cada instancia del problema, las entradas que se tomaron en cuenta fueron:
  el número de columnas de la primer matriz (
@@ -1651,23 +1592,23 @@ Local
 \begin_inset space ~
 \end_inset
 
-Transformations A traves de un grafo hammiltoniano, se analizan las aristas
+Transformations A través de un grafo hammiltoniano, se analizan las aristas
  cruzadas obteniendo un nuevo ciclo.
 \end_layout
 
 \begin_layout Standard
 Con el fin de garantizar instancias variadas del problema (diferentes cantidades
- de ciudades, distintas representaciones y pesos) y para la medicion de
- los componentes, se utiliza la libreria TSPLib que contiene archivos con
- multiples instancias del problema..
+ de ciudades, distintas representaciones y pesos) y para la medición de
+ los componentes, se utiliza la librería TSPLib que contiene archivos con
+ múltiples instancias del problema..
  La librería cuenta con 111 archivos de formato TSP, y 32 archivos de formato
  OPT.TOUR que contienen el recorrido óptimo del archivo que referencian.
  Los ejemplos oscilan desde 14 y hasta 18512 ciudades con un sólo ejemplo
  extremo de 85900, y utilizan cuatro funciones de cálculo de la distancia
  entre ciudades: distancia euclidiana, distancia geométrica, distancia pseudo
  euclidiana y función techo.
- Para la obtención de las mediciones correspondientes, se realizó una preselecci
-ón de 32 archivos que comprenden ejemplos de entre 22 y 200 ciudades.
+ Para la obtención de las mediciones correspondientes, se realizó una pre
+ selección de 32 archivos que comprenden ejemplos de entre 22 y 200 ciudades.
  Cabe destacar que fue necesaria la implementación de un parser para el
  uso de los archivos.
  
@@ -1855,9 +1796,8 @@ Las pruebas fueron llevadas a cabo sobre los dispositivos móviles Samsung
 
 \begin_layout Standard
 El objetivo de este escenario es la creación de modelos capaces de predecir
- el tiempo de latencia de cada algoritmo de resolución frente a distintas
- características de las entradas, y modelos para predecir la precisión en
- los caminos retornados.
+ el tiempo de respuesta de cada algoritmo frente a distintas características
+ de las entradas, y modelos para predecir la calidad en los caminos retornados.
  En la figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1865,10 +1805,7 @@ reference "fig:TPS-dataset-behaviour"
 
 \end_inset
 
- expuesta a continuación se muestra el comportamiento del conjunto de datos
- de entrenamiento ejecutado en el dispositivo Samsung Galaxy S4; ambos dataset
- restantes no son expuestos ya que presentan mínimas diferencias.
- 
+ expuesta a continuación se muestra el comportamiento del conjunto de mediciones.
 \end_layout
 
 \begin_layout Standard
@@ -1952,7 +1889,9 @@ name "subsec:Escenario-2:-Servicios"
 \end_layout
 
 \begin_layout Standard
-Hoy en día muchas soluciones para detección de rostro se proporcionan como
+El segundo escenario comprende un conjunto de servicios Web para la detección
+ de rostros en imágenes.
+ Hoy en día muchas soluciones para detección de rostro se proporcionan como
  servicios Web, que aunque no son tan rápidos y usables sin conexión a Internet
  como las bibliotecas de software, resultan generalmente más precisos y
  proporcionan características muy peculiares del rostro.
@@ -2103,7 +2042,7 @@ Mashape
 , la cual ofrece una gran variedad de aplicaciones, incluida una colección
  de Aplicaciones sobre detección y reconocimiento de rostros.
  SkyBiometry y FaceRect son aplicaciones que utilizan interfaz REST, es
- decir, los métodos son llamados a través de internet usando los métodos
+ decir, los métodos son llamados a través de Internet usando los métodos
  
 \begin_inset ERT
 status open
@@ -2245,8 +2184,8 @@ key "fddbTechReport"
 
 \begin_layout Standard
 Cabe destacar que las pruebas fueron realizadas en un único dispositivo
- móvil (Lenovo K3 Note), por tal motivo no se incluyen en los archivos caracterí
-sticas propias del móvil ya que significan valores constantes en la predicción.
+ móvil (Lenovo K3 Note), por tal motivo no se consideran características
+ propias del móvil ya que significan valores constantes en la predicción.
  Por lo tanto el objetivo de este escenario es crear modelos para predecir
  el tiempo de respuesta a partir de características variables de la imagen
  de entrada y de los parámetros de configuración del componente en cuestión.
