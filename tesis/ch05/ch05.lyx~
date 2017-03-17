@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass book
 \use_default_options true
 \maintain_unincluded_children false
@@ -9,16 +11,16 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman "default"
-\font_sans "default"
-\font_typewriter "default"
-\font_math "auto"
+\font_roman "" "default"""
+\font_sans "" "default"""
+\font_typewriter "" "default"""
+\font_math "" "auto"""
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -81,8 +83,8 @@ name "chap:Evaluación"
 \end_layout
 
 \begin_layout Standard
-En este capitulo se presenta la evaluacion del enfoque propuesto con el
- objetivo de analizar el desempeño de las tecnicas de aprendizaje de maquina
+En este capitulo se presenta la evaluación del enfoque propuesto con el
+ objetivo de analizar el desempeño de las técnicas de aprendizaje de maquina
  para predecir propiedades no-funcionales en dispositivos móviles.
  Con este fin, se crearon tres diferentes casos de estudio sobre los que
  se aplica y analiza el enfoque.
@@ -110,8 +112,8 @@ reference "sec:Escenarios"
 
  se presentan los escenarios de estudio considerados, brindando una descripción
  de los dataset obtenidos junto a gráficas y análisis sobre la distribución
- de los datos, con el fin de comprender mejor el desempeño de las tecnicas
- de regresion analizadas.
+ de los datos, con el fin de comprender mejor el desempeño de las técnicas
+ de regresión analizadas.
  Los resultados obtenidos son expuestos en la sección 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -175,8 +177,8 @@ Z
 \begin_layout Standard
 En todos los escenarios se considera el tiempo de respuesta como propiedad
  a predecir, y sólo en aquellos donde el contexto lo permitía se incorporó
- como propiedad la optimalidad o precisión en el resultado arrojado por
- el componente.
+ como propiedad la optimad o precisión en el resultado arrojado por el component
+e.
  
 \end_layout
 
@@ -760,7 +762,7 @@ textwidth}{!}{
 
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="5">
-<features rotate="0" tabularvalignment="middle" tabularwidth="20cm">
+<features tabularvalignment="middle" tabularwidth="20cm">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -1316,7 +1318,7 @@ Las entradas del problema utilizadas para la evaluación fueron generadas
 s a partir del número de filas y columnas de la primer matriz denominada
  matriz A y el número de columnas de la segunda matriz denominada matriz
  B, esta distinción es importante teniendo en cuenta la propiedad de no
- conmutatividad del producto de matrices.
+ conmutabilidad del producto de matrices.
  Adicionalmente, ambas matrices pueden ser configuradas externamente.
  De cada instancia del problema, las entradas que se tomaron en cuenta fueron:
  el número de columnas de la primer matriz (
@@ -1592,23 +1594,23 @@ Local
 \begin_inset space ~
 \end_inset
 
-Transformations A traves de un grafo hammiltoniano, se analizan las aristas
+Transformations A través de un grafo hammiltoniano, se analizan las aristas
  cruzadas obteniendo un nuevo ciclo.
 \end_layout
 
 \begin_layout Standard
 Con el fin de garantizar instancias variadas del problema (diferentes cantidades
- de ciudades, distintas representaciones y pesos) y para la medicion de
+ de ciudades, distintas representaciones y pesos) y para la medición de
  los componentes, se utiliza la librería TSPLib que contiene archivos con
- multiples instancias del problema..
+ múltiples instancias del problema..
  La librería cuenta con 111 archivos de formato TSP, y 32 archivos de formato
  OPT.TOUR que contienen el recorrido óptimo del archivo que referencian.
  Los ejemplos oscilan desde 14 y hasta 18512 ciudades con un sólo ejemplo
  extremo de 85900, y utilizan cuatro funciones de cálculo de la distancia
  entre ciudades: distancia euclidiana, distancia geométrica, distancia pseudo
  euclidiana y función techo.
- Para la obtención de las mediciones correspondientes, se realizó una preselecci
-ón de 32 archivos que comprenden ejemplos de entre 22 y 200 ciudades.
+ Para la obtención de las mediciones correspondientes, se realizó una pre
+ selección de 32 archivos que comprenden ejemplos de entre 22 y 200 ciudades.
  Cabe destacar que fue necesaria la implementación de un parser para el
  uso de los archivos.
  
@@ -1889,8 +1891,8 @@ name "subsec:Escenario-2:-Servicios"
 \end_layout
 
 \begin_layout Standard
-El segundo escenario comprende un conjunto de servicios Web para la deteccion
- de rostros en imagenes.
+El segundo escenario comprende un conjunto de servicios Web para la detección
+ de rostros en imágenes.
  Hoy en día muchas soluciones para detección de rostro se proporcionan como
  servicios Web, que aunque no son tan rápidos y usables sin conexión a Internet
  como las bibliotecas de software, resultan generalmente más precisos y
@@ -2042,7 +2044,7 @@ Mashape
 , la cual ofrece una gran variedad de aplicaciones, incluida una colección
  de Aplicaciones sobre detección y reconocimiento de rostros.
  SkyBiometry y FaceRect son aplicaciones que utilizan interfaz REST, es
- decir, los métodos son llamados a través de internet usando los métodos
+ decir, los métodos son llamados a través de Internet usando los métodos
  
 \begin_inset ERT
 status open
@@ -2056,7 +2058,7 @@ ac{HTTP}
 
 \end_inset
 
- standard como GET y POST a las direcciones correspondientes.
+ estándar como GET y POST a las direcciones correspondientes.
  Dependiendo de los parámetros especificados en el request, el servidor
  puede generar la respuesta tanto en formato JSON como 
 \begin_inset ERT
@@ -2178,7 +2180,7 @@ key "fddbTechReport"
  booleanos (a través del valor 0 y 1) que determinan las funciones requeridas
  del algoritmo determinado.
  En los cuatro servicios, el tiempo de respuesta es una variable continua
- y registrada en milisegundos.
+ y registrada en mili segundos.
  
 \end_layout
 
@@ -2348,11 +2350,6 @@ name "tab:Resultados-del-response-matrix"
 \end_layout
 
 \begin_layout Standard
-Correlacion muy alta entre los atributos y el valor buscaod (response) por
- lo tanto cualquier modelo es bueno.
-\end_layout
-
-\begin_layout Standard
 El primer caso analizado es el problema de la multiplicación de matrices.
  En el cuadro 
 \begin_inset CommandInset ref
@@ -2456,12 +2453,12 @@ ac{SVM}
 \emph on
 CC
 \emph default
-), lo que representa la exactitud de los datos predichos en relacion a los
+), lo que representa la exactitud de los datos predichos en relación a los
  reales.
  Como se ha se explicado en la sección
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Ajuste-del-modelo:"
+reference "subsec:Ajuste-del-modelo:"
 
 \end_inset
 
@@ -2531,7 +2528,7 @@ Lineas de predicción en la herramienta Nekonata
 \end_layout
 
 \begin_layout Standard
-Aplicando el mismo método de analisis anterior, se analizó el dataset TSPlib.csv
+Aplicando el mismo método de análisis anterior, se analizó el dataset TSPlib.csv
  considerando el atributo precisión del algoritmo.
 \end_layout
 
@@ -2600,7 +2597,7 @@ ac{SMO}
 \end_inset
 
 .
- Aun así, considerando el analisis realizado previamente, para el atributo
+ Aun así, considerando el análisis realizado previamente, para el atributo
  precision el mejor algoritmo es el 
 \begin_inset ERT
 status open
@@ -2766,7 +2763,7 @@ Continuando con la misma línea de análisis, los datos exhibidos demuestran
 
 \begin_layout Standard
 A continuación, se presentan las lineas de predicción para demostrar el
- poder de analisis del modelo.
+ poder de análisis del modelo.
 \end_layout
 
 \begin_layout Standard
@@ -2804,6 +2801,1630 @@ Figura comparativa de las predicciones realizadas por el MultiLayer Perceptron
 
 \end_layout
 
+\begin_layout Subsection
+Discusión
+\end_layout
+
+\begin_layout Standard
+En esta sección se contrastaran los escenarios y las técnicas entre sí mediante
+ las métricas en las cuales se centró el estudio realizado.
+ Es importante destacar algunas consideraciones sobre el modelo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SMO}
+\end_layout
+
+\end_inset
+
+, por lo cual se excluyó del análisis.
+ El desempeño de este algoritmo es predominantemente superior en la calidad
+ de sus respuestas, sin embargo presenta algunas limitaciones para su uso;
+ el modus operandi del algoritmo no es apto para formatos de dataset de
+ cientos de instancias y múltiples atributos, ya que en algunos casos el
+ costo operacional requirió más de un día de ejecución y en otros casos,
+ sus resultados no pudieron ser visualizados.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{.80
+\backslash
+textwidth}{!}{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="12">
+<features tabularvalignment="middle" tabularwidth="20cm">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Escenario 1
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Escenario 2
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Escenario 3
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sin RenderScript K3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sin RenderScript S3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+K3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+S3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+S4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+S5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+S6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+FaceRect
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SkyBiometry
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Microsoft
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GMS
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Linear Regression
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.91
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.92
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.87
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.87
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.72
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.72
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.71
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.08
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.41
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.6
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MultiLayer Perceptron
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.99
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.99
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.09
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.58
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.66
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SGD}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.89
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.91
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.87
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.87
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.65
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.65
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.62
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.06
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.41
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.59
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Clusterer
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ 0.98
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ 0.98
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ 0.99 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ 0.99 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ 0.63 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ 0.58 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ 0.65 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ 0.99 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ 0.13 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ 0.56 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ 0.78 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Especificaciones de los dispositivos móviles utilizados.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:CC-results"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A partir de los resultados expuestos, se analiza el impacto de la calidad
+ de las entradas en el Coeficiente de correlación de los datos.
+ El primer escenario centralizó la formación de los datasets exclusivamente
+ en las propiedades inherentes de la entrada del problema.
+ La naturaleza de los problemas de tipo P, como el escenario 1, conlleva
+ a que el tiempo de resolución de los mismos dependa exclusivamente de la
+ cantidad de atributos del problema.
+ Ambas consideraciones suponen un alto grado de correlación y los datos
+ obtenidos lo confirman.
+\end_layout
+
+\begin_layout Standard
+En contraste, el escenario 3 no consideró propiedades de la entrada del
+ problema, lo que supone un grado de correlación menor.
+ La entrada del problema no es fácilmente cuantificable de forma exacta,
+ por lo que no fueron consideradas como variables para la predicción.
+ Asimismo, los atributos del dataset son conformados por variables booleanas
+ que representan los detalles requeridos del servicio, lo que conlleva a
+ una gran homogeneización de los datos.
+ En consecuencia, dos instancias análogas en sus requerimientos podrían
+ producir predicciones diferentes lo cual rompe el criterio de unicidad
+ de toda función matemática.
+\end_layout
+
+\begin_layout Standard
+El caso más cercano al ideal es el escenario 2, en el cual se considera
+ solo un rasgo de la entrada y un rasgo del componente, conformando un conjunto
+ acotado de valores y permitiendo que el modelo alcance una función de correlaci
+ón estable.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{.80
+\backslash
+textwidth}{!}{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="12">
+<features tabularvalignment="middle" tabularwidth="20cm">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Escenario 1
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Escenario 2
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Escenario 3
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sin RenderScript K3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sin RenderScript S3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+K3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+S3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+S4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+S5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+S6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+FaceRect
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SkyBiometry
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Microsoft
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GMS
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Linear Regression
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.02
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.03
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.03
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.03
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7.72
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.69
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.06
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+153.6 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+637.54
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+71.78
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+59.17
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MultiLayer Perceptron
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.01
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.01
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.01
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.01
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.02
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.13
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+153.52
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+637.83 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+64.04
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+55.54
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SGD}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.03
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.03
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.03
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.03
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9.48
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.54
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.58
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+704.11
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+676.21
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+73.3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+59.31
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Clusterer
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ 0.01 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ 0.01 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ 0.01 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ 0.01 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ 8.67 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ 4.36 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ 2.2 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ 27.92 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ 633.84 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ 65.28 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ 45.83 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Especificaciones de los dispositivos móviles utilizados.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:RMSE-results"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Considerando el análisis previo y los valores de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{RMSE}
+\end_layout
+
+\end_inset
+
+ presentados en la tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:RMSE-results"
+
+\end_inset
+
+, se sustentan las conclusiones y suposiciones planteadas anteriormente.
+ Cuanto mayor sea la correlación entre los datos de entrada del problema
+ y el tiempo de respuesta, menor es el grado de error en la predicción ya
+ que es más factible que el modelo encuentre una formula matemática que
+ describa la salida a partir de la entrada.
+\end_layout
+
+\begin_layout Standard
+Teniendo en cuenta lo visto hasta ahora, el escenario 2 es el que mejor
+ satisface los requerimientos necesarios para obtener un buen modelo predictivo
+ ya que las entradas y los componentes son descriptos en su justa medida.
+ Por lo tanto, a partir de este escenario se desprende que el modelo LinearRegre
+ssion es el que mejor se ajusta a los objetivos del trabajo planteado siempre
+ que el conjunto de datos sea descripto de forma completa y eficiente.
+ El modelo no presenta efectos de overfit o underfit sobre los datos garantizand
+o buenos resultados en un futuro dataset o escenario.
+\end_layout
+
+\begin_layout Standard
+En situaciones desfavorables donde se cuenta con un dataset incompleto o
+ con sólo datos del componente que se desea analizar, es conveniente el
+ uso del modelo MultiLayer Perceptron ya que garantiza un analisis más profundo
+ de los datos.
+ Este análisis intensivo se debe a la idea intrínseca del algoritmo Neural
+ Network que permite la conjunción de entradas conformando otras nuevas
+ y facilitando nuevos datos que no estaban presentes de forma explicita
+ en el dataset.
+ Se estima que el modelo será capaz de generar buenas estimaciones a un
+ costo temporal aceptable, lo que significa que la ejecución de un dataset
+ de cientos de instancias y diversos atributos, no sólo arrojará un resultado
+ (ventaja frente a otros modelos) sino que la visualización de la respuesta
+ conllevará a lo sumo una hora de tiempo.
+ 
+\end_layout
+
 \begin_layout Section
 Conclusiones 
 \begin_inset CommandInset label
@@ -2816,12 +4437,62 @@ name "sec:Conclusiones"
 \end_layout
 
 \begin_layout Standard
-Support Vector Machine: No se ejecutó por el tiempo de ejecución.
- --> Muchas instancias (Matrices, Mochila y parte de face)
+En este capítulo se presentaron los distintos ambientes de pruebas y se
+ analizaron los resultados producto de los mismos.
+ En la primera sección se describió el procedimiento llevado a cabo para
+ la evaluación de la calidad de los modelos predictivos que aplican algoritmos
+ de regresión.
+ Luego, se describieron los escenarios que conforman cada uno de los casos
+ de estudio, donde toma lugar el enfoque propuesto para la herramienta implement
+ada.
+ 
 \end_layout
 
 \begin_layout Standard
-Mejor algoritmo: Neural Network.1
+Finalmente, se exponen los resultados acerca del error de predicción de
+ los modelos, que indican principalmente tres consideraciones: 
+\end_layout
+
+\begin_layout Itemize
+En situaciones de conjuntos de datos completos en su estructura, el modelo
+ Linear Regression es el más conveniente para predecir el tiempo de respuesta
+ en una aplicación móvil.
+\end_layout
+
+\begin_layout Itemize
+En contraste, en conjuntos de datos pobres, el modelo MultiLayer Perceptron
+ adquiere una mejor generalización de los datos, adaptándose a diferentes
+ formatos de dataset, y diferentes operaciones de componentes.
+\end_layout
+
+\begin_layout Itemize
+En caso de dataset formados por pocas instancias, el corportamiento del
+ SMO es similar al del Multilayer Perceptron.
+ Sin embargo, es importante destacar el efecto de overfit de ambos algoritmos,
+ y particularmente el tiempo de procesamiento que requiere el SMO.
+ 
+\end_layout
+
+\begin_layout Standard
+Se evaluaron los mismos con las métricas presentadas en secciones anteriores,
+ indicando que las estimaciones permiten predecir que en dominios de problemas
+ P y NP como el caso del problema de la multiplicacion de matrices y el
+ problema del viajante métrico, el nivel de correlación alcanzado por el
+ algoritmo es inmediatamente inferior al 100% y en cuanto al error en las
+ predicciones a través de las métricas CC y RMSE como principales objetivos,
+ tendrán valores inmediatamente cercanos o iguales a cero.
+ Para el caso de servicios, aunque las estimaciones arrojadas por el modelo
+ presentan mas variabilidad, su comportamiento es considerablemente superior
+ al resto de los modelos, en cuanto evita efectos de overfit y underfit
+ sobre los datos.
+ 
+\end_layout
+
+\begin_layout Standard
+Esto indica que una generalización del modelo propuesto puede resultar útil
+ para determinar a priori que componentes resultarán más eficiente, dadas
+ ciertas características en las entradas, en los componentes y en la operación,
+ tanto para la predicción del tiempo de respuesta como para la presición.
 \end_layout
 
 \end_body
