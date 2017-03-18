@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass book
 \use_default_options true
 \maintain_unincluded_children false
@@ -9,16 +11,16 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman "default"
-\font_sans "default"
-\font_typewriter "default"
-\font_math "auto"
+\font_roman "" "default"""
+\font_sans "" "default"""
+\font_typewriter "" "default"""
+\font_math "" "auto"""
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -545,33 +547,171 @@ name "fig:method-stages"
 
 \end_layout
 
-\begin_layout Description
-Testing El proceso comienza con la creación de datasets.
- Cada dataset pertenece a un escenario o dominio diferente del cual se extraen
- todas las características que podrían influir sobre el desempeño del componente.
+\begin_layout Subsection
+Etapa recolección
+\series bold
+ de datos
+\series default
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+El proceso comienza con la creación de datasets.
+ Cada dataset pertenece a un escenario o dominio diferente, del cual se
+ extraen todas las características que podrían influir sobre el desempeño
+ del componente.
  Durante la ejecución de cada servicio o pieza de software se van realizando
  las mediciones o métricas sobre distintos aspectos de la operación y registrand
 o cada uno de estos benchmarks en un archivo para su posterior análisis.
+ A su vez, el proceso de recolección de benckmarks involucra la ejecución
+ de sub etapas, pudiendo requerir el proceso algunas, o todas de las tareas
+ que se detallan a continuación:
+\end_layout
+
+\begin_layout Itemize
+Integración de componentes: A menudo se requiere la evaluación de componentes
+ de terceros, tanto de servicios Web como librerías instaladas, de manera
+ que deben ser integrados correctamente a la herramienta para ser tratados
+ como componentes.
  
 \end_layout
 
-\begin_layout Description
-Learning A partir del conjunto de benchmarks obtenidos, se aplican técnicas
- de aprendizaje de máquina para la extracción de conocimiento de estos datos
- y construir, consecuentemente, modelos predictivos que mejor se ajusten
- a la generalización de la información mediante un proceso de entrenamiento
- y evaluación de los mismos.
+\begin_layout Itemize
+Generación de instancias de entrada: Se debe proveer una manera para generar
+ arbitrariamente instancias de un dominio particular, o la capacidad para
+ obtener instancias externamente a través de enlaces o archivos.
  
 \end_layout
 
-\begin_layout Description
-Predict Finalmente, se pretende utilizar estos modelos de predicción en
- entornos de aplicación que permitan la selección del componente más adecuado
- en base a un conjunto de propiedades del problema de entrada, las propiedades
+\begin_layout Itemize
+Selección de características del contexto: Mientras se realiza la ejecución
+ de los componAprendizajeentes, las propiedades no funcionales del dispositivo
+ móvil donde se llevan a cabo las operaciones, pueden ser capturadas como
+ indicadores.
+ 
+\end_layout
+
+\begin_layout Itemize
+Selección de características de la entrada: Es posible obtener atributos
+ propios a la entrada del dominio, generalmente atributos que configuran
+ o sirven para generar una instancia.
+ 
+\end_layout
+
+\begin_layout Itemize
+Ejecución de componentes y obtensión de métricas: Los componentes son ejecutados
+ con las entradas generadas, tomando y registrando mediciones sobre las
+ características incorporadas además de las propiedades de interés a predecir.
+ 
+\end_layout
+
+\begin_layout Subsection
+Etapa aprendizaje
+\end_layout
+
+\begin_layout Standard
+A partir del conjunto de benchmarks obtenidos en la etapa anterior, se aplican
+ técnicas de aprendizaje de máquina para la extracción de conocimiento de
+ los datos.
+ Tal conocimiento se refleja mediante la construcción de modelos predictivos
+ que mejor se ajustan a la generalización de la información mediante un
+ proceso de entrenamiento, optimización y evaluación de los mismos.
+ El proceso de aprendizaje requiere indefectiblemente de un conjunto de
+ datos de entrenamiento volcado en un archivo, la especificación de un atributo
+ de ese conjunto como el atributo a predecir y un conjunto de algoritmos
+ que aplican técnicas de regresión sobre los datos.
+ Actualmente, hay herramientas que proveen estos algoritmos incluyendo toda
+ la funcionalidad necesaria para este proceso, y que son fácilmente integrables
+ a cualquier desarrollo.
+ Además, el aprendizaje está conformado por varias etapas o sub procesos.
+\end_layout
+
+\begin_layout Paragraph
+Configuración de las técnicas 
+\end_layout
+
+\begin_layout Standard
+Las técnicas de regresión representan modelos matemáticos cuyas funciones
+ involucran diferentes parámetros de configuración.
+ La variabilidad en estos valores permite ajustar las preferencias del algoritmo
+ y consecuentemente, la obtención de modelos de calidad diferente.
+ Por lo tanto, el desafío principal de esta parte de la etapa es encontrar
+ los valores apropiados para cada uno de los parámetros, teniendo como base,
+ el conocimiento sobre el efecto que el parámetro causa en el algoritmo.
+ Este desafío es el fundamento para el desarrollo de una metodología de
+ optimización, que partiendo de un rango finito de valores, permite obtener
+ el valor más apto.
+ 
+\end_layout
+
+\begin_layout Standard
+Debido a que las técnicas de regresión son muy variadas entre sí, pueden
+ existir algoritmos que no requieran configuración, que requieran sólo un
+ parámetro o un conjunto de ellos.
+\end_layout
+
+\begin_layout Paragraph
+Construcción de modelos 
+\end_layout
+
+\begin_layout Standard
+La construcción de modelos predictivos es un proceso que inicia con el entrenami
+ento de los datos, continúa opcionalmente con un proceso de validación y
+ concluye con una evaluación del error cometido en las estimaciones frente
+ a los datos reales del entrenamiento.
+\end_layout
+
+\begin_layout Standard
+La fase de entrenamiento de este proceso utiliza las mediciones ya obtenidas
+ en la etapa anterior y a partir del atributo que se desea predecir, el
+ algoritmo va definiendo la función de regresión para encontrar las relaciones
+ entre los atributos del dataset y el atributo a predecir.
+ Esta fase concentra el mayor porcentaje del tiempo computacional y uso
+ de memoria, y varía de acuerdo a la complejidad o simplicidad de cada técnica
+ en particular.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Evaluación de modelos
+\end_layout
+
+\begin_layout Standard
+Una vez concluida la fase de entrenamiento, la calidad del modelo obtenido
+ debe ser analizada para determinar la medida en que el modelo será capaz
+ de generalizar cualquier entrada de dataset futura.
+ La noción sobre el desempeño del modelo tiene lugar a partir de métricas
+ ya definidas para modelos de regresión, que capturan distintamente el error
+ de predicción e incluyen el coeficiente de correlación para conocer el
+ grado de interdependencia de las variables.
+ 
+\end_layout
+
+\begin_layout Standard
+A pesar que el objetivo de alcanzar estimaciones bajas en error es importante,
+ el análisis no debe centralizarse únicamente en la minimizacíón del error
+ en las predicciones, sino que debe estar dirigido por las curvas de aprendizaje.
+ Las curvas de aprendizaje permiten observar gráficamente el modo en que
+ el modelo se ajusta a los datos de entrenamiento, evidenciando efectos
+ de sobreajuste, el modelo sólo será bueno para ese dataset en particular,
+ o efectos de baja adaptación, debido principalmente a que no se cuenta
+ con los suficientes datos para enseñar al modelo.
+ 
+\end_layout
+
+\begin_layout Subsection
+Etapa predicción 
+\end_layout
+
+\begin_layout Standard
+Finalmente, se pretende utilizar estos modelos de predicción en entornos
+ de aplicación que permitan la selección del componente más adecuado en
+ base a un conjunto de propiedades del problema de entrada, las propiedades
  internas del dispositivo en el cual se llevará a cabo la ejecución, y un
  conjunto de restricciones que deben satisfacerse, a través de un proceso
  automatizado que determine al usuario la opción más favorable evitando
- la ejecución de cada componente.
+ la ejecución individual de cada componente.
  
 \end_layout
 
@@ -2578,6 +2718,11 @@ width "100col%"
 special "none"
 height "1in"
 height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
 status collapsed
 
 \begin_layout Plain Layout
