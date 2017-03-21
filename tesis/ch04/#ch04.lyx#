@@ -11,10 +11,10 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman "" "default"""
-\font_sans "" "default"""
-\font_typewriter "" "default"""
-\font_math "" "auto"""
+\font_roman "" "default"
+\font_sans "" "default"
+\font_typewriter "" "default"
+\font_math "" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
@@ -578,17 +578,36 @@ Integración de componentes: A menudo se requiere la evaluación de componentes
 \end_layout
 
 \begin_layout Itemize
-Generación de instancias de entrada: Se debe proveer una manera para generar
- arbitrariamente instancias de un dominio particular, o la capacidad para
- obtener instancias externamente a través de enlaces o archivos.
+Selección de características del contexto: Mientras se realiza la ejecución
+ de los componentes, las propiedades no funcionales del dispositivo móvil
+ donde se llevan a cabo las operaciones, pueden ser capturadas como indicadores.
+ Realizar las mediciones en distintos modelos de dispositivos móviles persigue
+ la idea sobre la influencia de las capacidades de cada modelo en las operacione
+s de ejecución.
+ Ya que las predicciones son realizadas sobre componentes de aplicaciones
+ Android, la captura de las carecterísticas estáticas y dinámicas son tomadas
+ en cuenta, para detectar relaciones entre éstas y los atributos a predecir
+ de los componentes.
+\end_layout
+
+\begin_layout Itemize
+Implementación de dominios: La evaluación de casos de estudios variables
+ en complejidad y características,que incluyen diferentes formatos de componente
+s, son analizados con el fin de arrojar conclusiones sobre la variación
+ en el desempeño de las técnicas de regresión frente a diferentes ambientes,
+ analizar la calidad en el aprendizaje para atributos no funcionales; cuánta
+ mejora en la precisión significa la aplicación de técnicas de regresión
+ sobre problemas de complejidad polinómica respecto a problemas NP, o la
+ afectación en el tiempo de respuesta de las operaciones sobre servicios
+ remotos frente a servicios locales, son algunas de las conclusiones que
+ podrían desprenderse del análisis.
  
 \end_layout
 
 \begin_layout Itemize
-Selección de características del contexto: Mientras se realiza la ejecución
- de los componAprendizajeentes, las propiedades no funcionales del dispositivo
- móvil donde se llevan a cabo las operaciones, pueden ser capturadas como
- indicadores.
+Generación de instancias de entrada: Se debe proveer una manera para generar
+ arbitrariamente instancias de un dominio particular, o la capacidad para
+ obtener instancias externamente a través de enlaces o archivos.
  
 \end_layout
 
@@ -603,6 +622,12 @@ Selección de características de la entrada: Es posible obtener atributos
 Ejecución de componentes y obtensión de métricas: Los componentes son ejecutados
  con las entradas generadas, tomando y registrando mediciones sobre las
  características incorporadas además de las propiedades de interés a predecir.
+ De esta forma, los dataset pueden ser formados por una cantidad variable
+ y opcional de atributos en base a las características que hayan sido elegidas
+ para ser medidas.
+ Este factor impacta en la calidad del dataset creado, por lo tanto estudiar
+ el comportamiento que adoptan los datos y la distribución en el rango de
+ valores, puede servir de indicio para entender el desempeño de las técnicas.
  
 \end_layout
 
@@ -642,6 +667,10 @@ Las técnicas de regresión representan modelos matemáticos cuyas funciones
  Este desafío es el fundamento para el desarrollo de una metodología de
  optimización, que partiendo de un rango finito de valores, permite obtener
  el valor más apto.
+ La obtensión de la mejor configuración de una técnica, para un dataset
+ y un atributo particular, facilita la comparación simultánea de todas las
+ técnicas disponibles a través de las métricas de evaluación y seleccionar
+ consecuentemente la más óptima.
  
 \end_layout
 
@@ -663,6 +692,12 @@ ento de los datos, continúa opcionalmente con un proceso de validación y
 \end_layout
 
 \begin_layout Standard
+La implementación de los casos de estudio enfatizan la predicción de la
+ precisión en las respuestas y el tiempo de ejecución de los componentes
+ considerando a ambas métricas IMPORTANTES al momento de 
+\end_layout
+
+\begin_layout Standard
 La fase de entrenamiento de este proceso utiliza las mediciones ya obtenidas
  en la etapa anterior y a partir del atributo que se desea predecir, el
  algoritmo va definiendo la función de regresión para encontrar las relaciones
@@ -680,11 +715,11 @@ Evaluación de modelos
 \begin_layout Standard
 Una vez concluida la fase de entrenamiento, la calidad del modelo obtenido
  debe ser analizada para determinar la medida en que el modelo será capaz
- de generalizar cualquier entrada de dataset.
+ de generalizar cualquier entrada de dataset futura.
  La noción sobre el desempeño del modelo tiene lugar a partir de métricas
  ya definidas para modelos de regresión, que capturan distintamente el error
- de predicción e incluye el coeficiente de correlación para conocer el grado
- de interdependencia de las variables.
+ de predicción e incluyen el coeficiente de correlación para conocer el
+ grado de interdependencia de las variables.
  
 \end_layout
 
@@ -695,7 +730,9 @@ A pesar que el objetivo de alcanzar estimaciones bajas en error es importante,
  Las curvas de aprendizaje permiten observar gráficamente el modo en que
  el modelo se ajusta a los datos de entrenamiento, evidenciando efectos
  de sobreajuste, el modelo sólo será bueno para ese dataset en particular,
- o efectos de baja adaptación, debido principalmente  
+ o efectos de baja adaptación, debido principalmente a que no se cuenta
+ con los suficientes datos para enseñar al modelo.
+ 
 \end_layout
 
 \begin_layout Subsection
