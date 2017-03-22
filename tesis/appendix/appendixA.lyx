@@ -623,8 +623,8 @@ ac{TSP}
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "basicstyle={\footnotesize}"
-inline true
+lstparams "basicstyle={\footnotesize},breaklines=true,language=Java,captionpos=t,tabsize=3,frame=no,keywordstyle={\color{blue}},commentstyle={\color{gray}},stringstyle={\color{red}},numbers=left,numberstyle={\tiny},numbersep=5pt,breaklines=true,showstringspaces=false,basicstyle={\footnotesize},emph={label}"
+inline false
 status open
 
 \begin_layout Plain Layout
@@ -634,8 +634,9 @@ vértices: 0..
 \end_layout
 
 \begin_layout Plain Layout
+\align left
 
-Xij = 1 | Xij = 0					            																								para i,j = 0...n
+Xij = 1 | Xij = 0 //para i,j = 0...n
 \end_layout
 
 \begin_layout Plain Layout
@@ -645,8 +646,7 @@ La arista (i,j) pertenece(1)/ no pertenece (0) al conjunto solución.
 
 \begin_layout Plain Layout
 
-Cij Distancia desde la ciudad i hasta j	     																							   para
- i,j = 0...n	 
+Cij Distancia desde la ciudad i hasta j //para i,j = 0...n	 
 \end_layout
 
 \begin_layout Plain Layout
@@ -711,7 +711,8 @@ Pseudo-código:
 
 \begin_layout Standard
 \begin_inset listings
-inline true
+lstparams "language=Java,numbers=left,numberstyle={\tiny},basicstyle={\footnotesize},breaklines=true,captionpos=t,frame=no,keywordstyle={\color{blue}},commentstyle={\color{gray}},stringstyle={\color{red}},numbersep=5pt,emph={label}"
+inline false
 status open
 
 \begin_layout Plain Layout
@@ -721,7 +722,7 @@ backtracking(costoAct, minCost, lastV, currPath, bestPath, costoAct)
 
 \begin_layout Plain Layout
 
-si costoAct<minCost			//Poda por costo que se arrastra 	
+si costoAct<minCost //Poda por costo que se arrastra 	
 \end_layout
 
 \begin_layout Plain Layout
@@ -771,7 +772,7 @@ si costoAct<minCost			//Poda por costo que se arrastra
 
 \begin_layout Plain Layout
 
-		bestPath=currPath;		//Setear la solución ya encontrada 		
+		bestPath=currPath; //Setear la solución ya encontrada 		
 \end_layout
 
 \begin_layout Plain Layout
@@ -846,7 +847,8 @@ Pseudocódigo:
 
 \begin_layout Standard
 \begin_inset listings
-inline true
+lstparams "language=Java,numbers=left,numberstyle={\tiny},basicstyle={\footnotesize},breaklines=true,captionpos=t,frame=no,keywordstyle={\color{blue}},commentstyle={\color{gray}},stringstyle={\color{red}},numbersep=5pt,emph={label}"
+inline false
 status open
 
 \begin_layout Plain Layout
@@ -909,7 +911,8 @@ Pseudocódigo:
 
 \begin_layout Standard
 \begin_inset listings
-inline true
+lstparams "language=Java,numbers=left,numberstyle={\tiny},basicstyle={\footnotesize},breaklines=true,captionpos=t,frame=no,keywordstyle={\color{blue}},commentstyle={\color{gray}},stringstyle={\color{red}},numbersep=5pt,emph={label}"
+inline false
 status open
 
 \begin_layout Plain Layout

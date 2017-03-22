@@ -9,10 +9,10 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default"
+\font_sans "default"
+\font_typewriter "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
@@ -106,8 +106,12 @@ Los dispositivos móviles son artefactos electrónicos pequeños con capacidad
  convencional.
  Mientras el teléfono móvil es un dispositivo inalámbrico electrónico utilizado
  para acceder y utilizar los servicios de la red de telefonía celular, el
- término “inteligente” hace referencia a la capacidad de usarlo también
- como una computadora de bolsillo.
+ término 
+\emph on
+inteligente
+\emph default
+ hace referencia a la capacidad de usarlo también como una computadora de
+ bolsillo.
 \end_layout
 
 \begin_layout Standard
@@ -221,7 +225,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/Android-architecture.png
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/Android-architecture.png
 	scale 55
 
 \end_inset
@@ -430,14 +434,18 @@ d de Android ha crecido muy rápidamente desde su lanzamiento.
  Esto se debe a la versatilidad que Android otorga a éstos dispositivos
  a través de las aplicaciones, que permiten adaptarlos según las necesidades
  de los usuarios.
- Además, el hecho de que Android sea open source da lugar a la creación
+ Además, el hecho de que Android sea de código abierto da lugar a la creación
  de diferentes versiones del sistema operativo que permiten personalizar
  cada aspecto del mismo.
  Android también permite que las aplicaciones se adapten a las características
  del dispositivo (pantalla, sensores, etc.), aprovechando las capacidades
  de cada dispositivo particular.
- Con respecto a las herramientas de desarrollo, Android ofrece un paquete
- que combina el 
+ 
+\end_layout
+
+\begin_layout Standard
+Respecto a las herramientas de desarrollo, Android ofrece un paquete que
+ combina el 
 \begin_inset ERT
 status open
 
@@ -458,7 +466,7 @@ ac{IDE}
 
 \begin_layout Standard
 Por otra parte, en el contexto de los servicios Web, Android provee soporte
- para clientes 
+ para conexiones 
 \begin_inset ERT
 status open
 
@@ -471,8 +479,20 @@ ac{HTTP}
 
 \end_inset
 
- mediante la clase AndroidHttpClient, y por tanto, permite la utilización
- de servicios Web REST a través de ella.
+ , y por tanto, permite la utilización de servicios Web 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{REST}
+\end_layout
+
+\end_inset
+
+ a través de ella.
  
 \end_layout
 
@@ -481,257 +501,72 @@ Un aspecto único del diseño de las aplicaciones en Android es que éstas
  pueden reutilizar componentes de otras aplicaciones instaladas en el dispositiv
 o.
  Por ejemplo, si una aplicación desea tomar una fotografía, es probable
- que ya exista una aplicación que cumpla esa funcionalidad.
- Entonces, la nueva aplicación puede utilizar la existente sin necesidad
- de desarrollar una actividad propia para utilizar la cámara, esta invocación
- se realiza de modo tal que sea transparente para el usuario final.
+ que ya exista una aplicación que cumpla esa funcionalidad, entonces, la
+ nueva aplicación puede utilizar la existente sin necesidad de desarrollar
+ una actividad propia para utilizar la cámara, esta invocación se realiza
+ de modo tal que sea transparente para el usuario final.
 \end_layout
 
 \begin_layout Standard
-Para comprender el funcionamiento íntegro de las aplicaciones en Android
- a continuación se describen brevemente los componentes claves del sistema.
+El sistema Android provee cinco tipos de componentes básicos para el desarrollo
+ de aplicaciones.
+ El componente 
+\emph on
+Activity 
+\emph default
+representa una pantalla simple y es el único que provee interfaz de usuario.
+ A través de estas actividades se logra el acceso a la información almacenada
+ en los componentes 
+\emph on
+Content Provider 
+\emph default
+que son los encargados de administrar la información compartida por las
+ aplicaciones; las aplicaciones pueden almacenar sus datos en el sistema
+ de archivos, en una base SQLite, en la Web, o en cualquier otro lugar de
+ acceso.
+ A través del ‘content provider’, otras aplicaciones pueden consultar, o
+ incluso modificar estos datos.
  
 \end_layout
 
-\begin_layout Itemize
-Actividad: Una actividad representa una pantalla simple con una interfaz
- de usuario.
- Por ejemplo, una aplicación de email puede tener una actividad que muestre
- una lista de los emails recientes, otra para escribir emails, y otra para
- leerlos.
- Aunque las actividades trabajan en conjunto para brindar al usuario una
- experiencia consistente en ésta aplicación, cada una es independiente de
- las otras.
- Esto significa que otra aplicación puede iniciar cualquiera de estas actividade
-s (si la aplicación de email lo permite).
- Por ejemplo, otra aplicación que utiliza la cámara puede iniciar la actividad
- correspondiente para escribir un email, con el objetivo de compartir una
- imagen.
-\end_layout
-
-\begin_layout Itemize
-Servicio: Un servicio es un componente que se ejecuta en segundo plano para
- realizar operaciones que requieran gran cantidad de tiempo, o interactúen
- con procesos remotos.
- Éstos tampoco proveen una interfaz de usuario.
- Por ejemplo, un servicio puede reproducir música en segundo plano, mientras
- que el usuario interactúa con una aplicación diferente, o puede descargar
- datos a través de la red sin bloquear la interacción del usuario con la
- actividad.
- Los servicios pueden iniciarse desde otros componentes, por ejemplo una
- actividad.
-\end_layout
-
-\begin_layout Itemize
-Content Provider: Este componente administra la información compartida por
- las aplicaciones.
- Las aplicaciones pueden almacenar sus datos en el sistema de archivos,
- en una base SQLite, en la Web, o en cualquier otro lugar que la aplicación
- pueda acceder.
- A través del content provider, otras aplicaciones pueden consultar, o incluso
- modificar estos datos (si el content provider lo permite).
- Por ejemplo, el sistema Android provee un content provider que administra
- la información de los contactos.
- Entonces, cualquier aplicación con los permisos adecuados puede consultar
- esta información para leer o escribir datos de una persona particular.
+\begin_layout Standard
+Las actividades también pueden iniciar servicios que se ejecutan en segundo
+ plano para realizar operaciones que requieran gran cantidad de tiempo,
+ o interactúen con procesos remotos, por ejemplo la reproducción de música
+ en segundo plano o la descarga de datos mientras el usuario interactúa
+ con una aplicación diferente.
+ 
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/Content-provider-use.png
-	scale 55
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Diagrama de la metodología de uso de un Content Provider.
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Content-provider-metology"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Broadcast Receiver: Es un componente que responde a los anuncios de difusión
- masiva.
- Muchos de estos anuncios se originan desde el sistema, por ejemplo, cuando
- la pantalla se apaga, la batería es baja, o al capturar una foto.
- Sin embargo, las aplicaciones también pueden iniciar anuncios, por ejemplo,
- para alertar a otras aplicaciones que cierta información fue descargada
- al dispositivo y está disponible para su uso.
- Aunque los broadcast receiver no poseen una interfaz de usuario, estos
- pueden crear un estado en la barra de notificaciones para alertar al usuario
- cuando un evento ocurre.
- En otras palabras, un broadcast receiver es simplemente una puerta de enlace
- a otros componentes, y por tanto, se estima que deben realizar una mínima
- cantidad de trabajo.
- Por ejemplo, pueden iniciar un servicio cuando algún evento ocurre.
+Respecto a los anuncios o mensajes de difusión masiva, el componente 
+\emph on
+Broadcast Receiver
+\emph default
+ funciona como puerta de enlace a otros componentes, respondiendo mayormente
+ a los anuncios originados por el sistema, por ejemplo, cuando la pantalla
+ se apaga, la batería es baja, o al capturar una fotografía.
+ 
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/Broadcast-receiver.png
-	scale 55
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Diagrama sobre el registro de eventos a través de Broadcast Receivers.
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Broadcast-receiver"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Intent: Es un objeto que representa una acción a realizar.
- Específicamente, tienen por finalidad iniciar actividades, servicios o
- BroadcastReceivers realizando el binding en tiempo de ejecución entre los
- componentes de las aplicaciones (tanto entre componentes de una misma aplicació
-n como de diferentes).
+El último componente denominado 
+\emph on
+Intent
+\emph default
+ representa acciones a realizar, específicamente, tienen por finalidad iniciar
+ actividades, servicios o 
+\emph on
+Broadcast Receivers
+\emph default
+ realizando el binding en tiempo de ejecución entre los componentes de las
+ aplicaciones (tanto entre componentes de una misma aplicación como de diferente
+s).
  Cada Intent cuenta con una estructura de datos donde se realiza una descripción
- abstracta de una operación a realizar.
- Luego, la entrega de estos objetos se realiza de diferente manera de acuerdo
- el tipo de componente que se desee activar.
- La operación a realizar varía desde crear una actividad u obtener una existente
- para realizar algo, activar o recuperar un servicio o simplemente ser pasado
- a todos los BroadcastReceivers.
-\end_layout
-
-\begin_layout Standard
-La resolución del Intent puede realizarse de manera explícita o implícita.
- En el caso de los Intents explícitos se designa el componente receptor
- de manera directa, utilizando su nombre.
- Dado que los nombres de los componentes de otras aplicaciones no suelen
- ser conocidos por los desarrolladores, este tipo de Intents suelen utilizarse
- en la comunicación interna de las aplicaciones.
- Por otra parte, los Intents implícitos poseen el nombre del componente
- en blanco ya que no se conoce.
- Este tipo de Intent es utilizado generalmente para activar componentes
- en otras aplicaciones.
- En este caso es necesario que Android determine cuál es el mejor componente
- para manejar el Intent implícito.
- Esto lo hace comparando los contenidos del Intent con los de los IntentFilters,
- los cuales son estructuras asociadas a componentes que pueden resolver
- Intents.
-\end_layout
-
-\begin_layout Itemize
-IntentFilter: Tanto las actividades como los servicios y los BroadcastReceivers
- pueden poseer uno o más IntentFilters para informarle al sistema el tipo
- de clases de Intent que pueden manejar.
- Cada uno de estos filtros describe la capacidad del componente para recibir
- y manejar cierta clase de Intent.
- A través de estos filtros, se entregan los Intents implícitos a los componentes.
- Por ello, cada componente posee un IntentFilter por cada trabajo que puede
- realizar.
- Los objetos IntentFilter son definidos en el manifiesto de la aplicación
- ya que el sistema operativo debe conocer las capacidades de los componentes
- antes de iniciar cada uno de ellos, la única excepción son los filtros
- utilizados por los objetos BroadcastReceiver los cuales pueden ser registrados
- en forma dinámica.
+ abstracta de una operación a realizar, luego, la entrega de estos objetos
+ se realiza de diferente manera de acuerdo el tipo de componente que se
+ desee activar.
  
-\end_layout
-
-\begin_layout Itemize
-PendingIntent: Es un contenedor de Intents que se encarga de compartir permisos.
- A través de estos objetos se pueden conceder permisos a otras aplicaciones
- para realizar operaciones.
- Concretamente, una aplicación puede crear un PendingIntent para pasárselo
- a otra y esta última pueda ejecutarlo como si fuera la aplicación original.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/New-activity-diagram.png
-	scale 55
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Diagrama sobre el uso de Intent para iniciar una nueva Actividad.
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:New-activity-diagram"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -837,7 +672,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/UML-component.png
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/UML-component.png
 	scale 55
 
 \end_inset
@@ -898,9 +733,15 @@ Al diseñar un sistema de software no sólo se espera cumplir con los objetivos
  determinan las cualidades que deben proporcionarse en la arquitectura de
  un sistema.
  Estas cualidades 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Ghahramani2004"
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cite{Ghahramani2004}
+\end_layout
 
 \end_inset
 
@@ -1032,11 +873,21 @@ El aprendizaje a partir de datos es la base para comprender el proceso de
 \end_layout
 
 \begin_layout Standard
-El hombre basa su conocimiento en tres partes: i) recuerdo, el hombre reconoce
- cuando ha sido la última vez que se estuvo en una determinada situación
- (dataset), ii) adaptación, reconoce la última vez que se probó una acción
- (salida producida) y iii) generalización, si ha funcionado o no (si fue
- correcta o no).
+El hombre basa su conocimiento en tres partes: 
+\emph on
+i
+\emph default
+) recuerdo, el hombre reconoce cuando ha sido la última vez que se estuvo
+ en una determinada situación (dataset), 
+\emph on
+ii
+\emph default
+) adaptación, reconoce la última vez que se probó una acción (salida producida)
+ y 
+\emph on
+iii
+\emph default
+) generalización, si ha funcionado o no (si fue correcta o no).
  
 \end_layout
 
@@ -1089,8 +940,11 @@ Si se define en forma imprecisa el concepto de aprendizaje como la mejora
  se le puede indicar a un algoritmo la respuesta correcta para un problema,
  así, la próxima vez que se aplique su desempeño será mejor.
  También, podría indicarse un conjunto de respuestas correctas para que
- la máquina “adivine” la forma de obtener estas respuestas para otros problemas
- (generalización).
+ la máquina 
+\emph on
+adivine
+\emph default
+ la forma de obtener estas respuestas para otros problemas (generalización).
  Alternativamente, se puede indicar si la respuesta obtenida es correcta
  o no sin señalar la respuesta real ya que la máquina debería ser capaz
  de encontrarla; una variante podría ser asignarle un puntaje a la respuesta
@@ -1119,17 +973,24 @@ Clasificación por la naturaleza de la entrada
 El modo de aprendizaje que un algoritmo particular puede realizar queda
  determinado por la naturaleza de los datos de entrada, es decir, puede
  variar en base a la información contenida en los datos de entrenamiento
- (training Set).
+ (
+\emph on
+training set
+\emph default
+).
  
 \end_layout
 
 \begin_layout Standard
 El aprendizaje supervisado utiliza un conjunto de datos basado en dos pares
  de objetos: los datos de entrada o conjunto de ejemplos del dominio y las
- respuestas correctas (targets) para una determinada característica; a través
- de las respuestas correctas provistas y basado en el conjunto de datos
- el algoritmo de aprendizaje generaliza el comportamiento para responder
- a todas las posibles entradas.
+ respuestas correctas (
+\emph on
+targets
+\emph default
+) para una determinada característica; a través de las respuestas correctas
+ provistas y basado en el conjunto de datos el algoritmo de aprendizaje
+ generaliza el comportamiento para responder a todas las posibles entradas.
  Este modo de aprendizaje, entonces, es un proceso que se realiza mediante
  un entrenamiento controlado por un agente externo que determina la respuesta
  que debería generar el algoritmo a partir de una entrada determinada.
@@ -1148,9 +1009,15 @@ Contrariamente, el aprendizaje por refuerzo se basa en la idea de no disponer
 
 \begin_layout Standard
 Por último, en el aprendizaje 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Ghahramani2004"
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cite{Ghahramani2004}
+\end_layout
 
 \end_inset
 
@@ -1171,88 +1038,93 @@ key "Ghahramani2004"
 
 \begin_layout Standard
 Nótese que los valores de entrada y etiqueta describen vectores ya que cada
- ejemplo (instance) del conjunto de entrenamiento posee varias características
- (features); si se tuvieran todos los posibles ejemplos de un problema,
- no habría necesidad alguna de aprendizaje.
+ ejemplo (
+\emph on
+instance
+\emph default
+) del conjunto de entrenamiento posee varias características (
+\emph on
+features
+\emph default
+); si se tuvieran todos los posibles ejemplos de un problema, no habría
+ necesidad alguna de aprendizaje.
 \end_layout
 
 \begin_layout Subsection
 Clasificación por la naturaleza de la salida
 \end_layout
 
-\begin_layout Subsubsection
-Clasificación
+\begin_layout Standard
+La teoría de aprendizaje de maquinas abarca varios factores considerando
+ las características de lo que se busca en los diferentes métodos.
+ Así, existen cinco tipos de métodos, para la búsqueda de diferentes objetivos:
 \end_layout
 
-\begin_layout Standard
-La clasificación también se conoce como un proceso de categorización que
- consiste en asignar a cada ejemplo una etiqueta o clase a la que pertenece
- basado en el entrenamiento de ejemplares de cada clase.
+\begin_layout Description
+Clasificación Consiste en asignar a cada ejemplo una etiqueta o clase a
+ la que pertenece basado en el entrenamiento de ejemplares de cada clase.
  Los datos de entrenamiento son instancias que pertenecen a una única clase
  y el conjunto de clases cubre todas las salidas posibles, por eso se considera
  al proceso de clasificación como un proceso discreto.
- Estas dos características claves no se asemejan a la realidad, algunos
- ejemplos podrían pertenecer parcialmente a dos clases diferentes, incluso
- podría haber situaciones en las que fuere imposible categorizar la entrada,
- por ejemplo, si se considerara una máquina vendedora que utiliza un algoritmo
- para aprender a distinguir monedas nacionales, al introducir una moneda
- extranjera, el clasificador será incapaz de responder correctamente, e
- identificará la moneda como aquella que más se asemeje.
- Este fenómeno se conoce como “novelty detection”.
  El algoritmo de clasificación tiene como objetivo encontrar umbrales de
- decisión que sirvan para identificar las diferentes clases, en la figura
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:clasification-problems"
+ decisión que sirvan para identificar las diferentes clases.
+\end_layout
 
-\end_inset
-
- puede observarse a la izquierda un conjunto de umbrales de decisión lineales
- y a la derecha un conjunto alternativo que separan más idóneamente las
- diferentes clases pero requiere líneas que no son rectas.
+\begin_layout Description
+Clustering El proceso de clustering es la tarea de agrupar un conjunto de
+ objetos de modo tal que los objetos pertenecientes a un mismo grupo (
+\emph on
+cluster
+\emph default
+) comparten algún tipo de similitud entre ellos, de igual sentido que se
+ diferencian con los objetos de otro grupo.
+ A diferencia del proceso de clasificación, los grupos o clases no son conocidos
+ fehacientemente antes del entrenamiento, un claro método de aprendizaje
+ no supervisado.
  
 \end_layout
 
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
+\begin_layout Description
+Estimación
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+densidad La función de densidad de probabilidad 
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/clasification-problems.png
-	scale 55
 
+
+\backslash
+cite{Silverman1986}
+\end_layout
+
+\end_inset
+
+ es un concepto fundamental de la estadística y caracteriza el comportamiento
+ probable de una población en tanto especifica la posibilidad relativa de
+ que una variable aleatoria continua X tome un valor cercano a x.
+\end_layout
+
+\begin_layout Description
+Reducción
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
 \end_inset
 
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Conjuntos de umbrales de decisión para problemas de clasificación.
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:clasification-problems"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
+\begin_layout Subsubsection
+Clasificación
 \end_layout
 
 \begin_layout Subsubsection
@@ -1293,7 +1165,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/regression-problems.png
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/regression-problems.png
 	scale 55
 
 \end_inset
@@ -1348,68 +1220,8 @@ nte mayor en dimensiones más grandes.
 Clustering
 \end_layout
 
-\begin_layout Standard
-El proceso de clustering es la tarea de agrupar un conjunto de objetos de
- modo tal que los objetos pertenecientes a un mismo grupo (cluster) comparten
- algún tipo de similitud entre ellos, de igual sentido que se diferencian
- con los objetos de otro grupo.
- A diferencia del proceso de clasificación, los grupos o clases no son conocidos
- fehacientemente antes del entrenamiento, un claro método de aprendizaje
- no supervisado.
- 
-\end_layout
-
-\begin_layout Standard
-Clustering es una de las tareas principales de la minería de datos y una
- técnica común en el análisis estadístico de los datos, usado en diversos
- campos, entre los que se destaca el aprendizaje de máquina, el reconocimiento
- de patrones, el análisis de imágenes, recuperación de información, bioinformaci
-ón, compresión de datos y gráficos computacionales.
- 
-\end_layout
-
 \begin_layout Subsubsection
 Estimación de densidad
-\end_layout
-
-\begin_layout Standard
-La función de densidad de probabilidad 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Silverman1986"
-
-\end_inset
-
- es un concepto fundamental de la estadística y caracteriza el comportamiento
- probable de una población en tanto especifica la posibilidad relativa de
- que una variable aleatoria continua X tome un valor cercano a x; especificar
- la función de densidad brinda una descripción natural de la distribución
- de X, y permite encontrar probabilidad asociadas con X de la relación:
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $P(a<X<b)=\intop f(d)dx$
-\end_inset
-
-
-\begin_inset Formula $\forall a<b$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-El conjunto de datos de entrenamiento puede considerarse como una función
- de densidad desconocida, donde la estimación de la densidad es, entonces,
- la estimación de una función de probabilidad desconocida de los datos observado
-s; un uso natural de esta estimación es la investigación informal de propiedades
- del conjunto de datos, obtener indicadores sobre estas propiedades como
- la asimetría y multimodalidad de los datos.
- En algunos casos, los indicadores pueden proteger conclusiones consideradas
- verdades autoevidentes, mientras que otros marcan el camino para un análisis
- posterior y/o recolección de datos.
- 
 \end_layout
 
 \begin_layout Subsubsection
@@ -1429,22 +1241,39 @@ Una de las principales motivaciones para la reducción dimensional es la
 \end_layout
 
 \begin_layout Standard
-Existen tres maneras de llevar a cabo la reducción: i) a través de la selección
- de atributos, observar las características disponibles y descubrir si las
- mismas son útiles, por ejemplo, el factor de correlación de las mismas
- con la salida, ii) la derivación de nuevas características a partir de
- las existentes, aplicando transformaciones al dataset cambiando los valores
- del dominio del gráfico mediante el movimiento y la rotación de los mismos,
- los cuales pueden ser descritos como una matriz aplicada a los datos con
- el fin de combinar características y detectar cuáles son útiles y cuáles
- deberían ser descartadas (reducción) y iii) a través del uso de clustering
- para agrupar puntos similares y permitir la identificación de un conjunto
- reducido a ser utilizadas.
+Existen tres maneras de llevar a cabo la reducción: 
+\emph on
+i
+\emph default
+) a través de la selección de atributos, observar las características disponible
+s y descubrir si las mismas son útiles, por ejemplo, el factor de correlación
+ de las mismas con la salida, 
+\emph on
+ii
+\emph default
+) la derivación de nuevas características a partir de las existentes, aplicando
+ transformaciones al dataset cambiando los valores del dominio del gráfico
+ mediante el movimiento y la rotación de los mismos, los cuales pueden ser
+ descritos como una matriz aplicada a los datos con el fin de combinar caracterí
+sticas y detectar cuáles son útiles y cuáles deberían ser descartadas (reducción
+) y 
+\emph on
+iii
+\emph default
+) a través del uso de clustering para agrupar puntos similares y permitir
+ la identificación de un conjunto reducido a ser utilizadas.
  
 \end_layout
 
 \begin_layout Subsection
 Funciones contempladas
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Funciones-contempladas"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1459,6 +1288,13 @@ El foco principal del trabajo desarrollado ha sido guiado por la búsqueda
 
 \begin_layout Subsubsection
 Regresión Lineal
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Regresión-Lineal"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1487,7 +1323,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/regression-lineal.png
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/regression-lineal.png
 	scale 55
 
 \end_inset
@@ -1536,8 +1372,20 @@ Para encontrar la recta que mejor se adapte a los datos se intenta minimizar
 La minimización de esta función da lugar a la implementación de diversas
  alternativas de la función lineal.
  En el presente trabajo se desarrollan dos variantes, la función denominada
- ridge - regression y la función gradiente estocástico descendiente.
- La primera aplica una penalización (ridge) a cada constante.
+ 
+\emph on
+ridge-regression 
+\emph default
+y la función 
+\emph on
+gradiente estocástico descendiente
+\emph default
+.
+ La primera aplica una penalización (
+\emph on
+ridge
+\emph default
+) a cada constante.
  La segunda, aplica un diferencial sobre la función obteniendo el gradiente
  el cual por definición, es la dirección en la que incrementa o disminuye
  en mayor medida.
@@ -1555,11 +1403,30 @@ Red neuronal
 Se presenta un modelo matemático sobre el comportamiento de una neurona,
  el modelo neuronal McCulloch - Pitts denominado así debido a sus creadores
  Warren McCulloch y Walter Pitts, ambos produjeron un ejemplo perfecto al
- modelar una célula nerviosa como i) un conjunto de entradas valoradas (wi)
- que corresponde a las sinapsis, ii) un sumador que une las señales entrantes
- (equivalente a la membrana de la célula que recolecta la carga eléctrica)
- y iii) una función de activación (inicialmente una función umbral) que
- decide sobre la activación de la célula en base a las entradas actuales.
+ modelar una célula nerviosa como 
+\emph on
+i
+\emph default
+) un conjunto de entradas valoradas (w
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+i
+\end_layout
+
+\end_inset
+
+) que corresponde a las sinapsis, 
+\emph on
+ii
+\emph default
+) un sumador que une las señales entrantes (equivalente a la membrana de
+ la célula que recolecta la carga eléctrica) y 
+\emph on
+iii
+\emph default
+) una función de activación (inicialmente una función umbral) que decide
+ sobre la activación de la célula en base a las entradas actuales.
  
 \end_layout
 
@@ -1572,7 +1439,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/McCulloch-Pitts.png
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/McCulloch-Pitts.png
 	scale 55
 
 \end_inset
@@ -1631,6 +1498,34 @@ reference "fig:McCulloch-Pitts"
 \end_layout
 
 \begin_layout Standard
+Teniendo en cuenta que una red neuronal puede llevar a cabo cualquier cálculo
+ que realiza una computadora normal, los pesos o valores de la fuerza sináptica
+ deben ser elegidos correctamente, considerando en consecuencia, un método
+ capaz de configurar dichos pesos.
+\end_layout
+
+\begin_layout Standard
+Observando la neurona McCulloch y Pitts, se puede notar fácilmente que las
+ entradas son independientes al cerebro, por lo que sólo cambia el valor
+ de los pesos y el umbral.
+ Considerando que el aprendizaje sucede entre las neuronas y éstas están
+ conectadas mutuamente, se debe tener en cuenta la manera en que en cambian
+ los pesos y los umbrales de las neuronas para que la red pueda obtener
+ la respuesta correcta más frecuentemente.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Red Neuronal Perceptron 
+\end_layout
+
+\begin_layout Standard
+El perceptrón es una colección de neuronas McCulloch y Pitts con un conjunto
+ de entradas y pesos que unen las neuronas con dichas entradas.
+ 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -1639,7 +1534,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/perceptron-neural-network.png
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/perceptron-neural-network.png
 	scale 55
 
 \end_inset
@@ -1651,8 +1546,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Red neuronal perceptrón.
- (A) Pesos o fuerzas sinápticas (B) Sumador de pesos ( C) Función de activación.
+Red neuronal perceptron
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:perceptron-neural-network"
@@ -1684,10 +1578,15 @@ reference "fig:perceptron-neural-network"
  el estado de una neurona no infiere sobre las demás, sólo comparten las
  entradas.
  Un punto a destacar es que el número de entradas y de neuronas no necesariament
-e debe corresponderse, en general hay m entradas y n neuronas.
- Además, como notación formal los pesos se etiquetan como wi donde el subíndice
- pertenece a la entrada, y respecto a la red neuronal se identifica como
- wij siendo j el número de neurona conectada a la entrada i.
+e debe corresponderse, en general hay 
+\emph on
+m
+\emph default
+ entradas y 
+\emph on
+n
+\emph default
+ neuronas.
  
 \end_layout
 
@@ -1700,93 +1599,19 @@ El mayor inconveniente es conocer con certeza los valores que deben tener
 \end_layout
 
 \begin_layout Standard
-Suponiendo que una neurona se encuentra en un estado que no debería con
- m pesos conectados, uno por cada nodo de entrada, luego se rotula la neurona
- equivocada como k,y los pesos de interés como wik, siendo i de 1 a m.
- Analizando estos pesos puede detectarse que son muy grandes cuando la neurona
- se activa (cuando no debería hacerlo) o en caso contrario, son muy pequeños.
- Por lo tanto, se puede computar una función de error yk − tk como la diferencia
- entre la salida que produjo la neurona (yk) y la salida (tk).
- Para mitigar errores de cálculos se considera la siguiente variación: 
+Un proceso de análisis sobre los pesos podría arrojar que los pesos toman
+ valores muy grandes en la activación de una neurona (cuando no debería
+ hacerlo) o en caso contrario, valores muy pequeños, por lo que se podría
+ computar una función de error como la diferencia entre la salida que produjo
+ la neurona y la salida de la red.
+ En el caso particular de entradas en cero, se modifica el valor de umbral
+ añadiendo a la red Perceptron un parámetro extra denominado bias, los pesos
+ de esta entrada son usualmente asignados al índice cero.
+ 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Formula $\triangle w_{i,k}=-(y_{_{k}}-t_{k})*x_{i}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Se toma un valor η como la tasa de aprendizaje para definir la variación
- del peso, por consiguiente la velocidad con que aprende la red.
- El costo de tener una tasa pequeña es que los pesos deberán inspeccionar
- reiteradas veces la entrada antes de cambiar significativamente, por lo
- tanto la red aprende más lentamente pero será más estable y resistente
- a los ruidos e imprecisiones de los datos (errores).
- El valor wij se actualiza mediante la fórmula:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $w_{i,j}\leftarrow w_{i,j}-\eta(y_{j}-t_{j})*x_{i}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Otra cuestión a tener en cuenta es el caso de todas las entradas en cero
- ya que alterar los pesos no produciría algún aprendizaje (los pesos son
- factores y su multiplicación por cero retorna siempre cero), lo que debe
- cambiarse es el valor de umbral.
- Este valor requiere un parámetro adicional por lo que se le agrega al Perceptró
-n un peso de entrada extra a la neurona (bias), con el valor de la entrada
- siempre constante.
- Se incluye dicho peso en el algoritmo de actualización (como cualquiera
- de los otros).
- Esta entrada es llamada bias y sus pesos son usualmente asignado al índice
- 0, por lo que su peso conectado a la neurona j sería w0j.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/perceptron-neural-network-bias.png
-	scale 55
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Red neuronal perceptrón con unidad de bias.
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:perceptron-neural-network-bias"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
+\begin_layout Subsubsection*
+Red neuronal Perceptrón multicapa 
 \end_layout
 
 \begin_layout Standard
@@ -1816,7 +1641,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/Perceptron-multilayer.png
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/Perceptron-multilayer.png
 	scale 55
 
 \end_inset
@@ -1850,31 +1675,22 @@ name "fig:perceptron-neural-network-multilayer"
 
 \begin_layout Standard
 La nueva red, ahora, debe ser entrenada para que los pesos nuevos se adapten
- y generen las respuestas correctas (targets).
+ y generen las respuestas correctas (
+\emph on
+targets
+\emph default
+).
  Estas respuestas son conocidas y se puede computar la diferencia entre
  estas y las salidas pero se desconoce si el peso incorrecto pertenece a
  la primera capa o a la segunda y cuáles activaciones de las neuronas de
  la capa intermedia son correctas, razón por la cual esta capa se denomina
  capa oculta ya que es imposible examinar y corregir sus valores de forma
  inmediata.
-\end_layout
-
-\begin_layout Standard
-El entrenamiento de MLP consiste en dos partes, primero se obtienen las
- salidas con las entradas brindadas y los pesos actuales (forwards), y luego
- se actualizan los pesos considerando el error como la diferencia entre
- el valor obtenido y el real (propagación hacia atrás del error - backwards).
  
 \end_layout
 
 \begin_layout Standard
-El primer paso es exactamente igual al modelo perceptrón, excepto que se
- realiza una vez por cada conjunto de neuronas y capa por capa.
- La función de error que se utiliza en base a t (valor esperado) e y (valor
- de salida) es la función de la suma de los cuadrados de los errores: 
-\end_layout
-
-\begin_layout Standard
+El entrenamiento de 
 \begin_inset ERT
 status open
 
@@ -1882,57 +1698,44 @@ status open
 
 
 \backslash
-[ E(t,y) = 1/2
-\backslash
-sum_{k=1}^{N} (y{k} - t{k})^2
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-]
+ac{MLP}
 \end_layout
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-Ya que el propósito de aprender es minimizar el error, se utiliza nuevamente
- la técnica de gradiente descendiente presentada en el apartado de linear
- regression.
+ consiste en dos partes, primero se obtienen las salidas con las entradas
+ brindadas y los pesos actuales (
+\emph on
+forwards
+\emph default
+), y luego se actualizan los pesos considerando el error como la diferencia
+ entre el valor obtenido y el real (propagación hacia atrás del error -
+ 
+\emph on
+backwards
+\emph default
+).
  
 \end_layout
 
 \begin_layout Standard
-Por otro lado como función de umbral debe usarse la función de activación,
- ya que esta es continua y permite entonces operar con sus derivadas y calcular
- el gradiente.
- Esta función llamada función sigmoide típicamente describe un gráfico en
- forma de S y tiene la forma: 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $a=g(h)=\frac{1}{1+\exp(-\beta h)}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Por lo tanto, con la nueva función de error y de activación, puede calcularse
+Por lo tanto, con la función de error y de activación, puede calcularse
  el diferencial para modificar los pesos en dirección del gradiente negativo,
  mejorando así la función de error.
  El objetivo es obtener los gradientes de esos errores y usarlos para decidir
  cuánto deben actualizarse dichos pesos en la red sobre la capa de salida
- y, luego de actualizarla, se opera hacia atrás (backwards) a través de
- la red hasta llegar a la entrada nuevamente.
+ y, luego de actualizarla, se opera hacia atrás (
+\emph on
+backwards
+\emph default
+) a través de la red hasta llegar a la entrada nuevamente.
  Sólo existen dos problemas, para las neuronas de salida se desconocen las
  entradas que le corresponden y para las neuronas escondidas, se desconocen
- las salidas esperadas (targets) y en caso de existir más capas incluso
- podrían no conocerse las entradas.
+ las salidas esperadas (
+\emph on
+targets
+\emph default
+) y en caso de existir más capas incluso podrían no conocerse las entradas.
  Para solucionar estas cuestiones se aplica la regla de la cadena la cual
  afirma que para conocer la forma en que varía el error en base a la variación
  de los pesos, se debe analizar la variación del error en función de las
@@ -1942,36 +1745,12 @@ Por lo tanto, con la nueva función de error y de activación, puede calcularse
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $(f\circ g(x))'=g'(x)f'(g(x))$
-\end_inset
-
-or
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $\frac{dy}{dx}=\frac{dy}{du}\frac{du}{dx}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 Esta forma de resolución es muy útil ya que permite conocer todas las derivadas
  que se necesitan.
  Puede escribirse la función de activación de los nodos de salida en términos
  de los nodos ocultos y de los pesos de salida para luego enviarlo hacia
  las capas ocultas de la red (hacia atrás) para decidir cuáles eran los
  salidas esperadas para esas neuronas.
- 
-\end_layout
-
-\begin_layout Standard
-En síntesis,se obtiene la derivada de la función de error respecto a los
- pesos para poder cambiarlos en dirección al gradiente negativo, minimizando
- el error lo más posible, como su análisis no puede realizarse de forma
- directa, se aplica la regla de la cadena y se calcula el diferencial respecto
- a valores conocidos.
- 
 \end_layout
 
 \begin_layout Subsubsection
@@ -1980,10 +1759,22 @@ K-means clusterer
 
 \begin_layout Standard
 El algoritmo K - means aplica clustering sobre los datos de entrenamiento
- y recibe un parámetro K para dividir estos datos en K categorías.
+ y recibe un parámetro 
+\emph on
+K
+\emph default
+ para dividir estos datos en 
+\emph on
+K
+\emph default
+ categorías.
  El algoritmo intenta localizar k centros en el espacio de entrada de modo
  tal que estos centros estén, como su nombre lo indica, en el centro de
- una categoría (cluster).
+ una categoría (
+\emph on
+cluster
+\emph default
+).
  La dificultad se presenta ya que al desconocer la categorización de estos
  grupos, resulta aún más difícil determinar la localización de cada centro.
  
@@ -1992,13 +1783,32 @@ El algoritmo K - means aplica clustering sobre los datos de entrenamiento
 \begin_layout Standard
 Los algoritmos de aprendizaje generalmente se basan en minimizar alguna
  clase de error, en consecuencia la primera acción que se realiza es definir
- un criterio que lo describa teniendo en cuenta: i) una medida de la distancia
- entre puntos, definir una medida para cuantificar estas distancias, por
- lo general se usa la distancia euclídea y ii) determinar el punto central
- de un conjunto de puntos (mean average) considerando el espacio euclídeo
- ya que en espacios curvos es otra la interpretación.
+ un criterio que lo describa teniendo en cuenta: 
+\emph on
+i
+\emph default
+) una medida de la distancia entre puntos, definir una medida para cuantificar
+ estas distancias, por lo general se usa la distancia euclídea y 
+\emph on
+ii
+\emph default
+) determinar el punto central de un conjunto de puntos (
+\emph on
+mean average
+\emph default
+) considerando el espacio euclídeo ya que en espacios curvos es otra la
+ interpretación.
  Teniendo en cuenta estos conceptos, el algoritmo K - means calcula el punto
- medio (centro) de cada cluster (µc(i)).
+ medio (centro) de cada cluster (µ
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+c
+\end_layout
+
+\end_inset
+
+(i)).
  lo que resulta equivalente a minimizar la distancia euclídea de cada punto
  del cluster al centro del mismo.
  
@@ -2035,7 +1845,14 @@ Maquina de vector de soporte
 \begin_layout Standard
 Al tratar con problemas de clasificación existen varios clasificadores lineales
  que ofrecen respuestas correctas pero diferentes, como se expone en la
- figura 2.13.
+ figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:lineals-classifiers"
+
+\end_inset
+
+.
  Si bien las soluciones laterales son acertadas, las líneas divisorias son
  muy próximas a algunos puntos del conjunto de datos de entrenamiento dando
  paso a una posible imprecisión futura en la predicción, situación que no
@@ -2052,7 +1869,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/lineals-classifiers.png
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/lineals-classifiers.png
 	scale 55
 
 \end_inset
@@ -2085,12 +1902,12 @@ name "fig:lineals-classifiers"
 \end_layout
 
 \begin_layout Standard
-Analiticamente, se toma la distancia existente entre la línea y el primer
+Analíticamente, se toma la distancia existente entre la línea y el primer
  punto interceptado (en dirección perpendicular), si se ubica una ‘zona
  desierta’ alrededor de la línea, ningún punto ubicado en dicha zona puede
  ser clasificado ya que se encuentra demasiado cerca de la línea.
  Esta región conforma un cilindro simétrico alrededor de la función en 3D
- y un hiper-cilindro en dimensiones mayores.
+ y un hiper - cilindro en dimensiones mayores.
  El radio máximo que puede tener esta región es llamado margen, señalado
  como M y los puntos de cada clase más cercanos a la línea de clasificación
  se denominan vectores de soporte.
@@ -2100,14 +1917,17 @@ Analiticamente, se toma la distancia existente entre la línea y el primer
  de los datos, luego del entrenamiento pueden descartarse los puntos que
  no pertenecen al vector y utilizarlos para clasificar, lo cual conlleva
  una gran eficiencia en el almacenamiento de datos.
- 
-\end_layout
+ El algoritmo puede encontrar varios hiperplanos de separación posibles
+ y detectar aquel que sea más óptimo.
+ En la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:SVM-metology"
 
-\begin_layout Standard
-El algoritmo puede encontrar varios hiperplanos de separación posibles y
- detectar aquel que sea más óptimo.
- En la figura 2.14 se reflejan estas dos situaciones y se expone, en el gráfico
- derecho las notaciones matemáticas formales del algoritmo.
+\end_inset
+
+ se reflejan estas dos situaciones y se expone, en el gráfico derecho las
+ notaciones matemáticas formales del algoritmo.
  
 \end_layout
 
@@ -2120,7 +1940,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/SVM-metology.png
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/SVM-metology.png
 	scale 55
 
 \end_inset
@@ -2153,8 +1973,20 @@ name "fig:SVM-metology"
 \end_layout
 
 \begin_layout Standard
-A través de la función g(x) = wtx + bse definen los dos hiperplanos (clasificado
-r).
+A través de la función 
+\emph on
+g(x) = w
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+t
+\end_layout
+
+\end_inset
+
+x + b
+\emph default
+ se definen los dos hiperplanos (clasificador).
  Para obtener el punto más cercano desde la línea de clasificación considerando
  la clase 2 (ver figura 
 \begin_inset CommandInset ref
@@ -2166,22 +1998,19 @@ reference "fig:SVM-metology"
 ) se recorre en dirección perpendicular partiendo del límite de la clase
  1 hasta llegar al límite de la clase 2, el primer punto interceptado se
  denomina x.
- Ya que w es perpendicular al clasificador, es perpendicular a los límites
- 1 y 2, por lo tanto el margen M se describe en términos de w.
- Si w es un vector unario, el margen toma el valor de 1/||w||.
-\end_layout
-
-\begin_layout Standard
-Para obtener un clasificador de buena calidad, se pueden definir un conjunto
+ Para obtener un clasificador de buena calidad, se pueden definir un conjunto
  de restricciones que indiquen la manera en que el clasificador podría obtener
  la respuesta correcta.
- 
-\end_layout
-
-\begin_layout Standard
-Por ejemplo, si en lugar de tomar las dos clases como g(x) = 1 y g(x) =
- 0, se igualaran a los valores 1 y -1 se obtendrá una respuesta correcta
- si ti × yi ≥1.
+ Por ejemplo, si en lugar de tomar las dos clases como 
+\emph on
+g(x) = 1
+\emph default
+ y 
+\emph on
+g(x) = 0
+\emph default
+, se podrían igualar a los valores 1 y -1 y así obtener una respuesta correcta
+ diferente.
  Estos tipos de problemas pueden ser resueltos de forma directa y eficiente
  (por ejemplo, en tiempo polinomial), gracias a que existen algoritmos de
  programación cuadrática que brindan soluciones efectivas.
@@ -2196,48 +2025,49 @@ Todas las consideraciones expuestas hasta el momento se realizaron tras
  en un lado incorrecto) el primero es mejor que el segundo, el error no
  fue tan extremo como en el segundo y esta información debe ser incluida
  en los criterios de minimización modificando las restricciones, incluyendo
- un parámetro C.
+ un parámetro 
+\emph on
+C
+\emph default
+.
  
-\end_layout
-
-\begin_layout Standard
-C es el parámetro que indica el trade off que existe entre ambos parámetros:
+\emph on
+C
+\emph default
+ es el parámetro que indica el trade off que existe entre ambos parámetros:
  cuanto más pequeño sea el valor de C más importancia toma el margen sobre
  algunos errores, cuanto más grande se vuelve C ocurre lo contrario.
- 
-\end_layout
-
-\begin_layout Standard
-Esto transforma el problema en un clasificador de margen suave ya que se
+ Esto transforma el problema en un clasificador de margen suave ya que se
  permiten algunos errores.
  La forma de evitarlos es modificando las características para que los datos
  sean linealmente separables, los datos no pueden inventarse de modo que
  las características deben ser derivadas a partir de las existentes.
- Para ello se describe una nueva función llamada kernel denominada φ(x)
+ Para ello se describe una nueva función llamada kernel denominada 
+\emph on
+φ(x)
+\emph default
  que se aplica sobre las diferentes variables de entrada, su función principal
  es transformar los datos para obtener un espacio de dimensión mayor.
  Como función kernel puede utilizarse cualquier función simétrica que está
  definida positivamente (positividad de la integral de funciones arbitrarias).
  Incluso, la conjunción de dos funciones kernel significa una nueva función
  kernel.
- 
-\end_layout
-
-\begin_layout Standard
-Elegir la función kernel más conveniente es un problema complejo.
+ Elegir la función kernel más conveniente es un problema complejo.
  A pesar que existen algunas teorías, el proceso más común es la experimentación
  con distintos valores para determinar la función más adecuada utilizando
  el conjunto de validación.
- 
-\end_layout
-
-\begin_layout Standard
-El algoritmo que aplica vectores de soporte se rige bajo todos los conceptos
+ El algoritmo que aplica vectores de soporte se rige bajo todos los conceptos
  expresados a lo largo del apartado para realizar clasificación, pero también
  aplica para realizar regresión sobre los datos, variante que fue utilizada
  en el presente trabajo.
- La figura 2.12 muestra un ejemplo de la aplicación del algoritmo SVM para
- regresión.
+ La figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:SVM-regression"
+
+\end_inset
+
+ muestra un ejemplo de la aplicación del algoritmo SVM para regresión.
  
 \end_layout
 
@@ -2250,7 +2080,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/SVM-regression.png
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/SVM-regression.png
 	scale 55
 
 \end_inset
@@ -2519,8 +2349,11 @@ sum_{i=1}^{N}{(f_i-y_i)^2}
 \end_layout
 
 \begin_layout Standard
-El término "error" representa la diferencia entre el valor predicho y el
- valor verdadero.
+El término 
+\emph on
+error 
+\emph default
+representa la diferencia entre el valor predicho y el valor verdadero.
  Normalmente, se calcula el valor absoluto o el cuadrado de esta diferencia
  para capturar la magnitud total de errores en todas las instancias, dado
  que la diferencia entre el valor verdadero y el predicho puede ser negativa
@@ -2536,6 +2369,13 @@ El término "error" representa la diferencia entre el valor predicho y el
 
 \begin_layout Subsection
 Ajuste del modelo: Overfitting y Underfitting
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Ajuste-del-modelo:"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2549,10 +2389,13 @@ ndo cómo se comporta y ajusta el modelo.
 
 \begin_layout Standard
 Los modelos pueden presentar dos efectos indeseables .
- El efecto de overfitting describe una función que se ajusta estrechamente
- a los datos de entrenamiento, el modelo aprendió los detalles y el ruido
- en los datos impactando negativamente en el desempeño del modelo, ha sido
- incapaz de generalizar.
+ El efecto de 
+\emph on
+overfitting 
+\emph default
+describe una función que se ajusta estrechamente a los datos de entrenamiento,
+ el modelo aprendió los detalles y el ruido en los datos impactando negativament
+e en el desempeño del modelo, ha sido incapaz de generalizar.
  Este efecto es causado porque el ruido o las fluctuaciones aleatorias en
  los datos de entrada fueron usados para el aprendizaje.
  Los problemas de overfitting son más probables en modelos no parametrizados
@@ -2570,12 +2413,15 @@ zados muy flexibles y pueden estar sujetos al efecto de overfitting, en
 \end_layout
 
 \begin_layout Standard
-Por otro lado, los modelos pueden presentar efectos de underfitting, funciones
- que no interpretan o definen los datos de entrenamiento, por lo que son
- incapaces de generalizar correctamente nuevos datos, este efecto es causado
- porque la función o modelo elegido no es el indicado para representar el
- comportamiento de los datos, el efecto underfitting se caracteriza por
- sobre generalizar los datos.
+Por otro lado, los modelos pueden presentar efectos de 
+\emph on
+underfitting
+\emph default
+, funciones que no interpretan o definen los datos de entrenamiento, por
+ lo que son incapaces de generalizar correctamente nuevos datos, este efecto
+ es causado porque la función o modelo elegido no es el indicado para representa
+r el comportamiento de los datos, el efecto underfitting se caracteriza
+ por sobre generalizar los datos.
  La incorporación de nuevos datos al conjunto de entrenamiento podría solucionar
  o apaciguar este efecto.
  
@@ -2605,7 +2451,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/under-overfitting.png
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/under-overfitting.png
 	scale 55
 
 \end_inset

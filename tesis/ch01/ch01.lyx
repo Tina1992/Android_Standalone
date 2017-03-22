@@ -533,16 +533,9 @@ reference "chap:Evaluación"
  Se presentan las variables consideradas en los escenarios evaluados, los
  modelos que han sido analizados y las conclusiones alcanzadas, presentando
  justificativo para la selección de los mejores modelos predictivos alcanzados.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
- [Incluir porcentajes de los mejores modelos] 
-\end_layout
-
-\end_inset
-
-
+ Mediante el presente trabajo se han alcanzado modelos de predicción para
+ el tiempo de respuesta con un coeficiente de correlación de 0.73 en promedio
+ y un error medio de 3.19 milisegundos en la predicción.
 \end_layout
 
 \begin_layout Standard

@@ -1054,95 +1054,82 @@ features
 Clasificación por la naturaleza de la salida
 \end_layout
 
-\begin_layout Subsubsection
-Clasificación
+\begin_layout Standard
+La teoría de aprendizaje de maquinas abarca varios factores considerando
+ las características de lo que se busca en los diferentes métodos.
+ Así, existen cinco tipos de métodos, para la búsqueda de diferentes objetivos:
 \end_layout
 
-\begin_layout Standard
-La clasificación también se conoce como un proceso de categorización que
- consiste en asignar a cada ejemplo una etiqueta o clase a la que pertenece
- basado en el entrenamiento de ejemplares de cada clase.
+\begin_layout Description
+Clasificación Consiste en asignar a cada ejemplo una etiqueta o clase a
+ la que pertenece basado en el entrenamiento de ejemplares de cada clase.
  Los datos de entrenamiento son instancias que pertenecen a una única clase
  y el conjunto de clases cubre todas las salidas posibles, por eso se considera
  al proceso de clasificación como un proceso discreto.
- Estas dos características claves no se asemejan a la realidad, algunos
- ejemplos podrían pertenecer parcialmente a dos clases diferentes, incluso
- podría haber situaciones en las que fuere imposible categorizar la entrada,
- por ejemplo, si se considerara una máquina vendedora que utiliza un algoritmo
- para aprender a distinguir monedas nacionales, al introducir una moneda
- extranjera, el clasificador será incapaz de responder correctamente, e
- identificará la moneda como aquella que más se asemeje.
- Este fenómeno se conoce como 
-\emph on
-novelty detection
-\emph default
-.
  El algoritmo de clasificación tiene como objetivo encontrar umbrales de
- decisión que sirvan para identificar las diferentes clases, en la figura
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:clasification-problems"
+ decisión que sirvan para identificar las diferentes clases.
+\end_layout
 
-\end_inset
-
- puede observarse a la izquierda un conjunto de umbrales de decisión lineales
- y a la derecha un conjunto alternativo que separan más idóneamente las
- diferentes clases pero requiere líneas que no son rectas.
+\begin_layout Description
+Clustering El proceso de clustering es la tarea de agrupar un conjunto de
+ objetos de modo tal que los objetos pertenecientes a un mismo grupo (
+\emph on
+cluster
+\emph default
+) comparten algún tipo de similitud entre ellos, de igual sentido que se
+ diferencian con los objetos de otro grupo.
+ A diferencia del proceso de clasificación, los grupos o clases no son conocidos
+ fehacientemente antes del entrenamiento, un claro método de aprendizaje
+ no supervisado.
  
 \end_layout
 
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
+\begin_layout Description
+Estimación
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+densidad La función de densidad de probabilidad 
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/clasification-problems.png
-	scale 55
-
-\end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Conjuntos de umbrales de decisión para problemas de clasificación.
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:clasification-problems"
-
-\end_inset
-
-
+\backslash
+cite{Silverman1986}
 \end_layout
 
 \end_inset
 
-
+ es un concepto fundamental de la estadística y caracteriza el comportamiento
+ probable de una población en tanto especifica la posibilidad relativa de
+ que una variable aleatoria continua X tome un valor cercano a x.
 \end_layout
 
+\begin_layout Description
+Reducción
+\begin_inset space ~
 \end_inset
 
+de
+\begin_inset space ~
+\end_inset
 
+dimesionalidad Se basa en simplificar los datos de entrada mapeándolos en
+ un espacio dimensional más simple.
 \end_layout
 
-\begin_layout Subsubsection
-Regresión
-\end_layout
-
-\begin_layout Standard
-A diferencia de la clasificación, el proceso de regresión predice valores
- numéricos de atributos a partir de funciones matemáticas polinomiales que
- describan o se ajusten lo más posible a todos los puntos del dominio, es
- decir, todos los valores del conjunto de entrenamiento correspondientes
- al atributo que se quiere predecir.
+\begin_layout Description
+Regresión El proceso de regresión predice valores numéricos de atributos
+ a partir de funciones matemáticas polinomiales que describan o se ajusten
+ lo más posible a todos los puntos del dominio, es decir, todos los valores
+ del conjunto de entrenamiento correspondientes al atributo que se quiere
+ predecir.
  Generalmente, se considera un problema de aproximación de función o interpolaci
 ón al encontrar un valor numérico entre los valores conocidos.
  Por lo tanto, el eje primordial del proceso de regresión es encontrar la
@@ -1215,128 +1202,17 @@ La forma más correcta de saber cuál solución presentada es la mejor, se
 \end_layout
 
 \begin_layout Standard
-En síntesis, un algoritmo de regresión puede interpolar entre dos puntos
- de datos, dando la apariencia de ser una práctica poco inteligente y no
- muy compleja en un espacio bi dimensional, pero su complejidad es exponencialme
-nte mayor en dimensiones más grandes.
- 
-\end_layout
-
-\begin_layout Subsubsection
-Clustering
-\end_layout
-
-\begin_layout Standard
-El proceso de clustering es la tarea de agrupar un conjunto de objetos de
- modo tal que los objetos pertenecientes a un mismo grupo (
-\emph on
-cluster
-\emph default
-) comparten algún tipo de similitud entre ellos, de igual sentido que se
- diferencian con los objetos de otro grupo.
- A diferencia del proceso de clasificación, los grupos o clases no son conocidos
- fehacientemente antes del entrenamiento, un claro método de aprendizaje
- no supervisado.
- 
-\end_layout
-
-\begin_layout Standard
-Clustering es una de las tareas principales de la minería de datos y una
- técnica común en el análisis estadístico de los datos, usado en diversos
- campos, entre los que se destaca el aprendizaje de máquina, el reconocimiento
- de patrones, el análisis de imágenes, recuperación de información, bioinformaci
-ón, compresión de datos y gráficos computacionales.
- 
-\end_layout
-
-\begin_layout Subsubsection
-Estimación de densidad
-\end_layout
-
-\begin_layout Standard
-La función de densidad de probabilidad 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-cite{Silverman1986}
-\end_layout
-
-\end_inset
-
- es un concepto fundamental de la estadística y caracteriza el comportamiento
- probable de una población en tanto especifica la posibilidad relativa de
- que una variable aleatoria continua X tome un valor cercano a x; especificar
- la función de densidad brinda una descripción natural de la distribución
- de X, y permite encontrar probabilidad asociadas con X de la relación:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-P(a<X<b)=\intop f(d)dx\forall a<b
-\]
-
+\begin_inset space ~
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-El conjunto de datos de entrenamiento puede considerarse como una función
- de densidad desconocida, donde la estimación de la densidad es, entonces,
- la estimación de una función de probabilidad desconocida de los datos observado
-s; un uso natural de esta estimación es la investigación informal de propiedades
- del conjunto de datos, obtener indicadores sobre estas propiedades como
- la asimetría y multimodalidad de los datos.
- En algunos casos, los indicadores pueden proteger conclusiones consideradas
- verdades autoevidentes, mientras que otros marcan el camino para un análisis
- posterior y/o recolección de datos.
- 
-\end_layout
-
-\begin_layout Subsubsection
-Reducción de dimensionalidad
-\end_layout
-
-\begin_layout Standard
-Una de las principales motivaciones para la reducción dimensional es la
- dificultad de interpretación de datos de tres dimensiones o más, teniendo
- en cuenta que cuanto mayor sea el número de dimensiones, más datos son
- requeridos infiriendo explícitamente en el costo computacional de muchos
- algoritmos.
- Por otro lado, reducir el espacio de dimensiones permite eliminar ruido
- sobre los datos, mejorar significativamente los resultados de los algoritmos
- de aprendizaje, simplificar el dataset y lograr resultados más claros y
- entendibles, entre otros.
-\end_layout
-
-\begin_layout Standard
-Existen tres maneras de llevar a cabo la reducción: 
-\emph on
-i
-\emph default
-) a través de la selección de atributos, observar las características disponible
-s y descubrir si las mismas son útiles, por ejemplo, el factor de correlación
- de las mismas con la salida, 
-\emph on
-ii
-\emph default
-) la derivación de nuevas características a partir de las existentes, aplicando
- transformaciones al dataset cambiando los valores del dominio del gráfico
- mediante el movimiento y la rotación de los mismos, los cuales pueden ser
- descritos como una matriz aplicada a los datos con el fin de combinar caracterí
-sticas y detectar cuáles son útiles y cuáles deberían ser descartadas (reducción
-) y 
-\emph on
-iii
-\emph default
-) a través del uso de clustering para agrupar puntos similares y permitir
- la identificación de un conjunto reducido a ser utilizadas.
- 
+Cabe destacar que en el presente trabajo, se analizan técnicas de regresión,
+ ya sea aquellas que intrínsecamente representan funciones polinomiales
+ como aquellas que se adaptaron desde los métodos de clustering para la
+ obtención de valores densos.
 \end_layout
 
 \begin_layout Subsection

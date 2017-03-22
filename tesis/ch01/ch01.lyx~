@@ -240,9 +240,12 @@ name "sec:Motivación"
 Para predecir la performance de un sistema, algunos enfoques definen un
  modelo del mismo como función de agregación que considera el desempeño
  individual de sus componentes.
- Así, por ejemplo, el tiempo de respuesta de un “mashup” de servicios Web
- puede determinarse como la suma de los tiempos de respuesta de los servicios
- invocados 
+ Así, por ejemplo, el tiempo de respuesta de un 
+\emph on
+mashup
+\emph default
+ de servicios Web puede determinarse como la suma de los tiempos de respuesta
+ de los servicios invocados 
 \begin_inset ERT
 status open
 
@@ -530,6 +533,9 @@ reference "chap:Evaluación"
  Se presentan las variables consideradas en los escenarios evaluados, los
  modelos que han sido analizados y las conclusiones alcanzadas, presentando
  justificativo para la selección de los mejores modelos predictivos alcanzados.
+ Mediante el presente trabajo se han alcanzado modelos de predicción para
+ el tiempo de respuesta con un coeficiente de correlación de 1 en el mejor
+ de los casos (a pesar de que en informe se detalle el porqué de su no elección
 \begin_inset Note Note
 status open
 

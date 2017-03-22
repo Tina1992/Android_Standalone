@@ -76,10 +76,16 @@ Introducción
 \begin_layout Standard
 En los últimos años las aplicaciones móviles se han puesto en el centro
  de la escena debido a la proliferación de los dispositivos móviles y su
- creciente capacidad de cómputo y almacenamiento 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Zunino2011"
+ creciente capacidad de cómputo y almacenamiento
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cite{Zunino2011}
+\end_layout
 
 \end_inset
 
@@ -108,10 +114,16 @@ Los dispositivos móviles de hoy en día utilizan sistemas operativos similares
 \begin_layout Standard
 Para reducir los costos y tiempos de desarrollo, es común la reutilización
  de software mediante la integración de componentes de terceros.
- Un componente 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Petritsch2016"
+ Un componente
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cite{Petritsch2016}
+\end_layout
 
 \end_inset
 
@@ -134,9 +146,15 @@ ac{API}
  Los componentes se pueden clasificar de acuerdo al ambiente en el que residen
  durante su ejecución, distinguiéndose así aquellos que se ejecutan en nodos
  remotos, como los denominados Servicios Web 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Addison2003"
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cite{Erickson2009}
+\end_layout
 
 \end_inset
 
@@ -151,7 +169,20 @@ Las funcionalidades que implementan estos componentes buscan satisfacer
  texto e imágenes, almacenamiento de datos en la nube, identificación de
  usuarios, algoritmos de optimización, etc.
  La misma funcionalidad suele ser ofrecida por componentes alternativos
- que difieren en sus propiedades no-funcionales o atributos de calidad [4].
+ que difieren en sus propiedades no-funcionales o atributos de calidad 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cite{Addison2003}
+\end_layout
+
+\end_inset
+
+.
  Estas propiedades son los aspectos que utilizan los desarrolladores para
  juzgar su funcionamiento, tales como performance (por ej., tiempo de respuesta),
  disponibilidad (por ej., tasa de errores) o precisión de la respuesta (para
@@ -171,8 +202,12 @@ Los dispositivos móviles tienen limitaciones en conflicto como la energía,
 \end_layout
 
 \begin_layout Standard
-Sin embargo, estos componentes suelen ser "cajas negras" para los desarrolladore
-s de aplicaciones móviles, que tienen acceso a la definición de sus 
+Sin embargo, estos componentes suelen ser 
+\emph on
+cajas negras
+\emph default
+ para los desarrolladores de aplicaciones móviles, que tienen acceso a la
+ definición de sus 
 \begin_inset ERT
 status open
 
@@ -205,28 +240,49 @@ name "sec:Motivación"
 Para predecir la performance de un sistema, algunos enfoques definen un
  modelo del mismo como función de agregación que considera el desempeño
  individual de sus componentes.
- Así, por ejemplo, el tiempo de respuesta de un “mashup” de servicios Web
- puede determinarse como la suma de los tiempos de respuesta de los servicios
- invocados 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Rosenberg2009"
+ Así, por ejemplo, el tiempo de respuesta de un 
+\emph on
+mashup
+\emph default
+ de servicios Web puede determinarse como la suma de los tiempos de respuesta
+ de los servicios invocados 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cite{Rosenberg2009}
+\end_layout
 
 \end_inset
 
 .
  Lo mismo se puede aplicar sobre otras propiedades de arquitecturas y aplicacion
 es que involucran el ensamblado de diferentes componentes 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Crnkovic2011"
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cite{Crnkovic2011}
+\end_layout
 
 \end_inset
 
 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Sanchez2015"
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cite{Sanchez2015}
+\end_layout
 
 \end_inset
 
@@ -240,9 +296,15 @@ Muchos estudios se enfocan en el análisis y predicción de los aspectos dinámi
  y en particular las de regresión, las más utilizadas.
  La mayor parte de estos estudios se enfocan en algoritmos de optimización
  e inteligencia artificial 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Hutter2014"
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cite{Hutter2014}
+\end_layout
 
 \end_inset
 
@@ -261,9 +323,15 @@ key "Hutter2014"
 
 \begin_layout Standard
 La predicción de performance también se ha extendido a servicios Web 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Zheng2013"
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cite{Zheng2013}
+\end_layout
 
 \end_inset
 
@@ -320,20 +388,44 @@ El objetivo del trabajo consiste en desarrollar un enfoque para la elaboración
  Basándonos en el hecho de que Android es el sistema operativo más difundido
  para dispositivos móviles, el enfoque se pondrá a prueba sobre diferentes
  casos de estudio en este sistema operativo.
- El enfoque se basa en un proceso de aprendizaje de máquina.
+ 
+\end_layout
+
+\begin_layout Standard
+El enfoque se basa en un proceso de aprendizaje de máquina.
  Dado un conjunto de componentes que implementan la misma funcionalidad
  y de los cuales queremos predecir propiedades dinámicas, el método propuesto
- es el siguiente: Usar conocimiento del dominio para seleccionar características
- del contexto y de los datos de entrada del componente que puedan ser indicativo
-s de su desempeño.
- Generar un conjunto de datos de entrada representativos del espacio de
- entrada para la evaluación de los componentes.
- Ejecutar los componentes con las entradas generadas y tomar mediciones
- de las características identificadas en el punto 1 más las propiedades
- de interés a predecir: tiempo de respuesta, calidad de la respuesta, etc.
- Usar estas mediciones con técnicas de aprendizaje de máquina para entrenar
+ es el siguiente: 
+\end_layout
+
+\begin_layout Enumerate
+Usar conocimiento del dominio para seleccionar características del contexto
+ y de los datos de entrada del componente que puedan ser indicativos de
+ su desempeño.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Generar un conjunto de datos de entrada representativos del espacio de entrada
+ para la evaluación de los componentes.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Ejecutar los componentes con las entradas generadas y tomar mediciones de
+ las características identificadas en el punto 1 más las propiedades de
+ interés a predecir: tiempo de respuesta, calidad de la respuesta, etc.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Usar estas mediciones con técnicas de aprendizaje de máquina para entrenar
  y evaluar modelos de predicción.
- El enfoque propuesto se pondrá a prueba sobre grupos de componentes y servicios
+ 
+\end_layout
+
+\begin_layout Standard
+El enfoque propuesto se pondrá a prueba sobre grupos de componentes y servicios
  reales que implementan funcionalidades de interés para desarrolladores
  de aplicaciones móviles.
  Esta evaluación no sólo involucrará diferentes dominios, sino también diferente
@@ -342,14 +434,24 @@ s técnicas, como regresiones y redes neuronales, sobre diferentes propiedades
  Para llevar a cabo la medición de los componentes se implementará una herramien
 ta de test de performance para la plataforma Android, y se utilizará software
  de aprendizaje de máquina como Weka 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Hall+FHPRW:2009"
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cite{Hall2009}
+\end_layout
 
 \end_inset
 
 .
- En conclusión, se espera poder proveer un análisis de los dominios y técnicas
+ 
+\end_layout
+
+\begin_layout Standard
+En conclusión, se espera poder proveer un análisis de los dominios y técnicas
  consideradas, como así también compararlas tanto en términos de precisión
  como también en cuanto a su generalización a diferentes contextos de ejecución
  (dispositivos) y datos de entrada
@@ -374,23 +476,44 @@ El resto del trabajo se organiza en 5 capítulos.
 \end_layout
 
 \begin_layout Standard
-En el capítulo 2 se presenta el marco teórico, donde se definen los conceptos
- utilizados a lo largo de todo el informe, tales como: Android, desempeño,
- precisión, aprendizaje de máquina, regresión, modelos, componentes.
+En el capítulo
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Marco-Teorico"
+
+\end_inset
+
+ se presenta el marco teórico, donde se definen los conceptos utilizados
+ a lo largo de todo el informe, tales como: Android, desempeño, precisión,
+ aprendizaje de máquina, regresión, modelos, componentes.
  
 \end_layout
 
 \begin_layout Standard
-En el capítulo 3 se presentan herramientas de benchmarks tanto para el sistema
- Android como para Java y se exponen algunos trabajos relacionados desde
- diferentes perspectivas, predicciones que incluyen modelos de performance
- y precisión como aproximación de éxito de los resultados, no sólo en algoritmos
- de optimización sino también en servicios Web.
+En el capítulo
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Trabajos-Relacionados"
+
+\end_inset
+
+ se presentan herramientas de benchmarks tanto para el sistema Android como
+ para Java y se exponen algunos trabajos relacionados desde diferentes perspecti
+vas, predicciones que incluyen modelos de performance y precisión como aproximac
+ión de éxito de los resultados, no sólo en algoritmos de optimización sino
+ también en servicios Web.
  
 \end_layout
 
 \begin_layout Standard
-En el capítulo 4 se describe el enfoque y las herramientas utilizadas.
+En el capítulo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Enfoque-y-Herramientas"
+
+\end_inset
+
+ se describe el enfoque y las herramientas utilizadas.
  Se detalla la arquitectura e implementación de las mismas, ahondando en
  las decisiones de diseño que se consideran importantes para el entendimiento
  y reutilización de las mismas.
@@ -398,18 +521,43 @@ En el capítulo 4 se describe el enfoque y las herramientas utilizadas.
 \end_layout
 
 \begin_layout Standard
-En el capítulo 5 se presenta la evaluación de los modelos obtenidos a partir
- de todo el framework presentado.
+En el capítulo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Evaluación"
+
+\end_inset
+
+ se presenta la evaluación de los modelos obtenidos a partir de todo el
+ framework presentado.
  Se presentan las variables consideradas en los escenarios evaluados, los
  modelos que han sido analizados y las conclusiones alcanzadas, presentando
  justificativo para la selección de los mejores modelos predictivos alcanzados.
+ Mediante el presente trabajo se han alcanzado modelos de predicción para
+ el tiempo de respuesta con un coeficiente de correlación de 1 en el mejor
+ de los casos (a pesar de que en informe se detalle el porqué de su no elección
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
  [Incluir porcentajes de los mejores modelos] 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-Finalmente, en el capítulo 6 se exponen las conclusiones del trabajo realizado,
- las limitaciones actuales del enfoque y la herramienta, y posibles líneas
- de trabajo futuro.
+Finalmente, en el capítulo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Conclusiones"
+
+\end_inset
+
+ se exponen las conclusiones del trabajo realizado, las limitaciones actuales
+ del enfoque y la herramienta, y posibles líneas de trabajo futuro.
 \end_layout
 
 \end_body

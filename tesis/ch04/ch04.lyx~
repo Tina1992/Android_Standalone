@@ -1,9 +1,7 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
 \begin_document
 \begin_header
-\save_transient_properties true
-\origin unavailable
 \textclass book
 \use_default_options true
 \maintain_unincluded_children false
@@ -11,16 +9,16 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman "" "default"
-\font_sans "" "default"
-\font_typewriter "" "default"
-\font_math "" "auto"
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100 100
-\font_tt_scale 100 100
+\font_sf_scale 100
+\font_tt_scale 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -619,7 +617,7 @@ Selección de características de la entrada: Es posible obtener atributos
 \end_layout
 
 \begin_layout Itemize
-Ejecución de componentes y obtensión de métricas: Los componentes son ejecutados
+Ejecución de componentes y obtención de métricas: Los componentes son ejecutados
  con las entradas generadas, tomando y registrando mediciones sobre las
  características incorporadas además de las propiedades de interés a predecir.
  De esta forma, los dataset pueden ser formados por una cantidad variable
@@ -643,9 +641,9 @@ A partir del conjunto de benchmarks obtenidos en la etapa anterior, se aplican
  que mejor se ajustan a la generalización de la información mediante un
  proceso de entrenamiento, optimización y evaluación de los mismos.
  El proceso de aprendizaje requiere indefectiblemente de un conjunto de
- datos de entrenamiento volcado en un archivo, la especificación de un atributo
- de ese conjunto como el atributo a predecir y un conjunto de algoritmos
- que aplican técnicas de regresión sobre los datos.
+ datos de entrenamiento volcado en un archivo, un atributo de ese conjunto
+ a predecir y un conjunto de algoritmos que aplican técnicas de regresión
+ sobre los datos.
  Actualmente, hay herramientas que proveen estos algoritmos incluyendo toda
  la funcionalidad necesaria para este proceso, y que son fácilmente integrables
  a cualquier desarrollo.
@@ -664,19 +662,26 @@ Las técnicas de regresión representan modelos matemáticos cuyas funciones
  Por lo tanto, el desafío principal de esta parte de la etapa es encontrar
  los valores apropiados para cada uno de los parámetros, teniendo como base,
  el conocimiento sobre el efecto que el parámetro causa en el algoritmo.
- Este desafío es el fundamento para el desarrollo de una metodología de
- optimización, que partiendo de un rango finito de valores, permite obtener
- el valor más apto.
- La obtensión de la mejor configuración de una técnica, para un dataset
- y un atributo particular, facilita la comparación simultánea de todas las
- técnicas disponibles a través de las métricas de evaluación.
+ Al obtener la mejor configuración de una técnica, para un dataset y un
+ atributo particular, se facilita la comparación simultánea de todas las
+ técnicas disponibles a través de las métricas de evaluación y en consecuencia
+ seleccionar la más óptima.
  
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 Debido a que las técnicas de regresión son muy variadas entre sí, pueden
  existir algoritmos que no requieran configuración, que requieran sólo un
- parámetro o un conjunto de ellos.
+ parámetro o un conjunto de ellos.????
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Paragraph
@@ -688,6 +693,14 @@ La construcción de modelos predictivos es un proceso que inicia con el entrenam
 ento de los datos, continúa opcionalmente con un proceso de validación y
  concluye con una evaluación del error cometido en las estimaciones frente
  a los datos reales del entrenamiento.
+\end_layout
+
+\begin_layout Standard
+La implementación de los casos de estudio enfatizan la predicción de la
+ precisión en las respuestas y el tiempo de ejecución de los componentes
+ considerando a ambas métricas esenciales al momento de seleccionar el/los
+ componente/s más adecuado/s para un propósito particular, dadas ciertas
+ entradas, componentes posibles, restricciones y parámetros deseados.
 \end_layout
 
 \begin_layout Standard
@@ -796,10 +809,13 @@ Enfoque general
 \end_layout
 
 \begin_layout Standard
-“Android Performance Testing and Prediction” es un framework diseñado para
- realizar mediciones de performance de componentes ejecutados bajo el sistema
- Android.
- Es una herramienta de testing que permite “correr” diferentes piezas de
+
+\emph on
+Android Performance Testing and Prediction
+\emph default
+ es un framework diseñado para realizar mediciones de performance de componentes
+ ejecutados bajo el sistema Android.
+ Es una herramienta de testing que permite ejecutar diferentes piezas de
  software y evaluar propiedades influyentes y características del entorno
  de ejecución.
  
@@ -808,8 +824,21 @@ Enfoque general
 \begin_layout Standard
 La herramienta cuenta con el soporte necesario para adaptarse a cualquier
  dominio informático y exportar las mediciones correspondientes en archivos
- de formato CSV, mediciones que servirán de fuente para herramientas de
- predicción a través de técnicas de aprendizaje de máquina.
+ de formato 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{CSV}
+\end_layout
+
+\end_inset
+
+, mediciones que servirán de fuente para herramientas de predicción a través
+ de técnicas de aprendizaje de máquina.
  
 \end_layout
 
@@ -820,12 +849,13 @@ Objetivos
 \begin_layout Standard
 El rendimiento de los componentes de ejecución (algoritmos, servicios Web,
  procesos ejecutándose en segundo plano, etc.) dependen de varios factores:
- “el contexto de ejecución” donde el componente está funcionando, los “parámetro
-s de entrada” que requiere el componente de la operación, y su “implementación
- interna”.
- Sin embargo, al utilizar componentes de terceros, generalmente se desconoce
- su implementación actuando como "cajas negras" a los desarrolladores móviles,
- que sólo conocen sus interfaces de aplicaciones, pero no su trabajo interno.
+ el contexto de ejecución donde el componente está funcionando, los parámetros
+ de entrada que requiere el componente de la operación y su implementación
+ interna.
+ Sin embargo, al utilizar componentes de terceros es posible desconocer
+ el modo en el que fueron implementados, actuando como cajas negras a los
+ desarrolladores móviles, que sólo conocen sus interfaces de aplicaciones,
+ pero no su trabajo interno.
  
 \end_layout
 
@@ -868,46 +898,18 @@ ación o exclusión correctamente de una condición.
 \begin_layout Standard
 Para construir un modelo de predicción del tiempo de respuesta sobre un
  componente particular, se deben considerar dos variables al momento de
- evaluar, un conjunto acerca de las características del contexto de ejecución
- (E,) por ejemplo, núcleos de CPU, tipo de red, etc.
- y otro conjunto acerca de las características de la entrada en particular
- (I), por ejemplo, en tamaño expresado en bytes.
- Por lo tanto, el modelo resulta una función R(c) que depende tanto de E
- como de I.
+ evaluar, un conjunto acerca de las características del contexto de ejecución,
+ por ejemplo, núcleos de CPU, tipo de red, etc.
+ y otro conjunto acerca de las características de la entrada en particular,
+ por ejemplo, en tamaño expresado en bytes.
  
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-FUNCION
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
 Del mismo modo se construye un modelo de predicción de precisión sobre un
  componente, como en la mayoría de los casos esta medida no depende de las
  características del contexto en el que se ejecuta, el modelo respondería
- a una función como la siguiente:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-FUNCION
-\end_layout
-
-\end_inset
-
-
+ a una función dependiente de las entradas del problema.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -974,9 +976,9 @@ reference "fig:android-component"
 
  se pueden observar los tres tipos de componentes generalizados por la herramien
 ta para obtener los resultados de mediciones adecuados, incluyendo servicios
- Web y servicios específicos de la plataforma Android, para toda pieza de
- software remanente los componentes son tratados simplemente como objetos
- Java.
+ Web y servicios específicos de la plataforma Android, mientras que para
+ toda pieza de software remanente los componentes son tratados simplemente
+ como objetos Java.
  Las instancias de objetos hacen referencia a cualquier componente residente
  en el espacio de memoria de una aplicación, el componente específico para
  servicios web incluye cualquier componente remoto fuera del dispositivo
@@ -1006,17 +1008,29 @@ Diseño e implementación
 \end_layout
 
 \begin_layout Standard
-El framework “Android-Performance-Testing-and-Prediction” está conformado
- por tres proyectos individuales.
- El proyecto “Android-Testing-Tool” constituye el modelo base para llevar
- a cabo el proceso de medición de propiedades de cualquier tipo de componente.
- Los proyectos restantes han sido implementados para desarrollar diferentes
- dominios de aplicación, los cuales incluyen la dependencia al proyecto
- modelo.
- El proyecto “Evaluation-of-Face-Detection-Services” fue diseñado para obtener
- mediciones sobre servicios que ofrecen reconocimiento facial y el proyecto
- “Examples-Android-Testing-Tool” fue diseñado para dominios de problemas
- NP, incluyendo a problemas de la clase P y NP - Completos.
+El proyecto 
+\emph on
+Android-Testing-Tool
+\emph default
+ constituye el modelo base del framework 
+\emph on
+Android-Performance-Testing-and-Prediction
+\emph default
+ para llevar a cabo el proceso de medición de propiedades de cualquier tipo
+ de componente.
+ Además, se proveen dos proyectos a modo de ejemplo demostrando el modo
+ de uso de el framework.
+ El proyecto 
+\emph on
+Evaluation-of-Face-Detection-Services
+\emph default
+ fue diseñado para obtener mediciones sobre servicios que ofrecen reconocimiento
+ facial y el proyecto 
+\emph on
+Examples-Android-Testing-Tool
+\emph default
+ fue diseñado para dominios de problemas NP, incluyendo a problemas de la
+ clase P y NP - Completos.
  
 \end_layout
 
@@ -1029,7 +1043,11 @@ reference "fig:TestingTool-Diagram"
 \end_inset
 
  los principales factores que han servido de guía para el diseño del proyecto
- base “Android-Testing-Tool”.
+ base 
+\emph on
+Android-Testing-Tool
+\emph default
+.
  
 \end_layout
 
@@ -1054,7 +1072,11 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama estructural de la herramienta template ‘Android Testing Tool’.
+Diagrama estructural de la herramienta template 
+\emph on
+Android Testing Tool
+\emph default
+.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:TestingTool-Diagram"
@@ -1081,18 +1103,49 @@ name "fig:TestingTool-Diagram"
 \begin_layout Standard
 La forma de organizar diferentes modelos de evaluación se realiza a través
  de la creación de planes de prueba, que se configuran y posteriormente
- se ejecutan para obtener un archivo de formato CSV con el resultado de
- todas las mediciones incorporadas al plan de pruebas.
- La herramienta implementa por defecto un objeto llamado “TestPlan” que
- define una ejecución sistemática de las operaciones y métricas sobre ellos.
+ se ejecutan para obtener un archivo de formato 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{CSV}
+\end_layout
+
+\end_inset
+
+ con el resultado de todas las mediciones incorporadas al plan de pruebas.
+ La herramienta implementa por defecto un objeto llamado 
+\emph on
+TestPlan
+\emph default
+ que define una ejecución sistemática de las operaciones y métricas sobre
+ ellos.
  Básicamente, un modelo de plan de pruebas se compone de un conjunto posible
  de componentes, un conjunto posible de objetos de entrada, y un conjunto
  posible de métricas para realizar las mediciones, dando la posibilidad
  de configurar estas propiedades a los requerimientos deseados.
  Una vez configurado y ejecutado el plan de pruebas, los resultados con
- las mediciones son almacenados en un objeto denominado ´Results’ y los
- datos son exportados a un archivo de formato CSV para su posterior procesamient
-o.
+ las mediciones son almacenados en un objeto denominado 
+\emph on
+Results
+\emph default
+ y los datos son exportados a un archivo de formato 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{CSV}
+\end_layout
+
+\end_inset
+
+ para su posterior procesamiento.
  
 \end_layout
 
@@ -1100,16 +1153,34 @@ o.
 La herramienta utiliza una representación simplificada de los componentes,
  pudiendo ser éstos servicios Web o simplemente piezas de software implementadas
  por el programador.
- Los parámetros que recibe son dos objetos del tipo Input y Output, siendo
- éstos, instancias de objetos que representan la entrada y salida del problema
- respectivamente.
+ Los parámetros que recibe son dos objetos del tipo 
+\emph on
+Input
+\emph default
+ y 
+\emph on
+Output
+\emph default
+, siendo éstos, instancias de objetos que representan la entrada y salida
+ del problema respectivamente.
  Cada uno de los componentes asociados a un problema específico ejecutan
- una operación o tarea a través de la llamada al método execute del componente.
+ una operación o tarea a través de la llamada al método 
+\emph on
+execute
+\emph default
+ del componente.
  Esta operación es responsable de evaluar la ejecución de la instancia de
  entrada en el componente y retornar un objeto de salida o respuesta del
  problema.
- Tanto ´Input´ como ´Output´ son dos conceptos abstractos que representan
- instancias reales del problema.
+ Tanto 
+\emph on
+Input
+\emph default
+ como 
+\emph on
+Output
+\emph default
+ son dos conceptos abstractos que representan instancias reales del problema.
  Una instancia de entrada puede encapsular no sólo los parámetros requeridos
  para realizar la ejecución del componente, sino la configuración de los
  mismos.
@@ -1122,49 +1193,53 @@ La herramienta utiliza una representación simplificada de los componentes,
  determinando el parámetro que recibe: 
 \end_layout
 
-\begin_layout Standard
-1.
- Métricas globales sobre características estáticas del contexto: cualidades
+\begin_layout Enumerate
+Métricas globales sobre características estáticas del contexto: cualidades
  del entorno de ejecución que se mantienen estáticas (sin cambio) durante
  el plan de pruebas, por ejemplo, modelo del dispositivo, arquitectura de
  la CPU, cantidad de núcleos de CPU, tamaño de memoria, etc.
  
 \end_layout
 
-\begin_layout Standard
-2.
- Métricas generales sobre características de la entrada: atributos inherentes
+\begin_layout Enumerate
+Métricas generales sobre características de la entrada: atributos inherentes
  al dominio del problema, por ejemplo, en el problema de detección de rostros
  algunas características podrían ser el nombre de imagen, tamaño o contraste,
  formato de archivo, etc.
 \end_layout
 
-\begin_layout Standard
-3.
- Métricas generales del componente: propiedades del componente como el nombre,
+\begin_layout Enumerate
+Métricas generales del componente: propiedades del componente como el nombre,
  su ubicación, etc.
 \end_layout
 
-\begin_layout Standard
-4.
- Métricas de operación: Son medidas que actúan sobre la ejecución del componente
-, por lo cual distinguen en tres tipos diferentes: • Características de
- la salida: características del resultado de la operación como su tamaño,
- calidad, etc.
- al igual que las entidades de entrada, son inherentes al dominio del problema.
- En la detección de rostros, por ejemplo, la salida podría ser un vector
- con la ubicación de los puntos detectados y una característica de salida
- interesante podría ser, el tamaño de ese vector, es decir, el número de
- rostros detectados.
- • Características dinámicas del contexto: características del entorno de
- ejecución que pueden variar de una operación a otra, como el uso de CPU,
- el número de procesos en ejecución, tipo de conexión, ubicación del dispositivo
-, etc.
- • Características de desempeño: medidas de interés sobre el rendimiento
- que varían de una operación a otra, como el tiempo de respuesta, el consumo
+\begin_layout Enumerate
+Métricas de operación: Son medidas que actúan sobre la ejecución del componente,
+ por lo cual distinguen en tres tipos diferentes:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Características de la salida: características o métricas obtenidas a partir
+ del resultado de la operación, por ejemplo el tamaño de la salida, la precisión
+ de la misma, etc.
+\end_layout
+
+\begin_layout Itemize
+Características dinámicas del contexto: características del entorno de ejecución
+ que pueden variar de una operación a otra, como el uso de CPU, el número
+ de procesos en ejecución, tipo de conexión, ubicación del dispositivo,
+ etc.
+ 
+\end_layout
+
+\begin_layout Itemize
+Características de desempeño: medidas de interés sobre el rendimiento que
+ varían de una operación a otra, como el tiempo de respuesta, el consumo
  de batería, operaciones ejecutadas con éxito o con error, etc.
 \end_layout
 
+\end_deeper
 \begin_layout Standard
 El framework de medición ha sido diseñado para soportar distintos dominios
  sobre los cuáles tomar las medidas deseadas.
@@ -1175,10 +1250,14 @@ El framework de medición ha sido diseñado para soportar distintos dominios
  de diferentes servicios que ofrecen esta misma funcionalidad, como ya ha
  sido anticipado.
  Los problemas de complejidad NP se contemplan bajo un proyecto individual
- llamado “Examples-Android-Testing-Tool” para la evaluación de desempeño
- de distintos algoritmos considerando dos aspectos fundamentales: tiempo
- (aproximación del número de pasos de ejecución que emplea el algoritmo)
- y espacio (aproximación de la cantidad de memoria utilizada).
+ llamado 
+\emph on
+Examples-Android-Testing-Tool
+\emph default
+ para la evaluación de desempeño de distintos algoritmos considerando dos
+ aspectos fundamentales: tiempo (aproximación del número de pasos de ejecución
+ que emplea el algoritmo) y espacio (aproximación de la cantidad de memoria
+ utilizada).
  Los problemas implementados pertenecen tanto a la clase P como a la clase
  NP-Completos.
  Por otro lado, el objetivo de la incorporación de dominios que implican
@@ -1189,7 +1268,11 @@ El framework de medición ha sido diseñado para soportar distintos dominios
  de esta manera determinar el servicio más adecuado (según el contexto)
  para la ejecución de una tarea.
  Este dominio ha sido diseñado a través de un proyecto individual bajo el
- nombre de “Evaluation-of-Faces-Detection-Services”.
+ nombre de 
+\emph on
+Evaluation-of-Faces-Detection-Services
+\emph default
+.
  Este proyecto se implementó como un modelo básico y genérico sobre el proceso
  de detección de rostros.
  Tal proyecto conforma una estructura general para almacenar y acceder a
@@ -1209,10 +1292,21 @@ El framework de medición ha sido diseñado para soportar distintos dominios
  Finalmente, fueron consideradas métricas respecto al proceso u operación
  (rostros correctamente detectados, rostros detectados y Tiempo de respuesta)
  y respecto a la imagen de entrada (contraste, entropía, formato, intensidad
- promedio, cantidad de rostros en la imagen, cantidad de píxeles de la imagen,
+ promedio, cantidad de rostros en la imagen, cantidad de pixeles de la imagen,
  tamaño y nombre).
  Respecto al servicio, sólo se registra el nombre del mismo.
  
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Este parrafo es sobretodo de los ejemplos que nos dan ellos y describimos
+ los proyectos que implementa el framework.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -1318,7 +1412,7 @@ En esta sección se brindará un enfoque global y expresarán las consideracione
 \end_layout
 
 \begin_layout Subsubsection*
-Librerias
+Librerías
 \end_layout
 
 \begin_layout Standard
@@ -1545,18 +1639,6 @@ El dataset de origen, también denominado conjunto de datos de aprendizaje
 error empírico
 \emph default
  que es el error producido por el algoritmo.
- Se asume que los datos de entrenamiento constituyen una muestra lo suficienteme
-nte representativa para aplicar un clasificador.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-OJO AHORA SABEMOS QUE NO ES ASI
-\end_layout
-
-\end_inset
-
  
 \end_layout
 
@@ -1569,8 +1651,11 @@ El proceso de evaluación, entonces, debe utilizar nuevos datos de entrada
  usados para la validación de modelos.
  El más sencillo resulta de utilizar los mismos datos que fueron usados
  para la fase de entrenamiento.
- El método restante conocido bajo el nombre de validación cruzada (‘Cross
- validation’ por su nombre en inglés) tiene una metodología más compleja.
+ El método restante conocido bajo el nombre de validación cruzada (
+\emph on
+Cross validation
+\emph default
+) tiene una metodología más compleja.
  
 \end_layout
 
@@ -1979,8 +2064,14 @@ Las curvas de aprendizaje se componen por dos líneas de puntos representadas
  Ambas líneas grafican el error de predicción utilizando los dos métodos
  de evaluación conocidos, aplicando el conjunto de entrenamiento o el método
  de validación cruzada.Las curvas de aprendizaje implementadas por la herramienta
- son mostradas en la figura 4.15.
- 
+ son mostradas en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:learning-curves"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2003,11 +2094,39 @@ En un primer paso, la herramienta toma en cuenta las primeras cinco instancias,
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
+\begin_inset Float figure
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
-FIGURA 15??
+\align center
+\begin_inset Graphics
+	filename e
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de flujo de la fase de ajuste.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:learning-curves"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2746,11 +2865,6 @@ width "100col%"
 special "none"
 height "1in"
 height_special "totalheight"
-thickness "0.4pt"
-separation "3pt"
-shadowsize "4pt"
-framecolor "black"
-backgroundcolor "none"
 status collapsed
 
 \begin_layout Plain Layout

@@ -128,7 +128,7 @@ public class Config {
 		public static final String GRAPHIC_BAR_TITLE_AXISX = "Metrics";
 		public static final String GRAPHIC_BAR_TITLE_AXISY = "Measure";
 
-		public static final Color GRAPHIC_BAR_COLOR = Color.GRAY;
+		public static final Color GRAPHIC_BAR_COLOR = Color.DARK_GRAY;
 		public static final Color GRAPHIC_BAR_COLOR_BESTRESULT1 = new Color(133, 47, 4);
 		public static final Color GRAPHIC_BAR_COLOR_BESTRESULT2 = new Color (174, 60, 4);
 

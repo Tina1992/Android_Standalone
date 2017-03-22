@@ -305,69 +305,354 @@ detectados:
 \begin_deeper
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-mouth_center OBJECT { x :Float, y : Float } 
+mouth_center
+\begin_inset space ~
+\end_inset
+
+OBJECT
+\begin_inset space ~
+\end_inset
+
+{x:Float,
+\begin_inset space ~
+\end_inset
+
+y:
+\begin_inset space ~
+\end_inset
+
+Float
+\begin_inset space ~
+\end_inset
+
+} 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-mouth_left OBJECT { x :Float, y : Float }
+mouth_left
+\begin_inset space ~
+\end_inset
+
+OBJECT
+\begin_inset space ~
+\end_inset
+
+{x:
+\begin_inset space ~
+\end_inset
+
+Float,
+\begin_inset space ~
+\end_inset
+
+y:
+\begin_inset space ~
+\end_inset
+
+Float
+\begin_inset space ~
+\end_inset
+
+}
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-mouth_right OBJECT { x :Float, y : Float } 
+mouth_right
+\begin_inset space ~
+\end_inset
+
+OBJECT
+\begin_inset space ~
+\end_inset
+
+{x:
+\begin_inset space ~
+\end_inset
+
+Float,
+\begin_inset space ~
+\end_inset
+
+y:
+\begin_inset space ~
+\end_inset
+
+Float
+\begin_inset space ~
+\end_inset
+
+} 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-eye_left OBJECT { x :Float, y : Float } 
+eye_left
+\begin_inset space ~
+\end_inset
+
+OBJECT
+\begin_inset space ~
+\end_inset
+
+{x:
+\begin_inset space ~
+\end_inset
+
+Float,
+\begin_inset space ~
+\end_inset
+
+y:
+\begin_inset space ~
+\end_inset
+
+Float
+\begin_inset space ~
+\end_inset
+
+} 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-eye_right OBJECT { x :Float, y : Float } 
+eye_right
+\begin_inset space ~
+\end_inset
+
+OBJECT
+\begin_inset space ~
+\end_inset
+
+{x:
+\begin_inset space ~
+\end_inset
+
+Float,
+\begin_inset space ~
+\end_inset
+
+y:
+\begin_inset space ~
+\end_inset
+
+Float
+\begin_inset space ~
+\end_inset
+
+} 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-nose OBJECT { x :Float, y : Float } 
+nose
+\begin_inset space ~
+\end_inset
+
+OBJECT
+\begin_inset space ~
+\end_inset
+
+{x:
+\begin_inset space ~
+\end_inset
+
+Float,
+\begin_inset space ~
+\end_inset
+
+y:
+\begin_inset space ~
+\end_inset
+
+Float
+\begin_inset space ~
+\end_inset
+
+} 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-ear_left OBJECT { x :Float, y : Float } 
+ear_left
+\begin_inset space ~
+\end_inset
+
+OBJECT
+\begin_inset space ~
+\end_inset
+
+{x:
+\begin_inset space ~
+\end_inset
+
+Float,
+\begin_inset space ~
+\end_inset
+
+y:
+\begin_inset space ~
+\end_inset
+
+Float
+\begin_inset space ~
+\end_inset
+
+} 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-ear_right OBJECT { x :Float, y : Float } 
+ear_right
+\begin_inset space ~
+\end_inset
+
+OBJECT
+\begin_inset space ~
+\end_inset
+
+{x:
+\begin_inset space ~
+\end_inset
+
+Float,
+\begin_inset space ~
+\end_inset
+
+y:
+\begin_inset space ~
+\end_inset
+
+Float
+\begin_inset space ~
+\end_inset
+
+} 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-chin OBJECT { x :Float, y : Float } 
+chin
+\begin_inset space ~
+\end_inset
+
+OBJECT
+\begin_inset space ~
+\end_inset
+
+{x:
+\begin_inset space ~
+\end_inset
+
+Float,
+\begin_inset space ~
+\end_inset
+
+y:
+\begin_inset space ~
+\end_inset
+
+Float
+\begin_inset space ~
+\end_inset
+
+} 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-yaw.
- FLOAT.Perfil.
- Value -90° a 90° 
+yaw
+\begin_inset space ~
+\end_inset
+
+FLOAT.Perfil.
+\begin_inset space ~
+\end_inset
+
+Value
+\begin_inset space ~
+\end_inset
+
+-90°
+\begin_inset space ~
+\end_inset
+
+a
+\begin_inset space ~
+\end_inset
+
+90° 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-roll.
- FLOAT.
- Ángulo de rotación del rostro.
- Value -90° a 90° 
+roll
+\begin_inset space ~
+\end_inset
+
+FLOAT.
+\begin_inset space ~
+\end_inset
+
+Ángulo
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+rotación
+\begin_inset space ~
+\end_inset
+
+del
+\begin_inset space ~
+\end_inset
+
+rostro.
+\begin_inset space ~
+\end_inset
+
+Value
+\begin_inset space ~
+\end_inset
+
+-90°
+\begin_inset space ~
+\end_inset
+
+a
+\begin_inset space ~
+\end_inset
+
+90° 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-pitch.
- FLOAT.
- Value -90° a 90° 
+pitch
+\begin_inset space ~
+\end_inset
+
+FLOAT.
+\begin_inset space ~
+\end_inset
+
+Value
+\begin_inset space ~
+\end_inset
+
+-90°
+\begin_inset space ~
+\end_inset
+
+a
+\begin_inset space ~
+\end_inset
+
+90° 
 \end_layout
 
 \end_deeper
@@ -440,8 +725,15 @@ Nota3: Ya que la API automáticamente re-escala las imágenes a 1024 pixeles
 \begin_layout Description
 Nota4: Nota: el atributo face es el valor por defecto y siempre es retornado,
  independientemente de los atributos especificados.
- Si el atributo “glasses” fue requerido adicionalmente se retorna el atributo
- ‘dark_glasses’ para diferenciar entre gafas oscuras y claras.
+ Si el atributo 
+\emph on
+glasses
+\emph default
+ fue requerido adicionalmente se retorna el atributo 
+\emph on
+dark_glasses
+\emph default
+ para diferenciar entre gafas oscuras y claras.
  El atributo mood (estado de ánimo) se devuelve junto con 7 más atributos:
  confianza para cada una de las emociones básicas, además de la confianza
  neutral_mood.
@@ -494,7 +786,7 @@ Post (Request en lenguaje JAVA)
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=Java,breaklines=true"
+lstparams "language=Java,numbers=left,numberstyle={\tiny},basicstyle={\footnotesize},breaklines=true,captionpos=t,frame=no,keywordstyle={\color{blue}},commentstyle={\color{gray}},stringstyle={\color{red}},numbersep=5pt,emph={label}"
 inline false
 status open
 
@@ -506,28 +798,28 @@ ct?api_key=[api_key]&api_secret=[api_secret])
 
 \begin_layout Plain Layout
 
-.header(X-Mashape-Key, 7rS5YDw5YHmshtdgMHP2ZYBLAljfp1OxKNzjsn1GJxNBgad6C9)
+	.header(X-Mashape-Key, 7rS5YDw5YHmshtdgMHP2ZYBLAljfp1OxKNzjsn1GJxNBgad6C9)
  
 \end_layout
 
 \begin_layout Plain Layout
 
-.header(Accept, application/json) 
+	.header(Accept, application/json) 
 \end_layout
 
 \begin_layout Plain Layout
 
-.field(attributes, all) 
+	.field(attributes, all) 
 \end_layout
 
 \begin_layout Plain Layout
 
-.field(detector, Aggressive)  [ver opciones] 
+	.field(detector, Aggressive)  //[ver opciones] 
 \end_layout
 
 \begin_layout Plain Layout
 
-.asJson();        
+	.asJson();        
 \end_layout
 
 \end_inset
@@ -549,17 +841,45 @@ Opciones:
 \begin_deeper
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-.field(“files”, Vector<File> imagenes) 
+.field(files,
+\begin_inset space ~
+\end_inset
+
+Vector<File>
+\begin_inset space ~
+\end_inset
+
+imagenes) 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-.field(“files”, File imagen) 
+.field(files,
+\begin_inset space ~
+\end_inset
+
+File
+\begin_inset space ~
+\end_inset
+
+imagen) 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-.field(“urls”, “”url_1”, “url_2”, …) 
+.field(urls,
+\begin_inset space ~
+\end_inset
+
+url_1,
+\begin_inset space ~
+\end_inset
+
+url_2,
+\begin_inset space ~
+\end_inset
+
+…) 
 \end_layout
 
 \end_deeper
@@ -627,106 +947,126 @@ Ejemplo codificación básica:
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=Java,breaklines=true"
+lstparams "language=Java,numbers=left,numberstyle={\tiny},basicstyle={\footnotesize},breaklines=true,captionpos=t,frame=no,keywordstyle={\color{blue}},commentstyle={\color{gray}},stringstyle={\color{red}},numbersep=5pt,emph={label}"
 inline false
 status open
 
 \begin_layout Plain Layout
+\align left
 
 JSONArray imágenes = obj.get(photos); 
 \end_layout
 
 \begin_layout Plain Layout
+\align left
 
 for(int p=0; p<imágenes.length(); p++) { 
 \end_layout
 
 \begin_layout Plain Layout
+\align left
 
 	//Obtención de cada una de las imágenes  	
 \end_layout
 
 \begin_layout Plain Layout
+\align left
 
 	JSONObject imagen=imagenes.getJSONObject(p);   
 \end_layout
 
 \begin_layout Plain Layout
+\align left
 
 	//Ejemplo obtención del ancho de la imagen 
 \end_layout
 
 \begin_layout Plain Layout
+\align left
 
 	int imgWidth = (int) imagen.get(width); 
 \end_layout
 
 \begin_layout Plain Layout
+\align left
 
 	//Obtención de los rostros detectados en la imagen 
 \end_layout
 
 \begin_layout Plain Layout
+\align left
 
 	JSONArray rostros = imagen.getJSONArray(tags); 
 \end_layout
 
 \begin_layout Plain Layout
+\align left
 
 	for(int r=0; r<rostros.lenght(); r++) { 
 \end_layout
 
 \begin_layout Plain Layout
+\align left
 
 		//Obtención de cada uno de los rostros detectados 
 \end_layout
 
 \begin_layout Plain Layout
+\align left
 
 		rostro=rostros.getJSONObject(r);     	 
 \end_layout
 
 \begin_layout Plain Layout
+\align left
 
 		//Ejemplo obtención de los puntos detectados JSONObject 
 \end_layout
 
 \begin_layout Plain Layout
+\align left
 
 		mouth = rostro.getJSONObject(mouth_center); 
 \end_layout
 
 \begin_layout Plain Layout
+\align left
 
 		int coordX= (int) mouth.get(“x”); 
 \end_layout
 
 \begin_layout Plain Layout
+\align left
 
 		int coordY= (int) mouth.get(“y”); 
 \end_layout
 
 \begin_layout Plain Layout
+\align left
 
 		//Ejemplo obtención de los atributos faciales JSONObject 
 \end_layout
 
 \begin_layout Plain Layout
+\align left
 
 		atributos=imagen.getJSONObject(“attributes”); 
 \end_layout
 
 \begin_layout Plain Layout
+\align left
 
 		String valor = atributos.getJSONObject(“mood”).getString(“value”); 
 \end_layout
 
 \begin_layout Plain Layout
+\align left
 
 	} 	
 \end_layout
 
 \begin_layout Plain Layout
+\align left
 
 } 
 \end_layout
@@ -770,33 +1110,92 @@ detectado:
 \begin_deeper
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-Orientation: tipo String.
- Valores posibles:<frontal, profile-right, profile-left> 
+Orientation:
+\begin_inset space ~
+\end_inset
+
+tipo
+\begin_inset space ~
+\end_inset
+
+String.
+\begin_inset space ~
+\end_inset
+
+Valores
+\begin_inset space ~
+\end_inset
+
+posibles:<frontal,
+\begin_inset space ~
+\end_inset
+
+profile-right
+\begin_inset space ~
+\end_inset
+
+profile-left> 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-x: tipo Integer 
+x:
+\begin_inset space ~
+\end_inset
+
+tipo
+\begin_inset space ~
+\end_inset
+
+Integer 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-y: tipo Integer 
+y:
+\begin_inset space ~
+\end_inset
+
+tipo
+\begin_inset space ~
+\end_inset
+
+Integer 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-width: tipo Integer 
+width:
+\begin_inset space ~
+\end_inset
+
+tipo
+\begin_inset space ~
+\end_inset
+
+Integer 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-height: tipo Integer 
+height:
+\begin_inset space ~
+\end_inset
+
+tipo
+\begin_inset space ~
+\end_inset
+
+Integer 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-Features: (opcional) 
+Features:
+\begin_inset space ~
+\end_inset
+
+(opcional) 
 \end_layout
 
 \begin_layout Labeling
@@ -863,7 +1262,7 @@ Post (Request en lenguaje JAVA)
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=Java,breaklines=true"
+lstparams "language=Java,numbers=left,numberstyle={\tiny},basicstyle={\footnotesize},breaklines=true,captionpos=t,frame=no,keywordstyle={\color{blue}},commentstyle={\color{gray}},stringstyle={\color{red}},numbersep=5pt,emph={label}"
 inline true
 status open
 
@@ -874,18 +1273,18 @@ HttpResponse<JsonNode> response = Unirest.post(ENDPOINT)
 
 \begin_layout Plain Layout
 
-.header(X-Mashape-Key, 7rS5YDw5YHmshtdgMHP2ZYBLAljfp1OxKNzjsn1GJxNBgad6C9)
- [ver opción correspondiente] 
+	.header(X-Mashape-Key, 7rS5YDw5YHmshtdgMHP2ZYBLAljfp1OxKNzjsn1GJxNBgad6C9)
+ //[ver opción correspondiente] 
 \end_layout
 
 \begin_layout Plain Layout
 
-.field(“features”, true) 
+	.field(“features”, true) 
 \end_layout
 
 \begin_layout Plain Layout
 
-.asJson();        
+	.asJson();        
 \end_layout
 
 \end_inset
@@ -918,12 +1317,24 @@ Opciones
 \begin_deeper
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-.field(“url”, “url_image”) 
+.field(url,
+\begin_inset space ~
+\end_inset
+
+url_image) 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-.field(image, new File(<path_image>)) 
+.field(image,
+\begin_inset space ~
+\end_inset
+
+new
+\begin_inset space ~
+\end_inset
+
+File(<path_image>)) 
 \end_layout
 
 \end_deeper
@@ -1018,7 +1429,7 @@ Ejemplo codificación básica
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=Java,breaklines=true"
+lstparams "language=Java,numbers=left,numberstyle={\tiny},basicstyle={\footnotesize},breaklines=true,captionpos=t,frame=no,keywordstyle={\color{blue}},commentstyle={\color{gray}},stringstyle={\color{red}},numbersep=5pt,emph={label}"
 inline false
 status open
 
@@ -1148,24 +1559,118 @@ rostro>
 \begin_deeper
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-Open eyes: (probabilidad) Constant value: 1 FLOAT (*) 
+Open
+\begin_inset space ~
+\end_inset
+
+eyes:
+\begin_inset space ~
+\end_inset
+
+(probabilidad)
+\begin_inset space ~
+\end_inset
+
+Constant
+\begin_inset space ~
+\end_inset
+
+value:
+\begin_inset space ~
+\end_inset
+
+1
+\begin_inset space ~
+\end_inset
+
+FLOAT
+\begin_inset space ~
+\end_inset
+
+(*) 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-Smiling: (probabilidad) Constant value: 1 FLOAT (*) 
+Smiling:
+\begin_inset space ~
+\end_inset
+
+(probabilidad)
+\begin_inset space ~
+\end_inset
+
+Constant
+\begin_inset space ~
+\end_inset
+
+value:
+\begin_inset space ~
+\end_inset
+
+1
+\begin_inset space ~
+\end_inset
+
+FLOAT
+\begin_inset space ~
+\end_inset
+
+(*) 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-Height, width: medidos en píxeles.
- FLOAT 
+Height,
+\begin_inset space ~
+\end_inset
+
+width:
+\begin_inset space ~
+\end_inset
+
+medidos
+\begin_inset space ~
+\end_inset
+
+en
+\begin_inset space ~
+\end_inset
+
+píxeles.
+\begin_inset space ~
+\end_inset
+
+FLOAT 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-Position: Punto superior izquierdo del rostro.
- FLOAT 
+Position:
+\begin_inset space ~
+\end_inset
+
+Punto
+\begin_inset space ~
+\end_inset
+
+superior
+\begin_inset space ~
+\end_inset
+
+izquierdo
+\begin_inset space ~
+\end_inset
+
+del
+\begin_inset space ~
+\end_inset
+
+rostro.
+\begin_inset space ~
+\end_inset
+
+FLOAT 
 \end_layout
 
 \end_deeper
@@ -1205,62 +1710,238 @@ LIST<Landmark>
 \begin_deeper
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-BOTTOM_MOUTH Constant Value: 0 CENTER 
+BOTTOM_MOUTH
+\begin_inset space ~
+\end_inset
+
+Constant
+\begin_inset space ~
+\end_inset
+
+Value:
+\begin_inset space ~
+\end_inset
+
+0
+\begin_inset space ~
+\end_inset
+
+CENTER 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-LEFT_CHEEK Constant Value: 1 CENTER 
+LEFT_CHEEK
+\begin_inset space ~
+\end_inset
+
+Constant
+\begin_inset space ~
+\end_inset
+
+Value:
+\begin_inset space ~
+\end_inset
+
+1
+\begin_inset space ~
+\end_inset
+
+CENTER 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-LEFT_EAR_TIP Constant Value: 2 
+LEFT_EAR_TIP
+\begin_inset space ~
+\end_inset
+
+Constant
+\begin_inset space ~
+\end_inset
+
+Value:
+\begin_inset space ~
+\end_inset
+
+2 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-LEFT_EAR Constant Value: 3
+LEFT_EAR
+\begin_inset space ~
+\end_inset
+
+Constant
+\begin_inset space ~
+\end_inset
+
+Value:
+\begin_inset space ~
+\end_inset
+
+3
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-MIDPOINT LEFT_EYE Constant Value: 4 
+MIDPOINT
+\begin_inset space ~
+\end_inset
+
+LEFT_EYE
+\begin_inset space ~
+\end_inset
+
+Constant
+\begin_inset space ~
+\end_inset
+
+Value:
+\begin_inset space ~
+\end_inset
+
+4 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-CENTER LEFT_MOUTH Constant Value: 5 
+CENTER
+\begin_inset space ~
+\end_inset
+
+LEFT_MOUTH
+\begin_inset space ~
+\end_inset
+
+Constant
+\begin_inset space ~
+\end_inset
+
+Value:
+\begin_inset space ~
+\end_inset
+
+5 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-NOSE_BASE Constant Value: 6 
+NOSE_BASE
+\begin_inset space ~
+\end_inset
+
+Constant
+\begin_inset space ~
+\end_inset
+
+Value:
+\begin_inset space ~
+\end_inset
+
+6 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-MIDPOINT RIGHT_CHEEK Constant Value: 7 
+MIDPOINT
+\begin_inset space ~
+\end_inset
+
+RIGHT_CHEEK
+\begin_inset space ~
+\end_inset
+
+Constant
+\begin_inset space ~
+\end_inset
+
+Value:
+\begin_inset space ~
+\end_inset
+
+7 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-CENTER RIGHT_EAR_TIP Constant Value: 8 
+CENTER
+\begin_inset space ~
+\end_inset
+
+RIGHT_EAR_TIP
+\begin_inset space ~
+\end_inset
+
+Constant
+\begin_inset space ~
+\end_inset
+
+Value:
+\begin_inset space ~
+\end_inset
+
+8 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-RIGHT_EAR Constant Value: 9 
+RIGHT_EAR
+\begin_inset space ~
+\end_inset
+
+Constant
+\begin_inset space ~
+\end_inset
+
+Value:
+\begin_inset space ~
+\end_inset
+
+9 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-MIDPOINT RIGHT_EYE Constant Value: 10 
+MIDPOINT
+\begin_inset space ~
+\end_inset
+
+RIGHT_EYE
+\begin_inset space ~
+\end_inset
+
+Constant
+\begin_inset space ~
+\end_inset
+
+Value:
+\begin_inset space ~
+\end_inset
+
+10 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-CENTER RIGHT_MOUTH Constant Value: 11 
+CENTER
+\begin_inset space ~
+\end_inset
+
+RIGHT_MOUTH
+\begin_inset space ~
+\end_inset
+
+Constant
+\begin_inset space ~
+\end_inset
+
+Value:
+\begin_inset space ~
+\end_inset
+
+11 
 \end_layout
 
 \end_deeper
@@ -1280,12 +1961,52 @@ Orientation>
 \begin_deeper
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-EulerY [valor ‘y’ en la imagen] 
+EulerY
+\begin_inset space ~
+\end_inset
+
+[valor
+\begin_inset space ~
+\end_inset
+
+y
+\begin_inset space ~
+\end_inset
+
+en
+\begin_inset space ~
+\end_inset
+
+la
+\begin_inset space ~
+\end_inset
+
+imagen] 
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-EulerZ [valor ‘r’ en la imagen]
+EulerZ
+\begin_inset space ~
+\end_inset
+
+[valor
+\begin_inset space ~
+\end_inset
+
+r
+\begin_inset space ~
+\end_inset
+
+en
+\begin_inset space ~
+\end_inset
+
+la
+\begin_inset space ~
+\end_inset
+
+imagen]
 \end_layout
 
 \end_deeper
@@ -1325,7 +2046,7 @@ Construcción del detector
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=Java,breaklines=true"
+lstparams "language=Java,numbers=left,numberstyle={\tiny},basicstyle={\footnotesize},breaklines=true,captionpos=t,frame=no,keywordstyle={\color{blue}},commentstyle={\color{gray}},stringstyle={\color{red}},numbersep=5pt,emph={label}"
 inline false
 status open
 
@@ -1336,32 +2057,32 @@ FaceDetector detector = new FaceDetector.Builder(context)
 
 \begin_layout Plain Layout
 
-.setTrackingEnabled(false) 
+	.setTrackingEnabled(false) 
 \end_layout
 
 \begin_layout Plain Layout
 
-.setMode(int Mode) 
+	.setMode(int Mode) 
 \end_layout
 
 \begin_layout Plain Layout
 
-.setProminentFaceOnly(true) 
+	.setProminentFaceOnly(true) 
 \end_layout
 
 \begin_layout Plain Layout
 
-.setClassificationType(int classificationType) 
+	.setClassificationType(int classificationType) 
 \end_layout
 
 \begin_layout Plain Layout
 
-.setLandmarkType(int landmarkType) 
+	.setLandmarkType(int landmarkType) 
 \end_layout
 
 \begin_layout Plain Layout
 
-.build(); 
+	.build(); 
 \end_layout
 
 \end_inset
@@ -1473,7 +2194,7 @@ El detector se puede llamar de forma sincronizada con un objeto del tipo
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=Java,breaklines=true"
+lstparams "language=Java,numbers=left,numberstyle={\tiny},basicstyle={\footnotesize},breaklines=true,captionpos=t,frame=no,keywordstyle={\color{blue}},commentstyle={\color{gray}},stringstyle={\color{red}},numbersep=5pt,emph={label}"
 inline false
 status open
 
@@ -1498,7 +2219,7 @@ Ejemplo codificación básica
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=Java,breaklines=true"
+lstparams "language=Java,numbers=left,numberstyle={\tiny},basicstyle={\footnotesize},breaklines=true,captionpos=t,frame=no,keywordstyle={\color{blue}},commentstyle={\color{gray}},stringstyle={\color{red}},numbersep=5pt,emph={label}"
 inline false
 status open
 
