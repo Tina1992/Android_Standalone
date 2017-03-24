@@ -164,13 +164,13 @@ Por otro lado, las evaluaciones señalan al modelo Linear Regression como
  a diferentes formatos de dataset.
  El factor de correlación obtenido por este modelo para problemas de complejidad
  polinómica alcanza resultados tan precisos como el modelo MultiLayer Perceptron
- a un costo computacional extremadamente inferior.
+ a un costo computacional notablemente inferior.
  Respecto al caso de estudio de problema NP, el modelo fue capaz de alcanzar
  valores de correlacioón entre las variables mayores al 70%, un valor positivo
  teniendo en cuenta un conjunto estrecho de datos de entrenamiento (cercano
  a las 200 instancias), y un tiempo de procesamiento reducido a minutos,
  tanto para la predicción del tiempo de respuesta como para la precisión.
- Incluso, los resultados arrojados fueron superiores a otras técnicas.
+ Incluso, los resultados arrojados fueron mejores que otras técnicas.
  Respecto a los servicios, se observa que el modelo tiene dificultades para
  aprender, aunque la pobreza de los dataset formados concentra la mayor
  responsabilidad.
@@ -205,7 +205,7 @@ La principal limitación que presenta el modelo propuesto en este trabajo
 Otra limitación que se presenta responde a la ausencia de un método automatizado
  para configurar dinámicamente los parámetros de las tecnicas de regresión,
  debiendo determinar un rango estático y específico propio para cada técnica,
- para llevar a cabo el proceso de optimización, considerando de esta forma
+ para llevar a cabo el proceso de optimización, considerando de esta formar
  a todos los datos de entrenamiento por igual, sin distinción de formato,
  dominio, etc.
 \end_layout
