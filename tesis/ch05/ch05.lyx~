@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass book
 \use_default_options true
 \maintain_unincluded_children false
@@ -9,16 +11,16 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman "default"
-\font_sans "default"
-\font_typewriter "default"
-\font_math "auto"
+\font_roman "" "default"""
+\font_sans "" "default"""
+\font_typewriter "" "default"""
+\font_math "" "auto"""
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -284,11 +286,20 @@ puede ser útil para determinar si un dataset contiene errores significativos
 \end_layout
 
 \begin_layout Standard
-El coeficiente de correlación (
-\emph on
-CC
-\emph default
-) es analizado en conjunto con el indicador 
+El coeficiente de correlación 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{CC}
+\end_layout
+
+\end_inset
+
+ es analizado en conjunto con el indicador 
 \emph on
 
 \begin_inset ERT
@@ -760,7 +771,7 @@ textwidth}{!}{
 
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="5">
-<features rotate="0" tabularvalignment="middle" tabularwidth="20cm">
+<features tabularvalignment="middle" tabularwidth="20cm">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -1519,16 +1530,41 @@ name "subsec:Escenario-1:-Algoritmos"
 
 \begin_layout Standard
 En el campo de la teoría de complejidad computacional, el problema del viajante
- o TSP por sus siglas en inglés, es tratado como un problema NP-Completo
- y es modelado como un grafo de manera que las ciudades son sus vértices,
- los caminos son las aristas y las distancias entre caminos son los pesos
- de las aristas.
+ o 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{TSP}
+\end_layout
+
+\end_inset
+
+ por sus siglas en inglés, es tratado como un problema NP-Completo y es
+ modelado como un grafo de manera que las ciudades son sus vértices, los
+ caminos son las aristas y las distancias entre caminos son los pesos de
+ las aristas.
  Es un problema de minimización tras la búsqueda de un recorrido completo
  que comienza y finaliza en un vértice específico y visita el resto de los
  vértices exactamente una vez con coste mínimo.
- Existen muchas variantes del problema, una de ellas se trata del TSP simétrico
- en el cual la distancia entre un par de ciudades es la misma en cada dirección
- formando un grafo ponderado no dirigido.
+ Existen muchas variantes del problema, una de ellas se trata del 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{TSP}
+\end_layout
+
+\end_inset
+
+ simétrico en el cual la distancia entre un par de ciudades es la misma
+ en cada dirección formando un grafo ponderado no dirigido.
  Esta variante fue la versión considerada por la herramienta.
  
 \end_layout
@@ -2058,7 +2094,20 @@ ac{HTTP}
 
  estándar como GET y POST a las direcciones correspondientes.
  Dependiendo de los parámetros especificados en el request, el servidor
- puede generar la respuesta tanto en formato JSON como 
+ puede generar la respuesta tanto en formato 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{JSON}
+\end_layout
+
+\end_inset
+
+ como 
 \begin_inset ERT
 status open
 
@@ -2132,7 +2181,20 @@ Microsoft Face API
 Face API es un servicio web en la nube que provee los algoritmos de detección
  y reconocimiento de rostros más avanzados.
  El servicio es consumido a través del sitio de Microsoft y las respuestas
- son retornadas en formato JSON.
+ son retornadas en formato 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{JSON}
+\end_layout
+
+\end_inset
+
+.
  El algoritmo permite setear seis propiedades (
 \emph on
 landmarks
@@ -2448,15 +2510,24 @@ ac{SVM}
 
  son, claramente, los mejores en cuanto a adaptación al modelo.
  Ambos presentan una correlación de los datos de 1 (
-\emph on
-CC
-\emph default
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{CC}
+\end_layout
+
+\end_inset
+
 ), lo que representa la exactitud de los datos predichos en relación a los
  reales.
  Como se ha se explicado en la sección
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Ajuste-del-modelo:"
+reference "subsec:Ajuste-del-modelo:"
 
 \end_inset
 
@@ -2479,8 +2550,33 @@ ya que presenta los niveles de correlación mas bajos y los errores más altos.
 En todos los escenarios presentados, se ha optado por el caso intermedio
  de adaptación, considerando que el mejor modelo obtenido será aquel que
  evite casos de overfitting o underfitting, focalizando el análisis en los
- valores de CC intermedios, con un error MAE aceptable considerando los
- valores propios y errores promedios bajos.
+ valores de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{CC}
+\end_layout
+
+\end_inset
+
+ intermedios, con un error 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MAE}
+\end_layout
+
+\end_inset
+
+ aceptable considerando los valores propios y errores promedios bajos.
  Por lo tanto, en este caso, el modelo más eficiente es el 
 \emph on
 Linear Regression.
@@ -2617,7 +2713,7 @@ ac{SGD}
 Teniendo en cuenta los conceptos expuestos en la sección 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Ajuste-del-modelo:"
+reference "subsec:Ajuste-del-modelo:"
 
 \end_inset
 
@@ -2626,7 +2722,20 @@ reference "sub:Ajuste-del-modelo:"
 \emph on
 modelo LinearRegression 
 \emph default
-es sus dos implementaciones (Ridge y SGD).
+es sus dos implementaciones (Ridge y 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SGD}
+\end_layout
+
+\end_inset
+
+).
  
 \end_layout
 
@@ -2850,7 +2959,7 @@ textwidth}{!}{
 
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="12">
-<features rotate="0" tabularvalignment="middle" tabularwidth="20cm">
+<features tabularvalignment="middle" tabularwidth="20cm">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -3625,7 +3734,9 @@ status open
 
 
 \backslash
-resizebox{!}{
+resizebox{.80
+\backslash
+textwidth}{!}{
 \end_layout
 
 \end_inset
@@ -3633,7 +3744,7 @@ resizebox{!}{
 
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="12">
-<features rotate="0" tabularvalignment="middle" tabularwidth="20cm">
+<features tabularvalignment="middle" tabularwidth="20cm">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -4459,9 +4570,35 @@ En contraste, en conjuntos de datos pobres, el modelo MultiLayer Perceptron
 
 \begin_layout Itemize
 En caso de dataset formados por pocas instancias, el comportamiento del
- SMO es similar al del Multilayer Perceptron.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SMO}
+\end_layout
+
+\end_inset
+
+ es similar al del Multilayer Perceptron.
  Sin embargo, es importante destacar el efecto de overfit de ambos algoritmos,
- y particularmente el tiempo de procesamiento que requiere el SMO.
+ y particularmente el tiempo de procesamiento que requiere el 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SMO}
+\end_layout
+
+\end_inset
+
+.
  
 \end_layout
 

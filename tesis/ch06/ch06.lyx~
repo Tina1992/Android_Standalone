@@ -277,7 +277,7 @@ Considerar conjuntos de datos de la misma naturaleza que los usados durante
  la fase de entrenamiento, para evaluar los modelos creados.
  Brindar un mecanismo de evaluación de los modelos a partir de las métricas,
  y validar estos modelos creados frente a nuevos conjuntos de datos para
- enclarecer, el desempeño y generalización lograda.
+ enclarecer el desempeño y generalización lograda.
  
 \end_layout
 

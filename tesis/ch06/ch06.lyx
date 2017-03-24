@@ -145,8 +145,34 @@ es bajas en error.
  como el caso del problema de la multiplicacion de matrices y el problema
  del viajante métrico, el nivel de correlación alcanzado por el algoritmo
  es inmediatamente inferior al 100% y en cuanto al error en las predicciones
- a través de las métricas CC y RMSE como principales objetivos, tendrán
- valores inmediatamente cercanos o iguales a cero.
+ a través de las métricas 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{CC}
+\end_layout
+
+\end_inset
+
+ y 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{RMSE}
+\end_layout
+
+\end_inset
+
+ como principales objetivos, tendrán valores inmediatamente cercanos o iguales
+ a cero.
  Para el caso de servicios, aunque las estimaciones arrojadas por el modelo
  presentan mas variabilidad, su comportamiento es considerablemente superior
  al resto de los modelos, en cuanto evita efectos de overfit y underfit
