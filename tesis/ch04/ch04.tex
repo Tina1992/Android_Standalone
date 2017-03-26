@@ -1,138 +1,138 @@
 
 \chapter{Enfoque y Herramientas\label{chap:Enfoque-y-Herramientas}}
 
-En este capÌtulo se describe el enfoque propuesto para extraer informaciÛn
-y conocimiento de un conjunto de caracterÌsticas inherentes a componentes
-de software y propiedades est·ticas y din·micas del dispositivo android
-de ejecuciÛn para analizar las relaciones y dependencias y predecir
-atributos no funcionales en base a dichas propiedades. Para el diseÒo
-se hizo Ènfasis en la optimizaciÛn combinada de los par·metros de
-los algoritmos de aprendizaje autom·tico. 
+En este cap√≠tulo se describe el enfoque propuesto para extraer informaci√≥n
+y conocimiento de un conjunto de caracter√≠sticas inherentes a componentes
+de software y propiedades est√°ticas y din√°micas del dispositivo android
+de ejecuci√≥n para analizar las relaciones y dependencias y predecir
+atributos no funcionales en base a dichas propiedades. Para el dise√±o
+se hizo √©nfasis en la optimizaci√≥n combinada de los par√°metros de
+los algoritmos de aprendizaje autom√°tico. 
 
-El enfoque plantea llevar a cabo la predicciÛn de propiedades no-funcionales
-mediante un proceso de aprendizaje de m·quina a travÈs de \emph{i})
-la recolecciÛn de indicadores o mediciones tomados a partir de la
-informaciÛn provista de la ejecuciÛn de piezas de software, considerando
+El enfoque plantea llevar a cabo la predicci√≥n de propiedades no-funcionales
+mediante un proceso de aprendizaje de m√°quina a trav√©s de \emph{i})
+la recolecci√≥n de indicadores o mediciones tomados a partir de la
+informaci√≥n provista de la ejecuci√≥n de piezas de software, considerando
 atributos de componentes, atributos inherentes al problema de entrada,
-y atributos de la operaciÛn y resultados de la ejecuciÛn, y \emph{ii})
-la construcciÛn de modelos como un proceso interactivo con el usuario
-a partir de la configuraciÛn inicial de los datos, la optimizaciÛn
-autom·tica de los par·metros de acuerdo a las tasas de error arrojadas
-por mÈtricas de evaluaciÛn y el ajuste final del modelo a travÈs del
-an·lisis de las curvas de aprendizaje. 
+y atributos de la operaci√≥n y resultados de la ejecuci√≥n, y \emph{ii})
+la construcci√≥n de modelos como un proceso interactivo con el usuario
+a partir de la configuraci√≥n inicial de los datos, la optimizaci√≥n
+autom√°tica de los par√°metros de acuerdo a las tasas de error arrojadas
+por m√©tricas de evaluaci√≥n y el ajuste final del modelo a trav√©s del
+an√°lisis de las curvas de aprendizaje. 
 
 Como soporte para el enfoque, se desarrollaron dos herramientas independientes
-entre sÌ y diseÒadas para efectuar el objetivo y conexiÛn de las dos
-fases propuestas. Por un lado, se desarrollÛ una herramienta denominada
-\emph{Android Performance Testing and Prediction} cuyo diseÒo se adapta
-f·cilmente a la implementaciÛn de cualquier dominio computacional
-del que se quiera obtener indicadores de desempeÒo. Al tratarse de
+entre s√≠ y dise√±adas para efectuar el objetivo y conexi√≥n de las dos
+fases propuestas. Por un lado, se desarroll√≥ una herramienta denominada
+\emph{Android Performance Testing and Prediction} cuyo dise√±o se adapta
+f√°cilmente a la implementaci√≥n de cualquier dominio computacional
+del que se quiera obtener indicadores de desempe√±o. Al tratarse de
 un framework implementado para el sistema Android, permite obtener
-de manera directa los benchmarks del dispositivo de interÈs para el
-an·lisis. Por otro lado, se desarrollÛ una herramienta standalone
-denominada \emph{Nekonata} diseÒada para brindar soporte al uso de
-las funciones de cualquier librerÌa que realice aprendizaje autom·tico
-y minerÌa de datos escritas en lenguaje Java y que consiste en dos
-fases, una primer etapa para la construcciÛn del modelo a partir del
-conjunto fuente de benchmarks mediante un proceso de automatizaciÛn
-de los algoritmos en complemento de informaciÛn gr·fica para la colaboraciÛn
+de manera directa los benchmarks del dispositivo de inter√©s para el
+an√°lisis. Por otro lado, se desarroll√≥ una herramienta standalone
+denominada \emph{Nekonata} dise√±ada para brindar soporte al uso de
+las funciones de cualquier librer√≠a que realice aprendizaje autom√°tico
+y miner√≠a de datos escritas en lenguaje Java y que consiste en dos
+fases, una primer etapa para la construcci√≥n del modelo a partir del
+conjunto fuente de benchmarks mediante un proceso de automatizaci√≥n
+de los algoritmos en complemento de informaci√≥n gr√°fica para la colaboraci√≥n
 interactiva del usuario y finalmente una segunda etapa de ajustes
 al modelo teniendo en cuenta los efectos de overfitting y underfitting
 consecuentes del entrenamiento. 
 
 Estas cuestiones se describen en detalle de la siguiente manera. En
-la secciÛn \ref{sec:Aplicaciones-de-la} se enumeran algunos de los
-usos pr·cticos de los modelos incluyendo aplicaciones de la propuesta.
-Luego, en la secciÛn \ref{sec:Etapas-del-m=0000E9todo} se profundiza
-sobre las distintas etapas del enfoque y flujo de trabajo. En la secciÛn
+la secci√≥n \ref{sec:Aplicaciones-de-la} se enumeran algunos de los
+usos pr√°cticos de los modelos incluyendo aplicaciones de la propuesta.
+Luego, en la secci√≥n \ref{sec:Etapas-del-m=0000E9todo} se profundiza
+sobre las distintas etapas del enfoque y flujo de trabajo. En la secci√≥n
 \ref{sec:Herramientas} se describen cada uno de los frameworks desarrollados,
-presentando la herramienta para la recolecciÛn de datos en la subsecciÛn
-\ref{subsec:Framework-de-medici=0000F3n} y finalmente, en la secciÛn
+presentando la herramienta para la recolecci√≥n de datos en la subsecci√≥n
+\ref{subsec:Framework-de-medici=0000F3n} y finalmente, en la secci√≥n
 \ref{subsec:Herramienta-de-entrenamiento} se presenta la herramienta
-para la construcciÛn de modelos evaluativos. 
+para la construcci√≥n de modelos evaluativos. 
 
 
 \section{Aplicaciones de la propuesta \label{sec:Aplicaciones-de-la}}
 
-Los problemas de clase NP - Completos est·n presentes en la mayorÌa
-de ·mbitos computacionales. Afortunadamente, en la medida que estos
-problemas resultan difÌciles de resolver frente a los peores casos
-de entrada, se hace m·s factible resolverlos a˙n considerando problemas
+Los problemas de clase NP - Completos est√°n presentes en la mayor√≠a
+de √°mbitos computacionales. Afortunadamente, en la medida que estos
+problemas resultan dif√≠ciles de resolver frente a los peores casos
+de entrada, se hace m√°s factible resolverlos a√∫n considerando problemas
 de grandes instancias. 
 
 Desafortunadamente, estos algoritmos pueden exhibir variaciones extremas
-de ejecuciÛn a travÈs de las instancias con distribuciones reales,
-incluso, aunque la dimensiÛn del problema se mantuviera constante,
-la misma instancia puede requerir dram·ticamente diferentes tiempos
-de ejecuciÛn en funciÛn del algoritmo utilizado. Existe una escasa
-comprensiÛn teÛrica de las causas de esta variaciÛn. Durante la ˙ltima
-dÈcada, una cantidad considerable de trabajo ha intentado demostrar
-cÛmo utilizar las tÈcnicas de aprendizaje autom·tico supervisado para
-la construcciÛn de modelos de regresiÛn que proporcionen respuestas
+de ejecuci√≥n a trav√©s de las instancias con distribuciones reales,
+incluso, aunque la dimensi√≥n del problema se mantuviera constante,
+la misma instancia puede requerir dram√°ticamente diferentes tiempos
+de ejecuci√≥n en funci√≥n del algoritmo utilizado. Existe una escasa
+comprensi√≥n te√≥rica de las causas de esta variaci√≥n. Durante la √∫ltima
+d√©cada, una cantidad considerable de trabajo ha intentado demostrar
+c√≥mo utilizar las t√©cnicas de aprendizaje autom√°tico supervisado para
+la construcci√≥n de modelos de regresi√≥n que proporcionen respuestas
 aproximadas a esta pregunta en base a los datos de rendimiento del
-algoritmo analizado, en otras palabras, podrÌa creerse que es posible
-predecir el tiempo que requerir· un determinado algoritmo para ejecutarse
+algoritmo analizado, en otras palabras, podr√≠a creerse que es posible
+predecir el tiempo que requerir√° un determinado algoritmo para ejecutarse
 bajo una entrada en particular construyendo un modelo de tiempo de
-ejecuciÛn del algoritmo como una funciÛn de las caracterÌsticas especÌficas
+ejecuci√≥n del algoritmo como una funci√≥n de las caracter√≠sticas espec√≠ficas
 de cada instancia del problema. 
 
-La construcciÛn de tales modelos conocidos como \emph{modelos de actuaciÛn
-empÌrica }(EPM por sus siglas en inglÈs) ha ido creciendo y motivada
+La construcci√≥n de tales modelos conocidos como \emph{modelos de actuaci√≥n
+emp√≠rica }(EPM por sus siglas en ingl√©s) ha ido creciendo y motivada
 debido a la utilidad que presentan frente a una gran variedad de contextos
-pr·cticos. A continuaciÛn, se detallan algunos:
+pr√°cticos. A continuaci√≥n, se detallan algunos:
 \begin{description}
-\item [{SelecciÛn~de~algoritmos}] Como se ha tratado en algunos trabajos
-\citet{Hutter2014}, los modelos de predicciÛn son ˙tiles para la
-selecciÛn autom·tica de algoritmos y la configuraciÛn en una variedad
-de formas (un problema cl·sico de selecciÛn del mejor algoritmo entre
-un determinado conjunto); a travÈs de \ac{EPM} se logra predecir
+\item [{Selecci√≥n~de~algoritmos}] Como se ha tratado en algunos trabajos
+\citet{Hutter2014}, los modelos de predicci√≥n son √∫tiles para la
+selecci√≥n autom√°tica de algoritmos y la configuraci√≥n en una variedad
+de formas (un problema cl√°sico de selecci√≥n del mejor algoritmo entre
+un determinado conjunto); a trav√©s de \ac{EPM} se logra predecir
 el rendimiento de cada uno de estos algoritmos candidatos y mediante
-un an·lisis comparativo, seleccionar el m·s apropiado considerando
-la instancia del problema y las caracterÌsticas del hardware. 
-\item [{Ajustes~de~par·metros~y~configuraciÛn~autom·tica~del~algoritmo}] \ac{EPM}
-sirve a dos propÛsitos fundamentales, por un lado, modelar el comportamiento
-o funcionalidad de un algoritmo parametrizado en base a la configuraciÛn
-de tales par·metros, en cuyo caso se puede alternar entre el aprendizaje
+un an√°lisis comparativo, seleccionar el m√°s apropiado considerando
+la instancia del problema y las caracter√≠sticas del hardware. 
+\item [{Ajustes~de~par√°metros~y~configuraci√≥n~autom√°tica~del~algoritmo}] \ac{EPM}
+sirve a dos prop√≥sitos fundamentales, por un lado, modelar el comportamiento
+o funcionalidad de un algoritmo parametrizado en base a la configuraci√≥n
+de tales par√°metros, en cuyo caso se puede alternar entre el aprendizaje
 del modelo y su uso para identificar configuraciones interesantes
 para evaluar posteriormente. Por otro lado, se puede modelar el rendimiento
-del algoritmo basado conjuntamente en las caracterÌsticas de las instancias
-del problema y la configuraciÛn de sus par·metros. Tales modelos pueden
-utilizarse para ajustar los valores de tales par·metros y obtener
-una mejor predicciÛn basada en la instancia particular. 
-\item [{GeneraciÛn~de~benchmarks~fuertes}] Un modelo predictivo para
-uno o m·s algoritmos se puede utilizar para establecer los par·metros
+del algoritmo basado conjuntamente en las caracter√≠sticas de las instancias
+del problema y la configuraci√≥n de sus par√°metros. Tales modelos pueden
+utilizarse para ajustar los valores de tales par√°metros y obtener
+una mejor predicci√≥n basada en la instancia particular. 
+\item [{Generaci√≥n~de~benchmarks~fuertes}] Un modelo predictivo para
+uno o m√°s algoritmos se puede utilizar para establecer los par√°metros
 de los generadores de benchmarks existentes con el fin de crear instancias
 asociadas al algoritmo particular. 
-\item [{Obtener~una~visiÛn~general~de~las~instancias~y~el~rendimiento~de~los~algoritmos}] \ac{EPM}
-se puede utilizar para evaluar las caracterÌsticas de la instancia
-y los valores de los par·metros del algoritmo que m·s impactan en
+\item [{Obtener~una~visi√≥n~general~de~las~instancias~y~el~rendimiento~de~los~algoritmos}] \ac{EPM}
+se puede utilizar para evaluar las caracter√≠sticas de la instancia
+y los valores de los par√°metros del algoritmo que m√°s impactan en
 el rendimiento. Algunos modelos son compatibles con este tipo de evaluaciones
-directamente. Para otros modelos, existen mÈtodos de selecciÛn de
-atributos (caracterÌsticas genÈricas) para identificar un grupo m·s
+directamente. Para otros modelos, existen m√©todos de selecci√≥n de
+atributos (caracter√≠sticas gen√©ricas) para identificar un grupo m√°s
 reducido de entradas del modelo que son claves, y describen el rendimiento
 del algoritmo casi tan bien como todo el conjunto de entradas. 
-\item [{SelecciÛn~de~Servicio~y~composiciÛn}] Cuando varios servicios
+\item [{Selecci√≥n~de~Servicio~y~composici√≥n}] Cuando varios servicios
 web implementan la misma funcionalidad, los modelos de rendimiento
 resultan ser un buen criterio para escoger el mejor candidato entre
-ellos. Incluso en tiempo de ejecuciÛn, los proveedores de servicio
-pueden cambiarse si las condiciones del contexto y los par·metros
+ellos. Incluso en tiempo de ejecuci√≥n, los proveedores de servicio
+pueden cambiarse si las condiciones del contexto y los par√°metros
 de entrada se modifican. 
-\item [{ProgramaciÛn~de~tareas~en~redes~mÛviles}] Suponiendo un conjunto
+\item [{Programaci√≥n~de~tareas~en~redes~m√≥viles}] Suponiendo un conjunto
 de tareas que deben asignarse entre un conjunto de dispositivos, los
-modelos de rendimiento podrÌan obtener una medida exacta del tiempo
-de respuesta que cada tarea requerir· sobre cada dispositivo con el
-fin de minimizar el tiempo total de secuenciaciÛn de las tareas. 
+modelos de rendimiento podr√≠an obtener una medida exacta del tiempo
+de respuesta que cada tarea requerir√° sobre cada dispositivo con el
+fin de minimizar el tiempo total de secuenciaci√≥n de las tareas. 
 \item [{Otros.}]~
 \end{description}
 
-\section{Etapas del mÈtodo\label{sec:Etapas-del-m=0000E9todo}}
+\section{Etapas del m√©todo\label{sec:Etapas-del-m=0000E9todo}}
 
 El enfoque propuesto se conceptualiza como un proceso de tres fases
 complementarias. Este ciclo o flujo de trabajo da lugar a tres etapas
-bien definidas por cada dominio o escenario de estudio, desde la obtenciÛn
-de indicadores hasta la predicciÛn de propiedades no funcionales en
-entornos de aplicaciÛn. La figura \ref{fig:method-stages} muestra
-un esquema conceptual del enfoque, cuyas etapas se describen a continuaciÛn:
+bien definidas por cada dominio o escenario de estudio, desde la obtenci√≥n
+de indicadores hasta la predicci√≥n de propiedades no funcionales en
+entornos de aplicaci√≥n. La figura \ref{fig:method-stages} muestra
+un esquema conceptual del enfoque, cuyas etapas se describen a continuaci√≥n:
 
 \begin{figure}
 \begin{centering}
@@ -142,120 +142,235 @@ un esquema conceptual del enfoque, cuyas etapas se describen a continuaciÛn:
 \caption{Esquema conceptual del enfoque en fases. \label{fig:method-stages}}
 \end{figure}
 
-\begin{description}
-\item [{Testing}] El proceso comienza con la creaciÛn de datasets. Cada
-dataset pertenece a un escenario o dominio diferente del cual se extraen
-todas las caracterÌsticas que podrÌan influir sobre el desempeÒo del
-componente. Durante la ejecuciÛn de cada servicio o pieza de software
-se van realizando las mediciones o mÈtricas sobre distintos aspectos
-de la operaciÛn y registrando cada uno de estos benchmarks en un archivo
-para su posterior an·lisis. 
-\item [{Learning}] A partir del conjunto de benchmarks obtenidos, se aplican
-tÈcnicas de aprendizaje de m·quina para la extracciÛn de conocimiento
-de estos datos y construir, consecuentemente, modelos predictivos
-que mejor se ajusten a la generalizaciÛn de la informaciÛn mediante
-un proceso de entrenamiento y evaluaciÛn de los mismos. 
-\item [{Predict}] Finalmente, se pretende utilizar estos modelos de predicciÛn
-en entornos de aplicaciÛn que permitan la selecciÛn del componente
-m·s adecuado en base a un conjunto de propiedades del problema de
-entrada, las propiedades internas del dispositivo en el cual se llevar·
-a cabo la ejecuciÛn, y un conjunto de restricciones que deben satisfacerse,
-a travÈs de un proceso automatizado que determine al usuario la opciÛn
-m·s favorable evitando la ejecuciÛn de cada componente. 
-\end{description}
+
+
+\subsection{Etapa recolecci√≥n de datos }
+
+\noindent El proceso comienza con la creaci√≥n de datasets. Cada dataset
+pertenece a un escenario o dominio diferente, del cual se extraen
+todas las caracter√≠sticas que podr√≠an influir sobre el desempe√±o del
+componente. Durante la ejecuci√≥n de cada servicio o pieza de software
+se van realizando las mediciones o m√©tricas sobre distintos aspectos
+de la operaci√≥n y registrando cada uno de estos benchmarks en un archivo
+para su posterior an√°lisis. A su vez, el proceso de recolecci√≥n de
+benckmarks involucra la ejecuci√≥n de sub etapas, pudiendo requerir
+el proceso algunas, o todas de las tareas que se detallan a continuaci√≥n:
+\begin{itemize}
+\item Integraci√≥n de componentes: A menudo se requiere la evaluaci√≥n de
+componentes de terceros, tanto de servicios Web como librer√≠as instaladas,
+de manera que deben ser integrados correctamente a la herramienta
+para ser tratados como componentes. 
+\item Selecci√≥n de caracter√≠sticas del contexto: Mientras se realiza la
+ejecuci√≥n de los componentes, las propiedades no funcionales del dispositivo
+m√≥vil donde se llevan a cabo las operaciones, pueden ser capturadas
+como indicadores. Realizar las mediciones en distintos modelos de
+dispositivos m√≥viles persigue la idea sobre la influencia de las capacidades
+de cada modelo en las operaciones de ejecuci√≥n. Ya que las predicciones
+son realizadas sobre componentes de aplicaciones Android, la captura
+de las carecter√≠sticas est√°ticas y din√°micas son tomadas en cuenta,
+para detectar relaciones entre √©stas y los atributos a predecir de
+los componentes.
+\item Implementaci√≥n de dominios: La evaluaci√≥n de casos de estudios variables
+en complejidad y caracter√≠sticas,que incluyen diferentes formatos
+de componentes, son analizados con el fin de arrojar conclusiones
+sobre la variaci√≥n en el desempe√±o de las t√©cnicas de regresi√≥n frente
+a diferentes ambientes, analizar la calidad en el aprendizaje para
+atributos no funcionales; cu√°nta mejora en la precisi√≥n significa
+la aplicaci√≥n de t√©cnicas de regresi√≥n sobre problemas de complejidad
+polin√≥mica respecto a problemas NP, o la afectaci√≥n en el tiempo de
+respuesta de las operaciones sobre servicios remotos frente a servicios
+locales, son algunas de las conclusiones que podr√≠an desprenderse
+del an√°lisis. 
+\item Generaci√≥n de instancias de entrada: Se debe proveer una manera para
+generar arbitrariamente instancias de un dominio particular, o la
+capacidad para obtener instancias externamente a trav√©s de enlaces
+o archivos. 
+\item Selecci√≥n de caracter√≠sticas de la entrada: Es posible obtener atributos
+propios a la entrada del dominio, generalmente atributos que configuran
+o sirven para generar una instancia. 
+\item Ejecuci√≥n de componentes y obtenci√≥n de m√©tricas: Los componentes
+son ejecutados con las entradas generadas, tomando y registrando mediciones
+sobre las caracter√≠sticas incorporadas adem√°s de las propiedades de
+inter√©s a predecir. De esta forma, los dataset pueden ser formados
+por una cantidad variable y opcional de atributos en base a las caracter√≠sticas
+que hayan sido elegidas para ser medidas. Este factor impacta en la
+calidad del dataset creado, por lo tanto estudiar el comportamiento
+que adoptan los datos y la distribuci√≥n en el rango de valores, puede
+servir de indicio para entender el desempe√±o de las t√©cnicas. 
+\end{itemize}
+
+\subsection{Etapa aprendizaje}
+
+A partir del conjunto de benchmarks obtenidos en la etapa anterior,
+se aplican t√©cnicas de aprendizaje de m√°quina para la extracci√≥n de
+conocimiento de los datos. Tal conocimiento se refleja mediante la
+construcci√≥n de modelos predictivos que mejor se ajustan a la generalizaci√≥n
+de la informaci√≥n mediante un proceso de entrenamiento, optimizaci√≥n
+y evaluaci√≥n de los mismos. El proceso de aprendizaje requiere indefectiblemente
+de un conjunto de datos de entrenamiento volcado en un archivo, un
+atributo de ese conjunto a predecir y un conjunto de algoritmos que
+aplican t√©cnicas de regresi√≥n sobre los datos. Actualmente, hay herramientas
+que proveen estos algoritmos incluyendo toda la funcionalidad necesaria
+para este proceso, y que son f√°cilmente integrables a cualquier desarrollo.
+Adem√°s, el aprendizaje est√° conformado por varias etapas o sub procesos.
+
+
+\paragraph{Configuraci√≥n de las t√©cnicas }
+
+Las t√©cnicas de regresi√≥n representan modelos matem√°ticos cuyas funciones
+involucran diferentes par√°metros de configuraci√≥n. La variabilidad
+en estos valores permite ajustar las preferencias del algoritmo y
+consecuentemente, la obtenci√≥n de modelos de calidad diferente. Por
+lo tanto, el desaf√≠o principal de esta parte de la etapa es encontrar
+los valores apropiados para cada uno de los par√°metros, teniendo como
+base, el conocimiento sobre el efecto que el par√°metro causa en el
+algoritmo. Al obtener la mejor configuraci√≥n de una t√©cnica, para
+un dataset y un atributo particular, se facilita la comparaci√≥n simult√°nea
+de todas las t√©cnicas disponibles a trav√©s de las m√©tricas de evaluaci√≥n
+y en consecuencia seleccionar la m√°s √≥ptima. 
+
+
+
+
+\paragraph{Construcci√≥n de modelos }
+
+La construcci√≥n de modelos predictivos es un proceso que inicia con
+el entrenamiento de los datos, contin√∫a opcionalmente con un proceso
+de validaci√≥n y concluye con una evaluaci√≥n del error cometido en
+las estimaciones frente a los datos reales del entrenamiento.
+
+La implementaci√≥n de los casos de estudio enfatizan la predicci√≥n
+de la precisi√≥n en las respuestas y el tiempo de ejecuci√≥n de los
+componentes considerando a ambas m√©tricas esenciales al momento de
+seleccionar el/los componente/s m√°s adecuado/s para un prop√≥sito particular,
+dadas ciertas entradas, componentes posibles, restricciones y par√°metros
+deseados.
+
+La fase de entrenamiento de este proceso utiliza las mediciones ya
+obtenidas en la etapa anterior y a partir del atributo que se desea
+predecir, el algoritmo va definiendo la funci√≥n de regresi√≥n para
+encontrar las relaciones entre los atributos del dataset y el atributo
+a predecir. Esta fase concentra el mayor porcentaje del tiempo computacional
+y uso de memoria, y var√≠a de acuerdo a la complejidad o simplicidad
+de cada t√©cnica en particular. 
+
+
+\paragraph{Evaluaci√≥n de modelos}
+
+Una vez concluida la fase de entrenamiento, la calidad del modelo
+obtenido debe ser analizada para determinar la medida en que el modelo
+ser√° capaz de generalizar cualquier entrada de dataset futura. La
+noci√≥n sobre el desempe√±o del modelo tiene lugar a partir de m√©tricas
+ya definidas para modelos de regresi√≥n, que capturan distintamente
+el error de predicci√≥n e incluyen el coeficiente de correlaci√≥n para
+conocer el grado de interdependencia de las variables. 
+
+A pesar que el objetivo de alcanzar estimaciones bajas en error es
+importante, el an√°lisis no debe centralizarse √∫nicamente en la minimizac√≠√≥n
+del error en las predicciones, sino que debe estar dirigido por las
+curvas de aprendizaje. Las curvas de aprendizaje permiten observar
+gr√°ficamente el modo en que el modelo se ajusta a los datos de entrenamiento,
+evidenciando efectos de sobreajuste, el modelo s√≥lo ser√° bueno para
+ese dataset en particular, o efectos de baja adaptaci√≥n, debido principalmente
+a que no se cuenta con los suficientes datos para ense√±ar al modelo. 
+
+
+\subsection{Etapa predicci√≥n }
+
+Finalmente, se pretende utilizar estos modelos de predicci√≥n en entornos
+de aplicaci√≥n que permitan la selecci√≥n del componente m√°s adecuado
+en base a un conjunto de propiedades del problema de entrada, las
+propiedades internas del dispositivo en el cual se llevar√° a cabo
+la ejecuci√≥n, y un conjunto de restricciones que deben satisfacerse,
+a trav√©s de un proceso automatizado que determine al usuario la opci√≥n
+m√°s favorable evitando la ejecuci√≥n individual de cada componente. 
+
 
 \section{Herramientas\label{sec:Herramientas}}
 
 El trabajo presentado conforma dos de las tres fases propuestas para
 el enfoque global del desarrollo. La primer fase se lleva a cabo en
-un framework particular para la mediciÛn de propiedades de componentes
-Android que ser· detallada en la secciÛn \ref{subsec:Framework-de-medici=0000F3n}.
-La segunda fase para la construcciÛn de modelos predictivos a travÈs
-de tÈcnicas de aprendizaje de m·quina se desarrolla en una segunda
-herramienta la cual ser· detallada en la secciÛn \ref{subsec:Herramienta-de-entrenamiento}. 
+un framework particular para la medici√≥n de propiedades de componentes
+Android que ser√° detallada en la secci√≥n \ref{subsec:Framework-de-medici=0000F3n}.
+La segunda fase para la construcci√≥n de modelos predictivos a trav√©s
+de t√©cnicas de aprendizaje de m√°quina se desarrolla en una segunda
+herramienta la cual ser√° detallada en la secci√≥n \ref{subsec:Herramienta-de-entrenamiento}. 
 
 
-\subsection{Framework de mediciÛn para Android\label{subsec:Framework-de-medici=0000F3n}}
+\subsection{Framework de medici√≥n para Android\label{subsec:Framework-de-medici=0000F3n}}
 
 
 \subsubsection*{Enfoque general}
 
-\textquotedblleft Android Performance Testing and Prediction\textquotedblright{}
-es un framework diseÒado para realizar mediciones de performance de
-componentes ejecutados bajo el sistema Android. Es una herramienta
-de testing que permite \textquotedblleft correr\textquotedblright{}
-diferentes piezas de software y evaluar propiedades influyentes y
-caracterÌsticas del entorno de ejecuciÛn. 
+\emph{Android Performance Testing and Prediction} es un framework
+dise√±ado para realizar mediciones de performance de componentes ejecutados
+bajo el sistema Android. Es una herramienta de testing que permite
+ejecutar diferentes piezas de software y evaluar propiedades influyentes
+y caracter√≠sticas del entorno de ejecuci√≥n. 
 
 La herramienta cuenta con el soporte necesario para adaptarse a cualquier
-dominio inform·tico y exportar las mediciones correspondientes en
-archivos de formato CSV, mediciones que servir·n de fuente para herramientas
-de predicciÛn a travÈs de tÈcnicas de aprendizaje de m·quina. 
+dominio inform√°tico y exportar las mediciones correspondientes en
+archivos de formato \ac{CSV}, mediciones que servir√°n de fuente para
+herramientas de predicci√≥n a trav√©s de t√©cnicas de aprendizaje de
+m√°quina. 
 
 
 \subsubsection*{Objetivos}
 
-El rendimiento de los componentes de ejecuciÛn (algoritmos, servicios
-Web, procesos ejecut·ndose en segundo plano, etc.) dependen de varios
-factores: \textquotedblleft el contexto de ejecuciÛn\textquotedblright{}
-donde el componente est· funcionando, los \textquotedblleft par·metros
-de entrada\textquotedblright{} que requiere el componente de la operaciÛn,
-y su \textquotedblleft implementaciÛn interna\textquotedblright .
-Sin embargo, al utilizar componentes de terceros, generalmente se
-desconoce su implementaciÛn actuando como \textquotedbl{}cajas negras\textquotedbl{}
-a los desarrolladores mÛviles, que sÛlo conocen sus interfaces de
-aplicaciones, pero no su trabajo interno. 
+El rendimiento de los componentes de ejecuci√≥n (algoritmos, servicios
+Web, procesos ejecut√°ndose en segundo plano, etc.) dependen de varios
+factores: el contexto de ejecuci√≥n donde el componente est√° funcionando,
+los par√°metros de entrada que requiere el componente de la operaci√≥n
+y su implementaci√≥n interna. Sin embargo, al utilizar componentes
+de terceros es posible desconocer el modo en el que fueron implementados,
+actuando como cajas negras a los desarrolladores m√≥viles, que s√≥lo
+conocen sus interfaces de aplicaciones, pero no su trabajo interno. 
 
-Para elaborar un an·lisis del rendimiento, tÈcnicas de aprendizaje
-autom·tico sobre los datos recogidos empÌricamente pueden ser utilizados
-para construir modelos de predicciÛn del tiempo de ejecuciÛn del componente,
-como una funciÛn de los par·metros de entrada y las caracterÌsticas
-especÌficas del contexto de ejecuciÛn: configuraciÛn de algoritmos,
-selecciÛn de servicios, planificaciÛn de trabajos, por citar algunos
+Para elaborar un an√°lisis del rendimiento, t√©cnicas de aprendizaje
+autom√°tico sobre los datos recogidos emp√≠ricamente pueden ser utilizados
+para construir modelos de predicci√≥n del tiempo de ejecuci√≥n del componente,
+como una funci√≥n de los par√°metros de entrada y las caracter√≠sticas
+espec√≠ficas del contexto de ejecuci√≥n: configuraci√≥n de algoritmos,
+selecci√≥n de servicios, planificaci√≥n de trabajos, por citar algunos
 ejemplos. 
 
 
 \subsubsection*{Enfoque}
 
-El enfoque principal de esta herramienta est· centrado en dos propiedades:
-el tiempo de respuesta y la precisiÛn de los resultados. 
+El enfoque principal de esta herramienta est√° centrado en dos propiedades:
+el tiempo de respuesta y la precisi√≥n de los resultados. 
 
 El tiempo de respuesta refiere al tiempo total que demanda un componente
-en ejecutar una operaciÛn o tarea, es decir, el tiempo para responder
-a una solicitud con una entrada determinada. Por otro lado, la precisiÛn
-es una medida que eval˙a la calidad de los resultados o salida de
-un componente y tiene diferentes significados sem·nticos dependiendo
-de la funcionalidad requerida, por ejemplo, en problemas de clasificaciÛn,
-se toma el concepto de precisiÛn como la medida estadÌstica de la
-eficacia de un clasificador, la precisiÛn est· relacionada a la identificaciÛn
-o exclusiÛn correctamente de una condiciÛn. En problemas de optimizaciÛn,
-tambiÈn conocido como optimalidad, la precisiÛn es una relaciÛn entre
-la soluciÛn de salida obtenida y la soluciÛn Ûptima conocida. 
+en ejecutar una operaci√≥n o tarea, es decir, el tiempo para responder
+a una solicitud con una entrada determinada. Por otro lado, la precisi√≥n
+es una medida que eval√∫a la calidad de los resultados o salida de
+un componente y tiene diferentes significados sem√°nticos dependiendo
+de la funcionalidad requerida, por ejemplo, en problemas de clasificaci√≥n,
+se toma el concepto de precisi√≥n como la medida estad√≠stica de la
+eficacia de un clasificador, la precisi√≥n est√° relacionada a la identificaci√≥n
+o exclusi√≥n correctamente de una condici√≥n. En problemas de optimizaci√≥n,
+tambi√©n conocido como optimalidad, la precisi√≥n es una relaci√≥n entre
+la soluci√≥n de salida obtenida y la soluci√≥n √≥ptima conocida. 
 
-Para construir un modelo de predicciÛn del tiempo de respuesta sobre
+Para construir un modelo de predicci√≥n del tiempo de respuesta sobre
 un componente particular, se deben considerar dos variables al momento
-de evaluar, un conjunto acerca de las caracterÌsticas del contexto
-de ejecuciÛn (E,) por ejemplo, n˙cleos de CPU, tipo de red, etc. y
-otro conjunto acerca de las caracterÌsticas de la entrada en particular
-(I), por ejemplo, en tamaÒo expresado en bytes. Por lo tanto, el modelo
-resulta una funciÛn R(c) que depende tanto de E como de I. 
+de evaluar, un conjunto acerca de las caracter√≠sticas del contexto
+de ejecuci√≥n, por ejemplo, n√∫cleos de CPU, tipo de red, etc. y otro
+conjunto acerca de las caracter√≠sticas de la entrada en particular,
+por ejemplo, en tama√±o expresado en bytes. 
 
-
-
-Del mismo modo se construye un modelo de predicciÛn de precisiÛn sobre
-un componente, como en la mayorÌa de los casos esta medida no depende
-de las caracterÌsticas del contexto en el que se ejecuta, el modelo
-responderÌa a una funciÛn como la siguiente:
-
-
+Del mismo modo se construye un modelo de predicci√≥n de precisi√≥n sobre
+un componente, como en la mayor√≠a de los casos esta medida no depende
+de las caracter√≠sticas del contexto en el que se ejecuta, el modelo
+responder√≠a a una funci√≥n dependiente de las entradas del problema.
 
 
 \subsubsection*{Componentes}
 
-El an·lisis de rendimiento que se propone en esta herramienta se basa
-en entidades de software individuales de ejecuciÛn que proveen servicios
-a travÈs de una interfaz especÌfica. De aquÌ en m·s, estas entidades
-se denotar·n componentes. 
+El an√°lisis de rendimiento que se propone en esta herramienta se basa
+en entidades de software individuales de ejecuci√≥n que proveen servicios
+a trav√©s de una interfaz espec√≠fica. De aqu√≠ en m√°s, estas entidades
+se denotar√°n componentes. 
 
 \begin{figure}
 \begin{centering}
@@ -269,43 +384,42 @@ se denotar·n componentes.
 En la figura \ref{fig:android-component} se pueden observar los tres
 tipos de componentes generalizados por la herramienta para obtener
 los resultados de mediciones adecuados, incluyendo servicios Web y
-servicios especÌficos de la plataforma Android, para toda pieza de
-software remanente los componentes son tratados simplemente como objetos
-Java. Las instancias de objetos hacen referencia a cualquier componente
-residente en el espacio de memoria de una aplicaciÛn, el componente
-especÌfico para servicios web incluye cualquier componente remoto
-fuera del dispositivo y accedidos a travÈs de protocolos de comunicaciÛn
-Web, como \ac{HTTP}. Por ˙ltimo el componente especÌfico para servicios
-Android incluye cualquier proceso ejecutado en segundo plano residente
-en el mismo dispositivo y accedidos a travÈs de objetos Intent (como
-˙nico mecanismo de comunicaciÛn entre procesos del sistema Android). 
+servicios espec√≠ficos de la plataforma Android, mientras que para
+toda pieza de software remanente los componentes son tratados simplemente
+como objetos Java. Las instancias de objetos hacen referencia a cualquier
+componente residente en el espacio de memoria de una aplicaci√≥n, el
+componente espec√≠fico para servicios web incluye cualquier componente
+remoto fuera del dispositivo y accedidos a trav√©s de protocolos de
+comunicaci√≥n Web, como \ac{HTTP}. Por √∫ltimo el componente espec√≠fico
+para servicios Android incluye cualquier proceso ejecutado en segundo
+plano residente en el mismo dispositivo y accedidos a trav√©s de objetos
+Intent (como √∫nico mecanismo de comunicaci√≥n entre procesos del sistema
+Android). 
 
 
-\subsubsection*{DiseÒo e implementaciÛn}
+\subsubsection*{Dise√±o e implementaci√≥n}
 
-El framework \textquotedblleft Android-Performance-Testing-and-Prediction\textquotedblright{}
-est· conformado por tres proyectos individuales. El proyecto \textquotedblleft Android-Testing-Tool\textquotedblright{}
-constituye el modelo base para llevar a cabo el proceso de mediciÛn
-de propiedades de cualquier tipo de componente. Los proyectos restantes
-han sido implementados para desarrollar diferentes dominios de aplicaciÛn,
-los cuales incluyen la dependencia al proyecto modelo. El proyecto
-\textquotedblleft Evaluation-of-Face-Detection-Services\textquotedblright{}
-fue diseÒado para obtener mediciones sobre servicios que ofrecen reconocimiento
-facial y el proyecto \textquotedblleft Examples-Android-Testing-Tool\textquotedblright{}
-fue diseÒado para dominios de problemas NP, incluyendo a problemas
-de la clase P y NP - Completos. 
+El proyecto \emph{Android-Testing-Tool} constituye el modelo base
+del framework \emph{Android-Performance-Testing-and-Prediction} para
+llevar a cabo el proceso de medici√≥n de propiedades de cualquier tipo
+de componente. Adem√°s, se proveen dos proyectos a modo de ejemplo
+demostrando el modo de uso de el framework. El proyecto \emph{Evaluation-of-Face-Detection-Services}
+fue dise√±ado para obtener mediciones sobre servicios que ofrecen reconocimiento
+facial y el proyecto \emph{Examples-Android-Testing-Tool} fue dise√±ado
+para dominios de problemas NP, incluyendo a problemas de la clase
+P y NP - Completos. 
 
-A continuaciÛn se expone en la figura \ref{fig:TestingTool-Diagram}
-los principales factores que han servido de guÌa para el diseÒo del
-proyecto base \textquotedblleft Android-Testing-Tool\textquotedblright . 
+A continuaci√≥n se expone en la figura \ref{fig:TestingTool-Diagram}
+los principales factores que han servido de gu√≠a para el dise√±o del
+proyecto base \emph{Android-Testing-Tool}. 
 
 \begin{figure}
 \begin{centering}
 \includegraphics[scale=0.1]{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/TestingTool-Diagram}
 \par\end{centering}
 
-\caption{Diagrama estructural de la herramienta template \textquoteleft Android
-Testing Tool\textquoteright .\label{fig:TestingTool-Diagram}}
+\caption{Diagrama estructural de la herramienta template \emph{Android Testing
+Tool}.\label{fig:TestingTool-Diagram}}
 
 
 \selectlanguage{english}%
@@ -313,175 +427,171 @@ Testing Tool\textquoteright .\label{fig:TestingTool-Diagram}}
 \end{figure}
 
 
-La forma de organizar diferentes modelos de evaluaciÛn se realiza
-a travÈs de la creaciÛn de planes de prueba, que se configuran y posteriormente
-se ejecutan para obtener un archivo de formato CSV con el resultado
+La forma de organizar diferentes modelos de evaluaci√≥n se realiza
+a trav√©s de la creaci√≥n de planes de prueba, que se configuran y posteriormente
+se ejecutan para obtener un archivo de formato \ac{CSV} con el resultado
 de todas las mediciones incorporadas al plan de pruebas. La herramienta
-implementa por defecto un objeto llamado \textquotedblleft TestPlan\textquotedblright{}
-que define una ejecuciÛn sistem·tica de las operaciones y mÈtricas
-sobre ellos. B·sicamente, un modelo de plan de pruebas se compone
-de un conjunto posible de componentes, un conjunto posible de objetos
-de entrada, y un conjunto posible de mÈtricas para realizar las mediciones,
-dando la posibilidad de configurar estas propiedades a los requerimientos
+implementa por defecto un objeto llamado \emph{TestPlan} que define
+una ejecuci√≥n sistem√°tica de las operaciones y m√©tricas sobre ellos.
+B√°sicamente, un modelo de plan de pruebas se compone de un conjunto
+posible de componentes, un conjunto posible de objetos de entrada,
+y un conjunto posible de m√©tricas para realizar las mediciones, dando
+la posibilidad de configurar estas propiedades a los requerimientos
 deseados. Una vez configurado y ejecutado el plan de pruebas, los
 resultados con las mediciones son almacenados en un objeto denominado
-\textasciiacute Results\textquoteright{} y los datos son exportados
-a un archivo de formato CSV para su posterior procesamiento. 
+\emph{Results} y los datos son exportados a un archivo de formato
+\ac{CSV} para su posterior procesamiento. 
 
-La herramienta utiliza una representaciÛn simplificada de los componentes,
-pudiendo ser Èstos servicios Web o simplemente piezas de software
-implementadas por el programador. Los par·metros que recibe son dos
-objetos del tipo Input y Output, siendo Èstos, instancias de objetos
-que representan la entrada y salida del problema respectivamente.
-Cada uno de los componentes asociados a un problema especÌfico ejecutan
-una operaciÛn o tarea a travÈs de la llamada al mÈtodo execute del
-componente. Esta operaciÛn es responsable de evaluar la ejecuciÛn
+La herramienta utiliza una representaci√≥n simplificada de los componentes,
+pudiendo ser √©stos servicios Web o simplemente piezas de software
+implementadas por el programador. Los par√°metros que recibe son dos
+objetos del tipo \emph{Input} y \emph{Output}, siendo √©stos, instancias
+de objetos que representan la entrada y salida del problema respectivamente.
+Cada uno de los componentes asociados a un problema espec√≠fico ejecutan
+una operaci√≥n o tarea a trav√©s de la llamada al m√©todo \emph{execute}
+del componente. Esta operaci√≥n es responsable de evaluar la ejecuci√≥n
 de la instancia de entrada en el componente y retornar un objeto de
-salida o respuesta del problema. Tanto \textasciiacute Input\textasciiacute{}
-como \textasciiacute Output\textasciiacute{} son dos conceptos abstractos
-que representan instancias reales del problema. Una instancia de entrada
-puede encapsular no sÛlo los par·metros requeridos para realizar la
-ejecuciÛn del componente, sino la configuraciÛn de los mismos. Por
-otro lado, una instancia de salida encapsula la respuesta o resultado
-de esa operaciÛn. Durante la ejecuciÛn del plan de pruebas (ejecuciÛn
-de cada uno de los componentes asociados), se eval˙an los indicadores
-que fueron configurados como mÈtricas en el plan. Se distinguieron
-cuatro tipos de mÈtricas en funciÛn del elemento de mediciÛn, determinando
-el par·metro que recibe: 
-
-1. MÈtricas globales sobre caracterÌsticas est·ticas del contexto:
-cualidades del entorno de ejecuciÛn que se mantienen est·ticas (sin
-cambio) durante el plan de pruebas, por ejemplo, modelo del dispositivo,
-arquitectura de la CPU, cantidad de n˙cleos de CPU, tamaÒo de memoria,
-etc. 
-
-2. MÈtricas generales sobre caracterÌsticas de la entrada: atributos
+salida o respuesta del problema. Tanto \emph{Input} como \emph{Output}
+son dos conceptos abstractos que representan instancias reales del
+problema. Una instancia de entrada puede encapsular no s√≥lo los par√°metros
+requeridos para realizar la ejecuci√≥n del componente, sino la configuraci√≥n
+de los mismos. Por otro lado, una instancia de salida encapsula la
+respuesta o resultado de esa operaci√≥n. Durante la ejecuci√≥n del plan
+de pruebas (ejecuci√≥n de cada uno de los componentes asociados), se
+eval√∫an los indicadores que fueron configurados como m√©tricas en el
+plan. Se distinguieron cuatro tipos de m√©tricas en funci√≥n del elemento
+de medici√≥n, determinando el par√°metro que recibe: 
+\begin{enumerate}
+\item M√©tricas globales sobre caracter√≠sticas est√°ticas del contexto: cualidades
+del entorno de ejecuci√≥n que se mantienen est√°ticas (sin cambio) durante
+el plan de pruebas, por ejemplo, modelo del dispositivo, arquitectura
+de la CPU, cantidad de n√∫cleos de CPU, tama√±o de memoria, etc. 
+\item M√©tricas generales sobre caracter√≠sticas de la entrada: atributos
 inherentes al dominio del problema, por ejemplo, en el problema de
-detecciÛn de rostros algunas caracterÌsticas podrÌan ser el nombre
-de imagen, tamaÒo o contraste, formato de archivo, etc.
+detecci√≥n de rostros algunas caracter√≠sticas podr√≠an ser el nombre
+de imagen, tama√±o o contraste, formato de archivo, etc.
+\item M√©tricas generales del componente: propiedades del componente como
+el nombre, su ubicaci√≥n, etc.
+\item M√©tricas de operaci√≥n: Son medidas que act√∫an sobre la ejecuci√≥n del
+componente, por lo cual distinguen en tres tipos diferentes:
 
-3. MÈtricas generales del componente: propiedades del componente como
-el nombre, su ubicaciÛn, etc.
-
-4. MÈtricas de operaciÛn: Son medidas que act˙an sobre la ejecuciÛn
-del componente, por lo cual distinguen en tres tipos diferentes: \textbullet{}
-CaracterÌsticas de la salida: caracterÌsticas del resultado de la
-operaciÛn como su tamaÒo, calidad, etc. al igual que las entidades
-de entrada, son inherentes al dominio del problema. En la detecciÛn
-de rostros, por ejemplo, la salida podrÌa ser un vector con la ubicaciÛn
-de los puntos detectados y una caracterÌstica de salida interesante
-podrÌa ser, el tamaÒo de ese vector, es decir, el n˙mero de rostros
-detectados. \textbullet{} CaracterÌsticas din·micas del contexto:
-caracterÌsticas del entorno de ejecuciÛn que pueden variar de una
-operaciÛn a otra, como el uso de CPU, el n˙mero de procesos en ejecuciÛn,
-tipo de conexiÛn, ubicaciÛn del dispositivo, etc. \textbullet{} CaracterÌsticas
-de desempeÒo: medidas de interÈs sobre el rendimiento que varÌan de
-una operaciÛn a otra, como el tiempo de respuesta, el consumo de baterÌa,
-operaciones ejecutadas con Èxito o con error, etc.
-
-El framework de mediciÛn ha sido diseÒado para soportar distintos
-dominios sobre los cu·les tomar las medidas deseadas. Por el momento
-sÛlo implementa dos tipos de dominios: por un lado, problemas cl·sicos
-del tipo NP para el an·lisis del desempeÒo de diferentes algoritmos
-de resoluciÛn y por otro lado, aplicaciones de propÛsito general,
+\begin{itemize}
+\item Caracter√≠sticas de la salida: caracter√≠sticas o m√©tricas obtenidas
+a partir del resultado de la operaci√≥n, por ejemplo el tama√±o de la
+salida, la precisi√≥n de la misma, etc.
+\item Caracter√≠sticas din√°micas del contexto: caracter√≠sticas del entorno
+de ejecuci√≥n que pueden variar de una operaci√≥n a otra, como el uso
+de CPU, el n√∫mero de procesos en ejecuci√≥n, tipo de conexi√≥n, ubicaci√≥n
+del dispositivo, etc. 
+\item Caracter√≠sticas de desempe√±o: medidas de inter√©s sobre el rendimiento
+que var√≠an de una operaci√≥n a otra, como el tiempo de respuesta, el
+consumo de bater√≠a, operaciones ejecutadas con √©xito o con error,
+etc.
+\end{itemize}
+\end{enumerate}
+El framework de medici√≥n ha sido dise√±ado para soportar distintos
+dominios sobre los cu√°les tomar las medidas deseadas. Por el momento
+s√≥lo implementa dos tipos de dominios: por un lado, problemas cl√°sicos
+del tipo NP para el an√°lisis del desempe√±o de diferentes algoritmos
+de resoluci√≥n y por otro lado, aplicaciones de prop√≥sito general,
 en este caso, aplicaciones que ofrecen reconocimiento facial para
-la evaluaciÛn de diferentes servicios que ofrecen esta misma funcionalidad,
+la evaluaci√≥n de diferentes servicios que ofrecen esta misma funcionalidad,
 como ya ha sido anticipado. Los problemas de complejidad NP se contemplan
-bajo un proyecto individual llamado \textquotedblleft Examples-Android-Testing-Tool\textquotedblright{}
-para la evaluaciÛn de desempeÒo de distintos algoritmos considerando
-dos aspectos fundamentales: tiempo (aproximaciÛn del n˙mero de pasos
-de ejecuciÛn que emplea el algoritmo) y espacio (aproximaciÛn de la
+bajo un proyecto individual llamado \emph{Examples-Android-Testing-Tool}
+para la evaluaci√≥n de desempe√±o de distintos algoritmos considerando
+dos aspectos fundamentales: tiempo (aproximaci√≥n del n√∫mero de pasos
+de ejecuci√≥n que emplea el algoritmo) y espacio (aproximaci√≥n de la
 cantidad de memoria utilizada). Los problemas implementados pertenecen
 tanto a la clase P como a la clase NP-Completos. Por otro lado, el
-objetivo de la incorporaciÛn de dominios que implican el uso de servicios
+objetivo de la incorporaci√≥n de dominios que implican el uso de servicios
 remotos se basa en la idea de automatizar el testeo continuo de uno
 o varios servicios, en este caso, aplicaciones que ofrecen reconocimiento
-facial, teniendo en cuenta las caracterÌsticas que estos pueden proveer
-y aquellas que el usuario de la aplicaciÛn desee considerar, de esta
-manera determinar el servicio m·s adecuado (seg˙n el contexto) para
-la ejecuciÛn de una tarea. Este dominio ha sido diseÒado a travÈs
-de un proyecto individual bajo el nombre de \textquotedblleft Evaluation-of-Faces-Detection-Services\textquotedblright .
-Este proyecto se implementÛ como un modelo b·sico y genÈrico sobre
-el proceso de detecciÛn de rostros. Tal proyecto conforma una estructura
+facial, teniendo en cuenta las caracter√≠sticas que estos pueden proveer
+y aquellas que el usuario de la aplicaci√≥n desee considerar, de esta
+manera determinar el servicio m√°s adecuado (seg√∫n el contexto) para
+la ejecuci√≥n de una tarea. Este dominio ha sido dise√±ado a trav√©s
+de un proyecto individual bajo el nombre de \emph{Evaluation-of-Faces-Detection-Services}.
+Este proyecto se implement√≥ como un modelo b√°sico y gen√©rico sobre
+el proceso de detecci√≥n de rostros. Tal proyecto conforma una estructura
 general para almacenar y acceder a todos los atributos posibles que
-cualquier servicio que brinde la funcionalidad de detecciÛn de rostros
+cualquier servicio que brinde la funcionalidad de detecci√≥n de rostros
 pudiera ofrecer. Es importante destacar algunos detalles sobre los
-componentes, entradas y mÈtricas que fueron tomados en cuenta en el
-diseÒo del proyecto. Cada componente representa un servicio particular,
-cuya performance es evaluada y analizada; en base a los par·metros
-de configuraciÛn que acepta cada uno de estos servicios, se generan
+componentes, entradas y m√©tricas que fueron tomados en cuenta en el
+dise√±o del proyecto. Cada componente representa un servicio particular,
+cuya performance es evaluada y analizada; en base a los par√°metros
+de configuraci√≥n que acepta cada uno de estos servicios, se generan
 diferentes instancias de componentes posibles, un servicio que admite
-dos variables de configuraciÛn, por ejemplo, da lugar a cuatro tipos
-de componentes como producto de la combinaciÛn de opciones configurables
-posibles. En cuanto a las entradas del dominio, pueden aÒadirse al
-plan de pruebas a travÈs de archivos o de manera est·tica especificando
-la ruta de cada imagen. Finalmente, fueron consideradas mÈtricas respecto
-al proceso u operaciÛn (rostros correctamente detectados, rostros
+dos variables de configuraci√≥n, por ejemplo, da lugar a cuatro tipos
+de componentes como producto de la combinaci√≥n de opciones configurables
+posibles. En cuanto a las entradas del dominio, pueden a√±adirse al
+plan de pruebas a trav√©s de archivos o de manera est√°tica especificando
+la ruta de cada imagen. Finalmente, fueron consideradas m√©tricas respecto
+al proceso u operaci√≥n (rostros correctamente detectados, rostros
 detectados y Tiempo de respuesta) y respecto a la imagen de entrada
-(contraste, entropÌa, formato, intensidad promedio, cantidad de rostros
-en la imagen, cantidad de pÌxeles de la imagen, tamaÒo y nombre).
-Respecto al servicio, sÛlo se registra el nombre del mismo. 
+(contraste, entrop√≠a, formato, intensidad promedio, cantidad de rostros
+en la imagen, cantidad de pixeles de la imagen, tama√±o y nombre).
+Respecto al servicio, s√≥lo se registra el nombre del mismo. 
 
 
-\subsection{Herramienta de entrenamiento y evaluaciÛn de modelos\label{subsec:Herramienta-de-entrenamiento}}
+\subsection{Herramienta de entrenamiento y evaluaci√≥n de modelos\label{subsec:Herramienta-de-entrenamiento}}
 
-El eje que ha guiado el diseÒo de la herramienta ha sido el brindar
-soporte para el uso de cualquier librerÌa que ofrezca aprendizaje
-de m·quina a travÈs de la implementaciÛn de todos los conceptos involucrados
+El eje que ha guiado el dise√±o de la herramienta ha sido el brindar
+soporte para el uso de cualquier librer√≠a que ofrezca aprendizaje
+de m√°quina a trav√©s de la implementaci√≥n de todos los conceptos involucrados
 como objetos independientes a los cuales adaptar las funcionalidades
-de las librerÌas. La herramienta \emph{Nekonata} lleva a cabo dos
+de las librer√≠as. La herramienta \emph{Nekonata} lleva a cabo dos
 tipos de procesos en el desarrollo de sus funciones, procesos automatizados
-y procesos que requieren la colaboraciÛn del usuario con el fin de
-mejorar los resultados a partir de vistas gr·ficas sobre el comportamiento
-y caracterÌsticas de los modelos y adem·s, para incluir en el proceso
-el interÈs y criterio del usuario. 
+y procesos que requieren la colaboraci√≥n del usuario con el fin de
+mejorar los resultados a partir de vistas gr√°ficas sobre el comportamiento
+y caracter√≠sticas de los modelos y adem√°s, para incluir en el proceso
+el inter√©s y criterio del usuario. 
 
 El enfoque y objetivo de la herramienta se concluyen en dos etapas,
-una fase de entrenamiento de modelos y una fase de evaluaciÛn y mejora
+una fase de entrenamiento de modelos y una fase de evaluaci√≥n y mejora
 de los mismos. 
 
 En la figura \ref{fig:prediction-tool} se muestran las vistas iniciales
-de la herramienta , presentaciÛn y configuraciÛn de datos. 
+de la herramienta , presentaci√≥n y configuraci√≥n de datos. 
 
 \begin{figure}
 \begin{centering}
 \includegraphics[scale=0.55]{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/prediction-tool}
 \par\end{centering}
 
-\caption{Captura de pantalla de la herramienta: (A) PresentaciÛn, (B) ConfiguraciÛn
-de datos, (C) Men˙ de selecciÛn de opciones.\label{fig:prediction-tool}}
+\caption{Captura de pantalla de la herramienta: (A) Presentaci√≥n, (B) Configuraci√≥n
+de datos, (C) Men√∫ de selecci√≥n de opciones.\label{fig:prediction-tool}}
 \end{figure}
 
 
 
 \subsubsection{Entrenamiento de modelos}
 
-En esta secciÛn se brindar· un enfoque global y expresar·n las consideraciones
+En esta secci√≥n se brindar√° un enfoque global y expresar√°n las consideraciones
 de los conceptos relacionados al proceso de entrenamiento. Posteriormente,
 se describe en detalle el flujo de desarrollo del proceso. Estos conceptos
-han sido el eje del diseÒo de la herramienta. A continuaciÛn, se presenta
+han sido el eje del dise√±o de la herramienta. A continuaci√≥n, se presenta
 un listado de los objetos tratados: 
 
 
-\subsubsection*{Librerias}
+\subsubsection*{Librer√≠as}
 
-Al dÌa de hoy se han implementado bibliotecas que realizan aprendizaje
-autom·tico en m˙ltiples lenguajes de programaciÛn. A pesar de la gran
-variaciÛn que existe entre unos y otros, el uso de tÈcnicas de aprendizaje
-de m·quina se rige bajo los mismos conceptos: durante la etapa de
-entrenamiento, un conjunto de datos que servir·n como base de datos
-del proceso y una lista de algoritmos categorizados seg˙n realicen
-una funciÛn de regresiÛn o clasificaciÛn (distinciÛn que lleva a cada
-biblioteca definir los tipos de atributos numÈricos y categÛricos),
-finalmente durante la etapa de evaluaciÛn, es necesario el uso de
-mÈtricas o indicadores matem·ticos para evaluar la calidad del clasificador.
-Estos principios permiten generalizar el tÈrmino \emph{librerÌa} independizando
-la implementaciÛn especÌfica de cada biblioteca aÒadida al sistema. 
+Al d√≠a de hoy se han implementado bibliotecas que realizan aprendizaje
+autom√°tico en m√∫ltiples lenguajes de programaci√≥n. A pesar de la gran
+variaci√≥n que existe entre unos y otros, el uso de t√©cnicas de aprendizaje
+de m√°quina se rige bajo los mismos conceptos: durante la etapa de
+entrenamiento, un conjunto de datos que servir√°n como base de datos
+del proceso y una lista de algoritmos categorizados seg√∫n realicen
+una funci√≥n de regresi√≥n o clasificaci√≥n (distinci√≥n que lleva a cada
+biblioteca definir los tipos de atributos num√©ricos y categ√≥ricos),
+finalmente durante la etapa de evaluaci√≥n, es necesario el uso de
+m√©tricas o indicadores matem√°ticos para evaluar la calidad del clasificador.
+Estos principios permiten generalizar el t√©rmino \emph{librer√≠a} independizando
+la implementaci√≥n espec√≠fica de cada biblioteca a√±adida al sistema. 
 
 La herramienta Nekonata utiliza la biblioteca Weka, una plataforma
-de software para el aprendizaje autom·tico y la minerÌa de datos escrito
+de software para el aprendizaje autom√°tico y la miner√≠a de datos escrito
 en Java y desarrollado en la Universidad de Waikato y popularmente
-conocida ya que contiene una extensa colecciÛn de tÈcnicas para preprocesamiento
+conocida ya que contiene una extensa colecci√≥n de t√©cnicas para preprocesamiento
 de datos y modelado. 
 
 
@@ -489,18 +599,18 @@ de datos y modelado.
 
 Los archivos dataset usados para el entrenamiento, a menudo son vistos
 como una grilla de valores cuyas columnas representan cada una de
-las caracterÌsticas del dominio com˙nmente denominadas clases o atributos
+las caracter√≠sticas del dominio com√∫nmente denominadas clases o atributos
 y cuyas filas denominadas instancias representan cada uno de los ejemplos
 del escenario de estudio. Bajo estas consideraciones, a nivel conceptual
-existe un objeto ˙nico como dataset que obtiene los datos a travÈs
+existe un objeto √∫nico como dataset que obtiene los datos a trav√©s
 de un proceso de parseo del archivo fuente a los objetos correspondientes
-de la librerÌa utilizada, generalizando toda funcionalidad requerida
-mediante el acceso a la representaciÛn de los atributos e instancias. 
+de la librer√≠a utilizada, generalizando toda funcionalidad requerida
+mediante el acceso a la representaci√≥n de los atributos e instancias. 
 
 
 \subsubsection*{Instancias}
 
-Tal como se adelantÛ anteriormente, cada dataset est· formado por
+Tal como se adelant√≥ anteriormente, cada dataset est√° formado por
 un conjunto de ejemplos tomados de un dominio en particular. Cada
 ejemplo constituye una instancia individual del problema representada
 por un conjunto de dos valores, el nombre del atributo y su respectivo
@@ -509,49 +619,49 @@ indicador.
 
 \subsubsection*{Modelos}
 
-La herramienta Nekonata est· orientada al aprendizaje supervisado
-de predicciÛn mediante funciones de regresiÛn e incluye la tÈcnica
-adaptada de agrupamiento a travÈs de cluster como alternativa. Ambos
-casos fueron diseÒados para incorporar los algoritmos que se deseen
+La herramienta Nekonata est√° orientada al aprendizaje supervisado
+de predicci√≥n mediante funciones de regresi√≥n e incluye la t√©cnica
+adaptada de agrupamiento a trav√©s de cluster como alternativa. Ambos
+casos fueron dise√±ados para incorporar los algoritmos que se deseen
 asegurando el correcto uso de sus funciones.
 
 
-\subsubsection*{Par·metros}
+\subsubsection*{Par√°metros}
 
-Los algoritmos de aprendizaje autom·tico se rigen bajo fÛrmulas matem·ticas
+Los algoritmos de aprendizaje autom√°tico se rigen bajo f√≥rmulas matem√°ticas
 que a menudo incluyen constantes o coeficientes cuyo valor incide
-directamente en la calidad y desempeÒo del clasificador. Algunos algoritmos
-no tienen par·metros adicionales m·s que los atributos del dominio,
-otros en cambio, tienen par·metros simples o complejos. Un par·metro
-simple es aquel conformado por un ˙nico valor y un par·metro complejo
-aquel constituido por una serie de valores, en la mayorÌa de casos
+directamente en la calidad y desempe√±o del clasificador. Algunos algoritmos
+no tienen par√°metros adicionales m√°s que los atributos del dominio,
+otros en cambio, tienen par√°metros simples o complejos. Un par√°metro
+simple es aquel conformado por un √∫nico valor y un par√°metro complejo
+aquel constituido por una serie de valores, en la mayor√≠a de casos
 se trata de algoritmos internos del algoritmo principal, tal es el
-caso de la funciÛn Kernel que utilizan los algoritmos de vectores
+caso de la funci√≥n Kernel que utilizan los algoritmos de vectores
 de soporte. 
 
 
-\subsubsection*{OptimizaciÛn}
+\subsubsection*{Optimizaci√≥n}
 
 Los algoritmos pueden aplicarse utilizando los valores por defecto
-de los par·metros sin embargo pueden variarse conjuntamente para adaptarse
+de los par√°metros sin embargo pueden variarse conjuntamente para adaptarse
 mejor a los datos de entrenamiento y producir modelos predictivos
-m·s adecuados. Un proceso de optimizaciÛn define rangos de valores
-v·lidos para cada uno de los par·metros admitidos y ejecuta a travÈs
-de un proceso evaluativo, la combinaciÛn cruzada de cada opciÛn, evaluando
+m√°s adecuados. Un proceso de optimizaci√≥n define rangos de valores
+v√°lidos para cada uno de los par√°metros admitidos y ejecuta a trav√©s
+de un proceso evaluativo, la combinaci√≥n cruzada de cada opci√≥n, evaluando
 cada alternativa posible. Como resultado, se obtiene la mejor de todas
-las configuraciones para el algoritmo en cuestiÛn.
+las configuraciones para el algoritmo en cuesti√≥n.
 
-La herramienta Nekonata considera la optimizaciÛn de algoritmos de
-regresiÛn, clusterers y funciones kernel. 
+La herramienta Nekonata considera la optimizaci√≥n de algoritmos de
+regresi√≥n, clusterers y funciones kernel. 
 
 Las consideraciones mencionadas anteriormente son el punto de partida
 en el mecanismo de aprendizaje. El proceso de entrenamiento de modelos
-(Figura \ref{fig:prediction-workflow}) b·sicamente lleva a cabo la
-configuraciÛn de todos los datos requeridos para ejecutar los algoritmos
+(Figura \ref{fig:prediction-workflow}) b√°sicamente lleva a cabo la
+configuraci√≥n de todos los datos requeridos para ejecutar los algoritmos
 clasificadores y obtener, posteriormente los modelos. Estos datos
-est·n directamente afectados por la biblioteca de aprendizaje autom·tico
-que se use por lo que se dispondr· de diferentes opciones de selecciÛn
-variando entre una librerÌa y otra. Esta disposiciÛn dio lugar a un
+est√°n directamente afectados por la biblioteca de aprendizaje autom√°tico
+que se use por lo que se dispondr√° de diferentes opciones de selecci√≥n
+variando entre una librer√≠a y otra. Esta disposici√≥n dio lugar a un
 flujo determinado en el orden de las actividades. 
 
 \begin{figure}
@@ -563,157 +673,154 @@ flujo determinado en el orden de las actividades.
 \end{figure}
 
 
-La selecciÛn de la librerÌa de aprendizaje autom·tico es el punto
+La selecci√≥n de la librer√≠a de aprendizaje autom√°tico es el punto
 de partida condicionando el resto de los datos configurables. Luego,
 al seleccionar el archivo fuente con los benchmarks medidos en formato
-CSV, a travÈs de un proceso de parseo se obtiene el archivo com˙nmente
-llamado dataset adaptado al formato de instancias de la librerÌa.
+CSV, a trav√©s de un proceso de parseo se obtiene el archivo com√∫nmente
+llamado dataset adaptado al formato de instancias de la librer√≠a.
 Con este nuevo formato se extraen los atributos para seleccionar aquel
-que se pretenda predecir y junto con la selecciÛn de algoritmos se
-inicia la optimizaciÛn de los mismos. 
+que se pretenda predecir y junto con la selecci√≥n de algoritmos se
+inicia la optimizaci√≥n de los mismos. 
 
 Los algoritmos de aprendizaje se habilitan al momento de elegir la
-librerÌa a utilizar ofreciendo sÛlo aquellos que la librerÌa dispone.
-La multi selecciÛn de clasificadores brinda la posibilidad al usuario
-de elegir los algoritmos de mayor preferencia o interÈs para optimizar
-en ese momento evitando el proceso de optimizaciÛn de todos los clasificadores
-lo cual significarÌa un ahorro en el uso de los recursos computacionales. 
+librer√≠a a utilizar ofreciendo s√≥lo aquellos que la librer√≠a dispone.
+La multi selecci√≥n de clasificadores brinda la posibilidad al usuario
+de elegir los algoritmos de mayor preferencia o inter√©s para optimizar
+en ese momento evitando el proceso de optimizaci√≥n de todos los clasificadores
+lo cual significar√≠a un ahorro en el uso de los recursos computacionales. 
 
 Finalmente, como resultado de esta etapa se obtiene el conjunto de
-clasificadores seleccionados cuyas configuraciones son las m·s favorables
+clasificadores seleccionados cuyas configuraciones son las m√°s favorables
 para los datos de entrenamiento 
 
 
-\subsubsection{EvaluaciÛn de modelos}
+\subsubsection{Evaluaci√≥n de modelos}
 
-En esta secciÛn se detallar·n las consideraciones y los enfoques generales
-del proceso de evaluaciÛn y mÈtricas de error. TambiÈn, se especificar·
-el flujo de las actividades llevadas a cabo para calificar el desempeÒo
+En esta secci√≥n se detallar√°n las consideraciones y los enfoques generales
+del proceso de evaluaci√≥n y m√©tricas de error. Tambi√©n, se especificar√°
+el flujo de las actividades llevadas a cabo para calificar el desempe√±o
 del clasificador y realizar ajustes de ser necesario. 
 
 
-\subsubsection*{EvaluaciÛn}
+\subsubsection*{Evaluaci√≥n}
 
-El dataset de origen, tambiÈn denominado conjunto de datos de aprendizaje
+El dataset de origen, tambi√©n denominado conjunto de datos de aprendizaje
 o entrenamiento, es utilizado para obtener el modelo predictivo que
-generalice esos datos adecuadamente. El tÈrmino generalizar hace referencia
-a obtener una funciÛn que se ajuste a los datos en cuanto minimice
-el \emph{error empÌrico} que es el error producido por el algoritmo.
-Se asume que los datos de entrenamiento constituyen una muestra lo
-suficientemente representativa para aplicar un clasificador.  
+generalice esos datos adecuadamente. El t√©rmino generalizar hace referencia
+a obtener una funci√≥n que se ajuste a los datos en cuanto minimice
+el \emph{error emp√≠rico} que es el error producido por el algoritmo. 
 
-El proceso de evaluaciÛn, entonces, debe utilizar nuevos datos de
+El proceso de evaluaci√≥n, entonces, debe utilizar nuevos datos de
 entrada (preferentemente distintos al conjunto de entrenamiento) y
-predecir la salida a partir de Èstos arrojando ciertamente una tasa
-de error en la predicciÛn hecha por el clasificador. Existen dos mÈtodos
-cl·sicos de evaluaciÛn en base al origen de los datos usados para
-la validaciÛn de modelos. El m·s sencillo resulta de utilizar los
-mismos datos que fueron usados para la fase de entrenamiento. El mÈtodo
-restante conocido bajo el nombre de validaciÛn cruzada (\textquoteleft Cross
-validation\textquoteright{} por su nombre en inglÈs) tiene una metodologÌa
-m·s compleja. 
+predecir la salida a partir de √©stos arrojando ciertamente una tasa
+de error en la predicci√≥n hecha por el clasificador. Existen dos m√©todos
+cl√°sicos de evaluaci√≥n en base al origen de los datos usados para
+la validaci√≥n de modelos. El m√°s sencillo resulta de utilizar los
+mismos datos que fueron usados para la fase de entrenamiento. El m√©todo
+restante conocido bajo el nombre de validaci√≥n cruzada (\emph{Cross
+validation}) tiene una metodolog√≠a m√°s compleja. 
 
-El mÈtodo de validaciÛn cruzada utiliza un coeficiente \emph{K} de
-repeticiÛn y divisiÛn; los datos de entrada se dividen en \emph{K}
+El m√©todo de validaci√≥n cruzada utiliza un coeficiente \emph{K} de
+repetici√≥n y divisi√≥n; los datos de entrada se dividen en \emph{K}
 subconjuntos, utilizando uno de ellos como dato de prueba y el resto
 (\emph{K-1}) como datos de entrenamiento. El proceso es repetido durante
 \emph{K} iteraciones, con cada uno de los posibles subconjunto de
-datos de prueba. Finalmente se calcula la media aritmÈtica de los
-resultados de cada iteraciÛn para obtener un ˙nico resultado. Los
-resultados de la evaluaciÛn son contemplan mediante un conjunto de
-indicadores que se describir·n m·s adelante. Nekonata implementa ambos
-mÈtodos e incluye la funcionalidad necesaria para acceder a todos
+datos de prueba. Finalmente se calcula la media aritm√©tica de los
+resultados de cada iteraci√≥n para obtener un √∫nico resultado. Los
+resultados de la evaluaci√≥n son contemplan mediante un conjunto de
+indicadores que se describir√°n m√°s adelante. Nekonata implementa ambos
+m√©todos e incluye la funcionalidad necesaria para acceder a todos
 los valores predictivos. 
 
 
-\subsubsection*{MÈtricas}
+\subsubsection*{M√©tricas}
 
-Las mÈtricas usadas para la evaluaciÛn de los algoritmos simplemente
-son fÛrmulas matem·ticas o composiciÛn de ellas que involucran ˙nicamente
+Las m√©tricas usadas para la evaluaci√≥n de los algoritmos simplemente
+son f√≥rmulas matem√°ticas o composici√≥n de ellas que involucran √∫nicamente
 a dos variables, los valores reales del dominio y los valores predictivos.
-En la herramienta se ha implementado el conjunto de indicadores m·s
-popular brindando, conjuntamente, la posibilidad de utilizar las mÈtricas
-ofrecidas por cada biblioteca incorporada. TambiÈn, se han definido
-e incorporado cuatro caracterÌsticas globales asociadas a las mÈtricas
-para brindar soporte a otras funcionalidades. Toda mÈtrica \emph{i})
-brinda alg˙n tipo de informaciÛn, acerca del error de predicciÛn o
-estadÌsticas o atributos de los datos; \emph{ii}) tiene una representaciÛn
+En la herramienta se ha implementado el conjunto de indicadores m√°s
+popular brindando, conjuntamente, la posibilidad de utilizar las m√©tricas
+ofrecidas por cada biblioteca incorporada. Tambi√©n, se han definido
+e incorporado cuatro caracter√≠sticas globales asociadas a las m√©tricas
+para brindar soporte a otras funcionalidades. Toda m√©trica \emph{i})
+brinda alg√∫n tipo de informaci√≥n, acerca del error de predicci√≥n o
+estad√≠sticas o atributos de los datos; \emph{ii}) tiene una representaci√≥n
 particular de los indicadores, los valores pueden estar normalizados
 en una escala del 0 al 1, expresados en porcentajes o simplemente
 adaptados a la escala de los datos; \emph{iii}) definen por su naturaleza
 un requerimiento minimo o maximo de su indicador y \emph{iv}) son
-aplicables a un tipo de funciÛn ya sea regresiÛn o clasificaciÛn. 
+aplicables a un tipo de funci√≥n ya sea regresi√≥n o clasificaci√≥n. 
 
 Con el fin de extremar las mejoras y asegurar que el modelo resultante
-sea el m·s favorable para el conjunto de datos usados en el entrenamiento
-el proceso de evaluaciÛn de modelos fue dividido en dos fases. Luego
+sea el m√°s favorable para el conjunto de datos usados en el entrenamiento
+el proceso de evaluaci√≥n de modelos fue dividido en dos fases. Luego
 de la etapa de entrenamiento, los algoritmos clasificadores optimizados
-son expuestos a una serie de mÈtricas dispuestos de manera tal que
-permita visualizar las diferencias de desempeÒo entre clasificadores
-con la misma mÈtrica considerada. Esta vista es un recurso ofrecido
+son expuestos a una serie de m√©tricas dispuestos de manera tal que
+permita visualizar las diferencias de desempe√±o entre clasificadores
+con la misma m√©trica considerada. Esta vista es un recurso ofrecido
 al usuario para decidir aquel modelo que a su criterio tenga mejor
-calidad a travÈs de la comparaciÛn simult·nea y continuar mejorando
-el modelo elegido a partir del an·lisis de los efectos de underfit
+calidad a trav√©s de la comparaci√≥n simult√°nea y continuar mejorando
+el modelo elegido a partir del an√°lisis de los efectos de underfit
 y overfit. 
 
 
-\subsubsection*{Fase 1: ComparaciÛn de modelos}
+\subsubsection*{Fase 1: Comparaci√≥n de modelos}
 
-La optimizaciÛn de un algoritmo clasificador para obtener la configuraciÛn
-m·s apropiada para el conjunto de datos es conveniente,sin embargo,
-resulta m·s ˙til aplicar un proceso de optimizaciÛn a un conjunto
-de algoritmos candidatos para luego analizar cu·l de ellos es el que
-mejor generaliza los datos. La comparaciÛn entre clasificadores se
-realiza por medio de mÈtricas que arrojan una estimaciÛn acerca del
-error de predicciÛn, es decir, una medida que refleja la diferencia
+La optimizaci√≥n de un algoritmo clasificador para obtener la configuraci√≥n
+m√°s apropiada para el conjunto de datos es conveniente,sin embargo,
+resulta m√°s √∫til aplicar un proceso de optimizaci√≥n a un conjunto
+de algoritmos candidatos para luego analizar cu√°l de ellos es el que
+mejor generaliza los datos. La comparaci√≥n entre clasificadores se
+realiza por medio de m√©tricas que arrojan una estimaci√≥n acerca del
+error de predicci√≥n, es decir, una medida que refleja la diferencia
 entre los datos reales del dominio y los valores predichos por el
-algoritmo. Es conveniente trasladar el an·lisis a la mayor cantidad
-de mÈtricas posibles, ya que un mismo indicador podrÌa arrojar valores
+algoritmo. Es conveniente trasladar el an√°lisis a la mayor cantidad
+de m√©tricas posibles, ya que un mismo indicador podr√≠a arrojar valores
 cercanos entre un algoritmo y otro favoreciendo equivocadamente a
-uno de ellos, error que podrÌa notarse al compararlos simult·neamente
-con otras mÈtricas. La metodologÌa de operaciÛn de esta fase se muestra
+uno de ellos, error que podr√≠a notarse al compararlos simult√°neamente
+con otras m√©tricas. La metodolog√≠a de operaci√≥n de esta fase se muestra
 en la figura \ref{fig:models-comparison-workflow}. 
 
 Nekonata hace foco en este detalle y ofrece al usuario una vista de
-im·genes con los indicadores medidos de cada algoritmo seleccionado
-por el usuario para aplicar el proceso de optimizaciÛn y elegir, posteriormente,
-el que resulte m·s adecuado. La informaciÛn gr·fica complementaria
+im√°genes con los indicadores medidos de cada algoritmo seleccionado
+por el usuario para aplicar el proceso de optimizaci√≥n y elegir, posteriormente,
+el que resulte m√°s adecuado. La informaci√≥n gr√°fica complementaria
 que se brinda, detalla los algoritmos representados por medio de barras
-y agrupados en categorÌas separadas de acuerdo a cada mÈtrica a modo
-de facilitar la comparaciÛn. Adicionalmente las barras se colorean
-en dos tonos diferentes para acentuar, por cada mÈtrica, los clasificadores
-que significarÌan las mejores opciones para ese indicador. 
+y agrupados en categor√≠as separadas de acuerdo a cada m√©trica a modo
+de facilitar la comparaci√≥n. Adicionalmente las barras se colorean
+en dos tonos diferentes para acentuar, por cada m√©trica, los clasificadores
+que significar√≠an las mejores opciones para ese indicador. 
 
 \begin{figure}
 \begin{centering}
 \includegraphics[scale=0.55]{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/models-comparison-workflow}
 \par\end{centering}
 
-\caption{Diagrama de flujo de la fase de comparaciÛn de modelos. \label{fig:models-comparison-workflow}}
+\caption{Diagrama de flujo de la fase de comparaci√≥n de modelos. \label{fig:models-comparison-workflow}}
 \end{figure}
 
 
-La disposiciÛn de todas las mÈtricas de evaluaciÛn se han distribuido
-en im·genes dispares para agruparlas seg˙n la clase de informaciÛn
-que representan, ya sean indicadores del error de predicciÛn o caracterÌsticas
-sobre los datos. En el primer caso tambiÈn se distinguen entre aquellas
-mÈtricas interpretadas a valores normalizados entre cero y uno y mÈtricas
+La disposici√≥n de todas las m√©tricas de evaluaci√≥n se han distribuido
+en im√°genes dispares para agruparlas seg√∫n la clase de informaci√≥n
+que representan, ya sean indicadores del error de predicci√≥n o caracter√≠sticas
+sobre los datos. En el primer caso tambi√©n se distinguen entre aquellas
+m√©tricas interpretadas a valores normalizados entre cero y uno y m√©tricas
 a valores de escala del atributo. De esta forma se agrupan en conjuntos
 los indicadores proclives a compararse mutuamente como puede observarse
 en la figura \ref{fig:screenshot-errors}. 
 
-El aporte del usuario se incorporÛ para personificar el interÈs y
-criterio para determinar los indicadores m·s significativos para basar
-la elecciÛn del modelo m·s favorable. De esta manera, cada usuario
-puede basar su elecciÛn analizando y comparando los indicadores que
-a su criterio son m·s relevantes. 
+El aporte del usuario se incorpor√≥ para personificar el inter√©s y
+criterio para determinar los indicadores m√°s significativos para basar
+la elecci√≥n del modelo m√°s favorable. De esta manera, cada usuario
+puede basar su elecci√≥n analizando y comparando los indicadores que
+a su criterio son m√°s relevantes. 
 
 \begin{figure}
 \begin{centering}
 \includegraphics[scale=0.55]{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/screenshot-errors}
 \par\end{centering}
 
-\caption{Captura de pantalla de la vista de indicadores sobre el error de predicciÛn
+\caption{Captura de pantalla de la vista de indicadores sobre el error de predicci√≥n
 normalizados.\label{fig:screenshot-errors}}
 \end{figure}
 
@@ -721,18 +828,18 @@ normalizados.\label{fig:screenshot-errors}}
 
 \subsubsection*{Fase 2: Ajustes al modelo}
 
-A travÈs del uso de mÈtricas se adquiere una idea estimativa del desempeÒo
+A trav√©s del uso de m√©tricas se adquiere una idea estimativa del desempe√±o
 del clasificador frente al conjunto de datos de entrenamiento, sin
-embargo, podrÌa resultar ˙til conocer el comportamiento general del
+embargo, podr√≠a resultar √∫til conocer el comportamiento general del
 algoritmo, contrastando cada uno de los valores reales del atributo
-clase con los valores predichos por el clasificador, y obtener asÌ
+clase con los valores predichos por el clasificador, y obtener as√≠
 una vista exacta de la manera en que el clasificador se ajusta a los
 datos (Figura \ref{fig:screenshot-error-curve}). 
 
-Este recurso es usado en la herramienta como un gr·fico de dos lÌneas
+Este recurso es usado en la herramienta como un gr√°fico de dos l√≠neas
 continuas de distinto color para representar el conjunto de datos
 de entrenamiento y el conjunto de datos predichos. Cada punto del
-dominio corresponde a cada instancia y la uniÛn entre puntos sÛlo
+dominio corresponde a cada instancia y la uni√≥n entre puntos s√≥lo
 se realiza con fines ilustrativos. 
 
 \begin{figure}
@@ -740,16 +847,16 @@ se realiza con fines ilustrativos.
 \includegraphics[scale=0.55]{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/screenshot-error-curve}
 \par\end{centering}
 
-\caption{Captura de pantalla de la vista del error de predicciÛn. \label{fig:screenshot-error-curve}}
+\caption{Captura de pantalla de la vista del error de predicci√≥n. \label{fig:screenshot-error-curve}}
 \end{figure}
 
 
-El an·lisis del error de predicciÛn es la base para comprender la
-calidad del modelo construido hasta el momento aunque no es el ˙nico
-objetivo, ya que la vista permite extraer conocimiento de cÛmo se
+El an√°lisis del error de predicci√≥n es la base para comprender la
+calidad del modelo construido hasta el momento aunque no es el √∫nico
+objetivo, ya que la vista permite extraer conocimiento de c√≥mo se
 comporta el conjunto de datos de entrenamiento, existencia de valores
-extremos, la variaciÛn de los valores tomados, entre otros. Es un
-recurso gr·fico para complementar la informaciÛn que se le brinda
+extremos, la variaci√≥n de los valores tomados, entre otros. Es un
+recurso gr√°fico para complementar la informaci√≥n que se le brinda
 al usuario y encaminarlo a un correcto proceso de ajuste del modelo. 
 
 \begin{figure}
@@ -761,40 +868,40 @@ al usuario y encaminarlo a un correcto proceso de ajuste del modelo.
 \end{figure}
 
 
-El flujo de desarrollo de esta fase se planteÛ como un proceso de
-car·cter opcional e iterativo para el usuario. Se puede optar simplemente
-por almacenar el modelo elegido durante la etapa de comparaciÛn anterior
-o repetir las veces que se desee un procedimiento de an·lisis de las
+El flujo de desarrollo de esta fase se plante√≥ como un proceso de
+car√°cter opcional e iterativo para el usuario. Se puede optar simplemente
+por almacenar el modelo elegido durante la etapa de comparaci√≥n anterior
+o repetir las veces que se desee un procedimiento de an√°lisis de las
 curvas de aprendizaje del modelo y las acciones consecuentes para
 reparar los posibles efectos, como se muestra en la figura \ref{fig:adjustment-workflow}.
 
 
-A continuaciÛn se explicar· el funcionamiento de la fase brindando
-una visiÛn general del planteamiento de las curvas de aprendizaje
+A continuaci√≥n se explicar√° el funcionamiento de la fase brindando
+una visi√≥n general del planteamiento de las curvas de aprendizaje
 con las respectivas consideraciones que se tuvieron en cuenta y la
-manera en que se ha incluido la participaciÛn del usuario para la
-transformaciÛn del conjunto de datos. 
+manera en que se ha incluido la participaci√≥n del usuario para la
+transformaci√≥n del conjunto de datos. 
 
 
 \paragraph*{Curvas de aprendizaje}
 
-Las curvas de aprendizaje se componen por dos lÌneas de puntos representadas
-en el mismo plano cartesiano. Ambas lÌneas grafican el error de predicciÛn
-utilizando los dos mÈtodos de evaluaciÛn conocidos, aplicando el conjunto
-de entrenamiento o el mÈtodo de validaciÛn cruzada.Las curvas de aprendizaje
-implementadas por la herramienta son mostradas en la figura 4.15. 
+Las curvas de aprendizaje se componen por dos l√≠neas de puntos representadas
+en el mismo plano cartesiano. Ambas l√≠neas grafican el error de predicci√≥n
+utilizando los dos m√©todos de evaluaci√≥n conocidos, aplicando el conjunto
+de entrenamiento o el m√©todo de validaci√≥n cruzada.Las curvas de aprendizaje
+implementadas por la herramienta son mostradas en la figura \ref{fig:learning-curves}
 
 El procedimiento considera una cantidad de instancias determinadas,
 cantidad que se incrementa en un factor constante para aplicar el
-modelo y calcular el error cuadr·tico medio, es decir, la diferencia
-cuadr·tica entre el valor real del atributo y el predicho por el modelo. 
+modelo y calcular el error cuadr√°tico medio, es decir, la diferencia
+cuadr√°tica entre el valor real del atributo y el predicho por el modelo. 
 
 En un primer paso, la herramienta toma en cuenta las primeras cinco
-instancias, luego las primeras diez, las primeras quince y asÌ sucesivamente
+instancias, luego las primeras diez, las primeras quince y as√≠ sucesivamente
 para conformar cada punto del dominio cuyo valor de ordenada es el
-error cuadr·tico, error aÒadido en la herramienta como parte del conjunto
-de mÈtricas consideradas. Por cuestiones de facilitar la vista se
-impuso un lÌmite en los valores del dominio reducido en trescientas
+error cuadr√°tico, error a√±adido en la herramienta como parte del conjunto
+de m√©tricas consideradas. Por cuestiones de facilitar la vista se
+impuso un l√≠mite en los valores del dominio reducido en trescientas
 (300) instancias en caso de que el conjunto de entrenamiento supere
 dicha cantidad. 
 
@@ -807,103 +914,103 @@ En Nekonata se han incluido dos acciones posibles para reparar, en
 caso de evidenciar, los efectos de overfit o underfit del modelo.
 Estas dos acciones no son mutuamente excluyentes de manera que el
 usuario puede elegir libremente alguna o ambas acciones a la vez,
-sin embargo, la herramienta le recomienda la acciÛn que deberÌa tomar
-en caso de un efecto u otro. Ambas acciones realizan una transformaciÛn
+sin embargo, la herramienta le recomienda la acci√≥n que deber√≠a tomar
+en caso de un efecto u otro. Ambas acciones realizan una transformaci√≥n
 en la base de datos, cuando el usuario decide incorporar nuevas instancias
-o ejemplos del dominio introduce un archivo el cu·l es parseado al
-formato conocido por la librerÌa de uso y es unido al conjunto original
+o ejemplos del dominio introduce un archivo el cu√°l es parseado al
+formato conocido por la librer√≠a de uso y es unido al conjunto original
 siendo ahora, el nuevo conjunto de datos. Por otro lado, cuando el
 usuario decide aumentar el grado del polinomio que emplea el modelo,
-elige un n˙mero entre uno y cuatro para modificar este polinomio y
-asÌ, aÒadir a la base de datos los nuevos atributos originarios del
+elige un n√∫mero entre uno y cuatro para modificar este polinomio y
+as√≠, a√±adir a la base de datos los nuevos atributos originarios del
 nuevo polinomio completo para ese grado. 
 
 
-\subsubsection{DiseÒo e implementaciÛn}
+\subsubsection{Dise√±o e implementaci√≥n}
 
-A pesar que la herramienta fue pensada para la predicciÛn de componentes
-de android,se desarrollÛ como una aplicaciÛn de escritorio debido
-a la limitaciÛn del hardware de los dispositivos mÛviles para ejecutar
-los procesos de optimizaciÛn que consumen un gran porcentaje de recursos
-computacionales. Esta implementaciÛn desvincula la herramienta de
-mediciÛn con la herramienta de entrenamiento y evaluaciÛn de modelos,
-permitiendo la ejecuciÛn independiente entre ambas por lo que el puente
-de comunicaciÛn entre ellas es la correspondencia entre la salida
+A pesar que la herramienta fue pensada para la predicci√≥n de componentes
+de android,se desarroll√≥ como una aplicaci√≥n de escritorio debido
+a la limitaci√≥n del hardware de los dispositivos m√≥viles para ejecutar
+los procesos de optimizaci√≥n que consumen un gran porcentaje de recursos
+computacionales. Esta implementaci√≥n desvincula la herramienta de
+medici√≥n con la herramienta de entrenamiento y evaluaci√≥n de modelos,
+permitiendo la ejecuci√≥n independiente entre ambas por lo que el puente
+de comunicaci√≥n entre ellas es la correspondencia entre la salida
 de la primer herramienta con la entrada de la segunda; la herramienta
-de mediciÛn crea archivos de formato \ac{CSV}, los cuales ser·n usados
+de medici√≥n crea archivos de formato \ac{CSV}, los cuales ser√°n usados
 en la herramienta como el conjunto de datos fuente para el entrenamiento. 
 
 
-\subsubsection*{Entorno y tecnologÌas}
+\subsubsection*{Entorno y tecnolog√≠as}
 
-Para la implementaciÛn del framework Nekonata se utilizÛ el entorno
-de desarrollo Eclipse cuyo lenguaje de programaciÛn es Java. El proyecto
-ha sido configurado con la versiÛn \ac{JDK} 1.7 y \ac{JRE} 1.8 y
-adem·s, se han incorporado tecnologÌas de terceros para el entorno
-las cu·les cumplen distintos roles en la herramienta. 
+Para la implementaci√≥n del framework Nekonata se utiliz√≥ el entorno
+de desarrollo Eclipse cuyo lenguaje de programaci√≥n es Java. El proyecto
+ha sido configurado con la versi√≥n \ac{JDK} 1.7 y \ac{JRE} 1.8 y
+adem√°s, se han incorporado tecnolog√≠as de terceros para el entorno
+las cu√°les cumplen distintos roles en la herramienta. 
 
-Para el diseÒo de la interfaz gr·fica se utilizÛ mayormente la librerÌa
-SWING de java incorporada en el \ac{JDK} aunque tambiÈn se incluyeron
-componentes de la librerÌa nativa AWT. La principal ventaja de la
-librerÌa SWING es brindar una interfaz adaptada a cada sistema operativo
-sin necesidad de cambio de cÛdigo, es decir independiente a la plataforma.
-Complementariamente se incorporaron las dos siguientes librerÌas:
+Para el dise√±o de la interfaz gr√°fica se utiliz√≥ mayormente la librer√≠a
+SWING de java incorporada en el \ac{JDK} aunque tambi√©n se incluyeron
+componentes de la librer√≠a nativa AWT. La principal ventaja de la
+librer√≠a SWING es brindar una interfaz adaptada a cada sistema operativo
+sin necesidad de cambio de c√≥digo, es decir independiente a la plataforma.
+Complementariamente se incorporaron las dos siguientes librer√≠as:
 \emph{jgoodies-forms-1.8.0.jar} y \emph{miglayout15-swing.jar}
 
-Por otro lado, para la creaciÛn de vistas para el usuario se incorporÛ
-la biblioteca gr·fica de Java JFREECHART que facilita la creaciÛn
-de varios tipos de gr·ficos profesionales, en el caso de la herramienta
-se han utilizado los gr·ficos de barras y lineales para representar
-la informaciÛn requerida por el usuario. Esta biblioteca ha sido elegida
+Por otro lado, para la creaci√≥n de vistas para el usuario se incorpor√≥
+la biblioteca gr√°fica de Java JFREECHART que facilita la creaci√≥n
+de varios tipos de gr√°ficos profesionales, en el caso de la herramienta
+se han utilizado los gr√°ficos de barras y lineales para representar
+la informaci√≥n requerida por el usuario. Esta biblioteca ha sido elegida
 por brindar objetos de alta calidad y ofrecer una extensa gama de
-funciones para reforzar y mejorar la informaciÛn mostrada en los gr·ficos.
-Se utilizÛ la versiÛn 1.0.19 de la biblioteca en complemento con la
-librerÌa JCOMMON en la versiÛn 1.0.23. 
+funciones para reforzar y mejorar la informaci√≥n mostrada en los gr√°ficos.
+Se utiliz√≥ la versi√≥n 1.0.19 de la biblioteca en complemento con la
+librer√≠a JCOMMON en la versi√≥n 1.0.23. 
 
-Respecto al uso de tÈcnicas de aprendizaje de m·quina, actualmente
-existen muchas tecnologÌas y frameworks que proveen esta funcionalidad
+Respecto al uso de t√©cnicas de aprendizaje de m√°quina, actualmente
+existen muchas tecnolog√≠as y frameworks que proveen esta funcionalidad
 para utilizar en entornos Java, sin embargo, como se ha adelantado
-anteriormente en la herramienta sÛlo se incluyÛ la biblioteca \emph{Weka}
-en la versiÛn 3.8 y se aÒadiÛ tambiÈn un paquete para la optimizaciÛn
-de par·metros perteneciente a la misma librerÌa denominado MULTISEARCH
-en su versiÛn m·s actual del mes de agosto del 2016. 
+anteriormente en la herramienta s√≥lo se incluy√≥ la biblioteca \emph{Weka}
+en la versi√≥n 3.8 y se a√±adi√≥ tambi√©n un paquete para la optimizaci√≥n
+de par√°metros perteneciente a la misma librer√≠a denominado MULTISEARCH
+en su versi√≥n m√°s actual del mes de agosto del 2016. 
 
 
-\subsubsection*{DiseÒo}
+\subsubsection*{Dise√±o}
 
 Considerando todo lo anteriormente descrito, el concepto principal
 de la herramienta fue la extensibilidad de la misma desde todos los
 enfoques posibles. Esto significa que la herramienta pudiera aceptar
-diferentes tipos de librerÌas de aprendizaje de m·quina, datasets,
-modelos de regresiÛn, par·metros y mÈtricas; lo que conlleva a un
-gran grado de abstracciÛn de las clases que conforman la aplicaciÛn
-y, por lo tanto, se considerÛ importante la asociaciÛn de mismas,
+diferentes tipos de librer√≠as de aprendizaje de m√°quina, datasets,
+modelos de regresi√≥n, par√°metros y m√©tricas; lo que conlleva a un
+gran grado de abstracci√≥n de las clases que conforman la aplicaci√≥n
+y, por lo tanto, se consider√≥ importante la asociaci√≥n de mismas,
 para un entendimiento mayor de parte de un nuevo desarrollador.
 
-La finalidad de la etapa de implementaciÛn fue un buen framework de
-trabajo para el futuro desarrollo de modelos, librerÌas y mÈtricas.
-Si bien la herramienta sÛlo trabaja con Weka actualmente y la mayorÌa
+La finalidad de la etapa de implementaci√≥n fue un buen framework de
+trabajo para el futuro desarrollo de modelos, librer√≠as y m√©tricas.
+Si bien la herramienta s√≥lo trabaja con Weka actualmente y la mayor√≠a
 de su funcionalidad es enteramente parser , se considera que el grado
-de abstracciÛn es lo bastante elevado para poder soportar la finalidad
+de abstracci√≥n es lo bastante elevado para poder soportar la finalidad
 deseada.
 
-Aplicando los conceptos teÛricos antes presentados, se exponen a continuaciÛn
+Aplicando los conceptos te√≥ricos antes presentados, se exponen a continuaci√≥n
 los paquetes y las clases principales que componen el desarrollo de
 Nekonata. 
 
 
 \paragraph*{Databases}
 
-Como ya se mencionÛ anteriormente se desea poder administrar, leer
-y escribir datasets de forma din·mica y segura. Para esto, se creÛ
+Como ya se mencion√≥ anteriormente se desea poder administrar, leer
+y escribir datasets de forma din√°mica y segura. Para esto, se cre√≥
 una estructura para almacenar cada individuo (instancia) con una estructura
 \emph{Hashtable}, con los nombres de los atributos como claves de
-los valores numÈricos que representan a cada uno de ellos.
+los valores num√©ricos que representan a cada uno de ellos.
 
-Asimismo, se desarrollÛ un conjunto para representar los datasets
+Asimismo, se desarroll√≥ un conjunto para representar los datasets
 ya que son estos las bases de los modelos, del aprendizaje y del framework,
 tomando como entrada un csv y creando la base de datos necesaria para
-el correcto funcionamiento de la aplicaciÛn. 
+el correcto funcionamiento de la aplicaci√≥n. 
 
 \begin{figure}
 \begin{centering}
@@ -918,10 +1025,10 @@ el correcto funcionamiento de la aplicaciÛn.
 \paragraph*{Modelos}
 
 Los modelos que la herramienta presenta son de tipo regresivo pero
-no necesariamente son modelos intrÌnsecamente predictivos y por eso
-el framework presenta una divisiÛn clara entre modelos regresivos
-y clasificadores (siempre considerando que estos ˙ltimos se utilizan
-para la regresiÛn).
+no necesariamente son modelos intr√≠nsecamente predictivos y por eso
+el framework presenta una divisi√≥n clara entre modelos regresivos
+y clasificadores (siempre considerando que estos √∫ltimos se utilizan
+para la regresi√≥n).
 
 \begin{figure}
 \begin{centering}
@@ -932,56 +1039,56 @@ para la regresiÛn).
 \end{figure}
 
 
-A partir de esto, implementando los mÈtodos abstractos presentados,
-se pueden incluir cualquier mÈtodo de clasificaciÛn requerido, siempre
+A partir de esto, implementando los m√©todos abstractos presentados,
+se pueden incluir cualquier m√©todo de clasificaci√≥n requerido, siempre
 considerando importante que retorne un valor denso. Actualmente, los
-modelos implementados son los presentados en la secciÛn \ref{subsec:Funciones-contempladas}.
+modelos implementados son los presentados en la secci√≥n \ref{subsec:Funciones-contempladas}.
 
 \begin{figure}
 \begin{centering}
 \includegraphics[scale=0.55]{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/all-modelers-class-diagram}
 \par\end{centering}
 
-\caption{Diagrama de la relaciÛn entre los modelos implementados.\label{fig:all-modelers-class-diagram}}
+\caption{Diagrama de la relaci√≥n entre los modelos implementados.\label{fig:all-modelers-class-diagram}}
 \end{figure}
 
 
 Como se puede apreciar en la figura \ref{fig:all-modelers-class-diagram}
-, se realizÛ una abstracciÛn intermedia considerando la librerÌa Weka.
-Esto se debe principalmente al comportamiento en com˙n que tenÌan
-dichos modelos, pero no es mandatoria dicha abstracciÛn al agregar
-una nueva librerÌa o al agregar nuevos modelos. 
+, se realiz√≥ una abstracci√≥n intermedia considerando la librer√≠a Weka.
+Esto se debe principalmente al comportamiento en com√∫n que ten√≠an
+dichos modelos, pero no es mandatoria dicha abstracci√≥n al agregar
+una nueva librer√≠a o al agregar nuevos modelos. 
 
-Ya que el diseÒo fue impulsado por la necesidad de abstracciÛn e independencia
-de las librerÌas subyacentes, se considera importante la posibilidad
+Ya que el dise√±o fue impulsado por la necesidad de abstracci√≥n e independencia
+de las librer√≠as subyacentes, se considera importante la posibilidad
 de que en un futuro cualquier desarrollador pueda incorporar modelos
 implementados de forma particular. 
 
 
-\paragraph{Par·metros}
+\paragraph{Par√°metros}
 
 Para implementar los modelos, la iniciativa fue modelar el concepto
-teÛrico que los rige: funciones. Como ya fue explicado, las funciones
-est·n moldeados por variables y par·metros. Las variables son aquellos
+te√≥rico que los rige: funciones. Como ya fue explicado, las funciones
+est√°n moldeados por variables y par√°metros. Las variables son aquellos
 atributos modelados por la Hashtable en la clase individuo. Debido
-a los modelos considerados en el apartado anterior, los par·metros
-(o las constantes de una funciÛn) fueron modeladas en dos partes:
+a los modelos considerados en el apartado anterior, los par√°metros
+(o las constantes de una funci√≥n) fueron modeladas en dos partes:
 \begin{enumerate}
-\item Par·metros simples: Son aquellos que sÛlo tienen un valor numÈrico
-y que tiene un valor ˙nico en la funciÛn. Rigen en funcionamiento
-del mÈtodo de aprendizaje y determinan la calidad y finalidad que
-tendr·n los mismos. Estos tipos de parametros se utilizan en todo
-el core de modelos ya que son la idea fundamental de cualquier funciÛn
-matem·tica. 
-\item Par·metros kernel: Son funciones matem·ticas que se emplean en las
+\item Par√°metros simples: Son aquellos que s√≥lo tienen un valor num√©rico
+y que tiene un valor √∫nico en la funci√≥n. Rigen en funcionamiento
+del m√©todo de aprendizaje y determinan la calidad y finalidad que
+tendr√°n los mismos. Estos tipos de parametros se utilizan en todo
+el core de modelos ya que son la idea fundamental de cualquier funci√≥n
+matem√°tica. 
+\item Par√°metros kernel: Son funciones matem√°ticas que se emplean en las
 \ac{SVM}. Estas funciones son las que le permiten convertir lo que
-serÌa un problema de clasificaciÛn no lineal en el espacio dimensional
-original, a un sencillo problema de clasificaciÛn lineal en un espacio
+ser√≠a un problema de clasificaci√≥n no lineal en el espacio dimensional
+original, a un sencillo problema de clasificaci√≥n lineal en un espacio
 dimensional mayor. Debido a que estas son funciones dentro de los
 modelos, es conveniente el modelado de las mismas de forma particular.
 \end{enumerate}
-Observando ambos puntos, se puede apreciar una composiciÛn de par·metros
-ya que las funciones se conforman por par·metros simples y los par·metros
+Observando ambos puntos, se puede apreciar una composici√≥n de par√°metros
+ya que las funciones se conforman por par√°metros simples y los par√°metros
 kernel son funciones internas. Esto se puede observar en la figura
 \ref{fig:parameters-class-diagram} . 
 
@@ -995,11 +1102,11 @@ kernel son funciones internas. Esto se puede observar en la figura
 
 
 
-\paragraph{MÈtricas}
+\paragraph{M√©tricas}
 
-Otra parte importante de la implementaciÛn de la herramienta es la
+Otra parte importante de la implementaci√≥n de la herramienta es la
 capacidad de la misma de cuantificar y valorizar los modelos obtenidos.
-Las mismas ya vienen implementadas por la librerÌa Weka, pero considerando
+Las mismas ya vienen implementadas por la librer√≠a Weka, pero considerando
 la finalidad de abstraer comportamiento, las mismas fueron parseadas
 y se crearon nuevas clases.
 
@@ -1008,49 +1115,49 @@ y se crearon nuevas clases.
 \includegraphics[scale=0.55]{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/metrics-class-diagram}
 \par\end{centering}
 
-\caption{Diagrama de clases de las mÈtricas implementadas.\label{fig:metrics-class-diagram}}
+\caption{Diagrama de clases de las m√©tricas implementadas.\label{fig:metrics-class-diagram}}
 \end{figure}
 
 
-La implementaciÛn presentada surge a partir de la forma de implementaciÛn
-que tiene la librerÌa weka. La misma presenta una clase que representa
-la relaciÛn entre los valores reales que presenta la base de datos
-y los valores calculados por el modelo. Sin embargo, la librerÌa presenta
-la particularidad de solo calcular mÈtricas de los modelos que la
-misma toma como de regresiÛn. AsÌ, el Simple K clusterer quedarÌa
-excluido de este grupo y, por lo tanto, no podrÌa ser valorado. La
-implementaciÛn planteada permite que este modelo quede a la altura
+La implementaci√≥n presentada surge a partir de la forma de implementaci√≥n
+que tiene la librer√≠a weka. La misma presenta una clase que representa
+la relaci√≥n entre los valores reales que presenta la base de datos
+y los valores calculados por el modelo. Sin embargo, la librer√≠a presenta
+la particularidad de solo calcular m√©tricas de los modelos que la
+misma toma como de regresi√≥n. As√≠, el Simple K clusterer quedar√≠a
+excluido de este grupo y, por lo tanto, no podr√≠a ser valorado. La
+implementaci√≥n planteada permite que este modelo quede a la altura
 de los otros presentados y que, si se desea, se pueden crear nuevas
-mÈtricas sin tener la clase \emph{AbsEvaluation} que represente esta
-relaciÛn. SÛlo serÌa necesario crear la mÈtrica heredando de \emph{AbsSimpleMetric}
-e implementar la forma de c·lculo requerida.
+m√©tricas sin tener la clase \emph{AbsEvaluation} que represente esta
+relaci√≥n. S√≥lo ser√≠a necesario crear la m√©trica heredando de \emph{AbsSimpleMetric}
+e implementar la forma de c√°lculo requerida.
 
 
-\paragraph*{OptimizaciÛn}
+\paragraph*{Optimizaci√≥n}
 
 El paquete que se procede a explicar es implementado principalmente
-considerando la funciÛn que proviene de Weka, permitiendo la prueba
-de varios valores para los par·metros sin necesidad de pruebas constantes,
-apuntando a una mejor y m·s r·pida optimizaciÛn del modelo. Puede
-omitirse dicha implementaciÛn si se desea agregar un nuevo modelo,
-pero es conveniente la explicaciÛn del mismo para futuras adaptaciones
-de modelos de weka que se quieran agregar o de librerÌas que tengan
-esta posibilidad tambiÈn. 
+considerando la funci√≥n que proviene de Weka, permitiendo la prueba
+de varios valores para los par√°metros sin necesidad de pruebas constantes,
+apuntando a una mejor y m√°s r√°pida optimizaci√≥n del modelo. Puede
+omitirse dicha implementaci√≥n si se desea agregar un nuevo modelo,
+pero es conveniente la explicaci√≥n del mismo para futuras adaptaciones
+de modelos de weka que se quieran agregar o de librer√≠as que tengan
+esta posibilidad tambi√©n. 
 
-La idea del paquete de optimizaciÛn es que, de forma transparente
-para el usuario de la aplicaciÛn, el modelo consiga adaptarse a la
-base de datos analizada. Esto permite que la aplicaciÛn Nekonata pueda
+La idea del paquete de optimizaci√≥n es que, de forma transparente
+para el usuario de la aplicaci√≥n, el modelo consiga adaptarse a la
+base de datos analizada. Esto permite que la aplicaci√≥n Nekonata pueda
 adaptarse a grandes rangos de valores objetivo. Como ya se dijo anteriormente,
-no es un paquete necesario en la aplicaciÛn ya que los par·metros
+no es un paquete necesario en la aplicaci√≥n ya que los par√°metros
 pueden ser puestos de forma fija en un modelo, pero esto restringe
 el rango y las posibilidades del mismo. 
 
-Los optimizadores cumplen la funciÛn de probar valores para los par·metros
+Los optimizadores cumplen la funci√≥n de probar valores para los par√°metros
 y se quedan con aquellos que minimizan el grado de error del modelo.
 Asimismo, cabe destacar que Weka proporciona dos tipos de optimizadores.
-Los primeros son los simples, que consideran cada par·metro del modelo
+Los primeros son los simples, que consideran cada par√°metro del modelo
 desde un valor al otro. Los segundos son los kernels y prueban valores
-no solo para los par·metros propios de los modelos sino para los par·metros
+no solo para los par√°metros propios de los modelos sino para los par√°metros
 que conforman los kernels. 
 
 \begin{figure}
@@ -1063,10 +1170,10 @@ que conforman los kernels.
 
 
 
-\paragraph*{CÛmo agregar clases nuevas}
+\paragraph*{C√≥mo agregar clases nuevas}
 
 Todo lo anteriormente planteado se mantiene coherente y de forma congruente
-gracias a la clase librerÌa y lo que conlleva agregarla a la aplicaciÛn. 
+gracias a la clase librer√≠a y lo que conlleva agregarla a la aplicaci√≥n. 
 
 \begin{figure}
 \begin{centering}
@@ -1078,34 +1185,34 @@ objetos.\label{fig:library-class-diagram}}
 \end{figure}
 
 
-Al crear la librerÌa, y como se ve en el diagrama de clases, se deben
-implementar dos mÈtodos que devuelven dos conceptos principales. Por
-un lado, un objeto de tipo Database que ya se explicÛ anteriormente.
-Por el otro, un objeto MetricsCollection. Este ˙ltimo representa el
-conjunto de mÈtricas que sirven para valorizar los modelos. 
+Al crear la librer√≠a, y como se ve en el diagrama de clases, se deben
+implementar dos m√©todos que devuelven dos conceptos principales. Por
+un lado, un objeto de tipo Database que ya se explic√≥ anteriormente.
+Por el otro, un objeto MetricsCollection. Este √∫ltimo representa el
+conjunto de m√©tricas que sirven para valorizar los modelos. 
 
 Ya implementado se provee el conjunto \emph{SimpleMetricsCollection}
 que permiten valorizar cualquier modelo, ademas del \emph{WekaMetricsCollection}
-que sÛlo contiene la metricas basadas en el \emph{WekaEvaluation}. 
+que s√≥lo contiene la metricas basadas en el \emph{WekaEvaluation}. 
 
-La ˙ltima funciÛn que se debe implementar de forma ineludible retorna
+La √∫ltima funci√≥n que se debe implementar de forma ineludible retorna
 un vector de constantes. Estas constantes deben estar declaradas en
 la clase \emph{Config.Modeler} con el formato: 
 
 \fbox{\begin{minipage}[t]{1\columnwidth}%
 \begin{center}
-Nombre a mostrar en la aplicaciÛn: constante 
+Nombre a mostrar en la aplicaci√≥n: constante 
 \par\end{center}%
 \end{minipage}}
 
 Las mismas declaran los modelos que son aceptados por la liberia.
-Esto se hace a modo de Ìndice para los modelos y, al momento de utilizar
+Esto se hace a modo de √≠ndice para los modelos y, al momento de utilizar
 la herramienta, las clases de los modelos sean creadas al momento
-de ser seleccionadas. Esto se permite implementando la ˙ltima funciÛn: 
+de ser seleccionadas. Esto se permite implementando la √∫ltima funci√≥n: 
 
 \lstinline[language=Java,basicstyle={\footnotesize}]!public abstract Vector<AbsModeler> createModelers(Vector<Integer> selectedModels, int index);!
 
-Esta ˙ltima funciÛn crea la relaciÛn entre la constante con las clases
+Esta √∫ltima funci√≥n crea la relaci√≥n entre la constante con las clases
 que se deben crear para representar a los modelos. 
 
 \begin{figure}
@@ -1113,6 +1220,35 @@ que se deben crear para representar a los modelos.
 \includegraphics[scale=0.55]{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/config-correlation}
 \par\end{centering}
 
-\caption{Diagrama conceptual de la configuraciÛn que presenta la herramienta\label{fig:config-correlation}}
+\caption{Diagrama conceptual de la configuraci√≥n que presenta la herramienta\label{fig:config-correlation}}
 \end{figure}
 
+
+
+\subsubsection{Formato de los resultados\label{subsec:Formato-de-los}}
+
+La herramienta devuelve como resultado un archivo en formato TXT almacenando,
+por un lado, los valores resultantes de los par√°metros fundamentales
+de cada t√©cnica y, por otro lado, la descripci√≥n del modelo construido.
+La herramienta genera un archivo por cada t√©cnica elegida por el usuario
+para optimizar, en la direcci√≥n especificada en la configuraci√≥n bajo
+el nombre de la t√©cnica. La figura \ref{fig:linear-regression-result}
+permite una descripci√≥n gr√°fica de lo expresado anteriormente, donde
+detalla A) los par√°metros, B) Nombre del modelo y C) la funci√≥n definida
+para el atributo de predicci√≥n. 
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.55]{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/linear-regression-result}
+\par\end{centering}
+
+\caption{Ejemplo de resultado del modelo ‚ÄòLinear Regression‚Äô. \label{fig:linear-regression-result}}
+\end{figure}
+
+
+La manera en que los datos son expuestos al usuario no representa
+un formato compatible para cualquier herramienta sobre aprendizaje
+de m√°quina, esto se debe a que no existe actualmente, un formato est√°ndar
+para almacenar los modelos, y esta discrepancia entre las herramientas
+disponibles exige un seteo manual de las t√©cnicas por cada evaluaci√≥n
+que se realice

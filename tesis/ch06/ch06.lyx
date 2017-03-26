@@ -1,9 +1,7 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
 \begin_document
 \begin_header
-\save_transient_properties true
-\origin unavailable
 \textclass book
 \use_default_options true
 \maintain_unincluded_children false
@@ -11,16 +9,16 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman "default" "default"
-\font_sans "default" "default"
-\font_typewriter "default" "default"
-\font_math "auto" "auto"
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100 100
-\font_tt_scale 100 100
+\font_sf_scale 100
+\font_tt_scale 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -42,7 +40,7 @@
 \use_package stmaryrd 1
 \use_package undertilde 1
 \cite_engine natbib
-\cite_engine_type authoryear
+\cite_engine_type numerical
 \biblio_style plainnat
 \use_bibtopic false
 \use_indices false
@@ -85,8 +83,8 @@ name "chap:Conclusiones"
 \begin_layout Standard
 En este trabajo se presentó un modelo de aprendizaje automático para la
  estimación de atributos no funcionales en componentes de aplicaciones Android,
- un framework de predicción con técnicas de regresión que permite un gran
- desacople a las implementaciones de bajo nivel de las librerías de aprendizaje
+ un framework de predicción con técnicas de regresión que permite una gran
+ abstraccióna las implementaciones de bajo nivel de las librerías de aprendizaje
  de máquina.
  Este modelo brinda la posibilidad de crear modelos predictivos óptimos,
  adecuados a un conjunto de datos particular y un atributo a predecir particular.
@@ -145,20 +143,7 @@ es bajas en error.
  como el caso del problema de la multiplicacion de matrices y el problema
  del viajante métrico, el nivel de correlación alcanzado por el algoritmo
  es inmediatamente inferior al 100% y en cuanto al error en las predicciones
- a través de las métricas 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{CC}
-\end_layout
-
-\end_inset
-
- y 
+ a través de las métrica 
 \begin_inset ERT
 status open
 
@@ -171,8 +156,7 @@ ac{RMSE}
 
 \end_inset
 
- como principales objetivos, tendrán valores inmediatamente cercanos o iguales
- a cero.
+ , tendrán valores inmediatamente cercanos o iguales a cero.
  Para el caso de servicios, aunque las estimaciones arrojadas por el modelo
  presentan mas variabilidad, su comportamiento es considerablemente superior
  al resto de los modelos, en cuanto evita efectos de overfit y underfit
@@ -253,13 +237,14 @@ Trabajos Futuros
 \end_layout
 
 \begin_layout Standard
-Cabe mensionar que existen algunas posibilidades de extensión interesantes
+Cabe mencionar que existen algunas posibilidades de extensión interesantes
  para este trabajo.
  Como primer objetivo se pretende mejorar el tiempo de procesamiento requerido
  para la optimización y generación de los modelos predictivos.
- Para poder lograr esto, se le otorga a la aplicación la capacidad de soportar
- eficientemente múltiples hilos de ejecución y distribuir o paralelizar
- los procesos de configuración, optimización, y construcción de los modelos.
+ Para poder lograr esto, se le puede otorgar a la aplicación la capacidad
+ de soportar eficientemente múltiples hilos de ejecución y distribuir o
+ paralelizar los procesos de optimización y construcción de los diferentes
+ modelos.
  Por otro lado, se deben incoportar dataset con la suficiente expresividad
  para describir de mejor manera los diferentes casos de aplicación analizados
  y derivar en conclusiones más precisas.

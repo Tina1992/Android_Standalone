@@ -1,9 +1,7 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
 \begin_document
 \begin_header
-\save_transient_properties true
-\origin unavailable
 \textclass book
 \use_default_options true
 \maintain_unincluded_children false
@@ -11,16 +9,16 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman "" "default"
-\font_sans "" "default"
-\font_typewriter "" "default"
-\font_math "" "auto"
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100 100
-\font_tt_scale 100 100
+\font_sf_scale 100
+\font_tt_scale 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -42,7 +40,7 @@
 \use_package stmaryrd 1
 \use_package undertilde 1
 \cite_engine natbib
-\cite_engine_type authoryear
+\cite_engine_type numerical
 \biblio_style plainnat
 \use_bibtopic false
 \use_indices false
@@ -771,7 +769,7 @@ textwidth}{!}{
 
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="5">
-<features tabularvalignment="middle" tabularwidth="20cm">
+<features rotate="0" tabularvalignment="middle" tabularwidth="20cm">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -2427,6 +2425,75 @@ reference "tab:Resultados-del-response-matrix"
 a de los modelos estudiados funciona de forma eficiente para este problema.
 \end_layout
 
+\begin_layout Standard
+De este modo, en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:lineas-matrix-response"
+
+\end_inset
+
+se presentan las lineas de predicción para el modelo menos eficiente en
+ cuanto a la correlación de los datos, el 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SGD}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/response_matrix_lc.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Lineas de predicción del SGD para el atributo response time
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:lineas-matrix-response"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Resultados para el problema del viajante.
 \begin_inset CommandInset label
@@ -2713,7 +2780,7 @@ ac{SGD}
 Teniendo en cuenta los conceptos expuestos en la sección 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "subsec:Ajuste-del-modelo:"
+reference "sub:Ajuste-del-modelo:"
 
 \end_inset
 
@@ -2767,10 +2834,6 @@ Figura comparativa de las dos implementaciones de regresión lineal para
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -2959,7 +3022,7 @@ textwidth}{!}{
 
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="12">
-<features tabularvalignment="middle" tabularwidth="20cm">
+<features rotate="0" tabularvalignment="middle" tabularwidth="20cm">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -3744,7 +3807,7 @@ textwidth}{!}{
 
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="12">
-<features tabularvalignment="middle" tabularwidth="20cm">
+<features rotate="0" tabularvalignment="middle" tabularwidth="20cm">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">

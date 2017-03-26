@@ -1,178 +1,181 @@
 
-\chapter{IntroducciÛn}
+\chapter{Introducci√≥n}
 
-En los ˙ltimos aÒos las aplicaciones mÛviles se han puesto en el centro
-de la escena debido a la proliferaciÛn de los dispositivos mÛviles
-y su creciente capacidad de cÛmputo y almacenamiento\cite{Zunino2011}.
+En los √∫ltimos a√±os las aplicaciones m√≥viles se han puesto en el centro
+de la escena debido a la proliferaci√≥n de los dispositivos m√≥viles
+y su creciente capacidad de c√≥mputo y almacenamiento\cite{Zunino2011}.
 Estos dispositivos pasaron de ser terminales con capacidades limitadas,
-generalmente de propÛsito especÌfico, como agendas electrÛnicas o
-telÈfonos celulares, a ser pequeÒas computadoras de propÛsito general
+generalmente de prop√≥sito espec√≠fico, como agendas electr√≥nicas o
+tel√©fonos celulares, a ser peque√±as computadoras de prop√≥sito general
 con grandes capacidades de procesamiento, almacenamiento y acceso
 a Internet, como tablets y smartphones. 
 
-Los dispositivos mÛviles de hoy en dÌa utilizan sistemas operativos
+Los dispositivos m√≥viles de hoy en d√≠a utilizan sistemas operativos
 similares a las computadoras personales, como Android y iOS. Por lo
-tanto, pueden ejecutar software al que hace unos aÒos atr·s solo se
+tanto, pueden ejecutar software al que hace unos a√±os atr√°s solo se
 encontraba en dichas computadoras. Esto, sumado a su costo accesible,
-pequeÒo tamaÒo, movilidad y ubicuidad de las conexiones mÛviles de
-alta velocidad, ha impulsado el desarrollo de las aplicaciones mÛviles
+peque√±o tama√±o, movilidad y ubicuidad de las conexiones m√≥viles de
+alta velocidad, ha impulsado el desarrollo de las aplicaciones m√≥viles
 para una amplia variedad de fines, incluyendo entretenimiento, juegos,
-comunicaciones, redes sociales, comercio electrÛnico, turismo, educaciÛn,
-y mucho m·s. 
+comunicaciones, redes sociales, comercio electr√≥nico, turismo, educaci√≥n,
+y mucho m√°s. 
 
-Para reducir los costos y tiempos de desarrollo, es com˙n la reutilizaciÛn
-de software mediante la integraciÛn de componentes de terceros. Un
+Para reducir los costos y tiempos de desarrollo, es com√∫n la reutilizaci√≥n
+de software mediante la integraci√≥n de componentes de terceros. Un
 componente\cite{Petritsch2016} es una entidad de software en tiempo
-de ejecuciÛn que encapsula un servicio, es decir, un conjunto de funciones
-y datos, a travÈs de una interfaz especÌfica \ac{API}. Los componentes
+de ejecuci√≥n que encapsula un servicio, es decir, un conjunto de funciones
+y datos, a trav√©s de una interfaz espec√≠fica \ac{API}. Los componentes
 se pueden clasificar de acuerdo al ambiente en el que residen durante
-su ejecuciÛn, distinguiÈndose asÌ aquellos que se ejecutan en nodos
+su ejecuci√≥n, distingui√©ndose as√≠ aquellos que se ejecutan en nodos
 remotos, como los denominados Servicios Web \cite{Erickson2009},
 de aquellos que residen en el dispositivo, como procesos en segundo
-plano, bibliotecas de enlace din·mico, o simples objetos Java. 
+plano, bibliotecas de enlace din√°mico, o simples objetos Java. 
 
 Las funcionalidades que implementan estos componentes buscan satisfacer
 las necesidades comunes de muchas aplicaciones, como el procesamiento
-de texto e im·genes, almacenamiento de datos en la nube, identificaciÛn
-de usuarios, algoritmos de optimizaciÛn, etc. La misma funcionalidad
+de texto e im√°genes, almacenamiento de datos en la nube, identificaci√≥n
+de usuarios, algoritmos de optimizaci√≥n, etc. La misma funcionalidad
 suele ser ofrecida por componentes alternativos que difieren en sus
 propiedades no-funcionales o atributos de calidad \cite{Addison2003}.
 Estas propiedades son los aspectos que utilizan los desarrolladores
 para juzgar su funcionamiento, tales como performance (por ej., tiempo
-de respuesta), disponibilidad (por ej., tasa de errores) o precisiÛn
+de respuesta), disponibilidad (por ej., tasa de errores) o precisi√≥n
 de la respuesta (para el caso de aquellos componentes que procesan
 datos de entrada para obtener un resultado de salida). 
 
-Los dispositivos mÛviles tienen limitaciones en conflicto como la
-energÌa, el acceso a la red y la capacidad de c·lculo que determinan
-el contexto de ejecuciÛn de estos componentes y que afecta considerablemente
+Los dispositivos m√≥viles tienen limitaciones en conflicto como la
+energ√≠a, el acceso a la red y la capacidad de c√°lculo que determinan
+el contexto de ejecuci√≥n de estos componentes y que afecta considerablemente
 los atributos de calidad de los mismos y de las aplicaciones que los
 invocan. Por lo tanto, es importante elegir los componentes adecuados
-de acuerdo con su calidad de servicio adem·s de la funcionalidad requerida. 
+de acuerdo con su calidad de servicio adem√°s de la funcionalidad requerida. 
 
 Sin embargo, estos componentes suelen ser \emph{cajas negras} para
-los desarrolladores de aplicaciones mÛviles, que tienen acceso a la
-definiciÛn de sus \ac{API}s pero no asÌ a su implementaciÛn interna,
-por lo que no cuentan con informaciÛn de sus atributos din·micos para
-elegir el componente adecuado en cada contexto de ejecuciÛn.
+los desarrolladores de aplicaciones m√≥viles, que tienen acceso a la
+definici√≥n de sus \ac{API}s pero no as√≠ a su implementaci√≥n interna,
+por lo que no cuentan con informaci√≥n de sus atributos din√°micos para
+elegir el componente adecuado en cada contexto de ejecuci√≥n.
 
 
-\section{MotivaciÛn\label{sec:Motivaci=0000F3n}}
+\section{Motivaci√≥n\label{sec:Motivaci=0000F3n}}
 
 Para predecir la performance de un sistema, algunos enfoques definen
-un modelo del mismo como funciÛn de agregaciÛn que considera el desempeÒo
-individual de sus componentes. AsÌ, por ejemplo, el tiempo de respuesta
+un modelo del mismo como funci√≥n de agregaci√≥n que considera el desempe√±o
+individual de sus componentes. As√≠, por ejemplo, el tiempo de respuesta
 de un \emph{mashup} de servicios Web puede determinarse como la suma
 de los tiempos de respuesta de los servicios invocados \cite{Rosenberg2009}.
 Lo mismo se puede aplicar sobre otras propiedades de arquitecturas
 y aplicaciones que involucran el ensamblado de diferentes componentes
 \cite{Crnkovic2011}\cite{Sanchez2015}. 
 
-Muchos estudios se enfocan en el an·lisis y predicciÛn de los aspectos
-din·micos de componentes individuales, siendo las tÈcnicas de aprendizaje
-de m·quina, y en particular las de regresiÛn, las m·s utilizadas.
-La mayor parte de estos estudios se enfocan en algoritmos de optimizaciÛn
+Muchos estudios se enfocan en el an√°lisis y predicci√≥n de los aspectos
+din√°micos de componentes individuales, siendo las t√©cnicas de aprendizaje
+de m√°quina, y en particular las de regresi√≥n, las m√°s utilizadas.
+La mayor parte de estos estudios se enfocan en algoritmos de optimizaci√≥n
 e inteligencia artificial \cite{Hutter2014}, donde se destaca el
-trade-off entre los tiempos de ejecuciÛn y la precisiÛn o calidad
+trade-off entre los tiempos de ejecuci√≥n y la precisi√≥n o calidad
 de las respuestas obtenidas. En estos trabajos, se obtienen mediciones
 a partir de sucesivas ejecuciones de los algoritmos y se entrenan
 modelos con estas mediciones. Los modelos son funciones que dado determinado
-algoritmo e instancia de un problema permiten estimar su desempeÒo.
-Generalmente, diferentes algoritmos se desempeÒan mejor que otros
-para distintas instancias, por lo que los modelos resultan ˙tiles
-como criterio de decisiÛn en la selecciÛn y parametrizaciÛn autom·tica
-de algoritmos, la asignaciÛn Ûptima de tareas en contextos Grid, entre
+algoritmo e instancia de un problema permiten estimar su desempe√±o.
+Generalmente, diferentes algoritmos se desempe√±an mejor que otros
+para distintas instancias, por lo que los modelos resultan √∫tiles
+como criterio de decisi√≥n en la selecci√≥n y parametrizaci√≥n autom√°tica
+de algoritmos, la asignaci√≥n √≥ptima de tareas en contextos Grid, entre
 otros escenarios. 
 
-La predicciÛn de performance tambiÈn se ha extendido a servicios Web
-\cite{Zheng2013} en una modalidad conocida como predicciÛn colaborativa,
-en donde las mediciones son recolectadas y compartidas por m˙ltiples
+La predicci√≥n de performance tambi√©n se ha extendido a servicios Web
+\cite{Zheng2013} en una modalidad conocida como predicci√≥n colaborativa,
+en donde las mediciones son recolectadas y compartidas por m√∫ltiples
 nodos distribuidos en todo el mundo. En este caso, los modelos permiten
 determinar latencia, disponibilidad, y otras propiedades de un servicio
-a partir de la ubicaciÛn geogr·fica del cliente que lo invoca y otras
-caracterÌsticas del contexto. 
+a partir de la ubicaci√≥n geogr√°fica del cliente que lo invoca y otras
+caracter√≠sticas del contexto. 
 
-En las aplicaciones mÛviles, donde el contexto de ejecuciÛn y disponibilidad
-de los recursos puede variar r·pidamente (cambio de red de acceso
-a internet, reducciÛn de la baterÌa, uso limitado de memoria y \ac{CPU},
+En las aplicaciones m√≥viles, donde el contexto de ejecuci√≥n y disponibilidad
+de los recursos puede variar r√°pidamente (cambio de red de acceso
+a internet, reducci√≥n de la bater√≠a, uso limitado de memoria y \ac{CPU},
 etc) y diferentes componentes consumen estos recursos de diferente
 forma, es interesante el uso de estos modelos como criterio de calidad
-para la selecciÛn de servicios y componentes, tanto en tiempo de desarrollo
-como en tiempo de ejecuciÛn. Por esta razÛn, se plantea la posibilidad
-de desarrollar un enfoque para construir y evaluar modelos de predicciÛn
-en el contexto de aplicaciones mÛviles. 
+para la selecci√≥n de servicios y componentes, tanto en tiempo de desarrollo
+como en tiempo de ejecuci√≥n. Por esta raz√≥n, se plantea la posibilidad
+de desarrollar un enfoque para construir y evaluar modelos de predicci√≥n
+en el contexto de aplicaciones m√≥viles. 
 
 
-\section{Objetivos y SoluciÛn propuesta\label{sec:Objetivos-Soluci=0000F3n-propuesta}}
+\section{Objetivos y Soluci√≥n propuesta\label{sec:Objetivos-Soluci=0000F3n-propuesta}}
 
 El objetivo del trabajo consiste en desarrollar un enfoque para la
-elaboraciÛn de modelos de predicciÛn de propiedades din·micas de componentes
-accedidos por aplicaciones mÛviles. Bas·ndonos en el hecho de que
-Android es el sistema operativo m·s difundido para dispositivos mÛviles,
-el enfoque se pondr· a prueba sobre diferentes casos de estudio en
+elaboraci√≥n de modelos de predicci√≥n de propiedades din√°micas de componentes
+accedidos por aplicaciones m√≥viles. Bas√°ndonos en el hecho de que
+Android es el sistema operativo m√°s difundido para dispositivos m√≥viles,
+el enfoque se pondr√° a prueba sobre diferentes casos de estudio en
 este sistema operativo. 
 
-El enfoque se basa en un proceso de aprendizaje de m·quina. Dado un
+El enfoque se basa en un proceso de aprendizaje de m√°quina. Dado un
 conjunto de componentes que implementan la misma funcionalidad y de
-los cuales queremos predecir propiedades din·micas, el mÈtodo propuesto
+los cuales queremos predecir propiedades din√°micas, el m√©todo propuesto
 es el siguiente: 
 \begin{enumerate}
-\item Usar conocimiento del dominio para seleccionar caracterÌsticas del
+\item Usar conocimiento del dominio para seleccionar caracter√≠sticas del
 contexto y de los datos de entrada del componente que puedan ser indicativos
-de su desempeÒo. 
+de su desempe√±o. 
 \item Generar un conjunto de datos de entrada representativos del espacio
-de entrada para la evaluaciÛn de los componentes. 
+de entrada para la evaluaci√≥n de los componentes. 
 \item Ejecutar los componentes con las entradas generadas y tomar mediciones
-de las caracterÌsticas identificadas en el punto 1 m·s las propiedades
-de interÈs a predecir: tiempo de respuesta, calidad de la respuesta,
+de las caracter√≠sticas identificadas en el punto 1 m√°s las propiedades
+de inter√©s a predecir: tiempo de respuesta, calidad de la respuesta,
 etc. 
-\item Usar estas mediciones con tÈcnicas de aprendizaje de m·quina para
-entrenar y evaluar modelos de predicciÛn. 
+\item Usar estas mediciones con t√©cnicas de aprendizaje de m√°quina para
+entrenar y evaluar modelos de predicci√≥n. 
 \end{enumerate}
-El enfoque propuesto se pondr· a prueba sobre grupos de componentes
-y servicios reales que implementan funcionalidades de interÈs para
-desarrolladores de aplicaciones mÛviles. Esta evaluaciÛn no sÛlo involucrar·
-diferentes dominios, sino tambiÈn diferentes tÈcnicas, como regresiones
-y redes neuronales, sobre diferentes propiedades de interÈs. Para
-llevar a cabo la mediciÛn de los componentes se implementar· una herramienta
-de test de performance para la plataforma Android, y se utilizar·
-software de aprendizaje de m·quina como Weka \cite{Hall2009}. 
+El enfoque propuesto se pondr√° a prueba sobre grupos de componentes
+y servicios reales que implementan funcionalidades de inter√©s para
+desarrolladores de aplicaciones m√≥viles. Esta evaluaci√≥n no s√≥lo involucrar√°
+diferentes dominios, sino tambi√©n diferentes t√©cnicas, como regresiones
+y redes neuronales, sobre diferentes propiedades de inter√©s. Para
+llevar a cabo la medici√≥n de los componentes se implementar√° una herramienta
+de test de performance para la plataforma Android, y se utilizar√°
+software de aprendizaje de m√°quina como Weka \cite{Hall2009}. 
 
-En conclusiÛn, se espera poder proveer un an·lisis de los dominios
-y tÈcnicas consideradas, como asÌ tambiÈn compararlas tanto en tÈrminos
-de precisiÛn como tambiÈn en cuanto a su generalizaciÛn a diferentes
-contextos de ejecuciÛn (dispositivos) y datos de entrada
+En conclusi√≥n, se espera poder proveer un an√°lisis de los dominios
+y t√©cnicas consideradas, como as√≠ tambi√©n compararlas tanto en t√©rminos
+de precisi√≥n como tambi√©n en cuanto a su generalizaci√≥n a diferentes
+contextos de ejecuci√≥n (dispositivos) y datos de entrada
 
 
-\section{OrganizaciÛn\label{sec:Organizaci=0000F3n}}
+\section{Organizaci√≥n\label{sec:Organizaci=0000F3n}}
 
-El resto del trabajo se organiza en 5 capÌtulos. A continuaciÛn se
+El resto del trabajo se organiza en 5 cap√≠tulos. A continuaci√≥n se
 da un breve resumen de los temas que se abordan en cada uno de ellos. 
 
-En el capÌtulo\ref{chap:Marco-Teorico} se presenta el marco teÛrico,
+En el cap√≠tulo\ref{chap:Marco-Teorico} se presenta el marco te√≥rico,
 donde se definen los conceptos utilizados a lo largo de todo el informe,
-tales como: Android, desempeÒo, precisiÛn, aprendizaje de m·quina,
-regresiÛn, modelos, componentes. 
+tales como: Android, desempe√±o, precisi√≥n, aprendizaje de m√°quina,
+regresi√≥n, modelos, componentes. 
 
-En el capÌtulo\ref{chap:Trabajos-Relacionados} se presentan herramientas
+En el cap√≠tulo\ref{chap:Trabajos-Relacionados} se presentan herramientas
 de benchmarks tanto para el sistema Android como para Java y se exponen
 algunos trabajos relacionados desde diferentes perspectivas, predicciones
-que incluyen modelos de performance y precisiÛn como aproximaciÛn
-de Èxito de los resultados, no sÛlo en algoritmos de optimizaciÛn
-sino tambiÈn en servicios Web. 
+que incluyen modelos de performance y precisi√≥n como aproximaci√≥n
+de √©xito de los resultados, no s√≥lo en algoritmos de optimizaci√≥n
+sino tambi√©n en servicios Web. 
 
-En el capÌtulo \ref{chap:Enfoque-y-Herramientas} se describe el enfoque
-y las herramientas utilizadas. Se detalla la arquitectura e implementaciÛn
-de las mismas, ahondando en las decisiones de diseÒo que se consideran
-importantes para el entendimiento y reutilizaciÛn de las mismas. 
+En el cap√≠tulo \ref{chap:Enfoque-y-Herramientas} se describe el enfoque
+y las herramientas utilizadas. Se detalla la arquitectura e implementaci√≥n
+de las mismas, ahondando en las decisiones de dise√±o que se consideran
+importantes para el entendimiento y reutilizaci√≥n de las mismas. 
 
-En el capÌtulo \ref{chap:Evaluaci=0000F3n} se presenta la evaluaciÛn
+En el cap√≠tulo \ref{chap:Evaluaci=0000F3n} se presenta la evaluaci√≥n
 de los modelos obtenidos a partir de todo el framework presentado.
 Se presentan las variables consideradas en los escenarios evaluados,
 los modelos que han sido analizados y las conclusiones alcanzadas,
-presentando justificativo para la selecciÛn de los mejores modelos
-predictivos alcanzados.
+presentando justificativo para la selecci√≥n de los mejores modelos
+predictivos alcanzados. Mediante el presente trabajo se han alcanzado
+modelos de predicci√≥n para el tiempo de respuesta con un coeficiente
+de correlaci√≥n de 0.73 en promedio y un error medio de 3.19 milisegundos
+en la predicci√≥n.
 
-Finalmente, en el capÌtulo \ref{chap:Conclusiones} se exponen las
+Finalmente, en el cap√≠tulo \ref{chap:Conclusiones} se exponen las
 conclusiones del trabajo realizado, las limitaciones actuales del
-enfoque y la herramienta, y posibles lÌneas de trabajo futuro.
+enfoque y la herramienta, y posibles l√≠neas de trabajo futuro.

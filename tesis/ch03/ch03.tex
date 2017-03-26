@@ -1,154 +1,154 @@
 
 \chapter{Trabajos Relacionados\label{chap:Trabajos-Relacionados}}
 
-El enfoque propuesto b·sicamente es un proceso de aprendizaje de m·quina
+El enfoque propuesto b√°sicamente es un proceso de aprendizaje de m√°quina
 que incluye una herramienta para recolectar mediciones de performance
 en Android (y Java), y otra herramienta para entrenar y evaluar modelos
-de predicciÛn con diferentes tÈcnicas de aprendizaje autom·tico. Por
-lo tanto, este capÌtulo se dividir· en dos secciones para describir
-en la secciÛn \ref{sec:Herramientas-de-benchmarks-para-Android} un
-conjunto de herramientas sobre benchmarks en Android y en la secciÛn
+de predicci√≥n con diferentes t√©cnicas de aprendizaje autom√°tico. Por
+lo tanto, este cap√≠tulo se dividir√° en dos secciones para describir
+en la secci√≥n \ref{sec:Herramientas-de-benchmarks-para-Android} un
+conjunto de herramientas sobre benchmarks en Android y en la secci√≥n
 \ref{sec:Predicci=0000F3n-de-propiedades-no-funcionales-con-aprendizaje-de-m=0000E1quina}se
-presentar·n algunos trabajos ya realizados que llevan a cabo la predicciÛn
-de atributos a travÈs de modelos.
+presentar√°n algunos trabajos ya realizados que llevan a cabo la predicci√≥n
+de atributos a trav√©s de modelos.
 
 
 \section{Herramientas de benchmarks para Android\label{sec:Herramientas-de-benchmarks-para-Android}}
 
 Las herramientas de benchmarking han ido incrementando su popularidad
 ya que ofrecen a los usuarios la posibilidad de analizar a fondo todos
-los aspectos de un dispositivo android arrojando datos numÈricos acerca
-de la potencia, eficiencia y capacidad de los mismos. La recolecciÛn
+los aspectos de un dispositivo android arrojando datos num√©ricos acerca
+de la potencia, eficiencia y capacidad de los mismos. La recolecci√≥n
 y conocimiento de estas propiedades no funcionales son relevantes
-y necesarios al momento de determinar cu·l dispositivo ser· el m·s
-adecuado para satisfacer la carga de trabajo esperada. A continuaciÛn
+y necesarios al momento de determinar cu√°l dispositivo ser√° el m√°s
+adecuado para satisfacer la carga de trabajo esperada. A continuaci√≥n
 se describen algunas herramientas de benchmarking. 
 
 
 \subsection{Performance Monitors de Android \label{sub:Performance-Monitors-de-Android }}
 
 Es una herramienta integrada en el ambiente de desarrollo \emph{Android
-Studio} y cuenta con varias sub herramientas que proveen informaciÛn
-en tiempo real sobre la aplicaciÛn, estos datos capturados se almacenan
+Studio} y cuenta con varias sub herramientas que proveen informaci√≥n
+en tiempo real sobre la aplicaci√≥n, estos datos capturados se almacenan
 en archivos para luego analizarlos en diferentes vistas. Pueden realizarse
 pruebas de rendimiento sobre dispositivos Android conectados directamente
-a la aplicaciÛn o simulados a travÈs de un emulador, en ambos casos
+a la aplicaci√≥n o simulados a trav√©s de un emulador, en ambos casos
 se debe tener en cuenta que \emph{Android Device Monitor }no puede
 ser utilizada. \emph{Android Monitor} utiliza la \ac{VM} del dispositivo
-o emulador dependiendo de la versiÛn del sistema Android. 
+o emulador dependiendo de la versi√≥n del sistema Android. 
 
-A travÈs de cinco vistas diferentes se accede a la informaciÛn sobre
-la aplicaciÛn evaluada. \emph{LogCat} muestra en detalle las excepciones
-emitidas por la aplicaciÛn, ˙til para detectar y eliminar errores
-que mejoren el funcionamiento de la aplicaciÛn. 
+A trav√©s de cinco vistas diferentes se accede a la informaci√≥n sobre
+la aplicaci√≥n evaluada. \emph{LogCat} muestra en detalle las excepciones
+emitidas por la aplicaci√≥n, √∫til para detectar y eliminar errores
+que mejoren el funcionamiento de la aplicaci√≥n. 
 
-Durante la ejecuciÛn de la aplicaciÛn tambiÈn hay seguimiento gr·fico
+Durante la ejecuci√≥n de la aplicaci√≥n tambi√©n hay seguimiento gr√°fico
 del consumo de memoria junto con los eventos de garbage collection
-(\emph{GC}) para detectar relaciones entre Èstos y los puntos de latencia,
-el porcentaje total de uso de \ac{CPU} (incluyendo todos los n˙cleos)
-que se utiliza en modo de usuario y modo kernel, una visiÛn general
+(\emph{GC}) para detectar relaciones entre √©stos y los puntos de latencia,
+el porcentaje total de uso de \ac{CPU} (incluyendo todos los n√∫cleos)
+que se utiliza en modo de usuario y modo kernel, una visi√≥n general
 de la performance de la interfaz incluyendo la cantidad de tiempo
 que le lleva al thread preparar, procesar y ejecutar los comandos
-gr·ficos, y finalmente, el seguimiento de cada solicitud de red que
+gr√°ficos, y finalmente, el seguimiento de cada solicitud de red que
 es realizada, al mismo tiempo que permite controlar la manera y el
 momento en que se llevan a cabo las transferencias de datos en la
-aplicaciÛn para optimizar el cÛdigo subyacente de manera apropiada. 
+aplicaci√≥n para optimizar el c√≥digo subyacente de manera apropiada. 
 
 Adicionalmente, la herramienta \emph{Android Monitor} provee funciones
-para examinar informaciÛn relevante sobre el estado de los servicios
+para examinar informaci√≥n relevante sobre el estado de los servicios
 del sistema, y permite realizar capturas y videos de la pantalla. 
 
 
 \subsection{Benchit\label{sub:Benchit}}
 
-\emph{Benchit} es una librerÌa Open Source implementada en lenguaje
+\emph{Benchit} es una librer√≠a Open Source implementada en lenguaje
 Java de Benchmarking para Android. El uso de esta herramienta se hace
-mediante un repositorio maven llamado \emph{JitPack} (accedido a travÈs
+mediante un repositorio maven llamado \emph{JitPack} (accedido a trav√©s
 de la URL \emph{https://jitpack.io}) el cual contiene el proyecto
 \emph{T-Spoon/Benchit}. JitPack puede utilizarse tanto en proyectos
 Android como en la \ac{VM} de Java y provee artefactos listos para
 su uso como archivos jar y aar. El proyecto ha sido configurado para
-ejecutarse a partir de la versiÛn 8 de Android. 
+ejecutarse a partir de la versi√≥n 8 de Android. 
 
-Benchit es un framework r·pido y sencillo ya que permite aÒadir benchmarks
-en ·reas de cÛdigo deseadas para determinar el tiempo o latencia de
-la operaciÛn. Una forma sencilla de utilizar esta librerÌa es a travÈs
-de iteraciones sobre una misma secciÛn de cÛdigo. De esta forma, con
-cada iteraciÛn, la herramienta va almacenando el tiempo de ejecuciÛn
-del cÛdigo (diferencia entre el tiempo de comienzo y tiempo de fin).
-Al tÈrmino de las iteraciones, se podr· observar el resultado en la
-herramienta LogCat mostrando tres propiedades: promedio, rango y desviaciÛn
-est·ndar. La herramienta, tambiÈn provee la posibilidad de realizar
-comparaciones entre todos o algunos benchmarks del cÛdigo mostrando
-los resultados de manera ordenada. Esta opciÛn es ˙til, por ejemplo,
-al momento de comparar el desempeÒo de varios algoritmos o sentencias
-que realicen la misma acciÛn de forma diferente. 
+Benchit es un framework r√°pido y sencillo ya que permite a√±adir benchmarks
+en √°reas de c√≥digo deseadas para determinar el tiempo o latencia de
+la operaci√≥n. Una forma sencilla de utilizar esta librer√≠a es a trav√©s
+de iteraciones sobre una misma secci√≥n de c√≥digo. De esta forma, con
+cada iteraci√≥n, la herramienta va almacenando el tiempo de ejecuci√≥n
+del c√≥digo (diferencia entre el tiempo de comienzo y tiempo de fin).
+Al t√©rmino de las iteraciones, se podr√° observar el resultado en la
+herramienta LogCat mostrando tres propiedades: promedio, rango y desviaci√≥n
+est√°ndar. La herramienta, tambi√©n provee la posibilidad de realizar
+comparaciones entre todos o algunos benchmarks del c√≥digo mostrando
+los resultados de manera ordenada. Esta opci√≥n es √∫til, por ejemplo,
+al momento de comparar el desempe√±o de varios algoritmos o sentencias
+que realicen la misma acci√≥n de forma diferente. 
 
 
 \subsection{Google Caliper \label{sub:Google-caliper}}
 
 \emph{Google Caliper} es un framework open source para implementar,
 ejecutar y visualizar resultados de microbenchmarks en aplicaciones
-Java, aunque brinda soporte para proyectos android accediendo a travÈs
-de la rama de la versiÛn 0.5 ya que la rama 1.0 no funciona correctamente
-en Android. Existen dos alternativas de acceso al proyecto a travÈs
+Java, aunque brinda soporte para proyectos android accediendo a trav√©s
+de la rama de la versi√≥n 0.5 ya que la rama 1.0 no funciona correctamente
+en Android. Existen dos alternativas de acceso al proyecto a trav√©s
 del repositorio maven o el repositorio git. Caliper permite obtener
-diferentes medidas del cÛdigo Java, principalmente microbenchmarks,
-pero tambiÈn tiene soporte para otros tipos de medidas incluyendo
+diferentes medidas del c√≥digo Java, principalmente microbenchmarks,
+pero tambi√©n tiene soporte para otros tipos de medidas incluyendo
 memoria disponible, ocupada, u otras medidas arbitrarias de dominio
-especÌfico como por ejemplo el radio de compresiÛn. 
+espec√≠fico como por ejemplo el radio de compresi√≥n. 
 
 
 \subsection{Java Microbenchmark Harness\label{sub:Java-Microbenchmark-Harness}}
 
 Java Microbenchmark Harness (\emph{JMH}), es una herramienta que facilita
-la implementaciÛn de benchmarks en forma correcta. El tÈrmino correcto
-hace alusiÛn a las optimizaciones que tanto la m·quina virtual como
-el hardware subyacente aplican sobre el cÛdigo durante la ejecuciÛn
-de los benchmarks y que no se aplican en sistemas de producciÛn real,
-infiriendo en conclusiones errÛneas sobre el rendimiento. \emph{JMH}
-fue diseÒada por los mismos desarrolladores de la m·quina virtual
-de Java posibilitando la construcciÛn, ejecuciÛn y an·lisis de benchmarks
-no sÛlo escritos en lenguaje Java sino en otros lenguajes soportados
-por la m·quina virtual. 
+la implementaci√≥n de benchmarks en forma correcta. El t√©rmino correcto
+hace alusi√≥n a las optimizaciones que tanto la m√°quina virtual como
+el hardware subyacente aplican sobre el c√≥digo durante la ejecuci√≥n
+de los benchmarks y que no se aplican en sistemas de producci√≥n real,
+infiriendo en conclusiones err√≥neas sobre el rendimiento. \emph{JMH}
+fue dise√±ada por los mismos desarrolladores de la m√°quina virtual
+de Java posibilitando la construcci√≥n, ejecuci√≥n y an√°lisis de benchmarks
+no s√≥lo escritos en lenguaje Java sino en otros lenguajes soportados
+por la m√°quina virtual. 
 
-La librerÌa \emph{JMH} ofrece cinco tipos de medidas sobre el cÛdigo
+La librer√≠a \emph{JMH} ofrece cinco tipos de medidas sobre el c√≥digo
 (modos) especificados por medio de anotaciones Java. 
 \begin{description}
-\item [{Throughput}] mide el n˙mero de operaciones por segundo, un estimativo
-sobre la cantidad de veces por segundo que el componente podrÌa ser
+\item [{Throughput}] mide el n√∫mero de operaciones por segundo, un estimativo
+sobre la cantidad de veces por segundo que el componente podr√≠a ser
 ejecutado. 
 \item [{Average~time}] mide el tiempo promedio que el componente requiere
 para ejecutarse.
-\item [{Sample~time}] mide el tiempo efectivo que el componente requiriÛ
-en ejecutarse, incluyendo tiempo m·ximo y mÌnimo. 
-\item [{Single~Shot}] mide el tiempo de ejecuciÛn de un simple mÈtodo
+\item [{Sample~time}] mide el tiempo efectivo que el componente requiri√≥
+en ejecutarse, incluyendo tiempo m√°ximo y m√≠nimo. 
+\item [{Single~Shot}] mide el tiempo de ejecuci√≥n de un simple m√©todo
 benchmark. 
 \item [{All}] computa y retorna todas las mediciones anteriores. 
 \end{description}
 
 \subsection{JMeter\label{sub:JMeter}}
 
-\emph{JMeter} es una herramienta Open Source diseÒada por Apache e
+\emph{JMeter} es una herramienta Open Source dise√±ada por Apache e
 implementada completamente en lenguaje Java para realizar pruebas
 de carga y medidas de rendimiento. Apache JMeter puede utilizar para
 simular un gran volumen de carga en un servidor o grupo de servidores
 y en la red y probar su resistencia o analizar el rendimiento general
-bajo diferentes tipos de carga. En un principio, fue diseÒada para
+bajo diferentes tipos de carga. En un principio, fue dise√±ada para
 realizar pruebas de rendimiento sobre aplicaciones Web pero luego
-ha sido extendida a otras funciones para cubrir diferentes categorÌas
-de testing, tal es el caso de los an·lisis de carga, de funcionalidad,
-desempeÒo, regresiÛn, entre otros. JMeter es una aplicaciÛn de escritorio
-con una interfaz gr·fica amigable para el usuario. Puede ser ejecutada
-bajo cualquier entorno o estaciÛn que acepte la m·quina virtual de
+ha sido extendida a otras funciones para cubrir diferentes categor√≠as
+de testing, tal es el caso de los an√°lisis de carga, de funcionalidad,
+desempe√±o, regresi√≥n, entre otros. JMeter es una aplicaci√≥n de escritorio
+con una interfaz gr√°fica amigable para el usuario. Puede ser ejecutada
+bajo cualquier entorno o estaci√≥n que acepte la m√°quina virtual de
 Java como es el caso de los sistemas operativos Windows, Linux y Mac.
 
-A grandes rasgos, la herramienta simula un grupo de usuarios que envÌan
-peticiones a un servidor y retorna un conjunto de estadÌsticas sobre
-el desempeÒo y funcionalidad por medio de gr·ficos, tablas, etc, tanto
-sobre recursos est·ticos y din·micos. Al tratarse de un framework
-basado en java, el ˙nico requerimiento es la instalaciÛn de la herramienta
-\ac{JDK} a partir de la versiÛn 6. 
+A grandes rasgos, la herramienta simula un grupo de usuarios que env√≠an
+peticiones a un servidor y retorna un conjunto de estad√≠sticas sobre
+el desempe√±o y funcionalidad por medio de gr√°ficos, tablas, etc, tanto
+sobre recursos est√°ticos y din√°micos. Al tratarse de un framework
+basado en java, el √∫nico requerimiento es la instalaci√≥n de la herramienta
+\ac{JDK} a partir de la versi√≥n 6. 
 
 El cuadro comparativo \ref{tab:benchmarks-tools} resalta las propiedades
 o medidas que pueden realizar las herramientas antes mencionadas y
@@ -159,112 +159,113 @@ los componentes sobre los cuales realizan las mediciones.
 \includegraphics[scale=0.55]{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/benchmarks_tools}
 \par\end{centering}
 
-\caption{InformaciÛn resumida de las herramientas de benchmarking para Android.}
+\caption{Informaci√≥n resumida de herramientas de pruebas de performance para
+aplicaciones Android y servicios Web.}
 \label{tab:benchmarks-tools}
 \end{table}
 
 
 
-\section{PredicciÛn de propiedades no funcionales con aprendizaje de m·quina
+\section{Predicci√≥n de propiedades no funcionales con aprendizaje de m√°quina
 \label{sec:Predicci=0000F3n-de-propiedades-no-funcionales-con-aprendizaje-de-m=0000E1quina}}
 
-La predicciÛn de propiedades no funcionales ha contribuido a los arquitectos
-de software en la evaluaciÛn de sus sistemas durante la etapa de diseÒo,
+La predicci√≥n de propiedades no funcionales ha contribuido a los arquitectos
+de software en la evaluaci√≥n de sus sistemas durante la etapa de dise√±o,
 y guiar las decisiones respecto a los componentes que deben integrarse
 a la arquitectura del sistema de acuerdo a los requerimientos de calidad
-esperados. Diferentes trabajos han recurrido al uso de tÈcnicas de
-aprendizaje de m·quina para construir modelos de predicciÛn de performance
-y otros atributos de calidad din·micos. Hutter, Xu y Hoos \citep{Hutter2014}se
-han referido a estos modelos como modelos empÌricos de performance
-(\emph{EPM} por sus siglas en inglÈs) ya que requieren la recolecciÛn
-de mediciones empÌricas sobre los componentes. La principal aplicaciÛn
-de estos modelos probablemente es el problema de selecciÛn de algoritmos,
+esperados. Diferentes trabajos han recurrido al uso de t√©cnicas de
+aprendizaje de m√°quina para construir modelos de predicci√≥n de performance
+y otros atributos de calidad din√°micos. Hutter, Xu y Hoos \citep{Hutter2014}se
+han referido a estos modelos como modelos emp√≠ricos de performance
+(\emph{EPM} por sus siglas en ingl√©s) ya que requieren la recolecci√≥n
+de mediciones emp√≠ricas sobre los componentes. La principal aplicaci√≥n
+de estos modelos probablemente es el problema de selecci√≥n de algoritmos,
 introducido en 1976 por John R. Rice \citep{Rice1976}. Este problema
-consiste en seleccionar el algoritmo, o configuraciÛn de algoritmo,
+consiste en seleccionar el algoritmo, o configuraci√≥n de algoritmo,
 de un portafolio de alternativas que minimice el tiempo de respuesta,
-seg˙n la instancia de datos de entrada. La predicciÛn del tiempo de
-respuesta ha sido abordada con Èxito usando tÈcnicas de aprendizaje
-supervisado, principalmente de regresiÛn \citep{Hutter2014}. En estos
-trabajos, los datos empÌricos de entrenamiento son obtenidos en contextos
-de ejecuciÛn controlados, para enfocarse en la correlaciÛn entre la
-propiedad a predecir y las propiedades de los par·metros de entrada
-del componente o algoritmo. Una limitaciÛn de estos modelos es que
-no generalizan la predicciÛn de las propiedades de performance al
-contexto de ejecuciÛn, es decir, no consideran caracterÌsticas del
-dispositivo y el ambiente de ejecuciÛn que influyen sobre el desempeÒo
-del componente, como su capacidad de cÛmputo y la disponibilidad de
+seg√∫n la instancia de datos de entrada. La predicci√≥n del tiempo de
+respuesta ha sido abordada con √©xito usando t√©cnicas de aprendizaje
+supervisado, principalmente de regresi√≥n \citep{Hutter2014}. En estos
+trabajos, los datos emp√≠ricos de entrenamiento son obtenidos en contextos
+de ejecuci√≥n controlados, para enfocarse en la correlaci√≥n entre la
+propiedad a predecir y las propiedades de los par√°metros de entrada
+del componente o algoritmo. Una limitaci√≥n de estos modelos es que
+no generalizan la predicci√≥n de las propiedades de performance al
+contexto de ejecuci√≥n, es decir, no consideran caracter√≠sticas del
+dispositivo y el ambiente de ejecuci√≥n que influyen sobre el desempe√±o
+del componente, como su capacidad de c√≥mputo y la disponibilidad de
 recursos. 
 
-Este capÌtulo describe trabajos que inducen al desarrollo de una herramienta
-capaz de generalizar cualquier caracterÌstica propia del componente
-de ejecuciÛn como asÌ tambiÈn del entorno donde se ejecuta para la
-aplicaciÛn de la tÈcnica de aprendizaje de m·quina que resulte la
-m·s adecuada para la predicciÛn. Est· organizado de la siguiente manera:
-la secciÛn \ref{sub:Predicci=0000F3n-de-precisi=0000F3n} presenta
-tres estudios sobre algoritmos de optimizaciÛn que abarcan la predicciÛn
-de otro de los indicadores m·s importantes, como lo es la precisiÛn
-y en la secciÛn \ref{sub:Predicci=0000F3n-sobre-Servicios} presenta
-dos estudios de propiedades din·micas sobre Servicios Web. 
+Este cap√≠tulo describe trabajos que inducen al desarrollo de una herramienta
+capaz de generalizar cualquier caracter√≠stica propia del componente
+de ejecuci√≥n como as√≠ tambi√©n del entorno donde se ejecuta para la
+aplicaci√≥n de la t√©cnica de aprendizaje de m√°quina que resulte la
+m√°s adecuada para la predicci√≥n. Est√° organizado de la siguiente manera:
+la secci√≥n \ref{sub:Predicci=0000F3n-de-precisi=0000F3n} presenta
+tres estudios sobre algoritmos de optimizaci√≥n que abarcan la predicci√≥n
+de otro de los indicadores m√°s importantes, como lo es la precisi√≥n
+y en la secci√≥n \ref{sub:Predicci=0000F3n-sobre-Servicios} presenta
+dos estudios de propiedades din√°micas sobre Servicios Web. 
 
 
-\subsection{PredicciÛn de precisiÛn sobre algoritmos de optimizaciÛn. \label{sub:Predicci=0000F3n-de-precisi=0000F3n}}
+\subsection{Predicci√≥n de precisi√≥n sobre algoritmos de optimizaci√≥n. \label{sub:Predicci=0000F3n-de-precisi=0000F3n}}
 
-Los modelos de predicciÛn no sÛlo se utilizan para estimar el tiempo
-de respuesta del desempeÒo de los componentes, sino tambiÈn para estimar
+Los modelos de predicci√≥n no s√≥lo se utilizan para estimar el tiempo
+de respuesta del desempe√±o de los componentes, sino tambi√©n para estimar
 otras propiedades. Mark Roberts, Adele Howe y Landon Flom \citep{Roberts07learnedmodels}
-han construido dos modelos para la predicciÛn del tiempo de respuesta
-y para la probabilidad de Èxito de diferentes algoritmos de planeamiento
-utilizando tÈcnicas de aprendizaje de m·quina incluidas en la librerÌa
+han construido dos modelos para la predicci√≥n del tiempo de respuesta
+y para la probabilidad de √©xito de diferentes algoritmos de planeamiento
+utilizando t√©cnicas de aprendizaje de m√°quina incluidas en la librer√≠a
 Weka. Para el aprendizaje fueron utilizados 4726 benchmarks, problemas
 o instancias para ejecutarse sobre 28 algoritmos de planeamiento conocidos.
 Por cada algoritmo y cada problema se registra si un plan fue encontrado
-(Èxito) a travÈs de los valores verdadero o falso y se registra el
-tiempo (en segundos) requerido en completar la ejecuciÛn. Ya que cada
+(√©xito) a trav√©s de los valores verdadero o falso y se registra el
+tiempo (en segundos) requerido en completar la ejecuci√≥n. Ya que cada
 algoritmo define su propia forma en que un resultado es exitoso o
-no, de forma autom·tica obtienen las mÈtricas de precisiÛn porcentuales
+no, de forma autom√°tica obtienen las m√©tricas de precisi√≥n porcentuales
 sobre la salida. 
 
 Otros autores (Mersmann; Bischl; Trautmann; Wagner; Bossek y Neumann
-\citep{Mersmann_anovel}) predicen la optimalidad o razÛn de aproximaciÛn
-de algoritmos para el problema del viajante utilizando una tÈcnica
-de regresiÛn no lineal llamada \emph{MARS}, por sus siglas en inglÈs.
-El modelo \emph{MARS} se aplicÛ con Èxito para predecir la calidad
-de aproximaciÛn del algoritmo de b˙squeda local llamado 2-opt independiente
-del tamaÒo de la instancia sobre la base de las caracterÌsticas de
-los casos generados con una precisiÛn muy alta. Se cree firmemente
-que debiera ser sencillo aplicar la misma metodologÌa a otros algoritmos
+\citep{Mersmann_anovel}) predicen la optimalidad o raz√≥n de aproximaci√≥n
+de algoritmos para el problema del viajante utilizando una t√©cnica
+de regresi√≥n no lineal llamada \emph{MARS}, por sus siglas en ingl√©s.
+El modelo \emph{MARS} se aplic√≥ con √©xito para predecir la calidad
+de aproximaci√≥n del algoritmo de b√∫squeda local llamado 2-opt independiente
+del tama√±o de la instancia sobre la base de las caracter√≠sticas de
+los casos generados con una precisi√≥n muy alta. Se cree firmemente
+que debiera ser sencillo aplicar la misma metodolog√≠a a otros algoritmos
 y utilizar estos modelos para derivar una estrategia para el problema
-de selecciÛn de algoritmos en el contexto de los problemas \ac{TSP}.
+de selecci√≥n de algoritmos en el contexto de los problemas \ac{TSP}.
 
 Finalmente, el trabajo desarrollado por los autores Beveridge, Givens,
-Phillips y Draper \citep{Beveridge2009} se analiza la precisiÛn de
-tres componentes diferentes para el reconocimiento de rostros en im·genes,
-utilizando una tÈcnica de regresiÛn lineal denominada GLMM, por Generalized
+Phillips y Draper \citep{Beveridge2009} se analiza la precisi√≥n de
+tres componentes diferentes para el reconocimiento de rostros en im√°genes,
+utilizando una t√©cnica de regresi√≥n lineal denominada GLMM, por Generalized
 Linear Mixed Models. 
 
 
-\subsection{PredicciÛn sobre Servicios Web \label{sub:Predicci=0000F3n-sobre-Servicios}}
+\subsection{Predicci√≥n sobre Servicios Web \label{sub:Predicci=0000F3n-sobre-Servicios}}
 
-La predicciÛn de propiedades din·micas de servicios Web, como su tiempo
-de respuesta, throughput y probabilidad de fallos, es m·s compleja
+La predicci√≥n de propiedades din√°micas de servicios Web, como su tiempo
+de respuesta, throughput y probabilidad de fallos, es m√°s compleja
 de abordar con respecto a componentes locales ya que depende del estado
 de la infraestructura de red y el proveedor del servicio, que no se
 puede monitorear desde el dispositivo cliente. Un enfoque ingenioso
 para abordar este problema fue propuesto en el articulo de Zheng\citep{Zheng2013}.
 En este trabajo, los autores se basan en la premisa de que las propiedades
-de performance de los servicios Web varÌan respecto a caracterÌsticas
-del contexto como la ubicaciÛn geogr·fica y el momento del dÌa y la
+de performance de los servicios Web var√≠an respecto a caracter√≠sticas
+del contexto como la ubicaci√≥n geogr√°fica y el momento del d√≠a y la
 semana en el que se realiza una solicitud al servicio. De esta forma,
-recolectan la informaciÛn del consumo de servicios de m˙ltiples clientes
-alrededor del mundo para generalizar modelos de predicciÛn. Este enfoque
-es conocido como predicciÛn colaborativa ya que los datos empÌricos
-de entrenamiento son brindados por m˙ltiples nodos de manera distribuida.
-Los autores llevaron a cabo un experimento a gran escala que involucrÛ
-m·s de 30 millones de invocaciones a servicios Web en m·s de 80 paÌses,
-por usuarios distribuidos en m·s de 30 paÌses. La observaciÛn experimental
+recolectan la informaci√≥n del consumo de servicios de m√∫ltiples clientes
+alrededor del mundo para generalizar modelos de predicci√≥n. Este enfoque
+es conocido como predicci√≥n colaborativa ya que los datos emp√≠ricos
+de entrenamiento son brindados por m√∫ltiples nodos de manera distribuida.
+Los autores llevaron a cabo un experimento a gran escala que involucr√≥
+m√°s de 30 millones de invocaciones a servicios Web en m√°s de 80 pa√≠ses,
+por usuarios distribuidos en m√°s de 30 pa√≠ses. La observaci√≥n experimental
 indica que diferentes usuarios pueden tener diferentes experiencias
-de uso sobre el mismo servicio, influenciados por la conexiÛn de red
-y los ambientes heterogÈneos entre usuarios y proveedores. Los datos
-se encuentran disponibles p˙blicamente y han sido utilizados en varios
-trabajos para la construcciÛn y comparaciÛn de modelos de performance
-con diferentes tÈcnicas de aprendizaje de m·quina \citep{Albu2013}\citep{Kumar2015}. 
+de uso sobre el mismo servicio, influenciados por la conexi√≥n de red
+y los ambientes heterog√©neos entre usuarios y proveedores. Los datos
+se encuentran disponibles p√∫blicamente y han sido utilizados en varios
+trabajos para la construcci√≥n y comparaci√≥n de modelos de performance
+con diferentes t√©cnicas de aprendizaje de m√°quina \citep{Albu2013}\citep{Kumar2015}. 

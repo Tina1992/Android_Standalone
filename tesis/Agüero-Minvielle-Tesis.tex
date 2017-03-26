@@ -1,26 +1,20 @@
 %% LyX 2.1.4 created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
 \documentclass[oneside,american,spanish,english]{book}
-\usepackage[LGR,T1]{fontenc}
-\usepackage[latin9]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{luainputenc}
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
+\usepackage{color}
 \usepackage{float}
 \usepackage{calc}
-\usepackage{textcomp}
 \usepackage{graphicx}
-\usepackage{esint}
 \usepackage[numbers]{natbib}
 \usepackage{subscript}
 
 \makeatletter
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
-\DeclareRobustCommand{\greektext}{%
-  \fontencoding{LGR}\selectfont\def\encodingdefault{LGR}}
-\DeclareRobustCommand{\textgreek}[1]{\leavevmode{\greektext #1}}
-\DeclareFontEncoding{LGR}{}{}
-\DeclareTextSymbol{\~}{LGR}{126}
 %% Because html converters don't know tabularnewline
 \providecommand{\tabularnewline}{\\}
 
@@ -48,6 +42,7 @@
 \usepackage{algpseudocode}
 \usepackage[Lenny]{fncychap}
 \usepackage{fancyhdr}
+\usepackage{graphicx}
 \lstloadlanguages{Java}
 \restylefloat{algorithm}
 \floatstyle{plain}
@@ -61,7 +56,7 @@
 \usepackage{listings}
 \addto\captionsamerican{\renewcommand{\lstlistingname}{Listing}}
 \addto\captionsenglish{\renewcommand{\lstlistingname}{Listing}}
-\addto\captionsspanish{\renewcommand{\lstlistingname}{Listado de cÛdigo}}
+\addto\captionsspanish{\renewcommand{\lstlistingname}{Listado de c√≥digo}}
 \renewcommand{\lstlistingname}{Listing}
 
 \begin{document}
@@ -70,8 +65,8 @@
 \selectlanguage{spanish}%
 \begin{center}
 Universidad Nacional del Centro de la Provincia De Buenos Aires\\
-Facultad de Ciencias Exactas - Departamento de ComputaciÛn y Sistemas\\
-IngenierÌa de Sistemas
+Facultad de Ciencias Exactas - Departamento de Computaci√≥n y Sistemas\\
+Ingenier√≠a de Sistemas
 \par\end{center}
 
 \begin{center}
@@ -82,14 +77,14 @@ IngenierÌa de Sistemas
 
 
 \begin{center}
-{\huge{}TÈcnicas de aprendizaje para predecir atributos no funcionales
+{\huge{}T√©cnicas de aprendizaje para predecir atributos no funcionales
 en componentes de aplicaciones Android}\vspace{1cm}
 
 \par\end{center}
 
 \begin{center}
 {\large{}por}\\
-{\Large{}Ag¸ero, Silvana}
+{\Large{}Ag√ºero, Silvana}
 \par\end{center}{\Large \par}
 
 \begin{center}
@@ -112,7 +107,7 @@ en componentes de aplicaciones Android}\vspace{1cm}
 
 \noindent \begin{center}
 Trabajo final de carrera presentado como requisito parcial\\
-para optar por el tÌtulo de\\
+para optar por el t√≠tulo de\\
 Ingeniera de Sistemas
 \par\end{center}
 
@@ -129,46 +124,41 @@ Ingeniera de Sistemas
 \addcontentsline{toc}{chapter}{Resumen}
 
 
+
+
 \chapter*{Resumen}
 
-Durante los ˙ltimos aÒos el desarrollo de aplicaciones en sistemas
-Android ha ido creciendo exponencialmente debido a la gran capacidad
-de cÛmputo que han adquirido los dispositivos mÛviles, haciendo que
-la reutilizaciÛn de software mediante la integraciÛn de componentes
-de terceros se torne una pr·ctica muy com˙n. De este modo la misma
-funcionalidad suele ser ofrecida por componentes alternativos que
-difieren en sus propiedades no-funcionales o atributos de calidad,
-componentes con sus propias caracterÌsticas, limitaciones y prestaciones,
-simplemente \emph{cajas negras }a la vista del desarrollador. Por
-lo tanto, la elecciÛn del servicio m·s adecuado para ejecutarse en
-un determinado contexto, no es tarea sencilla. 
+Durante los √∫ltimos a√±os el desarrollo de aplicaciones mobiles ha
+ido creciendo exponencialmente debido a la proliferaci√≥n de los dispositivos
+mobiles y el aumento de su capacidad de c√≥mputo, haciendo que la reutilizaci√≥n
+de software mediante la integraci√≥n de componentes de terceros se
+torne una pr√°ctica muy com√∫n. De este modo la misma funcionalidad
+suele ser ofrecida por componentes alternativos que difieren en sus
+propiedades no-funcionales o atributos de calidad. Por lo tanto, la
+elecci√≥n del servicio m√°s adecuado para ejecutarse en un determinado
+contexto, no es tarea sencilla. 
 
-Las limitaciones de hardware de los dispositivos mÛviles hace incapaz
-la ejecuciÛn o prueba de todos los servicios para determinar, luego,
-el m·s adecuado de acuerdo a su calidad de servicio y a la funcionalidad
-requerida. En este punto, es donde toma importancia el proceso de
-aprendizaje autom·tico. 
+Por razones pr√°cticas es costosa la ejecuci√≥n o prueba de todos los
+servicios para determinar, luego, el m√°s adecuado de acuerdo a su
+calidad de servicio y a la funcionalidad requerida. En este punto,
+es donde toma importancia definir un proceso para la medici√≥n y predicci√≥n
+de las propiedades no-funcionales. 
 
-A travÈs de la aplicaciÛn de modelos predictivos basados en la experiencia,
-es posible determinar el servicio que m·s satisface las condiciones
+A trav√©s de la aplicaci√≥n de modelos predictivos basados en la experiencia,
+es posible determinar el servicio que m√°s satisface las condiciones
 del entorno, en base a un conjunto de restricciones del contexto de
-ejecuciÛn, a un conjunto de caracterÌsticas de entrada y un conjunto
+ejecuci√≥n, a un conjunto de caracter√≠sticas de entrada y un conjunto
 de servicios que ofrecen la misma funcionalidad. Ya que estas condiciones
-o necesidades varÌan, el objetivo del aprendizaje de m·quina es el
-desarrollo de sistemas que puedan cambiar su comportamiento (decisiÛn)
-de manera autÛnoma basados en su experiencia (informaciÛn generalizada).
-El aprendizaje de m·quina est· principalmente centrado en el estudio
-de la complejidad computacional y enfocado en el diseÒo de soluciones
-factibles a esos problemas. 
+o necesidades var√≠an, el objetivo del aprendizaje de m√°quina es el
+desarrollo de sistemas que puedan cambiar su comportamiento (decisi√≥n)
+de manera aut√≥noma basados en su experiencia (informaci√≥n generalizada).
 
-El presente trabajo presenta un enfoque basado en tres fases complementarias
-y se proponen dos herramientas diseÒadas para cumplir con los objetivos
-de las dos primeras fases. De este modo, se expone una herramienta
-de mediciÛn que facilita la obtenciÛn de indicadores de propiedades
-de componentes Android y otra herramienta que propone diferentes tÈcnicas
-de regresiÛn sobre las mediciones obtenidas previamente. AsÌ, se logra
-construir modelos predictivos sobre alguna propiedad de interÈs de
-alg˙n componente especÌfico. 
+Se proponen dos herramientas para asistir la aplicaci√≥n del enfoque.
+Una de ellas facilita la obtenci√≥n de indicadores de propiedades de
+componentes Android y la otra herramienta permite utilizar diferentes
+t√©cnicas de regresi√≥n sobre las mediciones obtenidas previamente.
+As√≠, se logra construir modelos predictivos sobre alguna propiedad
+de inter√©s de alg√∫n componente espec√≠fico. 
 
 \selectlanguage{spanish}%
 \newpage{}\foreignlanguage{american}{\addcontentsline{toc}{chapter}{Agradecimientos}}
@@ -180,7 +170,7 @@ alg˙n componente especÌfico.
 
 \tableofcontents{}
 
-\newpage{}\addcontentsline{toc}{chapter}{Õndice de Figuras}
+\newpage{}\addcontentsline{toc}{chapter}{√çndice de Figuras}
 
 \listoffigures
 
@@ -188,7 +178,7 @@ alg˙n componente especÌfico.
 \selectlanguage{american}%
 \newpage{}
 
-\addcontentsline{toc}{chapter}{Õndice de Cuadros}
+\addcontentsline{toc}{chapter}{√çndice de Cuadros}
 
 \selectlanguage{spanish}%
 \listoftables
@@ -281,7 +271,7 @@ alg˙n componente especÌfico.
 
 \selectlanguage{spanish}%
 \bibliographystyle{plainnat}
-\addcontentsline{toc}{chapter}{\bibname}\bibliography{Bibliograf-Ìa}
+\addcontentsline{toc}{chapter}{\bibname}\bibliography{Bibliograf-√≠a}
 
 
 \newpage{}

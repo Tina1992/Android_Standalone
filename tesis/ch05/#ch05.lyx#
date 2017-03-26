@@ -2426,31 +2426,6 @@ a de los modelos estudiados funciona de forma eficiente para este problema.
 \end_layout
 
 \begin_layout Standard
-De este modo, en la figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:lineas-matrix-response"
-
-\end_inset
-
-se presentan las lineas de predicción para el modelo menos eficiente en
- cuanto a la correlación de los datos, el 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{SGD}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -2471,13 +2446,6 @@ status open
 
 \begin_layout Plain Layout
 Lineas de predicción del SGD para el atributo response time
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:lineas-matrix-response"
-
-\end_inset
-
-
 \end_layout
 
 \end_inset

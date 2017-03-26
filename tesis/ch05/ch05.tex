@@ -1,201 +1,136 @@
-%% LyX 2.1.4 created this file.  For more info, see http://www.lyx.org/.
-%% Do not edit unless you really know what you are doing.
-\documentclass[oneside,spanish]{book}
-\usepackage[T1]{fontenc}
-\usepackage[latin9]{inputenc}
-\setcounter{secnumdepth}{3}
-\setcounter{tocdepth}{3}
-\usepackage{float}
-\usepackage{graphicx}
 
-\makeatletter
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
-\newenvironment{lyxlist}[1]
-{\begin{list}{}
-{\settowidth{\labelwidth}{#1}
- \setlength{\leftmargin}{\labelwidth}
- \addtolength{\leftmargin}{\labelsep}
- \renewcommand{\makelabel}[1]{##1\hfil}}}
-{\end{list}}
+\chapter{Evaluaci√≥n\label{chap:Evaluaci=0000F3n}}
 
-\makeatother
+En este capitulo se presenta la evaluaci√≥n del enfoque propuesto con
+el objetivo de analizar el desempe√±o de las t√©cnicas de aprendizaje
+de maquina para predecir propiedades no-funcionales en dispositivos
+m√≥viles. Con este fin, se crearon tres diferentes casos de estudio
+sobre los que se aplica y analiza el enfoque.
 
-\usepackage{babel}
-\addto\shorthandsspanish{\spanishdeactivate{~<>}}
-
-\begin{document}
-
-\chapter{EvaluaciÛn\label{chap:Evaluaci=0000F3n}}
-
-En este capÌtulo se describe el procedimiento de evaluaciÛn que se
-lleva a cabo y una descripciÛn completa sobre los escenarios considerados
-y cada uno de los dataset involucrados. TambiÈn, se presentan los
-resultados obtenidos junto con las inferencias y relaciones que se
-han determinado entre las tÈcnicas y el contexto en el que se aplican. 
-
-El capÌtulo se organiza de la siguiente manera: en la secciÛn \ref{sec:Metodolog=0000EDa-de-Evaluaci=0000F3n}
-se detalla la metodologÌa de evaluaciÛn propuesta para analizar la
-eficacia de los modelos de predicciÛn, en esta se incluye informaciÛn
-complementaria y particular que fue tomada en cuenta para llevar a
-cabo la evaluaciÛn mediante sub-secciones individuales, de esta manera
-se especifican, las mÈtricas usadas, el formato de los resultados
-obtenidos, la determinaciÛn empleada para la configuraciÛn de los
-par·metros m·s fundamentales de cada tÈcnica y las caracterÌsticas
-de los dispositivos mÛviles usados para las pruebas. 
-
-En la secciÛn \ref{sec:Escenarios} se presentan los escenarios de
-estudio considerados, brindando una descripciÛn detallada de los dataset
-involucrados junto a gr·ficas y an·lisis sobre la distribuciÛn de
-los datos, con el fin de comprender mejor el desempeÒo de las tecnicas
-de regresion analizadas. Los modelos de predicciÛn obtenidos son expuestos
-en la secciÛn \ref{sec:Resultados-y-discusi=0000F3n} desglosados
-por escenario para analizar cÛmo impacta en el desempeÒo de las tÈcnicas,
-las particularidades de cada dominio. Finalmente en la secciÛn \ref{sec:Conclusiones}
-se obtienen las conclusiones del capÌtulo. 
+El cap√≠tulo se organiza de la siguiente manera: en la secci√≥n \ref{sec:Metodolog=0000EDa-de-Evaluaci=0000F3n}
+se detalla la metodolog√≠a de evaluaci√≥n propuesta para analizar la
+eficacia de los modelos de predicci√≥n, se incluye informaci√≥n complementaria
+sobre las m√©tricas usadas, el formato de los resultados obtenidos,
+los criterios empleados para la configuraci√≥n de los par√°metros de
+cada t√©cnica y las caracter√≠sticas de los dispositivos m√≥viles usados
+para las pruebas. En la secci√≥n \ref{sec:Escenarios} se presentan
+los escenarios de estudio considerados, brindando una descripci√≥n
+de los dataset obtenidos junto a gr√°ficas y an√°lisis sobre la distribuci√≥n
+de los datos, con el fin de comprender mejor el desempe√±o de las t√©cnicas
+de regresi√≥n analizadas. Los resultados obtenidos son expuestos en
+la secci√≥n \ref{sec:Resultados-y-discusi=0000F3n} desglosados por
+escenario para analizar el desempe√±o de las t√©cnicas sobre cada dominio.
+Finalmente en la secci√≥n \ref{sec:Conclusiones} se presentan las
+conclusiones del cap√≠tulo. 
 
 
-\section{MetodologÌa de EvaluaciÛn\label{sec:Metodolog=0000EDa-de-Evaluaci=0000F3n}}
+\section{Metodolog√≠a de Evaluaci√≥n\label{sec:Metodolog=0000EDa-de-Evaluaci=0000F3n}}
 
-Existen diversas formas que permiten evaluar la eficacia del clasificador.
-La calidad de los modelos ser· evaluada a travÈs de seis mÈtricas
-de regresiÛn que representan de forma distinta el error de predicciÛn.
-AsÌ mismo, para un an·lisis m·s profundo sobre las distintas tÈcnicas
-y su desempeÒo se usaron cuatro escenarios o contextos dispares entre
-sÌ para determinar, de ser posible, las tÈcnicas que mejor se adecuan
+La calidad de los modelos ser√° evaluada a trav√©s de seis m√©tricas
+de regresi√≥n que representan de forma distinta el error de predicci√≥n.
+As√≠ mismo, para un an√°lisis m√°s profundo sobre las distintas t√©cnicas
+y su desempe√±o se usaron cuatro escenarios o contextos dispares entre
+s√≠ para determinar, de ser posible, las t√©cnicas que mejor se adecuan
 a un escenario (por su naturaleza), o por el contrario, no aplican
 adecuadamente ante un escenario particular. 
 
-Cada modelo es definido por una tÈcnica \emph{X} (regresiÛn lineal,
+Cada modelo es definido por una t√©cnica \emph{X} (regresi√≥n lineal,
 red neuronal, etc.) que se aplica para predecir una propiedad \emph{Y},
-(tiempo de respuesta y precisiÛn) de un componente \emph{Z}. Cada
-uno de los contextos empleados incluyen tres o cuatro datasets, en
-algunos casos para individualizar el an·lisis hacia los componentes
-especÌficos, en otros, para separar las pruebas realizadas en mÛviles
-distintos. 
+(tiempo de respuesta y precisi√≥n) de un componente \emph{Z}. 
 
-En todo el conjunto de dataset, se aÒadiÛ el tiempo de respuesta como
-propiedad a predecir, y sÛlo en aquellos donde el contexto lo permitÌa
-se incorporÛ como propiedad la optimalidad o precisiÛn en el resultado
-arrojado por el componente. 
+En todos los escenarios se considera el tiempo de respuesta como propiedad
+a predecir, y s√≥lo en aquellos donde el contexto lo permit√≠a se incorpor√≥
+como propiedad la optimad o precisi√≥n en el resultado arrojado por
+el componente. 
 
 
-\subsection{MÈtricas de evaluaciÛn\label{subsec:M=0000E9tricas-de-evaluaci=0000F3n}}
+\subsection{M√©tricas de evaluaci√≥n\label{subsec:M=0000E9tricas-de-evaluaci=0000F3n}}
 
-Tras construir una serie de modelos de regresiÛn diferentes, existe
-una gran cantidad de criterios por los cuales pueden ser evaluados
-y comparados. Todos los indicadores comparan los valores reales con
-sus estimaciones, pero lo hacen de una manera ligeramente diferente. 
+Existe una gran cantidad de m√©tricas por las cuales pueden evaluarse
+y compararse los modelos de regresi√≥n. Todos los indicadores comparan
+los valores reales con sus estimaciones, pero lo hacen de una manera
+ligeramente diferente. 
 
 \emph{\ac{MAE}} representa el promedio del error absoluto (diferencia
-entre los valores predichos y los observados), e indica cu·n grande
-es el error que puede esperarse de la predicciÛn. Al tratarse de una
-mÈtrica basada en el error medio puede subestimar el impacto de errores
-grandes pero infrecuentes. Si el an·lisis se centra demasiado en la
-media arrojar· conclusiones precipitadas, por lo tanto para ajustar
-errores grandes y raros, se calcula el error cuadr·tico medio (\ac{RMSE}).
+entre los valores predichos y los observados), e indica cu√°n grande
+es el error que puede esperarse de la predicci√≥n. Al tratarse de una
+m√©trica basada en el error medio puede subestimar el impacto de errores
+grandes pero infrecuentes. Si el an√°lisis se centra demasiado en la
+media arrojar√° conclusiones precipitadas, por lo tanto para ajustar
+errores grandes y raros, se calcula el error cuadr√°tico medio (\ac{RMSE}).
 Mediante la cuadratura de los errores en lugar de la media y luego
-tomar la raÌz cuadrada de la media, se llega a una medida del tamaÒo
-del error que da m·s peso a los errores grandes e infrecuentes que
+tomar la ra√≠z cuadrada de la media, se llega a una medida del tama√±o
+del error que da m√°s peso a los errores grandes e infrecuentes que
 la media. 
 
-La comparaciÛn entre las mÈtricas \emph{\ac{RMSE} }y \emph{\ac{MAE}
-}puede ser ˙til para determinar si un dataset contiene errores significativos
+La comparaci√≥n entre las m√©tricas \emph{\ac{RMSE} }y \emph{\ac{MAE}
+}puede ser √∫til para determinar si un dataset contiene errores significativos
 y poco frecuentes, cuanto mayor sea la diferencia entre ambos indicadores,
-m·s inconsistente es el tamaÒo del error.
+m√°s inconsistente es el tama√±o del error.
 
-El coeficiente de correlaciÛn (\emph{CC}) es analizado en conjunto
-con el indicador \emph{\ac{RMSE}} ya que existe una estrecha relaciÛn
+El coeficiente de correlaci√≥n (\ac{CC}) es analizado en conjunto
+con el indicador \emph{\ac{RMSE}} ya que existe una estrecha relaci√≥n
 entre ambos. Por ejemplo, si \emph{\ac{CC}} es 1, \emph{\ac{RMSE}}
-debe ser 0, ya que todos los puntos se encuentran en la lÌnea de la
-funciÛn de regresiÛn; cuanto m·s cercano sea el valor de \emph{\ac{CC}}
-a 1 o -1, m·s prÛximos son los valores observados a la lÌnea de predicciÛn,
-y por tanto menor ser· el error absoluto reflejado en \emph{\ac{RMSE}}. 
+debe ser 0, ya que todos los puntos se encuentran en la l√≠nea de la
+funci√≥n de regresi√≥n; cuanto m√°s cercano sea el valor de \emph{\ac{CC}}
+a 1 o -1, m√°s pr√≥ximos son los valores observados a la l√≠nea de predicci√≥n,
+y por tanto menor ser√° el error absoluto reflejado en \emph{\ac{RMSE}}. 
 
 Por otro lado, complementariamente se utilizan indicadores relativos
 en lugar de absolutos como los descriptos anteriormente, ya que ponderan
-el error de predicciÛn respecto a la variaciÛn est·ndar de las observaciones.
+el error de predicci√≥n respecto a la variaci√≥n est√°ndar de las observaciones.
 De esta manera se obtienen indicadores \emph{\ac{RAE}} y \emph{\ac{RRSE}}
-de valores entre 0 y 1 para obtener una visiÛn de las observaciones
+de valores entre 0 y 1 para obtener una visi√≥n de las observaciones
 respecto a la media. 
 
 
-\subsection{Formato de los resultados\label{subsec:Formato-de-los}}
+\subsection{Par√°metros de configuraci√≥n de las t√©cnicas\label{subsec:Par=0000E1metros-de-configuraci=0000F3nde}}
 
-La herramienta devuelve como resultado un archivo en formato TXT almacenando,
-por un lado, los valores resultantes de los par·metros fundamentales
-de cada tÈcnica y, por otro lado, la descripciÛn del modelo construido.
-La herramienta genera un archivo por cada tÈcnica elegida por el usuario
-para optimizar, en la direcciÛn especificada en la configuraciÛn bajo
-el nombre de la tÈcnica. La figura \ref{fig:linear-regression-result}
-permite una descripciÛn gr·fica de lo expresado anteriormente, donde
-detalla A) los par·metros, B) Nombre del modelo y C) la funciÛn definida
-para el atributo de predicciÛn. 
+La optimizaci√≥n y posterior obtenci√≥n de un modelo de calidad tiene
+lugar a partir del establecimiento de diversos par√°metros de configuraci√≥n. 
 
-\begin{figure}[H]
-\begin{centering}
-\includegraphics[scale=0.55]{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/linear-regression-result}
-\par\end{centering}
-
-\caption{Ejemplo de resultado del modelo \textquoteleft Linear Regression\textquoteright .
-\label{fig:linear-regression-result}}
-\end{figure}
-
-
-La manera en que los datos son expuestos al usuario no representa
-un formato compatible para cualquier herramienta sobre aprendizaje
-de m·quina, esto se debe a que no existe actualmente, un formato est·ndar
-para almacenar los modelos, y esta discrepancia entre las herramientas
-disponibles exige un seteo manual de las tÈcnicas por cada evaluaciÛn
-que se realice
-
-
-\subsection{Par·metros de configuraciÛn de las tÈcnicas\label{subsec:Par=0000E1metros-de-configuraci=0000F3nde}}
-
-La optimizaciÛn y posterior obtenciÛn de un modelo de calidad tiene
-lugar a partir del establecimiento de diversos par·metros de configuraciÛn. 
-
-Estos par·metros pueden requerir distintos valores adapt·ndose a condiciones
-particulares de los datos que optimicen el resultado de la predicciÛn.
-Para brindar m·s detalle de estos par·metros, el Cuadro \ref{tab:Par=0000E1metros-de-configuraci=0000F3n}
-presenta la lista completa de par·metros propios de cada tÈcnica,
+Estos par√°metros pueden requerir distintos valores adapt√°ndose a condiciones
+particulares de los datos que optimicen el resultado de la predicci√≥n.
+Para brindar m√°s detalle de estos par√°metros, el Cuadro \ref{tab:Par=0000E1metros-de-configuraci=0000F3n}
+presenta la lista completa de par√°metros propios de cada t√©cnica,
 el valor por defecto adoptado para cada una y el rango de valores
-establecido con el cual se determinar· el mejor valor resultante. 
+establecido con el cual se determinar√° el mejor valor resultante. 
 
 \begin{table}[H]
 \begin{centering}
 \includegraphics[scale=0.5]{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/configuration-parameters}
 \par\end{centering}
 
-\caption{Par·metros de configuraciÛn de las tÈcnicas de regresiÛn \label{tab:Par=0000E1metros-de-configuraci=0000F3n}}
+\caption{Par√°metros de configuraci√≥n de las t√©cnicas de regresi√≥n \label{tab:Par=0000E1metros-de-configuraci=0000F3n}}
 \end{table}
 
 
-El proceso de optimizaciÛn de las tÈcnicas utiliza el rango de configuraciÛn
+El proceso de optimizaci√≥n de las t√©cnicas utiliza el rango de configuraci√≥n
 establecido para iterar en pasos tomando valores intermedios y evaluando
-la calidad de la tÈcnica con tales configuraciones, finalmente se
-contrastan entre sÌ y se determina la mejor configuraciÛn para un
+la calidad de la t√©cnica con tales configuraciones, finalmente se
+contrastan entre s√≠ y se determina la mejor configuraci√≥n para un
 dataset y atributo a predecir particular. 
 
-Los rangos para cada tÈcnica se establecieron tras un an·lisis exhaustivo
+Los rangos para cada t√©cnica se establecieron tras un an√°lisis exhaustivo
 de la influencia de estos valores sobre los datos. Los rangos de prueba
-se definieron de manera aleatoria en conjunto de fundamentos teÛricos
-asociados a cada tÈcnica, al mismo tiempo que el an·lisis de un rango
-ya propuesto servÌa como base para definir uno nuevo. Los an·lisis
+se definieron de manera aleatoria en conjunto de fundamentos te√≥ricos
+asociados a cada t√©cnica, al mismo tiempo que el an√°lisis de un rango
+ya propuesto serv√≠a como base para definir uno nuevo. Los an√°lisis
 se llevaron a cabo sobre 20 archivos dataset dispuestos para esta
 tesis. 
 
 Por otro lado, los valores elegidos por defecto fueron tomados de
-los valores propuestos por la herramienta Weka, a excepciÛn del par·metro
-\emph{Training Time} de la tÈcnica \emph{MultiLayer Perceptron} que
+los valores propuestos por la herramienta Weka, a excepci√≥n del par√°metro
+\emph{Training Time} de la t√©cnica \emph{MultiLayer Perceptron} que
 fue reducido de 500 a 200 para mejorar la performance de tiempo del
 algoritmo. 
 
-Para el caso de la tÈcnica \emph{Support Vector Machine} la configuraciÛn
-es m·s compleja ya que involucra par·metros propios simples y un kernel
-con par·metros especÌficos. Para la tÈcnica \emph{\ac{SMO}}, el par·metro
+Para el caso de la t√©cnica \emph{Support Vector Machine} la configuraci√≥n
+es m√°s compleja ya que involucra par√°metros propios simples y un kernel
+con par√°metros espec√≠ficos. Para la t√©cnica \emph{\ac{SMO}}, el par√°metro
 \emph{gamma} y \emph{complexy} fueron analizados en conjunto con el
-apoyo de fundamentos teorÌa y empÌricas. La figura \ref{fig:RBF-parameters-SVM}
-refleja el impacto que tienen los par·metros sobre la clasificaciÛn
+apoyo de fundamentos teor√≠a y emp√≠ricas. La figura \ref{fig:RBF-parameters-SVM}
+refleja el impacto que tienen los par√°metros sobre la clasificaci√≥n
 de los datos. 
 
 \begin{figure}[H]
@@ -203,132 +138,249 @@ de los datos.
 \includegraphics[scale=0.55]{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/RBF-parameters-SVM}
 \par\end{centering}
 
-\caption{Efecto de los par·metros de la tÈcnica SVM. \label{fig:RBF-parameters-SVM}}
+\caption{Efecto de los par√°metros de la t√©cnica SVM. \label{fig:RBF-parameters-SVM}}
 \end{figure}
 
 
-Las mejores opciones para configurar los par·metros se obtienen observando
+Las mejores opciones para configurar los par√°metros se obtienen observando
 la diagonal en donde los valores se incrementan a la par, la primer
-imagen de la cuadrÌcula aplica una clasificaciÛn muy simple sobre
+imagen de la cuadr√≠cula aplica una clasificaci√≥n muy simple sobre
 los datos, dejando en evidencia un alto grado de error en las predicciones.
-La ˙ltima imagen, en cambio, muestra un claro ejemplo de \emph{overfit},
-por lo que no resulta ser una buena opciÛn a la hora de buscar generalizaciÛn.
-La imagen central resulta entonces, ser la m·s apropiada para definir
-los valores por defecto para estos par·metros. Por otro lado, la optimizaciÛn
-para el par·metro \emph{complexy} se determinÛ bajo el rango 0 - 25
-debido a pruebas empÌricas realizadas sobre el conjunto base de dataset. 
+La √∫ltima imagen, en cambio, muestra un claro ejemplo de \emph{overfit},
+por lo que no resulta ser una buena opci√≥n a la hora de buscar generalizaci√≥n.
+La imagen central resulta entonces, ser la m√°s apropiada para definir
+los valores por defecto para estos par√°metros. Por otro lado, la optimizaci√≥n
+para el par√°metro \emph{complexy} se determin√≥ bajo el rango 0 - 25
+debido a pruebas emp√≠ricas realizadas sobre el conjunto base de dataset. 
 
-Respecto a la optimizaciÛn del kernel, los cuatro algoritmos considerados
-fueron analizados mediante la tÈcnica prueba y error y de esa forma,
-se determinaron los valores por defecto para los par·metros propios
-de cada uno. Del an·lisis se desprenden algunas conclusiones consecuentes: 
+Respecto a la optimizaci√≥n del kernel, los cuatro algoritmos considerados
+fueron analizados mediante la t√©cnica prueba y error y de esa forma,
+se determinaron los valores por defecto para los par√°metros propios
+de cada uno. Del an√°lisis se desprenden algunas conclusiones consecuentes: 
 \begin{description}
-\item [{Normalized~Polynomial}] El valor por defecto para el par·metro
+\item [{Normalized~Polynomial}] El valor por defecto para el par√°metro
 \emph{exponent} es 2.0 y hasta valores de 5.0 los resultados esperados
 son buenos. 
-\item [{Poly~Kernel}] El valor por defecto para el par·metro \emph{exponent}
+\item [{Poly~Kernel}] El valor por defecto para el par√°metro \emph{exponent}
 es 1.0. Si el valor se incrementa se obtienen mejores resultados,
-sin embargo para valores mayores a 5.0 el error de predicciÛn comienza
+sin embargo para valores mayores a 5.0 el error de predicci√≥n comienza
 a aumentar gradualmente. 
-\item [{Puk}] El valor por defecto para el par·metro \emph{omega} es 1.0,
-la modificaciÛn de este valor es indiferente a los resultados por
-lo que no aplica a la optimizaciÛn. Respecto a \emph{sigma} se adopta
+\item [{Puk}] El valor por defecto para el par√°metro \emph{omega} es 1.0,
+la modificaci√≥n de este valor es indiferente a los resultados por
+lo que no aplica a la optimizaci√≥n. Respecto a \emph{sigma} se adopta
 el valor 0.01 ya que el incremento en este valor no produce buenos
 resultados. 
 \item [{RBF}] Partiendo de un valor \emph{gamma} de 0.01 se obtienen buenos
-resultados, e incluso incrementando este valor a razÛn de 0.01 los
+resultados, e incluso incrementando este valor a raz√≥n de 0.01 los
 resultados tienden a mejorar. 
 \end{description}
 
-\subsection{CaracterÌsticas de los dispositivos mÛviles usados\label{subsec:Caracter=0000EDsticas-de-los}}
+\subsection{Caracter√≠sticas de los dispositivos m√≥viles usados\label{subsec:Caracter=0000EDsticas-de-los}}
 
-En la mayorÌa de las pruebas se han utilizado dos dispositivos mÛviles
-fundamentales, el modelo K3 Note de la marca Lenovo y el modelo Galaxy
-S3 de la marca Samsung principalmente por las caracterÌsticas del
-procesador y memoria interna. El mÛvil lenovo es superior debido a
-sus 8 n˙cleos de procesamiento frente a los 4 n˙cleos del Samsung
-y a una memoria RAM con el doble de capacidad. 
+En la mayor√≠a de las pruebas se han utilizado dos dispositivos m√≥viles,
+el modelo K3 Note de la marca Lenovo y el modelo Galaxy S3 de la marca
+Samsung.
 
-TambiÈn se utilizaron tres modelos m·s sÛlo para el escenario del
+Tambi√©n se utilizaron tres modelos m√°s s√≥lo para el escenario del
 problema del viajante. Todas las especificaciones son expuestas en
 el cuadro \ref{tab:Especificaciones-de-los}. 
 
 \begin{table}[H]
-\begin{centering}
-\includegraphics{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/used-mobiles}
-\par\end{centering}
+\resizebox{.80\textwidth}{!}{%
+\begin{tabular*}{20cm}{@{\extracolsep{\fill}}|c|c|c|c|c|}
+\hline 
+\selectlanguage{english}%
+\selectlanguage{english}%
+ & CPU Procesador/N√∫cleos & GPU tarjeta gr√°fica & Memoria RAM & Sistema Operativo\tabularnewline
+\hline 
+Lenovo K3 & 1.7Ghz Octa-Core ARM Cortex-A53 & ARM Mali-T760 MP2 & 2GB LPDDR3 & Android 5.0\tabularnewline
+\hline 
+Samsung Galaxy S3 & Quad-Core 1.4 Ghz Cortex-A9 & Mali-400MP & 1GB & Android 4.3\tabularnewline
+\hline 
+Samsung Galaxy S4 & Qualcomm APQ8064T Snapdragon 600 1.9Ghz /4 & PowerVR SGX 544MP / Adreno 320 & 2GB & Android 4.2.2\tabularnewline
+\hline 
+Samsung Galaxy S5 & Qualcomm MSM8974AC Snapdragon 801 2.5Ghz /4 & Adreno 330 & 2GB & Android 4.4.2\tabularnewline
+\hline 
+Samsung Galaxy S6 & 2.1Ghz Samsung Exynos /8 & Mali-T760 & 3GB LPDDR4 & Android 5.0\tabularnewline
+\hline 
+\end{tabular*}}
 
-\caption{Especificaciones de los dispositivos mÛviles utilizados. \label{tab:Especificaciones-de-los}}
+\caption{Especificaciones de los dispositivos m√≥viles utilizados. \label{tab:Especificaciones-de-los}}
 \end{table}
 
 
 
 \section{Escenarios\label{sec:Escenarios}}
 
-Definidas las mÈtricas, la metodologÌa de evaluaciÛn y los par·metros
-de configuraciÛn, en la presente secciÛn se detallar·n los escenarios
-o dominios estudiados a partir de una descripciÛn detallada de los
-dataset formados, cada uno de los componentes involucrados y los atributos
-de entrada considerados formando un contexto particular para la predicciÛn.
-Por otro lado, se analizar· el comportamiento o formato que adquieren
-los datos sobre los atributos predichos para comprender el desempeÒo
-de las diferentes tÈcnicas sobre los mismos y la manera en que Èstos
-adecuan sus predicciones. 
+Definidas las m√©tricas, la metodolog√≠a de evaluaci√≥n y los par√°metros
+de configuraci√≥n, en la presente secci√≥n se detallar√°n los escenarios
+sobre los que se aplica el enfoque. Por cada escenario se describen
+los componentes involucrados, el proceso de medici√≥n de los mismos
+y un an√°lisis de los datos obtenidos, formando un dataset particular
+para evaluar las tecnicas de regresi√≥n. 
 
 
-\subsection{Escenario 1: Algoritmos para el problema del viajante\label{subsec:Escenario-1:-Algoritmos}}
+\subsection{Escenario 1: Multiplicaci√≥n de matrices\label{subsec:Escenario-4:-Multiplicaci=0000F3n}}
 
-En el campo de la teorÌa de complejidad computacional, el problema
-del viajante o TSP por sus siglas en inglÈs, es tratado como un problema
-NP-Completo y es modelado como un grafo de manera que las ciudades
-son sus vÈrtices, los caminos son las aristas y las distancias entre
-caminos son los pesos de las aristas. Es un problema de minimizaciÛn
-tras la b˙squeda de un recorrido completo que comienza y finaliza
-en un vÈrtice especÌfico y visita el resto de los vÈrtices exactamente
-una vez con coste mÌnimo. Existen muchas variantes del problema, una
-de ellas se trata del TSP simÈtrico en el cual la distancia entre
-un par de ciudades es la misma en cada direcciÛn formando un grafo
-ponderado no dirigido. Esta variante fue la versiÛn considerada por
-la herramienta. 
+El producto de matrices corresponde a problemas de clase P ya que
+a diferencia de los problemas NP, su complejidad es polin√≥mica. El
+producto entre matrices no es conmutativo, depende del orden de las
+matrices intervinientes y su multiplicaci√≥n s√≥lo es posible si el
+n√∫mero de filas de la primera matriz es igual al n√∫mero de columnas
+de la segunda. 
 
-Con el fin de garantizar instancias variadas del problema, (diferentes
-cantidades de ciudades, distintas representaciones y pesos), se incorporÛ
-a la herramienta una librerÌa llamada TSPLib con m˙ltiples archivos
-de instancias del problema. La librerÌa cuenta con 111 archivos de
-formato TSP, y 32 archivos de formato OPT.TOUR que contienen el recorrido
-Ûptimo del archivo que referencian. Los ejemplos oscilan desde 14
-y hasta 18512 ciudades con un sÛlo ejemplo extremo de 85900, y utilizan
-cuatro funciones de c·lculo de la distancia entre ciudades: distancia
-euclidiana, distancia geomÈtrica, distancia pseudo euclidiana y funciÛn
-techo. Para la obtenciÛn de las mediciones correspondientes, se realizÛ
-una preselecciÛn de 32 archivos que comprenden ejemplos de entre 22
-y 200 ciudades. Cabe destacar que fue necesaria la implementaciÛn
-de un parser para el uso de los archivos.
+Los dataset para este dominio han sido formados tras la ejecuci√≥n
+de diferentes algoritmos de multiplicaci√≥n de matrices, con tama√±os
+variados de matrices. Existen dos clases de datasets, aquellos que
+involucran el component RenderScript y aquellos que lo excluyen. Para
+el primer caso se generaron 894 instancias lo cual comprende un total
+de 149 entradas por componente. Para el segundo caso, el dataset se
+compone de 745 instancias. 
 
-Los dataset para este dominio han sido formados tras la ejecuciÛn
-de seis algoritmos de resoluciÛn sobre 32 entradas del problema pertenecientes
-a la librerÌa TSPLIB dando lugar a un total de 192 instancias por
-dataset; las pruebas fueron llevadas a cabo sobre el dispositivo mÛvil
-Samsung Galaxy S4, y repetidas en los dispositivos S5 y S6, obteniendo
-asÌ, tres dataset an·logos que incluyen como propiedades 7 atributos,
-Id de operaciÛn, nombre de componente (algoritmo), entrada del problema
-(nombre de archivo), exactitud y precisiÛn en el resultado, tiempo
-de respuesta y valor soluciÛn. Todos los dataset han sido almacenados
-en archivos con formato \ac{CSV} bajo el nombre \textquoteleft 'Sx-results\textquoteright{}
-seg˙n el modelo de dispositivo utilizado. Los componentes involucrados
-incluyen el algoritmo del vecino m·s cercano, ProgramaciÛn Lineal,
-Mejor ajuste, Kruskal, Prim, y el algoritmo de TransformaciÛn Local.
-El algoritmo de Backtracking fue descartado de la lista debido al
-gran consumo de memoria en los dispositivos imposibilitando el desarrollo
-de las pruebas. 
+Los componentes o algoritmos considerados para este dominio se describen
+a continuaci√≥n: 
+\begin{description}
+\item [{Matrix~Multiplication}] implementaci√≥n simple desarrollada puramente
+en lenguaje Java. 
+\item [{Matrix~Multiplication~Multi~Thread}] corresponde a la misma
+versi√≥n del componente anterior paralelizada en ocho threads de ejecuci√≥n. 
+\item [{Matrix~Multiplication~Render~Script}] es una versi√≥n implementada
+con RenderScript , de modo que si el dispositivo tiene un \ac{GPU}
+compatible con RenderScript, √©ste lo ejecutar√°. Por tal raz√≥n el tiempo
+de operaci√≥n es mucho m√°s r√°pida. 
+\item [{Native~Matrix~Multiplication}] es una versi√≥n que usa \ac{JNI}
+para que la multiplicaci√≥n se realice sobre c√≥digo nativo desarrollado
+en lenguaje C++, el cual se compila espec√≠ficamente seg√∫n cada arquitectura
+de \ac{CPU} (Armeabi, x86, etc). 
+\item [{Matrix~Multiplication~with~Eigen}] versi√≥n que usa \ac{JNI}
+para ejecutar la multiplicaci√≥n de matrices provista por la librer√≠a
+nativa Eigen. 
+\item [{Matrix~Multiplication~with~OpenCV}] versi√≥n que usa \ac{JNI}
+para ejecutar la multiplicaci√≥n a trav√©s de la librer√≠a OpenCV . 
+\end{description}
+Las entradas del problema utilizadas para la evaluaci√≥n fueron generadas
+aleatoriamente a partir de las dimensiones (tama√±o) de las matrices
+involucradas a partir del n√∫mero de filas y columnas de la primer
+matriz denominada matriz A y el n√∫mero de columnas de la segunda matriz
+denominada matriz B, esta distinci√≥n es importante teniendo en cuenta
+la propiedad de no conmutabilidad del producto de matrices. Adicionalmente,
+ambas matrices pueden ser configuradas externamente. De cada instancia
+del problema, las entradas que se tomaron en cuenta fueron: el n√∫mero
+de columnas de la primer matriz (\emph{AColumn}), el n√∫mero de filas
+y el de columnas de la segunda matriz (\emph{ARow} y \emph{BColumn}).
 
-En cuanto a la precisiÛn y exactitud de las respuestas se consideraron
-tres indicadores que toman en cuenta las repeticiones en la respuesta
-y la totalidad o falta de los vÈrtices incluidos. El indicador TP
-(\emph{true positive}), para los vÈrtices incluidos en la soluciÛn,
-FP(\emph{false positive}), para las repeticiones de vÈrtices y FN
-(\emph{False Negative}) para los vÈrtices no incorporados en la soluciÛn.
-Por lo tanto, se considerÛ: 
+Por √∫ltimo, el dataset incluye atributos de la ejecuci√≥n del componente;
+la complejidad temporal de la operaci√≥n definida como O(AColumn x
+ARow x BColumn) y el tiempo de respuesta de la operaci√≥n registrada
+en segundos. No fueron incluidos atributos relativos al dispositivo
+de ejecuci√≥n, sin embargo podr√≠an considerarse propiedades como n√∫mero
+de cores de \ac{CPU}, cores de \ac{GPU}, frecuencia, etc. ya que
+se piensa son buenos predictores de tiempo para algunos algoritmos. 
+
+Las pruebas fueron ejecutadas sobre 2 modelos de dispositivos m√≥viles,
+Lenovo K3 y Samsung Galaxy S3. Lo interesante de este dataset, es
+que los algoritmos fueron implementados con diferentes librer√≠as y
+dise√±ados para ser ejecutados por diferente elementos de hardware
+(\ac{CPU}, \ac{GPU}, etc). 
+
+A continuaci√≥n en la figura \ref{fig:matrix-dataset-behaviour} se
+muestra el comportamiento del atributo \emph{Tiempo de respuesta}
+de los dataset formados para este dominio, en referencia a la imagen,
+A) Sin componente RenderScript en Lenovo K3, B) Sin componente RenderScript
+en Samsung Galaxy S3, C) Todos los componentes en Lenovo K3 y D) Todos
+los componentes en Samsung Galaxy S3.
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.55]{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/matrix-dataset-behaviour}
+\par\end{centering}
+
+\caption{Comportamiento del atributo ‚ÄòTiempo de respuesta‚Äô para el problema
+de la multiplicaci√≥n de matrices.\label{fig:matrix-dataset-behaviour}}
+\end{figure}
+
+
+En todos los casos puede observarse una distribuci√≥n exponencial de
+los datos incluyendo valores extremos o infrecuentes. Respecto a los
+valores de tiempo registrados, puede notarse a simple vista que las
+pruebas ejecutadas en el dispositivo Lenovo K3 consumen menor tiempo
+en contraste con el dispositivo Samsung Galaxy S3. 
+
+Lo interesante de este escenario es que permite la creaci√≥n de modelos
+simples, por ejemplo, a partir de la t√©cnica Linear Regression que
+arroje los mismos o mejores resultados que otras t√©cnicas m√°s complejas
+ya que entre los t√©rminos de la funci√≥n de predicci√≥n se expresa la
+complejidad del algoritmo de matrices. Incluso, se podr√≠an usar t√©cnicas
+espec√≠ficas para cada componentes evaluando y analizando el impacto
+sobre la predicci√≥n. Por ejemplo, para el componente \emph{Multiplicaci√≥n
+MultiThread} en la t√©cnica Linear Regression puede considerarse el
+n√∫mero de threads; para el componente con RenderScript puede considerarse
+alguna caracter√≠stica propia del \ac{GPU} donde se ejecuta si implica
+alguna mejora en los resultados predictivos. 
+
+
+\subsection{Escenario 2: Algoritmos para el problema del viajante\label{subsec:Escenario-1:-Algoritmos}}
+
+En el campo de la teor√≠a de complejidad computacional, el problema
+del viajante o \ac{TSP} por sus siglas en ingl√©s, es tratado como
+un problema NP-Completo y es modelado como un grafo de manera que
+las ciudades son sus v√©rtices, los caminos son las aristas y las distancias
+entre caminos son los pesos de las aristas. Es un problema de minimizaci√≥n
+tras la b√∫squeda de un recorrido completo que comienza y finaliza
+en un v√©rtice espec√≠fico y visita el resto de los v√©rtices exactamente
+una vez con coste m√≠nimo. Existen muchas variantes del problema, una
+de ellas se trata del \ac{TSP} sim√©trico en el cual la distancia
+entre un par de ciudades es la misma en cada direcci√≥n formando un
+grafo ponderado no dirigido. Esta variante fue la versi√≥n considerada
+por la herramienta. 
+
+Los dataset para este dominio han sido formados tras la ejecuci√≥n
+de algoritmos de resoluci√≥n del problema del viajante. Se generaron
+archivos de entrenamiento compuestos por 192 instancias, considerando
+32 entradas por componente.
+
+Los componentes o algoritmos considerados para este dominio se describen
+a continuaci√≥n: 
+\begin{description}
+\item [{Best~Fit}] algoritmo heur√≠stico que selecciona las ciudades de
+acuerdo al costo de sus trayectos y son incorporadas al conjunto Soluci√≥n
+en base al c√°lculo de la distancia marginal de las intersecciones.. 
+\item [{Nearest~neighbour}] partiendo de alguna ciudad arbitraria se analizan
+todos los v√©rtices adyacentes y a√∫n no visitados, y se a√±ade a la
+soluci√≥n aquel v√©rtice cuya arista de costo sea la m√≠nima. 
+\item [{Lineal~Programming}] realiza una b√∫squeda exhaustiva simulando
+el algoritmo backtracking, considerando restricciones y funciones
+objetivo como f√≥rmulas matem√°ticas. 
+\item [{Prim}] crea un √°rbol de recubrimiento sobre el grafo y crea un
+ciclo euleriano m√≠nimo
+\item [{Kruskal}] algoritmo similar a Prim en funcionamiento pero no en
+ejecuci√≥n, variando su complejidad.
+\item [{Local~Transformations}] A trav√©s de un grafo hammiltoniano, se
+analizan las aristas cruzadas obteniendo un nuevo ciclo.
+\end{description}
+Con el fin de garantizar instancias variadas del problema (diferentes
+cantidades de ciudades, distintas representaciones y pesos) y para
+la medici√≥n de los componentes, se utiliza la librer√≠a TSPLib que
+contiene archivos con m√∫ltiples instancias del problema.. La librer√≠a
+cuenta con 111 archivos de formato TSP, y 32 archivos de formato OPT.TOUR
+que contienen el recorrido √≥ptimo del archivo que referencian. Los
+ejemplos oscilan desde 14 y hasta 18512 ciudades con un s√≥lo ejemplo
+extremo de 85900, y utilizan cuatro funciones de c√°lculo de la distancia
+entre ciudades: distancia euclidiana, distancia geom√©trica, distancia
+pseudo euclidiana y funci√≥n techo. Para la obtenci√≥n de las mediciones
+correspondientes, se realiz√≥ una pre selecci√≥n de 32 archivos que
+comprenden ejemplos de entre 22 y 200 ciudades. Cabe destacar que
+fue necesaria la implementaci√≥n de un parser para el uso de los archivos. 
+
+Por √∫ltimo, el dataset incluye atributos de la ejecuci√≥n del componente;
+exactitud y precisi√≥n en el resultado, tiempo de respuesta y valor
+soluci√≥n. En cuanto a la precisi√≥n y exactitud de las respuestas se
+consideraron tres indicadores que toman en cuenta las repeticiones
+en la respuesta y la totalidad o falta de los v√©rtices incluidos.
+El indicador TP (\emph{true positive}), para los v√©rtices incluidos
+en la soluci√≥n, FP(\emph{false positive}), para las repeticiones de
+v√©rtices y FN (\emph{False Negative}) para los v√©rtices no incorporados
+en la soluci√≥n. Por lo tanto, se consider√≥: 
 
 \[
 Precisi\acute{o}n=\frac{TP}{FP+TP}
@@ -342,16 +394,16 @@ Exactitud=\frac{TP}{FP+TP+FN}
 
 A modo de ejemplo, se presenta en la figura \ref{fig:TPS-graph-problem}
 un grafo con comienzo en la ciudad A. Suponiendo que un algoritmo
-de resoluciÛn arroja el siguiente camino soluciÛn: \{A, B, D, A\},
-se obtiene una precisiÛn del 100\% al tener un valor de \ac{TP} =
-3 y un valor de \ac{FP} = 0 ya que no hay vÈrtices repetidos en la
-soluciÛn, sin embargo, la soluciÛn no es correcta ya que no incluye
-la totalidad de vÈrtices del conjunto (excluye al vÈrtice C). En cambio,
+de resoluci√≥n arroja el siguiente camino soluci√≥n: \{A, B, D, A\},
+se obtiene una precisi√≥n del 100\% al tener un valor de \ac{TP} =
+3 y un valor de \ac{FP} = 0 ya que no hay v√©rtices repetidos en la
+soluci√≥n, sin embargo, la soluci√≥n no es correcta ya que no incluye
+la totalidad de v√©rtices del conjunto (excluye al v√©rtice C). En cambio,
 al calcular la exactitud se obtiene un valor del 66\% al tener un
 valor de \ac{TP} = 4, \ac{FP} = 1 y \ac{FN} = 1 brindando un concepto
-m·s realista. 
+m√°s realista. 
 
-El uso del indicador de precisiÛn o el de exactitud depender· del
+El uso del indicador de precisi√≥n o el de exactitud depender√° del
 contexto en el que se aplique. 
 
 \begin{figure}[H]
@@ -363,14 +415,15 @@ contexto en el que se aplique.
 \end{figure}
 
 
-El objetivo de este escenario es la creaciÛn de modelos capaces de
-predecir el tiempo de latencia de cada algoritmo de resoluciÛn frente
-a distintas caracterÌsticas de las entradas, y modelos para predecir
-la precisiÛn en los caminos retornados. En la figura \ref{fig:TPS-dataset-behaviour}
-expuesta a continuaciÛn se muestra el comportamiento del conjunto
-de datos de entrenamiento ejecutado en el dispositivo Samsung Galaxy
-S4; ambos dataset restantes no son expuestos ya que presentan mÌnimas
-diferencias. 
+Las pruebas fueron llevadas a cabo sobre los dispositivos m√≥viles
+Samsung Galaxy S4, S5 y S6.
+
+El objetivo de este escenario es la creaci√≥n de modelos capaces de
+predecir el tiempo de respuesta de cada algoritmo frente a distintas
+caracter√≠sticas de las entradas, y modelos para predecir la calidad
+en los caminos retornados. En la figura \ref{fig:TPS-dataset-behaviour}
+expuesta a continuaci√≥n se muestra el comportamiento del conjunto
+de mediciones.
 
 \begin{figure}[H]
 \begin{centering}
@@ -382,56 +435,48 @@ diferencias.
 
 
 A primera vista la figura \ref{fig:TPS-dataset-behaviour} permite
-observar una gran concentraciÛn de datos sobre los extremos para los
-valores de precisiÛn y tiempo de respuesta. En el primer caso, aproximadamente
+observar una gran concentraci√≥n de datos sobre los extremos para los
+valores de precisi√≥n y tiempo de respuesta. En el primer caso, aproximadamente
 un 94\% de los datos toman el valor 1, y en el segundo caso, un 88\%
 de los datos toman valores entre 0 y 6.77 segundos. Este comportamiento
 uniforme y poco distribuido de los datos obstaculiza el desarrollo
 de un buen modelo predictivo. 
 
-Respecto al atributo \emph{accuracy}, si bien presenta m·s dispersiÛn
+Respecto al atributo \emph{accuracy}, si bien presenta m√°s dispersi√≥n
 entre los datos, aproximadamente un 82\% circunda alrededor del valor
 1 y un 15\% sobre valores cercanos a 0.008. 
 
 
-\subsection{Escenario 2: Servicios para detecciÛn de rostros\label{subsec:Escenario-2:-Servicios}}
+\subsection{Escenario 3: Servicios para detecci√≥n de rostros\label{subsec:Escenario-2:-Servicios}}
 
-Hoy en dÌa muchas soluciones para detecciÛn de rostro se proporcionan
-como servicios Web, que aunque no son tan r·pidos y usables sin conexiÛn
-a Internet como las bibliotecas de software, resultan generalmente
-m·s precisos y proporcionan caracterÌsticas muy peculiares del rostro.
-Sin embargo, el rendimiento y la precisiÛn de los servicios varÌan
-seg˙n las propiedades de la imagen (tamaÒo, foco, oclusiones) y contexto
-de ejecuciÛn (capacidad de la \ac{CPU}, conexiÛn de red). Por lo
-tanto el objetivo de este escenario es crear modelos para predecir
-el tiempo de respuesta a partir de caracterÌsticas variables de la
-imagen de entrada y de los par·metros de configuraciÛn del componente
-en cuestiÛn.
+El segundo escenario comprende un conjunto de servicios Web para la
+detecci√≥n de rostros en im√°genes. Hoy en d√≠a muchas soluciones para
+detecci√≥n de rostro se proporcionan como servicios Web, que aunque
+no son tan r√°pidos y usables sin conexi√≥n a Internet como las bibliotecas
+de software, resultan generalmente m√°s precisos y proporcionan caracter√≠sticas
+muy peculiares del rostro. Sin embargo, el rendimiento y la precisi√≥n
+de los servicios var√≠an seg√∫n las propiedades de la imagen (tama√±o,
+foco, oclusiones) y contexto de ejecuci√≥n (capacidad de la \ac{CPU},
+conexi√≥n de red).
 
-Los dataset para este dominio han sido formados tras la ejecuciÛn
-de diferentes componentes para detecciÛn de rostros en im·genes en
-un ˙nico dispositivo mÛvil (Lenovo K3 Note), por tal motivo no se
-incluyen en los archivos caracterÌsticas propias del mÛvil ya que
-significan valores constantes en la predicciÛn. Los componentes involucrados
-incluyen un servicio o proceso Android (Google Play Services (GMS)
-face detector) y tres servicios Web (FaceRect API, Sky Biometry API
-y Microsoft Face API). Estos cuatro componentes ser·n evaluados a
-partir de subconjunto de 290 im·genes pertenecientes al dataset llamado
-FDDB \cite{fddbTechReport} con caracterÌsticas muy variadas. Cada
-servicio es llamado especificando una imagen y un conjunto de par·metros
-booleanos (a travÈs del valor 0 y 1) que determinan las funciones
-requeridas del algoritmo determinado. En los cuatro servicios, el
-tiempo de respuesta es una variable continua y registrada en milisegundos. 
+Los dataset para este dominio han sido formados tras la ejecuci√≥n
+de diferentes servicios para detecci√≥n de rostros en im√°genes. Los
+dataset son particulares a cada servicio, y se conforman por diferente
+cantidad de entradas e instancias.
 
-A continuaciÛn se detallan las principales caracterÌsticas de los
-servicios y los respectivos dataset creados para cada uno:
+Los componentes involucrados incluyen un servicio o proceso Android
+(Google Play Services (GMS) face detector) y tres servicios Web (FaceRect
+API, Sky Biometry API y Microsoft Face API). 
+
+A continuaci√≥n se detallan las principales caracter√≠sticas de los
+servicios (componentes contemplados):
 
 
 \paragraph{GMS}
 
-La compaÒÌa Google ha implementado una colecciÛn extensa y variada
-de aplicaciones para Android. Entre ellas, ofrece el paquete \textquoteleft com.google.android.gms.vision\textquoteright{}
-el cual proporciona una funcionalidad com˙n para trabajar con detectores
+La compa√±√≠a Google ha implementado una colecci√≥n extensa y variada
+de aplicaciones para Android. Entre ellas, ofrece el paquete ‚Äòcom.google.android.gms.vision‚Äô
+el cual proporciona una funcionalidad com√∫n para trabajar con detectores
 de objetos visuales. En la figura \ref{fig:GooglePlay-services}se
 muestra la forma en que el objeto \emph{GoogleAPIClient} proporciona
 una interfaz para conectar y hacer llamadas a cualquiera de los servicios
@@ -446,65 +491,75 @@ Google Maps, etc
 \caption{Esquema conceptual para el uso de servicios de Google Play Services.\label{fig:GooglePlay-services}}
 
 
+\selectlanguage{english}%
+\selectlanguage{english}%
 \end{figure}
 
 
-El algoritmo permite setear tres par·metros diferentes (\emph{allLandmarks}
+El algoritmo permite setear tres par√°metros diferentes (\emph{allLandmarks}
 , \emph{allClassifications} , \emph{accurateMode}) dando lugar a 8
 configuraciones posibles por imagen. Para el servicio GMS se utilizaron
-290 im·genes originando un dataset de 2320 instancias. 
-
-Archivo Dataset: \emph{ResponseTime - Google Play Service face detector.csv}.
+290 im√°genes originando un dataset de 2320 instancias. 
 
 
 \paragraph{FaceRect API y Sky Biometry API}
 
 Los servicios web \emph{SkyBiometry} y \emph{FaceRect} son consumidos
-directamente desde la aplicaciÛn online \emph{Mashape}, la cual ofrece
-una gran variedad de aplicaciones, incluida una colecciÛn de Aplicaciones
-sobre detecciÛn y reconocimiento de rostros. SkyBiometry y FaceRect
-son aplicaciones que utilizan interfaz REST, es decir, los mÈtodos
-son llamados a travÈs de internet usando los mÈtodos \ac{HTTP} standard
+directamente desde la aplicaci√≥n online \emph{Mashape}, la cual ofrece
+una gran variedad de aplicaciones, incluida una colecci√≥n de Aplicaciones
+sobre detecci√≥n y reconocimiento de rostros. SkyBiometry y FaceRect
+son aplicaciones que utilizan interfaz REST, es decir, los m√©todos
+son llamados a trav√©s de Internet usando los m√©todos \ac{HTTP} est√°ndar
 como GET y POST a las direcciones correspondientes. Dependiendo de
-los par·metros especificados en el request, el servidor puede generar
-la respuesta tanto en formato JSON como \ac{XML}. Adicionalmente,
-se utilizÛ el servicio GMS VisiÛn de Google a partir de la librerÌa
+los par√°metros especificados en el request, el servidor puede generar
+la respuesta tanto en formato \ac{JSON} como \ac{XML}. Adicionalmente,
+se utiliz√≥ el servicio GMS Visi√≥n de Google a partir de la librer√≠a
 correspondiente. Los tres servicios son descritos en detalle en el
-apÈndice B.
+ap√©ndice B.
 
-El algoritmo de la aplicaciÛn FaceRect permite setear sÛlo una opciÛn
-(\emph{features}) por imagen, de modo que se construyÛ un dataset
-con sÛlo dos propiedades, incluyendo el tiempo de respuesta y un total
+El algoritmo de la aplicaci√≥n FaceRect permite setear s√≥lo una opci√≥n
+(\emph{features}) por imagen, de modo que se construy√≥ un dataset
+con s√≥lo dos propiedades, incluyendo el tiempo de respuesta y un total
 de 54 instancias. 
 
-Archivo Dataset: \emph{ResponseTime - FaceRect API.csv}. 
-
-Por otro lado, el algoritmo de Sky Biometry permite setear siete par·metros
+Por otro lado, el algoritmo de Sky Biometry permite setear siete par√°metros
 diferentes dando lugar a 128 configuraciones posibles por imagen (\emph{aggressive},
 \emph{gender}, \emph{glasses}, \emph{smiling}, \emph{mood}, \emph{age},\emph{
-eyes}). Para el servicio Sky Biometry se utilizaron 30 im·genes originando
-un dataset de 3840 instancias y se incluyen 8 propiedades, adem·s
-de los par·metros configurables del tipo binario se aÒade el tiempo
+eyes}). Para el servicio Sky Biometry se utilizaron 30 im√°genes originando
+un dataset de 3840 instancias y se incluyen 8 propiedades, adem√°s
+de los par√°metros configurables del tipo binario se a√±ade el tiempo
 de respuesta. 
-
-Archivo Dataset: \emph{ResponseTime - SkyBiometry API.csv}. 
 
 
 \paragraph{Microsoft Face API}
 
 Face API es un servicio web en la nube que provee los algoritmos de
-detecciÛn y reconocimiento de rostros m·s avanzados. El servicio es
-consumido a travÈs del sitio de Microsoft y las respuestas son retornadas
-en formato JSON. El algoritmo permite setear seis propiedades (\emph{landmarks},
-\emph{age}, \emph{gender}, \emph{facialHair}, \emph{smile} y \emph{headPos}).
-El dataset est· formado por 1826 instancias y siete propiedades, adem·s
-de los par·metros configurables como atributos binarios se incluye
-el tiempo de respuesta. 
+detecci√≥n y reconocimiento de rostros m√°s avanzados. El servicio es
+consumido a trav√©s del sitio de Microsoft y las respuestas son retornadas
+en formato \ac{JSON}. El algoritmo permite setear seis propiedades
+(\emph{landmarks}, \emph{age}, \emph{gender}, \emph{facialHair}, \emph{smile}
+y \emph{headPos}). El dataset est√° formado por 1826 instancias y siete
+propiedades, adem√°s de los par√°metros configurables como atributos
+binarios se incluye el tiempo de respuesta. 
 
-Archivo Dataset: \emph{ResponseTime - Microsoft Face API.csv}. 
+Estos cuatro componentes fueron evaluados a partir de subconjunto
+de 290 im√°genes pertenecientes al dataset llamado FDDB \citep{fddbTechReport}
+con caracter√≠sticas muy variadas. Cada servicio es llamado especificando
+una imagen y un conjunto de par√°metros booleanos (a trav√©s del valor
+0 y 1) que determinan las funciones requeridas del algoritmo determinado.
+En los cuatro servicios, el tiempo de respuesta es una variable continua
+y registrada en mili segundos. 
+
+Cabe destacar que las pruebas fueron realizadas en un √∫nico dispositivo
+m√≥vil (Lenovo K3 Note), por tal motivo no se consideran caracter√≠sticas
+propias del m√≥vil ya que significan valores constantes en la predicci√≥n.
+Por lo tanto el objetivo de este escenario es crear modelos para predecir
+el tiempo de respuesta a partir de caracter√≠sticas variables de la
+imagen de entrada y de los par√°metros de configuraci√≥n del componente
+en cuesti√≥n.
 
 En la figura \ref{fig:face-services-dataset-behaviour} que se muestra
-a continuaciÛn se expone el comportamiento de los datos del atributo
+a continuaci√≥n se expone el comportamiento de los datos del atributo
 \emph{Tiempo de respuesta} para cada uno de los servicios, en referencia
 con la imagen A) FaceRect API, B) Microsoft Face API, C) Google Play
 Service y D) Sky Biometry API. 
@@ -514,260 +569,78 @@ Service y D) Sky Biometry API.
 \includegraphics[scale=0.55]{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/face-services-dataset-behaviour}
 \par\end{centering}
 
-\caption{Comportamiento del atributo \textquoteleft Tiempo de respuesta\textquoteright{}
-de los servicios de detecciÛn de rostros.\label{fig:face-services-dataset-behaviour}}
+\caption{Comportamiento del atributo ‚ÄòTiempo de respuesta‚Äô de los servicios
+de detecci√≥n de rostros.\label{fig:face-services-dataset-behaviour}}
 \end{figure}
 
 
 El servicio Sky Biometry presenta entre sus datos un 5\% de valores
-infrecuentes y en esos casos valores extremos, siendo el ˙nico servicio
-en presentar estas caracterÌsticas. 
+infrecuentes y en esos casos valores extremos, siendo el √∫nico servicio
+en presentar estas caracter√≠sticas. 
 
-El servicio de Microsoft Face arrojÛ valores de tiempo de respuesta
+El servicio de Microsoft Face arroj√≥ valores de tiempo de respuesta
 uniformemente distribuidos en el intervalo tomando la forma de campana
-de Gauss, los datos se distribuyen simÈtricamente sobre el intervalo,
+de Gauss, los datos se distribuyen sim√©tricamente sobre el intervalo,
 es decir, no hay presencia de sesgos hacia la izquierda o hacia la
-derecha. Google Play tambiÈn tiene una distribuciÛn de Gauss con sesgo
+derecha. Google Play tambi√©n tiene una distribuci√≥n de Gauss con sesgo
 hacia la izquierda. Puede observarse que presenta un intervalo muy
 amplio, de modo que las propiedades configurables del algoritmo incrementan
-considerablemente el tiempo de operaciÛn. Sin embargo, al contrastarlo
-con el servicio de FaceRect, el mÌnimo de tiempo requerido por este
-servicio es mucho mayor que el tiempo m·ximo arrojado por el de Google
-Play, a˙n asÌ cualquier an·lisis sobre el servicio FaceRect puede
-ser precipitado, ya que se evaluÛ con un bajo n˙mero de instancias. 
+considerablemente el tiempo de operaci√≥n. Sin embargo, al contrastarlo
+con el servicio de FaceRect, el m√≠nimo de tiempo requerido por este
+servicio es mucho mayor que el tiempo m√°ximo arrojado por el de Google
+Play, a√∫n as√≠ cualquier an√°lisis sobre el servicio FaceRect puede
+ser precipitado, ya que se evalu√≥ con un bajo n√∫mero de instancias. 
 
 
-\subsection{Escenario 3: Problema de la mochila\label{subsec:Escenario-3:-Problema}}
+\section{Resultados y discusi√≥n\label{sec:Resultados-y-discusi=0000F3n}}
 
-Al igual que el problema del agente viajero, el problema de la mochila
-o \textquoteleft Knapsack problem\textquoteright{} por su nombre en
-inglÈs, es un problema NP-Completo de optimizaciÛn combinatoria, es
-decir, se busca la mejor soluciÛn entre un conjunto finito de posibles
-soluciones al problema. El problema simula la colocaciÛn de Ìtems
-u objetos en una mochila de tal forma que se maximice el valor de
-los Ìtems que contiene con la restricciÛn de no superar el peso (o
-volumen) m·ximo que puede soportar la mochila.
-
-La evaluaciÛn de este dominio se llevÛ a cabo en dos modelos distintos
-de dispositivos mÛviles (Samsung Galaxy S3 y Lenovo K3 Note) cuyo
-objetivo es crear modelos de predicciÛn del tiempo de respuesta y
-la optimalidad del componente, es decir, la relaciÛn entre la soluciÛn
-encontrada y la soluciÛn Ûptima retornando un valor entre cero y uno.
-Para este dominio se implementaron dos algoritmos de resoluciÛn al
-problema como componentes, el algoritmo greedy de complejidad O(n2
-log(n)) y el algoritmo backtracking que encuentra la soluciÛn Ûptima
-pero en tiempo exponencial O(2n). Ambos componentes fueron implementados
-puramente en Java. Las instancias del problema se obtuvieron aleatoriamente
-de las cuales se consideraron los siguientes atributos: 
-\begin{lyxlist}{00.00.0000}
-\item [{Primero~ID~de~OperaciÛn.}]~
-
-\begin{lyxlist}{00.00.0000}
-\item [{'KnapsackWeightRatio\textquoteright :}] teniendo en cuenta W como
-el peso lÌmite de la mochila y bi los pesos individuales de cada Ìtem,
-se calcula bajo la fÛrmula $KWR=W/b_{1}+b_{2}+...+b_{n}$ arrojando
-valores entre 0 y 1
-\item [{N˙mero}] de Ìtems en la mochila denotado como N. 
-\item [{Tiempo}] de respuesta registrado en segundos. 
-\end{lyxlist}
-\item [{Segundo~Nombre~de~Componente.}]~
-
-\begin{lyxlist}{00.00.0000}
-\item [{Optimalidad}] o precisiÛn de los componentes siempre medida respecto
-a la soluciÛn brindada por el algoritmo Backtracking. 
-\item [{Valor}] soluciÛn al problema. 
-\end{lyxlist}
-\end{lyxlist}
-Respecto a las caracterÌsticas propias del dispositivo de ejecuciÛn,
-sÛlo se tomÛ en cuenta la frecuencia de CPU ya que ambos algoritmos
-son single threads y corren en CPU, con la suposiciÛn que la frecuencia
-de CPU incide sobre la predicciÛn. 
-
-Se formaron cuatro dataset para este escenario, dos por cada uno de
-los dispositivos mÛviles evaluados. Bajo el nombre \emph{Optimality
-and Response time - dispositivo XXX} se crearon datasets de 720 instancias
-(360 para cada uno de los componentes) y siete propiedades como se
-describieron anteriormente (Grupo A y B). Las entradas del problema
-fueron consideradas desde un mÌnimo de 5 hasta un tamaÒo m·ximo de
-24 Ìtems lÌmite impuesto debido a la complejidad del algoritmo backtracking
-y su correspondiente latencia exponencial. Por cada Ìtem se evaluaron
-18 entradas al problema generadas aleatoriamente a partir de cuatro
-valores: cantidad total de Ìtems, m·ximo valor y peso de un Ìtem,
-y finalmente el peso o capacidad de la mochila. 
-
-Por otro lado, bajo el nombre \emph{Response time - Greedy algorithm
-- dispositivo XXX}, se crearon datasets de 4704 instancias y cuatro
-propiedades (Grupo A) con entradas del problema de tamaÒo mÌnimo de
-5 Ìtems, e incrementalmente hasta un m·ximo de 200, con 24 entradas
-dedicadas a cada n˙mero de Ìtem generadas tambiÈn aleatoriamente.
-A continuaciÛn en lafigura \ref{fig:Knapsack-dataset-behaviour} se
-muestra el comportamiento de los datos del atributo \emph{Tiempo de
-respuesta}, en referencia a la imagen, A) \textquoteleft Opt \& Resp
-Lenovo K3\textquoteright , B) \textquoteleft Opt \& Resp Samsung Galaxy
-S3\textquoteright , C) Greedy Lenovo K3 y D) Greedy Samsung S3. 
-
-\begin{figure}[H]
-\begin{centering}
-\includegraphics[scale=0.55]{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/Knapsack-dataset-behaviour}
-\par\end{centering}
-
-\caption{Comportamiento del atributo \textquoteleft Tiempo de respuesta\textquoteright{}
-para el problema de la mochila. \label{fig:Knapsack-dataset-behaviour}}
-\end{figure}
-
-
-En la ejecuciÛn de los algoritmos de Backtracking y Greedy en ambos
-dispositivos (Imagen A y B) se observa una concentraciÛn aproximada
-del 93\% de los datos en un intervalo muy pequeÒo y un 5\% de los
-datos se encuentran en el intervalo mayor a 1 segundo, por lo cual
-podrÌa concluirse que son valores atÌpicos o poco frecuentes. Este
-comportamiento muy homogÈneo de los datos, dificultar· la construcciÛn
-de un modelo predictivo de alta calidad. Por otro lado, los dataset
-que incluyen al algoritmo Greedy, presentan m·s dispersiÛn de los
-datos cuya distribuciÛn toma forma exponencial (Imagen C) y forma
-de campana de Gauss con sesgo hacia la izquierda (Imagen D). La heterogeneidad
-en los datos puede posibilitar la construcciÛn de un buen modelo.
-Respecto al an·lisis de los valores registrados, se puede observar
-que las mismas pruebas ejecutadas en el dispositivo Samsung Galaxy
-S3 consumen notoriamente m·s tiempo de operaciÛn.
-
-Por otro lado, se expone tambiÈn en la figura \ref{fig:Knapsack-optimi-dataset-behaviour}
-el comportamiento para el atributo optimalidad de los dataset que
-incluyen ambos algoritmos. (Backtracking y Greedy). 
-
-\begin{figure}[H]
-\begin{centering}
-\includegraphics[scale=0.55]{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/Knapsack-optimi-dataset-behaviour}
-\par\end{centering}
-
-\caption{Comportamiento del atributo \textquoteleft Optimalidad\textquoteright{}
-para el problema de la mochila \label{fig:Knapsack-optimi-dataset-behaviour}}
-\end{figure}
-
-
-Las pruebas ejecutadas en el modelo K3 de Lenovo arrojaron valores
-de optimalidad muy altos, un 80\% de los datos con optimalidad del
-100\%, y menos del 5\% del total adquiere valores por debajo de 0.95.
-Esta cifra incluye valores extremos que representan el 1\% de la totalidad
-de observaciones. Por lo tanto, la soluciÛn brindada por el algoritmo
-Greedy es generalmente Ûptima. Por otro lado, las pruebas ejecutadas
-en el dispositivo Samsung Galaxy arrojaron un grado de optimalidad
-del 69\%, y sÛlo un 12\% de los datos corresponden a valores entre
-0.9 y 1.0, sin incluir este ˙ltimo. Se presume que el dataset presenta
-algunas anomalÌas ya que un 10\% de los datos tienen valores superiores
-a 1.0, contraponiendo el concepto de optimalidad. 
-
-
-\subsection{Escenario 4: MultiplicaciÛn de matrices\label{subsec:Escenario-4:-Multiplicaci=0000F3n}}
-
-El producto de matrices corresponde a problemas de clase P ya que
-a diferencia de los problemas NP, su complejidad es polinÛmica. El
-producto entre matrices no es conmutativo, depende del orden de las
-matrices intervinientes y su multiplicaciÛn sÛlo es posible si el
-n˙mero de filas de la primera matriz es igual al n˙mero de columnas
-de la segunda. 
-
-Los dataset para este dominio han sido formados tras la ejecuciÛn
-de diferentes algoritmos de multiplicaciÛn de matrices, con tamaÒos
-variados de matrices sobre 2 modelos de dispositivos mÛviles, Lenovo
-K3 y Samsung Galaxy S3. Lo interesante de este dataset, es que los
-algoritmos fueron implementados con diferentes librerÌas y diseÒados
-para ser ejecutados por diferente elementos de hardware (\ac{CPU},
-\ac{GPU}, etc). 
-
-Los componentes o algoritmos considerados para este dominio se describen
-a continuaciÛn: 
-\begin{description}
-\item [{Matrix~Multiplication}] implementaciÛn simple desarrollada puramente
-en lenguaje Java. 
-\item [{Matrix~Multiplication~Multi~Thread}] corresponde a la misma
-versiÛn del componente anterior paralelizada en ocho threads de ejecuciÛn. 
-\item [{Matrix~Multiplication~Render~Script}] es una versiÛn implementada
-con RenderScript , de modo que si el dispositivo tiene un \ac{GPU}
-compatible con RenderScript, Èste lo ejecutar·. Por tal razÛn el tiempo
-de operaciÛn es mucho m·s r·pida. 
-\item [{Native~Matrix~Multiplication}] es una versiÛn que usa \ac{JNI}
-para que la multiplicaciÛn se realice sobre cÛdigo nativo desarrollado
-en lenguaje C++, el cual se compila especÌficamente seg˙n cada arquitectura
-de \ac{CPU} (Armeabi, x86, etc). 
-\item [{Matrix~Multiplication~with~Eigen}] versiÛn que usa \ac{JNI}
-para ejecutar la multiplicaciÛn de matrices provista por la librerÌa
-nativa Eigen. 
-\item [{Matrix~Multiplication~with~OpenCV}] versiÛn que usa \ac{JNI}
-para ejecutar la multiplicaciÛn a travÈs de la librerÌa OpenCV . 
-\end{description}
-Las entradas del problema utilizadas para la evaluaciÛn fueron generadas
-aleatoriamente a partir de las dimensiones (tamaÒo) de las matrices
-involucradas a partir del n˙mero de filas y columnas de la primer
-matriz denominada matriz A y el n˙mero de columnas de la segunda matriz
-denominada matriz B, esta distinciÛn es importante teniendo en cuenta
-la propiedad de no conmutatividad del producto de matrices. Adicionalmente,
-ambas matrices pueden ser configuradas externamente. De cada problema,
-las propiedades que se tomaron en cuenta fueron: el n˙mero de columnas
-de la primer matriz (\emph{AColumn}), el n˙mero de filas y el de columnas
-de la segunda matriz (\emph{ARow} y \emph{BColumn}), la complejidad
-temporal de la operaciÛn definida como O(AColumn x ARow x BColumn),
-el nombre del componente y el tiempo de respuesta de la operaciÛn
-registrada en segundos. No fueron incluidos atributos relativos al
-dispositivo de ejecuciÛn, sin embargo podrÌan considerarse propiedades
-como n˙mero de cores de \ac{CPU}, cores de \ac{GPU}, frecuencia,
-etc. ya que se piensa son buenos predictores de tiempo para algunos
-algoritmos. Los dataset bajo el nombre \emph{Response time NxNxN -
-Samsung Galaxy S3} y \emph{Response time NxNxN - Lenovo K3 Note} se
-componen de 894 instancias lo cual comprende un total de 149 entradas
-por cada uno de los seis componentes. Por otro lado, los dataset bajo
-el nombre de \emph{Response time NxMxL - Sin RenderScript component
-- Samsung Galaxy S3} y \emph{Response time NxMxL - Sin RenderScript
-component - Lenovo K3 Note} excluyen, la versiÛn implementada con
-RenderScript y comprenden 745 instancias. 
-
-A continuaciÛn en la figura \ref{fig:matrix-dataset-behaviour} se
-muestra el comportamiento del atributo \emph{Tiempo de respuesta}
-de los dataset formados para este dominio, en referencia a la imagen,
-A) Sin componente RenderScript en Lenovo K3, B) Sin componente RenderScript
-en Samsung Galaxy S3, C) Todos los componentes en Lenovo K3 y D) Todos
-los componentes en Samsung Galaxy S3.
-
-\begin{figure}[H]
-\begin{centering}
-\includegraphics[scale=0.55]{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/matrix-dataset-behaviour}
-\par\end{centering}
-
-\caption{Comportamiento del atributo \textquoteleft Tiempo de respuesta\textquoteright{}
-para el problema de la multiplicaciÛn de matrices.\label{fig:matrix-dataset-behaviour}}
-\end{figure}
-
-
-En todos los casos puede observarse una distribuciÛn exponencial de
-los datos incluyendo valores extremos o infrecuentes. Respecto a los
-valores de tiempo registrados, puede notarse a simple vista que las
-pruebas ejecutadas en el dispositivo Lenovo K3 consumen menor tiempo
-en contraste con el dispositivo Samsung Galaxy S3. 
-
-Lo interesante de este escenario es que permite la creaciÛn de modelos
-simples, por ejemplo, a partir de la tÈcnica Linear Regression que
-arroje los mismos o mejores resultados que otras tÈcnicas m·s complejas
-ya que entre los tÈrminos de la funciÛn de predicciÛn se expresa la
-complejidad del algoritmo de matrices. Incluso, se podrÌan usar tÈcnicas
-especÌficas para cada componentes evaluando y analizando el impacto
-sobre la predicciÛn. Por ejemplo, para el componente \emph{MultiplicaciÛn
-MultiThread} en la tÈcnica Linear Regression puede considerarse el
-n˙mero de threads; para el componente con RenderScript puede considerarse
-alguna caracterÌstica propia del \ac{GPU} donde se ejecuta si implica
-alguna mejora en los resultados predictivos. 
-
-
-\section{Resultados y discusiÛn\label{sec:Resultados-y-discusi=0000F3n}}
-
-En esta secciÛn final de la evaluaciÛn se agrupan los resultados para
-contrastar los escenarios entre sÌ con el fin de determinar relaciones
-entre las tÈcnicas, el contexto o dominio en el que se aplican y el
-desempeÒo sobre los atributos que predicen, esto es, si la tÈcnica
-se ajusta m·s adecuadamente a un tipo de atributo o a otro, a modo
-de inferir las conclusiones pertinentes. Adem·s, se analizan detalles
-sobre la performance del proceso de optimizaciÛn de las tÈcnicas respecto
-al tiempo de cÛmputo que insumen y su relaciÛn con el tamaÒo del dataset
+En esta secci√≥n final de la evaluaci√≥n se agrupan los resultados para
+contrastar los escenarios entre s√≠ con el fin de determinar relaciones
+entre las t√©cnicas, el contexto o dominio en el que se aplican y el
+desempe√±o sobre los atributos que predicen, esto es, si la t√©cnica
+se ajusta m√°s adecuadamente a un tipo de atributo o a otro, a modo
+de inferir las conclusiones pertinentes. Adem√°s, se analizan detalles
+sobre la performance del proceso de optimizaci√≥n de las t√©cnicas respecto
+al tiempo de c√≥mputo que insumen y su relaci√≥n con el tama√±o del dataset
 que procesa. 
+
+
+\subsection{Resultados para el problema de la multiplicaci√≥n de matrices.}
+
+\begin{table}[H]
+\begin{centering}
+\includegraphics[bb=0bp 0bp 596bp 619bp,scale=0.55]{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/reponse-matrix}
+\par\end{centering}
+
+\caption{Resultados del escenario ‚ÄòMultiplicaci√≥n de matrices‚Äô.\label{tab:Resultados-del-response-matrix}}
+\end{table}
+
+
+El primer caso analizado es el problema de la multiplicaci√≥n de matrices.
+En el cuadro \ref{tab:Resultados-del-response-matrix} se pueden apreciar
+las m√©tricas obtenidas a partir de los modelos calculados. A simple
+vista, se puede apreciar que todos los modelos obtenidos presentan
+una gran correlaci√≥n, significando que el atributo buscado (response
+time) tiene una gran dependencia de los atributos contemplados. Esto
+concluye que el tama√±o de las matrices multiplicadas influye en el
+tiempo de respuesta para obtener el producto de dichas matrices y
+que cualquiera de los modelos estudiados funciona de forma eficiente
+para este problema.
+
+De este modo, en la figura \ref{fig:lineas-matrix-response}se presentan
+las lineas de predicci√≥n para el modelo menos eficiente en cuanto
+a la correlaci√≥n de los datos, el \ac{SGD}
+
+\begin{figure}
+\includegraphics[scale=0.3]{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/response_matrix_lc}
+
+\caption{Lineas de predicci√≥n del SGD para el atributo response time\label{fig:lineas-matrix-response}}
+
+
+\selectlanguage{english}%
+\selectlanguage{english}%
+\end{figure}
+
 
 
 \subsection{Resultados para el problema del viajante.\label{subsec:Resultados-para-el}}
@@ -777,146 +650,266 @@ que procesa.
 \includegraphics[bb=0bp 0bp 596bp 619bp,scale=0.55]{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/response-TSP}
 \par\end{centering}
 
-\caption{Resultados del atributo Tiempo de respuesta para el escenario \textquoteleft problema
-del viajante\textquoteright .\label{tab:Resultados-del-atributo}}
+\caption{Resultados del atributo Tiempo de respuesta para el escenario ‚Äòproblema
+del viajante‚Äô.\label{tab:Resultados-del-atributo}}
 \end{table}
 
 
 A partir de la figura \ref{tab:Resultados-del-atributo} se desprenden
-las conclusiones con respecto al primer escenario. Como primer punto
-tanto el modelo de \emph{MultiLayer Perceptron} como el de \ac{SVM}
-son, claramente, los mejores en cuanto a adaptaciÛn al modelo. Ambos
-presentan una correlaciÛn con los datos de 1 (\emph{CC}), lo que representa
-la exactitud de los datos calculado con respecto a los reales. Como
-ya se explicÛ en la secciÛn\ref{subsec:Ajuste-del-modelo:}, esto
-puede parecernos lo m·s Ûptimo, pero observando las mÈtricas y las
-curvas de errores, ambos modelos presentan un problema de overfitting. 
+las conclusiones respecto al primer escenario. En primer punto tanto
+el modelo de \emph{MultiLayer Perceptron} como el de \ac{SVM} son,
+claramente, los mejores en cuanto a adaptaci√≥n al modelo. Ambos presentan
+una correlaci√≥n de los datos de 1 (\ac{CC}), lo que representa la
+exactitud de los datos predichos en relaci√≥n a los reales. Como se
+ha se explicado en la secci√≥n\ref{subsec:Ajuste-del-modelo:}, esto
+puede parecer lo m√°s √≥ptimo, sin embargo observando las m√©tricas y
+las curvas de errores, ambos modelos presentan el problema de overfitting. 
 
-Teniendo esto en cuenta, se descartan ambos como los mejores modelos
-para este tipo de problema. A su vez, se descarta el \emph{K-mean
-Clusterer }ya que los niveles de correlaciÛn son los mas bajos y los
-errores los m·s altos.
+Teniendo esto en cuenta, se descartan ambos modelos como los mejores
+para este tipo de problemas. A su vez, se descarta el \emph{K-mean
+Clusterer }ya que presenta los niveles de correlaci√≥n mas bajos y
+los errores m√°s altos.
 
-En todos los escenarios presentados, se optÛ por el caso intermedio
-de adaptaciÛn, considerando que el mismo es el mejor obtenido evitando
-casos de overfitting o underfitting. Este se escogiÛ teniendo en cuenta
-los valores de CC intermedios, con un error MAE aceptable considerando
-los valores propios y errores promedios bajos. AsÌ, en este caso,
-el m·s eficiente es el \emph{Linear Regression. }A continuaciÛn, se
-presenta el comportamiento de este ˙ltimo con respecto a los valores
-de referencia.
+En todos los escenarios presentados, se ha optado por el caso intermedio
+de adaptaci√≥n, considerando que el mejor modelo obtenido ser√° aquel
+que evite casos de overfitting o underfitting, focalizando el an√°lisis
+en los valores de \ac{CC} intermedios, con un error \ac{MAE} aceptable
+considerando los valores propios y errores promedios bajos. Por lo
+tanto, en este caso, el modelo m√°s eficiente es el \emph{Linear Regression.
+}A continuaci√≥n, se presenta el comportamiento de este √∫ltimo con
+respecto a los valores de referencia.
 
 \begin{figure}[H]
 \begin{centering}
 \includegraphics[scale=0.55]{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/linear-regression-behaviour.PNG}
 \par\end{centering}
 
-\caption{Lineas de predicciÛn en la herramienta Nekonata}
+\caption{Lineas de predicci√≥n en la herramienta Nekonata}
 \end{figure}
 
 
-Con el mismo mÈtodo de analisis se analizÛ el dataset TSPlib.csv considerando
-la precisiÛn del algoritmo.
+Aplicando el mismo m√©todo de an√°lisis anterior, se analiz√≥ el dataset
+TSPlib.csv considerando el atributo precisi√≥n del algoritmo.
 
 \begin{table}[H]
 \begin{centering}
 \includegraphics[bb=0bp 0bp 596bp 619bp,scale=0.55]{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/precision-TPS}
 \par\end{centering}
 
-\caption{Resultados del atributo precisiÛn para el escenario \textquoteleft problema
-del viajante\textquoteright .}
+\caption{Resultados del atributo precisi√≥n para el escenario ‚Äòproblema del
+viajante‚Äô.}
 \end{table}
 
 
-AsÌ, se puede apreciar que los que presentan una mejor adaptaciÛn
-en este caso siguen siendo el \ac{MLP} y el \ac{SMO}. Aun asÌ, considerando
-el analisis antes hecho, esta vez el mejor aloritmo es el \ac{SGD}. 
+A trav√©s de la figura se aprecia que los modelos que presentan una
+mejor adaptaci√≥n para este problema continuan siendo el \ac{MLP}
+y el \ac{SMO}. Aun as√≠, considerando el an√°lisis realizado previamente,
+para el atributo precision el mejor algoritmo es el \ac{SGD}. 
 
-Si tenemos en cuenta lo visto en la secciÛn \ref{subsec:Regresi=0000F3n-Lineal},
-el mejor algoritmo teÛrico que mejor se adapta a el problem del viajante
-es el \emph{LinearRegression }es sus dos implementaciones (Ridge y
-SGD). 
+Teniendo en cuenta los conceptos expuestos en la secci√≥n \ref{sub:Ajuste-del-modelo:},
+el mejor algoritmo te√≥rico que mejor se adapta al problema del viajante
+es el \emph{modelo LinearRegression }es sus dos implementaciones (Ridge
+y \ac{SGD}). 
 
 \begin{figure}[H]
-
-
 \begin{centering}
 \includegraphics[scale=0.55]{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/errors-comparison-response-S5}
 \par\end{centering}
 
-\caption{Figura comparativa de las dos implementaciones de regresiÛn lineal
+\caption{Figura comparativa de las dos implementaciones de regresi√≥n lineal
 para el problema del vaiajante}
-
-
 \end{figure}
 
 
 
-\subsection{Resultados para los servicios de detecciÛn de rostros.}
+\subsection{Resultados para los servicios de detecci√≥n de rostros.}
 
-Durante el proceso de formaciÛn de los dataset, se considerÛ en primer
-medida, la incorporaciÛn de variables sobre la imagen, como el tamaÒo,
+Durante el proceso de formaci√≥n de los dataset, se consider√≥ en primer
+medida, la incorporaci√≥n de variables sobre la imagen, como el tama√±o,
 la intensidad de color, entre otras. Sin embargo, fueron descartadas
-en la versiÛn final ya que no demostraron influir sobre la precisiÛn
-y el tiempo de respuesta al alcanzar un grado de correlaciÛn por debajo
+en la versi√≥n final ya que no demostraron influir sobre la precisi√≥n
+y el tiempo de respuesta al alcanzar un grado de correlaci√≥n por debajo
 de 0.05 entre las variables de la imagen y las variables a predecir.
-SÛlo los par·metros de configuraciÛn con los que se invocan a la funciÛn
-de detecciÛn de cada componente afectaron directamente al tiempo de
+S√≥lo los par√°metros de configuraci√≥n con los que se invocan a la funci√≥n
+de detecci√≥n de cada componente afectaron directamente al tiempo de
 respuesta requerido por el servicio. Los resultados de los modelos
-obtenidos para la predicciÛn del atributo \emph{Tiempo de respuesta}
+obtenidos para la predicci√≥n del atributo \emph{Tiempo de respuesta}
 se exponen en el cuadro \ref{tab:Resultados-response-face}
-
-<AÒadir conclusiones>
 
 \begin{table}[H]
 \begin{centering}
 \includegraphics[bb=0bp 0bp 596bp 619bp,scale=0.55]{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/response-face}
 \par\end{centering}
 
-\caption{Resultados del atributo \textquoteleft Tiempo de respuesta\textquoteright{}
-para los servicios de detecciÛn de rostros.\label{tab:Resultados-response-face}}
+\caption{Resultados del atributo ‚ÄòTiempo de respuesta‚Äô para los servicios de
+detecci√≥n de rostros.\label{tab:Resultados-response-face}}
 \end{table}
 
 
+Continuando con la misma l√≠nea de an√°lisis, los datos exhibidos demuestran
+que el mejor modelo presentado para predecir el tiempo de respuesta
+para el problema de detecci√≥n de rostros es el MultiLayer Perceptron.
+El algoritmo no s√≥lo ha arrojado los valores m√°s bajos del error de
+predicci√≥n sino que en todos los casos, demuestra una buena adaptaci√≥n
+a los dataset que por su naturaleza, difieren en volumen de instancias,
+cantidad y tipo de atributos. 
 
-\subsection{Resultados para el problema de la mochila.}
+A continuaci√≥n, se presentan las lineas de predicci√≥n para demostrar
+el poder de an√°lisis del modelo.
 
-<AÒadir conclusiones >
-
-\begin{table}[H]
+\begin{figure}[H]
 \begin{centering}
-\includegraphics[bb=0bp 0bp 596bp 619bp,scale=0.55]{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/response-knapsack}
+\includegraphics[scale=0.3]{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/response_face_lc}
 \par\end{centering}
 
-\caption{Resultados del atributo Tiempo de respuesta para el escenario \textquoteleft problema
-de la mochila\textquoteright . }
-\end{table}
+\caption{Figura comparativa de las predicciones realizadas por el MultiLayer
+Perceptron}
+\end{figure}
 
+
+
+\subsection{Discusi√≥n}
+
+En esta secci√≥n se contrastaran los escenarios y las t√©cnicas entre
+s√≠ mediante las m√©tricas en las cuales se centr√≥ el estudio realizado.
+Es importante destacar algunas consideraciones sobre el modelo \ac{SMO},
+por lo cual se excluy√≥ del an√°lisis. El desempe√±o de este algoritmo
+es predominantemente superior en la calidad de sus respuestas, sin
+embargo presenta algunas limitaciones para su uso; el modus operandi
+del algoritmo no es apto para formatos de dataset de cientos de instancias
+y m√∫ltiples atributos, ya que en algunos casos el costo operacional
+requiri√≥ m√°s de un d√≠a de ejecuci√≥n y en otros casos, sus resultados
+no pudieron ser visualizados. 
 
 \begin{table}[H]
-\begin{centering}
-\includegraphics[bb=0bp 0bp 596bp 619bp,scale=0.55]{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/precision-knapsack}
-\par\end{centering}
+\resizebox{.80\textwidth}{!}{%
+\begin{tabular*}{20cm}{@{\extracolsep{\fill}}|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline 
+\selectlanguage{english}%
+\selectlanguage{english}%
+ & \multicolumn{4}{c|}{Escenario 1} & \multicolumn{3}{c|}{Escenario 2} & \multicolumn{4}{c|}{Escenario 3}\tabularnewline
+\hline 
+\selectlanguage{english}%
+\selectlanguage{english}%
+ & Sin RenderScript K3 & Sin RenderScript S3 & K3 & S3 & S4 & S5 & S6 & FaceRect & SkyBiometry & Microsoft & GMS\tabularnewline
+\hline 
+Linear Regression & 0.91 & 0.92 & 0.87 & 0.87 & 0.72 & 0.72 & 0.71 & 0.7 & 0.08 & 0.41 & 0.6\tabularnewline
+\hline 
+MultiLayer Perceptron & 0.99 & 1 & 0.99 & 1 & 1 & 1 & 1 & 0.7 & 0.09 & 0.58 & 0.66\tabularnewline
+\hline 
+\ac{SGD} & 0.89 & 0.91 & 0.87 & 0.87 & 0.65 & 0.65 & 0.62 & 0.7 & 0.06 & 0.41 & 0.59\tabularnewline
+\hline 
+Clusterer &  0.98 &  0.98 &  0.99  &  0.99  &  0.63  &  0.58  &  0.65  &  0.99  &  0.13  &  0.56  &  0.78 \tabularnewline
+\hline 
+\end{tabular*}}
 
-\caption{Resultados del atributo precisiÛn para el escenario \textquoteleft problema
-de la mochila\textquoteright . }
+\caption{Especificaciones de los dispositivos m√≥viles utilizados. \label{tab:CC-results}}
 \end{table}
 
 
+A partir de los resultados expuestos, se analiza el impacto de la
+calidad de las entradas en el Coeficiente de correlaci√≥n de los datos.
+El primer escenario centraliz√≥ la formaci√≥n de los datasets exclusivamente
+en las propiedades inherentes de la entrada del problema. La naturaleza
+de los problemas de tipo P, como el escenario 1, conlleva a que el
+tiempo de resoluci√≥n de los mismos dependa exclusivamente de la cantidad
+de atributos del problema. Ambas consideraciones suponen un alto grado
+de correlaci√≥n y los datos obtenidos lo confirman.
 
-\subsection{Resultados para el problema de la multiplicaciÛn de matrices.}
+En contraste, el escenario 3 no consider√≥ propiedades de la entrada
+del problema, lo que supone un grado de correlaci√≥n menor. La entrada
+del problema no es f√°cilmente cuantificable de forma exacta, por lo
+que no fueron consideradas como variables para la predicci√≥n. Asimismo,
+los atributos del dataset son conformados por variables booleanas
+que representan los detalles requeridos del servicio, lo que conlleva
+a una gran homogeneizaci√≥n de los datos. En consecuencia, dos instancias
+an√°logas en sus requerimientos podr√≠an producir predicciones diferentes
+lo cual rompe el criterio de unicidad de toda funci√≥n matem√°tica.
 
-<AÒadir conclusiones>
+El caso m√°s cercano al ideal es el escenario 2, en el cual se considera
+solo un rasgo de la entrada y un rasgo del componente, conformando
+un conjunto acotado de valores y permitiendo que el modelo alcance
+una funci√≥n de correlaci√≥n estable.
 
 \begin{table}[H]
-\begin{centering}
-\includegraphics[bb=0bp 0bp 596bp 619bp,scale=0.55]{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/reponse-matrix}
-\par\end{centering}
+\resizebox{.80\textwidth}{!}{%
+\begin{tabular*}{20cm}{@{\extracolsep{\fill}}|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline 
+\selectlanguage{english}%
+\selectlanguage{english}%
+ & \multicolumn{4}{c|}{Escenario 1} & \multicolumn{3}{c|}{Escenario 2} & \multicolumn{4}{c|}{Escenario 3}\tabularnewline
+\hline 
+\selectlanguage{english}%
+\selectlanguage{english}%
+ & Sin RenderScript K3 & Sin RenderScript S3 & K3 & S3 & S4 & S5 & S6 & FaceRect & SkyBiometry & Microsoft & GMS\tabularnewline
+\hline 
+Linear Regression & 0.02 & 0.03 & 0.03 & 0.03 & 7.72 & 3.69 & 2.06 & 153.6  & 637.54 & 71.78 & 59.17\tabularnewline
+\hline 
+MultiLayer Perceptron & 0.01 & 0.01 & 0.01 & 0.01 & 1.02 & 0.2 & 0.13 & 153.52 & 637.83  & 64.04 & 55.54\tabularnewline
+\hline 
+\ac{SGD} & 0.03 & 0.03 & 0.03 & 0.03 & 9.48 & 4.54 & 2.58 & 704.11 & 676.21 & 73.3 & 59.31\tabularnewline
+\hline 
+Clusterer &  0.01  &  0.01  &  0.01  &  0.01  &  8.67  &  4.36  &  2.2  &  27.92  &  633.84  &  65.28  &  45.83 \tabularnewline
+\hline 
+\end{tabular*}}
 
-\caption{Resultados del escenario \textquoteleft MultiplicaciÛn de matrices\textquoteright{}}
+\caption{Especificaciones de los dispositivos m√≥viles utilizados. \label{tab:RMSE-results}}
 \end{table}
 
+
+Considerando el an√°lisis previo y los valores de \ac{RMSE} presentados
+en la tabla \ref{tab:RMSE-results}, se sustentan las conclusiones
+y suposiciones planteadas anteriormente. Cuanto mayor sea la correlaci√≥n
+entre los datos de entrada del problema y el tiempo de respuesta,
+menor es el grado de error en la predicci√≥n ya que es m√°s factible
+que el modelo encuentre una formula matem√°tica que describa la salida
+a partir de la entrada.
+
+Teniendo en cuenta lo visto hasta ahora, el escenario 2 es el que
+mejor satisface los requerimientos necesarios para obtener un buen
+modelo predictivo ya que las entradas y los componentes son descriptos
+en su justa medida. Por lo tanto, a partir de este escenario se desprende
+que el modelo LinearRegression es el que mejor se ajusta a los objetivos
+del trabajo planteado siempre que el conjunto de datos sea descripto
+de forma completa y eficiente. El modelo no presenta efectos de overfit
+o underfit sobre los datos garantizando buenos resultados en un futuro
+dataset o escenario.
+
+En situaciones desfavorables donde se cuenta con un dataset incompleto
+o con s√≥lo datos del componente que se desea analizar, es conveniente
+el uso del modelo MultiLayer Perceptron ya que garantiza un analisis
+m√°s profundo de los datos. Este an√°lisis intensivo se debe a la idea
+intr√≠nseca del algoritmo Neural Network que permite la conjunci√≥n
+de entradas conformando otras nuevas y facilitando nuevos datos que
+no estaban presentes de forma explicita en el dataset. Se estima que
+el modelo ser√° capaz de generar buenas estimaciones a un costo temporal
+aceptable, lo que significa que la ejecuci√≥n de un dataset de cientos
+de instancias y diversos atributos, no s√≥lo arrojar√° un resultado
+(ventaja frente a otros modelos) sino que la visualizaci√≥n de la respuesta
+conllevar√° a lo sumo una hora de tiempo. 
 
 
 \section{Conclusiones \label{sec:Conclusiones}}
-\end{document}
+
+En este cap√≠tulo se presentaron los distintos ambientes de pruebas
+y se analizaron los resultados producto de los mismos. En la primera
+secci√≥n se describi√≥ el procedimiento llevado a cabo para la evaluaci√≥n
+de la calidad de los modelos predictivos que aplican algoritmos de
+regresi√≥n. Luego, se describieron los escenarios que conforman cada
+uno de los casos de estudio, donde toma lugar el enfoque propuesto
+para la herramienta implementada. 
+
+Finalmente, se exponen los resultados acerca del error de predicci√≥n
+de los modelos, que indican principalmente tres consideraciones: 
+\begin{itemize}
+\item En situaciones de conjuntos de datos completos en su estructura, el
+modelo Linear Regression es el m√°s conveniente para predecir el tiempo
+de respuesta en una aplicaci√≥n m√≥vil.
+\item En contraste, en conjuntos de datos pobres, el modelo MultiLayer Perceptron
+adquiere una mejor generalizaci√≥n de los datos, adapt√°ndose a diferentes
+formatos de dataset, y diferentes operaciones de componentes.
+\item En caso de dataset formados por pocas instancias, el comportamiento
+del \ac{SMO} es similar al del Multilayer Perceptron. Sin embargo,
+es importante destacar el efecto de overfit de ambos algoritmos, y
+particularmente el tiempo de procesamiento que requiere el \ac{SMO}. \end{itemize}
+

@@ -1,79 +1,79 @@
 
-\chapter{Marco TeÛrico\label{chap:Marco-Teorico}}
+\chapter{Marco Te√≥rico\label{chap:Marco-Teorico}}
 
-En este capÌtulo se presentan los conceptos fundamentales del dominio,
-el cual est· centrado en torno a la predicciÛn de performance y precisiÛn
+En este cap√≠tulo se presentan los conceptos fundamentales del dominio,
+el cual est√° centrado en torno a la predicci√≥n de performance y precisi√≥n
 de componentes de software (funciones, algoritmos, servicios, etc.)
-en dispositivos mÛviles.
+en dispositivos m√≥viles.
 
 
-\section{Dispositivos MÛviles\label{sec:Dispositivos-m=0000F3viles}}
+\section{Dispositivos M√≥viles\label{sec:Dispositivos-m=0000F3viles}}
 
-Los dispositivos mÛviles son artefactos electrÛnicos pequeÒos con
-capacidad de trasladarse, que se alimentan a travÈs de una baterÌa
-de litio. En este contexto, un smartphone o telÈfono inteligente es
-un telÈfono mÛvil con una mayor capacidad de cÛmputo y conectividad
-que un telÈfono mÛvil convencional. Mientras el telÈfono mÛvil es
-un dispositivo inal·mbrico electrÛnico utilizado para acceder y utilizar
-los servicios de la red de telefonÌa celular, el tÈrmino \emph{inteligente}
-hace referencia a la capacidad de usarlo tambiÈn como una computadora
+Los dispositivos m√≥viles son artefactos electr√≥nicos peque√±os con
+capacidad de trasladarse, que se alimentan a trav√©s de una bater√≠a
+de litio. En este contexto, un smartphone o tel√©fono inteligente es
+un tel√©fono m√≥vil con una mayor capacidad de c√≥mputo y conectividad
+que un tel√©fono m√≥vil convencional. Mientras el tel√©fono m√≥vil es
+un dispositivo inal√°mbrico electr√≥nico utilizado para acceder y utilizar
+los servicios de la red de telefon√≠a celular, el t√©rmino \emph{inteligente}
+hace referencia a la capacidad de usarlo tambi√©n como una computadora
 de bolsillo.
 
-Una de las caracterÌsticas m·s destacadas de los smartphones reside
+Una de las caracter√≠sticas m√°s destacadas de los smartphones reside
 en la posibilidad que brindan de instalar aplicaciones mediante las
 cuales el usuario final logra ampliar las capacidades y funcionalidades
-del equipo, obteniendo asÌ una personalizaciÛn total del dispositivo.
-Otras caracterÌsticas importantes son la capacidad multitarea, el
-acceso y conectividad a Internet vÌa WiFi o red 3G, el soporte de
-clientes de email, la eficaz administraciÛn de datos y contactos,
+del equipo, obteniendo as√≠ una personalizaci√≥n total del dispositivo.
+Otras caracter√≠sticas importantes son la capacidad multitarea, el
+acceso y conectividad a Internet v√≠a WiFi o red 3G, el soporte de
+clientes de email, la eficaz administraci√≥n de datos y contactos,
 la posibilidad de lectura de archivos en diversos formatos como .pdf
-o .doc, y la posibilidad de obtener datos del ambiente a travÈs de
-sensores especializados como el acelerÛmetro y el sistema de posicionamiento
-global conocido como GPS por sus siglas en inglÈs, entre otros. 
+o .doc, y la posibilidad de obtener datos del ambiente a trav√©s de
+sensores especializados como el aceler√≥metro y el sistema de posicionamiento
+global conocido como GPS por sus siglas en ingl√©s, entre otros. 
 
-Para poder establecer aplicaciones en los dispositivos mÛviles, los
+Para poder establecer aplicaciones en los dispositivos m√≥viles, los
 mismos poseen, al igual que las computadoras, sistemas operativos.
 Un sistema operativo es un intermediario entre el usuario de un dispositivo
 y el hardware del mismo. El objetivo de un sistema operativo es proveer
 un ambiente en el cual el usuario pueda ejecutar programas en un manera
 conveniente y eficiente. Un sistema operativo es software que administra
 el hardware del dispositivo. El hardware debe proveer mecanismos apropiados
-para asegurar la operaciÛn correcta de un sistema y evitar a los usuarios
+para asegurar la operaci√≥n correcta de un sistema y evitar a los usuarios
 interferir con el funcionamiento apropiado del mismo. 
 
-Entre los sistemas operativos m·s populares en dispositivos mÛviles
+Entre los sistemas operativos m√°s populares en dispositivos m√≥viles
 se encuentra Android. En las secciones siguientes se describe detalladamente
 este sistema y la plataforma que provee para el desarrollo de aplicaciones. 
 
 
 \subsection{Android \label{sec:Android}}
 
-Android es un sistema operativo de cÛdigo abierto diseÒado para dispositivos
-mÛviles tales como smartphones y tablets. Este sistema operativo est·
+Android es un sistema operativo de c√≥digo abierto dise√±ado para dispositivos
+m√≥viles tales como smartphones y tablets. Este sistema operativo est√°
 basado en un kernel Linux y es desarrollado por Google. El mismo cuenta
 con un middleware extensible y aplicaciones de usuario. Adicionalmente,
-posee una plataforma de distribuciÛn de aplicaciones disponible a
-partir de la versiÛn 2.2 del sistema Android denominada Google Play
-que permite a los usuarios navegar y descargar aplicaciones que m·s
+posee una plataforma de distribuci√≥n de aplicaciones disponible a
+partir de la versi√≥n 2.2 del sistema Android denominada Google Play
+que permite a los usuarios navegar y descargar aplicaciones que m√°s
 se ajusten a sus necesidades y preferencias, personalizando de esta
-forma el dispositivo sencillamente. Por otro lado, tambiÈn provee
+forma el dispositivo sencillamente. Por otro lado, tambi√©n provee
 una plataforma para el desarrollo de aplicaciones, utilizando Java
 como el lenguaje predeterminado. 
 
-La plataforma Android utiliza la m·quina virtual Dalvik para ejecutar
-aplicaciones programadas en Java a partir de la versiÛn 5. Debido
+La plataforma Android utiliza la m√°quina virtual Dalvik para ejecutar
+aplicaciones programadas en Java a partir de la versi√≥n 5. Debido
 al escaso poder de procesamiento y memoria limitada de los dispositivos
-que ejecutan Android, no fue posible utilizar la m·quina virtual Java
-est·ndar por lo que la compaÒÌa Google tomÛ la decisiÛn de crear una
+que ejecutan Android, no fue posible utilizar la m√°quina virtual Java
+est√°ndar por lo que la compa√±√≠a Google tom√≥ la decisi√≥n de crear una
 nueva, la \ac{DVM} entonces, fue optimizada para requerir poco uso
-de memoria y diseÒada para ejecutar en simult·neo m˙ltiples instancias
-de la m·quina virtual, delegando en el sistema operativo Android subyacente
-el soporte para el aislamiento de procesos, la gestiÛn de memoria
-e hilos de ejecuciÛn. 
+de memoria y dise√±ada para ejecutar en simult√°neo m√∫ltiples instancias
+de la m√°quina virtual, delegando en el sistema operativo Android subyacente
+el soporte para el aislamiento de procesos, la gesti√≥n de memoria
+e hilos de ejecuci√≥n. 
 
 En la figura\ref{fig:Android-architecture} se puede ver la arquitectura
 en capas empleada por el sistema Android y se brinda seguidamente
-una breve descripciÛn de los componentes. 
+una breve descripci√≥n de los componentes. 
 
 \begin{figure}
 \begin{centering}
@@ -84,169 +84,156 @@ una breve descripciÛn de los componentes.
 \end{figure}
 
 
-Las capas interact˙an entre sÌ respetando el estilo arquitectÛnico
+Las capas interact√∫an entre s√≠ respetando el estilo arquitect√≥nico
 tradicional, donde cada una de las capas utiliza los servicios ofrecidos
 por las anteriores, y ofrece a su vez sus propios servicios a las
 capas de niveles superiores. 
 
-Las diferentes capas de la arquitectura son descritas a continuaciÛn:
+Las diferentes capas de la arquitectura son descritas a continuaci√≥n:
 \begin{itemize}
-\item Kernel Linux: Android utiliza el n˙cleo de Linux como una capa de
-abstracciÛn de hardware para los dispositivos mÛviles. Esta capa contiene
+\item Kernel Linux: Android utiliza el n√∫cleo de Linux como una capa de
+abstracci√≥n de hardware para los dispositivos m√≥viles. Esta capa contiene
 los drivers necesarios para que cualquier componente de hardware pueda
-ser utilizado mediante las llamadas correspondientes, sÛlo debe considerarse
+ser utilizado mediante las llamadas correspondientes, s√≥lo debe considerarse
 al momento de incluir un nuevo componente de hardware que los fabricantes
-hayan desarrollado los drivers correspondientes. Adem·s del soporte
+hayan desarrollado los drivers correspondientes. Adem√°s del soporte
 de drivers, la capa es responsable de proporcionar otros servicios
-como la seguridad, el manejo de la memoria, la gestiÛn de procesos,
+como la seguridad, el manejo de la memoria, la gesti√≥n de procesos,
 la pila de protocolos. 
-\item Entorno de ejecuciÛn de Android: como se ha adelantado previamente,
-cada aplicaciÛn corre en su propio proceso Linux con su propia instancia
-de la m·quina virtual Dalvik, la cual interpreta un lenguaje ligeramente
+\item Entorno de ejecuci√≥n de Android: como se ha adelantado previamente,
+cada aplicaci√≥n corre en su propio proceso Linux con su propia instancia
+de la m√°quina virtual Dalvik, la cual interpreta un lenguaje ligeramente
 diferente al tradiciones de \ac{JVM} bajo el formato .dex. A partir
-de la versiÛn 5.0 de Android, Dalvik es reemplazada por \ac{ART}
-la cual logra reducir el tiempo de ejecuciÛn del cÛdigo Java hasta
-un 33\%. TambiÈn se incluye en el entorno un mÛdulo de librerÌas nativas
-con la mayorÌa de librerÌas disponibles en lenguaje Java. Estas bibliotecas,
+de la versi√≥n 5.0 de Android, Dalvik es reemplazada por \ac{ART}
+la cual logra reducir el tiempo de ejecuci√≥n del c√≥digo Java hasta
+un 33\%. Tambi√©n se incluye en el entorno un m√≥dulo de librer√≠as nativas
+con la mayor√≠a de librer√≠as disponibles en lenguaje Java. Estas bibliotecas,
 si bien resultan diferentes a las ofrecidas por \ac{Java SE} y \ac{Java ME},
-proveen pr·cticamente la misma funcionalidad. 
-\item Bibliotecas: Incluye un conjunto de librerÌas en lenguaje C o C++
+proveen pr√°cticamente la misma funcionalidad. 
+\item Bibliotecas: Incluye un conjunto de librer√≠as en lenguaje C o C++
 usadas en varios componentes de Android proporcionando la mayor parte
-de las capacidades m·s caracterÌsticas de Android, algunas de ellas
+de las capacidades m√°s caracter√≠sticas de Android, algunas de ellas
 fueron expuestas en la figura anterior. En el caso de las bibliotecas
-SQLite se provee acceso a la utilizaciÛn y administraciÛn de bases
-de datos \ac{SQL}. Estas librerÌas est·n compiladas en cÛdigo nativo
-del procesador y muchas de ellas utilizan proyectos de cÛdigo abierto. 
+SQLite se provee acceso a la utilizaci√≥n y administraci√≥n de bases
+de datos \ac{SQL}. Estas librer√≠as est√°n compiladas en c√≥digo nativo
+del procesador y muchas de ellas utilizan proyectos de c√≥digo abierto. 
 \item Marco o entorno de Aplicaciones: Proporciona una plataforma de desarrollo
 libre para aplicaciones con gran riqueza e innovaciones de herramientas
-como sensores, localizaciÛn, servicios, barra de notificaciones, entre
-otros. y adem·s permite que los desarrolladores tengan acceso a las
+como sensores, localizaci√≥n, servicios, barra de notificaciones, entre
+otros. y adem√°s permite que los desarrolladores tengan acceso a las
 mismas \ac{API} utilizadas por las aplicaciones base del sistema.
-El foco principal del diseÒo de esta capa ha sido simplificar la reutilizaciÛn
+El foco principal del dise√±o de esta capa ha sido simplificar la reutilizaci√≥n
 de componentes, las aplicaciones pueden publicar sus capacidades y
 otras pueden hacer uso de ellas (sujetas a restricciones de seguridad),
-un mecanismo que permite a los usuarios reemplazar f·cilmente componentes. 
+un mecanismo que permite a los usuarios reemplazar f√°cilmente componentes. 
 \item Aplicaciones: Este nivel contiene todas las aplicaciones de usuario,
-tanto las incluidas por defecto en Android asÌ como como aquellas
-que el usuario vaya aÒadiendo posteriormente ya sean de terceros o
+tanto las incluidas por defecto en Android as√≠ como como aquellas
+que el usuario vaya a√±adiendo posteriormente ya sean de terceros o
 de su propio desarrollo. Todas estas aplicaciones utilizan los servicios,
-las \ac{API} y bibliotecas de los niveles inferiores. Se brindar·
-una descripciÛn m·s detallada en la secciÛn siguiente
+las \ac{API} y bibliotecas de los niveles inferiores. Se brindar√°
+una descripci√≥n m√°s detallada en la secci√≥n siguiente
 \end{itemize}
 
 \subsection{Aplicaciones Android \label{sec:Aplicaciones-Android}}
 
-Adem·s de las caracterÌsticas tÈcnicas, es importante resaltar que
-la popularidad de Android ha crecido muy r·pidamente desde su lanzamiento.
-Esto se debe a la versatilidad que Android otorga a Èstos dispositivos
-a travÈs de las aplicaciones, que permiten adaptarlos seg˙n las necesidades
-de los usuarios. Adem·s, el hecho de que Android sea de cÛdigo abierto
-da lugar a la creaciÛn de diferentes versiones del sistema operativo
-que permiten personalizar cada aspecto del mismo. Android tambiÈn
-permite que las aplicaciones se adapten a las caracterÌsticas del
+Adem√°s de las caracter√≠sticas t√©cnicas, es importante resaltar que
+la popularidad de Android ha crecido muy r√°pidamente desde su lanzamiento.
+Esto se debe a la versatilidad que Android otorga a √©stos dispositivos
+a trav√©s de las aplicaciones, que permiten adaptarlos seg√∫n las necesidades
+de los usuarios. Adem√°s, el hecho de que Android sea de c√≥digo abierto
+da lugar a la creaci√≥n de diferentes versiones del sistema operativo
+que permiten personalizar cada aspecto del mismo. Android tambi√©n
+permite que las aplicaciones se adapten a las caracter√≠sticas del
 dispositivo (pantalla, sensores, etc.), aprovechando las capacidades
 de cada dispositivo particular. 
 
 Respecto a las herramientas de desarrollo, Android ofrece un paquete
 que combina el \ac{IDE} Eclipse con un conjunto de herramientas que
 simplifican el desarrollo, permitiendo incluso, crear dispositivos
-virtuales que emulan cualquier configuraciÛn de hardware soportada. 
+virtuales que emulan cualquier configuraci√≥n de hardware soportada. 
 
 Por otra parte, en el contexto de los servicios Web, Android provee
-soporte para clientes \ac{HTTP} mediante la clase \emph{AndroidHttpClient},
-y por tanto, permite la utilizaciÛn de servicios Web \ac{REST} a
-travÈs de ella. 
+soporte para conexiones \ac{HTTP} , y por tanto, permite la utilizaci√≥n
+de servicios Web \ac{REST} a trav√©s de ella. 
 
-Un aspecto ˙nico del diseÒo de las aplicaciones en Android es que
-Èstas pueden reutilizar componentes de otras aplicaciones instaladas
-en el dispositivo. Por ejemplo, si una aplicaciÛn desea tomar una
-fotografÌa, es probable que ya exista una aplicaciÛn que cumpla esa
-funcionalidad, entonces, la nueva aplicaciÛn puede utilizar la existente
+Un aspecto √∫nico del dise√±o de las aplicaciones en Android es que
+√©stas pueden reutilizar componentes de otras aplicaciones instaladas
+en el dispositivo. Por ejemplo, si una aplicaci√≥n desea tomar una
+fotograf√≠a, es probable que ya exista una aplicaci√≥n que cumpla esa
+funcionalidad, entonces, la nueva aplicaci√≥n puede utilizar la existente
 sin necesidad de desarrollar una actividad propia para utilizar la
-c·mara, esta invocaciÛn se realiza de modo tal que sea transparente
+c√°mara, esta invocaci√≥n se realiza de modo tal que sea transparente
 para el usuario final.
 
-El sistema Android provee cinco tipos de componentes b·sicos para
+El sistema Android provee cinco tipos de componentes b√°sicos para
 el desarrollo de aplicaciones. El componente \emph{Activity }representa
-una pantalla simple y es el ˙nico que provee interfaz de usuario.
-A travÈs de estas actividades se logra el acceso a la informaciÛn
+una pantalla simple y es el √∫nico que provee interfaz de usuario.
+A trav√©s de estas actividades se logra el acceso a la informaci√≥n
 almacenada en los componentes \emph{Content Provider }que son los
-encargados de administrar la informaciÛn compartida por las aplicaciones;
+encargados de administrar la informaci√≥n compartida por las aplicaciones;
 las aplicaciones pueden almacenar sus datos en el sistema de archivos,
 en una base SQLite, en la Web, o en cualquier otro lugar de acceso.
-A travÈs del \textquoteleft content provider\textquoteright , otras
-aplicaciones pueden consultar, o incluso modificar estos datos. 
+A trav√©s del ‚Äòcontent provider‚Äô, otras aplicaciones pueden consultar,
+o incluso modificar estos datos. 
 
-Las actividades tambiÈn pueden iniciar servicios que se ejecutan en
+Las actividades tambi√©n pueden iniciar servicios que se ejecutan en
 segundo plano para realizar operaciones que requieran gran cantidad
-de tiempo, o interact˙en con procesos remotos, por ejemplo la reproducciÛn
-de m˙sica en segundo plano o la descarga de datos mientras el usuario
-interact˙a con una aplicaciÛn diferente. 
+de tiempo, o interact√∫en con procesos remotos, por ejemplo la reproducci√≥n
+de m√∫sica en segundo plano o la descarga de datos mientras el usuario
+interact√∫a con una aplicaci√≥n diferente. 
 
-Respecto a los anuncios o mensajes de difusiÛn masiva, el componente
+Respecto a los anuncios o mensajes de difusi√≥n masiva, el componente
 \emph{Broadcast Receiver} funciona como puerta de enlace a otros componentes,
 respondiendo mayormente a los anuncios originados por el sistema,
-por ejemplo, cuando la pantalla se apaga, la baterÌa es baja, o al
-capturar una fotografÌa. 
+por ejemplo, cuando la pantalla se apaga, la bater√≠a es baja, o al
+capturar una fotograf√≠a. 
 
-El ˙ltimo componente denominado \emph{Intent} representa acciones
-a realizar, especÌficamente, tienen por finalidad iniciar actividades,
+El √∫ltimo componente denominado \emph{Intent} representa acciones
+a realizar, espec√≠ficamente, tienen por finalidad iniciar actividades,
 servicios o \emph{Broadcast Receivers} realizando el binding en tiempo
-de ejecuciÛn entre los componentes de las aplicaciones (tanto entre
-componentes de una misma aplicaciÛn como de diferentes). Cada Intent
-cuenta con una estructura de datos donde se realiza una descripciÛn
-abstracta de una operaciÛn a realizar, luego, la entrega de estos
+de ejecuci√≥n entre los componentes de las aplicaciones (tanto entre
+componentes de una misma aplicaci√≥n como de diferentes). Cada Intent
+cuenta con una estructura de datos donde se realiza una descripci√≥n
+abstracta de una operaci√≥n a realizar, luego, la entrega de estos
 objetos se realiza de diferente manera de acuerdo el tipo de componente
 que se desee activar. 
-
-La manera en que los componentes interact˙an entre sÌ son resumidos
-en la figura \ref{fig:Android-components} expuesta a continuaciÛn. 
-
-\begin{figure}
-\begin{centering}
-\includegraphics[scale=0.55]{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/android-component}
-\par\end{centering}
-
-\caption{Diagrama de la arquitectura en capas empleada por Android\label{fig:Android-components}}
-\end{figure}
-
 
 
 \section{Componentes de software\label{sec:Componentes-de-software}}
 
 En el marco del desarrollo de software para diferentes plataformas
-y para mÛviles m·s especÌficamente, nos encontramos con la posibilidad
-de reutilizar cÛdigo previamente desarrollado, testeado y deployado
+y para m√≥viles m√°s espec√≠ficamente, nos encontramos con la posibilidad
+de reutilizar c√≥digo previamente desarrollado, testeado y deployado
 que cumpla con una determinada funcionalidad ahorrando tiempo y esfuerzo
-al desarrollador. Estas piezas de cÛdigos ya implementadas y disponibles
+al desarrollador. Estas piezas de c√≥digos ya implementadas y disponibles
 se conocen bajo el nombre de componentes de software e incluyen en
-su definiciÛn paquetes de software, servicios o recursos web, o mÛdulos
+su definici√≥n paquetes de software, servicios o recursos web, o m√≥dulos
 que encapsulan a un conjunto de funciones o datos relacionados; sin
 embargo, cualquiera sea la pieza que represente, frecuentemente los
-componentes son vistos y tratados como objetos o colecciÛn de objetos. 
+componentes son vistos y tratados como objetos o colecci√≥n de objetos. 
 
-La reutilizaciÛn es uno de los objetivos principales al momento de
-diseÒar un nuevo componente de software de gran calidad para ser usados
-en diferentes programas. Por lo tanto la implementaciÛn y diseÒo de
+La reutilizaci√≥n es uno de los objetivos principales al momento de
+dise√±ar un nuevo componente de software de gran calidad para ser usados
+en diferentes programas. Por lo tanto la implementaci√≥n y dise√±o de
 un componente conlleva un gran esfuerzo e incluye procesos complejos
-como la documentaciÛn, testing robusto a travÈs de entradas comprensibles
-y la posibilidad de retornar mensajes de error y cÛdigos, y el diseÒo
-enfocado a la utilizaciÛn en formas imprevistas. Si bien los componentes
-act˙an sin modificar su cÛdigo, el comportamiento de los cÛdigos fuentes
-del componente puede cambiar basado en la extensibilidad de la aplicaciÛn. 
+como la documentaci√≥n, testing robusto a trav√©s de entradas comprensibles
+y la posibilidad de retornar mensajes de error y c√≥digos, y el dise√±o
+enfocado a la utilizaci√≥n en formas imprevistas. Si bien los componentes
+act√∫an sin modificar su c√≥digo, el comportamiento de los c√≥digos fuentes
+del componente puede cambiar basado en la extensibilidad de la aplicaci√≥n. 
 
 Todos los procesos de sistemas son estructurados bajo componentes
 separados de modo tal que todos los datos y funciones de un componente
-mantengan una misma relaciÛn sem·ntica, principio que se mantiene
-en el contenido de las clases. Por esta razÛn, se le atribuye a los
-componentes las caracterÌsticas de ser modulares y cohesivos. 
+mantengan una misma relaci√≥n sem√°ntica, principio que se mantiene
+en el contenido de las clases. Por esta raz√≥n, se le atribuye a los
+componentes las caracter√≠sticas de ser modulares y cohesivos. 
 
-La comunicaciÛn entre componentes se realiza a travÈs de interfaces.
+La comunicaci√≥n entre componentes se realiza a trav√©s de interfaces.
 Cuando un componente ofrece servicios al resto del sistema, el mismo
 proporciona una interfaz que especifica los servicios que otros componentes
 pueden utilizar y la manera en que pueden hacerlo. La interfaz puede
 verse como una firma del componente ya que el cliente no necesita
-conocer el procesamiento interno del componente para utilizarlo, condiciÛn
+conocer el procesamiento interno del componente para utilizarlo, condici√≥n
 que respeta el principio de encapsulamiento. 
 
 Por otro lado, cuando un componente necesita de otro para su funcionamiento,
@@ -254,7 +241,7 @@ el mismo establece las interfaces requeridas donde especifica los
 servicios que necesita. 
 
 De acuerdo al modelo \ac{UML} y lo reflejado en la figura \ref{fig:UML-component},
-las interfaces proporcionadas son representadas con sÌmbolos de lollipop
+las interfaces proporcionadas son representadas con s√≠mbolos de lollipop
 en el borde del componente y las interfaces requeridas por medio de
 sockets abiertos en el borde externo. 
 
@@ -263,13 +250,13 @@ sockets abiertos en el borde externo.
 \includegraphics[scale=0.55]{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/UML-component}
 \par\end{centering}
 
-\caption{Componente UML con interfaces proveÌdas y requeridas.\label{fig:UML-component}}
+\caption{Componente UML con interfaces prove√≠das y requeridas.\label{fig:UML-component}}
 \end{figure}
 
 
-Otra de las caracterÌsticas fundamentales de los componentes es su
-capacidad de ser sustituibles tanto en tiempo de diseÒo como en tiempo
-de ejecuciÛn, pudiendo ser reemplazados por actualizaciones u otras
+Otra de las caracter√≠sticas fundamentales de los componentes es su
+capacidad de ser sustituibles tanto en tiempo de dise√±o como en tiempo
+de ejecuci√≥n, pudiendo ser reemplazados por actualizaciones u otras
 alternativas sin romper el sistema en el que los componentes funcionan.
 El reemplazo es posible si el componente sucesor provee por lo menos
 la misma funcionalidad que el componente a reemplazar y si requiere
@@ -278,355 +265,282 @@ a lo sumo las mismas funciones que el componente inicial.
 
 \section{Atributos de calidad \label{sec:Atributos-de-calidad}}
 
-Al diseÒar un sistema de software no sÛlo se espera cumplir con los
-objetivos de negocio sino tambiÈn alcanzar un determinado grado de
-calidad de software capaz de satisfacer al grupo de usuarios y/o diseÒadores,
+Al dise√±ar un sistema de software no s√≥lo se espera cumplir con los
+objetivos de negocio sino tambi√©n alcanzar un determinado grado de
+calidad de software capaz de satisfacer al grupo de usuarios y/o dise√±adores,
 muchos factores determinan las cualidades que deben proporcionarse
 en la arquitectura de un sistema. Estas cualidades \cite{Ghahramani2004}
-van m·s all· de la funcionalidad (capacidades), servicios y comportamientos
-del sistema El diseÒo de la arquitectura de un sistema depende mayormente
-de los atributos de calidad (tambiÈn denominados propiedades no funcionales)
-demandados por los stakeholders que de la funcionalidad en sÌ misma
-que especifica el comportamiento que deberÌa tener el producto, para
-considerar un software de utilidad; largos tiempos de respuesta, caÌdas
-del sistema, interfaces confusas, no son caracterÌsticas deseables
-en un sistema, por lo que toda decisiÛn respecto al diseÒo de la arquitectura
+van m√°s all√° de la funcionalidad (capacidades), servicios y comportamientos
+del sistema El dise√±o de la arquitectura de un sistema depende mayormente
+de los atributos de calidad (tambi√©n denominados propiedades no funcionales)
+demandados por los stakeholders que de la funcionalidad en s√≠ misma
+que especifica el comportamiento que deber√≠a tener el producto, para
+considerar un software de utilidad; largos tiempos de respuesta, ca√≠das
+del sistema, interfaces confusas, no son caracter√≠sticas deseables
+en un sistema, por lo que toda decisi√≥n respecto al dise√±o de la arquitectura
 debe conducir al cumplimiento de ciertos atributos de calidad al mismo
 tiempo que cumple con la funcionalidad requerida. 
 
 
 \subsection{Performance\label{subsec:Atributos-de-calidad-Performance}}
 
-Se puede medir la calidad de un sistema a travÈs de su desempeÒo evaluando
-la efectividad del uso de los recursos disponibles en tiempo de ejecuciÛn.
-Dependiendo el contexto, la eficiencia puede medirse a travÈs de varios
-par·metros, incluyendo tiempo de respuesta, ancho de banda y disponibilidad. 
+Se puede medir la calidad de un sistema a trav√©s de su desempe√±o evaluando
+la efectividad del uso de los recursos disponibles en tiempo de ejecuci√≥n.
+Dependiendo el contexto, la eficiencia puede medirse a trav√©s de varios
+par√°metros, incluyendo tiempo de respuesta, ancho de banda y disponibilidad. 
 
 El rendimiento de un sistema engloba, generalmente, el tiempo de los
 eventos que se producen y que el sistema debe responder a ellos. Estos
 eventos pueden ser muy variados tales como alarmas, mensajes, peticiones
-a usuarios o simplemente tiempo de procesamiento, pero b·sicamente
+a usuarios o simplemente tiempo de procesamiento, pero b√°sicamente
 se considera de todos ellos el tiempo que tarda el sistema para responder
 ante el evento . La complejidad para el manejo de estos eventos radica
 en su fuente, ya que pueden provenir desde una solicitud de usuario,
 de otros sistemas o desde el interior del propio sistema. 
 
-Sin importar el contexto de desarrollo del sistema, el patrÛn de los
-eventos que llegan y el patrÛn de respuestas se pueden caracterizar,
-y esta caracterizaciÛn hace posible la construcciÛn de escenarios
+Sin importar el contexto de desarrollo del sistema, el patr√≥n de los
+eventos que llegan y el patr√≥n de respuestas se pueden caracterizar,
+y esta caracterizaci√≥n hace posible la construcci√≥n de escenarios
 generales de rendimiento empleados en diferentes benchmarks, por ejemplo
-el tiempo de respuesta puede significar el tiempo m·ximo y mÌnimo
-de procesamiento para cierto elemento del sistema o la cantidad m·xima
+el tiempo de respuesta puede significar el tiempo m√°ximo y m√≠nimo
+de procesamiento para cierto elemento del sistema o la cantidad m√°xima
 de eventos que un determinado servicio puede atender por unidad de
 tiempo. 
 
-La respuesta del sistema a un estÌmulo puede ser caracterizado por
-la latencia (el tiempo entre la llegada del estÌmulo y la respuesta
-del sistema a la misma), los plazos de procesamiento, la fluctuaciÛn
-de la respuesta (la variaciÛn de latencia), el n˙mero de eventos no
+La respuesta del sistema a un est√≠mulo puede ser caracterizado por
+la latencia (el tiempo entre la llegada del est√≠mulo y la respuesta
+del sistema a la misma), los plazos de procesamiento, la fluctuaci√≥n
+de la respuesta (la variaci√≥n de latencia), el n√∫mero de eventos no
 procesados debido a que el sistema era demasiado ocupado para responder,
-y los datos que se perdiÛ debido a que el sistema era demasiado ocupado. 
+y los datos que se perdi√≥ debido a que el sistema era demasiado ocupado. 
 
 
-\subsection{PrecisiÛn\label{subsec:Atributos-de-calidad-Precisi=0000F3n}}
+\subsection{Precisi√≥n\label{subsec:Atributos-de-calidad-Precisi=0000F3n}}
 
-Cabe destacar que no existe una definiciÛn est·ndar sobre el significado
-de precisiÛn en un sistema, ya que se trata de una medida que eval˙a
-quÈ tan exacta es la respuesta de un componente, y cada componente
-est· fuertemente ligado al dominio en el que se presenta, por ejemplo,
-en un problema de detecciÛn de rostros, la precisiÛn puede significar
+Cabe destacar que no existe una definici√≥n est√°ndar sobre el significado
+de precisi√≥n en un sistema, ya que se trata de una medida que eval√∫a
+qu√© tan exacta es la respuesta de un componente, y cada componente
+est√° fuertemente ligado al dominio en el que se presenta, por ejemplo,
+en un problema de detecci√≥n de rostros, la precisi√≥n puede significar
 la cantidad de rostros correctamente detectados sobre los rostros
-totales presentes, y en un problema de clasificaciÛn puede significar
-la correctitud en la predicciÛn de la clase para un cierto atributo.
+totales presentes, y en un problema de clasificaci√≥n puede significar
+la correctitud en la predicci√≥n de la clase para un cierto atributo.
 
-En tÈrminos generales, se toma la precisiÛn como el grado de cercanÌa
-(o dispersiÛn) de las mediciones respecto al verdadero valor, es el
+En t√©rminos generales, se toma la precisi√≥n como el grado de cercan√≠a
+(o dispersi√≥n) de las mediciones respecto al verdadero valor, es el
 grado en que si las mediciones se repitieran bajo las mismas condiciones
-los resultados serÌan los mismos. A menudo, la medida de precisiÛn
-es confundida con el tÈrmino exactitud que indica la distancia del
+los resultados ser√≠an los mismos. A menudo, la medida de precisi√≥n
+es confundida con el t√©rmino exactitud que indica la distancia del
 valor medido respecto al valor verdadero. Por ejemplo, si un experimento
-contiene un error sistem·tico, el aumento del tamaÒo de la muestra
-en general aumenta la precisiÛn, pero no mejora la exactitud. El resultado
-serÌa una cadena consistente (aunque incorrecto) de los resultados
-del experimento defectuoso. La eliminaciÛn del error sistem·tico mejora
-la exactitud, pero no cambia la precisiÛn. 
+contiene un error sistem√°tico, el aumento del tama√±o de la muestra
+en general aumenta la precisi√≥n, pero no mejora la exactitud. El resultado
+ser√≠a una cadena consistente (aunque incorrecto) de los resultados
+del experimento defectuoso. La eliminaci√≥n del error sistem√°tico mejora
+la exactitud, pero no cambia la precisi√≥n. 
 
 
-\section{Aprendizaje de m·quina \label{sec:Aprendizaje-de-maquina}}
+\section{Aprendizaje de m√°quina \label{sec:Aprendizaje-de-maquina}}
 
 El aprendizaje a partir de datos es la base para comprender el proceso
-de aprendizaje de m·quina ya que los datos son la ˙nica herramienta
-de la que se dispone y conoce a ciencia cierta sobre las caracterÌsticas
-de un dominio cualquiera. La representaciÛn de los datos reales puede
-alcanzar el tamaÒo de terabytes por lo que dificulta hacer una analogÌa
+de aprendizaje de m√°quina ya que los datos son la √∫nica herramienta
+de la que se dispone y conoce a ciencia cierta sobre las caracter√≠sticas
+de un dominio cualquiera. La representaci√≥n de los datos reales puede
+alcanzar el tama√±o de terabytes por lo que dificulta hacer una analog√≠a
 respecto al aprendizaje humano basado en la experiencia. 
 
 El hombre basa su conocimiento en tres partes: \emph{i}) recuerdo,
-el hombre reconoce cuando ha sido la ˙ltima vez que se estuvo en una
-determinada situaciÛn (dataset), \emph{ii}) adaptaciÛn, reconoce la
-˙ltima vez que se probÛ una acciÛn (salida producida) y \emph{iii})
-generalizaciÛn, si ha funcionado o no (si fue correcta o no). 
+el hombre reconoce cuando ha sido la √∫ltima vez que se estuvo en una
+determinada situaci√≥n (dataset), \emph{ii}) adaptaci√≥n, reconoce la
+√∫ltima vez que se prob√≥ una acci√≥n (salida producida) y \emph{iii})
+generalizaci√≥n, si ha funcionado o no (si fue correcta o no). 
 
-El tÈrmino generalizaciÛn refiere a la similitud entre diferentes
+El t√©rmino generalizaci√≥n refiere a la similitud entre diferentes
 situaciones de manera tal que las opciones que han sido aplicadas
 en casos previos pueden ser usadas en nuevos casos. Estas fueron las
 bases del primer Aprendizaje Artificial y es conocido como procesamiento
-de sÌmbolos ya que las computadoras manipulan sÌmbolos que reflejan
-el ambiente. En contraste, los mÈtodos de aprendizaje de m·quinas
-son llamados sub-simbÛlicos ya que no se utilizan sÌmbolos. 
+de s√≠mbolos ya que las computadoras manipulan s√≠mbolos que reflejan
+el ambiente. En contraste, los m√©todos de aprendizaje de m√°quinas
+son llamados sub-simb√≥licos ya que no se utilizan s√≠mbolos. 
 
-El aprendizaje de m·quina, entonces, es un proceso para que las computadoras
+El aprendizaje de m√°quina, entonces, es un proceso para que las computadoras
 modifiquen o adapten sus acciones (predictivas o de control de robot)
-para que sus resultados sean m·s precisos, precisiÛn que refleja la
-proximidad respecto a las acciones correctas. El aprendizaje de m·quina
-re˙ne ideas de neurociencia y biologÌa, estadÌstica, matem·tica y
-fÌsica, para generar tÈcnicas y hacer que la computadora aprenda.
-Otro concepto importante en este ·mbito es la minerÌa de datos, el
-proceso de extraer informaciÛn ˙til de un conjunto de datos masivos
-llamado com˙nmente dataset por medio de algoritmos de alto grado de
+para que sus resultados sean m√°s precisos, precisi√≥n que refleja la
+proximidad respecto a las acciones correctas. El aprendizaje de m√°quina
+re√∫ne ideas de neurociencia y biolog√≠a, estad√≠stica, matem√°tica y
+f√≠sica, para generar t√©cnicas y hacer que la computadora aprenda.
+Otro concepto importante en este √°mbito es la miner√≠a de datos, el
+proceso de extraer informaci√≥n √∫til de un conjunto de datos masivos
+llamado com√∫nmente dataset por medio de algoritmos de alto grado de
 eficiencia y enfatizados nuevamente en la ciencia computacional. 
 
-Quiz·s, el punto de inflexiÛn en este campo de estudio es la complejidad
-computacional de la aplicaciÛn de tÈcnicas de aprendizaje de m·quina
+Quiz√°s, el punto de inflexi√≥n en este campo de estudio es la complejidad
+computacional de la aplicaci√≥n de t√©cnicas de aprendizaje de m√°quina
 sobre un gran volumen de datos, de manera que los algoritmos de complejidad
 polinomial muy grande pueden resultar un problema. Generalmente la
 complejidad se divide en dos partes: la complejidad del entrenamiento
 y la complejidad de aplicar el algoritmo entrenado. El proceso de
-entrenamiento usualmente, se realiza escasas veces, incluso tan sÛlo
-una, y el tiempo que requiere no resulta tan crÌtico, por lo que se
-enfatiza sobre la segunda parte donde se pretende que la decisiÛn
-sea lo m·s r·pida posible con un bajo costo computacional. 
+entrenamiento usualmente, se realiza escasas veces, incluso tan s√≥lo
+una, y el tiempo que requiere no resulta tan cr√≠tico, por lo que se
+enfatiza sobre la segunda parte donde se pretende que la decisi√≥n
+sea lo m√°s r√°pida posible con un bajo costo computacional. 
 
 Si se define en forma imprecisa el concepto de aprendizaje como la
-mejora de tareas a travÈs de la pr·ctica surgen algunos cuestionamientos
-asociados, de quÈ forma la computadora puede saber si est· aprendiendo
-mejor o de quÈ forma podrÌa mejorar ese aprendizaje. De aquÌ, toman
-lugar diferentes tipos de aprendizaje de m·quina, por ejemplo se le
+mejora de tareas a trav√©s de la pr√°ctica surgen algunos cuestionamientos
+asociados, de qu√© forma la computadora puede saber si est√° aprendiendo
+mejor o de qu√© forma podr√≠a mejorar ese aprendizaje. De aqu√≠, toman
+lugar diferentes tipos de aprendizaje de m√°quina, por ejemplo se le
 puede indicar a un algoritmo la respuesta correcta para un problema,
-asÌ, la prÛxima vez que se aplique su desempeÒo ser· mejor. TambiÈn,
-podrÌa indicarse un conjunto de respuestas correctas para que la m·quina
+as√≠, la pr√≥xima vez que se aplique su desempe√±o ser√° mejor. Tambi√©n,
+podr√≠a indicarse un conjunto de respuestas correctas para que la m√°quina
 \emph{adivine} la forma de obtener estas respuestas para otros problemas
-(generalizaciÛn). Alternativamente, se puede indicar si la respuesta
-obtenida es correcta o no sin seÒalar la respuesta real ya que la
-m·quina deberÌa ser capaz de encontrarla; una variante podrÌa ser
+(generalizaci√≥n). Alternativamente, se puede indicar si la respuesta
+obtenida es correcta o no sin se√±alar la respuesta real ya que la
+m√°quina deber√≠a ser capaz de encontrarla; una variante podr√≠a ser
 asignarle un puntaje a la respuesta obtenida por el algoritmo acordando
-cu·n correcta resulta ser y no sÛlo indicarlo mediante los valores
+cu√°n correcta resulta ser y no s√≥lo indicarlo mediante los valores
 verdadero o falso. 
 
-Estas diferentes respuestas proveen una forma f·cil de clasificar
-los diferentes mÈtodos de aprendizaje, los cuales ser·n detallados
+Estas diferentes respuestas proveen una forma f√°cil de clasificar
+los diferentes m√©todos de aprendizaje, los cuales ser√°n detallados
 en las secciones siguientes en base a la naturaleza de la entrada
-y la naturaleza de la salida; sin embargo todos los mÈtodos comparten
-el mismo objetivo de generalizaciÛn: el algoritmo debe producir salidas
+y la naturaleza de la salida; sin embargo todos los m√©todos comparten
+el mismo objetivo de generalizaci√≥n: el algoritmo debe producir salidas
 sensibles para datos de entrada que no fueron encontrados durante
-el aprendizaje teniendo en cuenta tambiÈn que el algoritmo puede lidiar
-con ruido en los datos, una pequeÒa imprecisiÛn en los valores que
-es inherente a la mediciÛn de cualquier proceso real. 
+el aprendizaje teniendo en cuenta tambi√©n que el algoritmo puede lidiar
+con ruido en los datos, una peque√±a imprecisi√≥n en los valores que
+es inherente a la medici√≥n de cualquier proceso real. 
 
 
-\subsection{ClasificaciÛn por la naturaleza de la entrada}
+\subsection{Clasificaci√≥n por la naturaleza de la entrada}
 
 El modo de aprendizaje que un algoritmo particular puede realizar
 queda determinado por la naturaleza de los datos de entrada, es decir,
-puede variar en base a la informaciÛn contenida en los datos de entrenamiento
+puede variar en base a la informaci√≥n contenida en los datos de entrenamiento
 (\emph{training set}). 
 
 El aprendizaje supervisado utiliza un conjunto de datos basado en
 dos pares de objetos: los datos de entrada o conjunto de ejemplos
 del dominio y las respuestas correctas (\emph{targets}) para una determinada
-caracterÌstica; a travÈs de las respuestas correctas provistas y basado
+caracter√≠stica; a trav√©s de las respuestas correctas provistas y basado
 en el conjunto de datos el algoritmo de aprendizaje generaliza el
 comportamiento para responder a todas las posibles entradas. Este
 modo de aprendizaje, entonces, es un proceso que se realiza mediante
 un entrenamiento controlado por un agente externo que determina la
-respuesta que deberÌa generar el algoritmo a partir de una entrada
+respuesta que deber√≠a generar el algoritmo a partir de una entrada
 determinada. 
 
 Contrariamente, el aprendizaje por refuerzo se basa en la idea de
 no disponer de ejemplos completos del comportamiento deseado por el
 algoritmo, es decir, no indicar durante el entrenamiento exactamente
 la salida que se desea proporcione el clasificador ante una determinada
-entrada, sÛlo se le indica si la salida obtenida se ajusta a la deseada
-y en funciÛn a ello se re configuran los pasos. 
+entrada, s√≥lo se le indica si la salida obtenida se ajusta a la deseada
+y en funci√≥n a ello se re configuran los pasos. 
 
-Por ˙ltimo, en el aprendizaje \cite{Ghahramani2004} no supervisado,
-la m·quina simplemente recibe los datos de entrada sin etiquetas o
-respuestas correctas como en el mÈtodo supervisado ni valores de recompensa
-desde el ambiente, dando lugar a una percepciÛn misteriosa sobre la
-forma que se espera que el mÈtodo aprenda sin recibir ning˙n tipo
-de devoluciÛn. Sin embargo, es posible desarrollar un framework formal
-para llevar a cabo aprendizaje no supervisado basado en la nociÛn
-de que el objetivo es construir una representaciÛn de la entrada que
+Por √∫ltimo, en el aprendizaje \cite{Ghahramani2004} no supervisado,
+la m√°quina simplemente recibe los datos de entrada sin etiquetas o
+respuestas correctas como en el m√©todo supervisado ni valores de recompensa
+desde el ambiente, dando lugar a una percepci√≥n misteriosa sobre la
+forma que se espera que el m√©todo aprenda sin recibir ning√∫n tipo
+de devoluci√≥n. Sin embargo, es posible desarrollar un framework formal
+para llevar a cabo aprendizaje no supervisado basado en la noci√≥n
+de que el objetivo es construir una representaci√≥n de la entrada que
 puede ser usada para tomar decisiones, predecir futuras entradas,
-comunicar eficientemente entradas para otras m·quinas, entre otras
+comunicar eficientemente entradas para otras m√°quinas, entre otras
 posibilidades. El aprendizaje no supervisado puede entenderse como
-la b˙squeda de patrones en los datos independientemente del ruido
+la b√∫squeda de patrones en los datos independientemente del ruido
 presente en los mismos. 
 
-NÛtese que los valores de entrada y etiqueta describen vectores ya
+N√≥tese que los valores de entrada y etiqueta describen vectores ya
 que cada ejemplo (\emph{instance}) del conjunto de entrenamiento posee
-varias caracterÌsticas (\emph{features}); si se tuvieran todos los
-posibles ejemplos de un problema, no habrÌa necesidad alguna de aprendizaje.
+varias caracter√≠sticas (\emph{features}); si se tuvieran todos los
+posibles ejemplos de un problema, no habr√≠a necesidad alguna de aprendizaje.
 
 
-\subsection{ClasificaciÛn por la naturaleza de la salida}
+\subsection{Clasificaci√≥n por la naturaleza de la salida}
 
-
-\subsubsection{ClasificaciÛn}
-
-La clasificaciÛn tambiÈn se conoce como un proceso de categorizaciÛn
-que consiste en asignar a cada ejemplo una etiqueta o clase a la que
-pertenece basado en el entrenamiento de ejemplares de cada clase.
-Los datos de entrenamiento son instancias que pertenecen a una ˙nica
-clase y el conjunto de clases cubre todas las salidas posibles, por
-eso se considera al proceso de clasificaciÛn como un proceso discreto.
-Estas dos caracterÌsticas claves no se asemejan a la realidad, algunos
-ejemplos podrÌan pertenecer parcialmente a dos clases diferentes,
-incluso podrÌa haber situaciones en las que fuere imposible categorizar
-la entrada, por ejemplo, si se considerara una m·quina vendedora que
-utiliza un algoritmo para aprender a distinguir monedas nacionales,
-al introducir una moneda extranjera, el clasificador ser· incapaz
-de responder correctamente, e identificar· la moneda como aquella
-que m·s se asemeje. Este fenÛmeno se conoce como \emph{novelty detection}.
-El algoritmo de clasificaciÛn tiene como objetivo encontrar umbrales
-de decisiÛn que sirvan para identificar las diferentes clases, en
-la figura \ref{fig:clasification-problems} puede observarse a la
-izquierda un conjunto de umbrales de decisiÛn lineales y a la derecha
-un conjunto alternativo que separan m·s idÛneamente las diferentes
-clases pero requiere lÌneas que no son rectas. 
-
-\begin{figure}
-\begin{centering}
-\includegraphics[scale=0.55]{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/clasification-problems}
-\par\end{centering}
-
-\caption{Conjuntos de umbrales de decisiÛn para problemas de clasificaciÛn.\label{fig:clasification-problems}}
-\end{figure}
-
-
-
-\subsubsection{RegresiÛn}
-
-A diferencia de la clasificaciÛn, el proceso de regresiÛn predice
-valores numÈricos de atributos a partir de funciones matem·ticas polinomiales
-que describan o se ajusten lo m·s posible a todos los puntos del dominio,
-es decir, todos los valores del conjunto de entrenamiento correspondientes
-al atributo que se quiere predecir. Generalmente, se considera un
-problema de aproximaciÛn de funciÛn o interpolaciÛn al encontrar un
-valor numÈrico entre los valores conocidos. Por lo tanto, el eje primordial
-del proceso de regresiÛn es encontrar la funciÛn que mejor represente
-al conjunto de puntos, ya que funciones con distintos grados de polinomios
-causan diferentes efectos. La figura \ref{fig:regression-problems}
-refleja la situaciÛn expresada anteriormente, donde se muestra el
-conjunto de valores del dominio y tres curvas alternativas de representaciÛn.
-El gr·fico inferior izquierdo combina, adem·s, una funciÛn c˙bica
-y lÌnea recta. 
-
+La teor√≠a de aprendizaje de maquinas abarca varios factores considerando
+las caracter√≠sticas de lo que se busca en los diferentes m√©todos.
+As√≠, existen cinco tipos de m√©todos, para la b√∫squeda de diferentes
+objetivos:
+\begin{description}
+\item [{Clasificaci√≥n}] Consiste en asignar a cada ejemplo una etiqueta
+o clase a la que pertenece basado en el entrenamiento de ejemplares
+de cada clase. Los datos de entrenamiento son instancias que pertenecen
+a una √∫nica clase y el conjunto de clases cubre todas las salidas
+posibles, por eso se considera al proceso de clasificaci√≥n como un
+proceso discreto. El algoritmo de clasificaci√≥n tiene como objetivo
+encontrar umbrales de decisi√≥n que sirvan para identificar las diferentes
+clases.
+\item [{Clustering}] El proceso de clustering es la tarea de agrupar un
+conjunto de objetos de modo tal que los objetos pertenecientes a un
+mismo grupo (\emph{cluster}) comparten alg√∫n tipo de similitud entre
+ellos, de igual sentido que se diferencian con los objetos de otro
+grupo. A diferencia del proceso de clasificaci√≥n, los grupos o clases
+no son conocidos fehacientemente antes del entrenamiento, un claro
+m√©todo de aprendizaje no supervisado. 
+\item [{Estimaci√≥n~de~densidad}] La funci√≥n de densidad de probabilidad
+\cite{Silverman1986} es un concepto fundamental de la estad√≠stica
+y caracteriza el comportamiento probable de una poblaci√≥n en tanto
+especifica la posibilidad relativa de que una variable aleatoria continua
+X tome un valor cercano a x.
+\item [{Reducci√≥n~de~dimesionalidad}] Se basa en simplificar los datos
+de entrada mape√°ndolos en un espacio dimensional m√°s simple.
+\item [{Regresi√≥n}] El proceso de regresi√≥n predice valores num√©ricos de
+atributos a partir de funciones matem√°ticas polinomiales que describan
+o se ajusten lo m√°s posible a todos los puntos del dominio, es decir,
+todos los valores del conjunto de entrenamiento correspondientes al
+atributo que se quiere predecir. Generalmente, se considera un problema
+de aproximaci√≥n de funci√≥n o interpolaci√≥n al encontrar un valor num√©rico
+entre los valores conocidos. Por lo tanto, el eje primordial del proceso
+de regresi√≥n es encontrar la funci√≥n que mejor represente al conjunto
+de puntos, ya que funciones con distintos grados de polinomios causan
+diferentes efectos. La figura \ref{fig:regression-problems} refleja
+la situaci√≥n expresada anteriormente, donde se muestra el conjunto
+de valores del dominio y tres curvas alternativas de representaci√≥n.
+El gr√°fico inferior izquierdo combina, adem√°s, una funci√≥n c√∫bica
+y l√≠nea recta. 
+\end{description}
 \begin{figure}
 \begin{centering}
 \includegraphics[scale=0.55]{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/regression-problems}
 \par\end{centering}
 
-\caption{ComparaciÛn de distintas funciones polinomiales de regresiÛn. \label{fig:regression-problems}}
+\caption{Comparaci√≥n de distintas funciones polinomiales de regresi√≥n. \label{fig:regression-problems}}
 \end{figure}
 
 
-La forma m·s correcta de saber cu·l soluciÛn presentada es la mejor,
-se eval˙a el grado de generalizaciÛn que permite cada una; se toma
-alg˙n punto incluido entre los puntos ya representados y se utiliza
+La forma m√°s correcta de saber cu√°l soluci√≥n presentada es la mejor,
+se eval√∫a el grado de generalizaci√≥n que permite cada una; se toma
+alg√∫n punto incluido entre los puntos ya representados y se utiliza
 la curva para predecir el valor, luego se compara entre los valores
-para saber cual resultÛ m·s prÛximo. En este caso, el gr·fico inferior
+para saber cual result√≥ m√°s pr√≥ximo. En este caso, el gr√°fico inferior
 derecho. 
 
-En sÌntesis, un algoritmo de regresiÛn puede interpolar entre dos
-puntos de datos, dando la apariencia de ser una pr·ctica poco inteligente
-y no muy compleja en un espacio bi dimensional, pero su complejidad
-es exponencialmente mayor en dimensiones m·s grandes. 
+~
 
-
-\subsubsection{Clustering}
-
-El proceso de clustering es la tarea de agrupar un conjunto de objetos
-de modo tal que los objetos pertenecientes a un mismo grupo (\emph{cluster})
-comparten alg˙n tipo de similitud entre ellos, de igual sentido que
-se diferencian con los objetos de otro grupo. A diferencia del proceso
-de clasificaciÛn, los grupos o clases no son conocidos fehacientemente
-antes del entrenamiento, un claro mÈtodo de aprendizaje no supervisado. 
-
-Clustering es una de las tareas principales de la minerÌa de datos
-y una tÈcnica com˙n en el an·lisis estadÌstico de los datos, usado
-en diversos campos, entre los que se destaca el aprendizaje de m·quina,
-el reconocimiento de patrones, el an·lisis de im·genes, recuperaciÛn
-de informaciÛn, bioinformaciÛn, compresiÛn de datos y gr·ficos computacionales. 
-
-
-\subsubsection{EstimaciÛn de densidad}
-
-La funciÛn de densidad de probabilidad \cite{Silverman1986} es un
-concepto fundamental de la estadÌstica y caracteriza el comportamiento
-probable de una poblaciÛn en tanto especifica la posibilidad relativa
-de que una variable aleatoria continua X tome un valor cercano a x;
-especificar la funciÛn de densidad brinda una descripciÛn natural
-de la distribuciÛn de X, y permite encontrar probabilidad asociadas
-con X de la relaciÛn:
-
-\[
-P(a<X<b)=\intop f(d)dx\forall a<b
-\]
-
-
-El conjunto de datos de entrenamiento puede considerarse como una
-funciÛn de densidad desconocida, donde la estimaciÛn de la densidad
-es, entonces, la estimaciÛn de una funciÛn de probabilidad desconocida
-de los datos observados; un uso natural de esta estimaciÛn es la investigaciÛn
-informal de propiedades del conjunto de datos, obtener indicadores
-sobre estas propiedades como la asimetrÌa y multimodalidad de los
-datos. En algunos casos, los indicadores pueden proteger conclusiones
-consideradas verdades autoevidentes, mientras que otros marcan el
-camino para un an·lisis posterior y/o recolecciÛn de datos. 
-
-
-\subsubsection{ReducciÛn de dimensionalidad}
-
-Una de las principales motivaciones para la reducciÛn dimensional
-es la dificultad de interpretaciÛn de datos de tres dimensiones o
-m·s, teniendo en cuenta que cuanto mayor sea el n˙mero de dimensiones,
-m·s datos son requeridos infiriendo explÌcitamente en el costo computacional
-de muchos algoritmos. Por otro lado, reducir el espacio de dimensiones
-permite eliminar ruido sobre los datos, mejorar significativamente
-los resultados de los algoritmos de aprendizaje, simplificar el dataset
-y lograr resultados m·s claros y entendibles, entre otros.
-
-Existen tres maneras de llevar a cabo la reducciÛn: \emph{i}) a travÈs
-de la selecciÛn de atributos, observar las caracterÌsticas disponibles
-y descubrir si las mismas son ˙tiles, por ejemplo, el factor de correlaciÛn
-de las mismas con la salida, \emph{ii}) la derivaciÛn de nuevas caracterÌsticas
-a partir de las existentes, aplicando transformaciones al dataset
-cambiando los valores del dominio del gr·fico mediante el movimiento
-y la rotaciÛn de los mismos, los cuales pueden ser descritos como
-una matriz aplicada a los datos con el fin de combinar caracterÌsticas
-y detectar cu·les son ˙tiles y cu·les deberÌan ser descartadas (reducciÛn)
-y \emph{iii}) a travÈs del uso de clustering para agrupar puntos similares
-y permitir la identificaciÛn de un conjunto reducido a ser utilizadas. 
+Cabe destacar que en el presente trabajo, se analizan t√©cnicas de
+regresi√≥n, ya sea aquellas que intr√≠nsecamente representan funciones
+polinomiales como aquellas que se adaptaron desde los m√©todos de clustering
+para la obtenci√≥n de valores densos.
 
 
 \subsection{Funciones contempladas\label{subsec:Funciones-contempladas}}
 
-El foco principal del trabajo desarrollado ha sido guiado por la b˙squeda
-de predicciÛn de valores numÈricos sobre componentes de ejecuciÛn,
-como el uso de CPU, consumo de red, precisiÛn y desempeÒo de las respuestas,
+El foco principal del trabajo desarrollado ha sido guiado por la b√∫squeda
+de predicci√≥n de valores num√©ricos sobre componentes de ejecuci√≥n,
+como el uso de CPU, consumo de red, precisi√≥n y desempe√±o de las respuestas,
 entre otros. Estos indicadores son valores continuos, motivo por el
-cual se utilizaron modelos de regresiÛn, los mismos se describir·n
+cual se utilizaron modelos de regresi√≥n, los mismos se describir√°n
 en las subsecciones siguientes. 
 
 
-\subsubsection{RegresiÛn Lineal\label{sub:Regresi=0000F3n-Lineal}}
+\subsubsection{Regresi√≥n Lineal\label{sub:Regresi=0000F3n-Lineal}}
 
-La regresiÛn es la predicciÛn de un valor desconocido a travÈs del
-c·lculo de una funciÛn matem·tica a partir de los valores conocidos.
-Si se considera esta funciÛn como una lÌnea recta, la salida ser·
+La regresi√≥n es la predicci√≥n de un valor desconocido a trav√©s del
+c√°lculo de una funci√≥n matem√°tica a partir de los valores conocidos.
+Si se considera esta funci√≥n como una l√≠nea recta, la salida ser√°
 la suma de cada valor conocido multiplicado por una constante la cual
-define la lÌnea recta (plano en 3D o hiperplano en dimensiones mayores)
+define la l√≠nea recta (plano en 3D o hiperplano en dimensiones mayores)
 que circundan los puntos como puede observarse en la figura \ref{fig:regression-lineal}. 
 
 \begin{figure}
@@ -639,81 +553,81 @@ que circundan los puntos como puede observarse en la figura \ref{fig:regression-
 
 
 Para encontrar la recta que mejor se adapte a los datos se intenta
-minimizar la distancia entre cada punto y dicha lÌnea, esta distancia
-se mide a travÈs de una lÌnea auxiliar que atraviese el punto y tope
-con la funciÛn, por ejemplo mediante el Teorema de Pit·goras. Luego,
-se intentar· minimizar la funciÛn de error que mide la suma de cada
-distancia, si se ignora las raÌces y sÛlo se minimiza la suma de los
-cuadrados de los errores, se obtiene la minimizaciÛn m·s com˙n llamada
-optimizaciÛn de mÌnimos cuadrados. 
+minimizar la distancia entre cada punto y dicha l√≠nea, esta distancia
+se mide a trav√©s de una l√≠nea auxiliar que atraviese el punto y tope
+con la funci√≥n, por ejemplo mediante el Teorema de Pit√°goras. Luego,
+se intentar√° minimizar la funci√≥n de error que mide la suma de cada
+distancia, si se ignora las ra√≠ces y s√≥lo se minimiza la suma de los
+cuadrados de los errores, se obtiene la minimizaci√≥n m√°s com√∫n llamada
+optimizaci√≥n de m√≠nimos cuadrados. 
 
-La minimizaciÛn de esta funciÛn da lugar a la implementaciÛn de diversas
-alternativas de la funciÛn lineal. En el presente trabajo se desarrollan
-dos variantes, la funciÛn denominada \emph{ridge-regression }y la
-funciÛn \emph{gradiente estoc·stico descendiente}. La primera aplica
-una penalizaciÛn (\emph{ridge}) a cada constante. La segunda, aplica
-un diferencial sobre la funciÛn obteniendo el gradiente el cual por
-definiciÛn, es la direcciÛn en la que incrementa o disminuye en mayor
-medida. Ya que el propÛsito del aprendizaje es minimizar el error
-de predicciÛn, se debe seguir la funciÛn en direcciÛn del gradiente
-negativo en la cual la funciÛn disminuye. 
+La minimizaci√≥n de esta funci√≥n da lugar a la implementaci√≥n de diversas
+alternativas de la funci√≥n lineal. En el presente trabajo se desarrollan
+dos variantes, la funci√≥n denominada \emph{ridge-regression }y la
+funci√≥n \emph{gradiente estoc√°stico descendiente}. La primera aplica
+una penalizaci√≥n (\emph{ridge}) a cada constante. La segunda, aplica
+un diferencial sobre la funci√≥n obteniendo el gradiente el cual por
+definici√≥n, es la direcci√≥n en la que incrementa o disminuye en mayor
+medida. Ya que el prop√≥sito del aprendizaje es minimizar el error
+de predicci√≥n, se debe seguir la funci√≥n en direcci√≥n del gradiente
+negativo en la cual la funci√≥n disminuye. 
 
 
 \subsubsection{Red neuronal}
 
-Se presenta un modelo matem·tico sobre el comportamiento de una neurona,
-el modelo neuronal McCulloch - Pitts denominado asÌ debido a sus creadores
+Se presenta un modelo matem√°tico sobre el comportamiento de una neurona,
+el modelo neuronal McCulloch - Pitts denominado as√≠ debido a sus creadores
 Warren McCulloch y Walter Pitts, ambos produjeron un ejemplo perfecto
-al modelar una cÈlula nerviosa como \emph{i}) un conjunto de entradas
+al modelar una c√©lula nerviosa como \emph{i}) un conjunto de entradas
 valoradas (w\textsubscript{i}) que corresponde a las sinapsis, \emph{ii})
-un sumador que une las seÒales entrantes (equivalente a la membrana
-de la cÈlula que recolecta la carga elÈctrica) y \emph{iii}) una funciÛn
-de activaciÛn (inicialmente una funciÛn umbral) que decide sobre la
-activaciÛn de la cÈlula en base a las entradas actuales. 
+un sumador que une las se√±ales entrantes (equivalente a la membrana
+de la c√©lula que recolecta la carga el√©ctrica) y \emph{iii}) una funci√≥n
+de activaci√≥n (inicialmente una funci√≥n umbral) que decide sobre la
+activaci√≥n de la c√©lula en base a las entradas actuales. 
 
 \begin{figure}
 \begin{centering}
 \includegraphics[scale=0.55]{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/McCulloch-Pitts}
 \par\end{centering}
 
-\caption{Modelo matem·tico neuronal McCulloch - Pitts. \label{fig:McCulloch-Pitts}}
+\caption{Modelo matem√°tico neuronal McCulloch - Pitts. \label{fig:McCulloch-Pitts}}
 \end{figure}
 
 
 Como puede observarse en la figura \ref{fig:McCulloch-Pitts}, el
-modelo McCulloch - Pitts es un dispositivo lÌmite binario, las entradas
-son multiplicadas por los pesos o fuerzas sin·pticas y luego se suman
+modelo McCulloch - Pitts es un dispositivo l√≠mite binario, las entradas
+son multiplicadas por los pesos o fuerzas sin√°pticas y luego se suman
 sus valores, si la suma es mayor a un determinado umbral (produce
-salida 1) la cÈlula se activa, de lo contrario (produce salida 0)
+salida 1) la c√©lula se activa, de lo contrario (produce salida 0)
 se mantiene desactivada. Teniendo en cuenta que una red neuronal puede
-llevar a cabo cualquier c·lculo que realiza una computadora normal,
-los pesos o valores de la fuerza sin·ptica deben ser elegidos correctamente,
-considerando en consecuencia, un mÈtodo capaz de configurar dichos
-pesos. Observando la neurona McCulloch y Pitts, se puede notar f·cilmente
-que las entradas son independientes al cerebro, por lo que sÛlo cambia
+llevar a cabo cualquier c√°lculo que realiza una computadora normal,
+los pesos o valores de la fuerza sin√°ptica deben ser elegidos correctamente,
+considerando en consecuencia, un m√©todo capaz de configurar dichos
+pesos. Observando la neurona McCulloch y Pitts, se puede notar f√°cilmente
+que las entradas son independientes al cerebro, por lo que s√≥lo cambia
 el valor de los pesos y el umbral. Considerando que el aprendizaje
-sucede entre las neuronas y Èstas est·n conectadas mutuamente, se
+sucede entre las neuronas y √©stas est√°n conectadas mutuamente, se
 debe tener en cuenta la manera en que en cambian los pesos y los umbrales
 de las neuronas para que la red pueda obtener la respuesta correcta
-m·s frecuentemente.
+m√°s frecuentemente.
 
 Teniendo en cuenta que una red neuronal puede llevar a cabo cualquier
-c·lculo que realiza una computadora normal, los pesos o valores de
-la fuerza sin·ptica deben ser elegidos correctamente, considerando
-en consecuencia, un mÈtodo capaz de configurar dichos pesos.
+c√°lculo que realiza una computadora normal, los pesos o valores de
+la fuerza sin√°ptica deben ser elegidos correctamente, considerando
+en consecuencia, un m√©todo capaz de configurar dichos pesos.
 
-Observando la neurona McCulloch y Pitts, se puede notar f·cilmente
-que las entradas son independientes al cerebro, por lo que sÛlo cambia
+Observando la neurona McCulloch y Pitts, se puede notar f√°cilmente
+que las entradas son independientes al cerebro, por lo que s√≥lo cambia
 el valor de los pesos y el umbral. Considerando que el aprendizaje
-sucede entre las neuronas y Èstas est·n conectadas mutuamente, se
+sucede entre las neuronas y √©stas est√°n conectadas mutuamente, se
 debe tener en cuenta la manera en que en cambian los pesos y los umbrales
 de las neuronas para que la red pueda obtener la respuesta correcta
-m·s frecuentemente. 
+m√°s frecuentemente. 
 
 
 \subsubsection*{Red Neuronal Perceptron }
 
-El perceptrÛn es una colecciÛn de neuronas McCulloch y Pitts con un
+El perceptr√≥n es una colecci√≥n de neuronas McCulloch y Pitts con un
 conjunto de entradas y pesos que unen las neuronas con dichas entradas. 
 
 \begin{figure}
@@ -725,10 +639,10 @@ conjunto de entradas y pesos que unen las neuronas con dichas entradas.
 \end{figure}
 
 
-Como puede observarse en el gr·fico de la figura \ref{fig:perceptron-neural-network},
-las neuronas del PerceptrÛn son completamente independientes entre
-sÌ, el estado de una neurona no infiere sobre las dem·s, sÛlo comparten
-las entradas. Un punto a destacar es que el n˙mero de entradas y de
+Como puede observarse en el gr√°fico de la figura \ref{fig:perceptron-neural-network},
+las neuronas del Perceptr√≥n son completamente independientes entre
+s√≠, el estado de una neurona no infiere sobre las dem√°s, s√≥lo comparten
+las entradas. Un punto a destacar es que el n√∫mero de entradas y de
 neuronas no necesariamente debe corresponderse, en general hay \emph{m}
 entradas y \emph{n} neuronas. 
 
@@ -737,25 +651,25 @@ tener los pesos para que las salidas sean las correctas, esta es la
 finalidad de la red neuronal, aprender si determinada neurona debe
 o no activarse de forma correcta. 
 
-Un proceso de an·lisis sobre los pesos podrÌa arrojar que los pesos
-toman valores muy grandes en la activaciÛn de una neurona (cuando
-no deberÌa hacerlo) o en caso contrario, valores muy pequeÒos, por
-lo que se podrÌa computar una funciÛn de error como la diferencia
+Un proceso de an√°lisis sobre los pesos podr√≠a arrojar que los pesos
+toman valores muy grandes en la activaci√≥n de una neurona (cuando
+no deber√≠a hacerlo) o en caso contrario, valores muy peque√±os, por
+lo que se podr√≠a computar una funci√≥n de error como la diferencia
 entre la salida que produjo la neurona y la salida de la red. En el
 caso particular de entradas en cero, se modifica el valor de umbral
-aÒadiendo a la red Perceptron un par·metro extra denominado bias,
-los pesos de esta entrada son usualmente asignados al Ìndice cero. 
+a√±adiendo a la red Perceptron un par√°metro extra denominado bias,
+los pesos de esta entrada son usualmente asignados al √≠ndice cero. 
 
 
-\subsubsection*{Red neuronal PerceptrÛn multicapa }
+\subsubsection*{Red neuronal Perceptr√≥n multicapa }
 
-La esencia del aprendizaje de la red neuronal perceptrÛn est· centrada
-en los valores de pesos, una buena pr·ctica entonces, serÌa la incorporaciÛn
-de nuevos pesos. Como alternativa para ello podrÌan agregarse conecciones
-hacia atr·s para conectar las neuronas de salida con las entradas
-nuevamente, o podrÌan agregarse nuevas neuronas creando redes mucho
-m·s complejas, como el caso reflejado en la figura \ref{fig:perceptron-neural-network-multilayer}
-donde se representa un modelo perceptrÛn de tres capas con cinco entradas,
+La esencia del aprendizaje de la red neuronal perceptr√≥n est√° centrada
+en los valores de pesos, una buena pr√°ctica entonces, ser√≠a la incorporaci√≥n
+de nuevos pesos. Como alternativa para ello podr√≠an agregarse conecciones
+hacia atr√°s para conectar las neuronas de salida con las entradas
+nuevamente, o podr√≠an agregarse nuevas neuronas creando redes mucho
+m√°s complejas, como el caso reflejado en la figura \ref{fig:perceptron-neural-network-multilayer}
+donde se representa un modelo perceptr√≥n de tres capas con cinco entradas,
 tres salidas y tres neuronas en la capa oculta.
 
 \begin{figure}
@@ -763,7 +677,7 @@ tres salidas y tres neuronas en la capa oculta.
 \includegraphics[scale=0.55]{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/Perceptron-multilayer}
 \par\end{centering}
 
-\caption{Red perceptrÛn multicapa\label{fig:perceptron-neural-network-multilayer}}
+\caption{Red perceptr√≥n multicapa\label{fig:perceptron-neural-network-multilayer}}
 \end{figure}
 
 
@@ -771,88 +685,88 @@ La nueva red, ahora, debe ser entrenada para que los pesos nuevos
 se adapten y generen las respuestas correctas (\emph{targets}). Estas
 respuestas son conocidas y se puede computar la diferencia entre estas
 y las salidas pero se desconoce si el peso incorrecto pertenece a
-la primera capa o a la segunda y cu·les activaciones de las neuronas
-de la capa intermedia son correctas, razÛn por la cual esta capa se
+la primera capa o a la segunda y cu√°les activaciones de las neuronas
+de la capa intermedia son correctas, raz√≥n por la cual esta capa se
 denomina capa oculta ya que es imposible examinar y corregir sus valores
 de forma inmediata. 
 
 El entrenamiento de \ac{MLP} consiste en dos partes, primero se obtienen
 las salidas con las entradas brindadas y los pesos actuales (\emph{forwards}),
 y luego se actualizan los pesos considerando el error como la diferencia
-entre el valor obtenido y el real (propagaciÛn hacia atr·s del error
+entre el valor obtenido y el real (propagaci√≥n hacia atr√°s del error
 - \emph{backwards}). 
 
-Por lo tanto, con la funciÛn de error y de activaciÛn, puede calcularse
-el diferencial para modificar los pesos en direcciÛn del gradiente
-negativo, mejorando asÌ la funciÛn de error. El objetivo es obtener
-los gradientes de esos errores y usarlos para decidir cu·nto deben
+Por lo tanto, con la funci√≥n de error y de activaci√≥n, puede calcularse
+el diferencial para modificar los pesos en direcci√≥n del gradiente
+negativo, mejorando as√≠ la funci√≥n de error. El objetivo es obtener
+los gradientes de esos errores y usarlos para decidir cu√°nto deben
 actualizarse dichos pesos en la red sobre la capa de salida y, luego
-de actualizarla, se opera hacia atr·s (\emph{backwards}) a travÈs
-de la red hasta llegar a la entrada nuevamente. SÛlo existen dos problemas,
+de actualizarla, se opera hacia atr√°s (\emph{backwards}) a trav√©s
+de la red hasta llegar a la entrada nuevamente. S√≥lo existen dos problemas,
 para las neuronas de salida se desconocen las entradas que le corresponden
 y para las neuronas escondidas, se desconocen las salidas esperadas
-(\emph{targets}) y en caso de existir m·s capas incluso podrÌan no
+(\emph{targets}) y en caso de existir m√°s capas incluso podr√≠an no
 conocerse las entradas. Para solucionar estas cuestiones se aplica
 la regla de la cadena la cual afirma que para conocer la forma en
-que varÌa el error en base a la variaciÛn de los pesos, se debe analizar
-la variaciÛn del error en funciÛn de las entradas de los pesos y multiplicarlo
-por el valor de la variaciÛn de los pesos seg˙n la variaciÛn de entradas. 
+que var√≠a el error en base a la variaci√≥n de los pesos, se debe analizar
+la variaci√≥n del error en funci√≥n de las entradas de los pesos y multiplicarlo
+por el valor de la variaci√≥n de los pesos seg√∫n la variaci√≥n de entradas. 
 
-Esta forma de resoluciÛn es muy ˙til ya que permite conocer todas
-las derivadas que se necesitan. Puede escribirse la funciÛn de activaciÛn
-de los nodos de salida en tÈrminos de los nodos ocultos y de los pesos
+Esta forma de resoluci√≥n es muy √∫til ya que permite conocer todas
+las derivadas que se necesitan. Puede escribirse la funci√≥n de activaci√≥n
+de los nodos de salida en t√©rminos de los nodos ocultos y de los pesos
 de salida para luego enviarlo hacia las capas ocultas de la red (hacia
-atr·s) para decidir cu·les eran los salidas esperadas para esas neuronas.
+atr√°s) para decidir cu√°les eran los salidas esperadas para esas neuronas.
 
 
 \subsubsection{K-means clusterer}
 
 El algoritmo K - means aplica clustering sobre los datos de entrenamiento
-y recibe un par·metro \emph{K} para dividir estos datos en \emph{K}
-categorÌas. El algoritmo intenta localizar k centros en el espacio
-de entrada de modo tal que estos centros estÈn, como su nombre lo
-indica, en el centro de una categorÌa (\emph{cluster}). La dificultad
-se presenta ya que al desconocer la categorizaciÛn de estos grupos,
-resulta a˙n m·s difÌcil determinar la localizaciÛn de cada centro. 
+y recibe un par√°metro \emph{K} para dividir estos datos en \emph{K}
+categor√≠as. El algoritmo intenta localizar k centros en el espacio
+de entrada de modo tal que estos centros est√©n, como su nombre lo
+indica, en el centro de una categor√≠a (\emph{cluster}). La dificultad
+se presenta ya que al desconocer la categorizaci√≥n de estos grupos,
+resulta a√∫n m√°s dif√≠cil determinar la localizaci√≥n de cada centro. 
 
 Los algoritmos de aprendizaje generalmente se basan en minimizar alguna
-clase de error, en consecuencia la primera acciÛn que se realiza es
+clase de error, en consecuencia la primera acci√≥n que se realiza es
 definir un criterio que lo describa teniendo en cuenta: \emph{i})
 una medida de la distancia entre puntos, definir una medida para cuantificar
-estas distancias, por lo general se usa la distancia euclÌdea y \emph{ii})
+estas distancias, por lo general se usa la distancia eucl√≠dea y \emph{ii})
 determinar el punto central de un conjunto de puntos (\emph{mean average})
-considerando el espacio euclÌdeo ya que en espacios curvos es otra
-la interpretaciÛn. Teniendo en cuenta estos conceptos, el algoritmo
-K - means calcula el punto medio (centro) de cada cluster (\textmu \textsubscript{c}(i)).
-lo que resulta equivalente a minimizar la distancia euclÌdea de cada
+considerando el espacio eucl√≠deo ya que en espacios curvos es otra
+la interpretaci√≥n. Teniendo en cuenta estos conceptos, el algoritmo
+K - means calcula el punto medio (centro) de cada cluster (¬µ\textsubscript{c}(i)).
+lo que resulta equivalente a minimizar la distancia eucl√≠dea de cada
 punto del cluster al centro del mismo. 
 
 El objetivo de determinar estos centros, en principio, a causa de
 incertidumbre total se posicionan los centros de forma aleatoria en
 el espacio de entrada. Una vez distinguidos los clusters, se determinar
-los puntos que pertenecen al mismo a travÈs del c·lculo de la distancia
-entre el punto y todos los centros localizados, asign·ndose entonces,
-al cluster cuyo centro sea el m·s cercano. Finalmente, para cada centro
-se actualiza su ubicaciÛn utilizando la media antes definida. Estos
+los puntos que pertenecen al mismo a trav√©s del c√°lculo de la distancia
+entre el punto y todos los centros localizados, asign√°ndose entonces,
+al cluster cuyo centro sea el m√°s cercano. Finalmente, para cada centro
+se actualiza su ubicaci√≥n utilizando la media antes definida. Estos
 pasos se realizan de forma incremental hasta que los centros dejar
-de modificar su ubicaciÛn. 
+de modificar su ubicaci√≥n. 
 
-Ya que este algoritmo sin duda es un mÈtodo de clasificaciÛn y no
-de regresiÛn, se considera importante resaltar la adaptaciÛn del mismo
-para utilizarlo con este fin. AsÌ, una vez realizada la clasificaciÛn
-del punto que se quiere predecir, se realizar· la predicciÛn calculando
+Ya que este algoritmo sin duda es un m√©todo de clasificaci√≥n y no
+de regresi√≥n, se considera importante resaltar la adaptaci√≥n del mismo
+para utilizarlo con este fin. As√≠, una vez realizada la clasificaci√≥n
+del punto que se quiere predecir, se realizar√° la predicci√≥n calculando
 el promedio de los valores del atributo a predecir de los otros puntos
-que est·n en el cluster. 
+que est√°n en el cluster. 
 
 
 \subsubsection{Maquina de vector de soporte}
 
-Al tratar con problemas de clasificaciÛn existen varios clasificadores
+Al tratar con problemas de clasificaci√≥n existen varios clasificadores
 lineales que ofrecen respuestas correctas pero diferentes, como se
 expone en la figura \ref{fig:lineals-classifiers}. Si bien las soluciones
-laterales son acertadas, las lÌneas divisorias son muy prÛximas a
+laterales son acertadas, las l√≠neas divisorias son muy pr√≥ximas a
 algunos puntos del conjunto de datos de entrenamiento dando paso a
-una posible imprecisiÛn futura en la predicciÛn, situaciÛn que no
+una posible imprecisi√≥n futura en la predicci√≥n, situaci√≥n que no
 se observa en el ejemplo central de la figura. 
 
 \begin{figure}
@@ -860,124 +774,124 @@ se observa en el ejemplo central de la figura.
 \includegraphics[scale=0.55]{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/lineals-classifiers}
 \par\end{centering}
 
-\caption{ComparaciÛn de tres clasificadores lineales distintos.\label{fig:lineals-classifiers}}
+\caption{Comparaci√≥n de tres clasificadores lineales distintos.\label{fig:lineals-classifiers}}
 \end{figure}
 
 
-AnalÌticamente, se toma la distancia existente entre la lÌnea y el
-primer punto interceptado (en direcciÛn perpendicular), si se ubica
-una \textquoteleft zona desierta\textquoteright{} alrededor de la
-lÌnea, ning˙n punto ubicado en dicha zona puede ser clasificado ya
-que se encuentra demasiado cerca de la lÌnea. Esta regiÛn conforma
-un cilindro simÈtrico alrededor de la funciÛn en 3D y un hiper - cilindro
-en dimensiones mayores. El radio m·ximo que puede tener esta regiÛn
-es llamado margen, seÒalado como M y los puntos de cada clase m·s
-cercanos a la lÌnea de clasificaciÛn se denominan vectores de soporte.
-Si se considera el mejor clasificador como aquel que atraviesa la
-zona desierta, se debe tener en cuenta que el margen debe ser lo m·s
-grande posible y que si los vectores de soporte son los puntos m·s
-importantes de los datos, luego del entrenamiento pueden descartarse
-los puntos que no pertenecen al vector y utilizarlos para clasificar,
-lo cual conlleva una gran eficiencia en el almacenamiento de datos.
-El algoritmo puede encontrar varios hiperplanos de separaciÛn posibles
-y detectar aquel que sea m·s Ûptimo. En la figura \ref{fig:SVM-metology}
-se reflejan estas dos situaciones y se expone, en el gr·fico derecho
-las notaciones matem·ticas formales del algoritmo. 
+Anal√≠ticamente, se toma la distancia existente entre la l√≠nea y el
+primer punto interceptado (en direcci√≥n perpendicular), si se ubica
+una ‚Äòzona desierta‚Äô alrededor de la l√≠nea, ning√∫n punto ubicado en
+dicha zona puede ser clasificado ya que se encuentra demasiado cerca
+de la l√≠nea. Esta regi√≥n conforma un cilindro sim√©trico alrededor
+de la funci√≥n en 3D y un hiper - cilindro en dimensiones mayores.
+El radio m√°ximo que puede tener esta regi√≥n es llamado margen, se√±alado
+como M y los puntos de cada clase m√°s cercanos a la l√≠nea de clasificaci√≥n
+se denominan vectores de soporte. Si se considera el mejor clasificador
+como aquel que atraviesa la zona desierta, se debe tener en cuenta
+que el margen debe ser lo m√°s grande posible y que si los vectores
+de soporte son los puntos m√°s importantes de los datos, luego del
+entrenamiento pueden descartarse los puntos que no pertenecen al vector
+y utilizarlos para clasificar, lo cual conlleva una gran eficiencia
+en el almacenamiento de datos. El algoritmo puede encontrar varios
+hiperplanos de separaci√≥n posibles y detectar aquel que sea m√°s √≥ptimo.
+En la figura \ref{fig:SVM-metology} se reflejan estas dos situaciones
+y se expone, en el gr√°fico derecho las notaciones matem√°ticas formales
+del algoritmo. 
 
 \begin{figure}
 \begin{centering}
 \includegraphics[scale=0.55]{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/SVM-metology}
 \par\end{centering}
 
-\caption{MetodologÌa de operaciÛn del algoritmo SVM\label{fig:SVM-metology}}
+\caption{Metodolog√≠a de operaci√≥n del algoritmo SVM\label{fig:SVM-metology}}
 \end{figure}
 
 
-A travÈs de la funciÛn \emph{g(x) = w\textsuperscript{t}x + b} se
+A trav√©s de la funci√≥n \emph{g(x) = w\textsuperscript{t}x + b} se
 definen los dos hiperplanos (clasificador). Para obtener el punto
-m·s cercano desde la lÌnea de clasificaciÛn considerando la clase
-2 (ver figura \ref{fig:SVM-metology}) se recorre en direcciÛn perpendicular
-partiendo del lÌmite de la clase 1 hasta llegar al lÌmite de la clase
+m√°s cercano desde la l√≠nea de clasificaci√≥n considerando la clase
+2 (ver figura \ref{fig:SVM-metology}) se recorre en direcci√≥n perpendicular
+partiendo del l√≠mite de la clase 1 hasta llegar al l√≠mite de la clase
 2, el primer punto interceptado se denomina x. Para obtener un clasificador
 de buena calidad, se pueden definir un conjunto de restricciones que
-indiquen la manera en que el clasificador podrÌa obtener la respuesta
+indiquen la manera en que el clasificador podr√≠a obtener la respuesta
 correcta. Por ejemplo, si en lugar de tomar las dos clases como \emph{g(x)
-= 1} y \emph{g(x) = 0}, se podrÌan igualar a los valores 1 y -1 y
-asÌ obtener una respuesta correcta diferente. Estos tipos de problemas
+= 1} y \emph{g(x) = 0}, se podr√≠an igualar a los valores 1 y -1 y
+as√≠ obtener una respuesta correcta diferente. Estos tipos de problemas
 pueden ser resueltos de forma directa y eficiente (por ejemplo, en
-tiempo polinomial), gracias a que existen algoritmos de programaciÛn
-cuadr·tica que brindan soluciones efectivas.
+tiempo polinomial), gracias a que existen algoritmos de programaci√≥n
+cuadr√°tica que brindan soluciones efectivas.
 
 Todas las consideraciones expuestas hasta el momento se realizaron
-tras la asunciÛn de que los datos podÌan ser divididos con funciones
-lineales, pero no siempre es posible, en este caso la soluciÛn es
+tras la asunci√≥n de que los datos pod√≠an ser divididos con funciones
+lineales, pero no siempre es posible, en este caso la soluci√≥n es
 introducir variables. Estas variables indican que, al comparar clasificadores,
 si uno clasifica un punto en un lado incorrecto y el otro lo ubica
-mucho m·s lejos (tambiÈn en un lado incorrecto) el primero es mejor
+mucho m√°s lejos (tambi√©n en un lado incorrecto) el primero es mejor
 que el segundo, el error no fue tan extremo como en el segundo y esta
-informaciÛn debe ser incluida en los criterios de minimizaciÛn modificando
-las restricciones, incluyendo un par·metro \emph{C}. \emph{C} es el
-par·metro que indica el trade off que existe entre ambos par·metros:
-cuanto m·s pequeÒo sea el valor de C m·s importancia toma el margen
-sobre algunos errores, cuanto m·s grande se vuelve C ocurre lo contrario.
+informaci√≥n debe ser incluida en los criterios de minimizaci√≥n modificando
+las restricciones, incluyendo un par√°metro \emph{C}. \emph{C} es el
+par√°metro que indica el trade off que existe entre ambos par√°metros:
+cuanto m√°s peque√±o sea el valor de C m√°s importancia toma el margen
+sobre algunos errores, cuanto m√°s grande se vuelve C ocurre lo contrario.
 Esto transforma el problema en un clasificador de margen suave ya
 que se permiten algunos errores. La forma de evitarlos es modificando
-las caracterÌsticas para que los datos sean linealmente separables,
-los datos no pueden inventarse de modo que las caracterÌsticas deben
+las caracter√≠sticas para que los datos sean linealmente separables,
+los datos no pueden inventarse de modo que las caracter√≠sticas deben
 ser derivadas a partir de las existentes. Para ello se describe una
-nueva funciÛn llamada kernel denominada \emph{\textgreek{f}(x)} que
-se aplica sobre las diferentes variables de entrada, su funciÛn principal
-es transformar los datos para obtener un espacio de dimensiÛn mayor.
-Como funciÛn kernel puede utilizarse cualquier funciÛn simÈtrica que
-est· definida positivamente (positividad de la integral de funciones
-arbitrarias). Incluso, la conjunciÛn de dos funciones kernel significa
-una nueva funciÛn kernel. Elegir la funciÛn kernel m·s conveniente
-es un problema complejo. A pesar que existen algunas teorÌas, el proceso
-m·s com˙n es la experimentaciÛn con distintos valores para determinar
-la funciÛn m·s adecuada utilizando el conjunto de validaciÛn. El algoritmo
+nueva funci√≥n llamada kernel denominada \emph{œÜ(x)} que se aplica
+sobre las diferentes variables de entrada, su funci√≥n principal es
+transformar los datos para obtener un espacio de dimensi√≥n mayor.
+Como funci√≥n kernel puede utilizarse cualquier funci√≥n sim√©trica que
+est√° definida positivamente (positividad de la integral de funciones
+arbitrarias). Incluso, la conjunci√≥n de dos funciones kernel significa
+una nueva funci√≥n kernel. Elegir la funci√≥n kernel m√°s conveniente
+es un problema complejo. A pesar que existen algunas teor√≠as, el proceso
+m√°s com√∫n es la experimentaci√≥n con distintos valores para determinar
+la funci√≥n m√°s adecuada utilizando el conjunto de validaci√≥n. El algoritmo
 que aplica vectores de soporte se rige bajo todos los conceptos expresados
-a lo largo del apartado para realizar clasificaciÛn, pero tambiÈn
-aplica para realizar regresiÛn sobre los datos, variante que fue utilizada
+a lo largo del apartado para realizar clasificaci√≥n, pero tambi√©n
+aplica para realizar regresi√≥n sobre los datos, variante que fue utilizada
 en el presente trabajo. La figura \ref{fig:SVM-regression} muestra
-un ejemplo de la aplicaciÛn del algoritmo SVM para regresiÛn. 
+un ejemplo de la aplicaci√≥n del algoritmo SVM para regresi√≥n. 
 
 \begin{figure}
 \begin{centering}
 \includegraphics[scale=0.55]{C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/SVM-regression}
 \par\end{centering}
 
-\caption{Algoritmo SVM para regresiÛn con funciÛn kernel de base radial.\label{fig:SVM-regression}}
+\caption{Algoritmo SVM para regresi√≥n con funci√≥n kernel de base radial.\label{fig:SVM-regression}}
 \end{figure}
 
 
 
-\subsection{EvaluaciÛn de modelos}
+\subsection{Evaluaci√≥n de modelos}
 
-La evaluaciÛn del rendimiento de un modelo es una de las fases principales
+La evaluaci√≥n del rendimiento de un modelo es una de las fases principales
 en el proceso de ciencia de datos. Indica el nivel de acierto de las
 predicciones del conjunto de datos mediante un modelo entrenado. Existen
 dos formas para evaluar: evaluar el modelo y validar el modelo de
-forma cruzada. Estos mÈtodos permiten conocer el rendimiento del modelo
-como un n˙mero de mÈtricas que se usan habitualmente en estadÌsticas
-y aprendizaje autom·tico. La evaluaciÛn y la validaciÛn cruzada son
-mÈtodos est·ndares para medir el rendimiento de un modelo. Ambos generan
-mÈtricas de evaluaciÛn que sirven para inspeccionar y comparar con
+forma cruzada. Estos m√©todos permiten conocer el rendimiento del modelo
+como un n√∫mero de m√©tricas que se usan habitualmente en estad√≠sticas
+y aprendizaje autom√°tico. La evaluaci√≥n y la validaci√≥n cruzada son
+m√©todos est√°ndares para medir el rendimiento de un modelo. Ambos generan
+m√©tricas de evaluaci√≥n que sirven para inspeccionar y comparar con
 las de otros modelos. 
 
-La evaluaciÛn se basa en los valores predictivos junto con las etiquetas
-o valores verdaderos. De forma alternativa, es posible usar la validaciÛn
-cruzada para realizar autom·ticamente varias operaciones de entrenamiento,
-puntuaciÛn y evaluaciÛn (10 subconjuntos) en distintos subconjuntos
+La evaluaci√≥n se basa en los valores predictivos junto con las etiquetas
+o valores verdaderos. De forma alternativa, es posible usar la validaci√≥n
+cruzada para realizar autom√°ticamente varias operaciones de entrenamiento,
+puntuaci√≥n y evaluaci√≥n (10 subconjuntos) en distintos subconjuntos
 de los datos de entrada. Los datos de entrada se dividen en 10 partes,
 donde una se reserva para las pruebas y las otras 9 para el entrenamiento.
-Este proceso se repite 10 veces y se calcula el promedio de las mÈtricas
-de evaluaciÛn. Esto ayuda a determinar el nivel al que un modelo se
-podrÌa generalizar para nuevos conjuntos de datos. 
+Este proceso se repite 10 veces y se calcula el promedio de las m√©tricas
+de evaluaci√≥n. Esto ayuda a determinar el nivel al que un modelo se
+podr√≠a generalizar para nuevos conjuntos de datos. 
 
-El presente trabajo implementa las siguientes mÈtricas de evaluaciÛn
-para los modelos de regresiÛn: 
+El presente trabajo implementa las siguientes m√©tricas de evaluaci√≥n
+para los modelos de regresi√≥n: 
 \begin{itemize}
-\item CC (Coeficiente de correlaciÛn de Pearson)
+\item CC (Coeficiente de correlaci√≥n de Pearson)
 \item MAE (Mean Absolute Error) 
 \end{itemize}
 \[ \frac{1}{N}\sum_{i=1}^{N}{f_i-y_i}
@@ -1008,56 +922,56 @@ para los modelos de regresiÛn:
 \[ \sum_{i=1}^{N}{(f_i-y_i)^2}
 \]
 
-El tÈrmino \emph{error }representa la diferencia entre el valor predicho
+El t√©rmino \emph{error }representa la diferencia entre el valor predicho
 y el valor verdadero. Normalmente, se calcula el valor absoluto o
 el cuadrado de esta diferencia para capturar la magnitud total de
 errores en todas las instancias, dado que la diferencia entre el valor
-verdadero y el predicho puede ser negativa en algunos casos. Las mÈtricas
-de error miden el rendimiento de predicciÛn de un modelo de regresiÛn
-en cuanto a la desviaciÛn media de sus predicciones a partir de los
-valores reales. Los valores de error m·s bajos implican que el modelo
-es m·s preciso a la hora de realizar predicciones. Una mÈtrica de
+verdadero y el predicho puede ser negativa en algunos casos. Las m√©tricas
+de error miden el rendimiento de predicci√≥n de un modelo de regresi√≥n
+en cuanto a la desviaci√≥n media de sus predicciones a partir de los
+valores reales. Los valores de error m√°s bajos implican que el modelo
+es m√°s preciso a la hora de realizar predicciones. Una m√©trica de
 error general de 0 significa que el modelo se ajusta a los datos perfectamente.
 
 
 \subsection{Ajuste del modelo: Overfitting y Underfitting\label{sub:Ajuste-del-modelo:}}
 
-Cuando un clasificador es entrenado se genera un modelo de predicciÛn
-cuya calidad es incierta hasta su aplicaciÛn. En algunas ocasiones,
+Cuando un clasificador es entrenado se genera un modelo de predicci√≥n
+cuya calidad es incierta hasta su aplicaci√≥n. En algunas ocasiones,
 la calidad del modelo es pobre generando respuestas imprecisas, de
 modo tal que se le deben aplicar acciones correctivas comprendiendo
-cÛmo se comporta y ajusta el modelo. 
+c√≥mo se comporta y ajusta el modelo. 
 
 Los modelos pueden presentar dos efectos indeseables . El efecto de
-\emph{overfitting }describe una funciÛn que se ajusta estrechamente
-a los datos de entrenamiento, el modelo aprendiÛ los detalles y el
-ruido en los datos impactando negativamente en el desempeÒo del modelo,
+\emph{overfitting }describe una funci√≥n que se ajusta estrechamente
+a los datos de entrenamiento, el modelo aprendi√≥ los detalles y el
+ruido en los datos impactando negativamente en el desempe√±o del modelo,
 ha sido incapaz de generalizar. Este efecto es causado porque el ruido
 o las fluctuaciones aleatorias en los datos de entrada fueron usados
-para el aprendizaje. Los problemas de overfitting son m·s probables
+para el aprendizaje. Los problemas de overfitting son m√°s probables
 en modelos no parametrizados y no lineales, los cuales tienen mayor
 flexibilidad al aprender funciones. Por lo tanto, muchos algoritmos
-de aprendizaje de m·quina no parametrizados incluyen par·metros o
-tÈcnicas para limitar y restringir los detalles que el modelo aprende.
-Por ejemplo, los ·rboles de decisiÛn son algoritmos de aprendizaje
+de aprendizaje de m√°quina no parametrizados incluyen par√°metros o
+t√©cnicas para limitar y restringir los detalles que el modelo aprende.
+Por ejemplo, los √°rboles de decisi√≥n son algoritmos de aprendizaje
 no parametrizados muy flexibles y pueden estar sujetos al efecto de
-overfitting, en cuyo caso se procede a podar el ·rbol una vez que
-el aprendizaje sea suficiente, eliminando asÌ algunos detalles innecesarios.
+overfitting, en cuyo caso se procede a podar el √°rbol una vez que
+el aprendizaje sea suficiente, eliminando as√≠ algunos detalles innecesarios.
 Para solucionar este efecto se debe modificar el grado del polinomio
-de la funciÛn utilizada por el modelo. 
+de la funci√≥n utilizada por el modelo. 
 
 Por otro lado, los modelos pueden presentar efectos de \emph{underfitting},
 funciones que no interpretan o definen los datos de entrenamiento,
 por lo que son incapaces de generalizar correctamente nuevos datos,
-este efecto es causado porque la funciÛn o modelo elegido no es el
+este efecto es causado porque la funci√≥n o modelo elegido no es el
 indicado para representar el comportamiento de los datos, el efecto
-underfitting se caracteriza por sobre generalizar los datos. La incorporaciÛn
-de nuevos datos al conjunto de entrenamiento podrÌa solucionar o apaciguar
+underfitting se caracteriza por sobre generalizar los datos. La incorporaci√≥n
+de nuevos datos al conjunto de entrenamiento podr√≠a solucionar o apaciguar
 este efecto. 
 
-El modelo deseado, sin dudas, serÌa aquel que se encuentre en un punto
+El modelo deseado, sin dudas, ser√≠a aquel que se encuentre en un punto
 de equilibrio entre modelos con underfitting y overfitting, aunque
-esta eficiencia es muy difÌcil de alcanzar en la pr·ctica. La figura
+esta eficiencia es muy dif√≠cil de alcanzar en la pr√°ctica. La figura
 \ref{fig:under-overfitting} refleja el contraste entre los tres posibles
 estados de un modelo. 
 
@@ -1070,14 +984,14 @@ estados de un modelo.
 \end{figure}
 
 
-El an·lisis de ambos efectos, se realiza gr·ficamente describiendo
-la performance del algoritmo y la forma en que va aprendiendo a travÈs
+El an√°lisis de ambos efectos, se realiza gr√°ficamente describiendo
+la performance del algoritmo y la forma en que va aprendiendo a trav√©s
 del tiempo. Al graficar la habilidad basada en los datos de entrenamiento
-y en los datos de validaciÛn (testing), puede notarse que el error
-basado en en el ˙ltimo gr·fico de la figura \ref{fig:under-overfitting}
+y en los datos de validaci√≥n (testing), puede notarse que el error
+basado en en el √∫ltimo gr√°fico de la figura \ref{fig:under-overfitting}
 comienza a disminuir por efectos de overfitting ya que comienza a
-aprender datos irrelevantes y ruidos del conjunto. En cuanto al gr·fico
+aprender datos irrelevantes y ruidos del conjunto. En cuanto al gr√°fico
 central (modelo esperado), se puede notar que el error aumenta mientras
 el modelo aprender a generalizar. 
 
-\quad{} 
+‚ÄÉ 

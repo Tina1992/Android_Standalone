@@ -1,9 +1,7 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
 \begin_document
 \begin_header
-\save_transient_properties true
-\origin unavailable
 \textclass book
 \use_default_options true
 \maintain_unincluded_children false
@@ -11,16 +9,16 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman "default" "default"
-\font_sans "default" "default"
-\font_typewriter "default" "default"
-\font_math "auto" "auto"
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100 100
-\font_tt_scale 100 100
+\font_sf_scale 100
+\font_tt_scale 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -42,7 +40,7 @@
 \use_package stmaryrd 1
 \use_package undertilde 1
 \cite_engine natbib
-\cite_engine_type authoryear
+\cite_engine_type numerical
 \biblio_style plainnat
 \use_bibtopic false
 \use_indices false
@@ -145,8 +143,34 @@ es bajas en error.
  como el caso del problema de la multiplicacion de matrices y el problema
  del viajante métrico, el nivel de correlación alcanzado por el algoritmo
  es inmediatamente inferior al 100% y en cuanto al error en las predicciones
- a través de las métricas CC y RMSE como principales objetivos, tendrán
- valores inmediatamente cercanos o iguales a cero.
+ a través de las métricas 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{CC}
+\end_layout
+
+\end_inset
+
+ y 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{RMSE}
+\end_layout
+
+\end_inset
+
+ como principales objetivos, tendrán valores inmediatamente cercanos o iguales
+ a cero.
  Para el caso de servicios, aunque las estimaciones arrojadas por el modelo
  presentan mas variabilidad, su comportamiento es considerablemente superior
  al resto de los modelos, en cuanto evita efectos de overfit y underfit
