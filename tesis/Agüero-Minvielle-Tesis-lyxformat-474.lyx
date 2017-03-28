@@ -1,9 +1,7 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
 \begin_document
 \begin_header
-\save_transient_properties true
-\origin unavailable
 \textclass book
 \begin_preamble
 \usepackage{multirow}
@@ -32,16 +30,16 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman "default" "default"
-\font_sans "default" "default"
-\font_typewriter "default" "default"
-\font_math "auto" "auto"
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100 100
-\font_tt_scale 100 100
+\font_sf_scale 100
+\font_tt_scale 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -103,10 +101,6 @@ status open
 thispagestyle{empty}
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -368,33 +362,6 @@ addcontentsline{toc}{chapter}{Agradecimientos}
 
 \lang spanish
 Agradecimientos
-\end_layout
-
-\begin_layout Standard
-
-\lang spanish
-Queremos agradecer la companía y apoyo incondicional de nuestros familiares
- y amigos durante el transcurso de la carrera y durante esta etapa final.
- En primer término, queremos agradecer a nuestros padres, quienes no sólo
- nos brindaron sus concejos y ayuda, sino que nos brindaron el sustento
- económico necesario para que este objetivo hoy sea posible.
-\end_layout
-
-\begin_layout Standard
-
-\lang spanish
-En segundo término, agradecemos a nuestros amigos, quienes nos acompañan
- desde el comienzo de nuestra carrera, y quienes conocimos durante el proceso,
- formando parte de nuestra formación, compartiendo buenos y malos momentos.
- 
-\end_layout
-
-\begin_layout Standard
-
-\lang spanish
-Finalmente, y no menos importante, queremos agradecer a nuestros directores
- por habernos guiado, aconcejado y brindado las herramientas para el desarrollo
- de este trayecto final de nuestra carrera.
 \end_layout
 
 \begin_layout Standard
