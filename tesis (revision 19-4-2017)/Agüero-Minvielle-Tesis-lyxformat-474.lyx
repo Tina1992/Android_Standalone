@@ -267,7 +267,7 @@ Resumen
 Durante los últimos años el uso y desarrollo de aplicaciones móviles ha
  ido creciendo constantemente debido a la proliferación de los dispositivos
  móviles y el aumento de su capacidad de cómputo.
- La reutilización de software mediante la integración de componentes de
+ La re-utilización de software mediante la integración de componentes de
  terceros es una práctica muy común en el desarrollo de aplicaciones.
  La misma funcionalidad suele ser ofrecida por componentes alternativos
  que difieren en sus propiedades no-funcionales o atributos de calidad,

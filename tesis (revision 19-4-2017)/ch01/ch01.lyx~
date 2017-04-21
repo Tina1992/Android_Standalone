@@ -65,7 +65,7 @@
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
-\author -322385837 "Emiliano" 
+\author 1188755597 "usuario" 
 \end_header
 
 \begin_body
@@ -124,7 +124,7 @@ Los dispositivos móviles de hoy en día utilizan sistemas operativos similares
 \end_layout
 
 \begin_layout Standard
-Para reducir los costos y tiempos de desarrollo, es común la reutilización
+Para reducir los costos y tiempos de desarrollo, es común la re-utilización
  de software mediante la integración de componentes de terceros.
  Un componente
 \begin_inset ERT
@@ -197,23 +197,15 @@ cite{Addison2003}
 .
  Estas propiedades son los aspectos que utilizan los desarrolladores para
  juzgar su funcionamiento, tales como performance (por ej., tiempo de respuesta),
- disponibilidad (por ej., tasa de errores) o precisión de la respuesta
-\change_deleted -322385837 1492201551
- (para el caso de aquellos componentes que procesan datos de entrada para
- obtener un resultado de salida)
-\change_unchanged
-.
+ disponibilidad (por ej., tasa de errores) o precisión de la respuesta.
  
 \end_layout
 
 \begin_layout Standard
 Los dispositivos móviles tienen limitaciones en conflicto como la energía,
  el acceso a la red y la capacidad de cálculo que determinan el contexto
- de ejecución de estos componentes y que afecta 
-\change_deleted -322385837 1492206321
-considerablemente
-\change_unchanged
- los atributos de calidad de los mismos y de las aplicaciones que los invocan.
+ de ejecución de estos componentes y que afecta los atributos de calidad
+ de los mismos y de las aplicaciones que los invocan.
  Por lo tanto, es importante elegir los componentes adecuados de acuerdo
  con su calidad de servicio además de la funcionalidad requerida.
  
@@ -241,21 +233,28 @@ ac{API}
 s pero no así a su implementación interna, por lo que no cuentan con información
  de sus atributos dinámicos para elegir el componente adecuado en cada contexto
  de ejecución.
-\change_inserted -322385837 1492206365
-
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -322385837 1492208335
 Teniendo en cuenta lo antes dicho, en este trabajo se propone estudiar y
- aplicar técnicas de aprendizaje de máquina [REF
-\begin_inset Note Note
+ aplicar técnicas de aprendizaje de máquina 
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
-\change_inserted -322385837 1492210469
+
+\backslash
+cite{Mitchell2013}
+\end_layout
+
+\end_inset
+
+ [REF
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 Michalski, R.
  S., Carbonell, J.
  G., & Mitchell, T.
@@ -264,8 +263,6 @@ Michalski, R.
  (2013).
  Machine learning: An artificial intelligence approach.
  Springer Science & Business Media.
-\change_unchanged
-
 \end_layout
 
 \end_inset
@@ -273,164 +270,27 @@ Michalski, R.
 ] para construir modelos de predicción de las propiedades dinámicas de component
 es de software en dispositivos móviles.
  
-\change_deleted -322385837 1492208312
+\change_deleted 1188755597 1492726095
 
-\end_layout
-
-\begin_layout Section
-
-\change_deleted -322385837 1492208314
-Motivación
-\end_layout
-
-\begin_layout Standard
-
-\change_inserted -322385837 1492386915
 \begin_inset Note Note
 status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted -322385837 1492386933
 Todo esto no es motivacion.
  Es mas bien trabajo relacionado
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
 
-\change_deleted -322385837 1492208319
-Para predecir la performance de un sistema, algunos enfoques definen un
- modelo del mismo como función de agregación que considera el desempeño
- individual de sus componentes.
- Así, por ejemplo, el tiempo de respuesta de un 
-\emph on
-mashup
-\emph default
- de servicios Web puede determinarse como la suma de los tiempos de respuesta
- de los servicios invocados 
-\begin_inset ERT
-status open
+\change_inserted 1188755597 1492726094
 
-\begin_layout Plain Layout
-
-
-\backslash
-cite{Rosenberg2009}
-\end_layout
-
-\end_inset
-
-.
- Lo mismo se puede aplicar sobre otras propiedades de arquitecturas y aplicacion
-es que involucran el ensamblado de diferentes componentes 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-cite{Crnkovic2011}
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-cite{Sanchez2015}
-\end_layout
-
-\end_inset
-
-.
- 
 \end_layout
 
 \begin_layout Standard
-
-\change_deleted -322385837 1492208321
-Muchos estudios se enfocan en el análisis y predicción de los aspectos dinámicos
- de componentes individuales, siendo las técnicas de aprendizaje de máquina,
- y en particular las de regresión, las más utilizadas.
- La mayor parte de estos estudios se enfocan en algoritmos de optimización
- e inteligencia artificial 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-cite{Hutter2014}
-\end_layout
-
-\end_inset
-
-, donde se destaca el trade-off entre los tiempos de ejecución y la precisión
- o calidad de las respuestas obtenidas.
- En estos trabajos, se obtienen mediciones a partir de sucesivas ejecuciones
- de los algoritmos y se entrenan modelos con estas mediciones.
- Los modelos son funciones que dado determinado algoritmo e instancia de
- un problema permiten estimar su desempeño.
- Generalmente, diferentes algoritmos se desempeñan mejor que otros para
- distintas instancias, por lo que los modelos resultan útiles como criterio
- de decisión en la selección y parametrización automática de algoritmos,
- la asignación óptima de tareas en contextos Grid, entre otros escenarios.
- 
-\end_layout
-
-\begin_layout Standard
-
-\change_deleted -322385837 1492208278
-La predicción de performance también se ha extendido a servicios Web 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-cite{Zheng2013}
-\end_layout
-
-\end_inset
-
- en una modalidad conocida como predicción colaborativa, en donde las mediciones
- son recolectadas y compartidas por múltiples nodos distribuidos en todo
- el mundo.
- En este caso, los modelos permiten determinar latencia, disponibilidad,
- y otras propiedades de un servicio a partir de la ubicación geográfica
- del cliente que lo invoca y otras características del contexto.
- 
-\end_layout
-
-\begin_layout Standard
-En las aplicaciones móviles, donde 
-\change_deleted -322385837 1492207455
-el contexto de ejecución y
-\change_inserted -322385837 1492207455
-la
-\change_unchanged
- disponibilidad de 
-\change_deleted -322385837 1492207459
-los 
-\change_unchanged
-recursos puede variar rápidamente (cambio de red de acceso a internet, 
-\change_deleted -322385837 1492207474
-reducción de la batería, uso
-\change_inserted -322385837 1492207475
-capacidad
-\change_unchanged
- limitado de memoria y 
+En las aplicaciones móviles, donde la disponibilidad de recursos puede variar
+ rápidamente (cambio de red de acceso a Internet, capacidad limitada de
+ memoria y 
 \begin_inset ERT
 status open
 
@@ -443,21 +303,10 @@ ac{CPU}
 
 \end_inset
 
-, etc) y diferentes componentes consumen estos recursos de diferente forma,
- es interesante el uso de estos modelos como criterio de calidad para la
- selección de servicios y componentes
-\change_inserted -322385837 1492208226
- candidatos
-\change_unchanged
-, tanto en tiempo de desarrollo como en tiempo de ejecución.
-
-\change_deleted -322385837 1492208276
- Por esta razón, se plantea la posibilidad de desarrollar un enfoque para
- construir y evaluar modelos de predicción en el contexto de aplicaciones
- móviles.
- 
-\change_unchanged
-
+, etc) y teniendo en cuenta la forma en que los componentes consumen estos
+ recursos, es interesante el uso de estos modelos como criterio de calidad
+ para la selección de servicios y componentes candidatos, tanto en tiempo
+ de desarrollo como en tiempo de ejecución.
 \end_layout
 
 \begin_layout Section
@@ -473,17 +322,8 @@ name "sec:Objetivos-Solución-propuesta"
 
 \begin_layout Standard
 El objetivo del trabajo consiste en desarrollar un enfoque para la elaboración
- de modelos de predicción de propiedades dinámicas
-\change_inserted -322385837 1492208686
-, como tiempo de respuesta y precision,
-\change_unchanged
- de componentes 
-\change_inserted -322385837 1492208715
-ejecutados sobre dispositivos
-\change_deleted -322385837 1492208717
-accedidos por aplicaciones
-\change_unchanged
- móviles.
+ de modelos de predicción de propiedades dinámicas, como tiempo de respuesta
+ y precisión, de componentes ejecutados sobre dispositivos móviles.
  Basándonos en el hecho de que Android es el sistema operativo más difundido
  para dispositivos móviles, el enfoque se pondrá a prueba sobre diferentes
  casos de estudio en este sistema operativo.
@@ -492,36 +332,15 @@ accedidos por aplicaciones
 
 \begin_layout Standard
 El enfoque se basa en un proceso de aprendizaje de máquina.
- Dado un conjunto de componentes
-\change_inserted -322385837 1492208754
-, como algoritmos o servicios Web,
-\change_unchanged
- que implementan la misma funcionalidad y de los cuales queremos predecir
- 
-\change_inserted -322385837 1492208780
-alguna 
-\change_unchanged
-propiedad
-\change_deleted -322385837 1492208794
-es
-\change_unchanged
- dinámica
-\change_deleted -322385837 1492208798
-s
-\change_unchanged
-, el método propuesto es el siguiente: 
+ Dado un conjunto de componentes, como algoritmos o servicios Web, que implement
+an la misma funcionalidad y de los cuales queremos predecir alguna propiedad
+ dinámica, el método propuesto es el siguiente: 
 \end_layout
 
 \begin_layout Enumerate
-Usar conocimiento del dominio para seleccionar características del contexto
+Usar conocimiento del caso de uso para seleccionar características del contexto
  y de los datos de entrada del componente que puedan ser indicativos de
- 
-\change_inserted -322385837 1492208855
-esta propiedad
-\change_deleted -322385837 1492208856
-su desempeño
-\change_unchanged
-.
+ esta propiedad.
  
 \end_layout
 
@@ -533,73 +352,28 @@ Generar un conjunto de datos de entrada representativos del espacio de entrada
 
 \begin_layout Enumerate
 Ejecutar los componentes con las entradas generadas y tomar mediciones de
- las características identificadas en el punto 1 más la
-\change_deleted -322385837 1492208871
-s
-\change_unchanged
- propiedad
-\change_deleted -322385837 1492208873
-es
-\change_unchanged
- de interés a predecir: tiempo de respuesta, 
-\change_deleted -322385837 1492208879
-calidad
-\change_inserted -322385837 1492208881
-precision
-\change_unchanged
- de la respuesta, etc.
+ las características identificadas en el punto 1 más la propiedad de interés
+ a predecir: tiempo de respuesta, precisión de la respuesta, etc.
  
 \end_layout
 
 \begin_layout Enumerate
 Usar estas mediciones con técnicas de aprendizaje de máquina para entrenar
- y evaluar modelos de predicción
-\change_inserted -322385837 1492208903
- de la propiedad
-\change_unchanged
-.
+ y evaluar modelos de predicción de la propiedad.
  
 \end_layout
 
 \begin_layout Standard
-El enfoque propuesto se pondrá a prueba sobre grupos de 
-\change_deleted -322385837 1492208911
-componentes
-\change_inserted -322385837 1492208912
-algoritmos
-\change_unchanged
- y servicios 
-\change_inserted -322385837 1492208915
-Web 
-\change_unchanged
-reales que implementan funcionalidades de interés para desarrolladores de
- aplicaciones móviles.
- Esta evaluación no sólo involucrará diferentes dominios, sino también diferente
-s técnicas, como regresiones y redes neuronales, sobre diferentes propiedades
- de interés.
- Para llevar a cabo la medición de los componentes se implement
-\change_deleted -322385837 1492208950
-ará
-\change_inserted -322385837 1492208953
-ó
-\change_unchanged
- una herramienta de test de performance para la plataforma Android, y 
-\change_inserted -322385837 1492209205
-para el entrenamiento y evaluación de modelos 
-\change_unchanged
-se 
-\change_inserted -322385837 1492209296
-implementó una segunda herramienta que 
-\change_unchanged
-utiliza
-\change_deleted -322385837 1492209308
-rá
-\change_unchanged
+El enfoque propuesto se pondrá a prueba sobre grupos de algoritmos y servicios
+ Web reales que implementan funcionalidades de interés para desarrolladores
+ de aplicaciones móviles.
+ Esta evaluación no sólo involucrará diferentes casos de estudio, sino también
+ diferentes técnicas, como regresiones y redes neuronales, sobre diferentes
+ propiedades de interés.
+ Para llevar a cabo la medición de los componentes se implementó una herramienta
+ de test de performance para la plataforma Android, y para el entrenamiento
+ y evaluación de modelos se implementó una segunda herramienta que utiliza
  software de aprendizaje de máquina como Weka
-\change_deleted -322385837 1492209319
- 
-\change_unchanged
-
 \begin_inset ERT
 status open
 
@@ -613,20 +387,6 @@ cite{Hall2009}
 \end_inset
 
 .
-
-\change_deleted -322385837 1492209324
- 
-\end_layout
-
-\begin_layout Standard
-
-\change_deleted -322385837 1492209269
-En conclusión, se espera poder proveer un análisis de los dominios y técnicas
- consideradas, como así también compararlas tanto en términos de precisión
- como también en cuanto a su generalización a diferentes contextos de ejecución
- (dispositivos) y datos de entrada
-\change_unchanged
-
 \end_layout
 
 \begin_layout Section
@@ -669,36 +429,10 @@ reference "chap:Trabajos-Relacionados"
 
 \end_inset
 
- se presentan 
-\change_inserted -322385837 1492209410
-algunos trabajos relacionados desde diferentes perspectivas: 
-\change_unchanged
-herramientas de 
-\change_deleted -322385837 1492209468
-benchmarks
-\change_inserted -322385837 1492209484
-medicion de performance
-\change_unchanged
- 
-\change_deleted -322385837 1492209499
-tanto 
-\change_unchanged
-para el sistema Android
-\change_deleted -322385837 1492209509
- como para Java y se exponen algunos trabajos relacionados desde diferentes
- perspectivas
-\change_unchanged
-, 
-\change_inserted -322385837 1492209675
-y trabajos que involucran prediccion de performance con técnicas de aprendizaje
- de máquina.
-\change_deleted -322385837 1492209636
-predicciones que incluyen modelos de performance y precisión como aproximación
- de éxito de los resultados, no sólo en algoritmos de optimización sino
- también en servicios Web.
- 
-\change_unchanged
-
+ se presentan algunos trabajos relacionados desde diferentes perspectivas:
+ herramientas de medición de performance para el sistema Android, y trabajos
+ que involucran predicción de performance con técnicas de aprendizaje de
+ máquina.
 \end_layout
 
 \begin_layout Standard
@@ -709,23 +443,9 @@ reference "chap:Enfoque-y-Herramientas"
 
 \end_inset
 
- se describe el enfoque y las herramientas 
-\change_deleted -322385837 1492209731
-utilizadas
-\change_inserted -322385837 1492209732
-propuestas
-\change_unchanged
-.
+ se describe el enfoque y las herramientas propuestas.
  Se detalla la arquitectura e implementación de las mismas, ahondando en
- las decisiones de diseño que se consideran 
-\change_inserted -322385837 1492209762
-mas 
-\change_unchanged
-importantes
-\change_deleted -322385837 1492209766
- para el entendimiento y reutilización de las mismas
-\change_unchanged
-.
+ las decisiones de diseño que se consideran mas importantes.
  
 \end_layout
 
@@ -737,49 +457,9 @@ reference "chap:Evaluación"
 
 \end_inset
 
- se presenta la evaluación de
-\change_inserted -322385837 1492209849
-l enfoque sobre 3 grupos de componentes
-\change_deleted -322385837 1492209854
- los modelos obtenidos a partir de todo el framework presentado
-\change_unchanged
-.
- Se presentan las variables consideradas en los escenarios evaluados, los
- modelos que han sido 
-\change_inserted -322385837 1492209985
-generados y 
-\change_unchanged
-analizados
-\change_inserted -322385837 1492209990
-,
-\change_unchanged
- y l
-\change_inserted -322385837 1492209993
-o
-\change_deleted -322385837 1492209992
-a
-\change_unchanged
-s 
-\change_inserted -322385837 1492209998
-resultados
-\change_deleted -322385837 1492210025
-conclusiones
-\change_unchanged
- alcanzad
-\change_inserted -322385837 1492210029
-o
-\change_deleted -322385837 1492210028
-a
-\change_unchanged
-s
-\change_deleted -322385837 1492209911
-, presentando justificativo para la selección de los mejores modelos predictivos
- alcanzados.
- Mediante el presente trabajo se han alcanzado modelos de predicción para
- el tiempo de respuesta con un coeficiente de correlación de 0.73 en promedio
- y un error medio de 3.19 milisegundos en la predicción
-\change_unchanged
-.
+ se presenta la evaluación del enfoque sobre tres casos de estudio.
+ Se presentan las propiedades consideradas en los escenarios evaluados,
+ los modelos que han sido generados y analizados, y los resultados alcanzados.
 \end_layout
 
 \begin_layout Standard
@@ -790,21 +470,8 @@ reference "chap:Conclusiones"
 
 \end_inset
 
- se exponen las conclusiones del trabajo realizado, las limitaciones 
-\change_deleted -322385837 1492209813
-actuales
-\change_inserted -322385837 1492209814
-encontradas
-\change_unchanged
- del enfoque y la
-\change_inserted -322385837 1492209818
-s
-\change_unchanged
- herramienta
-\change_inserted -322385837 1492209820
-s
-\change_unchanged
-, y posibles líneas de trabajo futuro.
+ se exponen las conclusiones del trabajo realizado, las limitaciones encontradas
+ del enfoque y las herramientas, y posibles líneas de trabajo futuro.
 \end_layout
 
 \end_body

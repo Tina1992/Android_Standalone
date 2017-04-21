@@ -121,7 +121,7 @@ Una de las características más destacadas de los smartphones reside en la
  usuario final logra ampliar las capacidades y funcionalidades del equipo,
  obteniendo así una personalización total del dispositivo.
  Otras características importantes son la capacidad multitarea, el acceso
- y conectividad a Internet vía WiFi o red movil, el soporte de clientes
+ y conectividad a Internet vía WiFi o red móvil, el soporte de clientes
  de email, la eficaz administración de datos y contactos, la posibilidad
  de lectura de archivos en diversos formatos como .pdf o .doc, y la posibilidad
  de obtener datos del ambiente a través de sensores especializados como
@@ -256,7 +256,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/Android-architecture.png
+	filename ../images/Android-architecture.png
 	scale 55
 
 \end_inset
@@ -374,7 +374,7 @@ Bibliotecas: incluye un conjunto de bibliotecas nativas escritas en lenguaje
 Marco o framework de Aplicaciones: este es el framework que proporciona
  Android para el desarrollo de aplicaciones, servicios y otros componentes.
  Todo el conjunto de funciones del sistema operativo y bibliotecas nativas
- está disponible a travez de este framework, cuya API esta escrita en el
+ está disponible a través de este framework, cuya API esta escrita en el
  lenguaje Java.
  El framework permite que los desarrolladores tengan acceso a las mismas
  
@@ -391,7 +391,7 @@ ac{API}
 \end_inset
 
  utilizadas por las aplicaciones base del sistema.
- El foco principal del diseño de esta capa ha sido simplificar la reutilización
+ El foco principal del diseño de esta capa ha sido simplificar la re-utilización
  de componentes: las aplicaciones pueden publicar sus capacidades y otras
  pueden hacer uso de ellas (sujetas a restricciones de seguridad), un mecanismo
  que permite a los usuarios reemplazar fácilmente componentes.
@@ -462,7 +462,7 @@ El sistema Android provee cinco tipos de componentes básicos para el desarrollo
 Activity 
 \emph default
 representa una pantalla simple que provee interfaz de usuario.
- Una aplicacion puede estar formada por una o mas actividades que trabajan
+ Una aplicación puede estar formada por una o mas actividades que trabajan
  en conjunto y representan diferentes pantallas o vistas.
  
 \end_layout
@@ -500,7 +500,7 @@ Intent
 \emph default
  es un objeto de acción que facilita la comunicación entre componentes.
  Un intent puede verse como un mensaje entre componentes, por ejemplo, para
- iniciar una actividad o servicio, o solicitar una accion.
+ iniciar una actividad o servicio, o solicitar una acción.
  Por último, el componente 
 \emph on
 Broadcast Receiver
@@ -534,7 +534,7 @@ En el marco del desarrollo de software nos encontramos con la posibilidad
 \end_layout
 
 \begin_layout Standard
-La reutilización es uno de los objetivos principales al momento de diseñar
+La re-utilización es uno de los objetivos principales al momento de diseñar
  un componente de software de calidad para ser usado en diferentes programas.
  La comunicación entre componentes se realiza a través de interfaces.
  Cuando un componente ofrece servicios al resto del sistema, el mismo proporcion
@@ -582,7 +582,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/UML-component.png
+	filename ../images/UML-component.png
 	scale 55
 
 \end_inset
@@ -647,20 +647,27 @@ an por un conjunto de propiedades que representan los aspectos no-funcionales
 \begin_inset space ~
 \end_inset
 
-[Referencia a 
-\begin_inset Quotes eld
+
+\change_inserted 1188755597 1492796264
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cite{McGraw2012}
+\end_layout
+
 \end_inset
 
-Software Architecture in Practice
-\begin_inset Quotes erd
-\end_inset
 
-].
+\change_unchanged
+.
  Algunos ejemplos de estas propiedades son: el tiempo de respuesta, la disponibi
 lidad, etc.
  
-\change_inserted 1188755597 1492727922
-
 \end_layout
 
 \begin_layout Standard
@@ -680,7 +687,7 @@ Estos atributos de calidad se pueden dividir en dos grupos en base al momento
  en el cual son medidos.
  Un grupo incluye atributos cuantificados durante el tiempo de diseño como
  la escalabilidad, modificabilidad, etc.
- El segundo grupo incluye atributos cuantifiables mientras el sistema se
+ El segundo grupo incluye atributos cuantificables mientras el sistema se
  ejecuta como usabilidad, seguridad, etc.
  Este trabajo se enfoca en la predicción de propiedades dinámicas o en tiempo
  de ejecución.
@@ -743,11 +750,11 @@ name "subsec:Atributos-de-calidad-Precisión"
 \begin_layout Standard
 Cabe destacar que no existe una definición estándar sobre el significado
  de precisión en un sistema, ya que se trata de una medida que evalúa qué
- tan exacta es la respuesta de una funcion (operación) de un componente,
+ tan exacta es la respuesta de una función (operación) de un componente,
  y cada función está ligada a resolver un problema o funcionalidad particular.
  Por ejemplo, en un problema de detección de rostros, la precisión puede
  medirse como la cantidad de rostros correctamente detectados sobre los
- rostros totales presentes, y en un problema de optimizacion puede significar
+ rostros totales presentes, y en un problema de optimización puede significar
  el grado de cercanía del valor de la solución encontrada respecto a la
  solución óptima.
 \end_layout
@@ -870,7 +877,7 @@ Clasificación de las técnicas de aprendizaje
 
 \change_inserted -322385837 1492373860
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -1043,7 +1050,7 @@ El foco principal del trabajo es el desarrollo de un enfoque para predecir
  propiedades no-funcionales de componentes de software en ejecución, como
  el tiempo de respuesta, precisión de las respuestas, entre otros.
  Estas propiedades son valores continuos, motivo por el cual se entrenan
- y evaluan técnicas de regresión para su predicción.
+ y evalúan técnicas de regresión para su predicción.
  Las técnicas utilizadas se describen a continuación.
  
 \end_layout
@@ -1098,7 +1105,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/regression-lineal.png
+	filename ../images/regression-lineal.png
 	scale 55
 
 \end_inset
@@ -1177,33 +1184,17 @@ Red neuronal
 \end_layout
 
 \begin_layout Standard
-La técnica de red neuronal
-\change_deleted 1188755597 1492731827
- 
-\change_unchanged
- presenta un modelo matemático sobre el comportamiento de una neurona.El
- mismo representa una célula nerviosa como 
+La técnica de red neuronal presenta un modelo matemático sobre el comportamiento
+ de una neurona.El mismo representa una célula nerviosa como 
 \emph on
 i
 \emph default
-) un conjunto de entradas valoradas (w
-\begin_inset script subscript
-
-\begin_layout Plain Layout
-i
-\end_layout
-
-\end_inset
-
-) que corresponde a las sinapsis, 
+) un conjunto de entradas valoradas (w) que corresponde a las sinapsis,
+ 
 \emph on
 ii
 \emph default
-) un sumador que une las señales entrantes
-\change_deleted 1188755597 1492731827
- 
-\change_unchanged
- y 
+) un sumador que une las señales entrantes y 
 \emph on
 iii
 \emph default
@@ -1221,7 +1212,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/McCulloch-Pitts.png
+	filename ../images/McCulloch-Pitts.png
 	scale 55
 
 \end_inset
@@ -1269,16 +1260,16 @@ adas por los pesos y sumando sus valores; si la suma es mayor a un determinado
 \end_layout
 
 \begin_layout Standard
-El perceptrón es una colección de neuronas con un conjunto de entradas y
+El perceptron es una colección de neuronas con un conjunto de entradas y
  pesos que unen las neuronas con dichas entradas.
- Las neuronas del Perceptrón son completamente independientes entre sí,
+ Las neuronas del Perceptron son completamente independientes entre sí,
  el estado de una neurona no infiere sobre las demás compartiendo sólo las
  entradas.
 \end_layout
 
 \begin_layout Standard
-La escencia del aprendizaje de la red neuronal perceptrón está centrada
- en los valores de pesos.
+La esencia del aprendizaje de la red neuronal perceptron está centrada en
+ los valores de pesos.
  La red debe ser entrenada para que los pesos se adapten y generen las respuesta
 s correctas (
 \emph on
@@ -1325,7 +1316,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/Perceptron-multilayer.png
+	filename ../images/Perceptron-multilayer.png
 	scale 55
 
 \end_inset
@@ -1441,8 +1432,6 @@ ac{SVM}
  El radio máximo que puede tener esta región es llamado margen, señalado
  como M y los puntos de cada clase más cercanos a la línea de clasificación
  se denominan vectores de soporte
-\change_inserted 1188755597 1492733481
-
 \end_layout
 
 \begin_layout Standard
@@ -1454,7 +1443,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/SVM-metology.png
+	filename ../images/SVM-metology.png
 	scale 55
 
 \end_inset
@@ -1512,7 +1501,7 @@ ento y datos de prueba.
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Revisar este parrafo.
@@ -1540,7 +1529,7 @@ La validación cruzada (cross-validation) es una técnica utilizada para evaluar
 El presente trabajo contempla las siguientes métricas de evaluación para
  los modelos de regresión: 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Poner solo 1 o 2 metricas como ejemplo, y explicarlas un poquito.
@@ -1573,7 +1562,7 @@ ac{RMSE}
 
 \end_inset
 
- representa la raiz cuadrática del promedio de la distancia euclidea entre
+ representa la raiz cuadrática del promedio de la distancia euclídea entre
  el valor de la propiedad obtenida por la técnica y el valor real.
  
 \end_layout
@@ -1659,7 +1648,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/under-overfitting.png
+	filename ../images/under-overfitting.png
 	scale 55
 
 \end_inset
@@ -1693,7 +1682,7 @@ name "fig:under-overfitting"
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 No se entiende muy bien esto :S

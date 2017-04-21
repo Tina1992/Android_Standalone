@@ -86,7 +86,6 @@
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
-\author -322385837 "Emiliano" 
 \end_header
 
 \begin_body
@@ -234,7 +233,7 @@ Ingeniera de Sistemas
 \align center
 
 \size large
-Tandil, Marzo de 2017
+Tandil, Mayo de 2017
 \end_layout
 
 \begin_layout Standard
@@ -265,172 +264,45 @@ Resumen
 \end_layout
 
 \begin_layout Standard
-Durante los últimos años el 
-\change_inserted -322385837 1492198155
-uso y 
-\change_unchanged
-desarrollo de aplicaciones m
-\change_inserted -322385837 1492198130
-ó
-\change_deleted -322385837 1492198129
-o
-\change_inserted -322385837 1492198127
-v
-\change_deleted -322385837 1492198126
-b
-\change_unchanged
-iles ha ido creciendo 
-\change_deleted -322385837 1492198208
-exponencialmente
-\change_inserted -322385837 1492198209
-constantemente
-\change_unchanged
- debido a la proliferación de los dispositivos m
-\change_deleted -322385837 1492198163
-ob
-\change_inserted -322385837 1492198163
-óv
-\change_unchanged
-iles y el aumento de su capacidad de cómputo
-\change_inserted -322385837 1492198272
-.
-\change_deleted -322385837 1492198275
-, haciendo que
-\change_unchanged
- 
-\change_inserted -322385837 1492198277
-L
-\change_deleted -322385837 1492198277
-l
-\change_unchanged
-a reutilización de software mediante la integración de componentes de terceros
- 
-\change_deleted -322385837 1492198292
-se torne
-\change_inserted -322385837 1492198292
-es
-\change_unchanged
- una práctica muy común
-\change_inserted -322385837 1492198301
- en el desarrollo de aplicaciones
-\change_unchanged
-.
- 
-\change_deleted -322385837 1492198426
-De este modo 
-\change_inserted -322385837 1492198427
-L
-\change_deleted -322385837 1492198427
-l
-\change_unchanged
-a misma funcionalidad suele ser ofrecida por componentes alternativos que
- difieren en sus propiedades no-funcionales o atributos de calidad
-\change_inserted -322385837 1492199209
-, como su tiempo de respuesta
-\change_unchanged
-.
- Por lo tanto
-\change_inserted -322385837 1492198643
- es importante elegir
-\change_deleted -322385837 1492198643
-,
-\change_unchanged
- la 
-\change_inserted -322385837 1492198653
-alternativa
-\change_deleted -322385837 1492198657
-elección del servicio
-\change_unchanged
- más adecuad
-\change_deleted -322385837 1492198660
-o
-\change_inserted -322385837 1492198660
-a
-\change_unchanged
- para ejecutar
-\change_deleted -322385837 1492198662
-se
-\change_unchanged
- en un determinado contexto
-\change_deleted -322385837 1492198686
-, no es tarea sencilla
-\change_unchanged
-.
+Durante los últimos años el uso y desarrollo de aplicaciones móviles ha
+ ido creciendo constantemente debido a la proliferación de los dispositivos
+ móviles y el aumento de su capacidad de cómputo.
+ La reutilización de software mediante la integración de componentes de
+ terceros es una práctica muy común en el desarrollo de aplicaciones.
+ La misma funcionalidad suele ser ofrecida por componentes alternativos
+ que difieren en sus propiedades no-funcionales o atributos de calidad,
+ como su tiempo de respuesta.
+ Por lo tanto es importante elegir la alternativa más adecuada para ejecutar
+ en un determinado contexto.
  
 \end_layout
 
 \begin_layout Standard
-Por razones prácticas es costosa la ejecución 
-\change_inserted -322385837 1492199046
-y
-\change_deleted -322385837 1492199046
-o
-\change_unchanged
- prueba de todos los servicios para determinar
-\change_deleted -322385837 1492199060
-, luego,
-\change_unchanged
- el más adecuado de acuerdo a su calidad de servicio
-\change_deleted -322385837 1492199286
- y a la funcionalidad requerida
-\change_unchanged
-.
+Por razones prácticas es costosa la ejecución y prueba de todos los servicios
+ para determinar el más adecuado de acuerdo a su calidad de servicio.
  En este punto, es donde toma importancia definir un proceso para la medición
  y predicción de las propiedades no-funcionales.
  
-\change_inserted -322385837 1492199518
-
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -322385837 1492199633
 A partir de la aplicación de técnicas de aprendizaje de máquina es posible
  construir modelos predictivos para estimar el desempeño futuro de un servicio
  en base a mediciones previas de las propiedades del mismo.
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
-
-\change_deleted -322385837 1492200565
-A través de la aplicación de modelos predictivos basados en la experiencia,
- es posible determinar el servicio que más satisface las condiciones del
- entorno, en base a un conjunto de restricciones del contexto de ejecución,
- a un conjunto de características de entrada y un conjunto de servicios
- que ofrecen la misma funcionalidad.
- Ya que estas condiciones o necesidades varían, el objetivo del aprendizaje
- de máquina es el desarrollo de sistemas que puedan cambiar su comportamiento
- (decisión) de manera autónoma basados en su experiencia (información generaliza
-da).
-\change_unchanged
-
-\end_layout
-
-\begin_layout Standard
-
-\change_inserted -322385837 1492608607
 En este trabajo se presenta un enfoque para medir propiedades no-funcionales
- en tiempo de ejecución y construir modelos de prediccion de estas propiedades.
- 
-\change_unchanged
-Se proponen dos herramientas para asistir la aplicación del enfoque.
+ en tiempo de ejecución y construir modelos de predicción de estas propiedades.
+ Se proponen dos herramientas para asistir la aplicación del enfoque.
  Una de ellas facilita la obtención de indicadores de propiedades de componentes
- Android
-\change_inserted -322385837 1492200921
-, como tiempo de respuesta o precision,
-\change_unchanged
- y la otra herramienta permite utilizar diferentes técnicas de regresión
- sobre las mediciones obtenidas previamente.
+ Android, como tiempo de respuesta o precisión, y la otra herramienta permite
+ utilizar diferentes técnicas de regresión sobre las mediciones obtenidas
+ previamente.
  Así, se logra construir modelos predictivos sobre alguna propiedad de interés
  de algún componente específico.
- 
-\change_inserted -322385837 1492608679
-El enfoque se evaluó empíricamente sobre grupos de algoritmos y servicios
+ El enfoque se evaluó empíricamente sobre grupos de algoritmos y servicios
  de diferentes dominios.
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard

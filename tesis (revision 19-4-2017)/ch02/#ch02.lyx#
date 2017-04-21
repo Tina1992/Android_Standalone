@@ -121,7 +121,7 @@ Una de las características más destacadas de los smartphones reside en la
  usuario final logra ampliar las capacidades y funcionalidades del equipo,
  obteniendo así una personalización total del dispositivo.
  Otras características importantes son la capacidad multitarea, el acceso
- y conectividad a Internet vía WiFi o red movil, el soporte de clientes
+ y conectividad a Internet vía WiFi o red móvil, el soporte de clientes
  de email, la eficaz administración de datos y contactos, la posibilidad
  de lectura de archivos en diversos formatos como .pdf o .doc, y la posibilidad
  de obtener datos del ambiente a través de sensores especializados como
@@ -374,7 +374,7 @@ Bibliotecas: incluye un conjunto de bibliotecas nativas escritas en lenguaje
 Marco o framework de Aplicaciones: este es el framework que proporciona
  Android para el desarrollo de aplicaciones, servicios y otros componentes.
  Todo el conjunto de funciones del sistema operativo y bibliotecas nativas
- está disponible a travez de este framework, cuya API esta escrita en el
+ está disponible a través de este framework, cuya API esta escrita en el
  lenguaje Java.
  El framework permite que los desarrolladores tengan acceso a las mismas
  
@@ -391,7 +391,7 @@ ac{API}
 \end_inset
 
  utilizadas por las aplicaciones base del sistema.
- El foco principal del diseño de esta capa ha sido simplificar la reutilización
+ El foco principal del diseño de esta capa ha sido simplificar la re-utilización
  de componentes: las aplicaciones pueden publicar sus capacidades y otras
  pueden hacer uso de ellas (sujetas a restricciones de seguridad), un mecanismo
  que permite a los usuarios reemplazar fácilmente componentes.
@@ -462,7 +462,7 @@ El sistema Android provee cinco tipos de componentes básicos para el desarrollo
 Activity 
 \emph default
 representa una pantalla simple que provee interfaz de usuario.
- Una aplicacion puede estar formada por una o mas actividades que trabajan
+ Una aplicación puede estar formada por una o mas actividades que trabajan
  en conjunto y representan diferentes pantallas o vistas.
  
 \end_layout
@@ -500,7 +500,7 @@ Intent
 \emph default
  es un objeto de acción que facilita la comunicación entre componentes.
  Un intent puede verse como un mensaje entre componentes, por ejemplo, para
- iniciar una actividad o servicio, o solicitar una accion.
+ iniciar una actividad o servicio, o solicitar una acción.
  Por último, el componente 
 \emph on
 Broadcast Receiver
@@ -534,7 +534,7 @@ En el marco del desarrollo de software nos encontramos con la posibilidad
 \end_layout
 
 \begin_layout Standard
-La reutilización es uno de los objetivos principales al momento de diseñar
+La re-utilización es uno de los objetivos principales al momento de diseñar
  un componente de software de calidad para ser usado en diferentes programas.
  La comunicación entre componentes se realiza a través de interfaces.
  Cuando un componente ofrece servicios al resto del sistema, el mismo proporcion
@@ -647,20 +647,27 @@ an por un conjunto de propiedades que representan los aspectos no-funcionales
 \begin_inset space ~
 \end_inset
 
-[Referencia a 
-\begin_inset Quotes eld
+
+\change_inserted 1188755597 1492796264
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cite{Mitchell1997}
+\end_layout
+
 \end_inset
 
-Software Architecture in Practice
-\begin_inset Quotes erd
-\end_inset
 
-].
+\change_unchanged
+.
  Algunos ejemplos de estas propiedades son: el tiempo de respuesta, la disponibi
 lidad, etc.
  
-\change_inserted 1188755597 1492727922
-
 \end_layout
 
 \begin_layout Standard
@@ -680,7 +687,7 @@ Estos atributos de calidad se pueden dividir en dos grupos en base al momento
  en el cual son medidos.
  Un grupo incluye atributos cuantificados durante el tiempo de diseño como
  la escalabilidad, modificabilidad, etc.
- El segundo grupo incluye atributos cuantifiables mientras el sistema se
+ El segundo grupo incluye atributos cuantificables mientras el sistema se
  ejecuta como usabilidad, seguridad, etc.
  Este trabajo se enfoca en la predicción de propiedades dinámicas o en tiempo
  de ejecución.
@@ -1692,39 +1699,16 @@ name "fig:under-overfitting"
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -322385837 1492386815
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted -322385837 1492386825
 No se entiende muy bien esto :S
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
 
-\change_unchanged
-El análisis de ambos efectos, se realiza gráficamente describiendo la performanc
-e del algoritmo y la forma en que va aprendiendo a través del tiempo.
- Al graficar la habilidad basada en los datos de entrenamiento y en los
- datos de validación (testing), puede notarse que el error basado en en
- el último gráfico de la figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:under-overfitting"
-
-\end_inset
-
- comienza a disminuir por efectos de overfitting ya que comienza a aprender
- datos irrelevantes y ruidos del conjunto.
- En cuanto al gráfico central (modelo esperado), se puede notar que el error
- aumenta mientras el modelo aprender a generalizar.
- 
 \end_layout
 
 \begin_layout Standard

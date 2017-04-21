@@ -124,7 +124,7 @@ Los dispositivos móviles de hoy en día utilizan sistemas operativos similares
 \end_layout
 
 \begin_layout Standard
-Para reducir los costos y tiempos de desarrollo, es común la reutilización
+Para reducir los costos y tiempos de desarrollo, es común la re-utilización
  de software mediante la integración de componentes de terceros.
  Un componente
 \begin_inset ERT
@@ -204,11 +204,8 @@ cite{Addison2003}
 \begin_layout Standard
 Los dispositivos móviles tienen limitaciones en conflicto como la energía,
  el acceso a la red y la capacidad de cálculo que determinan el contexto
- de ejecución de estos componentes y que afecta
-\change_deleted 1188755597 1492725988
- 
-\change_unchanged
- los atributos de calidad de los mismos y de las aplicaciones que los invocan.
+ de ejecución de estos componentes y que afecta los atributos de calidad
+ de los mismos y de las aplicaciones que los invocan.
  Por lo tanto, es importante elegir los componentes adecuados de acuerdo
  con su calidad de servicio además de la funcionalidad requerida.
  
@@ -240,7 +237,28 @@ s pero no así a su implementación interna, por lo que no cuentan con informaci
 
 \begin_layout Standard
 Teniendo en cuenta lo antes dicho, en este trabajo se propone estudiar y
- aplicar técnicas de aprendizaje de máquina [REF
+ aplicar técnicas de aprendizaje de máquina
+\change_inserted 1188755597 1492795946
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1188755597 1492795956
+
+
+\backslash
+cite
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+ [REF
 \begin_inset Note Note
 status open
 
@@ -279,7 +297,7 @@ Todo esto no es motivacion.
 
 \begin_layout Standard
 En las aplicaciones móviles, donde la disponibilidad de recursos puede variar
- rápidamente (cambio de red de acceso a internet, capacidad limitada de
+ rápidamente (cambio de red de acceso a Internet, capacidad limitada de
  memoria y 
 \begin_inset ERT
 status open
@@ -420,17 +438,9 @@ reference "chap:Trabajos-Relacionados"
 \end_inset
 
  se presentan algunos trabajos relacionados desde diferentes perspectivas:
- herramientas de medici
-\change_inserted 1188755597 1492727218
-ó
-\change_deleted 1188755597 1492727217
-o
-\change_unchanged
-n de performance para el sistema Android, y trabajos que involucran predicci
-\change_deleted 1188755597 1492727224
-o
-\change_unchanged
-n de performance con técnicas de aprendizaje de máquina.
+ herramientas de medición de performance para el sistema Android, y trabajos
+ que involucran predicción de performance con técnicas de aprendizaje de
+ máquina.
 \end_layout
 
 \begin_layout Standard
@@ -455,9 +465,9 @@ reference "chap:Evaluación"
 
 \end_inset
 
- se presenta la evaluación del enfoque sobre 3 grupos de componentes.
- Se presentan las variables consideradas en los escenarios evaluados, los
- modelos que han sido generados y analizados, y los resultados alcanzados.
+ se presenta la evaluación del enfoque sobre tres casos de estudio.
+ Se presentan las propiedades consideradas en los escenarios evaluados,
+ los modelos que han sido generados y analizados, y los resultados alcanzados.
 \end_layout
 
 \begin_layout Standard
