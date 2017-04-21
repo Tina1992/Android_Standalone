@@ -1,0 +1,313 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\use_default_options true
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type numerical
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Conclusiones
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Conclusiones"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En este trabajo se presentó un modelo de aprendizaje automático para la
+ estimación de atributos no funcionales en componentes de aplicaciones Android,
+ un framework de predicción con técnicas de regresión que permite un gran
+ desacople a las implementaciones de bajo nivel de las librerías de aprendizaje
+ de máquina.
+ Este modelo brinda la posibilidad de crear modelos predictivos óptimos,
+ adecuados a un conjunto de datos particular y un atributo a predecir particular.
+\end_layout
+
+\begin_layout Standard
+Ciertamente, el uso de modelos como criterio de calidad para la selección
+ de servicios y componentes se está extendiendo cada vez más, promoviendo
+ el desarrollo y optimización de técnicas de aprendizaje de máquina.
+ En primer lugar, en este trabajo se presentaron las características principales
+ de las técnicas que aplican aprendizaje sobre los datos, describiendo en
+ forma detallada los algoritmos y el desafío de optimizar la configuración
+ de los paramétros.
+ Luego, se estudiaron diferentes herramientas de recolección de datos en
+ sistemas Android examinando los principales artefactos y mecanismos involucrado
+s en estas herramientas y se analizaron dos indicadores principales de performan
+ce de componentes, el tiempo de respuesta y precisión en los resultados.
+ 
+\end_layout
+
+\begin_layout Standard
+Como resultado del creciente desarrollo de aplicaciones, hoy en día, la
+ integración de componentes de terceros se ha popularizado en diversas áreas,
+ como por ejemplo la de los dispositivos móviles.
+ En este sentido, se introdujeron las nociones básicas de los dispositivos
+ móviles, estudiando también, el sistema operativo más difundido en estos
+ dispositivos, Android.
+ Se analizaron las características más importantes del mismo, y se presentaron
+ los conceptos necesarios para comprender el funcionamiento de las aplicaciones
+ en este sistema.
+\end_layout
+
+\begin_layout Standard
+La utilización de componentes de terceros en dispositivos móviles presenta
+ ciertos desafíos.
+ Estos dispositivos tienen limitaciones en conflicto como la energía, el
+ acceso a la red y la capacidad de cálculo que determinan el contexto de
+ ejecución de estos componentes y que afecta considerablemente los atributos
+ de calidad de los mismos y de las aplicaciones que los invocan.
+ Por lo tanto, es importante elegir los componentes adecuados de acuerdo
+ con su calidad de servicio además de la funcionalidad requerida.
+ En este sentido se describieron las investigaciones actuales en el área.
+ Se presentaron los trabajos que apuntaban a la determinación de relaciones
+ entre las estimaciones de los atributos de calidad y las propiedades inhatas
+ de los diferentes dominios o casos de aplicación presentados.
+ 
+\end_layout
+
+\begin_layout Standard
+Por último, se presentaron los experimentos efectuados para validar el enfoque
+ propuesto.
+ Los mismos fueron evaluados con las métricas presentadas en secciones anteriore
+s, señalando al modelo MultiLayer Perceptron como el mejor a nivel de prediccion
+es bajas en error.
+ Las estimaciones permiten predecir que en dominios de problemas P y NP
+ como el caso del problema de la multiplicacion de matrices y el problema
+ del viajante métrico, el nivel de correlación alcanzado por el algoritmo
+ es inmediatamente inferior al 100% y en cuanto al error en las predicciones
+ a través de las métricas 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{CC}
+\end_layout
+
+\end_inset
+
+ y 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{RMSE}
+\end_layout
+
+\end_inset
+
+ como principales objetivos, tendrán valores inmediatamente cercanos o iguales
+ a cero.
+ Para el caso de servicios, aunque las estimaciones arrojadas por el modelo
+ presentan mas variabilidad, su comportamiento es considerablemente superior
+ al resto de los modelos, en cuanto evita efectos de overfit y underfit
+ sobre los datos.
+ Esto indica que una generalización del modelo propuesto puede resultar
+ útil para determinar a priori qué componentes resultarán más eficiente,
+ dadas ciertas características en las entradas, en los componentes y en
+ la operación, tanto para la predicción del tiempo de respuesta como para
+ la presición.
+\end_layout
+
+\begin_layout Standard
+Por otro lado, las evaluaciones señalan al modelo Linear Regression como
+ la mejor opción a nivel de generalización en el aprendizaje y buena adaptación
+ a diferentes formatos de dataset.
+ El factor de correlación obtenido por este modelo para problemas de complejidad
+ polinómica alcanza resultados tan precisos como el modelo MultiLayer Perceptron
+ a un costo computacional extremadamente inferior.
+ Respecto al caso de estudio de problema NP, el modelo fue capaz de alcanzar
+ valores de correlacioón entre las variables mayores al 70%, un valor positivo
+ teniendo en cuenta un conjunto estrecho de datos de entrenamiento (cercano
+ a las 200 instancias), y un tiempo de procesamiento reducido a minutos,
+ tanto para la predicción del tiempo de respuesta como para la precisión.
+ Incluso, los resultados arrojados fueron superiores a otras técnicas.
+ Respecto a los servicios, se observa que el modelo tiene dificultades para
+ aprender, aunque la pobreza de los dataset formados concentra la mayor
+ responsabilidad.
+ En estos ambientes, el modelo K means Clusterer logra superar estas dificultade
+s y obtiene resultados superiores incluso, al modelo MultiLayer Perceptron.
+ Para el servicio Microsoft conformado por más de 1800 instancias, el modelo
+ alcanza un factor de correlacion un 2% menor que el factor determinado
+ por el modelo MultiLayer Perceptron, y para los servicios Google Play (2320
+ instancias) y SkyBiometry (3840 instancias) el modelo de cluster determina
+ aún mejor la relación entre las variables y reduce el error en las predicciones
+ respecto al modelo MultiLayer, que por sus resultados fue tomado como base
+ para el análisis de las técnicas en general.
+ 
+\end_layout
+
+\begin_layout Section
+Limitaciones
+\end_layout
+
+\begin_layout Standard
+La principal limitación que presenta el modelo propuesto en este trabajo
+ parte del problema de la falta de recursos suficientes de los dispositivos
+ móviles para llevar adelante ejecuciones complejas y costosas, que insumen
+ gran cantidad de memoria y procesamiento.
+ Este factor, impide la posibilidad de serializar las primeras dos fases
+ del enfoque propuesto, obligando a dividir el enfoque en dos herramientas
+ desarrolladas para ambientes distintos.
+ 
+\end_layout
+
+\begin_layout Standard
+Otra limitación que se presenta responde a la ausencia de un método automatizado
+ para configurar dinámicamente los parámetros de las tecnicas de regresión,
+ debiendo determinar un rango estático y específico propio para cada técnica,
+ para llevar a cabo el proceso de optimización, considerando de esta forma
+ a todos los datos de entrenamiento por igual, sin distinción de formato,
+ dominio, etc.
+\end_layout
+
+\begin_layout Standard
+Finalmente, es importante destacar que las estimaciones arrojadas para los
+ servicios remotos de detección facial, no reflejan conclusiones claras
+ y determinísticas.
+ Este problema parte de la heterogeneidad en la formación de los datos,
+ lo que dificulta realizar comparaciones entre ellos.
+ Por otro lado, no se incoporaron atributos que reflejen datos reales sobre
+ los rostros en las imágenes ni atributos sobre los resultados retornados
+ por el servicio, de manera que la precisión no puede ser analizada, ni
+ contrastada con el tiempo de respuesta obtenido.
+\end_layout
+
+\begin_layout Section
+Trabajos Futuros
+\end_layout
+
+\begin_layout Standard
+Cabe mensionar que existen algunas posibilidades de extensión interesantes
+ para este trabajo.
+ Como primer objetivo se pretende mejorar el tiempo de procesamiento requerido
+ para la optimización y generación de los modelos predictivos.
+ Para poder lograr esto, se le otorga a la aplicación la capacidad de soportar
+ eficientemente múltiples hilos de ejecución y distribuir o paralelizar
+ los procesos de configuración, optimización, y construcción de los modelos.
+ Por otro lado, se deben incoportar dataset con la suficiente expresividad
+ para describir de mejor manera los diferentes casos de aplicación analizados
+ y derivar en conclusiones más precisas.
+\end_layout
+
+\begin_layout Standard
+Adicionalmente se pretende incorporar nuevos aspectos para la mejora y contraste
+ de técnicas.
+ Entre los aspectos a considerar al extender el proceso de optimización
+ se procura: 
+\end_layout
+
+\begin_layout Itemize
+Independizar al módulo de optimización de técnicas, de diferentes rangos
+ de configuración para cada uno de los parámetros que incluya la técnica.
+ De esta forma, lograr más énfasis en los valores de cada parámetro y explotar
+ al máximo el desempeño de las técnicas.
+ Incluso, el usuario podría disponer de la posibilidad de personalizar estos
+ valores.
+\end_layout
+
+\begin_layout Itemize
+Informar y registrar el tiempo real consumido por cada operación de construcción
+ de un modelo.
+ Operación que incluye la configuración, optimización, entrenamiento y finalment
+e la construccion del modelo con la evaluación de las métricas correspondientes.
+ 
+\end_layout
+
+\begin_layout Itemize
+Extender el análisis comparativo a nivel de librerías, aprovechando la capacidad
+ de la herramienta de integrar librerías de terceros.
+ De esta manera, se logra comparar el desempeño de una técnica conocida
+ en diferentes implementaciones, y seleccionar la mejor técnica independiente
+ de la librería que la implemente.
+ 
+\end_layout
+
+\begin_layout Itemize
+Considerar conjuntos de datos de la misma naturaleza que los usados durante
+ la fase de entrenamiento, para evaluar los modelos creados.
+ Brindar un mecanismo de evaluación de los modelos a partir de las métricas,
+ y validar estos modelos creados frente a nuevos conjuntos de datos para
+ enclarecer el desempeño y generalización lograda.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,561 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\use_default_options true
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type numerical
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes true
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\author 1188755597 "usuario" 
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Trabajos Relacionados
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Trabajos-Relacionados"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El enfoque propuesto es un proceso de aprendizaje de máquina que incluye
+ una herramienta para recolectar mediciones de performance en Android, y
+ otra herramienta para entrenar y evaluar modelos de predicción con diferentes
+ técnicas de aprendizaje automático.
+ En este capítulo se presentan trabajo relacionados, divididos en dos secciones.
+ Primero, en la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Herramientas-de-benchmarks-para-Android"
+
+\end_inset
+
+, se describe un conjunto de herramientas para monitorear y realizar pruebas
+ de performance en Android.
+ Luego, en la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Predicción-de-propiedades-no-funcionales-con-aprendizaje-de-máquina"
+
+\end_inset
+
+, se presentan algunos trabajos relacionados que también abordan el problema
+ de predicción de atributos no-funcionales con técnicas de aprendizaje de
+ máquina.
+\end_layout
+
+\begin_layout Section
+Herramientas para Android
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Herramientas-de-benchmarks-para-Android"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las herramientas de monitoreo y pruebas de performance para Android ofrecen
+ a los desarrolladores la posibilidad de analizar los aspectos no-funcionales
+ de una aplicación Android arrojando datos numéricos acerca de su desempeño
+ y consumo de recursos.
+ A continuación se describen algunas de estas herramientas.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Performance Monitors de Android 
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Performance-Monitors-de-Android "
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es una herramienta integrada en el ambiente de desarrollo 
+\emph on
+Android Studio
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+https://developer.android.com/studio/profile/android-monitor.html
+\end_layout
+
+\end_inset
+
+
+\emph default
+ y cuenta con varias sub herramientas que monitorean y proveen información
+ en tiempo real sobre la aplicación.
+ Los datos capturados se almacenan en archivos para luego analizarlos en
+ diferentes vistas.
+ Pueden monitorearse tanto aplicaciones en dispositivos reales conectados
+ o simulados a través de un emulador.
+\end_layout
+
+\begin_layout Standard
+A través de cinco vistas diferentes se accede a la información sobre la
+ aplicación evaluada.
+ 
+\emph on
+LogCat
+\emph default
+ monitorea las excepciones y mensajes de log emitidos por la aplicación
+ y el sistema operativo, útil para deputar la aplicación durante su desarrollo.
+ Las restantes vistas proveen un monitoreo del consumo de memoria, CPU,
+ GPU y red por parte de la aplicación.
+\end_layout
+
+\begin_layout Subsection*
+Benchit
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Benchit"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Benchit
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
+https://github.com/T-Spoon/Benchit
+\end_layout
+
+\end_inset
+
+
+\emph default
+ es una biblioteca Open Source implementada en lenguaje Java para realizar
+ mediciones de performance en Android.
+ Benchit es rápido y sencillo de usar, ya que permite analizar áreas de
+ código para determinar el tiempo de respuesta o latencia de la operación.
+ Una forma sencilla de utilizar esta librería es a través de iteraciones
+ sobre una misma sección de código.
+ De esta forma, con cada iteración, la herramienta va almacenando el tiempo
+ de ejecución del código (diferencia entre el tiempo de comienzo y tiempo
+ de fin).
+ Al término de las iteraciones, se podrá extraer el promedio, rango y desviación
+ estándar de las mediciones.
+ La herramienta, también provee la posibilidad de realizar comparaciones
+ de código mostrando los resultados de manera ordenada.
+ Esta opción es útil, por ejemplo, al momento de comparar el desempeño de
+ distintos algoritmos o porciones de código que realicen la misma acción
+ de forma diferente.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Google Caliper 
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Google-caliper"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Google Caliper
+\emph default
+ es un framework open source para implementar, ejecutar y visualizar resultados
+ de microbenchmarks en aplicaciones Java, aunque brinda soporte para proyectos
+ Android.
+ Los microbenchmarks son mediciones realizadas a funciones simples como
+ llamadas al kernel.
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Agregar una descripcion de que son los microbenchmarks
+\end_layout
+
+\end_inset
+
+Caliper permite obtener diferentes medidas del código Java, principalmente
+ microbenchmarks, pero también tiene soporte para otros tipos de medidas
+ incluyendo memoria disponible, u otras medidas arbitrarias de dominio específic
+o como por ejemplo el radio de compresión.
+ 
+\end_layout
+
+\begin_layout Subsection*
+JMeter
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:JMeter"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Apache JMeter
+\emph default
+ es una herramienta Open Source
+\change_inserted 1188755597 1492735899
+ 
+\change_unchanged
+implementada en lenguaje Java para realizar pruebas de carga y rendimiento
+ de una variedad de servicios, con 
+\change_inserted 1188755597 1492735908
+é
+\change_deleted 1188755597 1492735907
+e
+\change_unchanged
+nfasis en aplicaciones y protocolos Web.
+ Apache JMeter se puede utilizar para simular un gran volumen de carga en
+ un servidor o grupo de servidores y probar su resistencia o analizar el
+ rendimiento general bajo diferentes tipos de carga.
+ En un principio, fue diseñada para realizar pruebas de rendimiento sobre
+ aplicaciones Web pero luego ha sido extendida a otras funciones para cubrir
+ diferentes categorías de testing, tal es el caso de los análisis de carga,
+ de funcionalidad, desempeño, regresión, entre otros.
+ JMeter es una aplicación de escritorio con una interfaz gráfica amigable
+ para el usuario.
+ Puede ser ejecutada bajo cualquier entorno o estación que acepte la máquina
+ virtual de Java como es el caso de los sistemas operativos Windows, Linux
+ y Mac.
+\end_layout
+
+\begin_layout Standard
+A grandes rasgos, la herramienta simula un grupo de usuarios que envían
+ peticiones a un servidor y retorna un conjunto de estadísticas sobre el
+ desempeño y funcionalidad por medio de gráficos, tablas, etc, tanto sobre
+ recursos estáticos y dinámicos.
+ 
+\end_layout
+
+\begin_layout Standard
+El cuadro 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:benchmarks-tools"
+
+\end_inset
+
+ presenta y compara las principales caracteristicas de las herramientas
+ antes mencionadas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../images/benchmarks_tools.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Información resumida de herramientas de pruebas de performance para aplicaciones
+ Android y servicios Web.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:benchmarks-tools"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Predicción de propiedades no-funcionales con aprendizaje de máquina 
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Predicción-de-propiedades-no-funcionales-con-aprendizaje-de-máquina"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La predicción de propiedades no-funcionales ayuda a los arquitectos de software
+ en la evaluación de sus sistemas durante la etapa de diseño, y a guiar
+ las decisiones respecto a que componentes
+\change_deleted 1188755597 1492735057
+ 
+\change_unchanged
+ integrar a la arquitectura del sistema de acuerdo a sus requerimientos
+ de calidad.
+ Diferentes trabajos han recurrido al uso de técnicas de aprendizaje de
+ máquina para construir modelos de predicción de performance y otros atributos
+ de calidad dinámicos.
+ En 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Hutter2014"
+
+\end_inset
+
+se refieren a estos modelos como modelos empíricos de performance (
+\emph on
+EPM
+\emph default
+ por sus siglas en inglés) ya que requieren la recolección de mediciones
+ empíricas sobre los componentes.
+ 
+\end_layout
+
+\begin_layout Standard
+La principal aplicación de estos modelos probablemente es el problema de
+ selección de algoritmos, introducido en 1976 por John R.
+ Rice 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Rice1976"
+
+\end_inset
+
+.
+ Este problema consiste en seleccionar el algoritmo, o configuración de
+ algoritmo, de un portafolio de alternativas que minimice el tiempo de respuesta
+, según la instancia de datos de entrada.
+ La predicción del tiempo de respuesta ha sido abordada con éxito usando
+ técnicas de aprendizaje supervisado, principalmente de regresión 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Hutter2014"
+
+\end_inset
+
+.
+ En estos trabajos, los datos empíricos de entrenamiento son obtenidos en
+ contextos de ejecución controlados, para enfocarse en la correlación entre
+ la propiedad a predecir y las propiedades de los parámetros de entrada
+ del algoritmo.
+ Una limitación de estos modelos es que no generalizan la predicción de
+ las propiedades de performance al contexto de ejecución, es decir, no considera
+n características del dispositivo y el ambiente de ejecución que influyen
+ sobre el desempeño del componente, como su capacidad de cómputo y la disponibil
+idad de recursos.
+ 
+\end_layout
+
+\begin_layout Standard
+Los modelos de predicción no sólo se utilizan para estimar el tiempo de
+ respuesta del desempeño de los componentes, sino también para estimar otras
+ propiedades.
+ Por ejemplo, en 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Roberts07learnedmodels"
+
+\end_inset
+
+ se proponen modelos para la predicción del tiempo de respuesta y para la
+ probabilidad de éxito de diferentes algoritmos de planeamiento utilizando
+ técnicas de aprendizaje de máquina incluidas en la librería Weka.
+ Para el aprendizaje fueron utilizados los resultados de 4726 instancias
+ de problemas de planning
+\change_deleted 1188755597 1492735057
+ 
+\change_unchanged
+ ejecutadas sobre 28 algoritmos de planeamiento conocidos.
+ Por cada algoritmo y cada problema se registra si un plan fue encontrado
+ exitosamente o no,
+\change_deleted 1188755597 1492735057
+ 
+\change_unchanged
+ y el tiempo (en segundos) requerido en completar la ejecución.
+ A partir de esta información se entrenan y evaluan modelos con diferentes
+ técnicas de aprendizaje supervisado.
+ El trabajo presentado en 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Beveridge2009"
+
+\end_inset
+
+ también analiza la precisión de distintos algoritmos, en este caso, para
+ el reconocimiento de rostros en imágenes, utilizando una técnica de regresión
+ lineal denominada GLMM, por Generalized Linear Mixed Models.
+ 
+\end_layout
+
+\begin_layout Standard
+Otros autores en 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Mersmann_anovel"
+
+\end_inset
+
+ predicen la optimalidad o razón de aproximación de algoritmos para el problema
+ del viajante utilizando una técnica de regresión no lineal llamada 
+\emph on
+MARS
+\emph default
+, por sus siglas en inglés.
+ El modelo 
+\emph on
+MARS
+\emph default
+ se aplicó con éxito para predecir la optimalidad del algoritmo de búsqueda
+ local llamado 2-opt, independientemente del tamaño de la instancia del
+ problema.
+ Se argumenta que es sencillo aplicar la misma metodología a otros algoritmos
+ y utilizar estos modelos para derivar una estrategia para el problema de
+ selección de algoritmos en el contexto del problema del viajante.
+\end_layout
+
+\begin_layout Standard
+La predicción de propiedades dinámicas de servicios Web, como su tiempo
+ de respuesta, y probabilidad de fallos, es más compleja de abordar con
+ respecto a algoritmos y componentes ejecutados localmente ya que depende
+ de factores propios de la infraestructura de red y el proveedor del servicio,
+ que no se puede monitorear desde el dispositivo cliente.
+ Un enfoque ingenioso para abordar este problema fue propuesto en el articulo
+ de Zheng
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Zheng2013"
+
+\end_inset
+
+.
+ En este trabajo, los autores se basan en la premisa de que las propiedades
+ de performance de los servicios Web varían respecto a características del
+ contexto, como la ubicación geográfica y el momento del día y la semana
+ en el que se realiza una solicitud al servicio.
+ De esta forma, recolectan la información del consumo de servicios de múltiples
+ clientes alrededor del mundo para generalizar modelos de predicción.
+ Este enfoque es conocido como predicción colaborativa ya que los datos
+ empíricos de entrenamiento son brindados por múltiples nodos de manera
+ distribuida.
+ Los autores llevaron a cabo un experimento a gran escala que involucró
+ más de 30 millones de invocaciones a servicios Web en más de 80 países,
+ por usuarios distribuidos en más de 30 países.
+ La observación experimental indica que diferentes usuarios pueden tener
+ diferentes experiencias de uso sobre el mismo servicio, influenciados por
+ la conexión de red y los ambientes heterogéneos entre usuarios y proveedores.
+ Los datos se encuentran disponibles públicamente y han sido utilizados
+ en varios trabajos para la construcción y comparación de modelos de performance
+ con diferentes técnicas de aprendizaje de máquina 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Albu2013"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Kumar2015"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_body
+\end_document
