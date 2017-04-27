@@ -3155,6 +3155,47 @@ Lineas de predicción en la herramienta Nekonata
 \end_layout
 
 \begin_layout Standard
+Aplicando el mismo método de análisis anterior, se analizó el dataset TSPlib.csv
+ considerando el atributo precisión del algoritmo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/precision-TPS.png
+	scale 55
+	BoundingBox 0bp 0bp 596bp 619bp
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultados del atributo precisión para el escenario ‘problema del viajante’.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 A través de la figura se aprecia que los modelos que presentan una mejor
  adaptación para este problema continuan siendo el 
 \begin_inset ERT
