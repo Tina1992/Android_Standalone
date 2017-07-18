@@ -1,0 +1,612 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass book
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{acronym}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{AMC}{Average Method Complexity}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{AOP}{Aspect-Oriented Programming}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{ADT}{Android Development Toolkit}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{APC}{Average Parameter Count}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{API}{Application Programming Interface}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{ARP}{Address Resolution Protocol}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{ATC}{Abstract Type Count}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{BEEP}{Blocks Extensible Exchange Protocol}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{CAM}{Cohesion Among Methods}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{CBO}{Coupling Between Objects}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{CSV}{Comma-Separated Values}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{DAM}{Data Access Metric}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{DI}{Dependency Injection}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{DIT}{Depth of Inheritance Tree}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{DMC}{Distinct Message Count}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{DMR}{Distinct Message Ratio}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{DW}{Data Weight}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{EJB}{Enterprise Java Bean}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{EPM}{Empty Parameter Methods}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{FTP}{File Transfer Protocol}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{GPRS}{General Packet Radio Service}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{GPS}{Global Positioning System}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{GSM}{Global System for Mobile communications}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{GTC}{Generic Type Count}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{GUI}{Graphic User Interface}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{HTML}{Hyper Text Markup Language}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{HTTP}{Hyper Text Transfer Protocol}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{IDE}{Integrated Development Environment}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{IP}{Internet Protocol}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{IR}{Information Retrieval}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{JAXP}{Java API for XML Processing}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{JAX-RPC}{Java API for XML-based RPC}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{JVM}{Java Virtual Machine}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{LAN}{Local Area Network}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{LCOM}{Lack of Cohesion in Methods}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{LCOM-3}{Lack of Cohesion in Methods (Henderson-Sellers)}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{LOC}{Lines Of Code}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{ME}{Message Entropy}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{MIM}{Man In the Middle}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{MRS}{Message Repetition Scale}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{NAICS}{North American Industry Classification System}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{NASA}{National Aeronautics and Space Administration}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{OO}{Object Oriented}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{PC}{Personal Computer}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{PDF}{Portable Document Format}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{QBE}{Query By Example}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{REST}{Representational State Transfer}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{RFC}{Response For a Class}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{RPC}{Remote Procedure Call}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{SAAS}{Software as a Service}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{SDK}{Software Development Kit}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{SMTP}{Simple Mail Transfer Protocol}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{SOA}{Service-Oriented Architecture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{SOAP}{Simple Object Access Protocol}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{SOC}{Service Oriented Computing}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{SMS}{Short Message Service}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{SQL}{Structured Query Language}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{TCP}{Transfer Control Protocol}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{TPC}{Total Parameter Count}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{UDDI}{Universal Description, Discovery and Integration}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{UML}{Unified Modeling Language}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{UNSPSC}{United Nations Standard Products and Services Code}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{UPnP}{Universal Plug and Play}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{UTMS}{Universal Mobile Telecommunications System}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{VS}{Vector Space}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{VSM}{Vector Space Model}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{VTC}{Void Type Count}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{W3C}{World Wide Web Consortium}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{WADL}{Web Application Description Language}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{WMC}{Weigthed Method per Class}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{WSDL}{Web Services Description Language}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{WSQBE}{Web Service Query By Example}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{XML}{Extended Markup Language}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{XML-RPC}{XML-Remote Procedure Call}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{XSD}{XML Schema Definition}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{acronym}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

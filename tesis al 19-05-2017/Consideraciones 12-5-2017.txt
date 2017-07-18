@@ -1,0 +1,5 @@
+Simplificaciones:
+-Solo tiempo de respuesta
+-Caso 1: solo resultados de Samsung Galaxy S3
+-Caso 2: solo resultados de Samsung Galaxy S4. No hay modelos de optimalidad.
+-Caso 3: solo resultados de Lenovo K3 Note. No hay modelos de precision de la deteccion.

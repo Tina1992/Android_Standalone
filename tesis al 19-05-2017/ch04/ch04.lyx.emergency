@@ -1,0 +1,1778 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\use_default_options true
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes true
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\author -638769289 "Usuarioç" 
+\author -322385837 "Emiliano" 
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Enfoque y Herramientas
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Enfoque-y-Herramientas"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En este capítulo se describe el enfoque propuesto para predecir atributos
+ dinámicos de componentes de software, en base a propiedades medidas durante
+ su ejecucion.
+ El enfoque plantea llevar a cabo la predicción mediante un proceso de aprendiza
+je de máquina que involucra dos pasos: medición y aprendizaje.
+ El primero implica la recolección de indicadores o mediciones durante la
+ ejecución del componente, lo que puede significar la ejecución de una pieza
+ de codigo, la llamada a una funcion, o la invocación de un servicio
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Otros detalles se dan luego, porque hasta aca no se sabe que es un problema
+ de entrada o una operacion
+\end_layout
+
+\end_inset
+
+.
+ Lo segundo implica la construcción de modelos de predicción con técnicas
+ de regresión.
+ La construcción o entrenamiento de estos modelos se hace en un proceso
+ interactivo con el usuario, que involucra una configuración inicial de
+ los datos y la optimización automática de los parámetros de acuerdo a las
+ tasas de error arrojadas por métricas de evaluación 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Se hace esto ultimo? Si no, se borra
+\end_layout
+
+\end_inset
+
+.
+ Por último, los modelos generados pueden utilizarse en distintos casos
+ prácticos, como por ejemplo, la selección automática de servicios y algoritmos,
+ o soportar decisiones de diseño o implementación.
+ 
+\end_layout
+
+\begin_layout Standard
+Como soporte para el enfoque, se desarrollaron dos herramientas independientes
+ diseñadas para efectuar cada uno de los pasos mencionados.
+ Por un lado, 
+\change_deleted -638769289 1494877712
+el framework
+\change_inserted -638769289 1494877715
+la biblioteca
+\change_unchanged
+
+\emph on
+ Android Meter
+\change_deleted -638769289 1494877720
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+O cualquier otro nombre, pero mas corto
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
+\emph default
+ es una biblioteca Java para realizar pruebas de desempeños de código en
+ Android y capturar mediciones durante la ejecución.
+ Su diseño es genérico para usar sobre cualquier dominio del que se quieran
+ obtener mediciones de desempeño.
+ Por otro lado, se desarrolló una herramienta standalone denominada 
+\emph on
+Nekonata
+\emph default
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Primero definir que hace la herramiento y luego dar caracteristicas secundarias,
+ como lo de que brinda soporte para distintas librerias, etc.
+\end_layout
+
+\end_inset
+
+diseñada para integrar fácilmente técnicas de aprendizaje automático incluidas
+ en librerías Java de terceros.
+ La herramienta se usa para la construcción del modelo a partir del conjunto
+ de datos capturados con el uso de
+\change_inserted -638769289 1494877739
+ 
+\change_unchanged
+l
+\change_inserted -638769289 1494877740
+a
+\change_unchanged
+ 
+\change_deleted -638769289 1494877741
+framework
+\change_inserted -638769289 1494877743
+biblioteca
+\change_unchanged
+ Android Meter, mediante un proceso de automatización de los algoritmos
+ en complemento de información gráfica para la colaboración interactiva
+ del usuario.
+ 
+\end_layout
+
+\begin_layout Standard
+Estas cuestiones se describen en detalle de la siguiente manera.
+ En la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Etapas-del-método"
+
+\end_inset
+
+ se profundiza sobre las distintas etapas del enfoque, incluyendo algunos
+ usos prácticos de la propuesta.
+ En las siguientes secciónes se describen cada uno de las herramientas desarroll
+adas, presentando 
+\change_inserted -638769289 1494877772
+la biblioteca
+\change_deleted -638769289 1494877769
+el framework
+\change_unchanged
+ para la medici
+\change_inserted -638769289 1494877777
+ó
+\change_deleted -638769289 1494877776
+o
+\change_unchanged
+n y recolección de datos en la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Framework-de-medición"
+
+\end_inset
+
+ y finalmente, en la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Herramienta-de-entrenamiento"
+
+\end_inset
+
+ se presenta la herramienta para la construcción de modelos de predicción.
+ 
+\end_layout
+
+\begin_layout Section
+Etapas del método
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Etapas-del-método"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El enfoque propuesto se conceptualiza como un proceso de dos fases complementari
+as, con las que se obtienen modelos de predicción de propiedades de componentes
+ que pueden usarse en distintas aplicaciones o casos prácticos.
+ La figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:method-stages"
+
+\end_inset
+
+ muestra un esquema conceptual del enfoque, cuyas etapas se describen a
+ continuación:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../images/enfoque-overview.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Esquema conceptual del enfoque en fases.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:method-stages"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Medici
+\change_inserted -638769289 1494878218
+ó
+\change_deleted -638769289 1494878217
+o
+\change_unchanged
+n y recolección
+\series bold
+ de datos
+\series default
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+El proceso comienza con la 
+\change_inserted -638769289 1494878963
+medicion de un componente en ejecución y la recoleccion de estas mediciones
+ en un
+\change_deleted -638769289 1494878966
+creación de
+\change_unchanged
+ dataset
+\change_deleted -638769289 1494878976
+s
+\change_unchanged
+.
+ Cada dataset pertenece a 
+\change_inserted -638769289 1494878048
+la ejecución de un componente
+\change_deleted -638769289 1494878044
+un caso de uso
+\change_unchanged
+ diferente, del cual se extraen todas 
+\change_inserted -638769289 1494879018
+sus mediciones de desempeño (tiempo de respuesta, etc) mas 
+\change_unchanged
+las propiedades que podrían influir sobre 
+\change_deleted -638769289 1494879024
+el
+\change_inserted -638769289 1494879024
+este
+\change_unchanged
+ desempeño
+\change_deleted -638769289 1494879028
+ del componente
+\change_unchanged
+.
+ Durante la ejecución de cada componente se van realizando las mediciones
+ sobre distintos aspectos de la operación y registrando cada uno de estos
+ resultados en un archivo para su posterior análisis.
+ A su vez, el proceso de recolección de datos involucra la ejecución de
+ sub etapas, pudiendo requerir el proceso algunas
+\change_deleted -638769289 1494878071
+,
+\change_unchanged
+ o todas 
+\change_deleted -638769289 1494878076
+de 
+\change_unchanged
+las tareas que se detallan a continuación:
+\end_layout
+
+\begin_layout Itemize
+Integración de componentes: A menudo se requiere la evaluación de componentes
+ de terceros, tanto de servicios Web como 
+\change_inserted -638769289 1494878095
+algoritmos de bibliotecas
+\change_deleted -638769289 1494878097
+librerías
+\change_unchanged
+ instaladas, de manera que deben ser integrados correctamente a la herramienta
+ para ser tratados como componentes.
+ 
+\end_layout
+
+\begin_layout Itemize
+Selección de características del contexto: 
+\change_deleted -638769289 1494878272
+M
+\change_inserted -638769289 1494878272
+m
+\change_unchanged
+ientras se realiza la ejecución de los componentes, las 
+\change_deleted -638769289 1494878308
+propiedades no funcionales
+\change_inserted -638769289 1494878314
+caracter
+\change_deleted -322385837 1494885062
+i
+\change_inserted -322385837 1494885071
+í
+\change_inserted -638769289 1494878314
+sticas
+\change_unchanged
+ del dispositivo móvil donde se llevan a cabo las operaciones, pueden ser
+ capturadas como mediciones.
+ Realizar las mediciones 
+\change_deleted -638769289 1494878346
+en
+\change_inserted -638769289 1494878346
+sobre
+\change_unchanged
+ distintos 
+\change_deleted -638769289 1494878353
+modelos de 
+\change_unchanged
+dispositivos móviles persigue la idea 
+\change_deleted -638769289 1494878373
+sobre la influencia de
+\change_inserted -638769289 1494878374
+de que
+\change_unchanged
+ las capacidades de cada 
+\change_deleted -638769289 1494878377
+modelo
+\change_inserted -638769289 1494878417
+dispositivo (cantidad de memoria, CPU, etc) influye en el desempeño de los
+ componentes, como por ejemplo, su tiempo de ejecución
+\change_deleted -638769289 1494878450
+ en las operaciones de ejecución.
+ Ya que las predicciones son realizadas sobre componentes de aplicaciones
+ Android, la captura de las carecterísticas estáticas y dinámicas son tomadas
+ en cuenta, para detectar relaciones entre éstas y las propiedades a predecir
+ de los componentes.
+\change_unchanged
+
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted -638769289 1494878554
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -638769289 1494878554
+Esto no es una tarea de la etapa de medicion.
+ Esto es refiere a la evaluacion que hacen despues en el siguiente capitulo
+\end_layout
+
+\end_inset
+
+
+\change_deleted -638769289 1494878552
+Implementación de casos de uso: La evaluación de casos de estudios variables
+ en complejidad y características,que incluyen diferentes formatos de componente
+s, son analizados con el fin de arrojar conclusiones sobre la variación
+ en el desempeño de las técnicas de regresión frente a diferentes ambientes,
+ analizar la calidad en el aprendizaje para atributos dinámicos.Algunas de
+ las conclusiones que podrían desprenderse del análisis son cuánta mejora
+ en la precisión significa la aplicación de técnicas de regresión sobre
+ problemas de complejidad polinómica respecto a problemas NP, o la afectación
+ en el tiempo de respuesta de las operaciones sobre servicios remotos frente
+ a servicios locales 
+\change_unchanged
+
+\end_layout
+
+\begin_layout Itemize
+Generación de datos de entrada: 
+\change_inserted -638769289 1494878643
+los componentes requieren un conjunto de parámetros o datos de entrada para
+ su ejecución, por eso 
+\change_deleted -638769289 1494878610
+S
+\change_inserted -638769289 1494878610
+s
+\change_unchanged
+e debe proveer una manera para generar arbitrariamente instancias de 
+\change_deleted -638769289 1494878696
+un caso de estudio particular
+\change_inserted -638769289 1494878714
+datos de entrada del componente a medir
+\change_unchanged
+, o la capacidad para obtener instancias externamente a través de enlaces
+ o archivos.
+ 
+\end_layout
+
+\begin_layout Itemize
+Selección de propiedades de la entrada: Es posible obtener propiedades de
+ los datos de entrada, generalmente atributos que configuran o sirven para
+ generar una instancia
+\change_inserted -638769289 1494878747
+ como su tamaño
+\change_unchanged
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Ejecución de componentes y obtención de mediciones: 
+\change_deleted -322385837 1494885016
+L
+\change_inserted -322385837 1494885016
+l
+\change_unchanged
+os componentes son ejecutados con las entradas generadas,
+\change_inserted -322385837 1494886374
+ mientras se
+\change_unchanged
+ toman
+\change_deleted -322385837 1494886379
+do
+\change_unchanged
+ y registran
+\change_deleted -322385837 1494886382
+do
+\change_unchanged
+ mediciones sobre las propiedades 
+\change_inserted -322385837 1494886352
+del contexto de ejecucion (datos de entrada y dispositivo), que son los
+ atributos independientes o predictores, 
+\change_deleted -322385837 1494885771
+incorporadas
+\change_unchanged
+ además de las propiedades de interés a predecir.
+ De esta forma, 
+\change_deleted -322385837 1494885783
+los
+\change_inserted -322385837 1494885783
+el
+\change_unchanged
+ dataset 
+\change_inserted -322385837 1494885790
+que se obtiene 
+\change_unchanged
+puede
+\change_deleted -322385837 1494885791
+n
+\change_unchanged
+ ser formado
+\change_deleted -322385837 1494885794
+s
+\change_unchanged
+ por una cantidad variable
+\change_deleted -322385837 1494885801
+ y opcional
+\change_unchanged
+ de propiedades en base a las características que hayan sido elegidas para
+ ser medidas.
+ 
+\change_deleted -322385837 1494885875
+Este factor impacta en la calidad del dataset creado, por lo tanto estudiar
+ el comportamiento que adoptan los datos y la distribución en el rango de
+ valores, puede servir de indicio para entender el desempeño de las técnicas.
+ 
+\change_unchanged
+
+\end_layout
+
+\begin_layout Subsection*
+Aprendizaje
+\end_layout
+
+\begin_layout Standard
+A partir del conjunto de datos obtenidos en la etapa anterior, se aplican
+ técnicas de aprendizaje de máquina para la extracción de conocimiento.
+ Tal conocimiento se refleja mediante la construcción de modelos predictivos
+ que mejor se ajustan a la generalización de la información mediante un
+ proceso de entrenamiento, optimización y evaluación de los mismos.
+ El proceso de aprendizaje requiere indefectiblemente de un conjunto de
+ datos de entrenamiento volcado en un archivo, una propiedad de ese conjunto
+ a predecir y un conjunto de algoritmos que aplican técnicas de regresión
+ sobre los datos.
+ 
+\change_deleted -322385837 1494885976
+Además, e
+\change_inserted -322385837 1494885976
+E
+\change_unchanged
+l aprendizaje está conformado por varias 
+\change_inserted -322385837 1494885980
+sub 
+\change_unchanged
+etapas o sub procesos.
+\end_layout
+
+\begin_layout Itemize
+Configuración de las técnicas
+\change_deleted -322385837 1494885985
+ 
+\change_unchanged
+: 
+\change_deleted -322385837 1494885987
+L
+\change_inserted -322385837 1494885988
+l
+\change_unchanged
+as técnicas de regresión representan 
+\change_inserted -322385837 1494886732
+algoritmos
+\change_deleted -322385837 1494886740
+modelos matemáticos cuyas funciones
+\change_inserted -322385837 1494886744
+ que pueden
+\change_unchanged
+ involucra
+\change_deleted -322385837 1494886747
+n
+\change_inserted -322385837 1494886747
+r
+\change_unchanged
+ diferentes parámetros de configuración.
+ La variabilidad en estos valores permite ajustar las preferencias del algoritmo
+ y consecuentemente, la obtención de modelos de calidad diferente.
+ Por lo tanto, el desafío principal de esta parte de la etapa es encontrar
+ los valores apropiados para cada uno de los parámetros, teniendo como base,
+ el conocimiento sobre el efecto que el parámetro causa en el algoritmo.
+ Al obtener la mejor configuración de una técnica, para un dataset y una
+ propiedad particular, se facilita la comparación simultánea de todas las
+ técnicas disponibles a través de las métricas de evaluación y en consecuencia
+ seleccionar la más óptima.
+ 
+\end_layout
+
+\begin_layout Itemize
+Construcción de modelos
+\change_deleted -322385837 1494886016
+ 
+\change_unchanged
+: 
+\change_deleted -322385837 1494886017
+L
+\change_inserted -322385837 1494886017
+l
+\change_unchanged
+a construcción 
+\change_inserted -322385837 1494886676
+o entrenamiento 
+\change_unchanged
+de modelos predictivos es un proceso que 
+\change_inserted -322385837 1494887152
+implica la ejecucion de una o mas técnicas de regresión sobre el conjunto
+\change_deleted -322385837 1494887013
+inicia con el entrenamiento
+\change_unchanged
+ de los datos y continúa opcionalmente con un proceso de 
+\change_deleted -322385837 1494887038
+validación
+\change_inserted -322385837 1494887040
+evaluación
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -322385837 1494886664
+Validacion no seria evaluacion que se explica en el siguiente item?
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+.
+
+\change_deleted -322385837 1494887102
+ La implementación de los casos de estudio enfatizan la predicción de la
+ precisión en las respuestas y el tiempo de ejecución de los componentes
+ considerando a ambas propiedades esenciales al momento de seleccionar el/los
+ componente/s más adecuado/s para un propósito particular, dados ciertos
+ datos de entradas, componentes posibles y parámetros deseados.
+\change_inserted -322385837 1494887104
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -322385837 1494887126
+Esto hace referencia al capitulo de evaluacion
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_deleted -322385837 1494887186
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\change_deleted -322385837 1494887174
+La fase de entrenamiento de este proceso
+\change_inserted -322385837 1494887176
+El entrenamiento
+\change_unchanged
+ utiliza las mediciones ya obtenidas en la etapa anterior y a partir de
+ la propiedad que se desea predecir, el algoritmo va definiendo la función
+\change_inserted -322385837 1494886153
+ o modelo
+\change_unchanged
+ de regresión 
+\change_deleted -322385837 1494886171
+para
+\change_inserted -322385837 1494886174
+que mejor ajusta
+\change_deleted -322385837 1494886175
+ encontrar
+\change_unchanged
+ las relaciones entre los atributos 
+\change_inserted -322385837 1494886256
+independientes (o predictores) 
+\change_unchanged
+del dataset y el atributo a predecir.
+ Esta etapa concentra el mayor porcentaje del tiempo computacional y uso
+ de memoria, y varía de acuerdo a la complejidad o simplicidad de cada técnica
+ en particular.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Evaluación de modelos: 
+\change_deleted -322385837 1494886852
+U
+\change_inserted -322385837 1494886852
+u
+\change_unchanged
+na vez concluida la etapa de entrenamiento, 
+\change_deleted -322385837 1494886822
+la calidad d
+\change_unchanged
+el modelo obtenido 
+\change_inserted -322385837 1494886826
+puede
+\change_deleted -322385837 1494886827
+debe
+\change_unchanged
+ ser analizad
+\change_inserted -322385837 1494886830
+o
+\change_deleted -322385837 1494886829
+a
+\change_unchanged
+ para determinar la medida en que 
+\change_deleted -322385837 1494886874
+el modelo
+\change_inserted -322385837 1494886875
+este
+\change_unchanged
+ 
+\change_deleted -322385837 1494886879
+será
+\change_inserted -322385837 1494886880
+es
+\change_unchanged
+ capaz de generalizar cualquier entrada de dataset futura
+\change_inserted -322385837 1494886950
+ y estimar la propiedad de interés
+\change_unchanged
+.
+ La noción sobre el desempeño del modelo tiene lugar a partir de métricas
+ 
+\change_deleted -322385837 1494886601
+ya definidas
+\change_inserted -322385837 1494886603
+existentes
+\change_unchanged
+ para modelos de regresión, que capturan 
+\change_deleted -322385837 1494886618
+distintamente 
+\change_unchanged
+el error de predicción 
+\change_deleted -322385837 1494886622
+e incluyen
+\change_inserted -322385837 1494886622
+o
+\change_unchanged
+ el coeficiente de correlación para conocer el grado de interdependencia
+ de las propiedades.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Aplicaciones de los modelos
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Aplicaciones-de-la-1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finalmente, se pretende utilizar estos modelos de predicción en entornos
+ de aplicación que permitan la selección del componente más adecuado en
+ base a 
+\change_deleted -322385837 1494887744
+un conjunto de
+\change_unchanged
+ propiedades de
+\change_inserted -322385837 1494887234
+ 
+\change_unchanged
+l
+\change_inserted -322385837 1494887235
+os
+\change_unchanged
+ 
+\change_deleted -322385837 1494887238
+problema
+\change_inserted -322385837 1494887563
+parámetros
+\change_unchanged
+ de entrada
+\change_inserted -322385837 1494887456
+ u otras
+\change_deleted -322385837 1494887307
+, las
+\change_unchanged
+ propiedades
+\change_deleted -322385837 1494887279
+ internas
+\change_unchanged
+ del contexto de ejecución, a través de un proceso automatizado que determine
+ al usuario la opción más favorable evitando la ejecución individual de
+ cada componente.
+ 
+\change_deleted -322385837 1494888047
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -322385837 1494887783
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -322385837 1494888028
+Esto es muy especifico.
+ A lo sumo tendria que ser o formar parte de uno de los items de abajo
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_deleted -322385837 1494887857
+Los problemas de clase NP - Completos están presentes en la mayoría de ámbitos
+ computacionales.
+ Afortunadamente, en la medida que estos problemas resultan difíciles de
+ resolver frente a los peores casos de entrada, se hace más factible resolverlos
+ aún considerando problemas de grandes instancias.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\change_deleted -322385837 1494887861
+Desafortunadamente, estos algoritmos pueden exhibir variaciones extremas
+ de ejecución a través de las instancias con distribuciones reales, incluso,
+ aunque la dimensión del problema se mantuviera constante, la misma instancia
+ puede requerir dramáticamente diferentes tiempos de ejecución en función
+ del algoritmo utilizado.
+ Existe una escasa comprensión teórica de las causas de esta variación.
+ Durante la última década, una cantidad considerable de trabajo ha intentado
+ demostrar cómo utilizar las técnicas de aprendizaje automático supervisado
+ para la construcción de modelos de regresión que proporcionen respuestas
+ aproximadas a esta pregunta en base a los datos de rendimiento del algoritmo
+ analizado, en otras palabras, podría creerse que es posible predecir el
+ tiempo que requerirá un determinado algoritmo para ejecutarse bajo una
+ entrada en particular construyendo un modelo de tiempo de ejecución del
+ algoritmo como una función de las características específicas de cada instancia
+ del problema.
+
+\change_unchanged
+ 
+\change_deleted -322385837 1494888050
+
+\end_layout
+
+\begin_layout Standard
+L
+\change_inserted -322385837 1494888203
+a construccion de modelos de predicción de performance
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\change_inserted -322385837 1494888172
+No usemos la sigla EPM, porque se tendria que haber presentado mucho antes
+ en el texto.
+ Sigan llamando simplemente modelos de prediccion o modelos predictivos
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_deleted -322385837 1494888074
+a construcción de tales modelos conocidos como 
+\emph on
+modelos de actuación empírica 
+\emph default
+(EPM por sus siglas en inglés)
+\change_unchanged
+ ha ido creciendo
+\change_deleted -322385837 1494888221
+ y motivada
+\change_unchanged
+ debido a la utilidad que presentan 
+\change_deleted -322385837 1494888226
+frente a
+\change_inserted -322385837 1494888227
+en
+\change_unchanged
+ una gran variedad de contextos prácticos.
+ A continuación, se detallan algunos:
+\end_layout
+
+\begin_layout Description
+Selección
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+algoritmos Como se ha tratado en algunos trabajos 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Hutter2014"
+
+\end_inset
+
+, los modelos de predicción son útiles para la selección automática de algoritmo
+s 
+\change_deleted -322385837 1494888404
+y la configuración en una variedad de formas (un problema clásico de selección
+ del mejor algoritmo entre un determinado conjunto);
+\change_inserted -322385837 1494888405
+.
+
+\change_unchanged
+ 
+\change_inserted -322385837 1494888406
+A
+\change_deleted -322385837 1494888406
+a
+\change_unchanged
+ través de 
+\change_inserted -322385837 1494888311
+estos modelos
+\change_deleted -322385837 1494888304
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{EPM}
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+ se 
+\change_deleted -322385837 1494887984
+logra
+\change_inserted -322385837 1494887984
+puede
+\change_unchanged
+ predecir 
+\change_inserted -322385837 1494887992
+con cierto error 
+\change_unchanged
+el rendimiento de cada uno de estos algoritmos candidatos y mediante un
+\change_inserted -322385837 1494888370
+a simple comparación
+\change_deleted -322385837 1494888365
+ análisis comparativo,
+\change_unchanged
+ seleccionar el más apropiado considerando la instancia del problema y las
+ características del hardware.
+ 
+\end_layout
+
+\begin_layout Description
+Ajustes
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+parámetros
+\begin_inset space ~
+\end_inset
+
+y
+\begin_inset space ~
+\end_inset
+
+configuración
+\begin_inset space ~
+\end_inset
+
+automática
+\begin_inset space ~
+\end_inset
+
+del
+\begin_inset space ~
+\end_inset
+
+algoritmo 
+\change_inserted -322385837 1494888547
+Los modelos predictivos
+\change_deleted -322385837 1494888456
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{EPM}
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+ sirve a dos propósitos fundamentales
+\change_inserted -322385837 1494888460
+.
+\change_deleted -322385837 1494888461
+,
+\change_unchanged
+ 
+\change_deleted -322385837 1494888462
+p
+\change_inserted -322385837 1494888463
+P
+\change_unchanged
+or un lado, modelar el comportamiento o funcionalidad de un algoritmo parametriz
+ado en base a la configuración de tales parámetros, en cuyo caso se puede
+ alternar entre el aprendizaje del modelo y su uso para identificar configuracio
+nes interesantes para evaluar posteriormente.
+ Por otro lado, se puede modelar el rendimiento del algoritmo basado conjuntamen
+te en las características de las instancias del problema y la configuración
+ de sus parámetros.
+ Tales modelos pueden utilizarse para ajustar los valores de tales parámetros
+ y obtener una mejor predicción basada en la instancia particular.
+ 
+\end_layout
+
+\begin_layout Description
+Obtener
+\begin_inset space ~
+\end_inset
+
+una
+\begin_inset space ~
+\end_inset
+
+visión
+\begin_inset space ~
+\end_inset
+
+general
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+las
+\begin_inset space ~
+\end_inset
+
+instancias
+\begin_inset space ~
+\end_inset
+
+y
+\begin_inset space ~
+\end_inset
+
+el
+\begin_inset space ~
+\end_inset
+
+rendimiento
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+los
+\begin_inset space ~
+\end_inset
+
+algoritmos 
+\change_inserted -322385837 1494888549
+Los modelos
+\change_deleted -322385837 1494888477
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{EPM}
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+ se puede
+\change_inserted -322385837 1494888482
+n
+\change_unchanged
+ utilizar para evaluar las características de la instancia y los valores
+ de los parámetros del algoritmo que más impactan en el rendimiento.
+ Algunos modelos son compatibles con este tipo de evaluaciones directamente.
+ Para otros modelos, existen métodos de selección de atributos (características
+ genéricas) para identificar un grupo más reducido de entradas del modelo
+ que son claves, y describen el rendimiento del algoritmo casi tan bien
+ como todo el conjunto de entradas.
+ 
+\end_layout
+
+\begin_layout Description
+Selección
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+servicio
+\begin_inset space ~
+\end_inset
+
+para
+\begin_inset space ~
+\end_inset
+
+composición
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+servicios Cuando varios servicios 
+\change_deleted -322385837 1494888235
+w
+\change_inserted -322385837 1494888235
+W
+\change_unchanged
+eb implementan la misma funcionalidad, los modelos de rendimiento resultan
+ ser un buen criterio para escoger el mejor candidato entre ellos.
+ Incluso en tiempo de ejecución, los proveedores de servicio pueden cambiarse
+ si las condiciones del contexto y los parámetros de entrada se modifican.
+ 
+\end_layout
+
+\begin_layout Description
+Planificación
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+tareas
+\begin_inset space ~
+\end_inset
+
+en
+\begin_inset space ~
+\end_inset
+
+redes
+\begin_inset space ~
+\end_inset
+
+móviles Suponiendo un conjunto de tareas que deben asignarse entre un conjunto
+ de dispositivos, los modelos de rendimiento podrían obtener una medida
+ 
+\change_deleted -322385837 1494888566
+exacta
+\change_inserted -322385837 1494888572
+aproximada
+\change_unchanged
+ del tiempo de respuesta que cada tarea requerirá sobre cada dispositivo
+ con el fin de minimizar el tiempo total de secuenciación de las tareas.
+\end_layout
+
+\begin_layout Section
+
+\change_deleted -638769289 1494861799
+Framework
+\change_inserted -638769289 1494861801
+Biblioteca
+\change_unchanged
+ de medición para Android
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Framework-de-medición"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Android Meter
+\emph default
+ es un
+\change_inserted -322385837 1494897113
+a
+\change_unchanged
+ 
+\change_deleted -638769289 1494861812
+framework
+\change_inserted -638769289 1494861813
+biblioteca
+\change_inserted -322385837 1494897316
+ Java
+\change_unchanged
+ diseñad
+\change_deleted -322385837 1494897118
+o
+\change_inserted -322385837 1494897118
+a
+\change_unchanged
+ para realizar mediciones de performance de componentes ejecutados bajo
+ el sistema Android.
+ Es una herramienta de testing que permite ejecutar diferentes piezas de
+ software y 
+\change_deleted -322385837 1494897447
+evaluar
+\change_inserted -322385837 1494897452
+capturar
+\change_unchanged
+ propiedades 
+\change_inserted -322385837 1494897528
+y mediciones durante su
+\change_deleted -322385837 1494897531
+influyentes y características del contexto de
+\change_unchanged
+ ejecución.
+ 
+\change_deleted -322385837 1494897544
+
+\end_layout
+
+\begin_layout Standard
+La 
+\change_deleted -322385837 1494897840
+herramienta
+\change_inserted -322385837 1494897841
+biblioteca
+\change_unchanged
+ 
+\change_deleted -322385837 1494897844
+cuenta
+\change_inserted -322385837 1494897845
+ofrece
+\change_deleted -322385837 1494897848
+ con
+\change_unchanged
+ el soporte necesario para adaptar
+\change_inserted -322385837 1494897852
+la
+\change_deleted -322385837 1494897853
+se
+\change_unchanged
+ a 
+\change_deleted -322385837 1494897605
+cualquier
+\change_inserted -322385837 1494897606
+distintos
+\change_unchanged
+ dominio
+\change_inserted -322385837 1494897744
+s de componentes y algoritmos,
+\change_deleted -322385837 1494897613
+ informático
+\change_unchanged
+ y recolectar las mediciones que 
+\change_deleted -322385837 1494897626
+servirán
+\change_inserted -322385837 1494897627
+sirven
+\change_unchanged
+ de fuente para 
+\change_inserted -322385837 1494897659
+construir modelos
+\change_deleted -322385837 1494897661
+herramientas
+\change_unchanged
+ de predicción a través de técnicas de aprendizaje de máquina.
+ 
+\end_layout
+
+\begin_layout Standard
+El análisis de rendimiento que se propone en esta herramienta se basa en
+ entidades de software individuales de ejecución que proveen servicios a
+ través de una interfaz específica.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../images/android-component.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Esquema conceptual de componentes Android considerados.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:android-component"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:android-component"
+
+\end_inset
+
+ se pueden observar los tres tipos de componentes generalizados por la herramien
+ta para obtener los resultados de mediciones adecuados, incluyendo servicios
+ Web y servicios específicos de la plataforma Android, mientras que para
+ toda pieza de software remanente los componentes son tratados simplemente
+ como objetos Java.
+ Las instancias de objetos hacen referencia a cualquier componente residente
+ en el espacio de memoria de una aplicación, el componente específico para
+ servicios web incluye cualquier componente remoto fuera del dispositivo
+ y accedidos a través de protocolos de comunicación Web, como 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HTTP}
+\end_layout
+
+\end_inset
+
+.
+ Por último el componente específico para servicios Android incluye cualquier
+ proceso ejecutado en segundo plano residente en el mismo dispositivo y
+ accedidos a través de objetos Intent (como único mecanismo de comunicación
+ entre procesos del sistema Android).
+ 
+\end_layout
+
+\begin_layout Standard
+A continuación se expone en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:TestingTool-Diagram"
+
+\end_inset
+
+ los principales factores que han servido de guía para el diseño del framework
+ 
+\emph on
+Android Meter
+\emph default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../images/TestingTool-Diagram.png
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama estructural del framework Android Meter.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:TestingTool-Diagram"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La obtención de diferentes conjuntos de mediciones se realiza a través de
+ la creación de planes de prueba, que se configuran y posteriormente se
+ ejecutan para obtener los datasets.
+ Al momento de configurar los planes de pruebas se tiene la posibilidad
+ de cuantificar las propiedades del contexto, de los componentes y de la
+ aplicación o ejecución de estos últimos.
+ Las propiedades a obtener pueden ser:
+\end_layout
+
+\begin_layout Enumerate
+Propiedades globales sobre características estáticas del contexto: cualidades
+ del entorno de ejecución que se mantienen estáticas (sin cambio) durante
+ el plan de pruebas, por ejemplo, modelo del dispositivo, arquitectura de
+ la CPU, cantidad de núcleos de CPU, tamaño de memoria, etc.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Propiedades generales sobre características de la entrada: atributos inherentes
+ al dominio del caso de estudio.
+\end_layout
+
+\begin_layout Enumerate
+Propiedades generales del componente: propiedades del componente como el
+ nombre, su ubicación, etc.
+\end_layout
+
+\begin_layout Enumerate
+Propiedades de operación: Son medidas que actúan sobre la ejecución del
+ componente, por lo cual distinguen en tres tipos diferentes:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Características de la salida: características o métricas obtenidas a partir
+ del resultado de la operación, por ejemplo el tamaño de la salida, la precisión
+ de la misma, etc.
+\end_layout
+
+\begin_layout Itemize
+Características dinámicas del contexto: características del entorno de ejecución
+ que pueden variar de una operación a otra, como el uso de CPU, el número
+ de procesos en ejecución, tipo de conexión, ubicación del dispositivo,
+ etc.
+ 
+\end_layout
+
+\begin_layout Itemize
+Características de desempeño: medidas de interés sobre el rendimiento que
+ varían de una operación a otra, como el tiempo de respuesta, el consumo
+ de batería, operaciones ejecutadas con éxito o con error, etc.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Una vez configurados los planes de pruebas, los datos de entrada y el contexto
+ conforman el ambiente en donde el componente se implementan para obtener
+ las mediciones requeridas al momento de la configuración.
+\end_layout
+
+\begin_layout Section
+Herramienta de aprendizaje de modelos
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Herramienta-de-entrenamiento"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nekonata es una herramienta para la construcción de modelos predictivos
+ a través de técnicas de aprendizaje de máquina.
+ El eje que ha guiado el diseño de la herramienta ha sido el brindar soporte
+ para el uso de cualquier librería que ofrezca aprendizaje de máquina a
+ través de la implementación de todos los conceptos involucrados como objetos
+ independientes a los cuales adaptar las funcionalidades de las librerías.
+ La herramienta 
+\emph on
+Nekonata
+\emph default
+ lleva a cabo dos tipos de procesos en el desarrollo de sus funciones, procesos
+ automatizados y procesos que requieren la colaboración del usuario con
+ el fin de mejorar los resultados a partir de vistas gráficas sobre el comportam
+iento y características de los modelos y además, para incluir en el proceso
+ el interés y criterio del usuario.
+ 
+\end_layout
+
+\begin_layout Standard
+El flujo de trabajo de la herramienta consta de dos etapas, una de configuración
+ y entrenamiento de modelos y otra de evaluación de los mismos.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../images/prediction-workflow.png
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de flujo del proceso de configuración y entrenamiento de modelos.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:prediction-workflow-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En la etapa de configuración, se indican la librería y el dataset que se
+ desea considerar, habilitando la elección de las técnicas de aprendizaje
+ y de la propiedad dinámica requerida respectivamente.
+ Una vez seleccionados todos los valores requeridos, se procede a ejecutar
+ las tecnicas de aprendizaje para generar los modelos de predicción.
+ Un detalle importante a considerar es que la herramienta no sólo genera
+ los modelos a partir de parámetros fijos, sino que realiza una comparación
+ interna entre modelos parciales respetando diferentes rangos para la obtención
+ de una función de predicción más precisa y acertada.
+\end_layout
+
+\begin_layout Standard
+Luego de la etapa de entrenamiento, las técnicas de regresión optimizadas
+ son expuestas a una serie de métricas dispuestas de manera tal que permita
+ visualizar las diferencias de desempeño entre técnicas con la misma métrica
+ de evaluación considerada.
+ Esta vista es un recurso ofrecido al usuario para decidir aquel modelo
+ que a su criterio tenga mejor calidad a través de la comparación simultánea
+ .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/usuario/Tesisworkspace/Tesis_Standalone/tesis/images/models-comparison-workflow.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de flujo de la fase de comparación de modelos.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:models-comparison-workflow"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es conveniente trasladar el análisis a la mayor cantidad de métricas posibles,
+ ya que un mismo indicador podría arrojar valores cercanos entre un algoritmo
+ y otro favoreciendo equivocadamente a uno de ellos, error que podría notarse
+ al compararlos simultáneamente con otras métricas.
+ La metodología de operación de esta fase se muestra en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:models-comparison-workflow"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Nekonata hace foco en este detalle y ofrece al usuario una vista de imágenes
+ con los indicadores medidos de cada algoritmo seleccionado por el usuario
+ para aplicar el proceso de optimización y elegir, posteriormente, el que
+ resulte más adecuado.
+ La información gráfica complementaria que se brinda, detalla los algoritmos
+ representados por medio de barras y agrupados en categorías separadas de
+ acuerdo a cada métrica a modo de facilitar la comparación.
+ Adicionalmente las barras se colorean en dos tonos diferentes para acentuar,
+ por cada métrica, los clasificadores que significarían las mejores opciones
+ para ese indicador.
+ 
+\end_layout
+
+\begin_layout Standard
+A pesar que la herramienta fue pensada para la predicción de componentes
+ de android,se desarrolló como una aplicación de escritorio debido a la
+ limitación del hardware de los dispositivos móviles para ejecutar los procesos
+ de optimización que consumen un gran porcentaje de recursos computacionales.
+ Esta implementación desvincula la herramienta de medición con la herramienta
+ de entrenamiento y evaluación de modelos, permitiendo la ejecución independient
+e entre ambas por lo que el puente de comunicación entre ellas es la corresponde
+ncia entre la salida de la primer herramienta con la entrada de la segunda.
+\end_layout
+
+\begin_layout Standard
+El concepto principal de la herramienta fue la extensibilidad de la misma
+ desde todos los enfoques posibles.
+ Esto significa que la herramienta pudiera aceptar diferentes tipos de librerías
+ de aprendizaje de máquina, datasets, modelos de regresión, parámetros y
+ métricas; lo que conlleva a un alto grado de abstracción de las clases
+ que conforman la aplicación
+\change_deleted -638769289 1494862376
+ 
+\change_unchanged
+.
+\change_inserted -638769289 1494862377
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -638769289 1494877566
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -638769289 1494862403
+Listar las tecnicas incluidas por el momento, con las que se hacen la evaluacion
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+Actualmente, la aplicación ofrece una implementación de las siguientes técnicas
+ de regresión:
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted -638769289 1494862501
+Regression lineal: es la implementacion de la tecnica ridge regression de
+ Weka BLABLA
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted -638769289 1494862443
+...
+\change_unchanged
+
+\end_layout
+
+\end_body
+\end_document

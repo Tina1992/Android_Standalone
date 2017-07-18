@@ -1,0 +1,160 @@
+
+\chapter{Conclusiones\label{chap:Conclusiones}}
+
+
+
+En este trabajo se presentó un enfoque de aprendizaje automático para
+la estimación de atributos no funcionales en componentes de aplicaciones
+Android. Para darle soporte al enfoque, se implementaron dos herramientas
+especificas. La primera es una biblioteca para capturar mediciones
+de propiedades no funcionales durante la ejecución de componentes
+y algoritmos en dispositivos Android. La segunda es una herramienta
+de escritorio para entrenar modelos de predicción a partir de las
+mediciones capturadas. Esta herramienta incluye varias técnicas de
+regresión implementadas por la biblioteca Weka. Su diseño modular
+permite incorporar fácilmente las implementaciones de otras librerías
+de aprendizaje de máquina. La herramienta brinda la posibilidad de
+crear modelos predictivos óptimos, adecuados a un conjunto de datos
+particular y un atributo a predecir particular.
+
+Ciertamente, el uso de modelos como criterio de calidad para la selección
+de servicios y componentes se está extendiendo cada vez más, promoviendo
+el desarrollo y optimización de técnicas de aprendizaje de máquina.
+En primer lugar, en este trabajo se presentaron las características
+principales de las técnicas que aplican aprendizaje sobre datos y
+se analizaron algunas propiedades no funcionales de componentes, como
+tiempo de respuesta. Luego, se estudiaron diferentes herramientas
+de recolección de datos en sistemas Android examinando los principales
+artefactos y mecanismos involucrados en estas herramientas.
+
+Como resultado del creciente desarrollo de aplicaciones, la integración
+de componentes de terceros se ha popularizado en diversas áreas, como
+el de las aplicaciones móviles. En este sentido, se introdujeron las
+nociones básicas de los dispositivos móviles, estudiando también,
+el sistema operativo más difundido en estos dispositivos, Android.
+Se analizaron las características más importantes del mismo, y se
+presentaron los conceptos necesarios para comprender el funcionamiento
+de las aplicaciones en este sistema.
+
+La utilización de componentes y algoritmos de terceros en dispositivos
+móviles presenta ciertos desafíos. Estos dispositivos tienen limitaciones
+en conflicto como la energía, el acceso a la red y la capacidad de
+cálculo que determinan el contexto de ejecución de estos componentes
+y que afecta considerablemente los atributos de calidad y desempeño
+de los mismos y de las aplicaciones que los invocan. Por lo tanto,
+es importante elegir los componentes adecuados de acuerdo con su calidad
+de servicio además de la funcionalidad requerida. En este sentido
+se describieron algunas investigaciones recientes en el área que aplican
+aprendizaje de máquina y técnicas de regresión para estimar propiedades
+de desempeño de algoritmos y componentes en ejecución.
+
+Por último, se llevo a cabo una serie de experimentos sobre 3 casos
+de estudio para validar el enfoque propuesto. Los mismos fueron evaluados
+con las métricas presentadas en secciones anteriores, señalando al
+modelo MultiLayer Perceptron como el mejor a nivel de predicciones
+bajas en error. Las estimaciones permiten predecir que en dominios
+de problemas clásicos como el caso del problema de la multiplicación
+de matrices y el problema del viajante métrico, el nivel de correlación
+alcanzado por el algoritmo es cercano a 1 y en cuanto al error en
+las predicciones a través de las métrica \ac{RMSE} , tendrán valores
+inmediatamente cercanos a cero. Para el caso de servicios, aunque
+las estimaciones arrojadas por el modelo presentan mas variabilidad,
+su comportamiento es considerablemente superior al resto de los modelos,
+en cuanto evita efectos de overfit (sobreajuste) y underfit (subajuste)
+sobre los datos. Esto indica que una generalización del modelo propuesto
+puede resultar útil para determinar a priori qué componentes resultarán
+más eficientes, dadas ciertas características en las entradas, en
+los componentes y en la operación, para la predicción del tiempo de
+respuesta.
+
+Respecto a los servicios para detección de rostros, se observa que
+las técnicas tiene dificultades para aprender modelos con buena precisión.
+Esto se debe principalmente a la complejidad del problema, ya que
+es difícil extraer características de las imágenes de entrada que
+estén correlacionadas con el tiempo de respuesta. En este caso de
+estudio, el modelo K means Clusterer logra superar  al modelo MultiLayer
+Perceptron. Para el servicio Microsoft, el modelo alcanza un factor
+de correlación un 2\% menor que el factor determinado por el modelo
+MultiLayer Perceptron, y para los servicios Google Play y SkyBiometry
+ el modelo de cluster determina aún mejor la relación entre las variables
+y reduce el error en las predicciones respecto al modelo MultiLayer,
+que por sus resultados fue tomado como base para el análisis de las
+técnicas en general. 
+
+
+\section{Limitaciones}
+
+La principal limitación que presenta el enfoque propuesto en este
+trabajo es que el entrenamiento de modelos de precisión requiere una
+gran cantidad de mediciones para generalizar mejor los datos. En la
+evaluación presentada, las mediciones fueron capturadas sobre unos
+pocos dispositivos y con un contexto de ejecución normal. Por lo tanto,
+los modelos construidos solo pueden predecir el tiempo de respuesta
+para esos dispositivos y contextos específicos. Idealmente la medición
+debería realizarse sobre múltiples dispositivos y con diferentes contextos
+de ejecución (por ejemplo, distinta disponibilidad de CPU, memoria,
+y otros recursos) de tal forma que los modelos puedan estimar con
+precisión el tiempo de respuesta de determinado componente en un contexto
+mas amplio. Sin embargo, esto es muy costoso porque requiere disponer
+de numerosos dispositivos y tiempo para capturar un conjunto de mediciones
+mas exhaustiva.
+
+Una segunda limitación parte de la incapacidad de los dispositivos
+móviles para llevar adelante ejecuciones mas complejas y costosas,
+que insumen gran cantidad de memoria y procesamiento. Este factor,
+limita la posibilidad de llevar a cabo la etapa de aprendizaje del
+enfoque sobre el mismo dispositivo móvil, obligando a desarrollar
+la herramienta de aprendizaje para su ejecución en computadoras de
+escritorio. 
+
+Por última, otra limitación que se presenta responde a la ausencia
+de un método automatizado para configurar dinámicamente los parámetros
+de las técnicas de regresión, debiendo determinar un rango estático
+y específico propio para cada técnica, para llevar a cabo el proceso
+de optimización, considerando de esta forma a todos los datos de entrenamiento
+por igual, sin distinción de formato, dominio, etc.
+
+
+
+
+\section{Trabajos Futuros}
+
+Cabe mencionar que existen algunas posibilidades de extensión interesantes
+para este trabajo. Como primer objetivo se pretende mejorar el tiempo
+de procesamiento requerido para la optimización y generación de los
+modelos predictivos. Para poder lograr esto, se puede otorgar a la
+aplicación la capacidad de ejecución paralela de los procesos de optimización
+y construcción de los diferentes modelos. Por otro lado, se debe dar
+un mejor soporte a la etapa de medición para considerar una mayor
+variedad de dispositivos y contextos de ejecución sobre los que capturar
+mediciones. Con este fin, se puede recurrir a algún proveedor de dispositivos
+en la nube (Device-as-a-Service), como Amazon WS Device Farm\footnote{https://aws.amazon.com/es/device-farm/}
+o Samsung Remote Test Lab\footnote{http://developer.samsung.com/rtlLanding.do}.
+Estos servicios brindan acceso remoto a dispositivos móviles reales
+distribuidos geográficamente, lo que permite capturar mediciones sobre
+un grupo más amplio de dispositivos con características variadas.
+
+Adicionalmente se pueden incorporar nuevos aspectos para mejorar y
+comparar las técnicas y modelos en la herramienta de aprendizaje: 
+\begin{itemize}
+\item Independizar al módulo de optimización de técnicas, de diferentes
+rangos de configuración para cada uno de los parámetros que incluya
+la técnica. De esta forma, lograr más énfasis en los valores de cada
+parámetro y explotar al máximo el desempeño de las técnicas. Incluso,
+el usuario podría disponer de la posibilidad de personalizar estos
+valores.
+\item Informar y registrar el tiempo real consumido por cada operación de
+construcción de un modelo. Operación que incluye la configuración,
+optimización, entrenamiento y finalmente la evaluación del modelo
+con las métricas correspondientes. 
+\item Extender el análisis comparativo a nivel de librerías, aprovechando
+la capacidad de la herramienta de integrar librerías de terceros.
+De esta manera, se logra comparar el desempeño de una técnica conocida
+en diferentes implementaciones, y seleccionar la mejor técnica independiente
+de la librería que la implemente. 
+\item Considerar conjuntos de datos de la misma naturaleza que los usados
+durante la fase de entrenamiento, para evaluar los modelos creados.
+Brindar un mecanismo de evaluación de los modelos a partir de las
+métricas, y validar estos modelos creados frente a nuevos conjuntos
+de datos para esclarecer el desempeño y generalización lograda. \end{itemize}
+

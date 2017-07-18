@@ -1,0 +1,1675 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\use_default_options true
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default"
+\font_sans "default"
+\font_typewriter "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type numerical
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes true
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Marco Teórico
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Marco-Teorico"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En este capítulo se presentan los conceptos fundamentales del dominio, el
+ cual está centrado en torno a la predicción de performance y precisión
+ de componentes de software en dispositivos móviles.
+\end_layout
+
+\begin_layout Section
+Dispositivos Móviles
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Dispositivos-móviles"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Los dispositivos móviles son artefactos electrónicos pequeños que se alimentan
+ a través de una batería de litio.
+ En este contexto, un smartphone o teléfono inteligente es un teléfono móvil
+ con una mayor capacidad de cómputo y conectividad que un teléfono móvil
+ convencional.
+ Mientras el teléfono móvil es un dispositivo inalámbrico electrónico utilizado
+ para acceder y utilizar los servicios de la red de telefonía celular, el
+ término 
+\emph on
+inteligente
+\emph default
+ hace referencia a la capacidad de usarlo también como una computadora de
+ bolsillo.
+\end_layout
+
+\begin_layout Standard
+Una de las características más destacadas de los smartphones reside en la
+ posibilidad que brindan de instalar aplicaciones mediante las cuales el
+ usuario final logra ampliar las capacidades y funcionalidades del equipo,
+ obteniendo así una personalización total del dispositivo.
+ Otras características importantes son la capacidad multitarea, el acceso
+ y conectividad a Internet vía WiFi o red móvil, el soporte de clientes
+ de email, la eficaz administración de datos y contactos, la posibilidad
+ de lectura de archivos en diversos formatos como .pdf o .doc, y la posibilidad
+ de obtener datos del ambiente a través de sensores especializados como
+ el acelerómetro y el sistema de posicionamiento global conocido como GPS
+ por sus siglas en inglés, entre otros.
+ 
+\end_layout
+
+\begin_layout Standard
+Para poder ejecutar aplicaciones en los dispositivos móviles, los mismos
+ poseen, al igual que las computadoras, sistemas operativos.
+ Un sistema operativo es un intermediario entre el usuario de un dispositivo
+ y el hardware del mismo.
+ El objetivo de un sistema operativo es proveer un ambiente en el cual el
+ usuario pueda ejecutar programas en un manera conveniente y eficiente.
+ Un sistema operativo es software que administra el hardware del dispositivo.
+ El hardware debe proveer mecanismos apropiados para asegurar la operación
+ correcta de un sistema y evitar a los usuarios interferir con el funcionamiento
+ apropiado del mismo.
+ 
+\end_layout
+
+\begin_layout Standard
+Entre los sistemas operativos más populares en dispositivos móviles se encuentra
+ Android.
+ En las secciones siguientes se describe detalladamente este sistema y la
+ framework que provee para el desarrollo de aplicaciones.
+ 
+\end_layout
+
+\begin_layout Subsection
+Android 
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Android"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Android es un sistema operativo de código abierto diseñado para dispositivos
+ móviles tales como smartphones y tablets.
+ Este sistema operativo está basado en un kernel Linux y es desarrollado
+ por Google.
+ El mismo cuenta con un middleware extensible y aplicaciones de usuario.
+ Adicionalmente, posee una plataforma de distribución de aplicaciones disponible
+ a partir de la versión 2.2 del sistema, denominada Google Play
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://play.google.com
+\end_layout
+
+\end_inset
+
+, que permite a los usuarios navegar y descargar aplicaciones que más se
+ ajusten a sus necesidades y preferencias, personalizando de esta forma
+ el dispositivo sencillamente.
+ Por otro lado, también provee un framework para el desarrollo de aplicaciones
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://developer.android.com
+\end_layout
+
+\end_inset
+
+ que utiliza Java como lenguaje de su interfaz (API).
+ 
+\end_layout
+
+\begin_layout Standard
+La plataforma Android utiliza la máquina virtual Dalvik (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{DVM}
+\end_layout
+
+\end_inset
+
+) para ejecutar aplicaciones programadas en Java a partir de la versión
+ 5.
+ Debido al escaso poder de procesamiento y memoria limitada de los dispositivos
+ que ejecutan Android, no fue posible utilizar la máquina virtual Java estándar
+ por lo que la compañía Google tomó la decisión de crear una nueva, la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{DVM}
+\end_layout
+
+\end_inset
+
+, que fue optimizada para requerir poco uso de memoria y diseñada para ejecutar
+ en simultáneo múltiples instancias de la máquina virtual, delegando en
+ el sistema operativo Android subyacente el soporte para el aislamiento
+ de procesos, la gestión de memoria e hilos de ejecución.
+ 
+\end_layout
+
+\begin_layout Standard
+En la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Android-architecture"
+
+\end_inset
+
+ se puede ver la arquitectura en capas empleada por el sistema Android.
+ Las diferentes capas de la arquitectura son descritas a continuación:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../images/Android-architecture.png
+	scale 77
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de la arquitectura en capas empleada por Android
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Android-architecture"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Kernel Linux: Android utiliza el núcleo de Linux como una capa de abstracción
+ de hardware para los dispositivos móviles.
+ Esta capa contiene los drivers necesarios para que cualquier componente
+ de hardware pueda ser utilizado mediante las llamadas correspondientes,
+ sólo debe considerarse al momento de incluir un nuevo componente de hardware
+ que los fabricantes hayan desarrollado los drivers correspondientes.
+ Además del soporte de drivers, la capa es responsable de proporcionar otros
+ servicios como la seguridad, el manejo de la memoria, procesos, etc.
+ 
+\end_layout
+
+\begin_layout Itemize
+Entorno de ejecución de Android: como se ha adelantado previamente, cada
+ aplicación corre en su propio proceso Linux con su propia instancia de
+ la máquina virtual Dalvik, la cual interpreta un lenguaje ligeramente diferente
+ al tradicional bytecode de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{JVM}
+\end_layout
+
+\end_inset
+
+.
+ A partir de la versión 5.0 de Android, Dalvik es reemplazada por 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ART}
+\end_layout
+
+\end_inset
+
+ la cual logra reducir el tiempo de ejecución del código Java hasta un 33%.
+ También se incluye en el entorno un módulo de librerías nativas con la
+ mayoría de librerías disponibles en lenguaje Java.
+ Estas bibliotecas, si bien resultan diferentes a las ofrecidas por 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{Java SE}
+\end_layout
+
+\end_inset
+
+ y 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{Java ME}
+\end_layout
+
+\end_inset
+
+, proveen prácticamente la misma funcionalidad.
+ 
+\end_layout
+
+\begin_layout Itemize
+Bibliotecas: incluye un conjunto de bibliotecas nativas escritas en lenguaje
+ C y C++ usadas en varios componentes de Android que proporcionan la mayor
+ parte de las características de Android.
+\end_layout
+
+\begin_layout Itemize
+Marco o framework de Aplicaciones: este es el framework que proporciona
+ Android para el desarrollo de aplicaciones, servicios y otros componentes.
+ Todo el conjunto de funciones del sistema operativo y bibliotecas nativas
+ está disponible a través de este framework, cuya API esta escrita en el
+ lenguaje Java.
+ El framework permite que los desarrolladores tengan acceso a las mismas
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{API}
+\end_layout
+
+\end_inset
+
+ utilizadas por las aplicaciones base del sistema.
+ El foco principal del diseño de esta capa ha sido simplificar la re-utilización
+ de componentes: las aplicaciones pueden publicar sus capacidades y otras
+ pueden hacer uso de ellas (sujetas a restricciones de seguridad), un mecanismo
+ que permite a los usuarios reemplazar fácilmente componentes.
+ 
+\end_layout
+
+\begin_layout Itemize
+Aplicaciones: Este nivel contiene todas las aplicaciones de usuario, tanto
+ las incluidas por defecto en Android así como como aquellas que el usuario
+ vaya añadiendo posteriormente ya sean de terceros o de su propio desarrollo.
+ Todas estas aplicaciones utilizan los servicios, las 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{API}
+\end_layout
+
+\end_inset
+
+ y bibliotecas de los niveles inferiores.
+ Se brindará una descripción más detallada en la siguiente sección.
+\end_layout
+
+\begin_layout Subsection
+Aplicaciones Android 
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Aplicaciones-Android"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Además de las características técnicas, es importante resaltar que la popularida
+d de Android ha crecido muy rápidamente desde su lanzamiento.
+ Esto se debe a la versatilidad que Android otorga a los dispositivos a
+ través de las aplicaciones, que permiten adaptarlos según las necesidades
+ de los usuarios.
+ Android también permite que las aplicaciones se adapten a las características
+ del dispositivo (pantalla, sensores, etc.), aprovechando las capacidades
+ particulares de cada uno.
+ 
+\end_layout
+
+\begin_layout Standard
+Un aspecto clave del diseño de las aplicaciones en Android es que éstas
+ pueden reutilizar componentes de otras aplicaciones instaladas en el dispositiv
+o.
+ Por ejemplo, si una aplicación desea tomar una fotografía, es probable
+ que ya exista una aplicación que cumpla esa funcionalidad, entonces, la
+ nueva aplicación puede utilizar la existente sin necesidad de desarrollar
+ una actividad propia para utilizar la cámara, esta invocación se realiza
+ de modo tal que sea transparente para el usuario final.
+\end_layout
+
+\begin_layout Standard
+El sistema Android provee cinco tipos de componentes básicos para el desarrollo
+ de aplicaciones: Activity, Service, Content Provider, Broadcast Receiver
+ e Intent.
+ El componente 
+\emph on
+Activity 
+\emph default
+representa una pantalla simple que provee interfaz de usuario.
+ Una aplicación puede estar formada por una o mas actividades que trabajan
+ en conjunto y representan diferentes pantallas o vistas.
+ 
+\end_layout
+
+\begin_layout Standard
+Los
+\emph on
+ Content Providers
+\emph default
+ son los encargados de administrar la información compartida por las aplicacione
+s.
+ Las aplicaciones pueden almacenar sus datos en el sistema de archivos,
+ en una base de datos SQLite, en la Web, o en cualquier otro lugar de acceso.
+ A través del 
+\emph on
+content provider
+\emph default
+, otras aplicaciones pueden consultar, o incluso modificar estos datos.
+ 
+\end_layout
+
+\begin_layout Standard
+Las aplicaciones también pueden iniciar servicios que se ejecutan en segundo
+ plano para realizar operaciones que requieran gran cantidad de tiempo,
+ o interactúen con procesos remotos, por ejemplo la reproducción de música
+ en segundo plano o la descarga de datos mientras el usuario interactúa
+ con una aplicación diferente.
+ 
+\end_layout
+
+\begin_layout Standard
+El componente 
+\emph on
+Intent
+\emph default
+ es un objeto de acción que facilita la comunicación entre componentes.
+ Un intent puede verse como un mensaje entre componentes, por ejemplo, para
+ iniciar una actividad o servicio, o solicitar una acción.
+ Por último, el componente 
+\emph on
+Broadcast Receiver
+\emph default
+ funciona como puerta de enlace a otros componentes, respondiendo a los
+ anuncios (Intents) originados por el sistema u otras aplicaciones, por
+ ejemplo, cuando la pantalla se apaga, la batería es baja, o al capturar
+ una fotografía.
+ 
+\end_layout
+
+\begin_layout Section
+Componentes de software
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Componentes-de-software"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En el marco del desarrollo de software nos encontramos con la posibilidad
+ de reutilizar código previamente desarrollado, testeado y deployado que
+ cumple con una determinada funcionalidad, ahorrando tiempo y esfuerzo al
+ desarrollador.
+ Estas piezas de códigos ya implementadas se distribuyen como componentes
+ de software que encapsulan a un conjunto de funciones y datos relacionados.
+ 
+\end_layout
+
+\begin_layout Standard
+La re-utilización es uno de los objetivos principales al momento de diseñar
+ un componente de software de calidad para ser usado en diferentes programas.
+ La comunicación entre componentes se realiza a través de interfaces.
+ Cuando un componente ofrece servicios al resto del sistema, el mismo proporcion
+a una interfaz que especifica los servicios que otros componentes pueden
+ utilizar y la manera en que pueden hacerlo.
+ La interfaz puede verse como una firma del componente ya que el cliente
+ no necesita conocer el procesamiento interno del componente para utilizarlo,
+ condición que respeta el principio de encapsulamiento.
+ Por otro lado, cuando un componente necesita de otro para su funcionamiento,
+ el mismo establece las interfaces requeridas donde especifica los servicios
+ que necesita.
+ De acuerdo al lenguaje de modelado 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{UML}
+\end_layout
+
+\end_inset
+
+, las interfaces proporcionadas por componentes son representadas con símbolos
+ de lollipop en el borde del componente y las interfaces requeridas por
+ medio de sockets abiertos en el borde externo, como se ilustra en la figura
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:UML-component"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../images/UML-component.png
+	scale 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Componente UML con interfaces proveídas y requeridas.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:UML-component"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Otra de las características fundamentales de los componentes es su capacidad
+ de ser sustituidos tanto en tiempo de diseño como en tiempo de ejecución,
+ pudiendo ser reemplazados por actualizaciones u otras alternativas sin
+ romper el sistema en el que los componentes funcionan.
+ El reemplazo es posible si el componente sucesor provee al menos la misma
+ funcionalidad que el componente a reemplazar y si requiere a lo sumo las
+ mismas funciones que el componente inicial.
+ 
+\end_layout
+
+\begin_layout Section
+Atributos de calidad 
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Atributos-de-calidad"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish-mexico
+Además de su interfaz y funcionalidad, los componentes de software se caracteriz
+an por un conjunto de propiedades que representan los aspectos no-funcionales
+ o de calidad de servicio, llamados propiedades o atributos de calidad.
+ Estas propiedades son características medibles que utilizan los usuarios
+ para juzgar su funcionamiento
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cite{McGraw2012}
+\end_layout
+
+\end_inset
+
+.
+ Algunos ejemplos de estas propiedades son: el tiempo de respuesta, la disponibi
+lidad, etc.
+ 
+\end_layout
+
+\begin_layout Standard
+Al diseñar un sistema de software no sólo se espera cumplir con los objetivos
+ de negocio sino también alcanzar un determinado grado de calidad de software
+ capaz de satisfacer al grupo de usuarios y/o diseñadores.
+ El diseño de la arquitectura de un sistema depende mayormente de los atributos
+ de calidad demandados por los stakeholders.
+ Largos tiempos de respuesta, caídas del sistema, interfaces confusas, no
+ son características deseables en un sistema, por lo que toda decisión respecto
+ al diseño de la arquitectura debe conducir al cumplimiento de ciertos atributos
+ de calidad al mismo tiempo que cumple con la funcionalidad requerida.
+\end_layout
+
+\begin_layout Standard
+Estos atributos de calidad se pueden dividir en dos grupos en base al momento
+ en el cual son medidos.
+ Un grupo incluye atributos cuantificados durante el tiempo de diseño como
+ la escalabilidad, modificabilidad, etc.
+ El segundo grupo incluye atributos cuantificables mientras el sistema se
+ ejecuta como usabilidad, seguridad, etc.
+ Este trabajo se enfoca en la predicción de propiedades dinámicas o en tiempo
+ de ejecución.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Hacer una pequeña distincion de que en este trabajo se consideran propiedades
+ no-funcionales en tiempo de ejecucion, como performance (No propiedades
+ como modificabilidad o testabilidad, etc).
+ 
+\end_layout
+
+\end_inset
+
+A continuación se describen las dos propiedades consideradas en la evaluación
+ del enfoque.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Tiempo de respuesta
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Atributos-de-calidad-Performance"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se puede medir la calidad de un sistema a través de su desempeño (performance)
+ evaluando la efectividad del uso de los recursos disponibles en tiempo
+ de ejecución.
+ Dependiendo el contexto, el desempeño puede medirse a través de varias
+ propiedades, como el tiempo de respuesta o la latencia.
+ El rendimiento de un sistema engloba, generalmente, el tiempo de los eventos
+ que se producen y que el sistema debe responder a ellos.
+ Estos eventos pueden ser muy variados tales como alarmas, mensajes, peticiones
+ a usuarios o procesamiento, pero básicamente se considera de todos ellos
+ el tiempo que tarda el sistema para responder al evento.
+ La complejidad para el manejo de estos eventos radica en su fuente, ya
+ que pueden provenir desde una solicitud de usuario, de otros sistemas o
+ desde el interior del propio sistema.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Precisión
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Atributos-de-calidad-Precisión"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cabe destacar que no existe una definición estándar sobre el significado
+ de precisión en un sistema, ya que se trata de una medida que evalúa qué
+ tan exacta es la respuesta de una función (operación) de un componente,
+ y cada función está ligada a resolver un problema o funcionalidad particular.
+ Por ejemplo, en un problema de detección de rostros, la precisión puede
+ medirse como la cantidad de rostros correctamente detectados sobre los
+ rostros totales presentes, y en un problema de optimización puede significar
+ el grado de cercanía del valor de la solución encontrada respecto a la
+ solución óptima.
+\end_layout
+
+\begin_layout Section
+Aprendizaje de máquina 
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Aprendizaje-de-maquina"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El aprendizaje de máquina 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Incluir referencia a Aprendizaje de Maquina: Michalski, R.
+ S., Carbonell, J.
+ G., & Mitchell, T.
+ M.
+ (Eds.).
+ (2013).
+ Machine learning: An artificial intelligence approach.
+ Springer Science & Business Media.
+\end_layout
+
+\end_inset
+
+ o aprendizaje automático es una rama de la inteligencia artificial cuyo
+ objetivo es desarrollar técnicas que permitan a las computadoras 
+\emph on
+aprender
+\emph default
+ a partir de datos suministrados en forma de ejemplo.
+ El aprendizaje a partir de datos es la base para comprender el proceso
+ de aprendizaje de máquina ya que los datos son la única herramienta de
+ la que se dispone y conoce a ciencia cierta sobre las características de
+ un dominio cualquiera.
+ El aprendizaje de máquina puede entenderse haciendo una analogía con el
+ aprendizaje humano basado en la experiencia, en donde el hombre basa su
+ conocimiento en tres partes: 
+\emph on
+i
+\emph default
+) recuerdo, el hombre reconoce cuando ha sido la última vez que estuvo en
+ una determinada situación (dataset), 
+\emph on
+ii
+\emph default
+) adaptación, reconoce la última vez que se probó una acción (salida producida)
+ y 
+\emph on
+iii
+\emph default
+) generalización, reconoce si ha funcionado o no esta acción (si fue correcta
+ o no).
+ El término generalización refiere a la similitud entre diferentes situaciones
+ de manera tal que las opciones que han sido aplicadas en casos previos
+ pueden ser usadas en nuevos casos.
+\end_layout
+
+\begin_layout Standard
+El aprendizaje de máquina, entonces, es un proceso para que las computadoras
+ modifiquen o adapten sus acciones (predictivas o de control) para que sus
+ resultados sean más precisos, precisión que refleja la proximidad respecto
+ a las acciones correctas.
+ El aprendizaje de máquina reúne ideas de neurociencia, biología, estadística,
+ matemática y física, para generar técnicas y hacer que la computadora aprenda.
+ Un área importante relacionada con el aprendizaje de máquina es la minería
+ de datos, el proceso de extraer información útil de un conjunto de datos
+ masivos por medio de algoritmos eficientes.
+ 
+\end_layout
+
+\begin_layout Standard
+Si se define el aprendizaje de máquina como la mejora de tareas a través
+ de la experiencia, surge el cuestionamiento de como la computadora puede
+ saber si está aprendiendo mejor o de qué forma podría mejorar ese aprendizaje.
+ De aquí, surgen diferentes tipos de técnicas o algoritmos de aprendizaje.
+ Por ejemplo, se le puede indicar a un algoritmo la respuesta correcta para
+ un problema, así, la próxima vez que se aplique su desempeño será mejor.
+ También, podría indicarse un conjunto de respuestas correctas para que
+ el algoritmo 
+\emph on
+adivine
+\emph default
+ la forma de obtener estas respuestas para otros problemas (generalización).
+ Alternativamente, se puede indicar si la respuesta obtenida es correcta
+ o no sin señalar la respuesta real, que el algoritmo debería ser capaz
+ de encontrar.
+ Una variante podría ser asignarle un puntaje a la respuesta obtenida por
+ el algoritmo que indique cuán correcta resulta ser.
+ 
+\end_layout
+
+\begin_layout Standard
+Estas diferentes alternativas proveen una forma de clasificar las diferentes
+ métodos de aprendizaje que será detallada en la siguiente sección.
+ Cabe destacar que por más que existan distintos tipos de aprendizaje, todos
+ los métodos comparten el mismo objetivo de generalización: la técnica debe
+ producir salidas sensibles para datos de entrada que no fueron encontrados
+ durante el aprendizaje, teniendo en cuenta también que el algoritmo debe
+ lidiar con ruido en los datos, es decir, imprecisión en los valores que
+ es inherente a la medición de cualquier proceso real.
+ 
+\end_layout
+
+\begin_layout Subsection
+Clasificación de las técnicas de aprendizaje
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Simplificar esta seccion y la siguiente en una sola, considerando la siguiente
+ clasificacion:
+\end_layout
+
+\begin_layout Itemize
+Aprendizaje supervisado: los datos de entrenamiento tienen definido un atributo
+ clase.
+ Una tecnica de aprendizaje supervisado tiene como objetivo entrenar modelos
+ para predecir este atributo en entradas futuras.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Classificacion: el atributo clase es discreto
+\end_layout
+
+\begin_layout Itemize
+Regression: el atributo clase es continuo
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Aprendizaje no supervisado: los datos de entrenamiento no tienen definido
+ un atributo clase.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Clustering
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Aprendizaje por refuerzo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El modo de aprendizaje que una técnica particular puede realizar queda determina
+do por la naturaleza de los datos de entrada, es decir, los datos de entrenamien
+to (
+\emph on
+dataset
+\emph default
+).
+ Básicamente las técnicas de aprendizaje se clasifican en tres grandes grupos:
+ aprendizaje supervisado, no supervisado, y por refuerzo.
+\end_layout
+
+\begin_layout Standard
+El aprendizaje supervisado utiliza un conjunto de datos basado en dos pares
+ de objetos: los datos de entrada o conjunto de ejemplos del dominio y las
+ respuestas correctas (
+\emph on
+targets
+\emph default
+) para una propiedad determinada .
+ A través de las respuestas correctas provistas y basado en el conjunto
+ de datos la técnica de aprendizaje generaliza el comportamiento para responder
+ a todas las posibles entradas.
+ Este modo de aprendizaje, entonces, es un proceso que se realiza mediante
+ un entrenamiento controlado por un agente externo que determina la respuesta
+ que debería generar la técnica a partir de una entrada determinada.
+ 
+\end_layout
+
+\begin_layout Standard
+Dentro del aprendizaje supervisado, las técnicas pueden separarse en dos
+ grupos de acuerdo a la naturaleza de la propiedad o respuesta.
+ 
+\end_layout
+
+\begin_layout Description
+Clasificación Consiste en asignar a cada ejemplo una etiqueta o clase a
+ la que pertenece basado en el entrenamiento de ejemplares de cada clase.
+ Los datos de entrenamiento son instancias que pertenecen a una única clase
+ y el conjunto de clases cubre todas las salidas posibles, por eso se considera
+ al proceso de clasificación como un proceso discreto.
+ El algoritmo de clasificación tiene como objetivo encontrar umbrales de
+ decisión que sirvan para identificar las diferentes clases.
+\end_layout
+
+\begin_layout Description
+Regresión El proceso de regresión predice valores numéricos de atributos
+ a partir de funciones matemáticas polinomiales que describan o se ajusten
+ lo más posible a todos los puntos del dominio, es decir, todos los valores
+ del conjunto de entrenamiento correspondientes a la propiedad que se quiere
+ predecir.
+ Generalmente, se considera un problema de aproximación de función o interpolaci
+ón al encontrar un valor numérico entre los valores conocidos.
+ Por lo tanto, el eje primordial del proceso de regresión es encontrar la
+ función que mejor represente al conjunto de puntos, ya que funciones con
+ distintos grados de polinomios producen diferentes efectos.
+\end_layout
+
+\begin_layout Standard
+En el aprendizaje no supervisado, la máquina simplemente recibe los datos
+ de entrada sin etiquetas o respuestas correctas como en el método supervisado,
+ ni valores de recompensa desde el ambiente.
+ Aun así, es posible desarrollar un framework formal para llevar a cabo
+ aprendizaje no supervisado basado en la noción de que el objetivo es construir
+ una representación de la entrada que puede ser usada para tomar decisiones,
+ predecir futuras entradas, comunicar eficientemente entradas para otras
+ máquinas, entre otras posibilidades.
+ 
+\end_layout
+
+\begin_layout Standard
+El aprendizaje no supervisado puede entenderse como la búsqueda de patrones
+ en los datos independientemente del ruido presente en los mismos.
+ Por ejemplo, las técnicas de agrupamiento (clustering) son técnicas de
+ aprendizaje no supervisado que agrupan un conjunto de objetos de modo tal
+ que los objetos pertenecientes a un mismo grupo (
+\emph on
+cluster
+\emph default
+) comparten algún tipo de similitud entre ellos, de igual sentido que se
+ diferencian con los objetos de otro grupo.
+ A diferencia del proceso de clasificación, los grupos o clases no son conocidos
+ fehacientemente antes del entrenamiento, un claro método de aprendizaje
+ no supervisado.
+ 
+\end_layout
+
+\begin_layout Standard
+Por ultimo, el aprendizaje por refuerzo se basa en la idea de no disponer
+ de ejemplos completos del comportamiento deseado por el algoritmo, es decir,
+ no indicar durante el entrenamiento exactamente la salida que se desea
+ proporcione el clasificador ante una determinada entrada, sólo se le indica
+ si la salida obtenida se ajusta a la deseada y en función a ello se re
+ configuran los pasos.
+ 
+\end_layout
+
+\begin_layout Subsection
+Técnicas contempladas
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Funciones-contempladas"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El foco principal del trabajo es el desarrollo de un enfoque para predecir
+ propiedades no-funcionales de componentes de software en ejecución, como
+ el tiempo de respuesta, precisión de las respuestas, entre otros.
+ Estas propiedades son valores continuos, motivo por el cual se entrenan
+ y evalúan técnicas de regresión para su predicción.
+ Las técnicas utilizadas se describen a continuación.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Dar menos detalle sobre las tecnicas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Regresión Lineal
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Regresión-Lineal"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La regresión es la predicción de un valor desconocido a través del cálculo
+ de una función matemática a partir de los valores conocidos.
+ Si se considera esta función como una función lineal, la salida será la
+ suma de cada valor conocido multiplicado por una constante, lo cual define
+ una línea recta (plano en 3D o hiperplano en dimensiones mayores) que circundan
+ los puntos, como puede observarse en la Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:regression-lineal"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../images/regression-lineal.png
+	scale 85
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Regresiones lineales en dos y tres dimensiones..
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:regression-lineal"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para encontrar la recta (función lineal) que mejor se 
+\emph on
+ajusta
+\emph default
+ a los datos, se intenta minimizar la distancia entre cada punto y dicha
+ recta.
+ Esta distancia se mide a través de una línea auxiliar que atraviesa el
+ punto y tope con la función.
+ Luego, se intentará minimizar la función de error que que se calcula como
+ la suma de las distancias.
+ Si se minimiza la suma de los cuadrados de las distancias, se obtiene la
+ minimización más común llamada optimización de mínimos cuadrados.
+ 
+\end_layout
+
+\begin_layout Standard
+La minimización de este error, para ajustar la función lineal, puede realizarse
+ con distintas técnicas de regresión lineal, como 
+\emph on
+ridge-regression 
+\emph default
+y 
+\emph on
+gradiente estocástico descendiente
+\emph default
+.
+ La primera aplica una penalización (
+\emph on
+ridge
+\emph default
+) a cada constante.
+ La segunda, aplica un diferencial sobre la función obteniendo el gradiente
+ el cual por definición, es la dirección en la que incrementa o disminuye
+ en mayor medida.
+ Ya que el propósito del aprendizaje es minimizar el error de predicción,
+ se debe seguir la función en dirección del gradiente negativo en la cual
+ la función disminuye.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Red neuronal
+\end_layout
+
+\begin_layout Standard
+La técnica de red neuronal presenta un modelo matemático sobre el comportamiento
+ de una neurona.El mismo representa una célula nerviosa como 
+\emph on
+i
+\emph default
+) un conjunto de entradas valoradas (w) que corresponde a las sinapsis,
+ 
+\emph on
+ii
+\emph default
+) un sumador que une las señales entrantes y 
+\emph on
+iii
+\emph default
+) una función de activación (inicialmente una función umbral) que decide
+ sobre la activación de la célula en base a las entradas actuales.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../images/McCulloch-Pitts.png
+	scale 85
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Modelo matemático neuronal .
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:McCulloch-Pitts"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como puede observarse en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:McCulloch-Pitts"
+
+\end_inset
+
+, el modelo neuronales un dispositivo límite binario, las entradas son multiplic
+adas por los pesos y sumando sus valores; si la suma es mayor a un determinado
+ umbral (produce salida 1) la célula se activa, de lo contrario (produce
+ salida 0) se mantiene desactivada.
+\end_layout
+
+\begin_layout Standard
+El perceptron es una colección de neuronas con un conjunto de entradas y
+ pesos que unen las neuronas con dichas entradas.
+ Las neuronas del Perceptron son completamente independientes entre sí,
+ el estado de una neurona no infiere sobre las demás compartiendo sólo las
+ entradas.
+\end_layout
+
+\begin_layout Standard
+La esencia del aprendizaje de la red neuronal perceptron está centrada en
+ los valores de pesos.
+ La red debe ser entrenada para que los pesos se adapten y generen las respuesta
+s correctas (
+\emph on
+targets
+\emph default
+).
+\end_layout
+
+\begin_layout Standard
+El entrenamiento de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MLP}
+\end_layout
+
+\end_inset
+
+ consiste en dos partes, primero se obtienen las salidas con las entradas
+ brindadas y los pesos actuales (
+\emph on
+forwards
+\emph default
+), y luego se actualizan los pesos considerando el error como la diferencia
+ entre el valor obtenido y el real (propagación hacia atrás del error -
+ 
+\emph on
+backwards
+\emph default
+).
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../images/Perceptron-multilayer.png
+	scale 85
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Red perceptrón multicapa
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:perceptron-neural-network-multilayer"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+K-means clusterer
+\end_layout
+
+\begin_layout Standard
+El algoritmo K - means aplica clustering sobre los datos de entrenamiento
+ y recibe un parámetro 
+\emph on
+K
+\emph default
+ para dividir estos datos en 
+\emph on
+K
+\emph default
+ categorías.
+ El algoritmo intenta localizar k centros en el espacio de entrada de modo
+ tal que estos centros estén, como su nombre lo indica, en el centro de
+ una categoría (
+\emph on
+cluster
+\emph default
+).
+ La dificultad se presenta ya que al desconocer la categorización de estos
+ grupos, resulta aún más difícil determinar la localización de cada centro.
+ 
+\end_layout
+
+\begin_layout Standard
+El objetivo de determinar estos centros, en principio, a causa de incertidumbre
+ total se posicionan los centros de forma aleatoria en el espacio de entrada.
+ Una vez distinguidos los clusters, se determinan los puntos que pertenecen
+ al mismo a través del cálculo de la distancia entre el punto y todos los
+ centros localizados, asignándose entonces, al cluster cuyo centro sea el
+ más cercano.
+ Finalmente, para cada centro se actualiza su ubicación utilizando la media
+ antes definida.
+ Estos pasos se realizan de forma incremental hasta que los centros dejan
+ de modificar su ubicación.
+ 
+\end_layout
+
+\begin_layout Standard
+Ya que este algoritmo sin duda es un método de clasificación y no de regresión,
+ se considera importante resaltar la adaptación del mismo para utilizarlo
+ con este fin.
+ Así, una vez realizada la clasificación del punto que se quiere predecir,
+ se realizará la predicción calculando el promedio de los valores de la
+ propiedad a predecir de los otros puntos que están en el cluster.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Maquina de vector de soporte
+\end_layout
+
+\begin_layout Standard
+La técnica de máquina de vector soporte 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SVM}
+\end_layout
+
+\end_inset
+
+.
+ es un método propiamente relacionado con problemas de clasificación y regresión.
+ Dado un conjunto de ejemplos de entrenamiento (dataset) se pueden etiquetar
+ las clases y entrenar un SVM para construir un modelo que prediga la propiedad
+ de un nuevo dataset.
+ Intuitivamente, un SVM es un modelo que representa a los puntos de muestra
+ en el espacio, separando las clases en dos espacios lo más amplios posibles
+ mediante un hiperplano de separación.
+ Analíticamente, se toma la distancia existente entre la línea y el primer
+ punto interceptado (en dirección perpendicular), si se ubica una ‘zona
+ desierta’ alrededor de la línea, ningún punto ubicado en dicha zona puede
+ ser clasificado ya que se encuentra demasiado cerca de la línea.
+ El radio máximo que puede tener esta región es llamado margen, señalado
+ como M y los puntos de cada clase más cercanos a la línea de clasificación
+ se denominan vectores de soporte
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../images/SVM-metology.png
+	scale 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Metodología de operación del algoritmo SVM
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:SVM-metology"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Evaluación de modelos
+\end_layout
+
+\begin_layout Standard
+Una vez entrenado un modelo de predicción con una técnica, la evaluación
+ del modelo es importante para medir el nivel de acierto de las predicciones.
+ Esta evaluación consiste en probar el modelo con un conjunto de datos de
+ prueba y medir el error u otras métricas sobre los resultados.
+ Estas métricas de evaluación permite comparar el desempeño de modelos entrenado
+s con diferentes técnicas.
+ 
+\end_layout
+
+\begin_layout Standard
+Existen distintas formas para llevar a cabo esta evaluación.
+ La mas simple consiste en usar como datos de prueba el mismo conjunto de
+ datos utilizado para el entrenamiento de los modelos.
+ Otro método consiste en separar los datos del problema entre datos de entrenami
+ento y datos de prueba.
+ Por ultimo, también se puede validar el modelo de forma cruzada.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Revisar este parrafo.
+ Que explique brevemente en que consiste la validacion cruzada
+\end_layout
+
+\end_inset
+
+La validación cruzada (cross-validation) es una técnica utilizada para evaluar
+ los resultados de un análisis estadístico y garantizar que son independientes
+ de la partición entre datos de entrenamiento y prueba.
+ Consiste en repetir y calcular la media aritmética obtenida de las medidas
+ de evaluación sobre diferentes particiones.
+ Por ejemplo, si consideramos diez subconjuntos para validación, los datos
+ de entrada se dividen en diez partes, donde una se reserva para las pruebas
+ y las otras nueve para el entrenamiento.
+ Este proceso se repite diez veces y se calcula el promedio de las métricas
+ de evaluación.
+ Esto ayuda a determinar el nivel al que un modelo se podría generalizar
+ para nuevos conjuntos de datos.
+ 
+\end_layout
+
+\begin_layout Standard
+El presente trabajo contempla las siguientes métricas de evaluación para
+ los modelos de regresión: 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Poner solo 1 o 2 metricas como ejemplo, y explicarlas un poquito.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+CC (Coeficiente de correlación de Pearson): el coeficiente de correlación
+ de Pearson es un índice que puede utilizarse para medir el grado de relación
+ de dos variables siempre y cuando ambas sean cuantitativas.
+ En el presente trabajo se considera la correlación entre las variables
+ del dataset con respecto a la propiedad a predecir.
+\end_layout
+
+\begin_layout Itemize
+RMSE (Root Mean Absolute Error): el 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{RMSE}
+\end_layout
+
+\end_inset
+
+ representa la raiz cuadrática del promedio de la distancia euclídea entre
+ el valor de la propiedad obtenida por la técnica y el valor real.
+ 
+\end_layout
+
+\begin_layout Subsection
+Ajuste del modelo: Overfitting y Underfitting
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Ajuste-del-modelo:"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cuando se genera (o entrena) un modelo de predicción, su desempeño es incierto
+ hasta su evaluación o aplicación.
+ En algunas ocasiones, la calidad del modelo es pobre generando respuestas
+ imprecisas, de modo tal que se le deben aplicar acciones correctivas comprendie
+ndo cómo se comporta y ajusta el modelo.
+ 
+\end_layout
+
+\begin_layout Standard
+Los modelos pueden presentar dos problemas indeseables: 
+\emph on
+overfitting
+\emph default
+ y 
+\emph on
+underfitting
+\emph default
+.
+ El 
+\emph on
+overfitting 
+\emph default
+describe una función que se ajusta estrechamente a los datos de entrenamiento.
+ El modelo aprendió los detalles y el ruido en los datos impactando negativament
+e en el desempeño del modelo.
+ Este efecto es causado porque el ruido o las fluctuaciones aleatorias en
+ los datos de entrada fueron usados para el aprendizaje.
+ 
+\end_layout
+
+\begin_layout Standard
+Por otro lado, los modelos pueden presentar problemas de 
+\emph on
+underfitting
+\emph default
+, cuando no interpretan bien los datos de entrenamiento, por lo que son
+ incapaces de generalizar correctamente nuevos datos.
+ Este efecto es causado porque la función o técnica elegida no es el indicada
+ para representar el comportamiento de los datos.
+ El efecto underfitting se caracteriza por sobre generalizar los datos.
+ La incorporación de nuevos datos al conjunto de entrenamiento podría solucionar
+ o apaciguar este efecto.
+ 
+\end_layout
+
+\begin_layout Standard
+El modelo deseado, sin dudas, sería aquel que se encuentre en un punto de
+ equilibrio entre un problema y otro, aunque este equilibrio es muy difícil
+ de alcanzar en la práctica.
+ La Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:under-overfitting"
+
+\end_inset
+
+ presenta tres modelos de regresión para un mismo grupo de datos que permiten
+ interpretar gráficamente los problemas de underfitting y overfitting.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../images/under-overfitting.png
+	scale 85
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Contraste entre distintos efectos del modelo sobre los datos de entrenamiento.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:under-overfitting"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+No se entiende muy bien esto :S
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+  
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,2337 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\use_default_options true
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Descripción de los servicios de detección facial 
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Ambiente-de-desarrollo"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Servicio SkyBiometry
+\end_layout
+
+\begin_layout Subsection*
+En referencia al uso de la API – Autenticación 
+\end_layout
+
+\begin_layout Standard
+Cada llamada a la API debe ser autorizada mediante el uso de dos claves:
+ api_key y api_secret.
+ Ambas claves son obtenidas mediante una registración en el sitio oficial
+ de skybiometry (
+\emph on
+www.skybiometry.com
+\emph default
+) a través de una cuenta de email como usuario y una contraseña.
+\end_layout
+
+\begin_layout Subsection*
+Límites de uso 
+\end_layout
+
+\begin_layout Standard
+El consumo de este servicio presenta algunas limitaciones que varían en
+ base a la suscripción particular del usuario.
+ En general, las suscripciones gratuitas restringen un límite de 100 llamadas
+ a métodos por hora y de 5000 en el mes.
+ Para el caso del método POST, la limitación se presenta tanto en 100 request
+ a la API para el procesamiento de imágenes individuales como para 1 request
+ con 100 imágenes a procesar.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Factores ofrecidos
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Respecto
+\begin_inset space ~
+\end_inset
+
+al
+\begin_inset space ~
+\end_inset
+
+cuadrado
+\begin_inset space ~
+\end_inset
+
+del
+\begin_inset space ~
+\end_inset
+
+rostro
+\begin_inset space ~
+\end_inset
+
+detectado:
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+center
+\begin_inset space ~
+\end_inset
+
+OBJECT
+\begin_inset space ~
+\end_inset
+
+{
+\begin_inset space ~
+\end_inset
+
+x
+\begin_inset space ~
+\end_inset
+
+:Float,
+\begin_inset space ~
+\end_inset
+
+y
+\begin_inset space ~
+\end_inset
+
+:
+\begin_inset space ~
+\end_inset
+
+Float
+\begin_inset space ~
+\end_inset
+
+} 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+width.
+\begin_inset space ~
+\end_inset
+
+FLOAT.
+\begin_inset space ~
+\end_inset
+
+0-100%
+\begin_inset space ~
+\end_inset
+
+del
+\begin_inset space ~
+\end_inset
+
+ancho
+\begin_inset space ~
+\end_inset
+
+del
+\begin_inset space ~
+\end_inset
+
+rostro
+\begin_inset space ~
+\end_inset
+
+respecto
+\begin_inset space ~
+\end_inset
+
+al
+\begin_inset space ~
+\end_inset
+
+ancho
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+la
+\begin_inset space ~
+\end_inset
+
+imagen.
+ 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+height.
+\begin_inset space ~
+\end_inset
+
+FLOAT.
+\begin_inset space ~
+\end_inset
+
+0-100%
+\begin_inset space ~
+\end_inset
+
+del
+\begin_inset space ~
+\end_inset
+
+largo
+\begin_inset space ~
+\end_inset
+
+del
+\begin_inset space ~
+\end_inset
+
+rostro
+\begin_inset space ~
+\end_inset
+
+respecto
+\begin_inset space ~
+\end_inset
+
+al
+\begin_inset space ~
+\end_inset
+
+ancho
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+la
+\begin_inset space ~
+\end_inset
+
+imagen.
+\end_layout
+
+\end_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Otros
+\begin_inset space ~
+\end_inset
+
+puntos
+\begin_inset space ~
+\end_inset
+
+detectados:
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+mouth_center
+\begin_inset space ~
+\end_inset
+
+OBJECT
+\begin_inset space ~
+\end_inset
+
+{x:Float,
+\begin_inset space ~
+\end_inset
+
+y:
+\begin_inset space ~
+\end_inset
+
+Float
+\begin_inset space ~
+\end_inset
+
+} 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+mouth_left
+\begin_inset space ~
+\end_inset
+
+OBJECT
+\begin_inset space ~
+\end_inset
+
+{x:
+\begin_inset space ~
+\end_inset
+
+Float,
+\begin_inset space ~
+\end_inset
+
+y:
+\begin_inset space ~
+\end_inset
+
+Float
+\begin_inset space ~
+\end_inset
+
+}
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+mouth_right
+\begin_inset space ~
+\end_inset
+
+OBJECT
+\begin_inset space ~
+\end_inset
+
+{x:
+\begin_inset space ~
+\end_inset
+
+Float,
+\begin_inset space ~
+\end_inset
+
+y:
+\begin_inset space ~
+\end_inset
+
+Float
+\begin_inset space ~
+\end_inset
+
+} 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+eye_left
+\begin_inset space ~
+\end_inset
+
+OBJECT
+\begin_inset space ~
+\end_inset
+
+{x:
+\begin_inset space ~
+\end_inset
+
+Float,
+\begin_inset space ~
+\end_inset
+
+y:
+\begin_inset space ~
+\end_inset
+
+Float
+\begin_inset space ~
+\end_inset
+
+} 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+eye_right
+\begin_inset space ~
+\end_inset
+
+OBJECT
+\begin_inset space ~
+\end_inset
+
+{x:
+\begin_inset space ~
+\end_inset
+
+Float,
+\begin_inset space ~
+\end_inset
+
+y:
+\begin_inset space ~
+\end_inset
+
+Float
+\begin_inset space ~
+\end_inset
+
+} 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+nose
+\begin_inset space ~
+\end_inset
+
+OBJECT
+\begin_inset space ~
+\end_inset
+
+{x:
+\begin_inset space ~
+\end_inset
+
+Float,
+\begin_inset space ~
+\end_inset
+
+y:
+\begin_inset space ~
+\end_inset
+
+Float
+\begin_inset space ~
+\end_inset
+
+} 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+ear_left
+\begin_inset space ~
+\end_inset
+
+OBJECT
+\begin_inset space ~
+\end_inset
+
+{x:
+\begin_inset space ~
+\end_inset
+
+Float,
+\begin_inset space ~
+\end_inset
+
+y:
+\begin_inset space ~
+\end_inset
+
+Float
+\begin_inset space ~
+\end_inset
+
+} 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+ear_right
+\begin_inset space ~
+\end_inset
+
+OBJECT
+\begin_inset space ~
+\end_inset
+
+{x:
+\begin_inset space ~
+\end_inset
+
+Float,
+\begin_inset space ~
+\end_inset
+
+y:
+\begin_inset space ~
+\end_inset
+
+Float
+\begin_inset space ~
+\end_inset
+
+} 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+chin
+\begin_inset space ~
+\end_inset
+
+OBJECT
+\begin_inset space ~
+\end_inset
+
+{x:
+\begin_inset space ~
+\end_inset
+
+Float,
+\begin_inset space ~
+\end_inset
+
+y:
+\begin_inset space ~
+\end_inset
+
+Float
+\begin_inset space ~
+\end_inset
+
+} 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+yaw
+\begin_inset space ~
+\end_inset
+
+FLOAT.Perfil.
+\begin_inset space ~
+\end_inset
+
+Value
+\begin_inset space ~
+\end_inset
+
+-90°
+\begin_inset space ~
+\end_inset
+
+a
+\begin_inset space ~
+\end_inset
+
+90° 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+roll
+\begin_inset space ~
+\end_inset
+
+FLOAT.
+\begin_inset space ~
+\end_inset
+
+Ángulo
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+rotación
+\begin_inset space ~
+\end_inset
+
+del
+\begin_inset space ~
+\end_inset
+
+rostro.
+\begin_inset space ~
+\end_inset
+
+Value
+\begin_inset space ~
+\end_inset
+
+-90°
+\begin_inset space ~
+\end_inset
+
+a
+\begin_inset space ~
+\end_inset
+
+90° 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+pitch
+\begin_inset space ~
+\end_inset
+
+FLOAT.
+\begin_inset space ~
+\end_inset
+
+Value
+\begin_inset space ~
+\end_inset
+
+-90°
+\begin_inset space ~
+\end_inset
+
+a
+\begin_inset space ~
+\end_inset
+
+90° 
+\end_layout
+
+\end_deeper
+\begin_layout Description
+yaw: ángulo positivo en rostros donde predomina el perfil derecho (respecto
+ al sujeto, no a la imagen).
+ Caso contrario, ángulo negativo al predominar el perfil izquierdo.
+ 
+\end_layout
+
+\begin_layout Description
+Roll: Ejemplo ilustrativo.
+ El rectángulo verde representa al rostro detectado por la API cuyo valor
+ roll es igual a -17°, mientras que el rectángulo rojo fue añadido para
+ ilustrar el caso donde el ángulo roll es igual a 0°.
+ Una rotación inversa significa un valor roll positivo.
+ 
+\end_layout
+
+\begin_layout Description
+\begin_inset Graphics
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/face-example.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Todos los puntos detectados descritos no especificados corresponden a un
+ formato JSON, cuya clave es el nombre del mismo, y el valor es también
+ un objeto del tipo JSON que contiene los siguientes valores: id:INTEGER,
+ confidence:INTEGER, y:FLOAT, x:FLOAT, a excepción del valor 
+\emph on
+center
+\emph default
+ cuyo objeto JSON contiene sólo los valores: 
+\emph on
+x
+\emph default
+, 
+\emph on
+y
+\emph default
+.
+\end_layout
+
+\begin_layout Description
+Nota1: en caso de valor de atributo no se puede determinar que no se devuelve.
+ Si se determina el valor que se devuelve junto con el valor de confianza
+ como porcentaje de 0 a 100.
+ 
+\end_layout
+
+\begin_layout Description
+Nota2: La API sólo devuelve información necesaria para representar en forma
+ de rectángulo los rostros detectados.
+ Para el resto de opciones, la API sólo devuelve información del punto central
+ en cuestión.
+ 
+\end_layout
+
+\begin_layout Description
+Nota3: Ya que la API automáticamente re-escala las imágenes a 1024 pixeles
+ para su procesamiento interno, todas las coordenadas son provistas de forma
+ porcentual respecto al ancho y largo de la imagen (abstracción).
+ 
+\end_layout
+
+\begin_layout Description
+Nota4: Nota: el atributo face es el valor por defecto y siempre es retornado,
+ independientemente de los atributos especificados.
+ Si el atributo 
+\emph on
+glasses
+\emph default
+ fue requerido adicionalmente se retorna el atributo 
+\emph on
+dark_glasses
+\emph default
+ para diferenciar entre gafas oscuras y claras.
+ El atributo mood (estado de ánimo) se devuelve junto con 7 más atributos:
+ confianza para cada una de las emociones básicas, además de la confianza
+ neutral_mood.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Atributos faciales 
+\end_layout
+
+\begin_layout Standard
+The result of the API call is a JSON or XML object containing the requested
+ information.
+ Cada uno de los atributos son objetos del tipo JSON cuya clave es el nombre
+ del mismo y el valor es también un objeto JSON con dos valores específicos:
+ el primero con clave 
+\emph on
+value
+\emph default
+ y el segundo con clave 
+\emph on
+confidence
+\emph default
+.
+ El valor de confidence es del tipo Integer para representar el porcentaje
+ de probabilidad del valor detectado en el campo 
+\emph on
+value
+\emph default
+.
+\end_layout
+
+\begin_layout Subsection*
+Mensajes de error 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/usuario/Desktop/Tesis rubbish/tesis/images/face-service-errors.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Post (Request en lenguaje JAVA)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Java,numbers=left,numberstyle={\tiny},basicstyle={\footnotesize},breaklines=true,captionpos=t,frame=no,keywordstyle={\color{blue}},commentstyle={\color{gray}},stringstyle={\color{red}},numbersep=5pt,emph={label}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+HttpResponse<JsonNode> response = Unirest.post(https://face.p.mashape.com/faces/dete
+ct?api_key=[api_key]&api_secret=[api_secret]) 
+\end_layout
+
+\begin_layout Plain Layout
+
+	.header(X-Mashape-Key, 7rS5YDw5YHmshtdgMHP2ZYBLAljfp1OxKNzjsn1GJxNBgad6C9)
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	.header(Accept, application/json) 
+\end_layout
+
+\begin_layout Plain Layout
+
+	.field(attributes, all) 
+\end_layout
+
+\begin_layout Plain Layout
+
+	.field(detector, Aggressive)  //[ver opciones] 
+\end_layout
+
+\begin_layout Plain Layout
+
+	.asJson();        
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Nota: En los espacios [api_key] y [api_secret] deben colocarse las claves
+ correspondientes disponibles con la registración de una cuenta en el sitio
+ www.skybiometry.com 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Opciones: 
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+.field(files,
+\begin_inset space ~
+\end_inset
+
+Vector<File>
+\begin_inset space ~
+\end_inset
+
+imagenes) 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+.field(files,
+\begin_inset space ~
+\end_inset
+
+File
+\begin_inset space ~
+\end_inset
+
+imagen) 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+.field(urls,
+\begin_inset space ~
+\end_inset
+
+url_1,
+\begin_inset space ~
+\end_inset
+
+url_2,
+\begin_inset space ~
+\end_inset
+
+…) 
+\end_layout
+
+\end_deeper
+\begin_layout Description
+Nota: Los formatos de imagen aceptados por la API son los siguientes: PNG,
+ JPEG, BMP, JPEG2000.
+\end_layout
+
+\begin_layout Standard
+La respuesta recibida por el servicio del tipo HttpResponse<JsonNode> puede
+ ser manipulada como un objeto del tipo JSONObject a través de la siguiente
+ codificación: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Java,breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+JSONObject obj = response.getBody().getObject(); 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Parse - Overview 
+\end_layout
+
+\begin_layout Standard
+La respuesta en formato JSONObject contiene en primera parte un objeto del
+ tipo JSONObject con clave 
+\emph on
+photos
+\emph default
+ y cuyo valor, representado en formato JSONArray, contiene toda la información
+ detectada desde las imágenes.
+ Cada elemento del arreglo representa un archivo de imagen; a su vez, estos
+ elementos contienen un objeto del tipo JSONObject cuya clave es 
+\emph on
+tags
+\emph default
+ y su valor es un JSONArray para representar cada una de los rostros detectados
+ en la imagen particular; a su vez contiene la información de ancho y largo
+ asociado.
+ 
+\end_layout
+
+\begin_layout Standard
+En segunda parte, seguido de 
+\emph on
+photos
+\emph default
+ se anexan en la respuesta la información relacionada a la operación http.
+\end_layout
+
+\begin_layout Standard
+Ejemplo codificación básica: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Java,numbers=left,numberstyle={\tiny},basicstyle={\footnotesize},breaklines=true,captionpos=t,frame=no,keywordstyle={\color{blue}},commentstyle={\color{gray}},stringstyle={\color{red}},numbersep=5pt,emph={label}"
+inline false
+status open
+
+\begin_layout Plain Layout
+\align left
+
+JSONArray imágenes = obj.get(photos); 
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+
+for(int p=0; p<imágenes.length(); p++) { 
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+
+	//Obtención de cada una de las imágenes  	
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+
+	JSONObject imagen=imagenes.getJSONObject(p);   
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+
+	//Ejemplo obtención del ancho de la imagen 
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+
+	int imgWidth = (int) imagen.get(width); 
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+
+	//Obtención de los rostros detectados en la imagen 
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+
+	JSONArray rostros = imagen.getJSONArray(tags); 
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+
+	for(int r=0; r<rostros.lenght(); r++) { 
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+
+		//Obtención de cada uno de los rostros detectados 
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+
+		rostro=rostros.getJSONObject(r);     	 
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+
+		//Ejemplo obtención de los puntos detectados JSONObject 
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+
+		mouth = rostro.getJSONObject(mouth_center); 
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+
+		int coordX= (int) mouth.get(“x”); 
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+
+		int coordY= (int) mouth.get(“y”); 
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+
+		//Ejemplo obtención de los atributos faciales JSONObject 
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+
+		atributos=imagen.getJSONObject(“attributes”); 
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+
+		String valor = atributos.getJSONObject(“mood”).getString(“value”); 
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+
+	} 	
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+
+} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Servicio FaceRect
+\end_layout
+
+\begin_layout Subsection*
+En referencia al uso de la API 
+\end_layout
+
+\begin_layout Standard
+El consumo de esta API requiere la registración de una cuenta en el sitio
+ Mashape.
+ La registración se realiza con email y contraseña y se realiza de manera
+ gratuita e instantánea.
+ El servicio no restringe el número de request a la API pero permite el
+ procesamiento de sólo una imagen por request realizado.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Factores ofrecidos 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Rostro
+\begin_inset space ~
+\end_inset
+
+detectado: 
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Orientation:
+\begin_inset space ~
+\end_inset
+
+tipo
+\begin_inset space ~
+\end_inset
+
+String.
+\begin_inset space ~
+\end_inset
+
+Valores
+\begin_inset space ~
+\end_inset
+
+posibles:<frontal,
+\begin_inset space ~
+\end_inset
+
+profile-right
+\begin_inset space ~
+\end_inset
+
+profile-left> 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+x:
+\begin_inset space ~
+\end_inset
+
+tipo
+\begin_inset space ~
+\end_inset
+
+Integer 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+y:
+\begin_inset space ~
+\end_inset
+
+tipo
+\begin_inset space ~
+\end_inset
+
+Integer 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+width:
+\begin_inset space ~
+\end_inset
+
+tipo
+\begin_inset space ~
+\end_inset
+
+Integer 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+height:
+\begin_inset space ~
+\end_inset
+
+tipo
+\begin_inset space ~
+\end_inset
+
+Integer 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Features:
+\begin_inset space ~
+\end_inset
+
+(opcional) 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+eyes 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+nose 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+mouth
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Los 
+\emph on
+features
+\emph default
+ son analizados por la API sólo en rostros cuya orientación sea frontal.
+ El formato de respuesta de los mismos son del tipo JSONObject en el caso
+ de 
+\emph on
+nose
+\emph default
+ y 
+\emph on
+mouth
+\emph default
+.
+ Para el caso de 
+\emph on
+eyes
+\emph default
+ se devuelve un objeto del tipo JSONArray, cuyos elementos (1 o 2) son del
+ tipo JSONObject.
+ La API representa el rostro y los features detectados en forma de rectángulos,
+ por lo que incorpora en sus respuestas las coordenadas 
+\emph on
+x
+\emph default
+, 
+\emph on
+y
+\emph default
+ (esquina superior izquierda respecto a la imagen) y los tamaños 
+\emph on
+width
+\emph default
+, 
+\emph on
+height
+\emph default
+ del rectángulo en cuestión.
+\end_layout
+
+\begin_layout Subsection*
+Post (Request en lenguaje JAVA)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Java,numbers=left,numberstyle={\tiny},basicstyle={\footnotesize},breaklines=true,captionpos=t,frame=no,keywordstyle={\color{blue}},commentstyle={\color{gray}},stringstyle={\color{red}},numbersep=5pt,emph={label}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+HttpResponse<JsonNode> response = Unirest.post(ENDPOINT) 
+\end_layout
+
+\begin_layout Plain Layout
+
+	.header(X-Mashape-Key, 7rS5YDw5YHmshtdgMHP2ZYBLAljfp1OxKNzjsn1GJxNBgad6C9)
+ //[ver opción correspondiente] 
+\end_layout
+
+\begin_layout Plain Layout
+
+	.field(“features”, true) 
+\end_layout
+
+\begin_layout Plain Layout
+
+	.asJson();        
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Actualmente la API soporta dos endpoints difiriendo entre sí en el modo
+ en que las imágenes son especificadas en el request.
+ Mediante el método http 
+\emph on
+GET
+\emph default
+ se añade el URL de la imagen (Endpoint: http://apicloud-facerect.p.mashape.com/pro
+cess-url.json); por otra parte con el método 
+\emph on
+POST
+\emph default
+ se añade el archivo correspondiente (Endpoint: http://apicloud-facerect.p.mashape.
+com/process-file.json) De acuerdo con el endpoint especificado se añade la
+ línea correspondiente: 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Opciones
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+.field(url,
+\begin_inset space ~
+\end_inset
+
+url_image) 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+.field(image,
+\begin_inset space ~
+\end_inset
+
+new
+\begin_inset space ~
+\end_inset
+
+File(<path_image>)) 
+\end_layout
+
+\end_deeper
+\begin_layout Description
+Nota: Para ambos casos, la API restringe el procesamiento de algunas imágenes,
+ permitiendo procesar aquellas cuyo formato sea JPEG, PNG y GIF, la resolución
+ de la misma no supere los 4096 píxeles (4096×4096) y el tamaño sea inferior
+ a 10 MBytes.
+ 
+\end_layout
+
+\begin_layout Standard
+La respuesta recibida por el servicio del tipo HttpResponse<JsonNode> puede
+ ser manipulada como un objeto del tipo JSONObject a través de la siguiente
+ codificación: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Java,breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+JSONObject obj = response.getBody().getObject();
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Parse - overview
+\end_layout
+
+\begin_layout Standard
+La respuesta en formato JSONObject contiene dos objetos JSON.
+ El primero, cuya clave es 
+\emph on
+faces
+\emph default
+ contiene toda la información detectada desde la imagen, el segundo objeto
+ cuya clave es 
+\emph on
+image
+\emph default
+ contiene la información acerca del ancho (
+\emph on
+width
+\emph default
+) y largo (
+\emph on
+height
+\emph default
+) de la misma.
+ La información detectada se presenta en un objeto del tipo JSONArray donde
+ cada elemento del arreglo constituye cada uno de los rostros que ha detectada
+ la API; Cada uno de los elementos son JSONObject que contienen la información
+ del rostro (
+\emph on
+orientation
+\emph default
+, 
+\emph on
+x
+\emph default
+, 
+\emph on
+y
+\emph default
+, 
+\emph on
+height
+\emph default
+, 
+\emph on
+width
+\emph default
+) y los 
+\emph on
+features
+\emph default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Ejemplo codificación básica 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Java,numbers=left,numberstyle={\tiny},basicstyle={\footnotesize},breaklines=true,captionpos=t,frame=no,keywordstyle={\color{blue}},commentstyle={\color{gray}},stringstyle={\color{red}},numbersep=5pt,emph={label}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+//Ejemplo obtención del ancho de la imagen 
+\end_layout
+
+\begin_layout Plain Layout
+
+int imgWidth = (int) obj.getJSONObject(image).get(“width”); 
+\end_layout
+
+\begin_layout Plain Layout
+
+//Obtención de los rostros detectados en la imagen 
+\end_layout
+
+\begin_layout Plain Layout
+
+JSONArray rostros = obj.getJSONArray(faces); 
+\end_layout
+
+\begin_layout Plain Layout
+
+for(int r=0; r<rostros.lenght(); r++) {  	
+\end_layout
+
+\begin_layout Plain Layout
+
+	//Obtención de cada uno de los rostros detectados 
+\end_layout
+
+\begin_layout Plain Layout
+
+	rostro=rostros.getJSONObject(r);     	 
+\end_layout
+
+\begin_layout Plain Layout
+
+	//Ejemplo obtención información del rostro: 
+\end_layout
+
+\begin_layout Plain Layout
+
+	String orientation =(String) rostro.get(“orientation); 
+\end_layout
+
+\begin_layout Plain Layout
+
+	int coordX=(int) rostro.get(“x”); 
+\end_layout
+
+\begin_layout Plain Layout
+
+	//Ejemplo obtención de los features 
+\end_layout
+
+\begin_layout Plain Layout
+
+	JSONObject features = rostro.getJSONObject(“features”); 
+\end_layout
+
+\begin_layout Plain Layout
+
+	JSONArray eyes =features.getJSONArray(“eyes”); 
+\end_layout
+
+\begin_layout Plain Layout
+
+	JSONObject eye_left=eyes.getJSONObject(0); 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Servicio GMS Vision
+\end_layout
+
+\begin_layout Subsection*
+Factores ofrecidos
+\end_layout
+
+\begin_layout Standard
+El detector puede computar los siguientes atributos (accesibles a través
+ de los distintos métodos de la clase).
+\end_layout
+
+\begin_layout Standard
+Profile: rotación del rostro.
+ FLOAT 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Clasificadores:<característica
+\begin_inset space ~
+\end_inset
+
+facial
+\begin_inset space ~
+\end_inset
+
+presente
+\begin_inset space ~
+\end_inset
+
+en
+\begin_inset space ~
+\end_inset
+
+el
+\begin_inset space ~
+\end_inset
+
+rostro> 
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Open
+\begin_inset space ~
+\end_inset
+
+eyes:
+\begin_inset space ~
+\end_inset
+
+(probabilidad)
+\begin_inset space ~
+\end_inset
+
+Constant
+\begin_inset space ~
+\end_inset
+
+value:
+\begin_inset space ~
+\end_inset
+
+1
+\begin_inset space ~
+\end_inset
+
+FLOAT
+\begin_inset space ~
+\end_inset
+
+(*) 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Smiling:
+\begin_inset space ~
+\end_inset
+
+(probabilidad)
+\begin_inset space ~
+\end_inset
+
+Constant
+\begin_inset space ~
+\end_inset
+
+value:
+\begin_inset space ~
+\end_inset
+
+1
+\begin_inset space ~
+\end_inset
+
+FLOAT
+\begin_inset space ~
+\end_inset
+
+(*) 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Height,
+\begin_inset space ~
+\end_inset
+
+width:
+\begin_inset space ~
+\end_inset
+
+medidos
+\begin_inset space ~
+\end_inset
+
+en
+\begin_inset space ~
+\end_inset
+
+píxeles.
+\begin_inset space ~
+\end_inset
+
+FLOAT 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Position:
+\begin_inset space ~
+\end_inset
+
+Punto
+\begin_inset space ~
+\end_inset
+
+superior
+\begin_inset space ~
+\end_inset
+
+izquierdo
+\begin_inset space ~
+\end_inset
+
+del
+\begin_inset space ~
+\end_inset
+
+rostro.
+\begin_inset space ~
+\end_inset
+
+FLOAT 
+\end_layout
+
+\end_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Landmarks:<Puntos
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+interés
+\begin_inset space ~
+\end_inset
+
+en
+\begin_inset space ~
+\end_inset
+
+el
+\begin_inset space ~
+\end_inset
+
+rostro
+\begin_inset space ~
+\end_inset
+
+detectado>
+\begin_inset space ~
+\end_inset
+
+LIST<Landmark> 
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+BOTTOM_MOUTH
+\begin_inset space ~
+\end_inset
+
+Constant
+\begin_inset space ~
+\end_inset
+
+Value:
+\begin_inset space ~
+\end_inset
+
+0
+\begin_inset space ~
+\end_inset
+
+CENTER 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+LEFT_CHEEK
+\begin_inset space ~
+\end_inset
+
+Constant
+\begin_inset space ~
+\end_inset
+
+Value:
+\begin_inset space ~
+\end_inset
+
+1
+\begin_inset space ~
+\end_inset
+
+CENTER 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+LEFT_EAR_TIP
+\begin_inset space ~
+\end_inset
+
+Constant
+\begin_inset space ~
+\end_inset
+
+Value:
+\begin_inset space ~
+\end_inset
+
+2 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+LEFT_EAR
+\begin_inset space ~
+\end_inset
+
+Constant
+\begin_inset space ~
+\end_inset
+
+Value:
+\begin_inset space ~
+\end_inset
+
+3
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+MIDPOINT
+\begin_inset space ~
+\end_inset
+
+LEFT_EYE
+\begin_inset space ~
+\end_inset
+
+Constant
+\begin_inset space ~
+\end_inset
+
+Value:
+\begin_inset space ~
+\end_inset
+
+4 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+CENTER
+\begin_inset space ~
+\end_inset
+
+LEFT_MOUTH
+\begin_inset space ~
+\end_inset
+
+Constant
+\begin_inset space ~
+\end_inset
+
+Value:
+\begin_inset space ~
+\end_inset
+
+5 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+NOSE_BASE
+\begin_inset space ~
+\end_inset
+
+Constant
+\begin_inset space ~
+\end_inset
+
+Value:
+\begin_inset space ~
+\end_inset
+
+6 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+MIDPOINT
+\begin_inset space ~
+\end_inset
+
+RIGHT_CHEEK
+\begin_inset space ~
+\end_inset
+
+Constant
+\begin_inset space ~
+\end_inset
+
+Value:
+\begin_inset space ~
+\end_inset
+
+7 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+CENTER
+\begin_inset space ~
+\end_inset
+
+RIGHT_EAR_TIP
+\begin_inset space ~
+\end_inset
+
+Constant
+\begin_inset space ~
+\end_inset
+
+Value:
+\begin_inset space ~
+\end_inset
+
+8 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+RIGHT_EAR
+\begin_inset space ~
+\end_inset
+
+Constant
+\begin_inset space ~
+\end_inset
+
+Value:
+\begin_inset space ~
+\end_inset
+
+9 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+MIDPOINT
+\begin_inset space ~
+\end_inset
+
+RIGHT_EYE
+\begin_inset space ~
+\end_inset
+
+Constant
+\begin_inset space ~
+\end_inset
+
+Value:
+\begin_inset space ~
+\end_inset
+
+10 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+CENTER
+\begin_inset space ~
+\end_inset
+
+RIGHT_MOUTH
+\begin_inset space ~
+\end_inset
+
+Constant
+\begin_inset space ~
+\end_inset
+
+Value:
+\begin_inset space ~
+\end_inset
+
+11 
+\end_layout
+
+\end_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Angles:
+\begin_inset space ~
+\end_inset
+
+<Face
+\begin_inset space ~
+\end_inset
+
+Orientation> 
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+EulerY
+\begin_inset space ~
+\end_inset
+
+[valor
+\begin_inset space ~
+\end_inset
+
+y
+\begin_inset space ~
+\end_inset
+
+en
+\begin_inset space ~
+\end_inset
+
+la
+\begin_inset space ~
+\end_inset
+
+imagen] 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+EulerZ
+\begin_inset space ~
+\end_inset
+
+[valor
+\begin_inset space ~
+\end_inset
+
+r
+\begin_inset space ~
+\end_inset
+
+en
+\begin_inset space ~
+\end_inset
+
+la
+\begin_inset space ~
+\end_inset
+
+imagen]
+\end_layout
+
+\end_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+(*) En el trabajo desarrollado se consideró el uso de valores booleanos,
+ determinando a los clasificadores como verdaderos para valores de probabilidad
+ mayor al 50%, en casos contrario se determinaron los mismos como falsos.
+ 
+\end_layout
+
+\begin_layout Description
+Nota: El ángulo EulerZ se encuentra disponible siempre en la detección,
+ mientras que el ángulo EulerY sólo si en el detector se predetermina el
+ modo 
+\emph on
+accurate
+\emph default
+.
+ El concepto de 
+\emph on
+left
+\emph default
+ y 
+\emph on
+right
+\emph default
+ son relativos al sujeto no a la posición cuando se observa la imagen.
+ Las posiciones son accedidas a través del método getPosition() de la clase
+ Landmark; el retorno es del tipo PointF.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Construcción del detector 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Java,numbers=left,numberstyle={\tiny},basicstyle={\footnotesize},breaklines=true,captionpos=t,frame=no,keywordstyle={\color{blue}},commentstyle={\color{gray}},stringstyle={\color{red}},numbersep=5pt,emph={label}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+FaceDetector detector = new FaceDetector.Builder(context) 
+\end_layout
+
+\begin_layout Plain Layout
+
+	.setTrackingEnabled(false) 
+\end_layout
+
+\begin_layout Plain Layout
+
+	.setMode(int Mode) 
+\end_layout
+
+\begin_layout Plain Layout
+
+	.setProminentFaceOnly(true) 
+\end_layout
+
+\begin_layout Plain Layout
+
+	.setClassificationType(int classificationType) 
+\end_layout
+
+\begin_layout Plain Layout
+
+	.setLandmarkType(int landmarkType) 
+\end_layout
+
+\begin_layout Plain Layout
+
+	.build(); 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es necesario especificar en el detector el entorno de nuestra aplicación
+ (mediante el uso de la clase android.utils.Context) 
+\end_layout
+
+\begin_layout Standard
+Es posible obtener el entorno de la app a través del método 
+\emph on
+getApplicationContext()
+\emph default
+ de la clase Activity.
+ 
+\end_layout
+
+\begin_layout Standard
+El contexto es sólo una interfaz cuya implementación está prevista por el
+ sistema android y permite el acceso a los recursos y clases específicas
+ de la aplicación, como así también realizar operaciones tales como el despacho
+ de actividades, la difusión y recibimiento de objetos del tipo Intent,
+ etc.
+ 
+\end_layout
+
+\begin_layout Standard
+El servicio dispone de la posibilidad de elegir la preferencia de procesamiento
+ en la detección, 
+\emph on
+FAST_MODE
+\emph default
+ prioriza la rapidez en el análisis por sobre la cantidad de rostros detectados
+ y su precisión, contrariamente el servicio dispone del modo 
+\emph on
+ACCURATE_MODE
+\end_layout
+
+\begin_layout Standard
+Habilitar la opción 
+\emph on
+tracking enabled
+\emph default
+ es recomendable para la detección de imágenes individuales no relacionadas
+ (a diferencia de un vídeo o una serie de imágenes fijas capturadas consecutivam
+ente).
+ 
+\end_layout
+
+\begin_layout Standard
+Tanto los clasificadores y landmarks pueden especificarse uno a uno añadiendo
+ las líneas correspondientes en el constructor; adicionalmente la clase
+ FaceDetector proporciona las siguientes constantes: 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\emph on
+ALL_CLASSIFICATIONS 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\emph on
+ALL_LANDMARKS 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\emph on
+NO_CLASSIFICATIONS 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\emph on
+NO_LANDMARKS 
+\end_layout
+
+\begin_layout Standard
+El servicio no ofrece la capacidad de setar los landmark y clasificadores
+ bajo demanda, sino que son definidos estáticamente al momento de crear
+ el detector; esta restricción condiciona el tiempo de respuesta del servicio
+ ya que el requerimiento de al menos un landmark, por ejemplo, significa
+ el uso de la variable 
+\emph on
+FaceDetector.ALL_LANDMARKS
+\emph default
+, incrementando así el tiempo de procesamiento de la imagen.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Uso del detector
+\end_layout
+
+\begin_layout Standard
+El detector se puede llamar de forma sincronizada con un objeto del tipo
+ Frame para detectar las caras.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Java,numbers=left,numberstyle={\tiny},basicstyle={\footnotesize},breaklines=true,captionpos=t,frame=no,keywordstyle={\color{blue}},commentstyle={\color{gray}},stringstyle={\color{red}},numbersep=5pt,emph={label}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Frame frame = new Frame.Builder().setBitmap(<file_image>).build(); 
+\end_layout
+
+\begin_layout Plain Layout
+
+SparseArray<Face> faces = detector.detect(frame); 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Ejemplo codificación básica
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Java,breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+for(int i=0;i<faces.size();i++){ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	//Obtención de cada uno de los rostros detectados en la imagen 
+\end_layout
+
+\begin_layout Plain Layout
+
+	Face rostro=faces.valueAt(i); 
+\end_layout
+
+\begin_layout Plain Layout
+
+	//Obtención del rectángulo del rostro 
+\end_layout
+
+\begin_layout Plain Layout
+
+	Float coordX=rostro.getPosition().x; 
+\end_layout
+
+\begin_layout Plain Layout
+
+	Float coordY=rostro.getPosition().y; 
+\end_layout
+
+\begin_layout Plain Layout
+
+	Float width=rostro.getWidth(); 
+\end_layout
+
+\begin_layout Plain Layout
+
+	Float height=rostro.getHeight(); 
+\end_layout
+
+\begin_layout Plain Layout
+
+	//Obtención del ángulo EulerZ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	Float angleZ=rostro.getEulerZ(); 
+\end_layout
+
+\begin_layout Plain Layout
+
+	//Obtención del clasificador ‘eyes open’ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	Float probEyeRight=rostro.getIsRightEyeOpenProbability(); 
+\end_layout
+
+\begin_layout Plain Layout
+
+	Float probEyeLeft=rostro.getIsLeftEyeOpenProbability(); 
+\end_layout
+
+\begin_layout Plain Layout
+
+	//Obtención de los Landmarks detectados: 
+\end_layout
+
+\begin_layout Plain Layout
+
+	List<Landmark> landmarks=rostro.getLandmarks(); 	 
+\end_layout
+
+\begin_layout Plain Layout
+
+	//Obtención de cada uno de los landmark 
+\end_layout
+
+\begin_layout Plain Layout
+
+	for(int j=0;j<landmarks.size();j++){ 
+\end_layout
+
+\begin_layout Plain Layout
+
+		int LandmarkType=landmarks.get(j).getType(); 
+\end_layout
+
+\begin_layout Plain Layout
+
+		PointF Landmarkposition=landmarks.get(j).getPosition(); 
+\end_layout
+
+\begin_layout Plain Layout
+
+	} 
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,286 @@
+%% LyX 2.1.4 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[oneside,american,spanish,english]{book}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{luainputenc}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\usepackage{color}
+\usepackage{float}
+\usepackage{calc}
+\usepackage{graphicx}
+\usepackage[numbers]{natbib}
+\usepackage{subscript}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\newenvironment{lyxlist}[1]
+{\begin{list}{}
+{\settowidth{\labelwidth}{#1}
+ \setlength{\leftmargin}{\labelwidth}
+ \addtolength{\leftmargin}{\labelsep}
+ \renewcommand{\makelabel}[1]{##1\hfil}}}
+{\end{list}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usepackage{multirow}
+\usepackage{multicol} 
+\usepackage{colortbl}
+\usepackage[printonlyused]{acronym}
+\usepackage{pslatex}
+\usepackage{txfonts}
+\usepackage[small,bf]{caption}
+\usepackage{acronym}
+\usepackage{mathpazo}
+\usepackage{listings}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage[Lenny]{fncychap}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\lstloadlanguages{Java}
+\restylefloat{algorithm}
+\floatstyle{plain}
+\definecolor{gray}{gray}{0.7}
+
+\makeatother
+
+\usepackage{babel}
+\addto\shorthandsspanish{\spanishdeactivate{~<>}}
+
+\usepackage{listings}
+\addto\captionsamerican{\renewcommand{\lstlistingname}{Listing}}
+\addto\captionsenglish{\renewcommand{\lstlistingname}{Listing}}
+\addto\captionsspanish{\renewcommand{\lstlistingname}{Listado de código}}
+\renewcommand{\lstlistingname}{Listing}
+
+\begin{document}
+\thispagestyle{empty}
+
+\selectlanguage{spanish}%
+\begin{center}
+Universidad Nacional del Centro de la Provincia De Buenos Aires\\
+Facultad de Ciencias Exactas - Departamento de Computación y Sistemas\\
+Ingeniería de Sistemas
+\par\end{center}
+
+\begin{center}
+\includegraphics[scale=0.6]{images/unicen}
+\par\end{center}
+
+\vspace{1.5cm}
+
+
+\begin{center}
+{\huge{}Técnicas de aprendizaje para predecir atributos no funcionales
+en componentes de aplicaciones Android}\vspace{1cm}
+
+\par\end{center}
+
+\begin{center}
+{\large{}por}\\
+{\Large{}Agüero, Silvana}
+\par\end{center}{\Large \par}
+
+\begin{center}
+{\Large{}Minvielle, Martina}
+\par\end{center}{\Large \par}
+
+\vspace{1cm}
+
+
+\begin{center}
+{\Large{}\ \ Director: Dr. Alejandro Zunino }
+\par\end{center}{\Large \par}
+
+\begin{center}
+{\Large{}Co-Director: Ing. Emiliano Sanchez}
+\par\end{center}{\Large \par}
+
+\vspace{0.5cm}
+
+
+\noindent \begin{center}
+Trabajo final de carrera presentado como requisito parcial\\
+para optar por el título de\\
+Ingeniera de Sistemas
+\par\end{center}
+
+\vspace{1cm}
+
+
+\begin{center}
+{\large{}Tandil, Marzo de 2017}
+\par\end{center}{\large \par}
+
+\newpage{}
+
+\selectlanguage{english}%
+\addcontentsline{toc}{chapter}{Resumen}
+
+
+
+
+\chapter*{Resumen}
+
+Durante los últimos años el desarrollo de aplicaciones mobiles ha
+ido creciendo exponencialmente debido a la proliferación de los dispositivos
+mobiles y el aumento de su capacidad de cómputo, haciendo que la reutilización
+de software mediante la integración de componentes de terceros se
+torne una práctica muy común. De este modo la misma funcionalidad
+suele ser ofrecida por componentes alternativos que difieren en sus
+propiedades no-funcionales o atributos de calidad. Por lo tanto, la
+elección del servicio más adecuado para ejecutarse en un determinado
+contexto, no es tarea sencilla. 
+
+Por razones prácticas es costosa la ejecución o prueba de todos los
+servicios para determinar, luego, el más adecuado de acuerdo a su
+calidad de servicio y a la funcionalidad requerida. En este punto,
+es donde toma importancia definir un proceso para la medición y predicción
+de las propiedades no-funcionales. 
+
+A través de la aplicación de modelos predictivos basados en la experiencia,
+es posible determinar el servicio que más satisface las condiciones
+del entorno, en base a un conjunto de restricciones del contexto de
+ejecución, a un conjunto de características de entrada y un conjunto
+de servicios que ofrecen la misma funcionalidad. Ya que estas condiciones
+o necesidades varían, el objetivo del aprendizaje de máquina es el
+desarrollo de sistemas que puedan cambiar su comportamiento (decisión)
+de manera autónoma basados en su experiencia (información generalizada).
+
+Se proponen dos herramientas para asistir la aplicación del enfoque.
+Una de ellas facilita la obtención de indicadores de propiedades de
+componentes Android y la otra herramienta permite utilizar diferentes
+técnicas de regresión sobre las mediciones obtenidas previamente.
+Así, se logra construir modelos predictivos sobre alguna propiedad
+de interés de algún componente específico. 
+
+\selectlanguage{spanish}%
+\newpage{}\foreignlanguage{american}{\addcontentsline{toc}{chapter}{Agradecimientos}}
+
+
+\chapter*{Agradecimientos}
+
+\newpage{}
+
+\tableofcontents{}
+
+\newpage{}\addcontentsline{toc}{chapter}{Índice de Figuras}
+
+\listoffigures
+
+
+\selectlanguage{american}%
+\newpage{}
+
+\addcontentsline{toc}{chapter}{Índice de Cuadros}
+
+\selectlanguage{spanish}%
+\listoftables
+
+
+\newpage{}
+
+\addcontentsline{toc}{chapter}{Glosario}
+\pagestyle{plain}
+
+\cleardoublepage{}
+
+
+\chapter*{Glosario}
+
+\selectlanguage{english}%
+\begin{acronym}
+\acro{ADB}{Android Debug Bridge}
+\acro{ART}{Android Runtime}
+\acro{API}{Application Programmatic Interface}
+\acro{CC}{Correlation Coefficient}
+\acro{CPU}{Central Processing Unit}
+\acro{CSV}{Comma-Separated Values}
+\acro{DVM}{Dalvik Virtual Machine}
+\acro{EPM}{Empirical Performance Model}
+\acro{FN}{False Negative}
+\acro{FP}{False Positive}
+\acro{FTP}{File Transfer Protocol}
+\acro{GC}{Garbage Collector}
+\acro{GLMM}{Generalized Linear Mixed Models}
+\acro{GPU}{Graphics Processor Unit}
+\acro{HTTP}{Hypertext Transfer Protocol}
+\acro{HTTPS}{Hypertext Transfer Protocol Secure}
+\acro{IDE}{Integrated Development Environment}
+\acro{iOS}{Iphone Operating System}
+\acro{JAR}{Java ARchive}
+\acro{Java SE}{Java Standard Edition}
+\acro{Java ME}{Java Micro Edition}
+\acro{JDBC}{Java Database Connectivity}
+\acro{JDK}{Java Development Kit}
+\acro{JMH}{Java Microbenchmark Harness}
+\acro{JMS}{Java Message Service}
+\acro{JNI}{Java Native Interface}
+\acro{JRE}{Java Runtime Environment}
+\acro{JSON}{JavaScript Object Notation}
+\acro{JVM}{Java Virtual Machine}
+\acro{LDAP}{Lightweight Directory Access Protocol}
+\acro{MAE}{Mean Absolute Error}
+\acro{MARS}{Multivariate Adaptive Regression Splines}
+\acro{MLP}{MultiLayer Perceptron}
+\acro{POP3}{Post Office Protocol}
+\acro{REST}{Representational State Transfer}
+\acro{RMSE}{Root Mean Absolute Error}
+\acro{SMO}{Sequential Minimal Optimization}
+\acro{RAE}{Relative Absolute Error}
+\acro{RBF}{Radial Basis Function}
+\acro{RRSE}{Root Relative Squared Error}
+\acro{SGD}{Stochastic Gradient Descendent}
+\acro{SQL}{Structured Query Language}
+\acro{SVM}{Support Vector Machine}
+\acro{TP}{True Positive}
+\acro{TSP}{Travelling Salesman Problem}
+\acro{UML}{Unified Modeling Language}
+\acro{VM}{Virtual Machine}
+\acro{XML}{eXtensible Markup Language}
+\end{acronym}
+
+\newpage{}
+
+\selectlanguage{american}%
+\mainmatter
+\renewcommand
+\thepage{\arabic{page}}
+\setcounter{page}{1}
+\pagestyle{fancy}  
+\fancyhead{}  
+\fancyhead[RO]{\rightmark} 
+\fancyhead[LE]{\leftmark}
+\acresetall
+
+\selectlanguage{spanish}%
+\include{ch01/ch01}\acresetall
+
+\include{ch02/ch02}\acresetall\include{ch03/ch03}\acresetall
+
+\include{ch04/ch04}\acresetall\include{ch05/ch05}\acresetall\include{ch06/ch06}\acresetall
+
+\selectlanguage{american}%
+\newpage{}
+
+\selectlanguage{spanish}%
+\bibliographystyle{plainnat}
+\addcontentsline{toc}{chapter}{\bibname}\bibliography{Bibliograf-ía}
+
+
+\newpage{}
+
+\selectlanguage{american}%
+\acresetall
+
+\selectlanguage{spanish}%
+\appendix
+\include{appendix/appendixA}\include{appendix/appendixB}\selectlanguage{english}%
+
+\end{document}
